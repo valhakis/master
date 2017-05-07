@@ -1,7 +1,7 @@
 # Authentication
 
 ## File structure
-.
+```
 ├── bin
 │   └── app
 ├── client
@@ -43,3 +43,4 @@
         └── user
 
 14 directories, 25 files
+```
