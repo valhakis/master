@@ -1,0 +1,21 @@
+extends /layout
+
+block content
+   h1 This is the dashboard.
+
+   hr
+
+   p your email is #{user.email}
+   p your password is #{user.password}
+
+   hr
+
+   pre= user
+
+   hr
+
+   a(href="/logout") A link to logout page.
+
+   hr
+
+   a(href="/home") A link to home page.

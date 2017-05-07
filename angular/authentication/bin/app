@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var spawn = require('child_process').spawn;
+
+// Nodemon
+// ===============================================================
+var nodemon = {};
+nodemon.start = function() {
+   this.spawn = spawn('nodemon', [], {
+      cwd: path.join(__dirname, '../server'),
+      stdio: 'inherit'
+   });
+};
+
+// Webpack
+// ===============================================================
+var webpack = {};
+webpack.start = function() {
+   this.spawn = spawn('webpack', ['--watch'], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit'
+   });
+};
+
+nodemon.start();
+webpack.start();
