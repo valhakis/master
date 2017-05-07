@@ -72,6 +72,8 @@
    "wsh"           : false, 
    "yui"           : false,
 
-   "globals"       : {}        
+   "globals"       : {
+      "GET": true
+   }        
 }
 

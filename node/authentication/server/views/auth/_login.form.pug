@@ -1,0 +1,9 @@
+form(method="POST", action="/login")
+   input(type="hidden", name="_csrf", value=csrfToken)
+   div.form-group
+      label Email
+      input.form-control(type="email", name="email")
+   div.form-group
+      label Password
+      input.form-control(type="password", name="password")
+   button.btn.btn-default(type="submit") Log in.
