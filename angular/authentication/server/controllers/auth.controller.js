@@ -46,6 +46,8 @@ exports.LogUserIn = function(req, res) {
             delete user.password;
             req.session.user = user;
 
+            console.log('LOGIN WAS VALID:', req.session.user);
+
             res.redirect('/dashboard');
             // res.send({
                // message: "I think you are very beautiful."
@@ -56,6 +58,8 @@ exports.LogUserIn = function(req, res) {
 };
 
 exports.LogUserOut = function(req, res) {
-   req.session.reset();
-   res.redirect('/');
+   // req.session.reset(); // this is used in 'client-sessions'
+   req.session.destroy(function() {
+      res.redirect('/');
+   });
 };

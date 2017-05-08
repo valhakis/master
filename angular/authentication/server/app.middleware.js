@@ -9,8 +9,10 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var csrf = require('csurf');
-var session = require('client-sessions');
+var cookieParser = require('cookie-parser');
+// var csrf = require('csurf');
+// var sessions = require('client-sessions');
+var session = require('express-session');
 var config = GET.require('config');
 
 module.exports = function(app) {
@@ -25,7 +27,19 @@ module.exports = function(app) {
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({ extended: true }));
 
+   app.use(cookieParser());
+
    app.use(session({
+      secret: config.secret,
+      resave: false,
+      saveUninitialized: true,
+      cookie: {
+         secure: false
+      }
+   }));
+
+   /*
+   app.use(sessions({
       cookieName: 'session',
       secret: config.secret,
       duration: 30 * 60 * 1000,
@@ -34,10 +48,11 @@ module.exports = function(app) {
       // secure: true, // only use cookies over https.
       ephemeral: true, // delete cookie when browser is closed.
    }));
+   */
 
    // CSURF is required for req.csrfToken()
    // ===========================================================
-   app.use(csrf());
+   // app.use(csrf());
 
    app.use(GET.require('middleware/auth.middleware'));
 };

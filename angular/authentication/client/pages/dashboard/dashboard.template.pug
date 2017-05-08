@@ -1,0 +1,14 @@
+h2 This is the best dashboard I've ever seen.
+p 
+   i Lorem enim corrupti mollitia veritatis deserunt? A aliquam ex aut odit illum libero! Autem neque cum corrupti nesciunt ratione alias. Architecto perferendis quibusdam alias eum natus vitae. Quidem sequi dignissimos.
+
+div(ng-if="currentUser") Welcome, {{ currentUser.name }}
+
+div(ng-if="isAuthorized(userRoles.admin)") You're admin.
+
+div(ng-if="isAuthorized(userRoles.normal)") You're normal user.
+
+div(ng-switch, on="currentUser.role")
+   div(ng-switch-when="userRoles.admin") You're admin.
+   div(ng-switch-when="userRoles.master") You're master.
+   div(ng-switch-default) You're something else.

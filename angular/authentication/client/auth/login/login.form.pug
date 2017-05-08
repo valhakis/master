@@ -1,8 +1,8 @@
-form
+form(ng-submit="auth.login(auth.credentials)")
    div.form-group
       label Email.
-      input.form-control(type="email")
+      input.form-control(type="email", ng-model="auth.credentials.email")
    div.form-group
       label Password.
-      input.form-control(type="password")
+      input.form-control(type="password", ng-model="auth.credentials.password")
    button.btn.btn-default(type="submit") Log in.

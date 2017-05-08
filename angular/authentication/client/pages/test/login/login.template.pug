@@ -1,0 +1,8 @@
+form(ng-submit="test.login(test.credentials)")
+   div.form-group
+      label Email.
+      input.form-control(type="email", ng-model="test.credentials.email")
+   div.form-group
+      label Password.
+      input.form-control(type="password", ng-model="test.credentials.password")
+   button.btn.btn-default(type="submit") Log in.

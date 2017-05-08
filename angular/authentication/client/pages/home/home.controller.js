@@ -1,6 +1,6 @@
 class HomeController {
    constructor() {
-      console.log(`HomeController has been constructed.`);
+      // console.log(`HomeController has been constructed.`);
    }
 }
 

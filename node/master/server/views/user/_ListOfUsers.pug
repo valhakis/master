@@ -1,0 +1,9 @@
+ul.list-group
+   each user in users
+      li.list-group-item
+         =user
+
+         hr
+
+         a.btn.btn-danger.btn-xs(href="/user/remove/" + user._id) Remove user.
+

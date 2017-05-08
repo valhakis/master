@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var spawn = require('child_process').spawn;
+
+// Nodemon
+// ===============================================================
+var nodemon = {};
+
+nodemon.spawn = 'adios';
+
+nodemon.env = Object.create(process.env);
+nodemon.env.NODE_ENV = 'development';
+
+nodemon.start = function() {
+   this.spawn = spawn('nodemon', [], {
+      cwd: path.join(__dirname, '../', 'server'),
+      stdio: 'inherit',
+      env: this.env
+   });
+};
+
+nodemon.start();

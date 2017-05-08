@@ -1,0 +1,11 @@
+h2 Add a video.
+
+form
+   div.form-group(ng-submit="video.addVideo()")
+      label URL
+      input.form-control(type="url", ng-model="video.video.url")
+   button.btn.btn-default(type="submit") Add video.
+
+hr
+
+div.well Video: {{ video.video }}

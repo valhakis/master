@@ -17,6 +17,7 @@ module.exports = function(req, res, next) {
          next();
       });
    } else {
+      console.log(`REQ.SESSION.USER IS NOT SET! [${__filename}]`);
       next();
    }
 };

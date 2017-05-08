@@ -10,6 +10,13 @@ var UserSchema = new mongoose.Schema({
    password: {
       type: String,
       required: [true, 'Password is required.']
+   },
+   role: {
+      type: [{
+         type: String,
+         enum: ['normal', 'guest', 'admin', 'master']
+      }],
+      default: 'normal'
    }
 });
 
