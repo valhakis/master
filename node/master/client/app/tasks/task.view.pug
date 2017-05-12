@@ -1,0 +1,12 @@
+extends /app/views/layouts/base.pug
+
+block content
+   // include /bower_components/example.pug
+   div.app-content
+      h2 Tasks.
+      p Here should be information about what should be done.
+
+      include partials/nav.pug
+
+      ui-view
+

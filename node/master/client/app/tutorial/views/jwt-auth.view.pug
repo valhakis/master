@@ -1,0 +1,22 @@
+extends ../layouts/base.pug
+
+block content
+   h2 JWT Authentication.
+   p Ipsum nemo deserunt deleniti rerum quo ipsum, nulla reiciendis voluptate voluptate accusamus a praesentium nesciunt itaque vel maiores saepe. Reprehenderit laborum hic quae placeat veritatis? Quo rerum ullam architecto dignissimos.
+
+   h3 Log in to your account.
+   form(ng-submit="UserCtrl.login(UserCtrl.user)")
+      div.form-group
+         label Email.
+         input.form-control(type="text", ng-model="UserCtrl.user.email")
+      div.form-group
+         label Password.
+         input.form-control(type="password", ng-model="UserCtrl.user.password")
+      button.btn.btn-default Login.
+
+   h3 Your account login status.
+   p {{ UserCtrl.currentUser }}
+   button.btn.btn-default(ng-click="UserCtrl.logout()") Log out.
+
+
+

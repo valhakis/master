@@ -1,0 +1,11 @@
+h4 Add user.
+form(ng-submit="UserCtrl.add(UserCtrl.user)").app-form
+   div.form-group
+      label Email.
+      input.form-control(type="text", ng-model="UserCtrl.user.email")
+   div.form-group
+      label Password.
+      input.form-control(type="password", ng-model="UserCtrl.user.password")
+   button.btn.btn-default Add.
+
+

@@ -1,0 +1,77 @@
+extends /app/views/layouts/home.pug
+
+block content
+   h2.app-title This is my home hoomans.
+
+   button.btn.btn-primary(ng-click="authenticate('facebook')")
+      span Sign in with Facebook.
+
+   hr
+
+   ul.app-list
+      li(ng-repeat="i in [0, 1, 2, 3, 4, 5]")
+         span This is my list item {{ i }}.
+
+   form.app-form
+      h2.title Registration.
+      div.form-group
+         label The label of item.
+         input.form-control(type="text")
+      div.form-group
+         label The label of item.
+         input.form-control(type="text")
+      div.form-group
+         label The label of item.
+         input.form-control(type="text")
+      div.form-group
+         label The label of item.
+         input.form-control(type="text")
+      button.btn.btn-default.btn-block Submit form.
+
+   hr
+
+   div.w3-container.w3-blue
+      p Elit ab maxime odit maxime repellat quaerat ipsa aperiam accusamus quae corporis esse excepturi aspernatur officiis. Cumque tempora autem quam voluptates sit architecto sint voluptas eveniet fugiat! Iste quae nobis.
+
+   hr
+
+   div.w3-container.w3-black
+      br
+      div.w3-container.w3-red
+         p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
+      div.w3-container.w3-red
+         p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
+      hr
+
+      div.w3-panel.w3-red
+         p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
+      div.w3-panel.w3-red
+         p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
+
+
+   div.w3-panel.w3-red
+      h3 Danger.
+      p Dolor incidunt molestias dignissimos dignissimos saepe autem illum. Consequuntur suscipit cupiditate veritatis quos veniam quam vel asperiores obcaecati obcaecati sunt dolore, laborum accusamus. Veniam deleniti non cum beatae adipisci? Totam.
+
+
+   div.w3-panel.w3-black
+      div.w3-panel.w3-border.w3-border-red
+         span Adipisicing nobis id voluptatem amet unde error. Consectetur praesentium cupiditate eius labore veniam eius officia blanditiis magnam optio consectetur! Quasi repellendus vero sequi aliquid quasi repellendus omnis vel! Ut ducimus!
+      hr
+      div.w3-panel.w3-border-left.w3-border-red.w3-pale-red
+         span Elit neque illum architecto quia nam. Quis officia omnis sunt explicabo molestias sed quaerat minus. Laudantium quam eius molestiae maiores molestiae deserunt laborum natus impedit culpa cumque. Accusamus numquam omnis.
+      hr
+      div.w3-card.w3-yellow
+         p Consectetur mollitia soluta provident architecto numquam. Doloribus animi vero in nemo assumenda. Unde illo consequatur beatae reprehenderit repudiandae. Vitae rem obcaecati cumque quos praesentium quos. Ad dignissimos sequi non culpa.
+      hr
+      div.w3-card-4
+         header.w3-container.w3-blue
+            h1 Header.
+         div.w3-container.w3-pale-blue
+            p Sit rem aspernatur molestias doloremque molestias, labore recusandae facere molestiae fuga eaque natus nisi blanditiis sit quidem dolor quia assumenda. Porro odio maxime rerum iure laudantium. Optio nemo natus veritatis.
+         footer.w3-container.w3-blue
+            h5 Footer.
+      br
+
+   div.w3-panel.w3-light-gray
+      a(ui-sref="blog") Link to blog.

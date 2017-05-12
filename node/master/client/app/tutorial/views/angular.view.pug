@@ -1,0 +1,143 @@
+h3 Angular.
+p Lorem assumenda eaque rem voluptas rem totam nobis quibusdam in error. Dolore quibusdam fuga libero necessitatibus commodi provident sunt. Beatae reiciendis quidem id sit omnis necessitatibus? In animi velit maiores.
+
+h3 Hardcoded samples.
+p Sit accusamus eos at molestiae fugiat cumque! Aliquam quia recusandae est dignissimos reprehenderit beatae repellat. Nam impedit quia magnam tempore non. Necessitatibus at maiores animi voluptatem non quibusdam! Dicta omnis.
+
+div.w3-container.w3-light-gray
+   h4 Data Binding.
+   pre
+      code.code.javascript.
+         var app = angular.module('app', []);
+
+         app.run(function($rootScope) {
+            $rootScope.color = 'red';
+         });
+
+         app.controller('MyController', function($scope) {
+            $scope.color = 'red';
+
+            $scope.name = 'William Valhakis';
+
+            $scope.persons = [{
+               id: 1,
+               name: "Person Name"
+            },{
+               id: 2,
+               name: "Person Name"
+            },{
+               id: 3,
+               name: "Person Name"
+            }];
+
+            $scope.click = function() {
+               console.log('clicked');
+            };
+         });
+   span.app-break
+   pre
+      code.code.pug.
+         button(ng-click="click()")
+
+         ul
+            li(ng-repeat="person in persons")
+               span(ng-bind="person.name")
+   br
+
+br
+div.w3-container.w3-light-gray
+   h4 Module and Controller.
+   pre
+      code.code.pug.
+         div(ng-app="app", ng-controller="MainController as main")
+            input(ng-model="name")
+            p <% name %>
+            p(ng-bind="name")
+   span.app-break
+   pre
+      code.code.javascript.
+         var app = angular.module('app', []);
+         app.controller('MainController', function MainController() {
+            $scope.name = 'William Valhakis';
+         });
+   br
+
+br
+div.w3-container.w3-light-gray
+   h4 Form Validation.
+   pre
+      code.code.pug.
+         form(name="form1")
+            label Email.
+            input(type="email", name="email", ng-model="email")
+
+         p {{ form1.email.$valid }}
+         p {{ form1.email.$dirty }}
+         p {{ form1.email.$touched }}
+   span.app-break
+   pre
+      code.code.css.
+         input.ng-invalid {
+            background-color: red;
+         }
+         input.ng-valid {
+            background-color: red;
+         }
+         input.ng-pristine {
+            background-color: red;
+         }
+         input.ng-pending {
+            background-color: red;
+         }
+         input.ng-dirty {
+            background-color: red;
+         }
+         input.ng-empty {
+            background-color: red;
+         }
+         input.ng-not-empty {
+            background-color: red;
+         }
+         input.ng-touched {
+            background-color: red;
+         }
+         input.ng-untouched {
+            background-color: red;
+         }
+   br
+
+br
+div.w3-container.w3-light-gray
+   h4 Filters to Experssions.
+   pre
+      code.code.pug.
+         p The name is <% name | uppercase %>
+         p The name is <% name | lowercase %>
+         p The price is <% price | currency %>
+
+         input(ng-model="text")
+         ul
+            li(ng-repeat="name in names | filter : text")
+               {{ name }}
+   br
+
+br
+div.w3-container.w3-light-gray
+   h4 Ajax.
+   pre
+      code.code.javascript.
+         function MainController($http) {
+            $http.get('/api/users').then(function(res) {
+               console.log(res.data);
+            });
+
+            $http({ method: 'GET', url: '/api/users' }).then(function(res) {
+               console.log(res.data);
+            });
+         }
+   br
+
+script. 
+   $('pre code.code').each(function(index, block) {
+      hljs.highlightBlock(block); 
+   });

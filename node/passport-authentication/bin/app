@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var path = require('path');
+
+var spawn = require('child_process').spawn;
+
+var nodemon = {};
+
+nodemon.start = function() {
+   this.spawn = spawn('nodemon', [], {
+      stdio: 'inherit',
+      cwd: path.join(__dirname, '..')
+   });
+};
+
+nodemon.start();

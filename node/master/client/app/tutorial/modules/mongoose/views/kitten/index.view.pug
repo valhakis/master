@@ -1,0 +1,11 @@
+h4 Kitten Home View.
+p Lorem corporis pariatur quaerat ratione beatae. Tenetur optio inventore ea accusamus ad ullam at aut fugit doloremque aperiam nam provident quibusdam optio consequuntur! Nemo modi voluptatem adipisci unde error nostrum!
+
+h4 List of kittens.
+ul.w3-ul.w3-border
+   li(ng-repeat="kitten in KittenCtrl.kittens", style="margin-bottom: 5px;").w3-pale-blue
+      h5 {{ kitten.name }}
+      p
+         i Birthday: {{ kitten.birthday | date:'dd.MM.yyyy HH:mm:ss' }}
+      button.btn.btn-default.btn-xs.pull-right(ng-click="KittenCtrl.remove(kitten)") Remove Kitten.
+      div.clearfix

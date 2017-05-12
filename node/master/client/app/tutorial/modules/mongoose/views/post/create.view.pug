@@ -1,0 +1,12 @@
+h4 Post create.
+form.app-form(ng-submit="PostCtrl.create(PostCtrl.post)")
+   div.form-group
+      label Title.
+      input.form-control(type="text", ng-model="PostCtrl.post.title")
+   div.form-group
+      label Content.
+      textarea.form-control(ng-model="PostCtrl.post.body")
+   button.btn.btn-default Create.
+
+
+

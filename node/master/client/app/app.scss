@@ -1,0 +1,283 @@
+@import url('https://www.fontify.me/wf/42a6cdb26bad8bf22678dbaaa59e2d3a');
+@import '../sass/_variables.scss';
+
+* {
+   box-sizing: border-box;   
+}
+
+body {
+   background-color: $red;
+   font-family: 'Arial Narrow'
+}
+
+
+.app-list {
+   // background-color: $blue;
+   font-family: 'Arial Narrow', Arial, sans-serif;
+   margin: 0px;
+   padding: 0px;
+   list-style: none;
+   li {
+      border: 1px solid $cup;
+      border-radius: 3px;
+      margin-bottom: 3px;
+      background-color: $lightGray;
+      color: $dark;
+      padding: 1px 3px 1px 3px;
+      &:hover {
+         background-color: $green;
+      }
+   }
+}
+
+.app-title {
+   background-color: $green;
+   border: 1px solid $cup;
+   border-radius: 3px;
+   padding: 2px 3px;
+}
+
+.app-form {
+   .form-control {
+      border: 1px solid $cap;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      &:focus, &:active {
+         outline: none;
+         border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+   }
+   .btn {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      &:focus, &:active {
+         // outline: 1px solid $cup;
+         outline: none;
+         border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+   }
+   h2.title {
+      margin: 0px;
+      margin-bottom: 10px;
+   }
+   font-family: 'Arial Narrow', Arial, sans-serif;
+   background-color: $lightGray;
+   padding: 20px;
+   border-radius: 3px;
+   border: 1px solid $cup;
+   input {
+      padding: 12px 20px;
+   }
+}
+
+.jumbotron {
+   background-color: $lightGray !important;
+}
+
+.app-navbar {
+   ul {
+
+   }
+   li {
+
+   }
+   a.active, li.active a {
+      color: red;
+   }
+   a {
+      text-decoration: none;
+      color: $blue;
+      span:first-child {
+         margin-right: 5px;
+      }
+      &:hover {
+         text-decoration: none;
+         color: red;
+
+         & span:last-child {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+.app-content {
+   h2.title {
+      margin-top: 10px;
+   }
+   font-family: 'Arial Narrow';
+   background-color: tomato;
+   padding: 20px;
+}
+
+ul.app-horizontal-nav {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   background-color: $lightGray;
+   overflow: hidden;
+
+   li {
+      float: left;
+   }
+
+   li.active a, a.active {
+      background-color: #4caf50;
+      color: white;
+   }
+   a {
+      color: $dark;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: block;
+      min-width: 60px;
+      &:hover {
+         background-color: #555;
+         color: white;
+      }
+   }
+}
+
+.app-group {
+   $orange: #EA3001;
+   $red: #E0141F;
+   $red: #FF3334;
+   border-left: 2px solid $dark;
+   background-color: $red;
+   color: white;
+   padding: 10px 3px;
+   margin-bottom: 5px;
+   input {
+      &:active {
+         outline: none;
+      }
+      outline: none;
+      color: $dark;
+   }
+}
+.app-group-container {
+   $orange: #EA3001;
+   $red: #E0141F;
+   $red: #FF3334;
+   $paleRed: #A54046;
+   $paleRed: #FF7D7D;
+   $orange: #F75D37;
+   .app-group {
+      &:nth-child(even) {
+         background-color: $orange;
+      }
+   }
+}
+
+.app-input {
+   border: 1px solid $cup;
+   font-size: 12px;
+   padding: 0px;
+   margin: 0px;
+   line-height: 12px;
+}
+
+.jumbotron {
+   background-color: $lightGray !important;
+   border-radius: 0px !important;
+   a, button {
+      border-radius: 0px !important;
+   }
+}
+
+code {
+   border-radius: 0px;
+   margin: 0px;
+   padding: 0px;
+   // font-family: 'Arial Narrow';
+   font-family: 'Courier New';
+}
+pre {
+   border-radius: 0px;
+   padding: 0px;
+   margin: 0px;
+}
+
+span.app-break {
+   display: block;
+   height: 5px;
+}
+
+.form-group {
+   .form-control {
+      border-radius: 0px;
+   }
+}
+.btn {
+   border-radius: 0px;
+}
+
+.form-control {
+   border: none;
+   &:active {
+      border: none;
+      outline: 1px solid $dark;
+   }
+   &:focus {
+      border: none;
+      outline: 1px solid $dark;
+   }
+   // outline: 1px solid $dark;
+   & {
+      &:active, &:focus {
+         // border: none;
+         // outline: 1px solid $red;
+      }
+   }
+}
+
+.btn, .btn-default, .btn[type="submit"] {
+   &:focus {
+      outline: none;
+      border: none;
+   }
+   &:active {
+      outline: 1px solid $dark;
+      border: none;
+   }
+}
+
+bootstrap-editor {
+   .editor {
+
+   }
+   .preview {
+
+   }
+   pre {
+      code {
+         overflow: auto;
+      }
+   }
+}
+
+.app-vertical-nav {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   li {
+      display: block;
+      margin-bottom: 10px;
+   }
+   li.active a, a.active {
+      background-color: $blue1;
+      color: white;
+   }
+   a {
+      display: block;
+      background-color: $lightGray;
+      padding: 7px 20px;
+      color: $dark;
+      &:hover {
+         background-color: #555;
+         box-shadow: 1px 1px 10px $cup;
+         color: white;
+      }
+      &:active {
+         outline: 1px solid $cup;
+      }
+   }
+}

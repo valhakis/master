@@ -1,0 +1,16 @@
+form.app-form(ng-submit="AuthCtrl.register(AuthCtrl.credentials)")
+   div.form-group
+      label Email.
+      input.form-control(type="text", ng-model="AuthCtrl.credentials.email")
+   div.form-group
+      label Password.
+      input.form-control(type="password", ng-model="AuthCtrl.credentials.password")
+   div.form-group
+      label Password Confirmation.
+      input.form-control(type="password", ng-model="AuthCtrl.credentials.password2")
+   button.btn.btn-default(type="submit") Become a member.
+
+   span=" "
+   a.btn.btn-default(ui-sref="login") Login.
+
+

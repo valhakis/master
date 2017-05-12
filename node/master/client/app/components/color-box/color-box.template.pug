@@ -1,0 +1,27 @@
+ul
+   li(ng-repeat="color in colors")
+      div.left
+         div.color(ng-style="{'background-color': color.hex}") 
+            span.name {{ color.name }}
+            span.hex {{ color.hex }}
+      div.right
+         button.btn.btn-danger.btn-xs 
+            span.glyphicon.glyphicon-remove
+            // button.btn.btn-default.btn-xs 
+               // span.glyphicon.glyphicon-remove
+         // div.btn-group(role="group", aria-label="label")
+            // button.btn.btn-default.btn-xs
+               // span.glyphicon.glyphicon-remove
+            // button.btn.btn-default.btn-xs
+               // span.glyphicon.glyphicon-remove
+
+hr
+
+form(ng-submit="addColor(color)")
+   div.form-group
+      label Name.
+      input.form-control(type="text")
+   div.form-group
+      label Hex.
+      input.form-control(type="text")
+   button.btn.btn-default Add.

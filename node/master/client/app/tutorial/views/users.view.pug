@@ -1,0 +1,38 @@
+extends ../layouts/base.pug
+
+block content
+   h2 This is users page.
+
+   div.row
+      div.col-sm-5
+         h3 Become a member.
+         form.app-form(ng-submit="UserCtrl.register(UserCtrl.user)")
+            div.form-group
+               label Email.
+               input.form-control(type="text", ng-model="UserCtrl.user.email")
+            div.form-group
+               label Password.
+               input.form-control(type="password", ng-model="UserCtrl.user.password")
+            div.form-group
+               label Password Confirmation.
+               input.form-control(type="password", ng-model="UserCtrl.user.password2")
+            button.btn.btn-default Become a member
+         h3 Log in.
+         form.app-form(ng-submit="UserCtrl.login(UserCtrl.user)")
+            div.form-group
+               label Email.
+               input.form-control(type="text", ng-model="UserCtrl.user.email")
+            div.form-group
+               label Password.
+               input.form-control(type="password", ng-model="UserCtrl.user.password")
+            button.btn.btn-default Login.
+         h3 About user something.
+         div(ng-if="UserCtrl.currentUser") Welcome, {{ UserCtrl.currentUser.email }}.
+         div(ng-if="UserCtrl.isAuthorized(UserCtrl.userRoles.normal)") You're normal user.
+      div.col-sm-7
+         h3 List of users.
+         ul.w3-ul
+            li(ng-repeat="user in UserCtrl.users")
+               json-formatter(json="user", open="true").w3-panel.w3-light-gray
+
+

@@ -1,0 +1,35 @@
+
+nav.app-navbar
+   ul.w3-bar.w3-black
+      li.w3-bar-item(ui-sref-active="active")
+         a(ui-sref="home") 
+            span.glyphicon.glyphicon-home
+            span Home
+      li.w3-bar-item(ui-sref-active="active")
+         a(ui-sref="tutorial")
+            span.glyphicon.glyphicon-book
+            span Tutorial
+      li.w3-bar-item(ui-sref-active="active")
+         a(ui-sref="tasks")
+            span.glyphicon.glyphicon-list-alt
+            span Tasks
+      li.w3-bar-item(ui-sref-active="active")
+         a(ui-sref="blog")
+            span.glyphicon.glyphicon-bold
+            span Blog
+      li.w3-bar-item
+         a(href="/") 
+            span.glyphicon.glyphicon-link
+            span Link
+      li.w3-bar-item.w3-right(ng-if="!currentUser", ui-sref-active="active")
+         a(ui-sref="login") 
+            span.glyphicon.glyphicon-link
+            span Login
+      li.w3-bar-item.w3-right(ng-if="currentUser", ui-sref-active="active")
+         a(href="#", ng-click="NavCtrl.logout()") 
+            span.glyphicon.glyphicon-link
+            span Log out
+      li.w3-bar-item.w3-right(ui-sref-active="active")
+         a(ui-sref="dashboard") 
+            span.glyphicon.glyphicon-dashboard
+            span Dashboard

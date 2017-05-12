@@ -1,0 +1,17 @@
+extends ../../views/layouts/base.pug
+
+block content
+   h1 Login.
+
+   form.app-form(ng-submit="AuthCtrl.login(AuthCtrl.credentials)", ng-if="!currentUser")
+      div.form-group
+         label Email.
+         input.form-control(type="text", ng-model="AuthCtrl.credentials.email")
+      div.form-group
+         label Password.
+         input.form-control(type="password", ng-model="AuthCtrl.credentials.password")
+      button.btn.btn-default(type="submit") Login.
+      span=" "
+      a.btn.btn-default(ui-sref="register") Become a member.
+
+

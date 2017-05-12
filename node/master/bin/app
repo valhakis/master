@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+var sudo = parseInt(process.env.SUDO_UID);
+
+var path = require('path');
+var spawn = require('child_process').spawn;
+var exec = require('child_process').exec;
+
+var argument = process.argv[2];
+
+// Nodemon
+// ===============================================================
+var nodemon = {};
+nodemon.start = function() {
+   var env = Object.create(process.env);
+   env.NODE_ENV = 'development';
+   this.spawn = spawn('nodemon', [], {
+      cwd: path.join(__dirname, '../server'),
+      stdio: 'inherit',
+      env: env
+   });
+};
+
+// Webpack
+// ===============================================================
+var webpack = {};
+webpack.start = function() {
+   this.spawn = spawn('webpack', ['--watch'], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit'
+   });
+};
+
+// Pm2
+// ===============================================================
+var pm2 = {};
+pm2.start = function() {
+   var env = Object.create(process.env);
+   env.NODE_ENV = 'production';
+   this.spawn = spawn('pm2', ['start', 'server'], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit',
+      env: env
+   });
+};
+
+if (!argument) {
+   console.log(`ARGUMENT NEEDED: ['development' or 'production']`);
+} else if (argument == 'dev' || argument == 'development') {
+   if (!sudo) {
+      console.log('root permissions are required for development.');
+   } else {
+      nodemon.start();
+      webpack.start();
+   }
+} else if (argument == 'prod' || argument == 'production') {
+   if (!sudo) {
+      console.log('root permissions are required for production.');
+   } else {
+      pm2.start();
+   }
+}

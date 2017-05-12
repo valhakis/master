@@ -1,0 +1,17 @@
+h3 Ace Editor
+p Elit esse quam perferendis provident optio magni distinctio nulla minus aliquid deleniti porro id numquam, ea, incidunt ullam ullam voluptates, iusto, impedit fuga laborum! Laudantium maiores ex dolorem minima aspernatur.
+
+div#editor(style="min-height: 300px")
+
+   script.
+      var editor = ace.edit($('#editor')[0]);
+      editor.setTheme('ace/theme/monokai');
+      editor.getSession().setMode('ace/mode/javascript');
+      editor.setKeyboardHandler('ace/keyboard/vim');
+      ace.config.loadModule('ace/keyboard/vim', function(m) {
+         var VimApi = ace.require('ace/keyboard/vim').CodeMirror.Vim;
+         VimApi.defineEx('write', 'w', function(cm, input) {
+            console.log('I should write a book.');
+            cm.ace.execCommand('save');
+         });
+      });

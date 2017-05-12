@@ -12,7 +12,15 @@ var mongo = {
 
 module.exports = {
    host: '192.168.0.2',
-   port: '4000',
+   port: '80',
+   production: {
+      host: '192.168.0.2',
+      port: '80',
+   },
+   development: {
+      host: '192.168.0.2',
+      port: '4000',
+   },
    secret: 'the most secret',
    mongo: mongo
 };

@@ -1,0 +1,11 @@
+h3 This is the bootstrap view.
+
+h4 Add new bootstrap element.
+form(ng-submit="bs.addElement()")
+   div.form-group
+      label Element title.
+      input.form-control(type="text")
+   div.form-group
+      label Element content.
+      bootstrap-editor
+   button.btn.btn-default(type="submit") Add element.

@@ -1,0 +1,13 @@
+h3 Create a new post.
+
+form#create-post-form.app-form(ng-submit="vm.createPost(vm.post)")
+   div.form-group
+      label Title.
+      input.form-control(type="text",ng-model="vm.post.title")
+   div.form-group
+      label Content.
+      textarea.form-control(ng-model="vm.post.body")
+   button.btn.btn-default(type="submit") Create new post.
+
+   script.
+      $('#create-post-form input').focus();

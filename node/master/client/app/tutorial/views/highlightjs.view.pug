@@ -1,0 +1,40 @@
+h3 HighlightJS
+p Ipsum rem eveniet alias nobis saepe? Debitis quisquam nemo quis tempora laudantium velit. Ad doloribus eaque neque sint illum quibusdam recusandae. Ea id molestias iusto impedit nobis porro quis, ad!
+
+hr
+
+pre
+   code#example-code.javascript var name = 'William Valhakis';
+br
+
+pre
+   code.code hljs.highlightBlock(document.getElementById('example-code'));
+br
+
+pre
+   code.code $('pre code.code').each(function(i, block) { hljs.highlightBlock(block); });
+br
+
+pre
+   code.code var number = 12;
+br
+
+pre
+   code.code var number = 13;
+br
+
+div.w3-container.w3-red
+   h4 Hardcoded code.
+   pre
+      code.code.
+         var app = angular.module('app', []);
+         var app = angular.module('app', []);
+         var app = angular.module('app', []);
+         var app = angular.module('app', []);
+   br
+
+script.
+   hljs.highlightBlock(document.getElementById('example-code'));
+
+script.
+   $("pre code.code").each(function(i, block) { hljs.highlightBlock(block); });

@@ -1,0 +1,12 @@
+div.app-content
+   h1 Mongoose View.
+
+   div.row
+      div.col-xs-3
+         div.app-vertical-nav
+            li(ui-sref-active="active")
+               a(ui-sref="mongoose.index") Index.
+            li(ui-sref-active="active")
+               a(ui-sref="mongoose.editor") Editor.
+      div.col-xs-9
+         ui-view

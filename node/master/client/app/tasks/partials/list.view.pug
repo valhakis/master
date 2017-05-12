@@ -1,0 +1,9 @@
+h3 List of Tasks.
+p Elit cumque maxime quam quos sint inventore? Nulla quisquam modi repellat iure pariatur fugiat ad eos aspernatur error temporibus, velit qui aliquid eaque a ratione. Corporis perferendis recusandae at sed!
+
+ul.w3-ul
+   li(ng-repeat="task in TaskCtrl.tasks")
+      p {{ task.body }}
+      button.btn.btn-danger.btn-xs(ng-click="TaskCtrl.remove(task)") Remove.
+      div.w3-panel.w3-light-gray
+         json-formatter(json="task", open="1")

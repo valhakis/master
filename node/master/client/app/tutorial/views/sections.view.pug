@@ -1,0 +1,21 @@
+extends ../layouts/base.pug
+
+block content
+   h3 Sections.
+   p Elit debitis reiciendis asperiores qui corporis praesentium. Minima ab consequuntur voluptatum tempora officia inventore illo dolorem impedit laudantium. Nihil consectetur consequatur aperiam est voluptate ullam vel! Sed amet odio ratione.
+
+   h4 Add new section.
+   form.app-form(ng-submit="SectionCtrl.create(SectionCtrl.section)")
+      div.form-group
+         label Name.
+         input.form-control(type="text", ng-model="SectionCtrl.section.name")
+      button.btn.btn-default Create new section.
+
+   h4 List of sections.
+   ul.w3-ul
+      li(ng-repeat="section in SectionCtrl.sections")
+         p {{ section.name }}
+
+         button.btn.btn-danger.btn-xs.pull-right(ng-click="SectionCtrl.remove(section)") Remove section.
+         div.clearfix
+
