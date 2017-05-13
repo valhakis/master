@@ -73,9 +73,9 @@
    "yui"           : false,
 
    "globals"       : {
-      "angular": true,
       "$": true,
       "GET": true,
+      "APP": true,
       "jade": true,
       "hljs": true,
       "html_beautify": true,

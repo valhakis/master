@@ -1,42 +1,8 @@
 html
    head
       title Master.
-      link(rel="stylesheet" href="bower_components/json-formatter/dist/json-formatter.css")
-      link(rel="stylesheet", href="/node_modules/w3-css/w3.css")
-      link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.css")
-      link(rel="stylesheet", href="/bower_components/handsontable/dist/handsontable.full.css")
-      //-link(rel="stylesheet", href="/bower_components/highlightjs/styles/monokai_sublime.css")
-      link(rel="stylesheet", href="bower_components/highlightjs/styles/zenburn.css")
-      style.
-         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
 
    body(ng-app="app", ng-cloak)
 
-      div.container-fluid
+      ui-view
 
-         br
-
-         navbar
-
-         // include app/views/includes/_jumbotron.pug
-
-         ui-view
-
-         app-footer
-      
-      script(src="/bower_components/ace-builds/src-min-noconflict/ace.js")
-      script(src="/bower_components/highlightjs/highlight.pack.js")
-      script(src="/bower_components/handsontable/dist/handsontable.full.js")
-      script(src="/bower_components/jquery/dist/jquery.js")
-      script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
-      script(src="/bower_components/angular/angular.js")
-      script(src="/bower_components/angular-mocks/angular-mocks.js")
-      script(src="/bower_components/ngstorage/ngStorage.min.js")
-      script(src="/bower_components/angular-ui-router/release/angular-ui-router.js")
-      script(src="/bower_components/angular-local-storage/dist/angular-local-storage.js")
-      script(src="/bower_components/angular-ui-router/release/stateEvents.js")
-      script(src="/bower_components/json-formatter/dist/json-formatter.js")
-      script(src="/bower_components/satellizer/dist/satellizer.js")
-      script(src="/bower_components/oauth-js/dist/oauth.js")
-      script(src="/bower_components/jade/jade.js")
-      script(src="bower_components/js-beautify/js/lib/beautify-html.js")

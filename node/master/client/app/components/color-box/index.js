@@ -1,3 +1,4 @@
+import angular from 'angular';
 import './color-box.scss';
 
 import ColorBoxDirective from './color-box.directive';

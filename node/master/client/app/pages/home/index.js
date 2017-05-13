@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 import routes from './home.routes';
 
 var mod = angular.module('app.pages.home', []);

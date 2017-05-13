@@ -1,6 +1,26 @@
+navbar
+
 div.app-content
    h1 Dashboard.
 
-   div.w3-panel.w3-light-gray
-      h2 'currentUser'
-      pre {{ currentUser }}
+   div.w3-panel.w3-white
+      h2 Welcome 
+         i {{ currentUser.email }}
+      p 
+         i {{ currentUser.id }}
+
+   div.w3-panel.w3-white
+      h2 Example.
+      p Amet odit quos sed dolor aperiam. Optio iure maxime nemo officia aliquid harum fugit aliquam vero quos. Repellat velit velit similique dolorem nam ipsa eaque rerum voluptatem vitae! Voluptatibus quas?
+
+      button.w3-btn(ng-click="DashCtrl.start()") START.
+      span=" "
+      button.w3-btn(ng-click="DashCtrl.stop()") STOP.
+      span=" "
+      button.w3-btn(ng-click="DashCtrl.status()", ng-class="{'w3-green': DashCtrl.open}") STATUS.
+      span=" "
+      a.w3-btn(href="http://192.168.0.2:5000", target="_blank", ng-class="{'w3-disabled': !DashCtrl.open}") OPEN IN NEW TAB.
+      br
+      br
+
+app-footer

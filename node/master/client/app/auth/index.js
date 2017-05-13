@@ -1,3 +1,4 @@
+import angular from 'angular';
 import AuthRoutes from './auth.routes';
 import AuthEvents from './auth.events';
 import AuthController from './auth.controller';

@@ -3,6 +3,7 @@ var router = express.Router();
 
 require('./kitten')(router);
 require('./author')(router);
+require('./example')(router);
 
 require('./auth/auth.routes')(router);
 require('./user/user.routes')(router);

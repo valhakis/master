@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 import O01TutorialDirective from './O01-tutorial.directive';
 
 var mod = angular.module('app.tutorial.o01Tutorial', []);

@@ -1,3 +1,4 @@
+import angular from 'angular';
 export default function AuthResolver($q, $rootScope, $state) {
    return {
       resolve: function() {

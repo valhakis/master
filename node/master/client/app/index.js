@@ -1,5 +1,15 @@
 import './app.scss';
 
+import 'angular-ui-router/release/stateEvents.js';
+
+import 'json-formatter/src/jsonFormatter';
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+import ngStorage from 'ngstorage';
+import ngLocalStorage from 'angular-local-storage';
+import satellizer from 'satellizer';
+
+import Modules from './modules';
 import Aimbooster from './modules/aimbooster';
 import Mongoose from './pages/mongoose';
 import AuthJwt from './auth-jwt';
@@ -16,9 +26,10 @@ import AppConfig from './app.config';
 import AppRun from './app.run';
 
 var app = angular.module('app', [
-   'ui.router', 'ui.router.state.events', 'satellizer', 'jsonFormatter', 'LocalStorageModule',
+    /* 'ui.router',*/ 'ui.router.state.events', 'satellizer', /* 'jsonFormatter' ,*/ /* 'LocalStorageModule' , */
+   uiRouter, 'ngStorage', satellizer, ngLocalStorage,
    Home, Auth, AuthJwt, Blog, Tutorial, Tasks, Mongoose, Aimbooster,
-   Navbar, Footer, ColorBox
+   Navbar, Footer, ColorBox, Modules
 ]);
 
 app.run(AppRun);

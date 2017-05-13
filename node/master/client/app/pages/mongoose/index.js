@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 import MongooseRoutes from './mongoose.routes';
 import EditorDirective from './editor/editor.directive';
 

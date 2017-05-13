@@ -1,3 +1,4 @@
+import angular from 'angular';
 export default function AuthService($http, Session) {
    var service = {};
 

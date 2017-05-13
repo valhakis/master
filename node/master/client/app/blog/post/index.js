@@ -1,3 +1,4 @@
+import angular from 'angular';
 import PostRun from './post.run';
 import PostRoutes from './post.routes';
 

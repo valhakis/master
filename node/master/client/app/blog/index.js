@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 import BlogPost from './post';
 
 import BlogRoutes from './blog.routes';

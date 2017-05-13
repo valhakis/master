@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 export default function UserController($rootScope, $http, Session, AuthService, AuthEvents, UserRoles) {
    this.currentUser = null;
    this.userRoles = UserRoles;

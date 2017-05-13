@@ -1,3 +1,4 @@
+import angular from 'angular';
 import TaskRoutes from './task.routes';
 
 var mod = angular.module('app.tasks', []);

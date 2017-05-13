@@ -1,3 +1,4 @@
+import angular from 'angular';
 import TutorialRoutes from './tutorial.routes';
 import O01Tutorial from './components/O01-tutorial';
 import TutorialHandsontable from './components/handsontable';
