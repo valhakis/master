@@ -66,6 +66,7 @@
     "pug-loader": "^2.3.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "rxjs": "^5.4.0",
     "sass-loader": "^6.0.3",
     "satellizer": "^0.15.5",

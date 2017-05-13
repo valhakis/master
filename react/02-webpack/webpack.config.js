@@ -1,3 +1,4 @@
+/* eslint: node: true */
 var path = require('path');
 var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -45,6 +46,7 @@ module.exports = {
    devServer: {
       port: 3000,
       host: '192.168.0.2',
+      historyApiFallback: true,
       contentBase: [
          path.resolve('dist')
       ]
