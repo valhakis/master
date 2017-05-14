@@ -22,6 +22,8 @@ import Tutorial from './tutorial';
 import Home from './pages/home';
 import ColorBox from './components/color-box';
 
+import LiteServerService from './services/lite-server.service';
+
 import AppConfig from './app.config';
 import AppRun from './app.run';
 
@@ -37,5 +39,6 @@ app.config(AppConfig);
 
 import LoginController from './controllers/login.controller';
 app.controller('LoginController', LoginController);
+app.factory('LiteServer', LiteServerService);
 
 export default app;

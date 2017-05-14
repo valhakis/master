@@ -1,0 +1,11 @@
+<h2>About</h2>
+<p>Elit voluptate perferendis fuga nobis laboriosam deserunt. Amet culpa doloribus doloremque ratione cupiditate voluptatum officia reiciendis id fuga odio beatae non magnam quam. Voluptatibus perspiciatis ratione facere commodi dolore sapiente.</p>
+
+<ul class="w3-ul">
+   <li ng-repeat="code in codes">
+      <hi-code body="code.body"></hi-code>
+      <p>RemovedAt: <i>{{ code.removedAt }}</i></p>
+
+      <button class="w3-btn w3-red" ng-click="removeCode(code)">REMOVE</button>
+   </li>
+</ul>

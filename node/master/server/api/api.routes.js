@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+require('./lite-server')(router);
 require('./kitten')(router);
+require('./code')(router);
 require('./author')(router);
 require('./example')(router);
 

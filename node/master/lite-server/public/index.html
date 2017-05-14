@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>LITE-SERVER</title>
+      <link rel="stylesheet" href="node_modules/w3-css/w3.css">
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="node_modules/highlightjs/styles/agate.css">
+   </head>
+   <body ng-app="app" ng-cloak>
+
+      <app-navbar></app-navbar>
+
+      <div class="w3-container">
+
+
+         <div class="w3-panel w3-white">
+            <h1>LITE-SERVER</h1>
+            <p>Dolor nobis libero eum qui consequuntur. Consectetur sunt veritatis dicta delectus aut blanditiis fugit cum maiores doloribus praesentium quidem doloremque, incidunt ea rerum! Sit distinctio delectus quisquam distinctio saepe! Tempore.</p>
+            <div class="w3-panel">
+               <div class="row">
+                  <div class="w3-quarter w3-container">
+                     <h2>LITE-SERVER</h2>
+                     <p>kodu.webhop.me:3100</p>
+                     <p>192.168.0.2:3100</p>
+                  </div>
+                  <div class="w3-quarter w3-container">
+                     <h2>SERVER</h2>
+                     <p>kodu.webhop.me:4000</p>
+                     <p>192.168.0.2:4000</p>
+                  </div>
+                  <div class="w3-quarter w3-container">
+                     <h2>PRODUCTION</h2>
+                     <p>kodu.webhop.me</p>
+                     <p>192.168.0.2:80</p>
+                  </div>
+                  <div class="w3-quarter w3-container">
+                     <h2>DEVELOPMENT</h2>
+                     <p>kodu.webhop.me:3000</p>
+                     <p>192.168.0.2:3000</p>
+                  </div>
+               </div>
+            </div>
+            <ui-view></ui-view>
+         </div>
+
+         <div id="footer" class="w3-panel w3-white">
+            <h2>Footer.</h2>
+            <p>Amet dignissimos perspiciatis odio tempora in inventore hic corrupti tempore sed? Mollitia error veniam numquam quaerat quisquam fuga quae? Officia explicabo dolorem quasi distinctio molestiae voluptas numquam, in quas odit!</p>
+            <div class="w3-row">
+               <div class="w3-quarter w3-container">
+                  <div class="w3-bar-block">
+                     <a class="w3-bar-item w3-button" href="http://192.168.0.2:3000">Development Server</a>
+                     <a class="w3-bar-item w3-button" href="http://kodu.webhop.me">Production server.</a>
+                  </div>
+               </div>
+               <div class="w3-threequarter">
+                  <h3>Lorem ipsum.</h3>
+                  <p>Adipisicing tempora vel dolores quibusdam animi reiciendis! Dignissimos culpa aliquid voluptates accusamus ratione quis consequatur minus est aliquid? Sequi nostrum illo est veniam odit fugiat incidunt itaque error ducimus? Nesciunt.</p>
+               </div>
+            </div>
+            <br>
+         </div>
+
+      </div>
+
+      <script src="node_modules/angular/angular.js"></script>
+      <script src="node_modules/highlightjs/highlight.pack.js"></script>
+      <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
+      <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="app/index.js"></script>
+      <script src="app/constants/data.constants.js"></script>
+      <script src="app/services/code.service.js"></script>
+      <script src="app/controllers/about.controller.js"></script>
+      <script src="app/directives/navbar.directive.js"></script>
+      <script src="app/directives/hi-code.directive.js"></script>
+      <script src="app/directives/editor.directive.js"></script>
+
+   </body>
+</html>

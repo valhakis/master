@@ -10,6 +10,17 @@ div.app-content
          i {{ currentUser.id }}
 
    div.w3-panel.w3-white
+      h2 Lite Server
+      p Amet saepe aperiam iusto earum nemo sit ipsa ab quae id. Consequuntur aliquid itaque aliquid accusamus vel fuga facere distinctio omnis. Voluptate dignissimos odit quaerat cum aspernatur fuga? Impedit necessitatibus.
+      div.w3-bar.w3-black
+         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStartClass()", ng-click="DashCtrl.startLiteServer()") START
+         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStopClass()", ng-click="DashCtrl.stopLiteServer()") STOP
+         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStatusClass()", ng-click="DashCtrl.liteServerStatus()") STATUS
+         a.w3-bar-item.w3-btn.w3-hover-white(target="_blank", href="http://192.168.0.2:3100", ng-class="DashCtrl.liteServerOpenInTabClass()") OPEN IN NEW TAB
+      br
+      br
+
+   div.w3-panel.w3-white
       h2 Example.
       p Amet odit quos sed dolor aperiam. Optio iure maxime nemo officia aliquid harum fugit aliquam vero quos. Repellat velit velit similique dolorem nam ipsa eaque rerum voluptatem vitae! Voluptatibus quas?
 
