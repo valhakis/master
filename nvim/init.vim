@@ -3,9 +3,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/embear/vim-localvimrc'
 "Plug 'https://github.com/svermeulen/vim-easyclip'
 Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
+Plug 'https://github.com/sickill/vim-monokai'
 Plug 'https://github.com/briancollins/vim-jst'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/nikvdp/ejs-syntax'
+Plug 'https://github.com/tomasr/molokai'
 Plug 'https://github.com/StanAngeloff/php.vim'
 Plug 'https://github.com/evidens/vim-twig'
 Plug 'https://github.com/ekalinin/Dockerfile.vim'
@@ -67,13 +69,17 @@ call plug#end()
 nmap ,make :w \| !make <cr>
 
 set t_Co=256
+syntax enable
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
+"set backupdir=/tmp
+"set directory=/tmp
 
 set nowrap
 
 set tabstop=3 shiftwidth=3 softtabstop=3 expandtab
+set incsearch hlsearch
 
 set splitbelow
 
@@ -123,8 +129,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_c_config_file = $HOME . '/nvim/syntastic_c_config.txt'
-let g:syntastic_cpp_config_file = $HOME . '/nvim/syntastic_c_config.txt'
+let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
+let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
@@ -189,20 +195,33 @@ nmap ,clean :w \| so % \| PlugClean <cr>
 " HIGHLIGHT
 " ===================================================================================
 
-" colorscheme wombat
-" colorscheme molokai
+
+"colorscheme molokai
+"colorscheme monokai
+"if has('nvim')
+   " colorscheme monokai
+"else
+   " colorscheme monokai
+"endif
 
 hi comment ctermfg=red guibg=#ff0000
+hi Search ctermfg=red ctermbg=none
 
-hi Visual guibg=#222222 guifg=none
+if has('nvim')
+   hi Visual guibg=#222222 guifg=none
+endif
 
 hi Todo guifg=red ctermfg=red
 
 hi Visual ctermbg=160
 hi Pmenu ctermfg=160 ctermbg=none
-hi PmenuSel ctermfg=red
+if has('nvim')
+   hi PmenuSel ctermfg=red
+endif
 
-set termguicolors
+if has('nvim')
+   set termguicolors
+endif
 highlight Comment ctermfg=red
 hi TabLine guifg=#ffffff guibg=#333333
 hi Search guibg=#111111 guifg=#ff2222
@@ -216,8 +235,10 @@ hi Search guibg=#111111 guifg=#ff2222
 "hi nonText ctermbg=none
 "hi normal ctermbg=0 guibg=#FFFF
 
-hi Pmenu guibg=#111111 guifg=#FFFFFF
-hi PmenuSel guibg=#222222 guifg=#FFCCCC
+if has('nvim')
+   hi Pmenu guibg=#111111 guifg=#FFFFFF
+   hi PmenuSel guibg=#222222 guifg=#FFCCCC
+endif
 
 set background=dark
 
@@ -240,14 +261,14 @@ au filetype javascript nmap \mr :w \| !node % <cr>
 "let g:syntastic_cpp_compiler = 'g++'
 "let g:syntastic_cpp_compiler = 'i686-w64-mingw32-g+'
 
-autocmd BufNewFile bs-config.js 0r ~/nvim/skeletons/bs-config.js
-autocmd BufNewFile .jshintrc 0r ~/nvim/skeletons/.jshintrc
-autocmd BufNewFile webpack.config.js 0r ~/nvim/skeletons/webpack.config.js
-autocmd BufNewFile gulpfile.js 0r ~/nvim/skeletons/gulpfile.js
-autocmd BufNewFile Gruntfile.js 0r ~/nvim/skeletons/Gruntfile.js
-autocmd BufNewFile nodemon.json 0r ~/nvim/skeletons/nodemon.json
-autocmd BufNewFile main.c 0r ~/nvim/skeletons/main.c
-autocmd BufNewFile .babelrc 0r ~/nvim/skeletons/.babelrc
+autocmd BufNewFile bs-config.js 0r ~/master/nvim/skeletons/bs-config.js
+autocmd BufNewFile .jshintrc 0r ~/master/nvim/skeletons/.jshintrc
+autocmd BufNewFile webpack.config.js 0r ~/master/nvim/skeletons/webpack.config.js
+autocmd BufNewFile gulpfile.js 0r ~/master/nvim/skeletons/gulpfile.js
+autocmd BufNewFile Gruntfile.js 0r ~/master/nvim/skeletons/Gruntfile.js
+autocmd BufNewFile nodemon.json 0r ~/master/nvim/skeletons/nodemon.json
+autocmd BufNewFile main.c 0r ~/master/nvim/skeletons/main.c
+autocmd BufNewFile .babelrc 0r ~/master/nvim/skeletons/.babelrc
 
 " CUSTOM TEMPLATE FUNCTION
 " ==========================================================
@@ -259,7 +280,7 @@ function! GetTemplate()
    " set cursor 1 character backwards
    call cursor(line, col-1)
    " templates directory path
-   let path = $HOME . '/nvim/templates'
+   let path = $HOME . '/master/nvim/templates'
    " current file extension
    let ext = expand('%:e')
    if ext == 'hbs'
@@ -320,4 +341,6 @@ function! FileExists(fname)
 endfunction
 " ==========================================================
 
- let g:js_indent_log = 0
+let g:js_indent_log = 0
+"colorscheme monokai
+colorscheme badwolf
