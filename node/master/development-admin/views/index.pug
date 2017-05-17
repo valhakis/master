@@ -1,0 +1,23 @@
+extends /layouts/base
+
+block content
+   h1 Index.
+
+   div
+      h2 Development Admin
+      i 192.168.0.2:2000
+
+   div.w3-panel.w3-pale-blue
+      h2 Browser Sync
+      p
+         button(onclick="bs.start()").w3-btn START
+
+   div.w3-panel.w3-pale-blue
+      h2 Webpack
+      p
+         button.w3-btn START
+
+   div.w3-panel.w3-pale-blue
+      h2 Server
+      p
+         button.w3-btn START

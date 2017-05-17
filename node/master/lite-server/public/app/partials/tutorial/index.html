@@ -1,0 +1,44 @@
+<h1>TUTORIALS</h1>
+
+<tutorial-navbar></tutorial-navbar>
+
+<h2>ADD TUTORIAL</h2>
+
+<form class="w3-container w3-card-4" ng-submit="create(tutorial)">
+   <p>
+      <label>TITLE</label>
+      <input class="w3-input w3-border" type="text" ng-model="tutorial.title">
+   </p>
+   <p>
+      <button class="w3-btn w3-blue">CREATE</button>
+   </p>
+</form>
+
+<hr>
+
+<h2>ALL TUTORIALS</h2>
+
+<div class="w3-container" ng-repeat="tutorial in tutorials">
+   <h3>TITLE: {{ tutorial.title }}</h3>
+   <p><i>ID: {{ tutorial._id }}</i></p>
+   <p><i>RemovedAt: {{ tutorial.removedAt }}</i></p>
+
+   <h4>LIST OF CODES AT TUTORIAL</h4>
+   {{ tutorial.codes }}
+
+   <div>
+      <p>tutorial-editor</p>
+   </div>
+
+   <p>
+      <button class="w3-btn w3-red" ng-click="remove(tutorial)">REMOVE</button>
+      <button class="w3-btn w3-blue" ng-click="addCode(tutorial)">ADD CODE</button>
+   </p>
+</div>
+
+<hr>
+
+
+<h2>REMOVED TUTORIALS</h2>
+
+<br>

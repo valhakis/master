@@ -1,0 +1,37 @@
+extends layouts/document
+
+block content
+   div.w3-panel
+      div.w3-tag.w3-purple #{document.name}
+   div.w3-panel.w3-white
+      span Document: #{document._id}
+
+   div.w3-panel.w3-white
+      h2 Todo
+      p
+         ul.w3-ul
+            li Add Tutorial to document.
+            li Add Calendar to document.
+            li Add Post to document.
+            li Add Code to document.
+            li Next document.
+            li Previous document.
+            li Create document.
+            li Backup database.
+
+   a.w3-btn(onclick="window.history.back()") BACK
+
+   h2 Add Todo To Document.
+   form.w3-container(method="POST", action=`/documents/${document._id}/todos`)
+      p
+         label Todo
+         input.w3-input.w3-border(name="text")
+      p
+         button.w3-btn ADD
+
+   div.w3-panel.w3-white
+      pre #{document}
+
+   div.w3-panel.w3-white
+      p Amet sapiente voluptatum qui impedit labore, officiis consequatur reiciendis. Explicabo sit magnam optio ipsum quibusdam suscipit ut deleniti hic ex. Explicabo autem voluptates earum quam nobis non harum aliquam molestiae.
+

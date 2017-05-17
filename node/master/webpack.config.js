@@ -5,40 +5,15 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var serverConfig = require('./server/config');
 
-class ExamplePlugin {
-   constructor() {
-      console.log("I'm the best plugin there is.");
-   }
-   apply(compiler) {
-      compiler.plugin('compilation', function(compilation) {
-         compilation.plugin('optimize', function() {
-            console.log('Assets are being optimized');
-         });
-      });
-   }
-}
-
 module.exports = {
    // root: __dirname,
    context: __dirname,
-   devtool: 'eval-source-map',
+   // devtool: 'eval-source-map',
+   devtool: 'eval',
    entry: {
       'client': './client/index.js',
       'angular-2': './client/angular2/index.js',
       'react-app': './client/react-app/index.js',
-      'vendor': [
-         'jquery', 
-         'bootstrap', 
-         'angular', 
-         'angular-ui-router',
-         'ngstorage',
-         'angular-ui-router/release/stateEvents.js',
-         'angular-local-storage',
-         'satellizer',
-         'json-formatter/css/style.css',
-         'bootstrap/dist/css/bootstrap.css',
-         'w3-css/w3.css'
-      ]
    },
    output: {
       path: __dirname + '/dist',
@@ -68,9 +43,7 @@ module.exports = {
       ]
    },
    plugins: [
-      new ExamplePlugin({
-
-      }),
+      /*
       new BrowserSyncPlugin({
          proxy: `${serverConfig.development.host}:${serverConfig.development.port}`,
          logLevel: 'debug',
@@ -79,15 +52,16 @@ module.exports = {
             dir: 'dist'
          }]
       }),
+      */
       new HtmlWebpackPlugin({
-         chunks: ['node-static', 'vendor', 'client'],
+         chunks: ['commons', 'client'],
          template: '!!pug-loader!./client/index.pug',
          // template: './client/index.html',
          favicon: './client/favicon.ico',
          filename: './index.html'
       }),
       new HtmlWebpackPlugin({
-         chunks: ['node-static', 'react-app'],
+         chunks: ['react-app'],
          template: '!!pug-loader!./client/react-app/index.pug',
          filename: './react-app/index.html'
       }),
@@ -98,30 +72,40 @@ module.exports = {
          favicon: './client/favicon.ico',
          filename: './angular2/index.html'
       }),
+      new webpack.optimize.CommonsChunkPlugin({
+         name: 'commons',
+         filename: 'commons.js',
+         // children: true,
+         // async: true,
+         minChunks: function (module) {
+            // this assumes your vendor imports exist in the node_modules directory
+            return module.context && module.context.indexOf("node_modules") !== -1;
+         }
+      }),
       new BundleAnalyzerPlugin({
          analyzerMode: 'static'
       }),
-      new webpack.optimize.CommonsChunkPlugin({
-         name: 'node-static',
-         filename: 'node-static.js',
-         minChunks(module, count) {
-            var context = module.context;
-            return context && context.indexOf('node_modules') >= 0;
-         },
-      }),
+      // new webpack.optimize.CommonsChunkPlugin({
+      // name: 'node-static',
+      // filename: 'node-static.js',
+      // minChunks(module, count) {
+      // var context = module.context;
+      // return context && context.indexOf('node_modules') >= 0;
+      // },
+      // }),
       new webpack.ProvidePlugin({   
          jQuery: 'jquery',
          $: 'jquery',
          jquery: 'jquery'
       })
    ],
-   devServer: {
-      host: true,
-      contentBase: [
-         './dist'
-      ],
-      publicPath: '/'
-   },
+   // devServer: {
+   // host: true,
+   // contentBase: [
+   // './dist'
+   // ],
+   // publicPath: '/'
+   // },
    resolve: {
       modules: [
          path.resolve(__dirname, '../../node_modules')

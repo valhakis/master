@@ -1,0 +1,19 @@
+extends ../layouts/base
+
+block body
+   div.w3-container
+      h1 PERSONS
+
+      form.w3-panel.w3-light-gray.w3-card-4(action="/persons", method="POST")
+         p
+            span.w3-tag PERSON
+         input(type="hidden", name="_redirect", value="back")
+         p
+            label Name: 
+            input.w3-input.w3-border(name="name")
+         p
+            button.w3-btn Add
+
+      each person in persons
+         div.w3-panel
+            pre= JSON.stringify(person, " ", 2)

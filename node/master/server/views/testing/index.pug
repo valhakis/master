@@ -1,0 +1,46 @@
+extends ../layouts/base
+
+block head
+   style.
+      body {
+         background-color: #FF5E5B;
+      }
+
+block body
+
+   div.w3-container
+      h1 TESTING PAGE
+
+      div.w3-row
+         div.w3-half.w3-container
+            div.w3-panel.w3-white
+               h2 William
+               pre
+                  code.json= stringify(william)
+         div.w3-half.w3-container
+            div.w3-panel.w3-white
+               h2 Thomas
+               pre
+                  code.json= stringify(thomas)
+
+      hr
+
+      div.w3-panel.w3-white
+         h2 Post
+         pre
+            code.json= stringify(post)
+
+      hr
+
+      div.w3-panel.w3-white
+         h2 Result
+         pre
+            code.json= stringify(result)
+
+block scripts
+   script.
+      $(document).ready(function() {
+         $('pre code').each(function(index, block) {
+            hljs.highlightBlock(block);
+         });
+      });

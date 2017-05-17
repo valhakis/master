@@ -1,11 +1,11 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
-/***/ 205:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log('Angular 2');//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jbGllbnQvYW5ndWxhcjIvaW5kZXguanM/ZDk4NSJdLCJuYW1lcyI6WyJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxRQUFRQyxHQUFSLENBQVksV0FBWiIsImZpbGUiOiIyMDUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zb2xlLmxvZygnQW5ndWxhciAyJyk7XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gLi9jbGllbnQvYW5ndWxhcjIvaW5kZXguanMiXSwic291cmNlUm9vdCI6IiJ9");
+eval("\n\nconsole.log('Angular 2');\n\n//////////////////\n// WEBPACK FOOTER\n// ./client/angular2/index.js\n// module id = 201\n// module chunks = 2\n\n//# sourceURL=webpack:///./client/angular2/index.js?");
 
 /***/ })
 
-},[205]);
+},[201]);

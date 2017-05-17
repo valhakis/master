@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+var spawn = require('child_process').spawn;
+var env = require('../.env');
+var fs = require('fs');
+
+var i = 0;
+
+var processes = {
+   server: {
+      spawn: null,
+      initialize: function() {
+         fs.watch(env.root + '/', { 
+            persistent: false, 
+            recursive: true,
+            encoding: 'utf8' 
+         }, (type, filename) => {
+            i++;
+            // console.log(`${i}`, type, filename);
+            if (filename == '.env.js' && type == 'change') { // jshint ignore:line
+               // console.log('GREAT SUCCESS');
+            }
+         });
+      },
+      start: function() {
+         this.spawn = spawn('nodemon', ['.'], {
+            stdio: 'inherit',
+            cwd: env.root + '/server'
+         });
+      },
+      restart: function() {
+         this.spawn.kill();
+         this.start();
+      }
+   }
+};
+
+processes.server.initialize();
+
+/* start livereload server */
+var livereload = require('livereload').createServer({
+
+}, function() {
+   console.log('');
+});
+
+/* start the server */
+processes.server.start();

@@ -1,4 +1,55 @@
-export default function DashboardController($http, $interval, LiteServer) {
+export default function DashboardController($scope, $http, $interval, LiteServer, Project01Service) {
+
+   // LITE-SERVER
+   $scope.lite = {};
+   $scope.lite.open = false;
+   $scope.lite.startClass = function() {
+      return {'w3-disabled': LiteServer.open};
+   };
+   $scope.lite.stopClass = function() {
+      return {'w3-disabled': !LiteServer.open};
+   };
+   $scope.lite.statusClass = function() {
+      return {'w3-green': LiteServer.open, 'w3-red': !LiteServer.open};
+   };
+   $scope.lite.openClass = function() {
+      return {'w3-disabled': !LiteServer.open};
+   };
+   $scope.lite.start = function() {
+      LiteServer.start(function() {
+      });
+   };
+   $scope.lite.stop = function() {
+      LiteServer.stop(function() {
+      });
+   };
+   $scope.lite.open = function() {
+      window.open('http://192.168.0.2:3100', '_blank');
+   };
+   // PROJECT 01 
+   $scope.project01 = {};
+   $scope.project01.isOpen = false;
+   $scope.project01.start = function() {
+      $http.post('/api/projects/01/start').then(function(res) {
+      });
+   };
+   $scope.project01.stop = function() {
+      $http.post('/api/projects/01/stop').then(function(res) {
+      });
+   };
+   $scope.project01.status = function() {
+      $http.post('/api/projects/01/status').then(function(res) {
+         $scope.project01.isOpen = res.data.open;
+      });
+   };
+   $scope.project01.open = function() {
+      window.open('http://192.168.0.2:3200', '_blank');
+   };
+   $interval(function() {
+      $scope.project01.status();
+   }, 1000);
+
+   // REST OF SOMETHING
    this.statusInterval = null;
    this.open = false;
    this.liteServerOpen = false;
@@ -33,11 +84,6 @@ export default function DashboardController($http, $interval, LiteServer) {
    this.liteServerStatus = () => {
       LiteServer.status((response) => {
          this.liteServerOpen = response.open;
-         if (response.open) {
-            console.log(`LITE-SERVER IS RUNNING.`);
-         } else {
-            console.log(`LITE-SERVER IS NOT RUNNING.`);
-         }
       });
    };
 
@@ -48,14 +94,12 @@ export default function DashboardController($http, $interval, LiteServer) {
    this.start = () => {
       $http.get('/api/example/start')
          .then((res) => {
-            console.log(res.data);
          });
    };
 
    this.stop = () => {
       $http.get('/api/example/stop')
          .then((res) => {
-            console.log(res.data);
          });
    };
 
@@ -67,7 +111,6 @@ export default function DashboardController($http, $interval, LiteServer) {
             } else {
                this.open = false;
             }
-            console.log(res.data);
          });
    };
 

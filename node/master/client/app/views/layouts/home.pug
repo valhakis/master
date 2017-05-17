@@ -1,9 +1,10 @@
 navbar
 
 div.container-fluid
-   include /app/views/includes/_jumbotron.pug
+   // include /app/views/includes/_jumbotron.pug
 
-   div.row
+   block content
+   // div.row
       div.col-sm-2
          ul.app-vertical-nav
             li(ui-sref-active="active")
@@ -14,18 +15,7 @@ div.container-fluid
                a(ui-sref="w3") W3.
             li
                a(href="/react-app") React App.
-            li
-               a(href="#") Link.
-            li
-               a(href="#") Link.
-            li
-               a(href="#") Link.
-            li
-               a(href="#") Link.
-            li
-               a(href="#") Link.
       div.col-sm-8
-         h1 THIS IS HOME LAYOUT.
          block content
       div.col-sm-2
          ul.app-vertical-nav

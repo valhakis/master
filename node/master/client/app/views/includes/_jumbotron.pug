@@ -1,6 +1,13 @@
 div.jumbotron
    h1 {{ title ? title : 'Application' }}
    p {{ description ? description : 'Ipsum ipsum exercitationem deleniti eos esse rerum veniam eaque ut numquam. Voluptates commodi eligendi ratione numquam consequatur porro id aut? Eligendi numquam perferendis odio harum asperiores cumque fuga quis possimus.' }}
+   ul.app-horizontal-nav.w3-black
+      li 
+         a.w3-text-white(href="/server") Server.
+   div.w3-panel
+      p 
+         i ID {{ currentUser.id }}
+      p
+         i Email {{ currentUser.email }}
    p
       a.btn.btn-primary.btn-lg(href="/", role="button") Learn more.
-   p {{ currentUser }}

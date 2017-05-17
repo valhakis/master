@@ -1,0 +1,22 @@
+-I /home/william/work/socket-app/app/libraries/soil/include/
+-I/usr/i686-w64-mingw32/include/gtk-3.0 
+-I/usr/i686-w64-mingw32/include/cairo 
+-I/usr/i686-w64-mingw32/include 
+-I/usr/i686-w64-mingw32/include/pango-1.0 
+-I/usr/i686-w64-mingw32/include/atk-1.0 
+-I/usr/i686-w64-mingw32/include/cairo 
+-I/usr/i686-w64-mingw32/include/pixman-1 
+-I/usr/i686-w64-mingw32/include 
+-I/usr/i686-w64-mingw32/include/freetype2 
+-I/usr/i686-w64-mingw32/include 
+-I/usr/i686-w64-mingw32/include/freetype2 
+-I/usr/i686-w64-mingw32/include 
+-I/usr/i686-w64-mingw32/include/harfbuzz 
+-I/usr/i686-w64-mingw32/include 
+-I/usr/i686-w64-mingw32/include/libpng16 
+-I/usr/i686-w64-mingw32/include/gdk-pixbuf-2.0 
+-I/usr/i686-w64-mingw32/include/libpng16 
+-I/usr/i686-w64-mingw32/include/glib-2.0 
+-I/usr/i686-w64-mingw32/lib/glib-2.0/include 
+-I/usr/i686-w64-mingw32/include 
+-I /work/site/win-app/app/common/include

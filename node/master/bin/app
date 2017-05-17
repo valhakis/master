@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-
+require('../globals');
 var sudo = parseInt(process.env.SUDO_UID);
-
 var path = require('path');
 var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
@@ -49,7 +48,9 @@ if (!argument) {
 } else if (argument == 'dev' || argument == 'development') {
    if (!sudo) {
       console.log('root permissions are required for development.');
-   } else {
+   } else { // jshint ignore:line
+      App.rootRequire('browser-sync');
+
       nodemon.start();
       webpack.start();
    }
@@ -59,4 +60,6 @@ if (!argument) {
    } else {
       pm2.start();
    }
+} else if (argument == 'TODO') { // jshint ignore:line
+   // App.rootRequire('development-admin');
 }

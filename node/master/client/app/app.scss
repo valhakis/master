@@ -1,5 +1,6 @@
 @import url('https://www.fontify.me/wf/42a6cdb26bad8bf22678dbaaa59e2d3a');
 @import '../sass/_variables.scss';
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
 * {
    box-sizing: border-box;   
@@ -7,7 +8,7 @@
 
 body {
    background-color: $red;
-   font-family: 'Arial Narrow'
+   font-family: 'Arial Narrow', 'PT Sans Narrow', sans-serif;
 }
 
 
@@ -282,3 +283,21 @@ bootstrap-editor {
    }
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+
+.app-bar {
+   background-color: #000;
+
+   button {
+      background-color: #000;
+      border: none;
+      outline: none;
+      color: #FFF;
+      padding: 5px 10px;
+      font-size: 16px;
+      line-height: 29px;
+      &:hover {
+         background-color: #FFF;
+         color: #000;
+      }
+   }
+}

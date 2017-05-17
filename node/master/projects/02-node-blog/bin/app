@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var spawn = require('child_process').spawn;
+var path = require('path');
+
+var master = path.join(__dirname, '../../../../');
+
+var root = path.join(__dirname, '..');
+
+var ROOT = function(name) {
+   return root + '/' + name;
+};
+
+var nodemon = {};
+
+nodemon.spawn = null;
+
+nodemon.start = function() {
+   nodemon.spawn = spawn('nodemon', [], {
+      stdio: 'inherit',
+      cwd: ROOT('server')
+   });
+};
+
+nodemon.start();

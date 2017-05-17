@@ -8,4 +8,6 @@ require('./app.middleware')(app);
 
 routes(app);
 
+require('./testing')(app);
+
 module.exports = app;

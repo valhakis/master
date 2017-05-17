@@ -13,25 +13,26 @@ div.app-content
       h2 Lite Server
       p Amet saepe aperiam iusto earum nemo sit ipsa ab quae id. Consequuntur aliquid itaque aliquid accusamus vel fuga facere distinctio omnis. Voluptate dignissimos odit quaerat cum aspernatur fuga? Impedit necessitatibus.
       div.w3-bar.w3-black
-         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStartClass()", ng-click="DashCtrl.startLiteServer()") START
-         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStopClass()", ng-click="DashCtrl.stopLiteServer()") STOP
-         button.w3-bar-item.w3-btn.w3-hover-white(ng-class="DashCtrl.liteServerStatusClass()", ng-click="DashCtrl.liteServerStatus()") STATUS
-         a.w3-bar-item.w3-btn.w3-hover-white(target="_blank", href="http://192.168.0.2:3100", ng-class="DashCtrl.liteServerOpenInTabClass()") OPEN IN NEW TAB
+         button.w3-bar-item.w3-btn.w3-hover-white('ng-class'="lite.startClass()", 'ng-click'="lite.start()") START
+         button.w3-bar-item.w3-btn.w3-hover-white('ng-class'="lite.stopClass()", 'ng-click'="lite.stop()") STOP
+         button.w3-bar-item.w3-btn.w3-hover-white('ng-class'='lite.statusClass()', 'ng-click'="lite.status()") STATUS
+         button.w3-bar-item.w3-btn.w3-hover-white('ng-class'='lite.openClass()', 'ng-click'="lite.open()") OPEN IN NEW TAB
       br
-      br
+
 
    div.w3-panel.w3-white
-      h2 Example.
-      p Amet odit quos sed dolor aperiam. Optio iure maxime nemo officia aliquid harum fugit aliquam vero quos. Repellat velit velit similique dolorem nam ipsa eaque rerum voluptatem vitae! Voluptatibus quas?
+      h2 PROJECTS
 
-      button.w3-btn(ng-click="DashCtrl.start()") START.
-      span=" "
-      button.w3-btn(ng-click="DashCtrl.stop()") STOP.
-      span=" "
-      button.w3-btn(ng-click="DashCtrl.status()", ng-class="{'w3-green': DashCtrl.open}") STATUS.
-      span=" "
-      a.w3-btn(href="http://192.168.0.2:5000", target="_blank", ng-class="{'w3-disabled': !DashCtrl.open}") OPEN IN NEW TAB.
-      br
+      hr
+
+      h3 Project 01 - Example.
+      p Consectetur mollitia eum assumenda omnis optio beatae quam commodi deleniti corporis nemo nihil quisquam maiores labore beatae. Suscipit accusantium iste placeat quisquam accusamus amet officiis deserunt. Minus minima soluta quasi.
+      div.app-bar
+         button('ng-click'='project01.start()', 'ng-class'="{'w3-disabled':project01.isOpen}") START
+         button('ng-click'='project01.stop()', 'ng-class'="{'w3-disabled':!project01.isOpen}") STOP
+         button('ng-click'='project01.status()', 'ng-class'="{'w3-green':project01.isOpen, 'w3-red':!project01.isOpen}") STATUS
+         button('ng-click'='project01.open()', 'ng-class'="{'w3-disabled':!project01.isOpen}") OPEN IN NEW TAB
+
       br
 
 app-footer

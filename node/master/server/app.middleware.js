@@ -39,7 +39,7 @@ module.exports = function(app) {
    app.use('/public', express.static(GET.server('public')));
    app.use('/', express.static(GET.base('dist')));
 
-   app.use(morgan('combined'));
+   // app.use(morgan('combined'));
 
    // Body Parser is required for req.body.
    // ===========================================================

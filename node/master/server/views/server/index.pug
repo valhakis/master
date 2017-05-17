@@ -1,0 +1,38 @@
+extends layouts/default
+
+block content
+   - var authenticated = false;
+
+   p Authenticated: 
+      span.w3-tag(class=authenticated ? 'w3-green' : 'w3-red')
+         span= authenticated ? 'YES' : 'NO'
+
+   form.w3-container.w3-light-gray(method="POST", action="/documents")
+      input(type="hidden", name="_redirect", value="/server")
+      p
+         label Document Name
+         input.w3-input.w3-border(name="name")
+      p
+         button.w3-btn CREATE
+
+   h2.w3-panel.w3-black Documents
+   each document in documents
+      div.w3-panel.w3-blue
+         h2 #{document.name}
+         p Amet ducimus non optio consectetur in vel quae? Ullam voluptatum debitis eveniet sunt eligendi. Dolore commodi laboriosam fugiat expedita consequuntur necessitatibus consequatur repellendus? Dolor minima corporis vero esse id error.
+
+         p
+            i CreatedAt #{document.createdAt}
+         p
+            a(href=`/server/document/${document._id}`).w3-btn.w3-right(style=`
+               margin-bottom: -3px;
+            `) OPEN DOCUMENT
+
+   h2.w3-panel.w3-black To do's
+   each todo in todos
+      div.w3-panel.w3-red
+         p ID: 
+            i #{todo._id}
+         h2 #{todo.text}
+         p CreatedAt:
+            i #{todo.createdAt}

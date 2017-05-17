@@ -1,0 +1,1 @@
+global.DevAdmin = require('./DevAdmin');

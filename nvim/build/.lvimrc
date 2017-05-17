@@ -1,0 +1,68 @@
+
+function! GetTemplateV2()
+   " get the current line number
+   let line = line('.')
+   " get the current column number
+   let col = col('.')
+   " set cursor 1 character backwards
+   call cursor(line, col-1)
+   " templates directory path
+   "let path = $HOME . '/nvim/templates'
+   let path = '.'
+
+   " current file extension
+   let ext = expand('%:e')
+   if ext == 'hbs'
+      let ext = 'html'
+   endif
+   " the word under cursor
+   let word = expand('<cWORD>')
+   echo 'word: ' . word
+   echo 'SPLITTED: '
+   echo split(word, '\.')
+   let words = split(word, '\.')
+   " let reversed = reverse(words)
+
+   echo 'len: ' . len(words)
+
+   echo '\n'
+   echo words
+   " echo reversed
+   echo '\n'
+
+   " let lastword = reversed[0]
+   let lastword = words[len(words)-1]
+   echo 'lastword: ' .lastword
+
+   let template = path . '/template.' . lastword . '.' . ext
+
+   if filereadable(template)
+      let name = words[0]
+      echo template . ' exists'
+
+      echo 'replace [[name]] with ' . name
+   else
+      echo template . ' template does not exist'
+   endif
+
+   " the result file
+   let result = path . '/' . word . '.' . ext
+   " if the file exists
+   if filereadable(result)
+      " delete current line
+      d
+      " go one line up
+      call cursor(line-1, 0)
+      " read the file content
+      "execute "read" . result
+      execute (line == 1 ? '-1' : '') . "read" . result
+   else
+      echo result . ' does not exist'
+   endif
+   return ''
+endfunction
+"map <c-g> :call GetTemplate() <cr>
+imap ,l <c-r>=GetTemplateV2() <cr>
+nmap ,l :call GetTemplateV2() <cr>
+
+" list-of-posts.directive

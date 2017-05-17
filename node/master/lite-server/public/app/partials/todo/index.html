@@ -1,0 +1,37 @@
+<h1>TODO</h1>
+<p>Lorem aspernatur ea aspernatur commodi dignissimos non. Nobis ex maiores quis possimus quas! Rem quos vero commodi iure aliquam ipsum doloribus possimus dolorem? Sed ipsum in necessitatibus atque ut adipisci.</p>
+
+<h2>CREATE TODO</h2>
+<p>Consectetur corrupti repudiandae neque deserunt enim dicta animi magni magni atque cum. Nostrum ex sunt libero veritatis ex odio vel quis. Eius totam eos odio mollitia quae voluptatem. Vero eveniet.</p>
+
+<form ng-submit="create(todo)">
+   <p>
+      <label>Text</label>
+      <input class="w3-input w3-border" type="text" ng-model="todo.text">
+   </p>
+   <p>
+      <button class="w3-btn" type="submit">CREATE</button>
+   </p>
+</form>
+
+<h2>ALL TODOS</h2>
+<p>Lorem incidunt tenetur consequuntur qui recusandae? Vel saepe debitis officia accusamus dolores culpa. Voluptatem sed quibusdam sed nobis facere minima eligendi quisquam architecto asperiores, nobis architecto doloremque et facere consequuntur!</p>
+
+<div class="w3-container" ng-repeat="todo in todos">
+   <div class="w3-panel w3-card-4 w3-blue" ng-class="{'w3-green': todo.finishedAt, 'w3-red': todo.removedAt}">
+      <p><i>ID: {{todo._id}}</i></p>
+      <p>{{ todo.text }}</p>
+      <p>
+         <button ng-if="!todo.finishedAt"class="w3-btn" ng-click="finished(todo)">DONE</button>
+         <button ng-if="!todo.removedAt" class="w3-btn w3-red" ng-click="remove(todo)">REMOVE</button>
+      </p>
+      <p ng-if="todo.finishedAt"><i>Finished At: {{ todo.finishedAt }}</i></p>
+      <p ng-if="todo.removedAt"><i>Removed At: {{ todo.removedAt }}</i></p>
+      <p>
+         <button ng-if="todo.removedAt" class="w3-btn w3-pale-red" ng-click="removePermanently(todo)">REMOVE PERMANENTLY</button>
+      </p>
+   </div>
+</div>
+
+<br>
+

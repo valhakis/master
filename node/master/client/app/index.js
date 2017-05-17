@@ -1,4 +1,5 @@
 import './app.scss';
+// import './app.css';
 
 import 'angular-ui-router/release/stateEvents.js';
 
@@ -9,6 +10,7 @@ import ngStorage from 'ngstorage';
 import ngLocalStorage from 'angular-local-storage';
 import satellizer from 'satellizer';
 
+import DocumentModule from './document';
 import Modules from './modules';
 import Aimbooster from './modules/aimbooster';
 import Mongoose from './pages/mongoose';
@@ -22,6 +24,8 @@ import Tutorial from './tutorial';
 import Home from './pages/home';
 import ColorBox from './components/color-box';
 
+import Project01Service from './services/project-01.service';
+
 import LiteServerService from './services/lite-server.service';
 
 import AppConfig from './app.config';
@@ -31,7 +35,8 @@ var app = angular.module('app', [
     /* 'ui.router',*/ 'ui.router.state.events', 'satellizer', /* 'jsonFormatter' ,*/ /* 'LocalStorageModule' , */
    uiRouter, 'ngStorage', satellizer, ngLocalStorage,
    Home, Auth, AuthJwt, Blog, Tutorial, Tasks, Mongoose, Aimbooster,
-   Navbar, Footer, ColorBox, Modules
+   Navbar, Footer, ColorBox, Modules,
+   DocumentModule
 ]);
 
 app.run(AppRun);
@@ -40,5 +45,6 @@ app.config(AppConfig);
 import LoginController from './controllers/login.controller';
 app.controller('LoginController', LoginController);
 app.factory('LiteServer', LiteServerService);
+app.factory('Project01Service', Project01Service);
 
 export default app;

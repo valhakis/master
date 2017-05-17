@@ -73,7 +73,8 @@
    "yui"           : false,
 
    "globals"       : {
-      "angular": true
+      "angular": true,
+      "ReactDOM": true
    }        
 }
 

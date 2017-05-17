@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var UserSchema = new mongoose.Schema({
-   id: mongoose.Schema.ObjectId,
+var UserSchema = new Schema({
+   id: Schema.ObjectId,
+   name: String,
    firstname: {
       type: String
    },
@@ -39,7 +41,7 @@ var UserSchema = new mongoose.Schema({
    },
    posts: [
       {
-         type: mongoose.Schema.Types.ObjectId, ref: 'Post'
+         type: Schema.Types.ObjectId, ref: 'Post'
       }
    ]
 });

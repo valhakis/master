@@ -1,0 +1,30 @@
+extends ../layouts/base
+
+block body
+   div.w3-container
+      h1 STORIES
+
+      if !person
+         form.w3-panel.w3-light-gray.w3-card-4(method="POST", action="/stories/authenticate")
+            input(type="hidden", name="_redirect", value="back")
+            p
+               span.w3-tag PERSON
+            p
+               label Name
+               input.w3-input.w3-border(name="name")
+            p
+               button.w3-btn Next
+      else
+         div.w3-panel
+            pre= JSON.stringify(person, " ", 2)
+         form.w3-panel.w3-light-gray.w3-card-4(method="POST", action="/stories")
+            input(type="hidden", name="_creator", value=person._id)
+            input(type="hidden", name="_redirect", value="back")
+            p
+               span.w3-tag STORY
+               span.w3-tag.w3-right #{person.name}
+            p
+               label Title
+               input.w3-input.w3-border(name="title")
+            p
+               button.w3-btn Add
