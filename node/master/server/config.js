@@ -6,19 +6,25 @@
 // var config = Get.require('config');
 //
 
+var env = Master.loadJSON('.env');
+
 var mongo = {
    url: 'mongodb://localhost/master-authentication'
 };
 
 module.exports = {
-   host: '192.168.0.2',
+   host: env.host || 'localhost',
    port: '80',
+   'browser-sync': {
+      host: env.development.host,
+      port: 3000
+   },
    production: {
-      host: '192.168.0.2',
+      host: env.production.host || 'localhost',
       port: '80',
    },
    development: {
-      host: '192.168.0.2',
+      host: env.production.host || 'localhost',
       port: '4000',
    },
    secret: 'the most secret',

@@ -82,7 +82,8 @@
       "ace": true,
       "App": true,
       "DevAdmin": true,
-      "io": true
+      "io": true,
+      "Master": true
    }        
 }
 

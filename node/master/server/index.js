@@ -23,6 +23,8 @@ console.log = function(minions) {
 };
 */
 
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 var request = require('request');
 var http = require('http');
 var config = require('./config');
@@ -31,6 +33,10 @@ var app = require('./app');
 
 var host;
 var port;
+
+if (!process.env.NODE_ENV) {
+   process.env.NODE_ENV = 'development';
+}
 
 if (process.env.NODE_ENV === 'development') {
    host = config.development.host;
@@ -43,12 +49,27 @@ if (process.env.NODE_ENV === 'development') {
 
 var server = http.createServer(app);
 
-server.listen(port, host, function() {
-   console.log(`server at ${host}:${port}. [${process.env.NODE_ENV}]`);
 
-   // RELOAD BROWSER-SYNC
-   request.get('http://192.168.0.2:3000/__browser_sync__?method=reload')
-      .on('response', function(response) {
+// Connect to mongo database.
+// ===========================================================
+mongoose.connect(config.mongo.url, function(err) {
+   if (err) {
+      throw err;
+   }
+   server.listen(port, host, function() {
+      console.log(`server at ${host}:${port}. [${process.env.NODE_ENV}]`);
+
+      if (process.env.NODE_ENV === 'development') {
+         // RELOAD BROWSER-SYNC
+         /*
+      request(`http://192.168.0.2:3000/__browser_sync__?method=reload`, function(err, res, body) {
+         if (err) return console.log(err);
       });
+      */
+         request(`http://${config['browser-sync'].host}:${config['browser-sync'].port}/__browser_sync__?method=reload`, function(err, res, body) {
+            if (err) return console.log(`BROWSER-SYNC: ${err.message}`);
+         });
+      }
 
+   });
 });
