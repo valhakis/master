@@ -1,0 +1,15 @@
+extends layout
+
+block content
+   h1 New post.
+
+   form(action="/posts/create", method="POST")
+      input(type="hidden", name="__redirect", value="/posts")
+      p
+         label Title
+         input.w3-input(name="title")
+      p
+         label Body
+         input.w3-input(name="body")
+      p
+         button.w3-btn(type="submit") CREATE

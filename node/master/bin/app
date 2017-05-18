@@ -60,6 +60,8 @@ if (!argument) {
    } else {
       pm2.start();
    }
+} else if (argument == 'test') {
+   App.rootRequire('browser-sync');
 } else if (argument == 'TODO') { // jshint ignore:line
    // App.rootRequire('development-admin');
 }

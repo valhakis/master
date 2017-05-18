@@ -1,7 +1,8 @@
 var bs = require('browser-sync').create();
 
 bs.init({
-   proxy: `http://192.168.0.2:4000`
+   proxy: `http://192.168.0.2:4000`,
+   open: false
 });
 
 // bs.watch(`${App.root}/dist/**/*.html`).on('change', bs.reload);

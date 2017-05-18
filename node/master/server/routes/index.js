@@ -1,4 +1,5 @@
 module.exports = function(app) {
+   require('./post')(app);
    require('./server')(app);
    require('./person.routes')(app);
    require('./story.routes')(app);
