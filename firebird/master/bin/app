@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+require('../globals');
+var spawn = require('child_process').spawn;
+
+App.require('util/browser-sync');
+App.require('util/webpack');
+

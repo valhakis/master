@@ -30,6 +30,7 @@
     "angular-mocks": "^1.6.4",
     "ngstorage": "^0.3.11",
     "moment": "^2.18.1",
-    "system.js": "^0.20.12"
+    "system.js": "^0.20.12",
+    "firebase": "^4.0.0"
   }
 }
