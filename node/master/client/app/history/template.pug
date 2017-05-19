@@ -1,0 +1,19 @@
+app-main-nav
+
+div.w3-panel
+   button.w3-btn(onclick="this.nextSibling.classList.toggle('w3-hide')", ) {{ currentUser.email + '| JSON'}}
+   div.w3-panel.w3-hide
+      div.w3-card-4
+         pre 
+            code.json {{ currentUser | json }}
+
+div.w3-container
+   h1 HISTORY
+
+   div.w3-bar
+      a.w3-bar-item(ui-sref-active="active", ui-sref="history.create") CREATE HISTORY
+      a.w3-bar-item(ui-sref-active="active", ui-sref="history.list") HISTORIES LIST
+
+   ui-view
+
+

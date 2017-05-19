@@ -1,0 +1,18 @@
+h2 HISTORIES LIST
+
+style.
+   .loc-btn {
+      margin-top: -20px;
+      margin-right: 5px;
+   }
+
+div.w3-panel(ng-repeat="history in histories | orderBy: '-createdAt'")
+   div.w3-card-4.w3-white
+      div.w3-panel
+         h3 {{history.createdAt | date : 'dd.MM.yyyy HH:mm:ss'}}
+         p
+            i Num codes: {{history.codes.length}}
+         p
+            i Num posts: {{history.posts.length}}
+      a(ui-sref="history.single({ historyId: history._id })").w3-btn.w3-right.loc-btn GO TO HISTORY
+      // pre {{ history | json }}

@@ -1,0 +1,16 @@
+h2 INDEX
+
+div.w3-container(ng-if="currentMongoose")
+   div.w3-card-4.w3-panel
+      h3(ng-if="currentMongoose.name") {{ currentMongoose.name }}
+      h3(ng-if="!currentMongoose.name") NO NAME IS SET
+
+      div.w3-bar
+         button.w3-bar-item.w3-right.w3-btn.w3-black(ng-click="unsetMongoose()") UNSET CURRENT MONGOOSE
+
+div.w3-container(ng-repeat="mongoose in mongooses", ng-if="!currentMongoose")
+   div.w3-card-4.w3-panel
+      h4(ng-if="mongoose.name") {{ mongoose.name | uppercase }}
+      h4(ng-if="!mongoose.name") NO NAME IS SET
+   div.w3-bar(style="margin-top: -20px; padding-right: 5px")
+      button.w3-panel-item.w3-btn.w3-right(style="font-size: 12px; padding: 3px 6px; line-height: 12px", ng-click="setCurrentMongoose(mongoose)") SET AS CURRENT

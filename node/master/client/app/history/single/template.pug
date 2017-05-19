@@ -1,0 +1,70 @@
+style.
+   .toggle-btn {
+      float: right;
+      font-size: 12px;
+   }
+   .local-btns {
+      margin-top: -20px;
+      margin-right: 10px;
+   }
+
+div.w3-panel
+   div.w3-card-4.w3-white
+      div.w3-panel
+         h2 SINGLE HISTORY
+         hr
+         h3 {{history.createdAt | date : 'dd.MM.yyyy hh:mm:ss'}}
+         div(ng-if="history.removedAt") RemovedAt:
+            i {{ history.removedAt }}
+         div(ng-if="history.updatedAt") UpdatedAt:
+            i {{ history.updatedAt }}
+      // pre {{ history | json }}
+   div.local-btns.w3-right
+      a(ui-sref="").w3-btn.loc-btn.w3-blue EDIT
+      button(ng-click="deleteHistory(history)").w3-btn.loc-btn.w3-red DELETE
+
+div.w3-panel
+   div.w3-panel.w3-white.w3-card-4
+      h3 ADD POST
+         button.toggle-btn.w3-btn(onclick="this.parentElement.nextSibling.classList.toggle('w3-hide')") TOGGLE
+      form.w3-hide(ng-submit="addPost(post)")
+         p
+            label Title
+            input.w3-input.w3-border(ng-model="post.title")
+         p
+            label Body
+            input.w3-input.w3-border(ng-model="post.body")
+         p
+            button.w3-btn ADD POST
+
+div.w3-panel
+   div.w3-panel.w3-white.w3-card-4
+      h3 ADD CODE
+         button.toggle-btn.w3-btn(onclick="this.parentElement.nextSibling.classList.toggle('w3-hide')") TOGGLE
+      form.w3-hide(ng-submit="setAndAddCode(code)")
+         p 
+            label Language
+            select.w3-select(ng-options="language as language.name for language in languages track by language.value", ng-model="code.language", ng-change="updateLangugage()")
+         p
+            label Title
+            input.w3-input.w3-border(ng-model="code.title")
+         p 
+            label Body
+            document-code-editor
+         p
+            button.w3-btn ADD CODE
+
+div.w3-container
+   h2 POSTS
+   div.w3-card-4.w3-panel.w3-white(ng-repeat="post in history.posts | orderBy: '-createdAt'")
+      h4 {{ post.title }}
+      p {{ post.body }}
+
+div.w3-container
+   h2 CODES
+   div.w3-card-4.w3-panel.w3-white(ng-repeat="code in history.codes | orderBy: '-createdAt'")
+      h4 {{ code.title }}
+      p
+         document-code(body="code.body", language="code.language")
+      p.w3-bar
+         button.w3-right.w3-bar-item.w3-btn.w3-red(ng-click="removeCode(code)") Remove

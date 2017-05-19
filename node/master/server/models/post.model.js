@@ -7,6 +7,18 @@ var PostSchema = new Schema({
    user: {
       type: Schema.Types.ObjectId, ref: 'User'
    },
+   documents: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Document'
+   }],
+   histories: [{
+      type: Schema.Types.ObjectId,
+      ref: 'History'
+   }],
+   createdAt: {
+      type: Date,
+      default: Date.now
+   },
    postedBy: {
       type: Schema.Types.ObjectId,
       ref: 'User'

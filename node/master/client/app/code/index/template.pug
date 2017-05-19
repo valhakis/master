@@ -1,0 +1,13 @@
+h2 INDEX
+
+
+div.w3-panel(ng-repeat="code in codes")
+   p
+      document-code(body="code | json", language="{'value': 'json', 'name': 'JSON'}")
+   p
+      document-code(body="code.body", language="{'value': 'javascript', 'name': 'Javascript'}")
+   p
+      div.w3-bar
+         button.w3-bar-item.w3-btn.w3-red(ng-click="removeCode(code)") REMOVE
+
+

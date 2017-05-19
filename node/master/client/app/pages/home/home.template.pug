@@ -1,16 +1,19 @@
 extends /app/views/layouts/home.pug
 
 block content
-   button.btn.btn-primary(ng-click="authenticate('facebook')")
+   div.w3-bar.w3-white
+      a.w3-bar-item.w3-btn(ui-sref-active="active" ui-sref="document") Document
+      a.w3-bar-item.w3-btn(ui-sref-active="active" ui-sref="history") History
+   // button.btn.btn-primary(ng-click="authenticate('facebook')")
       span Sign in with Facebook.
 
-   hr
+   // hr
 
-   ul.app-list
+   // ul.app-list
       li(ng-repeat="i in [0, 1, 2, 3, 4, 5]")
          span This is my list item {{ i }}.
 
-   form.app-form
+   // form.app-form
       h2.title Registration.
       div.form-group
          label The label of item.
@@ -26,14 +29,14 @@ block content
          input.form-control(type="text")
       button.btn.btn-default.btn-block Submit form.
 
-   hr
+   // hr
 
-   div.w3-container.w3-blue
+   // div.w3-container.w3-blue
       p Elit ab maxime odit maxime repellat quaerat ipsa aperiam accusamus quae corporis esse excepturi aspernatur officiis. Cumque tempora autem quam voluptates sit architecto sint voluptas eveniet fugiat! Iste quae nobis.
 
-   hr
+   // hr
 
-   div.w3-container.w3-black
+   // div.w3-container.w3-black
       br
       div.w3-container.w3-red
          p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
@@ -47,12 +50,12 @@ block content
          p Adipisicing illum ullam similique ipsa modi obcaecati adipisci debitis doloribus ullam totam. Error consectetur saepe officiis provident accusantium. Ad temporibus in inventore ipsa perferendis. Necessitatibus sapiente nihil placeat quisquam quasi.
 
 
-   div.w3-panel.w3-red
+   // div.w3-panel.w3-red
       h3 Danger.
       p Dolor incidunt molestias dignissimos dignissimos saepe autem illum. Consequuntur suscipit cupiditate veritatis quos veniam quam vel asperiores obcaecati obcaecati sunt dolore, laborum accusamus. Veniam deleniti non cum beatae adipisci? Totam.
 
 
-   div.w3-panel.w3-black
+   // div.w3-panel.w3-black
       div.w3-panel.w3-border.w3-border-red
          span Adipisicing nobis id voluptatem amet unde error. Consectetur praesentium cupiditate eius labore veniam eius officia blanditiis magnam optio consectetur! Quasi repellendus vero sequi aliquid quasi repellendus omnis vel! Ut ducimus!
       hr
@@ -71,5 +74,5 @@ block content
             h5 Footer.
       br
 
-   div.w3-panel.w3-light-gray
+   // div.w3-panel.w3-light-gray
       a(ui-sref="blog") Link to blog.

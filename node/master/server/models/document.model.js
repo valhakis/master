@@ -5,6 +5,10 @@ var DocumentSchema = new Schema({
    todos: [{
       type: Schema.Types.ObjectId, ref: 'Todo'
    }],
+   posts: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Post'
+   }],
    name: {
       type: String,
       required: true
