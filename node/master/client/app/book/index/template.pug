@@ -1,0 +1,19 @@
+h2 INDEX
+
+form.w3-card-4.w3-panel(ng-submit="createBook(book)")
+   p
+      label NAME
+      input.w3-input.w3-border(ng-model="book.name")
+   p
+      label DESCRIPTION
+      input.w3-input.w3-border(ng-model="book.description")
+   p
+      button.w3-btn(type="submit") CREATE
+
+div.w3-card-4.w3-panel
+   ul.w3-ul
+      li(ng-repeat="book in books")
+         h4 {{book.name}}
+         p {{book.description}}
+         div.w3-bar
+            button.w3-btn.w3-bar-item.w3-red.w3-right(ng-click="removeBook(book)") REMOVE

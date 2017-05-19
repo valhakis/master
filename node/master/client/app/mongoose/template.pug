@@ -4,7 +4,7 @@ div.w3-container
       h1 MONGOOSE
       div.w3-bar
          a.w3-bar-item.w3-hover-red(ui-sref-active="active", ui-sref="mongoose.index") INDEX
-         a.w3-bar-item.w3-hover-red(ui-sref-active="active", ui-sref="mongoose.create") CREATE
+         a.w3-bar-item.w3-hover-red(ui-sref-active="active", ui-sref="mongoose.create", ng-if="!currentMongoose") CREATE
       ui-view
 
 app-main-footer

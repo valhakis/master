@@ -10,6 +10,8 @@ import ngStorage from 'ngstorage';
 import ngLocalStorage from 'angular-local-storage';
 import satellizer from 'satellizer';
 
+import Problem from './problem';
+import Book from './book';
 import MongooseModule from './mongoose';
 import HomeModule from './home';
 import CodeModule from './code';
@@ -43,7 +45,7 @@ var app = angular.module('app', [
    /* Home, */ Auth, AuthJwt, Blog, Tutorial, Tasks, Mongoose, Aimbooster,
    Navbar, Footer, ColorBox, Modules,
    DocumentModule, HistoryModule, HomeModule, CodeModule, MongooseModule,
-   AppMainNav
+   AppMainNav, Book, Problem
 ]);
 
 app.run(AppRun);

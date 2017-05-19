@@ -19,6 +19,7 @@ require('./programming-language/programming-language.routes')(router);
 
 module.exports = function(app) {
    GET.require('./api/mongoose')(app);
+   GET.require('./api/book')(app);
    GET.require('./api/person')(app);
    GET.require('./api/story')(app);
    GET.require('./api/history')(app);

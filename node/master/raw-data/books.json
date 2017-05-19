@@ -1,0 +1,22 @@
+[
+   {
+      "name": "Coders at Work: Reflection on the Craft of Programming",
+      "description": "Interviews with accomplished programmers. Inspiring stories. How programmers think. Encyclopedia of practical coding." 
+   },
+   {
+      "name": "The Mythical Man Month",
+      "description": "What can go wrong in software development."
+   },
+   {
+      "name": "Don't Make Me Thinkg, Revisited: A Common Sense Approach to Web Usability",
+      "description": "Web, mobile development."
+   },
+   {
+      "name": "The Pragmatic Programmer: From Journeyman to Master",
+      "description": "Collection of lessons and recommentations for software developers."
+   },
+   {
+      "name": "Clean Code: A Handbook of Agile Software Cfaftsmanship",
+      "description": "Tips and examples on how to create better code."
+   }
+]
