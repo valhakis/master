@@ -26,3 +26,8 @@ firebase login
 firebase init
 firebase deploy
 ```
+
+> Project Console: https://console.firebase.google.com/project/master-708eb/overview
+
+> Hosting URL: https://master-708eb.firebaseapp.com
+
