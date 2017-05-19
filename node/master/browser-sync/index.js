@@ -1,7 +1,11 @@
+var env = Master.loadJSON('.env');
 var bs = require('browser-sync').create();
 
+var host = env.development.host;
+var port = env.development.port;
+
 bs.init({
-   proxy: `http://192.168.0.2:4000`,
+   proxy: `http://${host}:${port}`,
    open: false
 });
 
