@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @import url('https://www.fontify.me/wf/42a6cdb26bad8bf22678dbaaa59e2d3a');
 @import '../sass/_variables.scss';
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
@@ -413,4 +414,8 @@ bootstrap-editor {
       padding: 20px;
       margin-bottom: 10px;
    }
+}
+pre code, code.code {
+   font-family: 'Roboto Mono', monospace;
+   font-size: 14px;
 }

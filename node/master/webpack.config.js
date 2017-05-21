@@ -84,7 +84,8 @@ module.exports = {
          }
       }),
       new BundleAnalyzerPlugin({
-         analyzerMode: 'static'
+         analyzerMode: 'static',
+         openAnalyzer: false,
       }),
       // new webpack.optimize.CommonsChunkPlugin({
       // name: 'node-static',

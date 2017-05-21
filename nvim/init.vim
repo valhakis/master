@@ -129,8 +129,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
-let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
+" let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
+" let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
@@ -162,11 +162,12 @@ let g:syntastic_handlebars_hbstidy_ignore_errors=[
 let g:syntastic_filetype_map = {'html.handlebars': 'handlebars'}
 let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
 
-let g:syntastic_c_compiler = 'i686-w64-mingw32-gcc'
+" let g:syntastic_c_compiler = 'i686-w64-mingw32-gcc'
 "let g:syntastic_cpp_compiler = 'i686-w64-mingw32-g++'
 "let g:syntastic_cpp_compiler = '/usr/bin/i686-w64-mingw32-g++'
 let g:syntastic_cpp_compiler = 'g++'
 
+au filetype c map \mr :w \| !make && make run <cr>
 if has('nvim')
    " au filetype java map \mr :w \| Term make && make run <cr>
    " au filetype cpp map \mr :w \| Term make && make run <cr>
@@ -346,3 +347,4 @@ endfunction
 let g:js_indent_log = 0
 "colorscheme monokai
 colorscheme badwolf
+

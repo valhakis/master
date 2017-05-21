@@ -1,9 +1,23 @@
+var env = Master.loadJSON('.env');
 var bs = require('browser-sync').create();
 
+// <<<<<<< HEAD
 exports.start = function() {
+   // =======
 
+   // >>>>>>> 2f6a2a05de5bb23ac494d2fb190cbb39af6352d3
+
+   var host = env.development.host;
+   var port = env.development.port;
+   /*
    bs.init({
       proxy: `http://192.168.0.2:4000`,
+      open: false
+   });
+   */
+
+   bs.init({
+      proxy: `http://${host}:${port}`,
       open: false
    });
 
