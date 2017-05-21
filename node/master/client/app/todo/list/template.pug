@@ -1,0 +1,13 @@
+h2 LIST
+
+div.list
+   div(ng-repeat="todo in todos | orderBy:'-createdAt'", ng-class="{'done': todo.finishedAt}")
+      div.tag {{todo.finishedAt ? 'HAS BEEN FINISHED' : 'NOT DONE YET'}}
+      h3 {{todo.text}}
+      button(onclick="this.nextSibling.classList.toggle('hide')") SHOW JSON
+      app-model-json.hide(object="todo")
+      button(ng-if="!todo.finishedAt", ng-click="setDone(todo)") SET DONE
+      button(ng-if="todo.finishedAt", ng-click="setNotDone(todo)") OOPS, NOT DONE YET
+      div(ng-if="todo.finishedAt")
+         p Finished At 
+            i {{todo.finishedAt}}

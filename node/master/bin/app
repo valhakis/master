@@ -4,6 +4,13 @@ var sudo = parseInt(process.env.SUDO_UID);
 var path = require('path');
 var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
+const readline = require('readline');
+var browserSync = App.rootRequire('browser-sync');
+
+const rl = readline.createInterface({
+   input: process.stdin,
+   output: process.stdout
+});
 
 var argument = process.argv[2];
 
@@ -43,13 +50,36 @@ pm2.start = function() {
    });
 };
 
-if (!argument) {
-   console.log(`ARGUMENT NEEDED: ['development' or 'production']`);
+if (!argument) { // jshint ignore:line
+   // process.env.NODE_ENV = 'production';
+   // var server = App.require('./server');
+   console.log('(0) -> start development');
+   console.log('(1) -> start production');
+   rl.question(`Action: `, (answer) => {
+      console.log(`Answer: ${answer}`);
+      if (answer == '0' || answer == 'start development') {
+         if (!sudo) {
+            console.log('root permissions are required for production.');
+         } else {
+            //App.rootRequire('browser-sync');
+            browserSync.start();
+            nodemon.start();
+            webpack.start();
+         }
+      } else if (answer == '1' || answer == 'start production') {
+         if (!sudo) {
+            console.log('root permissions are required for production.');
+         } else {
+            pm2.start();
+         }
+      }
+   });
 } else if (argument == 'dev' || argument == 'development') {
    if (!sudo) {
       console.log('root permissions are required for development.');
    } else { // jshint ignore:line
-      App.rootRequire('browser-sync');
+      // App.rootRequire('browser-sync');
+      browserSync.start();
 
       nodemon.start();
       webpack.start();
@@ -64,4 +94,7 @@ if (!argument) {
    App.rootRequire('browser-sync');
 } else if (argument == 'TODO') { // jshint ignore:line
    // App.rootRequire('development-admin');
+} else if (argument == 'help') {
+   console.log(`ARGUMENT NEEDED: ['development' or 'production']`);
+} else { // jshint ignore:line
 }

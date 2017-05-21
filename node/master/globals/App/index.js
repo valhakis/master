@@ -8,3 +8,7 @@ exports.root = root;
 exports.rootRequire = function(name) {
    return require(root + '/' + name);
 };
+
+exports.require = function(name) {
+   return require(root + '/' + name);
+};

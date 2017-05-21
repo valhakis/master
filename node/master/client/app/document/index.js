@@ -1,11 +1,10 @@
-import './document.scss';
+import './style.scss';
 
 import angular from 'angular';
 
-import DocumentConfig from './document.config';
-
 var mod = angular.module('app.document', []);
 
-mod.config(DocumentConfig);
+mod.config(require('./config'));
+mod.factory('Document', require('./service'));
 
 export default mod.name;

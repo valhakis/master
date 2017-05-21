@@ -2,6 +2,19 @@
 @import '../sass/_variables.scss';
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
+$black: #000;
+$terraCotta: #ED6A5A;
+$blueJeans: #5DA9E9;
+$blond: #F4F1BB;
+$white: #fff;
+$sunny: #F2ED6F;
+$maize: #f0ec57;
+$screaminGreen: #80FF72;
+$electricBlue: #7EE8FA;
+$gray: #ccc;
+$dark: #111;
+$isablline: #EEEEEE;
+
 * {
    box-sizing: border-box;   
 }
@@ -9,6 +22,7 @@
 body {
    background-color: $red;
    font-family: 'Arial Narrow', 'PT Sans Narrow', sans-serif;
+   padding-bottom: 100px;
 }
 
 
@@ -296,8 +310,107 @@ bootstrap-editor {
       font-size: 16px;
       line-height: 29px;
       &:hover {
-         background-color: #FFF;
+         background-color: $white;
          color: #000;
       }
+   }
+}
+
+.menu {
+   background-color: $white;
+   a {
+      display: inline-block;
+      padding: 5px 10px;
+      &:hover {
+         background-color: $sunny;
+         color: $dark;
+         text-decoration: none;
+         // outline: 1px solid $dark;
+      }
+      &.active {
+         background-color: $electricBlue;
+      }
+      &:focus {
+         text-decoration: none;
+      }
+   }
+}
+
+.form {
+   margin: 20px;
+   padding: 20px;
+   border: 1px solid $blueJeans;
+   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+   & > p {
+      padding: 20px;
+      label, input {
+         display: block;
+         width: 100%;
+      }
+      label {
+      }
+      input {
+         border: 1px solid $blueJeans;
+         padding: 6px 4px;
+      }
+   }
+   button[type="submit"] {
+      font-size: 15px;
+      padding: 5px 10px;
+      border: 1px solid $blueJeans;
+      background-color: $sunny;
+      &:hover {
+         background-color: $blueJeans;
+      }
+      &:active {
+         background-color: $dark;
+         color: $white;
+      }
+   }
+}
+
+.list {
+   & > div {
+      h1, h2, h3, h4, h5, h6 {
+
+      }
+      h1 {
+
+      }
+      h2 {
+
+      }
+      h3 {
+         font-size: 15px;
+      }
+      h4 {
+
+      }
+      h5 {
+
+      }
+      h6 {
+
+      }
+      .tag {
+         float: right;
+         background-color: $blueJeans;
+         display: inline-block;
+         padding: 2px 5px;
+      }
+      &.done {
+         .tag {
+            background-color: $screaminGreen;
+         }
+      }
+      button {
+         margin-right: 5px;
+         &:last-child {
+            margin-right: 0px;
+         }
+      }
+      box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+      padding: 20px;
+      margin-bottom: 10px;
    }
 }

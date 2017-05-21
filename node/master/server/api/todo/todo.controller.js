@@ -58,3 +58,29 @@ exports.removePermanently = function(req, res) {
       res.send(todo);
    });
 };
+
+exports.setDone = function(req, res) {
+   Todo.findOneAndUpdate({
+      _id: req.params.todoId 
+   }, {
+      $set: {
+         finishedAt: new Date()
+      }
+   }, function(err, todo) {
+      if (err) return res.send(err);
+      res.send(todo);
+   });
+};
+
+exports.setNotDone = function(req, res) {
+   Todo.findOneAndUpdate({
+      _id: req.params.todoId 
+   }, {
+      $set: {
+         finishedAt: null
+      }
+   }, function(err, todo) {
+      if (err) return res.send(err);
+      res.send(todo);
+   });
+};

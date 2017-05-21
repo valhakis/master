@@ -1,0 +1,25 @@
+h2 SINGLE
+
+h3(style="") {{ snippet.name }}
+
+div()
+
+div.w3-row
+   div.w3-col.l4
+      h4.title HTML
+         button(onclick="this.parentElement.nextSibling.classList.toggle('hide')") SHOW / HIDE
+      app-editor.hide(eId="1" mode="html", bind="snippet.html")
+   div.w3-col.l4
+      h4.title JAVASCRIPT
+         button(onclick="this.parentElement.nextSibling.classList.toggle('hide')") SHOW / HIDE
+      app-editor.hide(eId="2" mode="javascript", bind="snippet.javascript")
+   div.w3-col.l4
+      h4.title CSS
+         button(onclick="this.parentElement.nextSibling.classList.toggle('hide')") SHOW / HIDE
+      app-editor.hide(eId="3" mode="css", bind="snippet.css")
+
+div.w3-row(style="margin-bottom: 10px;")
+   div.w3-col.l12
+      snippet-preview(html="snippet.html", javascript="snippet.javascript", css="snippet.css")
+
+button(style="margin-bottom: 10px", ng-click="saveSnippet(snippet)") SAVE

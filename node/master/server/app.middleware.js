@@ -34,6 +34,7 @@ module.exports = function(app) {
       next();
    });
 
+   app.use('/', express.static(GET.root('node_modules')));
    app.use('/node_modules', express.static(GET.root('node_modules')));
    app.use('/bower_components', express.static(GET.root('bower_components')));
    app.use('/public', express.static(GET.server('public')));

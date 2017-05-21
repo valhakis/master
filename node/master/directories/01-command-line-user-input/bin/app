@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+require('../globals');
+
+const readline = require('readline');
+const server = App.require('server');
+
+const rl = readline.createInterface({
+   input: process.stdin,
+   output: process.stdout
+});
+
+
+rl.question('What do you want to do? Answer: ', (answer) => {
+   console.log(`Thank you for the answer: ${answer}.`);
+   if (answer == 'start') {
+      server.start();
+   } else if (answer == 'help') {
+      console.log(`[start] -> Start the server.`);
+   }
+});
+
+
+rl.on('line', (input) => {
+   if (input == 'start') {
+      server.start();
+   }
+   console.log(`Received: ${input}.`);
+});
+

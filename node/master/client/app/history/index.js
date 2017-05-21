@@ -10,6 +10,8 @@ var mod = angular.module('history', []);
 mod.directive('documentCodeEditor', DocumentCodeEditorDirective);
 mod.directive('documentCode', DocumentCodeDirective);
 
+mod.directive('historySample', require('./components/history-sample'));
+
 mod.config(config);
 
 export default mod.name;

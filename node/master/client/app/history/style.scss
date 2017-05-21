@@ -5,3 +5,24 @@ document-code-editor {
       min-height: 200px;
    }
 }
+
+history-sample {
+   border: 1px solid #000;
+   display: block;
+   background-color: white;
+   margin: 10px;
+   padding: 5px;
+   .item {
+      p {
+         margin: 0px;
+         padding: 0px;
+      }
+      border: 1px solid #000;
+      display: inline-block;
+      padding: 10px;
+      text-align: center;
+      vertical-align: center;
+      margin-right: 5px;
+      margin-bottom: 5px;
+   }
+}

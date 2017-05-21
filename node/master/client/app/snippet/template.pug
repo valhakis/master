@@ -1,0 +1,11 @@
+app-main-nav(style="margin-bottom: 0px;")
+h1(style="margin: 10px 10px 0px 10px; padding: 10px; background-color: #fff;") SNIPPET
+
+div.w3-panel
+   div.menu(style="margin-bottom: 5px;")
+      a(ui-sref-active="active", ui-sref="snippet.index") INDEX
+      a(ui-sref-active="active", ui-sref="snippet.create") CREATE
+      a(ui-sref-active="active", ui-sref="snippet.list") LIST
+
+   div.w3-container.w3-white
+      ui-view

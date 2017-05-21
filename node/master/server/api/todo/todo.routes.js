@@ -6,4 +6,6 @@ module.exports = function(router) {
    router.delete('/todos/:todoId', controller.remove);
    router.delete('/todos/:todoId/permanently', controller.removePermanently);
    router.put('/todos/:todoId/finished', controller.finished);
+   router.put('/todos/:todoId/done', controller.setDone);
+   router.put('/todos/:todoId/notDone', controller.setNotDone);
 };

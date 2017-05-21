@@ -1,0 +1,11 @@
+h2 LIST
+
+div.w3-row.snippet-list
+   div.w3-col.s4(ng-repeat="snippet in snippets")
+      div.w3-panel
+         div.w3-card-4.w3-panel
+            h3(style="font-size: 16px") {{ snippet.name }}
+            div.buttons
+               button(ng-click="removeSnippet(snippet)") REMOVE
+               button.right(ui-sref="snippet.single({snippetId: snippet._id})") OPEN
+               button.right(ng-click="openNewTab(snippet)") NEW TAB

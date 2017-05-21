@@ -6,3 +6,17 @@ exports.index = function(req, res) {
       res.send(documents);
    });
 };
+
+exports.remove = function(req, res) {
+   Document.findOneAndUpdate({_id: req.params.documentId}, {removedAt: new Date()}, function(err, document) {
+      if (err) return res.send(err);
+      res.send(document);
+   });
+};
+
+exports.unRemove = function(req, res) {
+   Document.findOneAndUpdate({_id: req.params.documentId}, {removedAt: null}, function(err, document) {
+      if (err) return res.send(err);
+      res.send(document);
+   });
+};

@@ -1,0 +1,43 @@
+snippet-preview {
+   iframe {
+      width: 100%;
+      border: 2px solid #111;
+      min-height: 500px;
+   }
+}
+
+h4.title {
+   overflow: hidden;
+   button {
+      float: right;
+      font-size: 12px;
+   }
+}
+
+.snippet-list {
+   .buttons {
+      margin-bottom: 10px;
+      button {
+         font-size: 10px;
+         padding: 0px 4px;
+         margin-right: 4px;
+         &:last-child {
+            margin-right: 0px;
+         }
+         @media (max-width: 800px) {
+            display: block;
+            width: 100%;
+         }
+         @media (min-width: 800px) {
+            font-size: 12px;
+            &.right {
+               float: right;
+               margin-left: 5px;
+               &:first-child {
+                  margin-left: 0px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,45 @@
+$black: #000;
+$terraCotta: #ED6A5A;
+$blueJeans: #5DA9E9;
+$blond: #F4F1BB;
+$white: #fff;
+$sunny: #F2ED6F;
+$maize: #f0ec57;
+$screaminGreen: #80FF72;
+$electricBlue: #7EE8FA;
+$gray: #ccc;
+$dark: #111;
+$isablline: #EEEEEE;
+
+#document-page {
+   background-color: $white;
+   padding-top: 10px;
+   .menu {
+      a {
+         display: inline-block;
+         padding: 5px 10px;
+         &:hover {
+            background-color: $sunny;
+            color: $dark;
+            text-decoration: none;
+            // outline: 1px solid $dark;
+         }
+         &.active {
+            background-color: $electricBlue;
+         }
+         &:focus {
+            text-decoration: none;
+         }
+      }
+   }
+   .panel {
+      border: 1px solid $black;
+      border-radius: 0px;
+      background-color: $blueJeans;
+      color: $dark;
+      padding: 3px 5px;
+      &.removed {
+         background-color: $terraCotta;
+      }
+   }
+}

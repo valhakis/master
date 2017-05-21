@@ -1,0 +1,11 @@
+app-main-nav
+
+div.w3-container
+   div#document-page.w3-panel
+      div.menu
+         - var attrs = {'ui-sref-active': 'active'};
+         a(ui-sref="document.index")&attributes(attrs) Index
+         a(ui-sref="document.documents")&attributes(attrs) Documents
+      ui-view
+
+app-main-footer

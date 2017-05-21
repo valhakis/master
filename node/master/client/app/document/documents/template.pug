@@ -1,0 +1,21 @@
+h2 Documents.
+
+div
+   p Current date: {{ currentDate }}
+
+div(ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]")
+   button(ng-click="setDate(getDate(i))") {{ i + ': ' + day(i) }}
+
+h2 List of documents.
+
+div(ng-repeat="document in documents")
+   div.panel(ng-class="{'removed': document.removedAt}")
+      h3 {{ document.name }}
+      button(onclick="this.nextSibling.classList.toggle('hide')") View json
+      pre(class="hide")
+         code {{ document | json }}
+      div(style="margin-top: 10px;")
+         p Created At: {{ document.createdAt | date : 'd.M.yyyy' }}
+         p(ng-if="document.removedAt") Removed At: {{ document.removedAt | date : 'd.M.yyyy' }}
+      button.w3-red.w3-btn(ng-if="!document.removedAt", ng-click="removeDocument(document)") Remove
+      button.w3-blue.w3-btn(ng-if="document.removedAt", ng-click="unRemoveDocument(document)") Un remove.
