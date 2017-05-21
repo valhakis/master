@@ -1,0 +1,27 @@
+app-navbar
+
+div.w3-container
+   h1 TODO
+   p Adipisicing porro laborum tempore sint reiciendis libero Ipsa eligendi omnis officia voluptatibus commodi assumenda. Assumenda voluptatibus tenetur officia iure voluptate? Sequi saepe vero quisquam recusandae fugiat Totam accusamus ipsa aut?
+
+   h2 {{ state == 'create' ? 'CREATE': 'EDIT' }} TODO
+   // form.w3-card-4.w3-panel(ng-submit="createTodo(todo)")
+   form.w3-card-4.w3-panel(ng-submit="one()")
+      p
+         label Todo
+         input.w3-input.w3-border(ng-model="todo.content")
+      p
+         button.w3-btn(type="submit") {{ state == 'create' ? 'CREATE' : 'EDIT' }}
+
+   h2 ALL TODOS
+
+   div(ng-repeat="key in keys").w3-panel.w3-card
+      p {{ todos[key].content }}
+      p(ng-if="todos[key].createdAt")
+         i CreatedAt: {{ todos[key].createdAt | date : 'dd.MM.yyyy HH:mm:ss'}}
+      p
+         i ID: {{ key }}
+      p
+         div.w3-bar
+            button.w3-btn.w3-bar-item.w3-red.w3-padding-small.w3-right(ng-click="removeTodo(key)") REMOVE
+            button.w3-btn.w3-bar-item.w3-blue.w3-padding-small.w3-right(ng-click="editTodo(key)") EDIT

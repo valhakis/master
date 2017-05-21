@@ -5,8 +5,11 @@ import uiRouter from 'angular-ui-router';
 
 import config from './config';
 
+import OrderObjectBy from './filters/order-object-by';
+
 import Home from './home';
 import About from './about';
+import Todo from './todo';
 import Navbar from './components/app-navbar';
 
 var firebase = require('firebase/app');
@@ -25,9 +28,10 @@ firebase.initializeApp({
 angular
    .module('app', [
       uiRouter, 
-      Home, About,
-      Navbar
+      Home, About, Todo,
+      Navbar,
+      OrderObjectBy
    ])
+   .constant('api', 'https://master-708eb.firebaseio.com')
    .config(config)
 ;
-
