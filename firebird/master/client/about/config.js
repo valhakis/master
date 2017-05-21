@@ -1,7 +1,7 @@
 export default function config($stateProvider) {
    $stateProvider
       .state('about', {
-         url: '/',
+         url: '/about',
          template: require('./template.pug')()
       })
    ;

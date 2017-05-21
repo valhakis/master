@@ -1,9 +1,9 @@
 module.exports = {
    open: false,
-   files: ['./**/*.{html,css,js}'],
+   files: ['./source/**/*.{html,css,js}'],
    watchOptions: {ignored: 'node_modules'},
    server: {
-      baseDir: ['./', '../../'],
+      baseDir: ['./source/', '../../node_modules/'],
       middleware: [
          function(req, res, next) {
             next();
