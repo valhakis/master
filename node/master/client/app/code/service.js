@@ -17,5 +17,17 @@ module.exports = function CodeService($http) {
       });
    };
 
+   service.findById = function(codeId) {
+      return $http.get(`/api/codes/${codeId}`).then(function(res) {
+         return res.data;
+      });
+   };
+
+   service.update = function(code) {
+      return $http.put(`/api/codes/${code._id}`, code).then(function(res) {
+         return res.data;
+      });
+   };
+
    return service;
 };

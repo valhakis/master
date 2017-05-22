@@ -1,0 +1,8 @@
+h3 LATEST COMPLETED TODOS
+div.list
+   div.done(ng-repeat="todo in todos | notNull:'finishedAt' | orderBy:'-finishedAt'")
+      div.tag HAS BEEN FINISHED
+      h3 {{todo.text}}
+      div
+         p Finished At 
+            i {{todo.finishedAt}}

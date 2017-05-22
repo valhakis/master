@@ -1,0 +1,8 @@
+h4 LIST OF ALL CODES
+
+div.list
+   div(ng-repeat="code in codes")
+      h5 {{ code.title }}
+      app-code(body="code.body", language="'javascript'")
+      div.buttons(style="margin-top: 10px;")
+         button(ui-sref="code.edit({codeId: code._id})") EDIT

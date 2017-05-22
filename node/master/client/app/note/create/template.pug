@@ -1,0 +1,11 @@
+h2 CREATE A NOTE
+
+form.form(ng-submit="createNote(note)")
+   p
+      label Title
+      input(ng-model="note.title")
+   p
+      label Content
+      textarea(ng-model="note.content")
+   p
+      button(type="submit") Create

@@ -33,5 +33,11 @@ module.exports = function controller($scope, Todo) {
       });
    };
 
+   $scope.removeTodo = function(todo) {
+      Todo.remove(todo).then(function(todo) {
+         $scope.updateTodos();
+      });
+   };
+
    $scope.updateTodos();
 };

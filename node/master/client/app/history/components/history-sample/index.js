@@ -17,7 +17,7 @@ module.exports = function HistorySampleDirective() {
             $scope.days.push(day);
          }
 
-         console.log(days);
+         // console.log(days);
       },
       link: function() {
 

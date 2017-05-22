@@ -6,7 +6,7 @@ form(ng-submit="createCode(code)")
       input.w3-input(ng-model="code.title")
    p
       label EDITOR
-      app-editor
+      app-editor(bind="code.body")
    p
       button.w3-btn CREATE
 

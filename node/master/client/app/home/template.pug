@@ -1,11 +1,14 @@
 app-main-nav
 
-div.w3-container
+div.main
    div.w3-panel.w3-white
       h1 HOME
-      div.w3-bar
-         a.w3-bar-item(ui-sref="book") Book
-         a.w3-bar-item(ui-sref="movie") Movie
-
-div.w3-container
-   p example
+      div.menu
+         a(ui-sref="book") Book
+         a(ui-sref="movie") Movie
+      h2 LATEST NOTES
+      div.list
+         div(ng-repeat="note in notes")
+            h4 {{note.title}}
+            div.pre.excerpt {{note.content}}
+            p [excerpt]

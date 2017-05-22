@@ -10,11 +10,15 @@ import ngStorage from 'ngstorage';
 import ngLocalStorage from 'angular-local-storage';
 import satellizer from 'satellizer';
 
+import Filters from './filters';
+
 import Problem from './problem';
 import Book from './book';
+import Note from './note';
 import Snippet from './snippet';
 import MongooseModule from './mongoose';
 import HomeModule from './home';
+import Services from './services';
 import CodeModule from './code';
 import HistoryModule from './history';
 import DocumentModule from './document';
@@ -24,6 +28,7 @@ import Mongoose from './pages/mongoose';
 import AuthJwt from './auth-jwt';
 import Tasks from './tasks';
 import Auth from './auth';
+import Exercise from './exercise';
 import Blog from './blog';
 import Navbar from './components/navbar';
 import Todo from './todo';
@@ -32,6 +37,8 @@ import Tutorial from './tutorial';
 // import Home from './pages/home';
 import ColorBox from './components/color-box';
 
+import Directives from './directives';
+
 import Project01Service from './services/project-01.service';
 
 import LiteServerService from './services/lite-server.service';
@@ -39,7 +46,7 @@ import LiteServerService from './services/lite-server.service';
 import AppMainNav from './directives/app-main-nav';
 import AppModelJson from './directives/app-model-json';
 import AppTime from './directives/app-time';
-import AppEditor from './directives/editor';
+// import AppEditor from './directives/editor';
 
 import AppConfig from './app.config';
 import AppRun from './app.run';
@@ -50,8 +57,9 @@ var app = angular.module('app', [
    /* Home, */ Auth, AuthJwt, Blog, Tutorial, Tasks, Mongoose, Aimbooster,
    Navbar, Footer, ColorBox, Modules,
    DocumentModule, HistoryModule, HomeModule, CodeModule, MongooseModule,
-   AppMainNav, Book, Problem, AppTime, AppEditor, Snippet,
-   Todo, AppModelJson
+   AppMainNav, Book, Problem, AppTime, /* AppEditor, */ Snippet,
+   Todo, AppModelJson, Note, Exercise, Filters,
+   Directives, Services
 ]);
 
 app.run(AppRun);

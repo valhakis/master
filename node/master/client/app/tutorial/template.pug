@@ -1,0 +1,14 @@
+app-main-nav
+div.main
+   h1 TUTORIAL
+   div.menu
+      a(ui-sref-active="active", ui-sref="tutorial.index") Index
+      a(ui-sref-active="active", ui-sref="tutorial.create") Create
+      a(ui-sref-active="active", ui-sref="tutorial.list") List
+      a(ui-sref-active="active", ui-sref="tutorial.removed") Removed
+      // a(ui-sref-active="active", ui-sref="tutorial.edit") Edit
+      // a(ui-sref-active="active", ui-sref="tutorial.edit") Single
+   div.content
+      ui-view
+
+app-main-footer

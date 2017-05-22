@@ -8,6 +8,8 @@ div.list
       app-model-json.hide(object="todo")
       button(ng-if="!todo.finishedAt", ng-click="setDone(todo)") SET DONE
       button(ng-if="todo.finishedAt", ng-click="setNotDone(todo)") OOPS, NOT DONE YET
+      button(ng-click="removeTodo(todo)") REMOVE
+      button(ui-sref="todo.single({todoId: todo._id})") OPEN
       div(ng-if="todo.finishedAt")
          p Finished At 
             i {{todo.finishedAt}}

@@ -329,6 +329,7 @@ bootstrap-editor {
          // outline: 1px solid $dark;
       }
       &.active {
+         transition: all 0.5s;
          background-color: $electricBlue;
       }
       &:focus {
@@ -344,13 +345,13 @@ bootstrap-editor {
    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
    & > p {
       padding: 20px;
-      label, input {
+      label, input, textarea {
          display: block;
          width: 100%;
       }
       label {
       }
-      input {
+      input, textarea {
          border: 1px solid $blueJeans;
          padding: 6px 4px;
       }
@@ -371,6 +372,14 @@ bootstrap-editor {
 }
 
 .list {
+   .pre {
+      white-space: pre;
+   }
+   .excerpt {
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+   }
    & > div {
       h1, h2, h3, h4, h5, h6 {
 
@@ -418,4 +427,23 @@ bootstrap-editor {
 pre code, code.code {
    font-family: 'Roboto Mono', monospace;
    font-size: 14px;
+}
+
+div.main {
+   background-color: $white;
+   padding-bottom: 20px;
+   // width: 1000px;
+   //width: 100%;
+   // min-width: 200px;
+   margin: 10px auto;
+   padding: 10px;
+   display: block;
+   min-width: 400px;
+   max-width: 1000px;
+   border: 5px solid $black;
+   @media (min-width: 900px) {
+      // background-color: red;
+   }
+   .content {
+   }
 }

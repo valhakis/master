@@ -1,0 +1,12 @@
+h4 LIST OF TUTORIALS
+div.list
+   div(ng-repeat="tutorial in vm.tutorials | orderBy:'-createdAt'")
+      h4 {{tutorial.name ? tutorial.name : 'HAS NO NAME'}}
+      div.buttons
+         button(onclick="this.nextSibling.classList.toggle('hide')") Show Json
+         app-code.hide(object="tutorial", language="json")
+         button Edit
+         button(ui-sref="tutorial.single({tutorialId: tutorial._id})") Open
+         button(ng-if="!tutorial.removedAt", ng-click="vm.removeTutorial(tutorial)") Remove
+         button(ng-if="tutorial.removedAt", ng-click="vm.recoverTutorial(tutorial)") Recover
+         button(ng-if="tutorial.removedAt", ng-click="vm.removePermanently(tutorial)") Remove Permanently

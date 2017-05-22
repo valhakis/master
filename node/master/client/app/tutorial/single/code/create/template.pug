@@ -1,0 +1,10 @@
+h5 CREATE CODE
+form.form(ng-submit="vm.createCode(vm.code)")
+   p
+      label TITLE
+      input(ng-model="vm.code.title")
+   p
+      label BODY
+      app-editor(bind="vm.code.body", language="javascript")
+   p
+      button(type="submit") CREATE

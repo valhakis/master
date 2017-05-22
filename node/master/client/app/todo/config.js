@@ -16,10 +16,27 @@ module.exports = function config($stateProvider) {
          template: require('./create/template.pug')(),
          controller: require('./create/controller')
       })
+      .state('todo.removed', {
+         url: '/removed',
+         template: require('./removed/template.pug')(),
+         controller: require('./removed/controller'),
+         controllerAs: 'vm'
+      })
       .state('todo.list', {
          url: '/list',
          template: require('./list/template.pug')(),
          controller: require('./list/controller')
+      })
+      .state('todo.single', {
+         url: '/single/{todoId}',
+         template: require('./single/template.pug')(),
+         controller: require('./single/controller'),
+         controllerAs: 'vm',
+         resolve: {
+            todo: function(Todo, $transition$) {
+               return Todo.findById($transition$.params().todoId);
+            }
+         }
       })
    ;
 };

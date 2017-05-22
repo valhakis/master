@@ -1,0 +1,17 @@
+h2 SINGLE TUTORIAL
+
+div.w3-container
+   h3 {{ tutorial.name ? tutorial.name : 'HAS NO NAME' }}
+   div.menu(style="margin-bottom: 10px;")
+      a(ui-sref-active="active", ui-sref="tutorial.single.index") Index
+      a(ui-sref-active="active", ui-sref="tutorial.single.code") Code
+
+   div.content
+      ui-view
+
+   //app-editor(language="code.language", bind="code.body")
+   //app-code(language="code.language", body="code.body")
+
+   //button(ng-click="addCode(code)") Add
+
+// pre(language="", bind="code.body")

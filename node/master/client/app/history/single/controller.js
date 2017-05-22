@@ -64,7 +64,7 @@ module.exports = function($state, $http, $scope, history) {
    $scope.removeCode = function(code) {
       $http.delete(`/api/histories/${history._id}/codes/${code._id}`).then(function(res) {
          $scope.updateHistory();
-         console.log(res.data);
+         // console.log(res.data);
       });
    };
 

@@ -1,0 +1,11 @@
+h2 EDIT CODE
+
+form.form(ng-submit="vm.updateCode(vm.code)")
+   p 
+      label TITLE
+      input(ng-model="vm.code.title")
+   p
+      label BODY
+      app-editor(bind="vm.code.body")
+   p
+      button(type="submit") UPDATE

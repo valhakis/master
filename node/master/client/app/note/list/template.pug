@@ -1,0 +1,8 @@
+h2 LIST
+
+div.list
+   div(ng-repeat="note in notes")
+      p {{ 'sample data' | linebreaks }}
+      h4 {{ note.title ? note.title : 'NOTE HAS NO TITLE'}}
+      div.pre(style="margin-bottom: 20px;") {{ (note.content ? note.content : 'NOTE HAS NO CONTENT') | linebreaks}}
+      button(ng-click="removeNote(note)") Remove

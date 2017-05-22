@@ -1,6 +1,10 @@
 app-main-nav
-div.w3-container
-   div.w3-panel.w3-white
-      h1 PROBLEM
+div.main
+   h1 PROBLEM
+   div.menu
+      a(ui-sref-active="active", ui-sref="problem.index") Index
+      a(ui-sref-active="active", ui-sref="problem.create") Create
+      a(ui-sref-active="active", ui-sref="problem.list") List
+   div.content
       ui-view
 app-main-footer

@@ -4,13 +4,13 @@ module.exports = function controller($scope, $http) {
    $scope.mongooses = [];
 
    $http.get('/api/mongoose').then(function(res) {
-      console.log(res.data);
+      // console.log(res.data);
    });
 
    $scope.updateMongooses = function() {
       $http.get('/api/mongooses').then(function(res) {
          $scope.mongooses = res.data;
-         console.log(res.data);
+         // console.log(res.data);
       });
    };
 

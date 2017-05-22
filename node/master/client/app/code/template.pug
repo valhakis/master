@@ -12,14 +12,17 @@ app-main-nav
 
 br
 
-div#content.w3-container
+div.main
    div.w3-container.w3-white
       h1 CODE
 
-      div.w3-bar.w3-light-gray
-         a.w3-bar-item.w3-btn(ui-sref-active="active" ui-sref="code.index") INDEX
-         a.w3-bar-item.w3-btn(ui-sref-active="active" ui-sref="code.create") CREATE
+      div.menu
+         a(ui-sref-active="active" ui-sref="code.index") INDEX
+         a(ui-sref-active="active" ui-sref="code.create") CREATE
+         a(ui-sref-active="active" ui-sref="code.list") LIST
+         a(ui-sref-active="active" ui-sref="code.removed") REMOVED
 
-      ui-view
+      div.content
+         ui-view
 
 app-main-footer

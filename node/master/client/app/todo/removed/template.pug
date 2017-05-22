@@ -1,0 +1,11 @@
+h2 REMOVED TODOS
+
+div.list
+   div(ng-repeat="todo in vm.todos")
+      div.buttons
+         button.tag.w3-red(ng-click="vm.removePermanently(todo)", ng-init="sample1='HAS BEEN REMOVED'", ng-mouseout="sample1='HAS BEEN REMOVED'", ng-mouseover="sample1='REMOVE PERMANENTLY'") {{ sample1 }}
+         button.tag.w3-blue(ng-click="vm.recoverTodo(todo)") RECOVER
+      h6 {{ todo.text }}
+
+// app-code(object="vm.todos", language="json")
+

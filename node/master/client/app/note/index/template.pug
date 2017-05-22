@@ -1,0 +1,9 @@
+h2 INDEX
+
+h3 LATEST 5 NOTES
+
+div.list
+   div(ng-repeat="note in notes | orderBy:'-createdAt' | limitTo:5")
+      h4 {{ note.title ? note.title : 'NOTE HAS NO TITLE'}}
+      div.pre.excerpt(style="margin-bottom: 20px;") {{ note.content ? note.content : 'NOTE HAS NO CONTENT'}}
+      div [excerpt]

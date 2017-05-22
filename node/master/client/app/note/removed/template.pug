@@ -1,0 +1,9 @@
+h2 LIST OF REMOVED NOTES
+
+div.list
+   div(ng-repeat="note in vm.notes")
+      h4 {{ note.title ? note.title : 'NOTE HAS NO TITLE'}}
+      div {{ note.content ? note.content : 'NOTE HAS NO CONTENT'}}
+      p(style="margin-top: 20px") RemovedAt: 
+         i {{note.removedAt | date:'d.M.yyyy | HH:mm:ss'}}
+      button(ng-click="vm.removeNotePermanently(note)") Remove Permanently

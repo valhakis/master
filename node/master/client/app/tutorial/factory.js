@@ -1,0 +1,63 @@
+module.exports = function TutorialFactory($http) {
+   var factory = {};
+
+   var handleError = function(res) {
+      console.log(res.data);
+   };
+
+   factory.remove = function(tutorial) {
+      return $http.delete(`/api/tutorials/${tutorial._id}`).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.destroy = function(tutorial) {
+      return $http.delete(`/api/tutorials/${tutorial._id}?destroy=true`).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.recover = function(tutorial) {
+      return $http.put(`/api/tutorials/${tutorial._id}/recover`).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.findById = function(tutorialId) {
+      return $http.get(`/api/tutorials/${tutorialId}`).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.findRemoved = function() {
+      return $http.get('/api/tutorials?removed=true').then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.findAll = function() {
+      return $http.get('/api/tutorials').then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.create = function(tutorial) {
+      return $http.post('/api/tutorials', tutorial).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.single = function(tutorialId) {
+      return $http.get(`/api/tutorials/${tutorialId}`).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   factory.createCode = function(tutorialId, code) {
+      return $http.post(`/api/tutorials/${tutorialId}/codes`, code).then(function(res) {
+         return res.data;
+      }, handleError);
+   };
+
+   return factory;
+};
