@@ -1,6 +1,6 @@
 import angular from 'angular';
 
 export default angular
-  .module('app.movie', [])
+  .module('app.bootstrap', [])
   .config(require('./config'))
   .name;

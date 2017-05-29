@@ -6,6 +6,7 @@ module.exports = function(router) {
   router.get('/tutorials', controller.findAll);
   router.post('/tutorials', controller.create);
   router.post('/tutorials/:tutorialId/codes', controller.createPost);
+  router.post('/tutorials/:tutorialId/notes', controller.createNote);
   router.delete('/tutorials/:tutorialId', controller.remove);
   router.put('/tutorials/:tutorialId/recover', controller.recover);
   router.get('/tutorials/:tutorialId/codes/:codeId', controller.singleCode);
@@ -17,6 +18,19 @@ controller.createPost = function(req, res) {
   }, {
     $push: {
       codes: req.body
+    }
+  }, function(err, tutorial) {
+    if (err) return res.status(500).send(err);
+    res.send(tutorial);
+  });
+};
+
+controller.createNote = function(req, res) {
+  Tutorial.findOneAndUpdate({
+    _id: req.params.tutorialId
+  }, {
+    $push: {
+      notes: req.body
     }
   }, function(err, tutorial) {
     if (err) return res.status(500).send(err);

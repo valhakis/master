@@ -1,7 +1,7 @@
 module.exports = function config($stateProvider) {
   $stateProvider
-    .state('movie', {
-      url: '/movie',
+    .state('bootstrap', {
+      url: '/bootstrap',
       template: require('./template.html')
     });
 };

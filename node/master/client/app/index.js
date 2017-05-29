@@ -14,6 +14,8 @@ import Filters from './filters';
 
 import Problem from './problem';
 import Book from './book';
+import Movie from './movie';
+import Bootstrap from './bootstrap';
 import Note from './note';
 import Snippet from './snippet';
 import MongooseModule from './mongoose';
@@ -59,7 +61,7 @@ var app = angular.module('app', [
    DocumentModule, HistoryModule, HomeModule, CodeModule, MongooseModule,
    AppMainNav, Book, Problem, AppTime, /* AppEditor, */ Snippet,
    Todo, AppModelJson, Note, Exercise, Filters,
-   Directives, Services
+   Directives, Services, Movie, Bootstrap
 ]);
 
 app.run(AppRun);

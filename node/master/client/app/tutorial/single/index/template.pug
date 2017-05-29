@@ -1,5 +1,17 @@
 h5 TUTORIAL SINGLE INDEX PAGE
 
-tutorial-single-code-latest(tutorial-id="tutorial._id")
+// tutorial-single-code-latest(tutorial-id="tutorial._id")
+
+h6 LIST OF CODES
+div.list
+  div(ng-repeat="code in vm.codes")
+    h6 {{ code.title }}
+    app-code(bind="code.body", language="code.language")
+
+h6 LIST OF NOTES
+div.list
+  div(ng-repeat="note in vm.notes")
+    h6 {{ note.title }}
+    div {{ note.content }}
 
 ui-view

@@ -1,23 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <base href="/site/">
-      <meta charset="UTF-8">
-      <title>Site</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <div class="menu">
-         <a href="..">Master</a>
-         <a href="01/">01</a>
-         <a href="HTML-Canvas/">HTML-Canvas</a>
-         <a href="WebGL/">WebGL</a>
-         <a href="W3-Game/">W3 Game</a>
-      </div>  
+  <head>
+    <base href="/site/">
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="menu">
+      <a href="..">Master</a>
+      <a href="01/">01</a>
+      <a href="HTML-Canvas/">HTML-Canvas</a>
+      <a href="WebGL/">WebGL</a>
+      <a href="W3-Game/">W3 Game</a>
+    </div>  
 
-      <h1>Site</h1>
+    <h1>Site</h1>
 
-      <script src="/jquery/dist/jquery.js"></script>
-      <script src="app.js"></script>
-   </body>
+    <style>
+      #calculator {
+        width: 200px;
+      }
+      #calculator button.num {
+        background-color: red;
+        width: 25%;
+        border: 1px solid #000;
+      }
+      #calculator button.other {
+        width: 50%;
+        border: 1px solid #000;
+      }
+      #calculator #display {
+        background-color: blue;
+        min-height: 20px;
+        border: 1px solid #000;
+      }
+    </style>
+
+    <div id="calc1"></div>
+
+    <div id="calculator"></div>
+
+    <div id="calcBod">
+      <div id="display"><p id="displayTxt"></p></div>
+      <div id="numBtns">
+        <div id="buttonsRow1">
+          <button id="Btn1">1</button>
+          <button id="Btn2">2</button>
+          <button id="Btn3">3</button>
+          <button id="plusBtn">+</button>
+        </div>
+        <div id="buttonsRow2">
+          <button id="Btn4">4</button>
+          <button id="Btn5">5</button>
+          <button id="Btn6">6</button>
+          <button id="minBtn">-</button>
+        </div>
+        <div id="buttonsRow3">
+          <button id="Btn7">7</button>
+          <button id="Btn8">8</button>
+          <button id="Btn9">9</button>
+          <button id="multBtn">x</button>
+        </div>
+        <div id="buttonsRow4">
+          <button id="decBtn">.</button>
+          <button id="Btn0">0</button>
+          <button id="eqlBtn">=</button>
+          <button id="divBtn">÷</button>
+        </div>
+        <div id="clrDel">
+          <button id="delBtn">Delete</button>
+          <button id="clrBtn">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="app.js"></script>
+    <script src="calculator.js"></script>
+  </body>
 </html>

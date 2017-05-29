@@ -3,57 +3,14 @@
   <head>
     <base href="/site/01/">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>01</title>
   </head>
   <body>
 
-    <!-- color -->
-    <form>
-      Select color: <input type="color" name="color" value="#fff">
-    </form>
+    <canvas id="canvas"></canvas>
 
-    <!-- date -->
-    <form>
-      Birthday: <input type="date" name="bday">
-    </form>
-
-    <!-- date with restrictions -->
-    <form>
-      Start date: <input type="date" name="bday" max="2000-01-01">
-      End date: <input type="date" name="bday" min="2018-01-01">
-    </form>
-
-    <!-- datetime-local -->
-    <form>
-      Birthday (date and time): <input type="datetime-local" name="bday">
-    </form>
-
-    <!-- email -->
-    <form>
-      E-mail: <input type="email" name="email">
-    </form>
-
-    <!-- month (month and year) -->
-    <form>
-      Birthday (month and year) <input type="month" name="bdaymonth">
-    </form>
-
-    <!-- number -->
-    <form>
-      Quantity (between 1 and 20) <input type="number" name="quantity" min="1" max="20" step="5" value="10">
-    </form>
-
-    <!-- restrictions -->
-    <!-- disabled -->
-    <!-- max -->
-    <!-- maxlength -->
-    <!-- min -->
-    <!-- pattern (reqular experssion) -->
-    <!-- readonly -->
-    <!-- required -->
-    <!-- size -->
-    <!-- step -->
-    <!-- value -->
-
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

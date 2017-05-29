@@ -30,6 +30,8 @@ var request = require('request');
 var http = require('http');
 var config = require('./config');
 
+var db = require('./database').db;
+
 var app = require('./app');
 
 var host;
@@ -59,26 +61,30 @@ if (process.env.NODE_ENV === 'development') {
 
 var server = http.createServer(app);
 
+// Connect to sequelize database
+// ===========================================================
+db.sync().then(() => {
 // Connect to mongo database.
 // ===========================================================
-mongoose.connect(config.mongo.url, function(err) {
-   if (err) {
+  mongoose.connect(config.mongo.url, function(err) {
+    if (err) {
       throw err;
-   }
-   server.listen(port, host, function() {
+    }
+    server.listen(port, host, function() {
       console.log(`server at ${host}:${port}. [${process.env.NODE_ENV}]`);
 
       if (process.env.NODE_ENV === 'development') {
-         // RELOAD BROWSER-SYNC
-         /*
+        // RELOAD BROWSER-SYNC
+        /*
       request(`http://192.168.0.2:3000/__browser_sync__?method=reload`, function(err, res, body) {
          if (err) return console.log(err);
       });
       */
-         request(`http://${config['browser-sync'].host}:${config['browser-sync'].port}/__browser_sync__?method=reload`, function(err, res, body) {
-            if (err) return console.log(`BROWSER-SYNC: ${err.message}`);
-         });
+        request(`http://${config['browser-sync'].host}:${config['browser-sync'].port}/__browser_sync__?method=reload`, function(err, res, body) {
+          if (err) return console.log(`BROWSER-SYNC: ${err.message}`);
+        });
       }
 
-   });
+    });
+  });
 });

@@ -65,5 +65,11 @@ module.exports = function TutorialFactory($http) {
     }, handleError);
   };
 
+  factory.createNote = function(tutorialId, note) {
+    return $http.post(`/api/tutorials/${tutorialId}/notes`, note).then(function(res) {
+      return res.data;
+    }, handleError);
+  };
+
    return factory;
 };
