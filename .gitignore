@@ -1,6 +1,6 @@
 node_modules
 bower_components
 /.env
-/node/master/dist/
+/node/master/dist
 
 /vendor/

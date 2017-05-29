@@ -26,6 +26,7 @@ exports.start = function() {
       `${App.root}/php-site/public/**/*.{html,js,css,php}`,
       `${App.root}/site/**/*.{html,js,css}`,
       `${App.root}/server/views/**/*.pug`,
+      `${App.root}/server/sample/**/*.mu`,
       `${App.root}/dist/**/*.html`,
       `${App.root}/dist/**/*.js`,
       `!${App.root}/dist/report.html`

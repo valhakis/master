@@ -1,0 +1,5 @@
+exit        -> exits the program 
+start game  -> starts the game 
+note app    -> start note app
+XApp        -> start XApp
+XApp        -> start XApp
