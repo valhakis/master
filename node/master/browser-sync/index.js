@@ -24,6 +24,7 @@ exports.start = function() {
    // bs.watch(`${App.root}/dist/**/*.html`).on('change', bs.reload);
    bs.watch([
       `${App.root}/server/views/**/*.pug`,
+      `${App.root}/server/sample/**/*.mu`,
       `${App.root}/dist/**/*.html`,
       `${App.root}/dist/**/*.js`,
       `!${App.root}/dist/report.html`
