@@ -4,7 +4,16 @@ form.form(ng-submit="vm.createCode(vm.code)")
       label TITLE
       input(ng-model="vm.code.title")
    p
+      label LANGUAGE
+      select(ng-model="vm.code.language")
+         option(value="javascript") Javascript
+         option(value="php") PHP
+         option(value="c") C
+         option(value="c++") C++
+         option(value="makefile") Makefile
+         option(value="html") HTML
+   p
       label BODY
-      app-editor(bind="vm.code.body", language="javascript")
+      app-editor(bind="vm.code.body", mode="vm.code.language")
    p
       button(type="submit") CREATE

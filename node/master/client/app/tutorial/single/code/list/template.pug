@@ -1,11 +1,15 @@
 h5 CODE LIST PAGE
 
 div.list
-   div(ng-repeat="code in vm.codes")
-      h6 {{ code.title }}
-      app-code(bind="code.body", language="javascript")
-      div.buttons(style="margin-top: 10px;")
-         button(ng-click="vm.runCode(code)") RUN CODE
+  div(ng-repeat="code in vm.codes")
+     h6 {{ code.title }}
+     app-code(bind="code.body", language="code.language")
+     div.buttons(style="margin-top: 10px;")
+        button(ng-click="vm.runCode(code)") RUN CODE
+        button(onclick="this.nextSibling.classList.toggle('hide')") VIEW CODE OBJECT
+        app-code.hide(object="code", language="json")
+        button(ui-sref="tutorial.single.code.edit({codeId: code._id})") EDIT
+
 
 //h6 LATEST CODES
 //tutorial-single-code-latest(tutorial-id="vm.tutorial._id")

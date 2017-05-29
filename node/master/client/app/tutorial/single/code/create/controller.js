@@ -6,7 +6,8 @@ module.exports = function controller(Tutorial, tutorial) {
    vm.resetCode = function() {
       vm.code = {
          title: '',
-         body: ''
+         body: '',
+         language: 'javascript'
       };
    };
 

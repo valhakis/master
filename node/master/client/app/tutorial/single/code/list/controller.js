@@ -1,8 +1,15 @@
-module.exports = function controller(tutorial, Run) {
+module.exports = function controller(Tutorial, tutorial, Run) {
    var vm = {};
 
    vm.codes = tutorial.codes;
    vm.tutorial = tutorial;
+
+   vm.updateTutorial = function() {
+      Tutorial.findById(tutorial._id).then(function(tutorial) {
+         vm.tutorial = tutorial;
+         vm.codes = tutorial.codes;
+      });
+   };
 
    vm.runCode = function(code) {
       Run
@@ -14,5 +21,6 @@ module.exports = function controller(tutorial, Run) {
          });
    };
 
+   vm.updateTutorial();
    return vm;
 };

@@ -6,6 +6,7 @@ var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
 const readline = require('readline');
 var browserSync = App.rootRequire('browser-sync');
+var phpSite = App.rootRequire('php-site');
 
 const rl = readline.createInterface({
    input: process.stdin,
@@ -79,6 +80,7 @@ if (!argument) { // jshint ignore:line
       console.log('root permissions are required for development.');
    } else { // jshint ignore:line
       // App.rootRequire('browser-sync');
+      phpSite.start();
       browserSync.start();
 
       nodemon.start();

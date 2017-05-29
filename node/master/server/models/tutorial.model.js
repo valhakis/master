@@ -10,7 +10,8 @@ var TutorialSchema = new Schema({
    },
    codes: [{
       title: String,
-      body: String
+      body: String,
+      language: String
    }],
    createdAt: {
       type: Date,

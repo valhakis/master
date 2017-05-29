@@ -23,6 +23,7 @@ console.log = function(minions) {
 };
 */
 
+var express = require('express');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var request = require('request');
@@ -47,8 +48,16 @@ if (process.env.NODE_ENV === 'development') {
    port = config.production.port;
 }
 
-var server = http.createServer(app);
+//var router = express.Router();
+//router.use('**', function(req, res) {
+   //proxy.web(req, res, { target: 'http://192.168.0.2:4500' });
+//});
+//app.use('/php-site', router);
 
+
+// httpProxy.createProxyServer({ target: 'http://192.168.0.2:4500' }).listen(8000);
+
+var server = http.createServer(app);
 
 // Connect to mongo database.
 // ===========================================================

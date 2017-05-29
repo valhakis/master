@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+require('../globals');
+
+var spawn = require('child_process').spawn;
+
+spawn('nodemon', [], {
+  stdio: 'inherit',
+  cwd: App.path('server')
+});
+
+App.require('server/browser-sync');
+//App.require('server');

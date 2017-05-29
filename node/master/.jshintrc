@@ -79,7 +79,6 @@
       "jade": true,
       "hljs": true,
       "html_beautify": true,
-      "ace": true,
       "App": true,
       "DevAdmin": true,
       "io": true,

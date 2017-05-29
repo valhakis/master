@@ -1,3 +1,5 @@
+import ace from 'brace';
+
 export default function EditorDirective() {
    return {
       template: 'This is editor directive.',

@@ -59,5 +59,11 @@ module.exports = function TutorialFactory($http) {
       }, handleError);
    };
 
+  factory.findCodeById = function(tutorialId, codeId) {
+    return $http.get(`/api/tutorials/${tutorialId}/codes/${codeId}`).then(function(res) {
+      return res.data;
+    }, handleError);
+  };
+
    return factory;
 };

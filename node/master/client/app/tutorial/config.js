@@ -65,7 +65,13 @@ module.exports = function config($stateProvider) {
          url: '/create',
          controller: require('./single/code/create/controller'),
          controllerAs: 'vm',
-         template: require('./single/code/create/template.pug')
+         template: require('./single/code/create/template.pug')()
+      })
+      .state('tutorial.single.code.edit', {
+         url: '/edit/{codeId}',
+         controller: require('./single/code/edit/controller'),
+         controllerAs: 'vm',
+         template: require('./single/code/edit/template.pug')()
       })
    ;
 };

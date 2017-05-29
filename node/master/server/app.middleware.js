@@ -38,7 +38,9 @@ module.exports = function(app) {
    app.use('/node_modules', express.static(GET.root('node_modules')));
    app.use('/bower_components', express.static(GET.root('bower_components')));
    app.use('/public', express.static(GET.server('public')));
+   app.use(['/static', '/public'], express.static(GET.base('public')));
    app.use('/', express.static(GET.base('dist')));
+   app.use('/site', express.static(GET.base('site')));
 
    // app.use(morgan('combined'));
 

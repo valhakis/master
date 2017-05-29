@@ -74,7 +74,8 @@
 
    "globals"       : {
       "angular": true,
-      "ReactDOM": true
+      "ReactDOM": true,
+      "App": true
    }        
 }
 

@@ -7,9 +7,21 @@ import 'highlight.js/styles/agate.css';
 require('brace/mode/javascript');
 require('brace/mode/c_cpp');
 require('brace/mode/html');
+require('brace/mode/makefile');
 require('brace/mode/css');
+require('brace/mode/php');
 require('brace/theme/monokai');
 require('brace/keybinding/vim');
+
+var modes = [
+   'javascript',
+   'c', 
+   'html', 
+   'css',
+   'makefile',
+   'php',
+   'c_cpp'
+];
 
 import jsBeautify from 'js-beautify';
 
@@ -32,7 +44,8 @@ module.exports = function directive($timeout) {
       template: '',
       scope: {
          'bind': '=',
-         'mode': '@'
+         'mode': '=',
+         'language': '='
       },
       //template: `
       //{{ ::$id }}
@@ -89,6 +102,20 @@ module.exports = function directive($timeout) {
          }
          editor.on('change', function() {
             scope.bind = editor.getValue();
+         });
+         scope.$watch('mode', function(newValue) {
+            if (newValue == 'c') {
+               newValue = 'c_cpp';
+            } 
+            if (newValue == 'c++') {
+               newValue = 'c_cpp';
+            }
+            if (modes.indexOf(newValue) == -1) {
+               console.log('This mode is not supported.');
+            } else {
+               editor.getSession().setMode(`ace/mode/${newValue}`);
+            }
+            console.log(newValue);
          });
       }
    };

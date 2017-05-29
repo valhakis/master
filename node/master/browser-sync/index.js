@@ -23,6 +23,8 @@ exports.start = function() {
 
    // bs.watch(`${App.root}/dist/**/*.html`).on('change', bs.reload);
    bs.watch([
+      `${App.root}/php-site/public/**/*.{html,js,css,php}`,
+      `${App.root}/site/**/*.{html,js,css}`,
       `${App.root}/server/views/**/*.pug`,
       `${App.root}/dist/**/*.html`,
       `${App.root}/dist/**/*.js`,

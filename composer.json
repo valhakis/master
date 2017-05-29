@@ -1,0 +1,12 @@
+{
+    "name": "root/master",
+    "authors": [
+        {
+            "name": "valhakis",
+            "email": "william.valhakis@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.8"
+    }
+}

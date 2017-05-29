@@ -5,8 +5,16 @@ form(ng-submit="createCode(code)")
       label TITLE
       input.w3-input(ng-model="code.title")
    p
+      label(style="margin-right: 10px;") LANGUAGE
+      select(ng-model="code.language")
+         option(value="javascript") Javascript
+         option(value="php") PHP
+         option(value="c") C
+         option(value="c++") C++
+         option(value="makefile") Makefile
+   p
       label EDITOR
-      app-editor(bind="code.body")
+      app-editor(bind="code.body", mode="code.language")
    p
       button.w3-btn CREATE
 
