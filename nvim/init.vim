@@ -5,6 +5,7 @@ Plug 'https://github.com/embear/vim-localvimrc'
 Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
 Plug 'https://github.com/sickill/vim-monokai'
 Plug 'https://github.com/briancollins/vim-jst'
+Plug 'https://github.com/mustache/vim-mustache-handlebars'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/nikvdp/ejs-syntax'
 Plug 'https://github.com/tomasr/molokai'
@@ -78,7 +79,7 @@ set directory=~/.vim/swp/
 
 set nowrap
 
-set tabstop=3 shiftwidth=3 softtabstop=3 expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set incsearch hlsearch
 
 set splitbelow
@@ -131,6 +132,7 @@ let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
+let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
 
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
@@ -165,9 +167,8 @@ let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
 " let g:syntastic_c_compiler = 'i686-w64-mingw32-gcc'
 "let g:syntastic_cpp_compiler = 'i686-w64-mingw32-g++'
 "let g:syntastic_cpp_compiler = '/usr/bin/i686-w64-mingw32-g++'
-let g:syntastic_cpp_compiler = 'g++'
+"let g:syntastic_cpp_compiler = 'g++'
 
-au filetype c map \mr :w \| !make && make run <cr>
 if has('nvim')
    " au filetype java map \mr :w \| Term make && make run <cr>
    " au filetype cpp map \mr :w \| Term make && make run <cr>
@@ -177,7 +178,11 @@ if has('nvim')
    "au filetype c map \mr :w \| Term make && ./app <cr>
    "au filetype c map ,mr :w \| :terminal make && ./app <cr>
    "au filetype c map \mr :w \| :terminal make && ./app <cr>
+au filetype c map \mr :w \| Term make && make run <cr>
+au filetype cpp map \mr :w \| Term make && make run <cr>
 else
+au filetype c map \mr :w \| !make && make run <cr>
+au filetype cpp map \mr :w \| !make && make run <cr>
    "au filetype c map ,mr :w \| !make && ./app <cr>
    "au filetype c map \mr :w \| !make && ./app <cr>
 endif
@@ -193,60 +198,12 @@ nmap qq :q <cr>
 nmap ,install :w \| so % \| PlugInstall <cr>
 nmap ,clean :w \| so % \| PlugClean <cr>
 
-" HIGHLIGHT
-" ===================================================================================
-
-
-"colorscheme molokai
-"colorscheme monokai
-"if has('nvim')
-   " colorscheme monokai
-"else
-   " colorscheme monokai
-"endif
-
-hi comment ctermfg=red guibg=#ff0000
-hi Search ctermfg=red ctermbg=none
-
-if has('nvim')
-   hi Visual guibg=#222222 guifg=none
-endif
-
-hi Todo guifg=red ctermfg=red
-
-hi Visual ctermbg=160
-hi Pmenu ctermfg=160 ctermbg=none
-if has('nvim')
-   hi PmenuSel ctermfg=red
-endif
-
-if has('nvim')
-   set termguicolors
-endif
-highlight Comment ctermfg=red
-hi TabLine guifg=#ffffff guibg=#333333
-hi Search guibg=#111111 guifg=#ff2222
-
-" highlight link SyntasticErrorSign SignColumn
-" highlight link SyntasticWarningSign SignColumn
-" highlight link SyntasticStyleErrorSign SignColumn
-" highlight link SyntasticStyleWarningSign SignColumn
-
-
-"hi nonText ctermbg=none
-"hi normal ctermbg=0 guibg=#FFFF
-
-if has('nvim')
-   hi Pmenu guibg=#111111 guifg=#FFFFFF
-   hi PmenuSel guibg=#222222 guifg=#FFCCCC
-endif
-
-set background=dark
-
 let g:indentLine_enabled = 1
 
 let g:neocomplete#enable_at_startup = 1
 
+au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
+au BufRead,BufNewFile *.mu set filetype=html.mustache syntax=html.mustache
 au BufRead,BufNewFile .jshintrc set filetype=json syntax=json
 au BufRead,BufNewFile app set filetype=javascript syntax=javascript
 au BufRead,BufNewFile .babelrc set filetype=json syntax=json
@@ -346,5 +303,45 @@ endfunction
 
 let g:js_indent_log = 0
 "colorscheme monokai
-colorscheme badwolf
+"colorscheme badwolf
+colorscheme 0x7A69_dark
+
+" HIGHLIGHT
+" ===================================================================================
+
+
+"colorscheme molokai
+"colorscheme monokai
+"if has('nvim')
+   " colorscheme monokai
+"else
+   " colorscheme monokai
+"endif
+
+set background=dark
+"hi comment ctermfg=red guibg=#ff0000
+hi Search ctermfg=red ctermbg=none
+hi Todo guifg=red ctermfg=red
+hi Visual ctermbg=160
+hi Pmenu ctermfg=160 ctermbg=none
+if has('nvim')
+   hi PmenuSel ctermfg=red
+   hi Visual guibg=#222222 guifg=none
+   set termguicolors
+   hi Pmenu guibg=#111111 guifg=#FFFFFF
+   hi PmenuSel guibg=#222222 guifg=#FFCCCC
+endif
+highlight Comment ctermfg=red
+hi TabLine guifg=#ffffff guibg=#333333
+hi Search guibg=#111111 guifg=#ff2222
+
+" highlight link SyntasticErrorSign SignColumn
+" highlight link SyntasticWarningSign SignColumn
+" highlight link SyntasticStyleErrorSign SignColumn
+" highlight link SyntasticStyleWarningSign SignColumn
+
+
+"hi nonText ctermbg=none
+"hi normal ctermbg=0 guibg=#FFFF
+
 
