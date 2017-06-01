@@ -447,3 +447,17 @@ div.main {
    .content {
    }
 }
+
+.app-pre {
+  display: block;
+  white-space: pre;
+  overflow: auto;
+  word-wrap: normal;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
+
+
+textarea {
+  all: revert;
+}

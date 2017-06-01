@@ -1,0 +1,12 @@
+#directive-page {
+  border: 2px solid #000;
+  app-main-nav, app-main-footer, #content {
+    display: block;
+    border: 2px solid #000;
+    margin: 5px;
+  }
+  #content {
+    padding: 10px;
+    background-color: #FFF;
+  }
+}

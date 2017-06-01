@@ -1,0 +1,53 @@
+<div id="node-main">
+  <app-main-nav></app-main-nav>
+
+  <div id="content">
+    <h1>Node</h1>
+
+    <button class="btn btn-default" data-toggle="modal" data-target="#create-node-modal">Create Node</button>
+
+    <form class="modal fade" id="create-node-modal" role="dialog" ng-submit="node.createNode()">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3>Create Node</h3>
+            <div class="form-group">
+              <label for="node-name">Name</label>
+              <input type="text" id="node-name" class="form-control" ng-model="node.node.name">
+            </div>
+            <div class="bottom-row">
+              <button class="btn btn-default" type="submit">CREATE</button>
+              <p>Sit quas beatae?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div style="padding: 10px;"></div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <ul class="list-group col-sm-4">
+          <li class="list-group-item" ng-repeat="item in node.nodes">
+            <span>{{ item.name }}</span>
+          </li>
+        </ul>
+        <ul class="list-group col-sm-4">
+          <li class="list-group-item" ng-repeat="item in node.nodes">
+            <span>{{ item.name }}</span>
+          </li>
+        </ul>
+        <ul class="list-group col-sm-4">
+          <li class="list-group-item" ng-repeat="item in node.nodes">
+            <span>{{ item.name }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+
+  <app-main-footer></app-main-footer>
+</div>

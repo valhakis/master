@@ -111,5 +111,15 @@ module.exports = function config($stateProvider) {
       controller: require('./single/note/list/controller'),
       controllerAs: 'vm'
     })
+  /* tutorial single post routes */
+    .state('tutorial.single.post', {
+      url: '/post',
+      template: require('./single/post/template.html'),
+      redirectTo: 'tutorial.single.post.index'
+    })
+    .state('tutorial.single.post.index', {
+      url: '/index',
+      template: require('./single/post/index/template.html'),
+    })
   ;
 };

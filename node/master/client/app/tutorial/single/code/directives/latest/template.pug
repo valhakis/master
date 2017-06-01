@@ -1,5 +1,6 @@
 h6 LIST OF LATEST CODES
 
 div.list
-   div(ng-repeat="code in codes")
-      app-code(bind="code.body", language="code.language")
+  div(ng-repeat="code in codes | filter:{removedAt: null}")
+    h6 {{ code.title }}
+    app-code(bind="code.body", language="code.language")

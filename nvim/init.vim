@@ -132,7 +132,7 @@ let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
-let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
+" let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
 
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
@@ -204,6 +204,7 @@ let g:neocomplete#enable_at_startup = 1
 
 au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mu set filetype=html.mustache syntax=html.mustache
+au BufRead,BufNewFile *.ejs set filetype=jst syntax=jst
 au BufRead,BufNewFile .jshintrc set filetype=json syntax=json
 au BufRead,BufNewFile app set filetype=javascript syntax=javascript
 au BufRead,BufNewFile .babelrc set filetype=json syntax=json

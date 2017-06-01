@@ -2,16 +2,31 @@ h5 TUTORIAL SINGLE INDEX PAGE
 
 // tutorial-single-code-latest(tutorial-id="tutorial._id")
 
-h6 LIST OF CODES
-div.list
-  div(ng-repeat="code in vm.codes")
-    h6 {{ code.title }}
-    app-code(bind="code.body", language="code.language")
+div(ng-if="!vm.codes.length")
+  h6 NO CODES IN TUTORIAL
+div(ng-if="vm.codes.length")
+  h6 LIST OF CODES
+  div.list
+    div(ng-repeat="code in vm.codes | filter:{removedAt: null}")
+      h6 {{ code.title }}
+      app-code(bind="code.body", language="code.language")
 
-h6 LIST OF NOTES
-div.list
-  div(ng-repeat="note in vm.notes")
-    h6 {{ note.title }}
-    div {{ note.content }}
+div(ng-if="!vm.notes.length")
+  h6 NO NOTES IN TUTORIAL
+div(ng-if="vm.notes.length")
+  h6 LIST OF NOTES
+  div.list
+    div(ng-repeat="note in vm.notes")
+      h6 {{ note.title }}
+      div.app-pre {{ note.content }}
+
+div(ng-if="!vm.posts.length")
+  h6 NO POSTS IN TUTORIAL
+div(ng-if="vm.posts.length")
+  h6 LIST OF POSTS
+  div.list
+    div(ng-repeat="post in vm.posts")
+      h6 {{ posts.title }}
+      div {{ posts.body }}
 
 ui-view

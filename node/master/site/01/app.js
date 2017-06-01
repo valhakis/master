@@ -1,77 +1,59 @@
-/* global angular */
+angular
+  .module('app', [])
+  .controller('MainController', MainController);
 
-angular.module('app', [])
-  .controller('MainCtrl', ['$scope',
-    function ($scope) {
-      $scope.arr = [
-        {name: "XXXXXX"},
-        {name: "YYYYYY"},
-        {name: "ZZZZZZ"},
-        {name: "OOOOOO"}
-      ];
-    }
-  ])
-  .directive('bindStringModel', [
-    '$compile',
-    function ($compile) {
-      return {
-        compile: function (el, attr) {
-          el[0].removeAttribute('bind-string-model');
-          return function (scope) {
-            var stringBinding = attr.bindStringModel;
-            var tagName = el[0].nodeName.toLowerCase();
-            var tagType = el[0].type ? el[0].type.toLowerCase() : "unknown";
-            var scopeBinding = scope.$eval(stringBinding);
+function MainController($http, $scope) {
+  var vm = {};
 
-            if (scopeBinding !== undefined) {
+  vm.country = null;
 
-              if (angular.isArray(scopeBinding)) {
+  vm.getCurrentExchangeFor = {};
 
-                el[0].setAttribute('bind-string-array-model', stringBinding);
+  $scope.$watch('vm.getCurrentExchangeFor', function(newValue) {
+    console.log(newValue);
+  });
 
-              } else {
-                if (tagName === "input" || tagName === "select" || tagName === "textarea") {
+  var GetSmthing = function(year, month, day, country) {
+    day = day < 10 ? `0${day}` : day;
+    month = month < 10 ? `0${month}` : month;
+    $http.get(`http://api.fixer.io/${year}-${month}-${day}?symbols=${country}`).then(function(res) {
+      console.log(`rates: ${res.data.rates[country]}, day: ${year}-${month}-${day}`, res.data);
+      vm.getCurrentExchangeTo[day] = res.data.rates[country];
+      // console.log('vm: ', vm.getCurrentExchangeFor);
+      // console.log(res.data.rates);
+    }, function(res) {
+    });
+  };
 
-                  if (tagType === "checkbox" || tagType === "radio") {
-                    el[0].setAttribute('ng-checked', scopeBinding);
-                  } else {
-                    el[0].setAttribute('ng-model', scopeBinding);
-                  }
-                } else {
-                  el[0].innerHTML = scopeBinding;
-                }
-              }
-            } else {
-              if (tagName === "input" || tagName === "select" || tagName === "textarea") {
-                el[0].setAttribute('value', stringBinding);
-              } else {
-                el[0].innerHTML = stringBinding;
-              }
-            }
+  vm.getCurrentExchangeTo = function(year, month, country) {
+    var numberDayPerMonth = [ 31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30, ];
 
-            $compile(el[0])(scope);
-          };
+    for (var i=0; i<numberDayPerMonth.length; i++) {
+      if ((i+1) == month) {
+        for (var j=1; j<numberDayPerMonth[i]; j++) {
+          GetSmthing(year, month, j, country);
         }
-      };
+      }
     }
-  ])
-  .directive('bindStringArrayModel', [
-    '$compile',
-    function ($compile) {
-      return {
-        compile: function (el, attr) {
-          var stringArrayBinding = attr.bindStringArrayModel;
-          var index = attr.index ? attr.index : "i";
-          var alias = attr.alias ? attr.alias : "item";
-          el[0].removeAttribute('bind-string-array-model');
-          el[0].setAttribute('ng-repeat', "(" + index + "," + alias + ") in " + stringArrayBinding);
-          var compile = $compile(el[0]);
 
-          return function (scope) {
-            compile(scope);
-          };
+    /*
+    for(var i = 0; i < numberDayPerMonth.length; i++){
+      console.log(i);
+      if((i + 1) === month){
+        for(let j = 1; j < numberDayPerMonth[i]; j++){
+          $http.get('http://api.fixer.io/' + year + '-0' + month + '-0' + j +'?symbols=' + vm.country).then(function (success) {
+            let countryDay = vm.country;
+            vm.getCurrentExchangeFor[j] = success.data.rates[countryDay];
+          });
         }
-      };
+      }
     }
-  ]);
+    */
+    // return vm.getCurrentExchangeFor;
+  };
+
+  vm.getCurrentExchangeTo(2005, 1, 'USD');
+
+  return vm;
+}
 

@@ -6,11 +6,30 @@
     <link rel="stylesheet" href="style.css">
     <title>01</title>
   </head>
-  <body>
+  <body ng-app="app">
 
-    <canvas id="canvas"></canvas>
+    <div ng-controller="MainController as vm">
+    </div>
 
+    <div class="col-sm-6">
+      <a id="tester" data-toggle="collapse" href="#collapsible" aria-expanded="false">
+        <h3><span class="glyphicon glyphicon-star"></span> Extra <span id="testerTwo" class="glyphicon glyphicon-eye-close"></span></h3>
+      </a>
+      <div class="collapse" id="collapsible">
+        <div class="card card-block">
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="/angular/angular.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

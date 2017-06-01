@@ -1,7 +1,7 @@
 h5 CODE LIST PAGE
 
 div.list
-  div(ng-repeat="code in vm.codes")
+  div(ng-repeat="code in vm.codes | filter:{removedAt: null}")
      h6 {{ code.title }}
      app-code(bind="code.body", language="code.language")
      div.buttons(style="margin-top: 10px;")
@@ -9,6 +9,7 @@ div.list
         button(onclick="this.nextSibling.classList.toggle('hide')") VIEW CODE OBJECT
         app-code.hide(object="code", language="json")
         button(ui-sref="tutorial.single.code.edit({codeId: code._id})") EDIT
+        button(ng-click="vm.removeCode(code)") REMOVE CODE
 
 
 //h6 LATEST CODES
