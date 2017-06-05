@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+require('../globals');
+
+var path = require('path');
+var spawn = require('child_process').spawn;
+
+var bs = require('browser-sync').create();
+
+spawn('nodemon', [], {
+  stdio: 'inherit',
+  cwd: App.path('server')
+});
+
+bs.init({
+  proxy: 'http://127.0.0.1:4000',
+  open: false
+});
+
+var public = App.root('public');
+
+bs.watch(public + '/*.html', bs.reload);
+bs.watch(public + '/scripts/*.js', bs.reload);
+
+bs.watch(public + '/stylesheets/*.css', function(event, file) {
+  if (event === 'change') {
+    bs.reload('*.css');
+  }
+});
+
+// bs.reload(public + '/**/*.css');
+// bs.stream(public + '/stylesheets/*.css');

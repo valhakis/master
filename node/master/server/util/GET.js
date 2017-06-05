@@ -24,5 +24,9 @@ GET.require = function(name) {
    return require(paths.server + '/' + name);
 };
 
+GET.rootRequire = function(name) {
+  return require(paths.base + '/' + name);
+};
+
 
 module.exports = GET;

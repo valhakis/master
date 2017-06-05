@@ -26,6 +26,7 @@ exports.start = function() {
   bs.watch([
     `${App.root}/php-site/public/**/*.{html,js,css,php}`,
     `${App.root}/site/**/*.{html,js,css}`,
+    `!${App.root}/site/**/client/**/*.{html,js,css}`,
     `${App.root}/server/views/**/*.pug`,
     `${App.root}/server/sample/**/*.mu`,
     `${App.root}/dist/**/*.html`,

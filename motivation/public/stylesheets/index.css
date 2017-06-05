@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Farsan');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial Narrow', 'Farsan', cursive;
+  padding: 10px 0px;
+  margin: 0px;
+}
+img {
+  margin: 0px auto;
+  max-width: 100%;
+  display: block;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  margin-bottom: 10px;
+}
+img:hover {
+  outline: 2px solid #000;
+}
+
+#add-image-url {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding: 10px;
+  min-width: 520px;
+  margin: 10px 20px;
+  display: block;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  opacity: 0.95;
+}
+
+#add-image-url:focus {
+  outline: 1px solid black;
+}
+
+.messages {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-height: 250px;
+  min-width: 850px;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+.messages .error {
+  color: red;
+}
+
+.messages .failure {
+  color: red;
+}
+
+.messages .success {
+  color: green;
+}
+
+.messages .info {
+  color: blue;
+}
+
+.messages .message {
+  padding: 3px 10px;
+  opacity: 1.0;
+  transition: all 0.3s;
+  background-color: #fff;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  margin-bottom: 8px;
+}
+.messages .message .close {
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  min-width: 25px;
+  text-align: center;
+}
+
+.messages .message .close:hover {
+  color: red;
+}
+
+.messages .message .close:focus {
+  outline: none;
+  color: red;
+}
+.messages .message .close:active {
+  color: red;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+
+    <style>
+      #artists {
+        border: 2px solid #000;
+        overflow: hidden;
+      }
+      .artist-single {
+        border: 2px solid #000;
+      }
+    </style>
+
+    <div class="all-artist" id="artists">
+      <div class="col-md-4 col-sm-6 col-xs-6 artist-single" data-number="0">
+        <div>
+          <!--<a href="artist-single.html">-->
+            <img alt="Image 1">
+          <!--</a>-->
+        </div>
+      </div> 
+
+      <div class="col-md-4 col-sm-6 col-xs-6 artist-single" data-number="1">
+        <div>
+          <!--<a href="artist-single.html">-->
+            <img alt="Image 2">
+          <!--</a>-->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="artist">
+      <div id="name"></div>
+      <div id="logo"></div>
+      <div id="bio"></div>
+    </div>
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.getJSON('data.json',function(data) {
+          $('#name').html(data[num].name);
+          $('#description').html(data[num].bio);
+          $('#logo').append('<img src=data[num].logo>');
+        });
+        $('#artists .artist-single').on('click',function(){
+          window.location.href="?num=32";
+          /*
+        var num = $(this).data('number');
+           */
+        });
+      });
+    </script>
+
+    <!--<script src="script.js"></script>-->
+  </body>
+</html>

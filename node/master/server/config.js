@@ -17,7 +17,7 @@ module.exports = {
    port: '80',
    'browser-sync': {
       host: env.development.host,
-      port: 3000
+      port: 80
    },
    production: {
       host: env.production.host || 'localhost',
