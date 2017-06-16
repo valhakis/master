@@ -1,0 +1,53 @@
+#node-main {
+  .btn, .btn-default {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  form {
+    .form-group {
+      .form-control, .btn {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+
+  app-main-nav {
+    border: 2px solid #000;
+    display: block;
+    margin: 5px;
+  }
+  border: 2px solid #000;
+
+  #content {
+    border: 2px solid #000;
+    margin: 5px;
+    background-color: #FFF;
+    padding: 10px;
+  }
+
+  app-main-footer {
+    border: 2px solid #000;
+    margin: 5px;
+    display: block;
+  }
+}
+
+.bottom-row {
+  vertical-align: middle;
+  p, button, .btn, .btn-default {
+    display: inline-block;
+    height: 30px;
+    padding: 0px 5px;
+    margin: 0px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  p {
+    line-height: 35px;
+  }
+  button, .btn, .btn-default {
+    padding-left: 8px;
+    padding-right: 8px;
+    float: right;
+  }
+}

@@ -1,0 +1,21 @@
+<div id="directive-page">
+  <app-main-nav></app-main-nav>
+
+  <div id="content">
+    <h1>Directive</h1>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>app-editor</h2>
+        <app-editor mode="javascript" bind="main.code"></app-editor>
+      </div>
+      <div class="col-sm-4">
+        <h2>app-code</h2>
+        <app-code language="main.language" bind="main.code"></app-code>
+      </div>
+    </div>
+
+  </div>
+
+  <app-main-footer></app-main-footer>
+</div>

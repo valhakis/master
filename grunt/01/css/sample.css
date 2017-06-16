@@ -1,0 +1,13 @@
+/* line 1, ../sass/sample.scss */
+.sample {
+  color: purple;
+  color: purple;
+  color: purple;
+  color: purple;
+}
+
+/* line 9, ../sass/sample.scss */
+.sample .example {
+  background-color: red;
+  box-sizing: border-box;
+}

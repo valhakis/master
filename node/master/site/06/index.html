@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>App</title>
+  </head>
+  <body>
+
+    <div ng-app="app">
+
+
+<div ng-controller="AppController">  
+  <ion-item ng-repeat="urun in urunler" class="item-thumbnail-left positive" id="anasayfa-list-item5" href-inappbrowser="/urundetay">
+    <img ng-src="{{ urun.gorsel_url }}">
+    <h2positive>{{ urun.urun_adi }} 
+      <p style="white-space:normal; font-weight: bold;">Fiyat: <span style="color:blue">{{ urun.urun_fiyati }} </span></p>
+      <ion-option-button class="button-positive"></ion-option-button>
+    </h2positive>
+  </ion-item>
+</div>
+
+      <div ng-controller="MainController">
+        <div ng-repeat="product in products">
+
+          <!--<img ng-src="{{ product.image_url }}">-->
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

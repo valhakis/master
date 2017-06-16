@@ -1,0 +1,20 @@
+h5 EDIT CODE
+form.form(ng-submit="vm.editCode(vm.code)")
+   p
+      label TITLE
+      input(ng-model="vm.code.title")
+   p
+      label LANGUAGE
+      select(ng-model="vm.code.language")
+         option(value="javascript") Javascript
+         option(value="php") PHP
+         option(value="c") C
+         option(value="c++") C++
+         option(value="makefile") Makefile
+         option(value="html") HTML
+         option(value="sql") SQL
+   p
+      label BODY
+      app-editor(bind="vm.code.body", mode="vm.code.language", update="vm.update")
+   p
+      button(type="submit") EDIT

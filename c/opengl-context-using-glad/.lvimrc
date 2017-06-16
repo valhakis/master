@@ -1,0 +1,3 @@
+let g:syntastic_c_config_file = $HOME . '/master/c/opengl-context-using-glad/.syntastic'
+
+

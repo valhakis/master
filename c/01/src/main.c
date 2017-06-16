@@ -105,7 +105,7 @@ int Server()
      }
      printf("Connected to server.\n");
      */
-  
+
 #else /* LINUX SERVER */
   int _socket, _new_socket, ret;
   socklen_t clilen;

@@ -1,5 +1,11 @@
+import 'codemirror/lib/codemirror.css';
+import CodeMirror from 'codemirror/lib/codemirror';
+import 'codemirror/theme/monokai.css';
+import 'codemirror/mode/javascript/javascript';
+
 import 'json-formatter/css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import 'w3-css/w3.css';
 import angular from 'angular';
 import 'highlight.js';
@@ -15,3 +21,12 @@ $(document).ready(function() {
       hljs.highlightBlock(block);
    });
 });
+
+var textarea = document.createElement('textarea');
+textarea.classList.add('editor-textarea');
+document.body.appendChild(textarea);
+
+var editor = CodeMirror.fromTextArea(textarea, {
+  lineNumbers: true
+});
+

@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+<base href="/php-site/">
+</head>
+<body>
+<a href="mariadb">MARIADB</a>
+</body>
+</html>
 <?php
+/*
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -13,3 +25,4 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 });
 $app->run();
 ?>
+ */

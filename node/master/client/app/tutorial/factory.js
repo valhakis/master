@@ -65,5 +65,23 @@ module.exports = function TutorialFactory($http) {
     }, handleError);
   };
 
+  factory.updateCode = function(tutorialId, code) {
+    return $http.put(`/api/tutorials/${tutorialId}/codes/${code._id}`, code).then(function(res) {
+      return res.data;
+    }, handleError);
+  };
+
+  factory.createNote = function(tutorialId, note) {
+    return $http.post(`/api/tutorials/${tutorialId}/notes`, note).then(function(res) {
+      return res.data;
+    }, handleError);
+  };
+
+  factory.removeCode = function(tutorialId, codeId) {
+    return $http.delete(`/api/tutorials/${tutorialId}/codes/${codeId}`).then(function(res) {
+      return res.data;
+    }, handleError);
+  };
+
    return factory;
 };

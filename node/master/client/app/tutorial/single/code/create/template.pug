@@ -12,8 +12,9 @@ form.form(ng-submit="vm.createCode(vm.code)")
          option(value="c++") C++
          option(value="makefile") Makefile
          option(value="html") HTML
+         option(value="sql") SQL
    p
       label BODY
-      app-editor(bind="vm.code.body", mode="vm.code.language")
+      app-editor(bind="vm.code.body", mode="vm.code.language", update="vm.updateEditor")
    p
       button(type="submit") CREATE

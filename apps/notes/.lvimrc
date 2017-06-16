@@ -1,0 +1,1 @@
+let g:syntastic_cpp_config_file = $HOME . '/master/apps/notes/.syntastic'

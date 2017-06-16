@@ -1,0 +1,19 @@
+<h5>TUTORIAL NOTE CREATE PAGE</h5>
+
+<style>
+  .form-control, .btn.btn-default {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<form ng-submit="vm.createNote(vm.note)">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" ng-model="vm.note.title">
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    <textarea class="form-control" ng-model="vm.note.content"></textarea>
+  </div>
+  <button class="btn btn-default">CREATE</button>
+</form>

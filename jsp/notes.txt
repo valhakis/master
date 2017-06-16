@@ -1,0 +1,25 @@
+- server-side programming technology
+- build web-based applications
+- access to entrire java APIs
+- JDBC API to access databases
+- jSP - Java Server Pages
+
+- <% sample %>
+
+- HTML or XHTML, XML
+
+- collect input from webpage forms 
+
+- JSP tags -> retrieve information from database 
+
+- CGI -> Common Gateway Interface
+
+- performance is better
+- JDBC, JNDI, EJB, JAXP
+
+- Java Development Kit (jdk) -> { java, javac }
+- Web Server: Tomcat {http://localhost:8080}
+
+- extensions -> .html -> .jsp
+
+- GET /hello.jsp -> hello.jsp -> helloServlet.java -> helloServlet.class -> <html></html>

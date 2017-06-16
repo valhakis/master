@@ -132,7 +132,7 @@ let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
-let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
+" let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
 
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
@@ -170,21 +170,22 @@ let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
 "let g:syntastic_cpp_compiler = 'g++'
 
 if has('nvim')
-   " au filetype java map \mr :w \| Term make && make run <cr>
-   " au filetype cpp map \mr :w \| Term make && make run <cr>
-   " au filetype c map \mr :w \| Term make && make run <cr>
+  " au filetype java map \mr :w \| Term make && make run <cr>
+  " au filetype cpp map \mr :w \| Term make && make run <cr>
+  " au filetype c map \mr :w \| Term make && make run <cr>
 
-   " au filetype cpp map ,mr :w \| Term make result && make run_result <cr>
-   "au filetype c map \mr :w \| Term make && ./app <cr>
-   "au filetype c map ,mr :w \| :terminal make && ./app <cr>
-   "au filetype c map \mr :w \| :terminal make && ./app <cr>
-au filetype c map \mr :w \| Term make && make run <cr>
-au filetype cpp map \mr :w \| Term make && make run <cr>
+  " au filetype cpp map ,mr :w \| Term make result && make run_result <cr>
+  "au filetype c map \mr :w \| Term make && ./app <cr>
+  "au filetype c map ,mr :w \| :terminal make && ./app <cr>
+  "au filetype c map \mr :w \| :terminal make && ./app <cr>
+  au filetype c map \mr :w \| Term make && make run <cr>
+  au filetype cpp map \mr :w \| Term make && make run <cr>
+  au filetype javascript,html map \mr :w \| Term nw . <cr>
 else
-au filetype c map \mr :w \| !make && make run <cr>
-au filetype cpp map \mr :w \| !make && make run <cr>
-   "au filetype c map ,mr :w \| !make && ./app <cr>
-   "au filetype c map \mr :w \| !make && ./app <cr>
+  au filetype c map \mr :w \| !make && make run <cr>
+  au filetype cpp map \mr :w \| !make && make run <cr>
+  "au filetype c map ,mr :w \| !make && ./app <cr>
+  "au filetype c map \mr :w \| !make && ./app <cr>
 endif
 au filetype ruby map \mr :w \| !ruby -w %<cr>
 
@@ -204,6 +205,7 @@ let g:neocomplete#enable_at_startup = 1
 
 au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mu set filetype=html.mustache syntax=html.mustache
+au BufRead,BufNewFile *.ejs set filetype=jst syntax=jst
 au BufRead,BufNewFile .jshintrc set filetype=json syntax=json
 au BufRead,BufNewFile app set filetype=javascript syntax=javascript
 au BufRead,BufNewFile .babelrc set filetype=json syntax=json
@@ -215,54 +217,82 @@ au BufRead,BufNewFile .ember-cli set filetype=json syntax=json
 
 "au filetype cpp map \mr :w \| !make && ./app <cr>
 
-au filetype javascript nmap \mr :w \| !node % <cr>
+" au filetype javascript nmap \mr :w \| !node % <cr>
 
 "let g:syntastic_cpp_compiler = 'g++'
 "let g:syntastic_cpp_compiler = 'g++'
 "let g:syntastic_cpp_compiler = 'i686-w64-mingw32-g+'
 
-autocmd BufNewFile bs-config.js 0r ~/master/nvim/skeletons/bs-config.js
-autocmd BufNewFile .jshintrc 0r ~/master/nvim/skeletons/.jshintrc
-autocmd BufNewFile webpack.config.js 0r ~/master/nvim/skeletons/webpack.config.js
-autocmd BufNewFile gulpfile.js 0r ~/master/nvim/skeletons/gulpfile.js
-autocmd BufNewFile Gruntfile.js 0r ~/master/nvim/skeletons/Gruntfile.js
-autocmd BufNewFile nodemon.json 0r ~/master/nvim/skeletons/nodemon.json
-autocmd BufNewFile main.c 0r ~/master/nvim/skeletons/main.c
-autocmd BufNewFile .babelrc 0r ~/master/nvim/skeletons/.babelrc
+function InsertIfEmpty(file)
+  echo a:file
+  if @% == ""
+    " no filename for current buffer
+    " startinsert
+    execute "0r" . a:file
+  elseif filereadable(@%) == 0
+    " file does not exist yet
+    " startinsert
+    execute "0r" . a:file
+  elseif line('$') == 1 && col('$') == 1
+    " file is empty
+    " startinsert
+    execute "0r" . a:file
+  endif
+endfunction
+
+"au VimEnter main.c call InsertIfEmpty('~/master/nvim/skeletons/main.c')
+
+autocmd VimEnter,BufRead,TabEnter,BufNewFile bs-config.js silent! call InsertIfEmpty('~/master/nvim/skeletons/bs-config.js')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile .jshintrc silent! call InsertIfEmpty('~/master/nvim/skeletons/.jshintrc')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile webpack.config.js silent! call InsertIfEmpty('~/master/nvim/skeletons/webpack.config.js')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile gulpfile.js silent! call InsertIfEmpty('~/master/nvim/skeletons/gulpfile.js') 
+autocmd VimEnter,BufRead,TabEnter,BufNewFile Gruntfile.js silent! call InsertIfEmpty('~/master/nvim/skeletons/Gruntfile.js') 
+autocmd VimEnter,BufRead,TabEnter,BufNewFile nodemon.json silent! call InsertIfEmpty('~/master/nvim/skeletons/nodemon.json') 
+autocmd VimEnter,BufRead,TabEnter,BufNewFile main.c silent! call InsertIfEmpty('~/master/nvim/skeletons/main.c') 
+autocmd VimEnter,BufRead,TabEnter,BufNewFile .babelrc silent! call InsertIfEmpty('~/master/nvim/skeletons/.babelrc')
+
+"autocmd BufNewFile bs-config.js 0r ~/master/nvim/skeletons/bs-config.js
+"autocmd BufNewFile .jshintrc 0r ~/master/nvim/skeletons/.jshintrc
+"autocmd BufNewFile webpack.config.js 0r ~/master/nvim/skeletons/webpack.config.js
+"autocmd BufNewFile gulpfile.js 0r ~/master/nvim/skeletons/gulpfile.js
+"autocmd BufNewFile Gruntfile.js 0r ~/master/nvim/skeletons/Gruntfile.js
+"autocmd BufNewFile nodemon.json 0r ~/master/nvim/skeletons/nodemon.json
+"autocmd BufNewFile main.c 0r ~/master/nvim/skeletons/main.c
+"autocmd BufNewFile .babelrc 0r ~/master/nvim/skeletons/.babelrc
 
 " CUSTOM TEMPLATE FUNCTION
 " ==========================================================
 function! GetTemplate()
-   " get the current line number
-   let line = line('.')
-   " get the current column number
-   let col = col('.')
-   " set cursor 1 character backwards
-   call cursor(line, col-1)
-   " templates directory path
-   let path = $HOME . '/master/nvim/templates'
-   " current file extension
-   let ext = expand('%:e')
-   if ext == 'hbs'
-      let ext = 'html'
-   endif
-   " the word under cursor
-   let word = expand('<cWORD>')
-   " the result file
-   let result = path . '/' . word . '.' . ext
-   " if the file exists
-   if filereadable(result)
-      " delete current line
-      d
-      " go one line up
-      call cursor(line-1, 0)
-      " read the file content
-      "execute "read" . result
-      execute (line == 1 ? '-1' : '') . "read" . result
-   else
-      echo result . ' does not exist'
-   endif
-   return ''
+  " get the current line number
+  let line = line('.')
+  " get the current column number
+  let col = col('.')
+  " set cursor 1 character backwards
+  call cursor(line, col-1)
+  " templates directory path
+  let path = $HOME . '/master/nvim/templates'
+  " current file extension
+  let ext = expand('%:e')
+  if ext == 'hbs'
+    let ext = 'html'
+  endif
+  " the word under cursor
+  let word = expand('<cWORD>')
+  " the result file
+  let result = path . '/' . word . '.' . ext
+  " if the file exists
+  if filereadable(result)
+    " delete current line
+    d
+    " go one line up
+    call cursor(line-1, 0)
+    " read the file content
+    "execute "read" . result
+    execute (line == 1 ? '-1' : '') . "read" . result
+  else
+    echo result . ' does not exist'
+  endif
+  return ''
 endfunction
 "map <c-g> :call GetTemplate() <cr>
 "inoremap <c-l> <c-r>=GetTemplate() <cr>
@@ -293,11 +323,11 @@ let g:localvimrc_persistent = 2
 " CHECK IF FILE EXISTS
 " ==========================================================
 function! FileExists(fname)
-   if (filereadable(a:fname))
-      " echo "file is '" . a:fname . "' readable"
-   else
-      echo "file is '" . a:fname . "' not readable"
-   endif
+  if (filereadable(a:fname))
+    " echo "file is '" . a:fname . "' readable"
+  else
+    echo "file is '" . a:fname . "' not readable"
+  endif
 endfunction
 " ==========================================================
 
@@ -313,9 +343,9 @@ colorscheme 0x7A69_dark
 "colorscheme molokai
 "colorscheme monokai
 "if has('nvim')
-   " colorscheme monokai
+" colorscheme monokai
 "else
-   " colorscheme monokai
+" colorscheme monokai
 "endif
 
 set background=dark
@@ -325,11 +355,11 @@ hi Todo guifg=red ctermfg=red
 hi Visual ctermbg=160
 hi Pmenu ctermfg=160 ctermbg=none
 if has('nvim')
-   hi PmenuSel ctermfg=red
-   hi Visual guibg=#222222 guifg=none
-   set termguicolors
-   hi Pmenu guibg=#111111 guifg=#FFFFFF
-   hi PmenuSel guibg=#222222 guifg=#FFCCCC
+  hi PmenuSel ctermfg=red
+  hi Visual guibg=#222222 guifg=none
+  set termguicolors
+  hi Pmenu guibg=#111111 guifg=#FFFFFF
+  hi PmenuSel guibg=#222222 guifg=#FFCCCC
 endif
 highlight Comment ctermfg=red
 hi TabLine guifg=#ffffff guibg=#333333

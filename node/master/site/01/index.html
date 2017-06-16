@@ -3,57 +3,33 @@
   <head>
     <base href="/site/01/">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>01</title>
   </head>
-  <body>
+  <body ng-app="app">
 
-    <!-- color -->
-    <form>
-      Select color: <input type="color" name="color" value="#fff">
-    </form>
+    <div ng-controller="MainController as vm">
+    </div>
 
-    <!-- date -->
-    <form>
-      Birthday: <input type="date" name="bday">
-    </form>
+    <div class="col-sm-6">
+      <a id="tester" data-toggle="collapse" href="#collapsible" aria-expanded="false">
+        <h3><span class="glyphicon glyphicon-star"></span> Extra <span id="testerTwo" class="glyphicon glyphicon-eye-close"></span></h3>
+      </a>
+      <div class="collapse" id="collapsible">
+        <div class="card card-block">
+          <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+            <li><a href="#">item 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    <!-- date with restrictions -->
-    <form>
-      Start date: <input type="date" name="bday" max="2000-01-01">
-      End date: <input type="date" name="bday" min="2018-01-01">
-    </form>
-
-    <!-- datetime-local -->
-    <form>
-      Birthday (date and time): <input type="datetime-local" name="bday">
-    </form>
-
-    <!-- email -->
-    <form>
-      E-mail: <input type="email" name="email">
-    </form>
-
-    <!-- month (month and year) -->
-    <form>
-      Birthday (month and year) <input type="month" name="bdaymonth">
-    </form>
-
-    <!-- number -->
-    <form>
-      Quantity (between 1 and 20) <input type="number" name="quantity" min="1" max="20" step="5" value="10">
-    </form>
-
-    <!-- restrictions -->
-    <!-- disabled -->
-    <!-- max -->
-    <!-- maxlength -->
-    <!-- min -->
-    <!-- pattern (reqular experssion) -->
-    <!-- readonly -->
-    <!-- required -->
-    <!-- size -->
-    <!-- step -->
-    <!-- value -->
-
+    <script src="/angular/angular.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

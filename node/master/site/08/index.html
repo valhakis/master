@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--scripts-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+    <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+    <script src='https://code.jquery.com/ui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js'></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id='wrap'>
+      <img src="" alt="client logo" id='client-logo' height=80 width=80 style="float: left;margin-left:45px;">
+      <div class="clients" style="float:left;clear:left;">
+        <select id="client-list" onchange="changeImage(this)" style="width:150px; height:40px; margin-left:18px;margin-top:2px;">
+          <option value="Choose Client">---Choose Client---</option>
+          <option value="Client 1">Client 1</option>
+          <option value="Client 2">Client 2</option>
+          <option value="Client 3">Client 3</option>
+          <option value="Client 4">Client 4</option>
+          <option value="Client 5">Client 5</option>
+        </select>
+
+        <div id='external-events'>
+          <div id='external-events-listing'>
+            <h4>Channel List</h4>
+            <div value="Client 1" class='fc-event'>My Event 1</div>
+            <div value="Client 2" class='fc-event'>My Event 2</div>
+            <div value="Client 3" class='fc-event'>My Event 3</div>
+            <div value="Client 4" class='fc-event'>My Event 4</div>
+            <div value="Client 5" class='fc-event'>My Event 5</div>
+          </div>
+        </div>
+
+        <div class="container">
+          <span type="reset" id="btnReset" class="btn btn-default" style="margin
+            top: 10px;" >Reset Calender</span>
+          <ul id="daysEvent"></ul>
+          <div id='calendar'></div>
+        </div>
+      </div>
+
+    </body>
+  </html>

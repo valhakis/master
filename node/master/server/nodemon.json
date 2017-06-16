@@ -1,0 +1,8 @@
+{
+  "watch": [
+    "./",
+    " /home/william/master/node/master/site/index.js",
+    " /home/william/master/node/master/site/**/server.js"
+  ]
+}
+
