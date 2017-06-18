@@ -2,5 +2,5 @@ node_modules
 bower_components
 /.env
 /node/master/dist
-
+/eksam/dist
 /vendor/
