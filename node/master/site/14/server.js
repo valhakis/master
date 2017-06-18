@@ -1,3 +1,4 @@
+/*
 var path = require('path');
 var webpack = require('webpack');
 
@@ -32,6 +33,7 @@ const watching = compiler.watch({
     colors: true    // Shows colors in the console
   }));
 });
+*/
 
 var express = require('express');
 var router = express.Router();

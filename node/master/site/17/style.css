@@ -1,0 +1,161 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#Wrapper {
+  height: 702px;
+  width: 1364px;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+#Hist, #Memb, #Med {
+  height: 702px;
+  width: 1364px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0px;
+  left: 1364px;
+}
+
+#Home {
+  height: 702px;
+  width: 1364px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background: linear-gradient(#F293BF 50%, #EBEFF8 50%);
+}
+
+.Box {
+  background-repeat: no-repeat;
+  background-attatchment: fixed;
+  background: linear-gradient(#94DBF7, #D2EAF7);
+  height: 646px;
+  width: 1202px;
+  position: relative;
+  left: 5.5%;
+  top: 25px;
+}
+
+.Pledis, .PledisHov, .SVT, .Logo, #HistHover, #MembHover, #MedHover {
+  position: absolute;
+}
+
+#HistHover, #MembHover {
+  top: 543px;
+}
+
+#HistHover:hover {
+  cursor: pointer;
+}
+
+.Pledis {
+  top: 15%;
+  left: 15%;
+}
+
+.PledisHov {
+  top: 78px;
+  left: 175px;
+  transform: rotate(-15deg);
+}
+
+.PledisHov, #PledisHover:hover .Pledis {
+  display: none;
+}
+
+.Pledis, #PledisHover:hover .PledisHov {
+  display: block;
+}
+
+.SVT {
+  top: 10%;
+  left: 20%;
+}
+
+.Logo {
+  top:48%;
+  left: 37%;
+}
+
+#HistHover {
+  left: 25%;
+}
+
+#MembHover {
+  left: 42%;
+}
+
+#MedHover {
+  top: 553px;
+  left: 59%;
+}
+
+#Page {
+  height: 702px;
+  width: 1364px;
+}
+
+.animate {
+  -webkit-animation-name: Slide;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes Slide {
+  from {transform: translateX(0px)}
+  to {transform: translateX(-1364px)}
+}
+
+@keyframes Slide {
+  from {transform: translateX(0px)}
+  to {transform: translateX(-1364px)}
+}
+
+
+.animate2 {
+  -webkit-animation-name: SlideOut;
+  -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes SlideOut {
+  from {transform: translateX(0px)}
+  to {transform: translateX(1364px)}
+}
+
+@keyframes SlideOut {
+  from {transform: translateX(0px)}
+  to {transform: translateX(1364px)}
+}
+
+#HomeButton {
+  /*position: absolute;*/
+  /*top: 2px;*/
+  /*left: 9px;*/
+  border: 8px solid #000;
+  display: block;
+  position: relative;
+  opacity: 1.0;
+  /*z-index: 500;*/
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}

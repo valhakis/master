@@ -4,4 +4,5 @@ module.exports = function (app) {
 
   app.use('/site/11', require('./11/server'));
   app.use('/site/14', require('./14/server'));
+  app.use('/site/16', require('./16/server'));
 };
