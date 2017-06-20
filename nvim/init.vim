@@ -250,6 +250,7 @@ autocmd VimEnter,BufRead,TabEnter,BufNewFile Gruntfile.js silent! call InsertIfE
 autocmd VimEnter,BufRead,TabEnter,BufNewFile nodemon.json silent! call InsertIfEmpty('~/master/nvim/skeletons/nodemon.json') 
 autocmd VimEnter,BufRead,TabEnter,BufNewFile main.c silent! call InsertIfEmpty('~/master/nvim/skeletons/main.c') 
 autocmd VimEnter,BufRead,TabEnter,BufNewFile .babelrc silent! call InsertIfEmpty('~/master/nvim/skeletons/.babelrc')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile makefile silent! call InsertIfEmpty('~/master/nvim/skeletons/makefile')
 
 "autocmd BufNewFile bs-config.js 0r ~/master/nvim/skeletons/bs-config.js
 "autocmd BufNewFile .jshintrc 0r ~/master/nvim/skeletons/.jshintrc
