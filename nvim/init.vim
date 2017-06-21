@@ -207,7 +207,7 @@ au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mu set filetype=html.mustache syntax=html.mustache
 au BufRead,BufNewFile *.ejs set filetype=jst syntax=jst
 au BufRead,BufNewFile .jshintrc set filetype=json syntax=json
-au BufRead,BufNewFile app set filetype=javascript syntax=javascript
+au BufRead,BufNewFile app,node set filetype=javascript syntax=javascript
 au BufRead,BufNewFile .babelrc set filetype=json syntax=json
 au BufRead,BufNewFile .env set filetype=json syntax=json
 au BufRead,BufNewFile .env.template set filetype=json syntax=json

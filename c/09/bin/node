@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+var spawn = require('child_process').spawn;
+var path = require('path');
+var env = require('../node/env');
+
+spawn('./server', {
+  stdio: 'inherit',
+  cwd: __dirname
+});
+
+spawn('node', ['.'], {
+  stdio: 'inherit',
+  cwd: path.join(__dirname, '..', 'node')
+});
+
+var bs = require("browser-sync").create();
+
+bs.init({
+  proxy: env.host + ':' + env.port,
+  open: false
+});
+
+bs.watch([
+  env.public + '/*.{html,css,js}'
+]).on('change', bs.reload);

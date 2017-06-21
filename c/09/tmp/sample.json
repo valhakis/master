@@ -1,0 +1,12 @@
+{
+  "interface": {
+    "object": {
+      "id": "window",
+      "body": {
+        "property": {
+          "name": "visible"
+        }
+      }
+    }
+  }
+}

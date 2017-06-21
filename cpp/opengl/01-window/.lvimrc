@@ -1,0 +1,2 @@
+let g:syntastic_c_config_file = $HOME . "/.syntastic"
+let g:syntastic_cpp_config_file = $HOME . "/.syntastic"

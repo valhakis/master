@@ -4,12 +4,21 @@
 #include <stdbool.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-void ValSample(const char *format, ...);
-void ValErr(const char *format, ...);
-char *ValReadSource(const char *file);
-void ValLog(const char *format, ...);
-int ValCreateShader(GLenum type, const char *file);
-GLFWwindow *CreateGLFWWindow(int width, int height);
-int ValCreateProgram(int vshader, int fshader);
-GLFWwindow *ValCreateLazyGLFWWindow();
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+  void ValSample(const char *format, ...);
+  void ValErr(const char *format, ...);
+  char *ValReadSource(const char *file);
+  void ValLog(const char *format, ...);
+  int ValCreateShader(GLenum type, const char *file);
+  GLFWwindow *CreateGLFWWindow(int width, int height);
+  int ValCreateProgram(int vshader, int fshader);
+  GLFWwindow *ValCreateLazyGLFWWindow();
+#ifdef __cplusplus
+}
+#endif
+
 #endif

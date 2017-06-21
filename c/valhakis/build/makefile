@@ -1,12 +1,13 @@
 cc = gcc
 out = bin/app
 
-src += src/sample.c
-src += src/valhakis.c
+src := $(wildcard src/*.c)
+obj := $(patsubst src/%.c, obj/%.o, $(src))
 
-all:
-	$(cc) -c src/sample.c -o obj/sample.o $(libs)
-	$(cc) -c src/valhakis.c -o obj/valhakis.o $(libs)
-	ar rcs ~/.lib/libvalhakis.a obj/sample.o obj/valhakis.o
+all: $(obj)
+	ar rcs ~/.lib/libvalhakis.a $(obj)
 	cp src/inc/* ~/.include -rf
+
+obj/%.o: src/%.c
+	$(cc) $(cflags) -c $< -o $@
 
