@@ -1,7 +1,7 @@
 cc = g++
 out = bin/app
 
-src := $(wildcard src/*.cpp)
+src := $(wildcard src/*.cpp src/window1/*.cpp)
 obj := $(patsubst src/%.cpp, obj/%.o, $(src))
 
 cflags += -I~/.include/
@@ -65,5 +65,6 @@ run:
 
 clean:
 	rm -f obj/*.o
+	rm -f obj/window1/*.o
 
 

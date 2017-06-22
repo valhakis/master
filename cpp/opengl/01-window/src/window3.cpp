@@ -5,15 +5,22 @@
 #include "inc/window3.h"
 #include "inc/window2.h"
 #include "inc/window1.h"
+#include "inc/settings.h"
 
 static GtkBuilder *builder;
 static GObject *window;
 static GObject *quitBtn;
+static GObject *settingsBtn;
 static GObject *textview;
 static GtkTextBuffer *textbuffer;
 
 static gboolean keyboard(GtkWidget *widget, GdkEventKey *event, gpointer data);
-static gboolean destroy();
+static void destroy();
+
+static void settings_button_click_callback(GtkButton *button, gpointer data)
+{
+  SettingsWindowStart();
+}
 
 static gboolean backspace(GtkWidget *widget)
 {
@@ -80,13 +87,19 @@ int Window3Initialize()
   window = gtk_builder_get_object(builder, "window1");
   g_signal_connect(window, "key_press_event", G_CALLBACK(keyboard), NULL);
   g_signal_connect(window, "destroy", G_CALLBACK(destroy), NULL);
+  gtk_window_move(GTK_WINDOW(window), 500, 0);
+  gtk_window_activate_focus(GTK_WINDOW(window));
 
   quitBtn = gtk_builder_get_object(builder, "quitBtn");
   g_signal_connect(quitBtn, "clicked", G_CALLBACK(destroy), NULL);
 
+  settingsBtn = gtk_builder_get_object(builder, "settingsBtn");
+  g_signal_connect(settingsBtn, "clicked", G_CALLBACK(settings_button_click_callback), NULL);
+
   textview = gtk_builder_get_object(builder, "textview");
+  gtk_widget_grab_focus(GTK_WIDGET(textview));
   textbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(textview));
-  gtk_widget_set_size_request(GTK_WIDGET(textview), 300, 300);
+  gtk_widget_set_size_request(GTK_WIDGET(textview), 200, 300);
   g_signal_connect(textview, "backspace", G_CALLBACK(backspace), NULL);
   g_signal_connect(textview, "insert-at-cursor", G_CALLBACK(insert_at_cursor), NULL);
   g_signal_connect(textview, "preedit-changed", G_CALLBACK(preedit_changed), NULL);
@@ -119,8 +132,9 @@ static gboolean keyboard(GtkWidget *widget, GdkEventKey *event, gpointer data)
   return false;
 }
 
-static gboolean destroy()
+static void destroy()
 {
+  printf("HAVE TO MAIN QUIT.\n");
   MainClose();
 }
 

@@ -1,71 +1,82 @@
 call plug#begin('~/.vim/plugged')
-"Plug 'https://github.com/vim-scripts/JavaScript-Indent'
-Plug 'https://github.com/embear/vim-localvimrc'
-"Plug 'https://github.com/svermeulen/vim-easyclip'
-Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
-Plug 'https://github.com/sickill/vim-monokai'
-Plug 'https://github.com/briancollins/vim-jst'
-Plug 'https://github.com/mustache/vim-mustache-handlebars'
-Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'https://github.com/nikvdp/ejs-syntax'
-Plug 'https://github.com/tomasr/molokai'
-Plug 'https://github.com/StanAngeloff/php.vim'
-Plug 'https://github.com/evidens/vim-twig'
-Plug 'https://github.com/ekalinin/Dockerfile.vim'
-Plug 'https://github.com/cakebaker/scss-syntax.vim'
-Plug 'https://github.com/jwalton512/vim-blade'
-Plug 'https://github.com/jaxbot/syntastic-react'
-Plug 'https://github.com/mxw/vim-jsx'
-Plug 'https://github.com/embear/vim-localvimrc'
-Plug 'https://github.com/beyondmarc/opengl.vim'
-Plug 'https://github.com/tikhomirov/vim-glsl'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mklabs/split-term.vim'
-Plug 'https://github.com/ekalinin/Dockerfile.vim'
-Plug 'https://github.com/NLKNguyen/vim-docker-compose-syntax'
-Plug 'https://github.com/erickzanardo/vim-xclip'
-Plug 'https://github.com/christoomey/vim-system-copy'
-Plug 'junegunn/vim-easy-align'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug '~/my-prototype-plugin'
-Plug 'https://github.com/flazz/vim-colorschemes'
-Plug 'https://github.com/keith/tmux.vim'
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/jistr/vim-nerdtree-tabs'
-Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
-Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/vim-syntastic/syntastic'
-Plug 'https://github.com/easymotion/vim-easymotion'
-Plug 'https://github.com/pangloss/vim-javascript'
-Plug 'https://github.com/jiangmiao/auto-pairs'
-Plug 'https://github.com/Yggdroot/indentLine'
-"Plug 'https://github.com/Shougo/neocomplete.vim'
-Plug 'https://github.com/scrooloose/nerdcommenter'
-Plug 'https://github.com/Valloric/MatchTagAlways'
-Plug 'https://github.com/nono/vim-handlebars'
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/burnettk/vim-angular'
-Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/embear/vim-localvimrc'
+Plug 'https://github.com/Rip-Rip/clang_complete'
+if has('nvim')
+  Plug 'https://github.com/Shougo/deoplete.nvim'
+else
+  Plug 'https://github.com/Shougo/neocomplete.vim'
+endif
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'flazz/vim-colorschemes'
+Plug 'mklabs/split-term.vim'
+"Plug 'https://github.com/vim-scripts/JavaScript-Indent'
+"Plug 'https://github.com/svermeulen/vim-easyclip'
+"Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
+"Plug 'https://github.com/Rip-Rip/clang_complete'
+"Plug 'https://github.com/sickill/vim-monokai'
+"Plug 'https://github.com/briancollins/vim-jst'
+"Plug 'https://github.com/mustache/vim-mustache-handlebars'
+"Plug 'https://github.com/leafgarland/typescript-vim'
+"Plug 'https://github.com/nikvdp/ejs-syntax'
+"Plug 'https://github.com/tomasr/molokai'
+"Plug 'https://github.com/StanAngeloff/php.vim'
+"Plug 'https://github.com/evidens/vim-twig'
+"Plug 'https://github.com/ekalinin/Dockerfile.vim'
+"Plug 'https://github.com/cakebaker/scss-syntax.vim'
+"Plug 'https://github.com/jwalton512/vim-blade'
+"Plug 'https://github.com/jaxbot/syntastic-react'
+"Plug 'https://github.com/mxw/vim-jsx'
+"Plug 'https://github.com/embear/vim-localvimrc'
+"Plug 'https://github.com/beyondmarc/opengl.vim'
+Plug 'https://github.com/tikhomirov/vim-glsl'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'https://github.com/ekalinin/Dockerfile.vim'
+"Plug 'https://github.com/NLKNguyen/vim-docker-compose-syntax'
+"Plug 'https://github.com/erickzanardo/vim-xclip'
+"Plug 'https://github.com/christoomey/vim-system-copy'
+"Plug 'junegunn/vim-easy-align'
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'fatih/vim-go', { 'tag': '*' }
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug '~/my-prototype-plugin'
+"Plug 'https://github.com/flazz/vim-colorschemes'
+"Plug 'https://github.com/keith/tmux.vim'
+"Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
+"Plug 'https://github.com/kien/ctrlp.vim'
+"Plug 'https://github.com/easymotion/vim-easymotion'
+"Plug 'https://github.com/pangloss/vim-javascript'
+"Plug 'https://github.com/jiangmiao/auto-pairs'
+"Plug 'https://github.com/Yggdroot/indentLine'
+"Plug 'https://github.com/scrooloose/nerdcommenter'
+"Plug 'https://github.com/Valloric/MatchTagAlways'
+"Plug 'https://github.com/nono/vim-handlebars'
+"Plug 'https://github.com/tpope/vim-surround'
+"Plug 'https://github.com/burnettk/vim-angular'
+"Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/mattn/emmet-vim'
 "Plug 'https://github.com/ervandew/supertab'
-Plug 'https://github.com/airblade/vim-gitgutter'
-Plug 'https://github.com/vim-scripts/apachestyle'
-Plug 'https://github.com/othree/html5.vim'
-Plug 'davidosomething/syntastic-hbstidy'
-Plug 'https://github.com/tfnico/vim-gradle'
-Plug 'https://github.com/vim-scripts/groovy.vim'
-Plug 'https://github.com/digitaltoad/vim-pug'
-Plug 'https://github.com/ap/vim-css-color'
-Plug 'https://github.com/mustache/vim-mustache-handlebars'
-Plug 'https://github.com/rking/ag.vim'
+"Plug 'https://github.com/airblade/vim-gitgutter'
+"Plug 'https://github.com/vim-scripts/apachestyle'
+"Plug 'https://github.com/othree/html5.vim'
+"Plug 'davidosomething/syntastic-hbstidy'
+"Plug 'https://github.com/tfnico/vim-gradle'
+"Plug 'https://github.com/vim-scripts/groovy.vim'
+"Plug 'https://github.com/digitaltoad/vim-pug'
+"Plug 'https://github.com/ap/vim-css-color'
+"Plug 'https://github.com/mustache/vim-mustache-handlebars'
+"Plug 'https://github.com/rking/ag.vim'
 call plug#end()
+
+let base16colorspace=256  " Access colors present in 256 colorspace
 
 nmap ,make :w \| !make <cr>
 
@@ -78,6 +89,9 @@ set directory=~/.vim/swp/
 "set directory=/tmp
 
 set nowrap
+
+map ,wrap :set wrap! <cr>
+map <F2> :set wrap! <cr>
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set incsearch hlsearch
@@ -109,8 +123,11 @@ let NERDTreeDirArrows = 1
 
 " let g:NERDTreeDirArrowExpandable = '→'
 " let g:NERDTreeDirArrowCollapsible = '↓'
-nmap ,ne :NERDTreeToggle <cr>
-nmap \ne :NERDTreeToggle <cr>
+"nmap ,ne :NERDTreeToggle <cr>
+"nmap ,ng :NERDTreeFind <cr>
+"nmap \ne :NERDTreeToggle <cr>
+nmap \ne :NERDTreeFind <cr>
+nmap ,ne :NERDTreeFind <cr>
 
 
 set statusline+=%#warningmsg#
@@ -173,17 +190,18 @@ if has('nvim')
   " au filetype java map \mr :w \| Term make && make run <cr>
   " au filetype cpp map \mr :w \| Term make && make run <cr>
   " au filetype c map \mr :w \| Term make && make run <cr>
+  au filetype cpp map \mr :w \| Term make && make run <cr>
 
   " au filetype cpp map ,mr :w \| Term make result && make run_result <cr>
   "au filetype c map \mr :w \| Term make && ./app <cr>
   "au filetype c map ,mr :w \| :terminal make && ./app <cr>
   "au filetype c map \mr :w \| :terminal make && ./app <cr>
-  au filetype c map \mr :w \| Term make && make run <cr>
-  au filetype cpp map \mr :w \| Term make && make run <cr>
-  au filetype javascript,html map \mr :w \| Term nw . <cr>
+  "au filetype c map \mr :w \| Term make && make run <cr>
+  "au filetype cpp map \mr :w \| Term make && make run <cr>
+  "au filetype javascript,html map \mr :w \| Term nw . <cr>
 else
-  au filetype c map \mr :w \| !make && make run <cr>
-  au filetype cpp map \mr :w \| !make && make run <cr>
+  "au filetype c map \mr :w \| !make && make run <cr>
+  "au filetype cpp map \mr :w \| !make && make run <cr>
   "au filetype c map ,mr :w \| !make && ./app <cr>
   "au filetype c map \mr :w \| !make && ./app <cr>
 endif
@@ -223,7 +241,7 @@ au BufRead,BufNewFile .ember-cli set filetype=json syntax=json
 "let g:syntastic_cpp_compiler = 'g++'
 "let g:syntastic_cpp_compiler = 'i686-w64-mingw32-g+'
 
-function InsertIfEmpty(file)
+function! InsertIfEmpty(file)
   echo a:file
   if @% == ""
     " no filename for current buffer
@@ -335,7 +353,7 @@ endfunction
 let g:js_indent_log = 0
 "colorscheme monokai
 "colorscheme badwolf
-colorscheme 0x7A69_dark
+"colorscheme 0x7A69_dark
 
 " HIGHLIGHT
 " ===================================================================================
@@ -343,11 +361,13 @@ colorscheme 0x7A69_dark
 
 "colorscheme molokai
 "colorscheme monokai
-"if has('nvim')
-" colorscheme monokai
-"else
-" colorscheme monokai
-"endif
+if has('nvim')
+  " colorscheme monokai
+else
+  "colorscheme monokai
+endif
+" antares, babymate256, birds-of-paradise, brogrammer
+colorscheme antares
 
 set background=dark
 "hi comment ctermfg=red guibg=#ff0000
@@ -376,3 +396,92 @@ hi Search guibg=#111111 guifg=#ff2222
 "hi normal ctermbg=0 guibg=#FFFF
 
 
+
+if has('nvim')
+else
+  "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+  " Disable AutoComplPop.
+  let g:acp_enableAtStartup = 0
+  " Use neocomplete.
+  let g:neocomplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplete#enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+  " Define dictionary.
+  let g:neocomplete#sources#dictionary#dictionaries = {
+        \ 'default' : '',
+        \ 'vimshell' : $HOME.'/.vimshell_hist',
+        \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+  " Define keyword.
+  if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+  " Plugin key-mappings.
+  inoremap <expr><C-g>     neocomplete#undo_completion()
+  inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+  " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
+  endfunction
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  " Close popup by <Space>.
+  "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+  " AutoComplPop like behavior.
+  "let g:neocomplete#enable_auto_select = 1
+
+  " Shell like behavior(not recommended).
+  "set completeopt+=longest
+  "let g:neocomplete#enable_auto_select = 1
+  "let g:neocomplete#disable_auto_complete = 1
+  "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+  " Enable omni completion.
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+  " Enable heavy omni completion.
+  if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+  "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+  "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+  "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+  " For perlomni.vim setting.
+  " https://github.com/c9s/perlomni.vim
+  let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+  let g:neocomplete#enable_at_startup = 1
+endif
+
+nmap ,n :echo "hello"<cr>
+nmap ,nn :NextColorScheme<cr>
+nmap ,nb :PrevColorScheme<cr>
+let g:colorscheme_switcher_exclude = ['billw', 'biogoo', '1989', '256-grayvim', '256-jungle', '0x7A69_dark''default', 'test', 'abra', 'adam', 'adobe', 'af', 'anderson', 'anotherdark', 'anasi_blows', 'astronaut', 'asu1dark', '256', '3dglasses', 'abbott']
+
+au filetype qf setlocal wrap
+au filetype qf setlocal syntax=c
+
+
+set completeopt+=preview
+
+autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif

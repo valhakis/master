@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Exercises	src/window1.cpp	/^} Exercises;$/;"	v	typeref:struct:__anon2	file:
+GLFW_EXPOSE_NATIVE_X11	src/window1.cpp	1;"	d	file:
+Global	src/window1.cpp	/^} Global;$/;"	v	typeref:struct:__anon1	file:
+HEIGHT	src/window1.cpp	/^static int WIDTH = 500, HEIGHT = 500;$/;"	v	file:
+KBLU	src/share.cpp	/^const char* KBLU = "\\x1B[34m";$/;"	v
+KCYN	src/share.cpp	/^const char* KCYN = "\\x1B[36m";$/;"	v
+KGRN	src/share.cpp	/^const char* KGRN = "\\x1B[32m";$/;"	v
+KMAG	src/share.cpp	/^const char* KMAG = "\\x1B[35m";$/;"	v
+KNRM	src/share.cpp	/^const char* KNRM = "\\x1B[0m";$/;"	v
+KRED	src/share.cpp	/^const char* KRED = "\\x1B[31m";$/;"	v
+KWHT	src/share.cpp	/^const char* KWHT = "\\x1B[37m";$/;"	v
+KYEL	src/share.cpp	/^const char* KYEL = "\\x1B[33m";$/;"	v
+MainClose	src/main.cpp	/^void MainClose()$/;"	f
+PrintVertices	src/window1/exercise01.cpp	/^int PrintVertices(float *vertices, size_t size)$/;"	f
+Settings	src/inc/settings.h	/^struct Settings {$/;"	s
+SettingsInitialize	src/settins.cpp	/^int SettingsInitialize(struct Settings *in_settings)$/;"	f
+SettingsWindowStart	src/settins.cpp	/^int SettingsWindowStart()$/;"	f
+ShareError	src/share.cpp	/^int ShareError(const char *format, ...)$/;"	f
+WIDTH	src/window1.cpp	/^static int WIDTH = 500, HEIGHT = 500;$/;"	v	file:
+Window1Events	src/window1.cpp	/^int Window1Events()$/;"	f
+Window1Exercise01	src/window1/exercise01.cpp	/^void Window1Exercise01(int *in_program, struct Settings *in_settings)$/;"	f
+Window1GetMonitorDimensions	src/window1.cpp	/^int Window1GetMonitorDimensions(int *width, int *height)$/;"	f
+Window1Initialize	src/window1.cpp	/^int Window1Initialize(struct Settings *in_settings)$/;"	f
+Window1Process	src/window1.cpp	/^int Window1Process(const char *text)$/;"	f
+Window1Register	src/window1.cpp	/^int Window1Register(int (*init)(), int (*render)())$/;"	f
+Window2AddAtCursor	src/window2.cpp	/^int Window2AddAtCursor(const char *format, ...)$/;"	f
+Window2Events	src/window2.cpp	/^int Window2Events()$/;"	f
+Window2Initialize	src/window2.cpp	/^int Window2Initialize(int argc, char *argv[])$/;"	f
+Window3Initialize	src/window3.cpp	/^int Window3Initialize()$/;"	f
+backspace	src/window3.cpp	/^static gboolean backspace(GtkWidget *widget)$/;"	f	file:
+buffer_changed	src/window3.cpp	/^static void buffer_changed(GtkTextBuffer *textbuffer)$/;"	f	file:
+builder	src/settins.cpp	/^static GtkBuilder *builder;$/;"	v	file:
+builder	src/window3.cpp	/^static GtkBuilder *builder;$/;"	v	file:
+cc	makefile	/^cc = g++$/;"	m
+createProgram	src/window1.cpp	/^static int createProgram(int *program, const char *vpath, const char *fpath)$/;"	f	file:
+defaultProgram	src/window1.cpp	/^static int defaultProgram;$/;"	v	file:
+destroy	src/window2.cpp	/^static gboolean destroy()$/;"	f	file:
+destroy	src/window3.cpp	/^static void destroy()$/;"	f	file:
+draw	src/window1/exercise01.cpp	/^static int draw()$/;"	f	file:
+drawRectangle	src/window1.cpp	/^static int drawRectangle(int *program, unsigned int *vao)$/;"	f	file:
+drawTriangle	src/window1.cpp	/^static int drawTriangle(int *program, unsigned int *vao)$/;"	f	file:
+framebuffer	src/window1.cpp	/^static void framebuffer(GLFWwindow* window, int width, int height)$/;"	f	file:
+grid	src/settins.cpp	/^static GObject *grid;$/;"	v	file:
+hadjustment	src/window2.cpp	/^static GtkAdjustment *hadjustment, *vadjustment;$/;"	v	file:
+index	src/window1.cpp	/^  int index;$/;"	m	struct:__anon2	file:
+init	src/window1/exercise01.cpp	/^static int init()$/;"	f	file:
+init1	src/window1.cpp	/^static int init1()$/;"	f	file:
+init2	src/window1.cpp	/^static int init2()$/;"	f	file:
+initializeGlobal	src/window1.cpp	/^static void initializeGlobal()$/;"	f	file:
+initializeRectangle	src/window1.cpp	/^static int initializeRectangle(unsigned int *vao, unsigned int *vbo, unsigned int *ebo)$/;"	f	file:
+initializeTriangle	src/window1.cpp	/^static int initializeTriangle(unsigned int *vao, unsigned int *vbo)$/;"	f	file:
+initializeWindow	src/window1.cpp	/^static int initializeWindow(GLFWwindow** window)$/;"	f	file:
+inits	src/window1.cpp	/^  int (*inits[10])();$/;"	m	struct:__anon2	file:
+insert_at_cursor	src/window3.cpp	/^static void insert_at_cursor(GtkTextView *textview)$/;"	f	file:
+keyboard	src/window1.cpp	/^static void keyboard(GLFWwindow *window, int key, int scancode, int action, int mod)$/;"	f	file:
+keyboard	src/window2.cpp	/^static gboolean keyboard(GtkWidget *widget, GdkEventKey *event, gpointer data)$/;"	f	file:
+keyboard	src/window3.cpp	/^static gboolean keyboard(GtkWidget *widget, GdkEventKey *event, gpointer data)$/;"	f	file:
+loadVertices	src/window1/exercise01.cpp	/^static int loadVertices(float *vertices, size_t size, const char *path, const char *section)$/;"	f	file:
+main	src/main.cpp	/^int main(int argc, char *argv[])$/;"	f
+obj	makefile	/^obj := $(patsubst src\/%.cpp, obj\/%.o, $(src))$/;"	m
+open	src/main.cpp	/^static int open = true;$/;"	v	file:
+out	makefile	/^out = bin\/app$/;"	m
+preedit_changed	src/window3.cpp	/^static void preedit_changed(GtkTextView *textview)$/;"	f	file:
+program	src/window1/exercise01.cpp	/^static int *program;$/;"	v	file:
+quitBtn	src/window3.cpp	/^static GObject *quitBtn;$/;"	v	file:
+rectangle	src/inc/settings.h	/^  bool rectangle;$/;"	m	struct:Settings
+rectangle	src/window1.cpp	/^  bool rectangle;$/;"	m	struct:__anon1	file:
+rectangleCheckBtn	src/settins.cpp	/^static GObject *rectangleCheckBtn;$/;"	v	file:
+rectangleEBO	src/window1.cpp	/^static unsigned int rectangleVBO, rectangleVAO, rectangleEBO;$/;"	v	file:
+rectangleVAO	src/window1.cpp	/^static unsigned int rectangleVBO, rectangleVAO, rectangleEBO;$/;"	v	file:
+rectangleVBO	src/window1.cpp	/^static unsigned int rectangleVBO, rectangleVAO, rectangleEBO;$/;"	v	file:
+rectangle_check_btn_clicked	src/settins.cpp	/^static void rectangle_check_btn_clicked(GtkCheckButton* *rectangleCheckBtn)$/;"	f	file:
+render1	src/window1.cpp	/^static int render1()$/;"	f	file:
+render2	src/window1.cpp	/^static int render2()$/;"	f	file:
+renders	src/window1.cpp	/^  int (*renders[10])();$/;"	m	struct:__anon2	file:
+scrolledWindow	src/window2.cpp	/^static GtkWidget *scrolledWindow;$/;"	v	file:
+settings	src/main.cpp	/^static struct Settings settings;$/;"	v	typeref:struct:Settings	file:
+settings	src/settins.cpp	/^static Settings *settings;$/;"	v	file:
+settings	src/window1.cpp	/^static struct Settings *settings;$/;"	v	typeref:struct:Settings	file:
+settings	src/window1/exercise01.cpp	/^static struct Settings *settings;$/;"	v	typeref:struct:Settings	file:
+settingsBtn	src/window3.cpp	/^static GObject *settingsBtn;$/;"	v	file:
+settings_button_click_callback	src/window3.cpp	/^static void settings_button_click_callback(GtkButton *button, gpointer data)$/;"	f	file:
+src	makefile	/^src := $(wildcard src\/*.cpp src\/window1\/*.cpp)$/;"	m
+textbuffer	src/window2.cpp	/^static GtkTextBuffer *textbuffer;$/;"	v	file:
+textbuffer	src/window3.cpp	/^static GtkTextBuffer *textbuffer;$/;"	v	file:
+texttagtable	src/window2.cpp	/^static GtkTextTagTable *texttagtable;$/;"	v	file:
+textview	src/window2.cpp	/^static GtkWidget *textview;$/;"	v	file:
+textview	src/window3.cpp	/^static GObject *textview;$/;"	v	file:
+textview_keypress	src/window3.cpp	/^static gboolean textview_keypress(GtkTextView *textview, GdkEventKey *event)$/;"	f	file:
+toggle_window1_exercise_callback	src/settins.cpp	/^static void toggle_window1_exercise_callback(GtkCheckButton *checkBtn, gpointer data)$/;"	f	file:
+triangle	src/inc/settings.h	/^  bool triangle;$/;"	m	struct:Settings
+triangle	src/window1.cpp	/^  bool triangle;$/;"	m	struct:__anon1	file:
+triangleCheckBtn	src/settins.cpp	/^static GObject *triangleCheckBtn;$/;"	v	file:
+triangleVAO	src/window1.cpp	/^static unsigned int triangleVBO, triangleVAO;$/;"	v	file:
+triangleVBO	src/window1.cpp	/^static unsigned int triangleVBO, triangleVAO;$/;"	v	file:
+triangle_check_btn_clicked	src/settins.cpp	/^static void triangle_check_btn_clicked(GtkCheckButton* *triangleCheckBtn)$/;"	f	file:
+vadjustment	src/window2.cpp	/^static GtkAdjustment *hadjustment, *vadjustment;$/;"	v	file:
+vao	src/window1/exercise01.cpp	/^static unsigned int vao[10], vbo[10];$/;"	v	file:
+vbo	src/window1/exercise01.cpp	/^static unsigned int vao[10], vbo[10];$/;"	v	file:
+window	src/window1.cpp	/^static GLFWwindow *window;$/;"	v	file:
+window	src/window2.cpp	/^static GtkWidget *window;$/;"	v	file:
+window	src/window3.cpp	/^static GObject *window;$/;"	v	file:
+window1Exercises	src/inc/settings.h	/^  bool window1Exercises[10];$/;"	m	struct:Settings

@@ -134,6 +134,7 @@ int ValCreateShader(GLenum type, const char *file)
   {
     glGetShaderInfoLog(shader, 512, NULL, info);
     ValErr("Shader '%s' compilation failed.\n%s\n", file, info);
+    return -1;
   }
 
   return shader;
@@ -207,4 +208,41 @@ GLFWwindow *ValCreateLazyGLFWWindow()
   }
 
   return window;
+}
+
+int ValLoadProgram(const char *vpath, const char *fpath)
+{
+  int program, shader;
+
+  program = glCreateProgram();
+
+  shader = ValCreateShader(GL_VERTEX_SHADER, vpath);
+  if (!shader) {
+    ValErr("No Shader.\n");
+    return -1;
+  }
+  glAttachShader(program, shader);
+  //glDeleteShader(shader);
+
+  shader = ValCreateShader(GL_FRAGMENT_SHADER, fpath);
+  if (!shader) {
+    ValErr("No Shader.\n");
+    return -1;
+  }
+  glAttachShader(program, shader);
+  //glDeleteShader(shader);
+
+  glLinkProgram(program);
+
+  int link_ok = true;
+  char info[512];
+
+  if (!link_ok)
+  {
+    glGetProgramInfoLog(program, 512, NULL, info);
+    ValErr("Program linking failed.\n%s\n", info);
+    return -1;
+  }
+
+  return program;
 }

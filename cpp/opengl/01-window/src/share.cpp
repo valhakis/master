@@ -1,4 +1,6 @@
 #include <stdarg.h>
+#include <valhakis.h>
+#include <string.h>
 #include <stdio.h>
 
 const char* KNRM = "\x1B[0m";
@@ -19,3 +21,34 @@ int ShareError(const char *format, ...)
   va_end(args);
   fprintf(stderr, "\n");
 }
+
+int ShareLoadVertices(float *vertices, size_t size, const char *path, const char *section)
+{
+  FILE *fp;
+
+  if ((fp = fopen(path, "r")) == NULL)
+  {
+    ValErr("Failed to open file '%s'.\n", path);
+    return -1;
+  }
+
+  char buffer[512];
+  while (fgets(buffer, 512, fp))
+  {
+    buffer[strlen(buffer) - 1] = '\0';
+    if (strcmp(buffer, section) == 0)
+    {
+      break;
+    }
+  }
+
+  int x;
+  for (x=0; x<size/sizeof(*vertices); x++)
+  {
+    fscanf(fp, "%f", vertices + x);
+  }
+  fclose(fp);
+
+  return 0;
+}
+

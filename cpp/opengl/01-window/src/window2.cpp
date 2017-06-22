@@ -59,8 +59,7 @@ int Window2Initialize(int argc, char *argv[])
 
   gtk_widget_show(window);
 
-  Window2AddAtCursor("WHAT IS NUMBER: %d.\n", 489);
-
+  // Window2AddAtCursor("WHAT IS NUMBER: %d.\n", 489);
   return 0;
 }
 
@@ -86,4 +85,9 @@ int Window2AddAtCursor(const char *format, ...)
   gdouble upper = gtk_adjustment_get_upper(vadjustment);;
   gdouble page_size = gtk_adjustment_get_page_size(vadjustment);;
   gtk_adjustment_set_value(GTK_ADJUSTMENT(vadjustment), upper - page_size);
+}
+
+int Window2Clear()
+{
+  gtk_text_buffer_set_text(GTK_TEXT_BUFFER(textbuffer), "", -1);
 }

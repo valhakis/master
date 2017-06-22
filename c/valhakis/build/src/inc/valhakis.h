@@ -17,6 +17,8 @@ extern "C" {
   GLFWwindow *CreateGLFWWindow(int width, int height);
   int ValCreateProgram(int vshader, int fshader);
   GLFWwindow *ValCreateLazyGLFWWindow();
+  int ValLoadProgram(const char *vpath, const char *fpath);
+
 #ifdef __cplusplus
 }
 #endif
