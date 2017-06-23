@@ -4,3 +4,7 @@ bower_components
 /node/master/dist
 /eksam/dist
 /vendor/
+<<<<<<< HEAD
+=======
+/node/master/server/dist
+>>>>>>> d53901259345d528b45acf02ca838e93007863d2
