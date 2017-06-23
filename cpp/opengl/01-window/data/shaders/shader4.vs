@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #version 330 core
 
 layout (location = 0) in vec3 aPos;
@@ -16,3 +17,16 @@ void main(void)
   
   vcolor = aColor;
 }
+=======
+#version 330 core
+
+layout (location = 0) in vec3 aPos;
+
+out vec4 vertexColor;
+
+void main(void)
+{
+  gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0f);
+  vertexColor = vec4(0.9, 0.8, 0.1, 1.0);
+}
+>>>>>>> 0b8937f71d8fb659b6f2dce2f77abd8176dfb9d9
