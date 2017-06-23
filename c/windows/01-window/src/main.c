@@ -2,6 +2,9 @@
 #include <stdbool.h>
 #include <GLFW/glfw3.h>
 
+#define GLFW_EXPOSE_NATIVE_WIN32 1
+#include <GLFW/glfw3native.h>
+
 #ifdef _WIN32
 #include "windows.h"
 #endif
@@ -31,6 +34,9 @@ int main(int argc, char *argv[])
   glfwMakeContextCurrent(window);
 
   glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+
+  HWND hwnd = glfwGetWin32Window(window);
+  SetFocus(hwnd);
 
   while (open)
   {

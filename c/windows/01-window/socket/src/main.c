@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 const unsigned int SERVER_PORT = 5000;
-const char *SERVER_IP = "192.168.0.30";
+const char *SERVER_IP = "192.168.0.3";
 bool open = true;
 
 // wait for 'run' and start app

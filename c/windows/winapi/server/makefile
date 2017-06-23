@@ -1,10 +1,10 @@
-cc = gcc
-out = ../bin/client
+cc = i686-w64-mingw32-gcc
+out = ../bin/server.exe
 
 cflags = 
 ldflags = 
 
-libs = 
+libs += -lws2_32
 
 src := $(wildcard src/*.c)
 obj := $(patsubst src/%.c, obj/%.o, $(src))
@@ -17,6 +17,3 @@ obj/%.o: src/%.c
 
 clean:
 	rm -f obj/*
-
-run:
-	../bin/client 06-win-opengl.exe

@@ -10,7 +10,7 @@
 
 // send 'run' to socket server
 
-const char *SERVER_IP = "192.168.0.30";
+const char *SERVER_IP = "192.168.0.3";
 const unsigned int SERVER_PORT = 5000;
 
 int main()
