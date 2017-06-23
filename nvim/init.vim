@@ -1,9 +1,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/jistr/vim-nerdtree-tabs'
 Plug 'https://github.com/vim-syntastic/syntastic'
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/embear/vim-localvimrc'
 Plug 'https://github.com/Rip-Rip/clang_complete'
+Plug 'https://github.com/jiangmiao/auto-pairs'
 if has('nvim')
   Plug 'https://github.com/Shougo/deoplete.nvim'
 else
@@ -54,15 +58,11 @@ Plug 'https://github.com/tikhomirov/vim-glsl'
 "Plug 'https://github.com/kien/ctrlp.vim'
 "Plug 'https://github.com/easymotion/vim-easymotion'
 "Plug 'https://github.com/pangloss/vim-javascript'
-"Plug 'https://github.com/jiangmiao/auto-pairs'
 "Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/scrooloose/nerdcommenter'
 "Plug 'https://github.com/Valloric/MatchTagAlways'
 "Plug 'https://github.com/nono/vim-handlebars'
-"Plug 'https://github.com/tpope/vim-surround'
 "Plug 'https://github.com/burnettk/vim-angular'
-"Plug 'https://github.com/tpope/vim-repeat'
-Plug 'https://github.com/mattn/emmet-vim'
 "Plug 'https://github.com/ervandew/supertab'
 "Plug 'https://github.com/airblade/vim-gitgutter'
 "Plug 'https://github.com/vim-scripts/apachestyle'
@@ -83,8 +83,8 @@ nmap ,make :w \| !make <cr>
 set t_Co=256
 syntax enable
 
-set backupdir=~/.vim/backup/
-set directory=~/.vim/swp/
+set backupdir=~/master/.vim/backup/
+set directory=~/master/.vim/swp/
 "set backupdir=/tmp
 "set directory=/tmp
 
@@ -191,6 +191,7 @@ if has('nvim')
   " au filetype cpp map \mr :w \| Term make && make run <cr>
   " au filetype c map \mr :w \| Term make && make run <cr>
   au filetype cpp map \mr :w \| Term make && make run <cr>
+  au filetype sh map \mr :w \| Term ./% <cr>
 
   " au filetype cpp map ,mr :w \| Term make result && make run_result <cr>
   "au filetype c map \mr :w \| Term make && ./app <cr>
@@ -204,6 +205,7 @@ else
   "au filetype cpp map \mr :w \| !make && make run <cr>
   "au filetype c map ,mr :w \| !make && ./app <cr>
   "au filetype c map \mr :w \| !make && ./app <cr>
+  au filetype sh map \mr :w \| !./% <cr>
 endif
 au filetype ruby map \mr :w \| !ruby -w %<cr>
 
@@ -211,6 +213,8 @@ au filetype ruby map \mr :w \| !ruby -w %<cr>
 set mouse=n
 
 nmap ,edit :tabedit ~/.config/nvim/init.vim <cr>
+nmap ,tmux :tabedit ~/.tmux.conf <cr>
+nmap ,bash :tabedit ~/.bashrc <cr>
 au VimEnter,FileType vim,.vimrc,.lvimrc nmap ,so :w \| so % <cr>
 au VimEnter,FileType c,cpp,*.c,*.cpp nmap ,so :e % <cr>
 nmap qq :q <cr>
@@ -485,3 +489,12 @@ au filetype qf setlocal syntax=c
 set completeopt+=preview
 
 autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif
+
+" set statusline=%y\ %f\ %l\\%L
+set statusline=%#LineNR#
+set statusline=%m
+set statusline+=\ %y
+set statusline+=%=[%l/%L]
+set statusline+=\ [%f]
+
+"nmap <c-f> :set statusline=[%F] <cr>
