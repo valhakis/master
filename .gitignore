@@ -4,3 +4,5 @@ bower_components
 /node/master/dist
 /eksam/dist
 /vendor/
+/.vim/swp
+/.vim/backup
