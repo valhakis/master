@@ -12,11 +12,13 @@ static int open = true;
 int main(int argc, char *argv[])
 {
 
+  /*
   if (TerminalInitialize() == -1) 
   {
     ShareError("Unable to initialize Terminal.");
     return -1;
   }
+  */
 
   if (SettingsInitialize() == -1)
   {
