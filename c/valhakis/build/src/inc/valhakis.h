@@ -18,6 +18,7 @@ extern "C" {
   int ValCreateProgram(int vshader, int fshader);
   GLFWwindow *ValCreateLazyGLFWWindow();
   int ValLoadProgram(const char *vpath, const char *fpath);
+  int ValGetUniform(int program, const char *name);
 
 #ifdef __cplusplus
 }

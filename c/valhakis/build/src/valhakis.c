@@ -246,3 +246,15 @@ int ValLoadProgram(const char *vpath, const char *fpath)
 
   return program;
 }
+
+int ValGetUniform(int program, const char *name)
+{
+  int uniform = glGetUniformLocation(program, name);
+
+  if (uniform == -1)
+  {
+    ValErr("Unable to get uniform '%s'.\n", name);
+  }
+
+  return uniform;
+}
