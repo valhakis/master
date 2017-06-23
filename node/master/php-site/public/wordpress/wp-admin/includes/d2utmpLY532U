@@ -1,0 +1,180 @@
+<?php
+/**
+ * List Table API: WP_Users_List_Table class
+ *
+ * @package WordPress
+ * @subpackage Administration
+ * @since 3.1.0
+ */
+
+/**
+ * Core class used to implement displaying users in a list table.
+ *
+ * @since 3.1.0
+ * @access private
+ *
+ * @see WP_List_Table
+ */
+class WP_Users_List_Table extends WP_List_Table {
+
+	/**
+	 * Site ID to generate the Users list table for.
+	 *
+	 * @since 3.1.0
+	 * @access public
+	 * @var int
+	 */
+	public $site_id;
+
+	/**
+	 * Whether or not the current Users list table is for Multisite.
+	 *
+	 * @since 3.1.0
+	 * @access public
+	 * @var bool
+	 */
+	public $is_site_users;
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 3.1.0
+	 * @access public
+	 *
+	 * @see WP_List_Table::__construct() for more information on default arguments.
+	 *
+	 * @param array $args An associative array of arguments.
+	 */
+	public function __construct( $args = array() ) {
+		parent::__construct( array(
+			'singular' => 'user',
+			'plural'   => 'users',
+			'screen'   => isset( $args['screen'] ) ? $args['screen'] : null,
+		) );
+
+		$this->is_site_users = 'site-users-network' === $this->screen->id;
+
+		if ( $this->is_site_users )
+			$this->site_id = isset( $_REQUEST['id'] ) ? intval( $_REQUEST['id'] ) : 0;
+	}
+
+	/**
+	 * Check the current user's permissions.
+	 *
+ 	 * @since 3.1.0
+	 * @access public
+	 *
+	 * @return bool
+	 */
+	public function ajax_user_can() {
+		if ( $this->is_site_users )
+			return current_user_can( 'manage_sites' );
+		else
+			return current_user_can( 'list_users' );
+	}
+
+	/**
+	 * Prepare the users list for display.
+	 *
+	 * @since 3.1.0
+	 * @access public
+	 *
+	 * @global string $role
+	 * @global string $usersearch
+	 */
+	public function prepare_items() {
+		global $role, $usersearch;
+
+		$usersearch = isset( $_REQUEST['s'] ) ? wp_unslash( trim( $_REQUEST['s'] ) ) : '';
+
+		$role = isset( $_REQUEST['role'] ) ? $_REQUEST['role'] : '';
+
+		$per_page = ( $this->is_site_users ) ? 'site_users_network_per_page' : 'users_per_page';
+		$users_per_page = $this->get_items_per_page( $per_page );
+
+		$paged = $this->get_pagenum();
+
+		if ( 'none' === $role ) {
+			$args = array(
+				'number' => $users_per_page,
+				'offset' => ( $paged-1 ) * $users_per_page,
+				'include' => wp_get_users_with_no_role(),
+				'search' => $usersearch,
+				'fields' => 'all_with_meta'
+			);
+		} else {
+			$args = array(
+				'number' => $users_per_page,
+				'offset' => ( $paged-1 ) * $users_per_page,
+				'role' => $role,
+				'search' => $usersearch,
+				'fields' => 'all_with_meta'
+			);
+		}
+
+		if ( '' !== $args['search'] )
+			$args['search'] = '*' . $args['search'] . '*';
+
+		if ( $this->is_site_users )
+			$args['blog_id'] = $this->site_id;
+
+		if ( isset( $_REQUEST['orderby'] ) )
+			$args['orderby'] = $_REQUEST['orderby'];
+
+		if ( isset( $_REQUEST['order'] ) )
+			$args['order'] = $_REQUEST['order'];
+
+		/**
+		 * Filters the query arguments used to retrieve users for the current users list table.
+		 *
+		 * @since 4.4.0
+		 *
+		 * @param array $args Arguments passed to WP_User_Query to retrieve items for the current
+		 *                    users list table.
+		 */
+		$args = apply_filters( 'users_list_table_query_args', $args );
+
+		// Query the user IDs for this page
+		$wp_user_search = new WP_User_Query( $args );
+
+		$this->items = $wp_user_search->get_results();
+
+		$this->set_pagination_args( array(
+			'total_items' => $wp_user_search->get_total(),
+			'per_page' => $users_per_page,
+		) );
+	}
+
+	/**
+	 * Output 'no users' message.
+	 *
+	 * @since 3.1.0
+	 * @access public
+	 */
+	public function no_items() {
+		_e( 'No users found.' );
+	}
+
+	/**
+	 * Return an associative array listing all the views that can be used
+	 * with this table.
+	 *
+	 * Provides a list of roles and user count for that role for easy
+	 * Filtersing of the user table.
+	 *
+	 * @since  3.1.0
+	 * @access protected
+	 *
+	 * @global string $role
+	 *
+	 * @return array An array of HTML links, one for each view.
+	 */
+	protected function get_views() {
+		global $role;
+
+		$wp_roles = wp_roles();
+
+		if ( $this->is_site_users ) {
+			$url = 'site-users.php?id=' . $this->site_id;
+			switch_to_blog( $this->site_id );
+			$users_of_blog
