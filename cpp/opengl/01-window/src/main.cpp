@@ -4,6 +4,7 @@
 #include "inc/window2.h"
 #include "inc/window3.h"
 #include "inc/settings.h"
+#include "inc/terminal.h"
 #include "inc/program.h"
 
 static int open = true;
@@ -11,28 +12,28 @@ static int open = true;
 int main(int argc, char *argv[])
 {
 
-  if (SettingsInitialize() < 0)
+  if (TerminalInitialize() == -1) 
+  {
+    ShareError("Unable to initialize Terminal.");
+    return -1;
+  }
+
+  if (SettingsInitialize() == -1)
   {
     ShareError("Unable to initialize Settings.");
     return -1;
   }
 
-  if (Window1Initialize() < 0)
+  if (Window1Initialize() == -1)
   {
     ShareError("Unable to initialize Window1.");
-    return -1;
-  }
-
-  if (ProgramInitialize() < 0)
-  {
-    ShareError("Unable to initialize program.");
     return -1;
   }
 
   int width, height;
   Window1GetMonitorDimensions(&width, &height);
 
-  if (Window2Initialize(argc, argv) < 0)
+  if (Window2Initialize(argc, argv) == -1)
   {
     ShareError("Unable to initialize Window2.");
     return -1;
@@ -40,7 +41,7 @@ int main(int argc, char *argv[])
 
   Window2AddAtCursor("MONITOR: [%d, %d].\n", width, height);
 
-  if (Window3Initialize() < 0)
+  if (Window3Initialize() == -1)
   {
     ShareError("Unable to initialize Window3.");
     return -1;

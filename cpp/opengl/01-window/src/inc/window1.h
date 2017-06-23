@@ -2,6 +2,7 @@
 
 #define MAX_PROGRAMS 10
 
+#include <stdio.h>
 #include "settings.h"
 
 int Window1Initialize();
@@ -12,3 +13,5 @@ int Window1Register(int (*init)(), int (*render)());
 
 void Window1Exercise01(int *in_program);
 void Window1Exercise02();
+void Window1Exercise03();
+void Window1Exercise04();

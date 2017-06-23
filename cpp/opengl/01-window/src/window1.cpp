@@ -11,6 +11,7 @@
 #include "inc/window1.h"
 #include "inc/window2.h"
 #include "inc/settings.h"
+#include "inc/program.h"
 
 static struct {
   bool triangle;
@@ -94,8 +95,6 @@ int Window1Initialize()
 
 
   Exercises.index = 0;
-  // Window1Register(init1, render1);
-  // Window1Register(init2, render2);
 
   programs[0] = ValLoadProgram("data/default.vs", "data/default.fs");
   programs[1] = 2;
@@ -103,6 +102,8 @@ int Window1Initialize()
 
   Window1Exercise01(&defaultProgram);
   Window1Exercise02();
+  Window1Exercise03();
+  Window1Exercise04();
 
   int x=0;
   for (x=0; x<Exercises.index; x++)
@@ -257,6 +258,12 @@ static int initializeWindow(GLFWwindow** window)
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
   {
     ShareError("Failed to initialize glad.");
+    return -1;
+  }
+
+  if (ProgramInitialize() < 0)
+  {
+    ShareError("Unable to initialize program.");
     return -1;
   }
 

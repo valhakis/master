@@ -52,3 +52,38 @@ int ShareLoadVertices(float *vertices, size_t size, const char *path, const char
   return 0;
 }
 
+int ShareLoadIndices(unsigned int *indices, size_t size, const char *path, const char *section)
+{
+  FILE *fp;
+
+  if ((fp = fopen(path, "r")) == NULL)
+  {
+    ValErr("Failed to open file '%s'.\n", path);
+    return -1;
+  }
+
+  char buffer[512];
+  while (fgets(buffer, 512, fp))
+  {
+    buffer[strlen(buffer) - 1] = '\0';
+    if (strcmp(buffer, section) == 0)
+    {
+      break;
+    }
+  }
+
+  int x;
+  for (x=0; x<size/sizeof(*indices); x++)
+  {
+    fscanf(fp, "%u", indices + x);
+  }
+  printf("\n");
+  fclose(fp);
+
+  return 0;
+}
+
+int ShareLoadDefaultTriangleVertices(float *vertices)
+{
+  ShareLoadVertices(vertices, 3 * 3 * sizeof(float), "data/vertices.dat", "DEFAULT TRIANGLE");
+}
