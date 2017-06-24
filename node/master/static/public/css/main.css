@@ -33,3 +33,7 @@ a:hover {
 .file {
   color: #ccc;
 }
+.file:hover {
+  color: #FF0;
+  cursor: pointer;
+}

@@ -37,6 +37,14 @@
     this.nextSibling.classList.toggle('hidden');
   }
 
+  function fileView()
+  {
+    console.log(this.file);
+    console.log(encodeURIComponent(JSON.stringify(this.file)));
+    var file = encodeURIComponent(JSON.stringify(this.file));
+    window.location.href = '/static/view/' + file
+  }
+
   function createStructure(files, container) {
     var ul = document.createElement('ul');
     container.appendChild(ul);
@@ -54,6 +62,8 @@
         span.nextSibling.classList.add('hidden');
       } else {
         span.classList.add('file');
+        span.file = files[x];
+        span.addEventListener('click', fileView);
       }
     }
   }

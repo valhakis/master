@@ -25,6 +25,7 @@ exports.start = function() {
   bs.watch([
     `${App.root}/php-site/public/**/*.{html,js,css,php}`,
     `${App.root}/static/**/*.{html,js,css}`,
+    `!${App.root}/static/**/*.{js,json}`,
     `${App.root}/site/**/*.{html,js,css}`,
     // `!${App.root}/site/**/client/**/*.{html,js,css}`,
     `${App.root}/server/views/**/*.pug`,
@@ -33,7 +34,7 @@ exports.start = function() {
     `${App.root}/dist/**/*.js`,
     `!${App.root}/dist/report.html`
   ]).on('change', function(filename) {
-    console.log(`FILENAME: ${filename} changed.`);
+    console.log(`[BS] FILENAME: ${filename} changed.`);
     bs.reload();
   });
 
