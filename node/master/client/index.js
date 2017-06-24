@@ -1,3 +1,5 @@
+// import './static';
+
 import 'codemirror/lib/codemirror.css';
 import CodeMirror from 'codemirror/lib/codemirror';
 import 'codemirror/theme/monokai.css';
@@ -29,4 +31,3 @@ document.body.appendChild(textarea);
 var editor = CodeMirror.fromTextArea(textarea, {
   lineNumbers: true
 });
-

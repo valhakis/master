@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/master/node/master/static/tmp/MError.c.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="c">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="antares">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #b2b2b2; background-color: #080808; }
+body { font-family: monospace; color: #b2b2b2; background-color: #080808; }
+* { font-size: 1em; }
+.cType { color: #87d7ff; }
+.String { color: #00af5f; }
+.cConstant { color: #00af5f; font-weight: bold; }
+.cStorageClass { color: #ffd75f; }
+.cSpecial { color: #afaf5f; font-weight: bold; }
+.cInclude { color: #d75f5f; }
+.cDefine { color: #d75f5f; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="cInclude">#include </span><span class="String">&lt;stdio.h&gt;</span>
+<span class="cInclude">#include </span><span class="String">&lt;stdarg.h&gt;</span>
+
+<span class="cType">void</span> ValLog(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...);
+<span class="cType">void</span> ValErr(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...);
+
+<span class="cDefine">#define KNRM  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[0m&quot;</span>
+<span class="cDefine">#define KRED  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[31m&quot;</span>
+<span class="cDefine">#define KGRN  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[32m&quot;</span>
+<span class="cDefine">#define KYEL  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[33m&quot;</span>
+<span class="cDefine">#define KBLU  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[34m&quot;</span>
+<span class="cDefine">#define KMAG  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[35m&quot;</span>
+<span class="cDefine">#define KCYN  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[36m&quot;</span>
+<span class="cDefine">#define KWHT  </span><span class="String">&quot;</span><span class="cSpecial">\x1B</span><span class="String">[37m&quot;</span>
+
+<span class="cType">void</span> ValErr(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...)
+{
+  <span class="cType">va_list</span> args;
+  fprintf(<span class="cConstant">stderr</span>, KRED);
+  fprintf(<span class="cConstant">stderr</span>, <span class="String">&quot;ERROR: &quot;</span>);
+  fprintf(<span class="cConstant">stderr</span>, KNRM);
+  va_start(args, format);
+  vfprintf(<span class="cConstant">stderr</span>, format, args);
+  va_end(args);
+}
+
+<span class="cType">void</span> ValLog(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...)
+{
+  <span class="cType">va_list</span> args;
+  fprintf(<span class="cConstant">stderr</span>, KBLU);
+  fprintf(<span class="cConstant">stderr</span>, <span class="String">&quot;LOG: &quot;</span>);
+  fprintf(<span class="cConstant">stderr</span>, KNRM);
+  va_start(args, format);
+  vfprintf(<span class="cConstant">stderr</span>, format, args);
+  va_end(args);
+}
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

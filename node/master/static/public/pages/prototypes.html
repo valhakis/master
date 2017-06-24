@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/master/node/master/static/public/c/prototypes.c.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="c">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="antares">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #b2b2b2; background-color: #080808; }
+body { font-family: monospace; color: #b2b2b2; background-color: #080808; }
+* { font-size: 1em; }
+.cType { color: #87d7ff; }
+.String { color: #00af5f; }
+.cStorageClass { color: #ffd75f; }
+.cInclude { color: #d75f5f; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="cInclude">#include </span><span class="String">&lt;glad/glad.h&gt;</span>
+<span class="cInclude">#include </span><span class="String">&lt;valhakis.h&gt;</span>
+
+<span class="cType">void</span> ValSample(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...);
+<span class="cType">void</span> ValErr(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...);
+<span class="cType">char</span> *ValReadSource(<span class="cStorageClass">const</span> <span class="cType">char</span> *file);
+<span class="cType">void</span> ValLog(<span class="cStorageClass">const</span> <span class="cType">char</span> *format, ...);
+<span class="cType">int</span> ValCreateShader(GLenum type, <span class="cStorageClass">const</span> <span class="cType">char</span> *file);
+GLFWwindow *CreateGLFWWindow(<span class="cType">int</span> width, <span class="cType">int</span> height);
+<span class="cType">int</span> ValCreateProgram(<span class="cType">int</span> vshader, <span class="cType">int</span> fshader);
+GLFWwindow *ValCreateLazyGLFWWindow();
+<span class="cType">int</span> ValLoadProgram(<span class="cStorageClass">const</span> <span class="cType">char</span> *vpath, <span class="cStorageClass">const</span> <span class="cType">char</span> *fpath);
+<span class="cType">int</span> ValGetUniform(<span class="cType">int</span> program, <span class="cStorageClass">const</span> <span class="cType">char</span> *name);
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

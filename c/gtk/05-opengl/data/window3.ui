@@ -1,0 +1,12 @@
+<interface>
+  <object id="window" class="GtkWindow">
+    <property name="visible">True</property>
+    <property name="width_request">500</property>
+    <property name="height_request">500</property>
+    <child>
+      <object id="gl_area" class="GtkGLArea">
+        <property name="visible">True</property>
+      </object>
+    </child>
+  </object>
+</interface>

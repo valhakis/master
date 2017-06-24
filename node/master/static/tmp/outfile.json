@@ -1,0 +1,294 @@
+{
+  "files": [
+    {
+      "name": ".env.template",
+      "path": "/home/thomas/master/.env.template",
+      "isDir": false
+    },
+    {
+      "name": ".jshintrc",
+      "path": "/home/thomas/master/.jshintrc",
+      "isDir": false
+    },
+    {
+      "name": ".vim",
+      "path": "/home/thomas/master/.vim",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "angular",
+      "path": "/home/thomas/master/angular",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "angular-2",
+      "path": "/home/thomas/master/angular-2",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "app",
+      "path": "/home/thomas/master/app",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "application",
+      "path": "/home/thomas/master/application",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "apps",
+      "path": "/home/thomas/master/apps",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "bash",
+      "path": "/home/thomas/master/bash",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "bin",
+      "path": "/home/thomas/master/bin",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "bower.json",
+      "path": "/home/thomas/master/bower.json",
+      "isDir": false
+    },
+    {
+      "name": "c",
+      "path": "/home/thomas/master/c",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "c++",
+      "path": "/home/thomas/master/c++",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "composer.json",
+      "path": "/home/thomas/master/composer.json",
+      "isDir": false
+    },
+    {
+      "name": "composer.lock",
+      "path": "/home/thomas/master/composer.lock",
+      "isDir": false
+    },
+    {
+      "name": "cpp",
+      "path": "/home/thomas/master/cpp",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "eksam",
+      "path": "/home/thomas/master/eksam",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "ember",
+      "path": "/home/thomas/master/ember",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "firebird",
+      "path": "/home/thomas/master/firebird",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "game",
+      "path": "/home/thomas/master/game",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "globals",
+      "path": "/home/thomas/master/globals",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "grunt",
+      "path": "/home/thomas/master/grunt",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "gtk",
+      "path": "/home/thomas/master/gtk",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "home",
+      "path": "/home/thomas/master/home",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "index.html",
+      "path": "/home/thomas/master/index.html",
+      "isDir": false
+    },
+    {
+      "name": "java",
+      "path": "/home/thomas/master/java",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "jsp",
+      "path": "/home/thomas/master/jsp",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "lib",
+      "path": "/home/thomas/master/lib",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "main.js",
+      "path": "/home/thomas/master/main.js",
+      "isDir": false
+    },
+    {
+      "name": "mongo",
+      "path": "/home/thomas/master/mongo",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "motivation",
+      "path": "/home/thomas/master/motivation",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "msys",
+      "path": "/home/thomas/master/msys",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "node",
+      "path": "/home/thomas/master/node",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "notes-app",
+      "path": "/home/thomas/master/notes-app",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "nvim",
+      "path": "/home/thomas/master/nvim",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "opengl",
+      "path": "/home/thomas/master/opengl",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "package-lock.json",
+      "path": "/home/thomas/master/package-lock.json",
+      "isDir": false
+    },
+    {
+      "name": "package.json",
+      "path": "/home/thomas/master/package.json",
+      "isDir": false
+    },
+    {
+      "name": "program",
+      "path": "/home/thomas/master/program",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "react",
+      "path": "/home/thomas/master/react",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "readme.md",
+      "path": "/home/thomas/master/readme.md",
+      "isDir": false
+    },
+    {
+      "name": "sample-folder",
+      "path": "/home/thomas/master/sample-folder",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "samples",
+      "path": "/home/thomas/master/samples",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "scripts",
+      "path": "/home/thomas/master/scripts",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "server",
+      "path": "/home/thomas/master/server",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "tmp",
+      "path": "/home/thomas/master/tmp",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "typescript",
+      "path": "/home/thomas/master/typescript",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "valhakis-app",
+      "path": "/home/thomas/master/valhakis-app",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "webkit-app",
+      "path": "/home/thomas/master/webkit-app",
+      "isDir": true,
+      "files": []
+    },
+    {
+      "name": "website",
+      "path": "/home/thomas/master/website",
+      "isDir": true,
+      "files": []
+    }
+  ]
+}

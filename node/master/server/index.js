@@ -1,3 +1,4 @@
+require('../globals');
 require('./globals');
 
 // FIND console.log FILENAME
@@ -29,6 +30,7 @@ mongoose.Promise = global.Promise;
 var request = require('request');
 var http = require('http');
 var config = require('./config');
+var env = Master.loadJSON('.env');
 
 var db = require('./database').db;
 
@@ -80,7 +82,9 @@ db.sync().then(() => {
          if (err) return console.log(err);
       });
       */
-        request(`http://${config['browser-sync'].host}:${config['browser-sync'].port}/__browser_sync__?method=reload`, function(err, res, body) {
+        var _host = '192.168.0.3';
+        var _port = '3000';
+        request(`http://${_host}:${_port}/__browser_sync__?method=reload`, function(err, res, body) {
           if (err) return console.log(`BROWSER-SYNC: ${err.message}`);
         });
       }

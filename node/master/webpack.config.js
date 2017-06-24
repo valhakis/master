@@ -3,14 +3,14 @@ var path = require('path');
 var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var serverConfig = require('./server/config');
 
 module.exports = {
   // root: __dirname,
   context: __dirname,
   // devtool: 'eval-source-map',
-  devtool: 'eval',
+  // devtool: 'eval',
   entry: {
     'client': './client/index.js',
     'angular-2': './client/angular2/index.js',
@@ -58,22 +58,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['commons', 'client'],
       template: '!!pug-loader!./client/index.pug',
-      // template: './client/index.html',
+       //template: './client/index.html',
       favicon: './client/favicon.ico',
       filename: './index.html'
     }),
-    new HtmlWebpackPlugin({
-      chunks: ['react-app'],
-      template: '!!pug-loader!./client/react-app/index.pug',
-      filename: './react-app/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['angular2'],
-      template: '!!pug-loader!./client/angular2/index.pug',
-      // template: './client/index.html',
-      favicon: './client/favicon.ico',
-      filename: './angular2/index.html'
-    }),
+    //new HtmlWebpackPlugin({
+      //chunks: ['react-app'],
+      //template: '!!pug-loader!./client/react-app/index.pug',
+      //filename: './react-app/index.html'
+    //}),
+    //new HtmlWebpackPlugin({
+      //chunks: ['angular2'],
+      //template: '!!pug-loader!./client/angular2/index.pug',
+    // template: './client/index.html',
+    //favicon: './client/favicon.ico',
+    //filename: './angular2/index.html'
+    //}),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'commons',
       filename: 'commons.js',
@@ -84,10 +84,10 @@ module.exports = {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-    }),
+    //new BundleAnalyzerPlugin({
+    //analyzerMode: 'static',
+    //openAnalyzer: false,
+    //}),
     // new webpack.optimize.CommonsChunkPlugin({
     // name: 'node-static',
     // filename: 'node-static.js',

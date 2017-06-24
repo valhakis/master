@@ -8,6 +8,7 @@ Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/embear/vim-localvimrc'
 Plug 'https://github.com/Rip-Rip/clang_complete'
 Plug 'https://github.com/jiangmiao/auto-pairs'
+Plug 'https://github.com/pangloss/vim-javascript'
 if has('nvim')
   Plug 'https://github.com/Shougo/deoplete.nvim'
 else
@@ -50,14 +51,13 @@ Plug 'https://github.com/tikhomirov/vim-glsl'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'fatih/vim-go', { 'tag': '*' }
 "Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug '~/my-prototype-plugin'
 "Plug 'https://github.com/flazz/vim-colorschemes'
 "Plug 'https://github.com/keith/tmux.vim'
 "Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
-"Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'https://github.com/kien/ctrlp.vim'
 "Plug 'https://github.com/easymotion/vim-easymotion'
-"Plug 'https://github.com/pangloss/vim-javascript'
 "Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/scrooloose/nerdcommenter'
 "Plug 'https://github.com/Valloric/MatchTagAlways'
@@ -78,7 +78,6 @@ call plug#end()
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-nmap ,make :w \| !make <cr>
 
 set t_Co=256
 syntax enable
@@ -89,9 +88,6 @@ set directory=~/master/.vim/swp/
 "set directory=/tmp
 
 set nowrap
-
-map ,wrap :set wrap! <cr>
-map <F2> :set wrap! <cr>
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set incsearch hlsearch
@@ -106,28 +102,20 @@ let g:deoplete#enable_at_startup = 1
 
 let g:ctrlp_custom_ignore = '\.git\|node_modules\|bower_components\|laravel\/vendor'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'a'
 let g:user_emmet_leader_key=','
 
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeWinSize = 25 
 let NERDTreeMapActivateNode='<space>'
-imap \ne <c-o>:NERDTreeFind <cr>
-
-let NERDTreeShowHidden=1
-
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:NERDTreeWinPos = "right"
 " let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeShowHidden=1
+
 
 " let g:NERDTreeDirArrowExpandable = '→'
 " let g:NERDTreeDirArrowCollapsible = '↓'
-"nmap ,ne :NERDTreeToggle <cr>
-"nmap ,ng :NERDTreeFind <cr>
-"nmap \ne :NERDTreeToggle <cr>
-nmap \ne :NERDTreeFind <cr>
-nmap ,ne :NERDTreeFind <cr>
 
 
 set statusline+=%#warningmsg#
@@ -147,7 +135,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" let g:syntastic_c_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
+let g:syntastic_c_config_file = $HOME . '/master/nvim/.syntastic'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
 
@@ -187,39 +175,16 @@ let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
 "let g:syntastic_cpp_compiler = 'g++'
 
 if has('nvim')
-  " au filetype java map \mr :w \| Term make && make run <cr>
-  " au filetype cpp map \mr :w \| Term make && make run <cr>
-  " au filetype c map \mr :w \| Term make && make run <cr>
-  au filetype cpp map \mr :w \| Term make && make run <cr>
+  au filetype c,cpp map \mr :w \| Term make && make run <cr>
   au filetype sh map \mr :w \| Term ./% <cr>
-
-  " au filetype cpp map ,mr :w \| Term make result && make run_result <cr>
-  "au filetype c map \mr :w \| Term make && ./app <cr>
-  "au filetype c map ,mr :w \| :terminal make && ./app <cr>
-  "au filetype c map \mr :w \| :terminal make && ./app <cr>
-  "au filetype c map \mr :w \| Term make && make run <cr>
-  "au filetype cpp map \mr :w \| Term make && make run <cr>
-  "au filetype javascript,html map \mr :w \| Term nw . <cr>
 else
-  "au filetype c map \mr :w \| !make && make run <cr>
-  "au filetype cpp map \mr :w \| !make && make run <cr>
-  "au filetype c map ,mr :w \| !make && ./app <cr>
-  "au filetype c map \mr :w \| !make && ./app <cr>
+  au filetype c,cpp map \mr :w \| !make && make run <cr>
   au filetype sh map \mr :w \| !./% <cr>
+  au filetype ruby map \mr :w \| !ruby -w %<cr>
 endif
-au filetype ruby map \mr :w \| !ruby -w %<cr>
 
 
 set mouse=n
-
-nmap ,edit :tabedit ~/.config/nvim/init.vim <cr>
-nmap ,tmux :tabedit ~/.tmux.conf <cr>
-nmap ,bash :tabedit ~/.bashrc <cr>
-au VimEnter,FileType vim,.vimrc,.lvimrc nmap ,so :w \| so % <cr>
-au VimEnter,FileType c,cpp,*.c,*.cpp nmap ,so :e % <cr>
-nmap qq :q <cr>
-nmap ,install :w \| so % \| PlugInstall <cr>
-nmap ,clean :w \| so % \| PlugClean <cr>
 
 let g:indentLine_enabled = 1
 
@@ -337,7 +302,21 @@ hi CursorLine ctermbg=235 guibg=#111111
 " map ,run :w \| !make && curl kodu.noip.me:3000/restart <cr>
 map ,run :w \| !make run <cr>
 map ,kill :w \| !curl kodu.noip.me:3000/kill <cr>
-
+nmap ,edit :tabedit ~/.config/nvim/init.vim <cr>
+nmap ,tmux :tabedit ~/.tmux.conf <cr>
+nmap ,bash :tabedit ~/.bashrc <cr>
+au VimEnter,FileType vim,.vimrc,.lvimrc nmap ,so :w \| so % <cr>
+au VimEnter,FileType c,cpp,*.c,*.cpp nmap ,so :e % <cr>
+nmap qq :q <cr>
+nmap ,install :w \| so % \| PlugInstall <cr>
+nmap ,clean :w \| so % \| PlugClean <cr>
+map ,wrap :set wrap! <cr>
+map <F2> :set wrap! <cr>
+imap \ne <c-o>:NERDTreeFind <cr>
+nmap \ne :NERDTreeFind <cr>
+nmap <F3> :NERDTree <cr>
+nmap ,ne :NERDTreeFind <cr>
+nmap ,make :w \| !make <cr>
 
 let g:localvimrc_ask = 1
 let g:localvimrc_sandbox = 0
@@ -498,3 +477,5 @@ set statusline+=%=[%l/%L]
 set statusline+=\ [%f]
 
 "nmap <c-f> :set statusline=[%F] <cr>
+
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'

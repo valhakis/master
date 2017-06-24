@@ -28,3 +28,9 @@ export C_INCLUDE_PATH=$C_INCLUDE_PATH:"$HOME/include"
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:"$HOME/include"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME/lib"
 export LIBRARY_PATH=$LIBRARY_PATH:"$HOME/lib"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

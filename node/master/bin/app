@@ -2,15 +2,20 @@
 require('../globals');
 var sudo = parseInt(process.env.SUDO_UID);
 var path = require('path');
+var watch = require('gulp-watch');
 var spawn = require('child_process').spawn;
+var fs = require('fs');
 var exec = require('child_process').exec;
 const readline = require('readline');
 var browserSync = App.rootRequire('browser-sync');
 var phpSite = App.rootRequire('php-site');
+var gulp = require('gulp');
+
+var masterRoot = App.masterRoot;
 
 const rl = readline.createInterface({
-   input: process.stdin,
-   output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
 
 var argument = process.argv[2];
@@ -19,84 +24,118 @@ var argument = process.argv[2];
 // ===============================================================
 var nodemon = {};
 nodemon.start = function() {
-   var env = Object.create(process.env);
-   env.NODE_ENV = 'development';
-   this.spawn = spawn('nodemon', [], {
-      cwd: path.join(__dirname, '../server'),
-      stdio: 'inherit',
-      env: env
-   });
+  var root = App.root;
+
+  var nodemon = {
+    "watch": [
+      root + '/server',
+      root + '/static/server'
+    ]
+  };
+  var data = JSON.stringify(nodemon, ' ', 2);
+  fs.writeFileSync(root + "/server/nodemon.json", data);
+
+  var env = Object.create(process.env);
+  env.NODE_ENV = 'development';
+  this.spawn = spawn(masterRoot + '/node_modules/.bin/nodemon', [], {
+    cwd: path.join(__dirname, '../server'),
+    stdio: 'inherit',
+    env: env
+  });
+
+  var root = App.root;
+  gulp.watch(root + '/server/nodemon.json').on('change', function() {
+    nodemon.restart();
+  });
+};
+
+nodemon.restart = function() {
+  nodemon.spawn.kill();
+  nodemon.start();
 };
 
 // Webpack
 // ===============================================================
 var webpack = {};
+
+webpack.restart = function() {
+  webpack.spawn.kill();
+  webpack.start();
+};
+
 webpack.start = function() {
-   this.spawn = spawn('webpack', ['--watch'], {
-      cwd: path.join(__dirname, '..'),
-      stdio: 'inherit'
-   });
+  this.spawn = spawn(masterRoot + '/node_modules/.bin/webpack', ['--watch'], {
+    cwd: path.join(__dirname, '..'),
+    stdio: 'inherit'
+  });
+
+  var root = App.root;
+  gulp.watch(root + '/webpack.config.js').on('change', function() {
+    webpack.restart();
+  });
 };
 
 // Pm2
 // ===============================================================
 var pm2 = {};
 pm2.start = function() {
-   var env = Object.create(process.env);
-   env.NODE_ENV = 'production';
-   this.spawn = spawn('pm2', ['start', 'server'], {
-      cwd: path.join(__dirname, '..'),
-      stdio: 'inherit',
-      env: env
-   });
+  var env = Object.create(process.env);
+  env.NODE_ENV = 'production';
+  this.spawn = spawn('pm2', ['start', 'server'], {
+    cwd: path.join(__dirname, '..'),
+    stdio: 'inherit',
+    env: env
+  });
 };
 
 if (!argument) { // jshint ignore:line
-   // process.env.NODE_ENV = 'production';
-   // var server = App.require('./server');
-   console.log('(0) -> start development');
-   console.log('(1) -> start production');
-   rl.question(`Action: `, (answer) => {
-      console.log(`Answer: ${answer}`);
-      if (answer == '0' || answer == 'start development') {
-         if (!sudo) {
-            console.log('root permissions are required for production.');
-         } else {
-            //App.rootRequire('browser-sync');
-            browserSync.start();
-            nodemon.start();
-            webpack.start();
-         }
-      } else if (answer == '1' || answer == 'start production') {
-         if (!sudo) {
-            console.log('root permissions are required for production.');
-         } else {
-            pm2.start();
-         }
+  // process.env.NODE_ENV = 'production';
+  // var server = App.require('./server');
+  console.log('(0) -> start development');
+  console.log('(1) -> start production');
+  rl.question(`Action: `, (answer) => {
+    console.log(`Answer: ${answer}`);
+    if (answer == '0' || answer == 'start development') {
+      if (!sudo) {
+        console.log('root permissions are required for production.');
+      } else {
+        //App.rootRequire('browser-sync');
+        browserSync.start();
+        nodemon.start();
+        webpack.start();
       }
-   });
+    } else if (answer == '1' || answer == 'start production') {
+      if (!sudo) {
+        console.log('root permissions are required for production.');
+      } else {
+        pm2.start();
+      }
+    }
+  });
 } else if (argument == 'dev' || argument == 'development') {
-   if (!sudo) {
-      console.log('root permissions are required for development.');
-   } else { // jshint ignore:line
-      // App.rootRequire('browser-sync');
-      phpSite.start();
-      browserSync.start();
+  //if (!sudo) {
+  //console.log('root permissions are required for development.');
+  //} else { // jshint ignore:line
+  // App.rootRequire('browser-sync');
+  phpSite.start();
+  browserSync.start();
 
-      nodemon.start();
-      webpack.start();
-   }
+  nodemon.start();
+  webpack.start();
+  //}
 } else if (argument == 'prod' || argument == 'production') {
-   if (!sudo) {
-      console.log('root permissions are required for production.');
-   } else {
-      pm2.start();
-   }
+  if (!sudo) {
+    console.log('root permissions are required for production.');
+  } else {
+    pm2.start();
+  }
 } else if (argument == 'test') {
-   App.rootRequire('browser-sync');
+  App.rootRequire('browser-sync');
 } else if (argument == 'TODO') { // jshint ignore:line
-   // App.rootRequire('development-admin');
+  // App.rootRequire('development-admin');
 } else if (argument == 'help') {
-   console.log(`ARGUMENT NEEDED: ['development' or 'production']`);
+  console.log(`ARGUMENT NEEDED: ['development' or 'production']`);
+} else if (argument == 'webpack') {
+  webpack.start();
 } else { // jshint ignore:line
 }
