@@ -154,6 +154,7 @@ static int makeResources()
 
   Gresources.vertexShader = makeShader(GL_VERTEX_SHADER, "data/shaders/default.vs");
   Gresources.fragmentShader = makeShader(GL_FRAGMENT_SHADER, "data/shaders/default.fs");
+
   Gresources.program = makeProgram(Gresources.vertexShader, Gresources.fragmentShader);
 
   Gresources.attributes.position = glGetAttribLocation(Gresources.program, "position");
@@ -259,7 +260,7 @@ int main(int argc, char *argv[])
   Log("Vendor: %s.\n", glGetString(GL_VENDOR));
   Log("Renderer: %s.\n", glGetString(GL_RENDERER));
 
-  makeShader(GL_VERTEX_SHADER, "data/shaders/default.vs");
+  // makeShader(GL_VERTEX_SHADER, "data/shaders/default.vs");
 
   while (open)
   {
@@ -277,13 +278,13 @@ int main(int argc, char *argv[])
       /* run our drawing function */
       DrawQuad();
 
-      glUseProgram(Gresources.program);
-      glBindBuffer(GL_ARRAY_BUFFER, Gresources.vertexBuffer);
-      glVertexAttribPointer(Gresources.attributes.position, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*2, (void*)0);
-      glEnableVertexAttribArray(Gresources.attributes.position);
-      glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, Gresources.elementBuffer);
-      glDrawElements(GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_SHORT, (void*)0);
-      glDisableVertexAttribArray(Gresources.attributes.position);
+      // glUseProgram(Gresources.program);
+      // glBindBuffer(GL_ARRAY_BUFFER, Gresources.vertexBuffer);
+      // glVertexAttribPointer(Gresources.attributes.position, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*2, (void*)0);
+      // glEnableVertexAttribArray(Gresources.attributes.position);
+      // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, Gresources.elementBuffer);
+      // glDrawElements(GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_SHORT, (void*)0);
+      // glDisableVertexAttribArray(Gresources.attributes.position);
 
       /* swap the buffers */
       glXSwapBuffers(display, window);

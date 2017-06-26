@@ -1,0 +1,6 @@
+{
+  "development": {
+    "storage": "/home/thomas/master/node/master/projects/sequelize/data/database.sqlite",
+    "dialect": "sqlite"
+  }
+}

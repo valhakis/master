@@ -461,3 +461,20 @@ div.main {
 textarea {
   all: revert;
 }
+
+app-main-nav {
+  div.w3-bar {
+    & > div {
+      text-align: center;
+      display: block;
+      overflow: hidden;
+    }
+    overflow: hidden;
+    display: block;
+    a.w3-bar-item.w3-btn {
+      float: none;
+      width: 100px;
+      display: inline-block;
+    }
+  }
+}

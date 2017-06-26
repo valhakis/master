@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box; 
+}
+
+form {
+  box-shadow: 1px 1px 8px #000, -1px -1px 8px #000;
+  padding: 10px;
+  overflow: hidden;
+  width: 400px;
+}
+
+form textarea {
+  display: block;
+}
+
+form > div {
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+form input {
+  padding: 5px 10px;
+  width: 300px;
+  float: right;
+  border: 1px solid #000;
+}
+
+form label {
+  text-transform: uppercase;
+  float: left;
+  border: 1px solid #000;
+}
+
+form label, form input {
+  height: 30px;
+  font-size: 14px;
+  vertical-align: center;
+  display: inline-block;
+  line-height: 18px;
+  padding: 5px 10px;
+}
+
+form input {
+  padding-left: 5px;
+}
+
+form button {
+  padding: 5px 10px;
+  float: right;
+}
+
+.form-2 {
+
+}
+
+.form-2 label {
+  float: none;
+  display: block;
+  height: 30px;
+  line-height: 18px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.form-2 textarea {
+  float: none;
+  display: block;
+  width: 100%;
+}
+
+.project {
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.3), -1px -1px 5px 2px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.project h2 {
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 20px;
+  margin: 0px;
+  margin: 0px;
+}
+
+.project .info-box {
+  padding: 5px;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+
+.project .description {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

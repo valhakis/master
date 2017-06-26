@@ -24,6 +24,7 @@ function make_ps1()
 }
 make_ps1
 
+export PATH=$PATH:"$HOME/include"
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:"$HOME/include"
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:"$HOME/include"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME/lib"

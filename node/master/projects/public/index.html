@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>application</title>
+    <link rel="stylesheet" href="/highlightjs/styles/agate.css">
+    <link rel="stylesheet" href="/projects/css/style.css">
+  </head>
+  <body>
+
+    <h1>application</h1>
+
+    <a href="/projects/static-files">static files</a>
+
+    <a href="/projects/all-projects">all projects</a>
+
+    <h1>create new project</h1>
+    <form action="project/create" method="post">
+      <div>
+        <label for="name">name: </label>
+        <input id="name" type="text" name="name">
+      </div>
+      <button type="submit">create</button>
+    </form>
+
+    <script src="js/static-files.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/highlightjs/highlight.pack.js"></script>
+
+  </body>
+</html>

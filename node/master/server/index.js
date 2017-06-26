@@ -61,13 +61,57 @@ if (process.env.NODE_ENV === 'development') {
 
 // httpProxy.createProxyServer({ target: 'http://192.168.0.2:4500' }).listen(8000);
 
+
 var server = http.createServer(app);
+var io = require('socket.io')(server);
+
+class Player {
+  constructor(socket) {
+    this.socket = socket;
+  }
+}
+
+var players = [];
+
+io.on('connection', function(socket) {
+  io.emit('message', 'NEW PLAYER CONNECTED');
+  players.push(new Player(socket));
+  console.log('a user connected');
+
+  socket.on('log-num-players', function() {
+    io.emit('log-num-players', players.length);
+  });
+
+  socket.on('disconnect', function() {
+    io.emit('message', 'PLAYER HAS DISCONNECTED');
+    console.log('a user disconnected');
+    console.log(socket.id);
+    players.forEach(function(player, index) {
+      if (player.socket.id == socket.id) {
+        players.splice(index, 1);
+      }
+    });
+  });
+  socket.on('keypress', function(keypress) {
+    console.log(keypress);
+  });
+  socket.on('keyboard', function(data) {
+    console.log(data);
+  });
+  socket.on('update', function() {
+    var data = {
+      'num-players': players.length,
+    };
+    socket.emit('update', data);
+  });
+});
 
 // Connect to sequelize database
 // ===========================================================
+// App.rootRequire('db1').sync(function() {
 db.sync().then(() => {
-// Connect to mongo database.
-// ===========================================================
+  // Connect to mongo database.
+  // ===========================================================
   mongoose.connect(config.mongo.url, function(err) {
     if (err) {
       throw err;
@@ -93,3 +137,4 @@ db.sync().then(() => {
   });
 });
 
+// });

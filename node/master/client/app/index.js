@@ -15,6 +15,7 @@ import Filters from './filters';
 import Problem from './problem';
 import Book from './book';
 import Movie from './movie';
+import Sequelize from './sequelize';
 import Bootstrap from './bootstrap';
 import Node from './node';
 import Directive from './directive';
@@ -63,7 +64,7 @@ var app = angular.module('app', [
    Navbar, Footer, ColorBox, Modules,
    DocumentModule, HistoryModule, HomeModule, CodeModule, MongooseModule,
    AppMainNav, Book, Problem, AppTime, /* AppEditor, */ Snippet,
-   Todo, AppModelJson, Note, Exercise, Filters,
+   Todo, AppModelJson, Note, Exercise, Filters, Sequelize,
    Directives, Services, Movie, Bootstrap, Test, Node, Directive
 ]);
 

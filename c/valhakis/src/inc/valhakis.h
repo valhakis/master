@@ -19,6 +19,7 @@ extern "C" {
   GLFWwindow *ValCreateLazyGLFWWindow();
   int ValLoadProgram(const char *vpath, const char *fpath);
   int ValGetUniform(int program, const char *name);
+  void ValLoadVertices(const char *name, const char *path, float *vertices, size_t size);
 
 #ifdef __cplusplus
 }

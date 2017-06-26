@@ -1,0 +1,33 @@
+.custom > div {
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  /* float: left; */
+  width: calc(100% / 3);
+
+  border-radius: 0px 10px 10px 0px;
+  margin-bottom: 20px;
+
+  box-shadow: 5px 5px 3px 1px #999;
+}
+
+.custom > div:nth-child(1) {
+  border-radius: 50px / 100px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.custom > div:nth-child(4n+3) {
+  background-color: #333;
+}
+
+.custom > div:nth-child(2n+1) {
+  background-color: #F00;
+  box-shadow: none;
+  box-shadow: inset 0px 0px 7px 5px #ddd;
+}
+
+#canvas {
+  background-color: #ccc;
+}

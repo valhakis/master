@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>project</title>
+    <link rel="stylesheet" href="/projects/css/style.css">
+  </head>
+  <body class="project">
+
+    <div>
+      <a href="/projects/">GO /</a>
+    </div>
+
+    <h1>{{ project.name }} <small style="font-weight: normal;">[project]</small></h1>
+
+    {{#if project.description}}
+      <h2>description</h2>
+      <div class="description">
+        {{ project.description }}
+      </div>
+    {{/if}}
+
+    {{#unless project.description}}
+      <h2>add description</h2>
+      <form id="add-description-form" class="form-2">
+        <div>
+          <label for="description">description</label>
+          <textarea id="description" name="description" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit">set description</button>
+      </form>
+    {{/unless}}
+
+    <form id="add-note-form" class="form-2">
+      <h2>add note</h2>
+      <hr>
+      <div>
+        <label for="note">note</label>
+        <textarea id="note" name="note" cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit">add note</button>
+    </form>
+
+    <script src="/projects/project/script.js"></script>
+  </body>
+</html>

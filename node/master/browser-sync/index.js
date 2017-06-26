@@ -1,7 +1,7 @@
 var env = Master.loadJSON('.env');
 var bs = require('browser-sync').create();
 
-exports.start = function() {
+bs.start = function() {
 
   var host = env.development.host;
   var port = env.development.port;
@@ -25,7 +25,9 @@ exports.start = function() {
   bs.watch([
     `${App.root}/php-site/public/**/*.{html,js,css,php}`,
     `${App.root}/static/**/*.{html,js,css}`,
-    `!${App.root}/static/**/*.{js,json}`,
+    `!${App.root}/static/server/**/*.{js,json}`,
+    `${App.root}/projects/public/**/*.{html,js,css}`,
+    `!${App.root}/projects/server/**/*.{js,json}`,
     `${App.root}/site/**/*.{html,js,css}`,
     // `!${App.root}/site/**/client/**/*.{html,js,css}`,
     `${App.root}/server/views/**/*.pug`,
@@ -39,3 +41,5 @@ exports.start = function() {
   });
 
 };
+module.exports = bs;
+

@@ -1,0 +1,18 @@
+// /db1/codes [post]
+
+#sequelize-main {
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+  border: 1px solid #000;
+  min-height: 500px;
+  padding: 5px;
+
+  .sequelize-menu {
+    background-color: #fff;
+    a {
+      padding: 5px;
+    }
+  }
+}

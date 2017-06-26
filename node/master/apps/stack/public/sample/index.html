@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>sample</title>
+    <style>
+.hidden {
+  display: none;
+}
+iframe {
+  display: block;
+}
+    </style>
+  </head>
+  <body>
+
+    <a href="..">back</a>
+
+    <button onclick="this.nextElementSibling.classList.toggle('hidden')">video</button>
+    <iframe class="hidden" src="https://www.youtube.com/embed/TTxZj3DZiIM?ecver=1" frameborder="0" allowfullscreen></iframe>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

@@ -1,6 +1,14 @@
 {
   "watch": [
     "/home/thomas/master/node/master/server",
-    "/home/thomas/master/node/master/static/server"
+    "/home/thomas/master/node/master/static/server",
+    "/home/thomas/master/node/master/projects/server",
+    "/home/thomas/master/node/master/apps/index.js",
+    "/home/thomas/master/node/master/apps/sqlite",
+    "/home/thomas/master/node/master/apps/music"
+  ],
+  "ignore": [
+    "/home/thomas/master/node/master/apps/sqlite/views",
+    "/home/thomas/master/node/master/apps/music/public"
   ]
 }

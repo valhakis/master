@@ -9,6 +9,7 @@ var exec = require('child_process').exec;
 const readline = require('readline');
 var browserSync = App.rootRequire('browser-sync');
 var phpSite = App.rootRequire('php-site');
+var masterGulp = App.rootRequire('gulp')(browserSync);
 var gulp = require('gulp');
 
 var masterRoot = App.masterRoot;
@@ -29,7 +30,15 @@ nodemon.start = function() {
   var nodemon = {
     "watch": [
       root + '/server',
-      root + '/static/server'
+      root + '/static/server',
+      root + '/projects/server',
+      root + '/apps/index.js',
+      root + '/apps/sqlite',
+      root + '/apps/music',
+    ],
+    "ignore": [
+      root + '/apps/sqlite/views',
+      root + '/apps/music/public',
     ]
   };
   var data = JSON.stringify(nodemon, ' ', 2);

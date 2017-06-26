@@ -18,6 +18,10 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'flazz/vim-colorschemes'
 Plug 'mklabs/split-term.vim'
+Plug 'https://github.com/tikhomirov/vim-glsl'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/vim-scripts/JavaScript-Indent'
 "Plug 'https://github.com/svermeulen/vim-easyclip'
 "Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
@@ -37,7 +41,6 @@ Plug 'mklabs/split-term.vim'
 "Plug 'https://github.com/mxw/vim-jsx'
 "Plug 'https://github.com/embear/vim-localvimrc'
 "Plug 'https://github.com/beyondmarc/opengl.vim'
-Plug 'https://github.com/tikhomirov/vim-glsl'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'https://github.com/ekalinin/Dockerfile.vim'
 "Plug 'https://github.com/NLKNguyen/vim-docker-compose-syntax'
@@ -51,14 +54,11 @@ Plug 'https://github.com/tikhomirov/vim-glsl'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'fatih/vim-go', { 'tag': '*' }
 "Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug '~/my-prototype-plugin'
 "Plug 'https://github.com/flazz/vim-colorschemes'
 "Plug 'https://github.com/keith/tmux.vim'
 "Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
-Plug 'https://github.com/kien/ctrlp.vim'
 "Plug 'https://github.com/easymotion/vim-easymotion'
-"Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/scrooloose/nerdcommenter'
 "Plug 'https://github.com/Valloric/MatchTagAlways'
 "Plug 'https://github.com/nono/vim-handlebars'
@@ -84,20 +84,13 @@ syntax enable
 
 set backupdir=~/master/.vim/backup/
 set directory=~/master/.vim/swp/
-"set backupdir=/tmp
-"set directory=/tmp
 
-set nowrap
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab nowrap incsearch hlsearch splitbelow
 
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set incsearch hlsearch
+set cursorline
+hi clear CursorLine 
+hi CursorLine ctermbg=235 guibg=#111111
 
-set splitbelow
-
-"set clipboard+=unnamedplus
-"set clipboard+=unnamed
-
-" DEOPLETE SETUP
 let g:deoplete#enable_at_startup = 1
 
 let g:ctrlp_custom_ignore = '\.git\|node_modules\|bower_components\|laravel\/vendor'
@@ -112,8 +105,6 @@ let NERDTreeMapActivateNode='<space>'
 " let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden=1
-
-
 " let g:NERDTreeDirArrowExpandable = '→'
 " let g:NERDTreeDirArrowCollapsible = '↓'
 
@@ -184,7 +175,7 @@ else
 endif
 
 
-set mouse=n
+" set mouse=n
 
 let g:indentLine_enabled = 1
 
@@ -238,6 +229,8 @@ autocmd VimEnter,BufRead,TabEnter,BufNewFile nodemon.json silent! call InsertIfE
 autocmd VimEnter,BufRead,TabEnter,BufNewFile main.c silent! call InsertIfEmpty('~/master/nvim/skeletons/main.c') 
 autocmd VimEnter,BufRead,TabEnter,BufNewFile .babelrc silent! call InsertIfEmpty('~/master/nvim/skeletons/.babelrc')
 autocmd VimEnter,BufRead,TabEnter,BufNewFile makefile silent! call InsertIfEmpty('~/master/nvim/skeletons/makefile')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile default.vs silent! call InsertIfEmpty('~/master/nvim/skeletons/default.vs')
+autocmd VimEnter,BufRead,TabEnter,BufNewFile default.fs silent! call InsertIfEmpty('~/master/nvim/skeletons/default.fs')
 
 "autocmd BufNewFile bs-config.js 0r ~/master/nvim/skeletons/bs-config.js
 "autocmd BufNewFile .jshintrc 0r ~/master/nvim/skeletons/.jshintrc
@@ -294,10 +287,6 @@ imap ,l <c-r>=GetTemplate() <cr>
 " let s:paste['*'] = s:paste['+']
 " let s:cache_enabled = 0
 " endif
-
-set cursorline
-hi clear CursorLine 
-hi CursorLine ctermbg=235 guibg=#111111
 
 " map ,run :w \| !make && curl kodu.noip.me:3000/restart <cr>
 map ,run :w \| !make run <cr>
@@ -474,7 +463,9 @@ set statusline=%#LineNR#
 set statusline=%m
 set statusline+=\ %y
 set statusline+=%=[%l/%L]
-set statusline+=\ [%f]
+" set statusline+=\ [%f]
+"
+set path=.,/usr/include,~/include,
 
 "nmap <c-f> :set statusline=[%F] <cr>
 

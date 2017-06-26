@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdarg.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -257,4 +258,42 @@ int ValGetUniform(int program, const char *name)
   }
 
   return uniform;
+}
+
+void ValLoadVertices(const char *name, const char *path, float *vertices, size_t size)
+{
+  FILE *filePtr = NULL;
+
+  filePtr = fopen(path, "r");
+
+  if (filePtr == NULL)
+  {
+    ValErr("Failed to open file '%s'.\n", path);
+    return;
+  }
+
+  bool found_name = false;
+  char line[200];
+  while (fgets(line, 200, filePtr))
+  {
+    line[strlen(line) - 1] = '\0';
+    if (strcmp(line, name) == 0) 
+    {
+      found_name = true;
+      break;
+    }
+  }
+
+  for (int x=0; x<size / sizeof(float); x++)
+  {
+    fscanf(filePtr, "%f", vertices + x);
+  }
+
+  if (!found_name)
+  {
+    ValErr("Did not find vertices with name '%s'.\n", name);
+    return;
+  }
+
+  fclose(filePtr);
 }

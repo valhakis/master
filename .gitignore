@@ -6,3 +6,4 @@ bower_components
 /vendor/
 /.vim/swp
 /.vim/backup
+/node/master/apps/music/public/music
