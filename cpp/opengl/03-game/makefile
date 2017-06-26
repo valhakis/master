@@ -1,7 +1,7 @@
 cc = g++
 out = bin/app
 
-src := $(wildcard src/*.cpp)
+src := $(wildcard src/*.cpp src/exs/*.cpp)
 obj := $(patsubst src/%.cpp, obj/%.o, $(src))
 
 # cflags += -I/usr/include/gtk-3.0 

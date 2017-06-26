@@ -20,6 +20,12 @@ extern "C" {
   int ValLoadProgram(const char *vpath, const char *fpath);
   int ValGetUniform(int program, const char *name);
   void ValLoadVertices(const char *name, const char *path, float *vertices, size_t size);
+  void ValSetMat4Identity(float mat[4][4]);
+  void ValSetUniformMatrix4fv(int program, const char *name, const float *M);
+  void ValSetUniform3fv(int program, const char *name, float color[3]);
+  void ValMat4TransformVec3(float mat1[4][4], float vec[3]);
+  void ValMultiMat4ByMat4(float C[4][4], float B[4][4]);
+  void ValMat4Scale(float M[4][4], float s);
 
 #ifdef __cplusplus
 }

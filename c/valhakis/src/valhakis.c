@@ -5,12 +5,7 @@
 #include <stdarg.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
-void ValLog(const char *format, ...);
-void ValErr(const char *format, ...);
-char *ValReadSource(const char *file);
-int ValCreateShader(GLenum type, const char *file);
-int ValCreateProgram(int vshader, int fshader);
+#include "inc/valhakis.h"
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -297,3 +292,73 @@ void ValLoadVertices(const char *name, const char *path, float *vertices, size_t
 
   fclose(filePtr);
 }
+
+void ValSetMat4Identity(float mat[4][4])
+{
+  mat[0][0] = 1.0f; mat[0][1] = 0.0f; mat[0][2] = 0.0f; mat[0][3] = 0.0f;
+  mat[1][0] = 0.0f; mat[1][1] = 1.0f; mat[1][2] = 0.0f; mat[1][3] = 0.0f;
+  mat[2][0] = 0.0f; mat[2][1] = 0.0f; mat[2][2] = 1.0f; mat[2][3] = 0.0f;
+  mat[3][0] = 0.0f; mat[3][1] = 0.0f; mat[3][2] = 0.0f; mat[3][3] = 1.0f;
+}
+
+void ValSetUniformMatrix4fv(int program, const char *name, const float *M)
+{
+  int uniform = ValGetUniform(program, name);
+  glUniformMatrix4fv(uniform, 1, GL_FALSE, M);
+}
+
+void ValSetUniform3fv(int program, const char *name, float color[3])
+{
+  int uniform = ValGetUniform(program, name);
+  glUniform3fv(uniform, 1, color);
+}
+
+void ValMat4TransformVec3(float mat1[4][4], float vec[3])
+{
+  float mat2[4][4] = {
+    1.0f, 0.0f, 0.0f, 0.0f,
+    0.0f, 1.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 1.0f, 0.0f,
+    vec[0], vec[1], vec[2], 1.0f,
+  };
+  ValMultiMat4ByMat4(mat1, mat2);
+}
+
+void ValMultiMat4ByMat4(float C[4][4], float B[4][4])
+{
+  float A[4][4];
+  memcpy(A, C, sizeof(A));
+
+  C[0][0] = A[0][0]*B[0][0] + A[0][1]*B[1][0] + A[0][2]*B[2][0] + A[0][3]*B[3][0];
+  C[0][1] = A[0][0]*B[0][1] + A[0][1]*B[1][1] + A[0][2]*B[2][1] + A[0][3]*B[3][1];
+  C[0][2] = A[0][0]*B[0][2] + A[0][1]*B[1][2] + A[0][2]*B[2][2] + A[0][3]*B[3][2];
+  C[0][3] = A[0][0]*B[0][3] + A[0][1]*B[1][3] + A[0][2]*B[2][3] + A[0][3]*B[3][3];
+
+  C[1][0] = A[1][0]*B[0][0] + A[1][1]*B[1][0] + A[1][2]*B[2][0] + A[1][3]*B[3][0];
+  C[1][1] = A[1][0]*B[0][1] + A[1][1]*B[1][1] + A[1][2]*B[2][1] + A[1][3]*B[3][1];
+  C[1][2] = A[1][0]*B[0][2] + A[1][1]*B[1][2] + A[1][2]*B[2][2] + A[1][3]*B[3][2];
+  C[1][3] = A[1][0]*B[0][3] + A[1][1]*B[1][3] + A[1][2]*B[2][3] + A[1][3]*B[3][3];
+
+  C[2][0] = A[2][0]*B[0][0] + A[2][1]*B[1][0] + A[2][2]*B[2][0] + A[2][3]*B[3][0];
+  C[2][1] = A[2][0]*B[0][1] + A[2][1]*B[1][1] + A[2][2]*B[2][1] + A[2][3]*B[3][1];
+  C[2][2] = A[2][0]*B[0][2] + A[2][1]*B[1][2] + A[2][2]*B[2][2] + A[2][3]*B[3][2];
+  C[2][3] = A[2][0]*B[0][3] + A[2][1]*B[1][3] + A[2][2]*B[2][3] + A[2][3]*B[3][3];
+
+  C[3][0] = A[3][0]*B[0][0] + A[3][1]*B[1][0] + A[3][2]*B[2][0] + A[3][3]*B[3][0];
+  C[3][1] = A[3][0]*B[0][1] + A[3][1]*B[1][1] + A[3][2]*B[2][1] + A[3][3]*B[3][1];
+  C[3][2] = A[3][0]*B[0][2] + A[3][1]*B[1][2] + A[3][2]*B[2][2] + A[3][3]*B[3][2];
+  C[3][3] = A[3][0]*B[0][3] + A[3][1]*B[1][3] + A[3][2]*B[2][3] + A[3][3]*B[3][3];
+}
+
+
+void ValMat4Scale(float M[4][4], float s)
+{
+  float T[4][4] = {
+    s, 0.0f, 0.0f, 0.0f,
+    0.0f, s, 0.0f, 0.0f,
+    0.0f, 0.0f, s, 0.0f,
+    0.0f, 0.0f, 0.0f, 1.0f,
+  };
+  ValMultiMat4ByMat4(M, T);
+}
+

@@ -5,15 +5,21 @@
 #include "inc/program.h"
 #include "inc/main.h"
 #include "inc/monster.h"
+#include "inc/exs.h"
 
 static int open = true;
 
 int main()
 {
   WindowInitialize();
+  ProgramInitialize();
   ProgramCreate("default", "data/shaders/default.vs", "data/shaders/default.fs");
   TriangleInitialize();
   MonsterInitialize();
+
+  ExsInitialize();
+  ExTriangleInitialize();
+  ExRectangleInitialize();
 
   while (MainOpen())
   {
@@ -22,6 +28,7 @@ int main()
 
     TriangleRender();
     MonsterRender();
+    ExsEvents();
 
     WindowEvents();
   }

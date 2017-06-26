@@ -169,11 +169,10 @@ static float projection[4][4];
 
 void MonsterInitialize()
 {
-  // monster.speed = 1.0f;
-  Set3f(monster.position, 1.0f, 0.0f, 0.0f);
+  Set3f(monster.position, 0.0f, 0.0f, 0.0f);
   Set3f(monster.rotation, 0.0f, 0.0f, 0.0f);
   Set3f(monster.color, 1.0f, 1.0f, 0.0f);
-  monster.speed = 0.001f;
+  monster.speed = 0.0005f;
 
   program = ProgramFind("default");
   WindowGetKeysPtr(&keys);
@@ -253,7 +252,7 @@ void MonsterRender()
   Mat4RotateX(model, monster.rotation[0]);
   Mat4RotateY(model, monster.rotation[1]);
   Mat4RotateZ(model, monster.rotation[2]);
-  Mat4Scale(model, 0.5f);
+  Mat4Scale(model, 0.2f);
   Mat4TransformVec3(model, monster.position);
 
   Set3f(monster.color, cos(time)/2.0f+0.5f, 1.0f, sinf(time)/2.0f+0.5f);

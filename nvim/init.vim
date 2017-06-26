@@ -8,19 +8,19 @@ Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/embear/vim-localvimrc'
 Plug 'https://github.com/Rip-Rip/clang_complete'
 Plug 'https://github.com/jiangmiao/auto-pairs'
-Plug 'https://github.com/pangloss/vim-javascript'
+" Plug 'https://github.com/pangloss/vim-javascript'
 if has('nvim')
   Plug 'https://github.com/Shougo/deoplete.nvim'
 else
   Plug 'https://github.com/Shougo/neocomplete.vim'
 endif
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-colorscheme-switcher'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-colorscheme-switcher'
 Plug 'flazz/vim-colorschemes'
 Plug 'mklabs/split-term.vim'
 Plug 'https://github.com/tikhomirov/vim-glsl'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'https://github.com/kien/ctrlp.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/vim-scripts/JavaScript-Indent'
 "Plug 'https://github.com/svermeulen/vim-easyclip'
@@ -371,46 +371,46 @@ hi Search guibg=#111111 guifg=#ff2222
 
 if has('nvim')
 else
+  let g:neocomplete#enable_at_startup = 1
   "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplete.
-  let g:neocomplete#enable_at_startup = 1
   " Use smartcase.
-  let g:neocomplete#enable_smart_case = 1
+  " let g:neocomplete#enable_smart_case = 1
   " Set minimum syntax keyword length.
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
+  " let g:neocomplete#sources#syntax#min_keyword_length = 3
 
   " Define dictionary.
-  let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+  " let g:neocomplete#sources#dictionary#dictionaries = {
+        " \ 'default' : '',
+        " \ 'vimshell' : $HOME.'/.vimshell_hist',
+        " \ 'scheme' : $HOME.'/.gosh_completions'
+        " \ }
 
   " Define keyword.
-  if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+  " if !exists('g:neocomplete#keyword_patterns')
+    " let g:neocomplete#keyword_patterns = {}
+  " endif
+  " let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
   " Plugin key-mappings.
-  inoremap <expr><C-g>     neocomplete#undo_completion()
-  inoremap <expr><C-l>     neocomplete#complete_common_string()
+  " inoremap <expr><C-g>     neocomplete#undo_completion()
+  " inoremap <expr><C-l>     neocomplete#complete_common_string()
 
   " Recommended key-mappings.
   " <CR>: close popup and save indent.
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  " function! s:my_cr_function()
+    " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
     " For no inserting <CR> key.
     "return pumvisible() ? "\<C-y>" : "\<CR>"
-  endfunction
+  " endfunction
   " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
   " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  " inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
   " Close popup by <Space>.
   "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
@@ -424,49 +424,48 @@ else
   "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
   " Enable omni completion.
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
   " Enable heavy omni completion.
-  if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-  endif
+  " if !exists('g:neocomplete#sources#omni#input_patterns')
+    " let g:neocomplete#sources#omni#input_patterns = {}
+  " endif
   "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
   "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
   "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
   " For perlomni.vim setting.
   " https://github.com/c9s/perlomni.vim
-  let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+  " let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-  let g:neocomplete#enable_at_startup = 1
+  " let g:neocomplete#enable_at_startup = 1
 endif
 
-nmap ,n :echo "hello"<cr>
-nmap ,nn :NextColorScheme<cr>
-nmap ,nb :PrevColorScheme<cr>
-let g:colorscheme_switcher_exclude = ['billw', 'biogoo', '1989', '256-grayvim', '256-jungle', '0x7A69_dark''default', 'test', 'abra', 'adam', 'adobe', 'af', 'anderson', 'anotherdark', 'anasi_blows', 'astronaut', 'asu1dark', '256', '3dglasses', 'abbott']
+" nmap ,n :echo "hello"<cr>
+" nmap ,nn :NextColorScheme<cr>
+" nmap ,nb :PrevColorScheme<cr>
+" let g:colorscheme_switcher_exclude = ['billw', 'biogoo', '1989', '256-grayvim', '256-jungle', '0x7A69_dark''default', 'test', 'abra', 'adam', 'adobe', 'af', 'anderson', 'anotherdark', 'anasi_blows', 'astronaut', 'asu1dark', '256', '3dglasses', 'abbott']
 
 au filetype qf setlocal wrap
 au filetype qf setlocal syntax=c
-
 
 set completeopt+=preview
 
 autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif
 
 " set statusline=%y\ %f\ %l\\%L
-set statusline=%#LineNR#
-set statusline=%m
-set statusline+=\ %y
-set statusline+=%=[%l/%L]
+" set statusline=%#LineNR#
+" set statusline=%m
+" set statusline+=\ %y
+" set statusline+=%=[%l/%L]
 " set statusline+=\ [%f]
 "
-set path=.,/usr/include,~/include,
+set path=.,/usr/include,,~/include,
 
 "nmap <c-f> :set statusline=[%F] <cr>
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+" let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
