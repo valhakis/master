@@ -307,10 +307,33 @@ void ValSetUniformMatrix4fv(int program, const char *name, const float *M)
   glUniformMatrix4fv(uniform, 1, GL_FALSE, M);
 }
 
+void SetUniformMatrix4fv(int program, const char *name, const float *M)
+{
+  int uniform = ValGetUniform(program, name);
+  glUniformMatrix4fv(uniform, 1, GL_FALSE, M);
+}
+
 void ValSetUniform3fv(int program, const char *name, float color[3])
 {
   int uniform = ValGetUniform(program, name);
   glUniform3fv(uniform, 1, color);
+}
+
+void SetUniform3fv(int program, const char *name, float color[3])
+{
+  int uniform = ValGetUniform(program, name);
+  glUniform3fv(uniform, 1, color);
+}
+
+void Mat4Translate(float mat1[4][4], float vec[3])
+{
+  float mat2[4][4] = {
+    1.0f, 0.0f, 0.0f, 0.0f,
+    0.0f, 1.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 1.0f, 0.0f,
+    vec[0], vec[1], vec[2], 1.0f,
+  };
+  ValMultiMat4ByMat4(mat1, mat2);
 }
 
 void ValMat4TransformVec3(float mat1[4][4], float vec[3])
@@ -350,6 +373,16 @@ void ValMultiMat4ByMat4(float C[4][4], float B[4][4])
   C[3][3] = A[3][0]*B[0][3] + A[3][1]*B[1][3] + A[3][2]*B[2][3] + A[3][3]*B[3][3];
 }
 
+void Mat4Scale(float M[4][4], float s)
+{
+  float T[4][4] = {
+    s, 0.0f, 0.0f, 0.0f,
+    0.0f, s, 0.0f, 0.0f,
+    0.0f, 0.0f, s, 0.0f,
+    0.0f, 0.0f, 0.0f, 1.0f,
+  };
+  ValMultiMat4ByMat4(M, T);
+}
 
 void ValMat4Scale(float M[4][4], float s)
 {
@@ -362,3 +395,74 @@ void ValMat4Scale(float M[4][4], float s)
   ValMultiMat4ByMat4(M, T);
 }
 
+void ValMat4SetIdentityf(int count, ...)
+{
+  va_list arguments;
+  va_start(arguments, count);
+  for (int x=0; x<count; x++)
+  {
+    float *p = va_arg(arguments, float*);
+    p[0]  = 1.0f, p[1]  = 0.0f, p[2]  = 0.0f, p[3]  = 0.0f;
+    p[4]  = 0.0f, p[5]  = 1.0f, p[6]  = 0.0f, p[7]  = 0.0f;
+    p[8]  = 0.0f, p[9]  = 0.0f, p[10] = 1.0f, p[11] = 0.0f;
+    p[12] = 0.0f, p[13] = 0.0f, p[14] = 0.0f, p[15] = 1.0f;
+  }
+  va_end(arguments);
+}
+
+void ValSetVec3v(float vec1[3], float vec2[3])
+{
+  vec1[0] = vec2[0]; vec1[1] = vec2[1]; vec1[2] = vec2[2];
+}
+
+void ValSetVec3(float vec[3], float x, float y, float z)
+{
+  vec[0] = x, vec[1] = y, vec[2] = z;
+}
+
+void SetVec3(float vec[3], float x, float y, float z)
+{
+  vec[0] = x, vec[1] = y, vec[2] = z;
+}
+
+void Mat4Flip(float M[4][4])
+{
+  // [0][0] [0][1] [0][2] [0][3]    [0][0] [1][0] [2][0] [3][0]
+  // [1][0] [1][1] [1][2] [1][3]    [0][1] [1][1] [2][1] [3][1] 
+  // [2][0] [2][1] [2][2] [2][3]    [0][2] [1][2] [2][2] [3][2] 
+  // [3][0] [3][1] [3][2] [3][3]    [0][3] [1][3] [2][3] [3][3] 
+
+  float T[4][4];
+  memcpy(T, M, sizeof(T));
+
+  M[0][0] = T[0][0], M[0][1] = T[1][0], M[0][2] = T[2][0], M[0][3] = T[3][0];
+  M[1][0] = T[0][1], M[1][1] = T[1][1], M[1][2] = T[2][1], M[1][3] = T[3][1];
+  M[2][0] = T[0][2], M[2][1] = T[1][2], M[2][2] = T[2][2], M[2][3] = T[3][2];
+  M[3][0] = T[0][3], M[3][1] = T[1][3], M[3][2] = T[2][3], M[3][3] = T[3][3];
+}
+
+void Mat4MultiMat4(float C[4][4], float B[4][4])
+{
+  float A[4][4];
+  memcpy(A, C, sizeof(A));
+
+  C[0][0] = A[0][0]*B[0][0] + A[0][1]*B[1][0] + A[0][2]*B[2][0] + A[0][3]*B[3][0];
+  C[0][1] = A[0][0]*B[0][1] + A[0][1]*B[1][1] + A[0][2]*B[2][1] + A[0][3]*B[3][1];
+  C[0][2] = A[0][0]*B[0][2] + A[0][1]*B[1][2] + A[0][2]*B[2][2] + A[0][3]*B[3][2];
+  C[0][3] = A[0][0]*B[0][3] + A[0][1]*B[1][3] + A[0][2]*B[2][3] + A[0][3]*B[3][3];
+
+  C[1][0] = A[1][0]*B[0][0] + A[1][1]*B[1][0] + A[1][2]*B[2][0] + A[1][3]*B[3][0];
+  C[1][1] = A[1][0]*B[0][1] + A[1][1]*B[1][1] + A[1][2]*B[2][1] + A[1][3]*B[3][1];
+  C[1][2] = A[1][0]*B[0][2] + A[1][1]*B[1][2] + A[1][2]*B[2][2] + A[1][3]*B[3][2];
+  C[1][3] = A[1][0]*B[0][3] + A[1][1]*B[1][3] + A[1][2]*B[2][3] + A[1][3]*B[3][3];
+
+  C[2][0] = A[2][0]*B[0][0] + A[2][1]*B[1][0] + A[2][2]*B[2][0] + A[2][3]*B[3][0];
+  C[2][1] = A[2][0]*B[0][1] + A[2][1]*B[1][1] + A[2][2]*B[2][1] + A[2][3]*B[3][1];
+  C[2][2] = A[2][0]*B[0][2] + A[2][1]*B[1][2] + A[2][2]*B[2][2] + A[2][3]*B[3][2];
+  C[2][3] = A[2][0]*B[0][3] + A[2][1]*B[1][3] + A[2][2]*B[2][3] + A[2][3]*B[3][3];
+
+  C[3][0] = A[3][0]*B[0][0] + A[3][1]*B[1][0] + A[3][2]*B[2][0] + A[3][3]*B[3][0];
+  C[3][1] = A[3][0]*B[0][1] + A[3][1]*B[1][1] + A[3][2]*B[2][1] + A[3][3]*B[3][1];
+  C[3][2] = A[3][0]*B[0][2] + A[3][1]*B[1][2] + A[3][2]*B[2][2] + A[3][3]*B[3][2];
+  C[3][3] = A[3][0]*B[0][3] + A[3][1]*B[1][3] + A[3][2]*B[2][3] + A[3][3]*B[3][3];
+}

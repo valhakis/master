@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[table]</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/websites/website1/style.css">
+  </head>
+  <body>
+
+    <div id="nav-template"></div>
+
+    <div class="w3-container">
+      <p><a href="/websites/website1/database/">[ /database ]</a></p>
+      <p>[table]</p>
+
+      <h3>SQL</h3>
+      <pre><code>{{ sql }}</code></pre>
+
+      <div class="w3-card">
+        <form class="w3-panel" method="post" action="/websites/website1/database/table/{{ tableName }}/add/column">
+          <h3>[ add column ]</h3>
+          <div class="w3-panel">
+            <label for="name">Column Name</label>
+            <input class="w3-input w3-border" type="text" name="columnName" placeholder="username">
+          </div>
+          <div class="w3-panel">
+            <label for="type">Type</label>
+            <input class="w3-input w3-border" type="text" name="columnType" placeholder="varchar(100)">
+          </div>
+          <div class="w3-panel">
+            <button class="w3-btn w3-border">Add Column</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/websites/website1/script.js"></script>
+  </body>
+</html>

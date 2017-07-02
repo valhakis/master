@@ -5,7 +5,9 @@
     "/home/thomas/master/node/master/projects/server",
     "/home/thomas/master/node/master/apps/index.js",
     "/home/thomas/master/node/master/apps/sqlite",
-    "/home/thomas/master/node/master/apps/music"
+    "/home/thomas/master/node/master/apps/music",
+    "/home/thomas/master/node/master/websites/sites/website01/server",
+    "/home/thomas/master/node/master/websites/index.js"
   ],
   "ignore": [
     "/home/thomas/master/node/master/apps/sqlite/views",

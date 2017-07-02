@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[app]</title>
+  </head>
+  <body>
+
+    <div data-role="page" id="loginpage">
+      <div id="header" data-theme="b" data-role="header">
+        <h3>Login</h3>
+      </div>
+      <div id="wrapper">
+        <form action="" name="mylogin">
+          <div data-role="content">
+            <div class="username" data-role="fieldcontain">
+              <label for="username"> Username </label> 
+              <input name="username" id="username" placeholder="enter username" value="" type="text">
+            </div>
+            <div class="psw" data-role="fieldcontain">
+              <label for="psw"> Password </label>
+              <input name="password" id="psw" placeholder="enter password" value="" type="text">
+            </div>
+            <input id="login" value="Login" type="button" name="Login" onclick="validationcheck();">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

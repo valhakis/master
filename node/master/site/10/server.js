@@ -21,6 +21,7 @@ const Post = database.define('Post', {
 WishList.hasMany(Post, {as: 'posts'});
 Post.belongsTo(WishList);
 
+/*
 database.sync({ force: true }).then(() => {
   return WishList.create({
     name: 'MY WISH LIST 1',
@@ -34,6 +35,7 @@ database.sync({ force: true }).then(() => {
 }).then(wishList => {
 
 });
+*/
 
 module.exports = function(app) {
   var router = express.Router();

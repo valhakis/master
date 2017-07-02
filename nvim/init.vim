@@ -1,27 +1,30 @@
 call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/Haron-Prime/Antares'
 Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/jistr/vim-nerdtree-tabs'
+"Plug 'https://github.com/jistr/vim-nerdtree-tabs'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/mattn/emmet-vim'
-Plug 'https://github.com/embear/vim-localvimrc'
-Plug 'https://github.com/Rip-Rip/clang_complete'
-Plug 'https://github.com/jiangmiao/auto-pairs'
-" Plug 'https://github.com/pangloss/vim-javascript'
-if has('nvim')
-  Plug 'https://github.com/Shougo/deoplete.nvim'
-else
-  Plug 'https://github.com/Shougo/neocomplete.vim'
-endif
+Plug 'https://github.com/Valloric/MatchTagAlways'
+"Plug 'https://github.com/embear/vim-localvimrc'
+"Plug 'https://github.com/Rip-Rip/clang_complete'
+Plug 'https://github.com/pangloss/vim-javascript'
+Plug 'https://github.com/Shougo/neocomplete.vim'
+Plug 'https://github.com/nono/vim-handlebars'
+"if has('nvim')
+"Plug 'https://github.com/Shougo/deoplete.nvim'
+"else
+"endif
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-colorscheme-switcher'
-Plug 'flazz/vim-colorschemes'
-Plug 'mklabs/split-term.vim'
-Plug 'https://github.com/tikhomirov/vim-glsl'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'mklabs/split-term.vim'
+"Plug 'https://github.com/tikhomirov/vim-glsl'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'https://github.com/kien/ctrlp.vim'
-Plug 'https://github.com/Yggdroot/indentLine'
+"Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/vim-scripts/JavaScript-Indent'
 "Plug 'https://github.com/svermeulen/vim-easyclip'
 "Plug 'https://github.com/2072/PHP-Indenting-for-VIm/'
@@ -60,8 +63,6 @@ Plug 'https://github.com/Yggdroot/indentLine'
 "Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
 "Plug 'https://github.com/easymotion/vim-easymotion'
 "Plug 'https://github.com/scrooloose/nerdcommenter'
-"Plug 'https://github.com/Valloric/MatchTagAlways'
-"Plug 'https://github.com/nono/vim-handlebars'
 "Plug 'https://github.com/burnettk/vim-angular'
 "Plug 'https://github.com/ervandew/supertab'
 "Plug 'https://github.com/airblade/vim-gitgutter'
@@ -91,7 +92,7 @@ set cursorline
 hi clear CursorLine 
 hi CursorLine ctermbg=235 guibg=#111111
 
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 let g:ctrlp_custom_ignore = '\.git\|node_modules\|bower_components\|laravel\/vendor'
 let g:ctrlp_show_hidden = 1
@@ -109,13 +110,14 @@ let NERDTreeShowHidden=1
 " let g:NERDTreeDirArrowCollapsible = '↓'
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" SYNTASTIC
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_typescript_tsc_fname = ''
+"let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_typescript_checkers = ['tslint']
+"let g:syntastic_typescript_tsc_fname = ''
 "let g:syntastic_typescript_tslint_exec = '/usr/bin/env tslint'
 
 "let g:syntastic_typescript_tsc_fname = ''
@@ -130,7 +132,7 @@ let g:syntastic_c_config_file = $HOME . '/master/nvim/.syntastic'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic_c_config.txt'
 " let g:syntastic_cpp_config_file = $HOME . '/master/nvim/syntastic.conf'
 
-let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
+"let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
 let g:syntastic_html_tidy_ignore_errors=[ 
       \ " proprietary attribute \"ng-", 
@@ -177,9 +179,12 @@ endif
 
 " set mouse=n
 
-let g:indentLine_enabled = 1
+"let g:indentLine_enabled = 1
 
+" NEOCOMPLETE
 let g:neocomplete#enable_at_startup = 1
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" NEOCOMPLETE END
 
 au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mu set filetype=html.mustache syntax=html.mustache
@@ -307,22 +312,22 @@ nmap <F3> :NERDTree <cr>
 nmap ,ne :NERDTreeFind <cr>
 nmap ,make :w \| !make <cr>
 
-let g:localvimrc_ask = 1
-let g:localvimrc_sandbox = 0
-let g:localvimrc_persistent = 2
+"let g:localvimrc_ask = 1
+"let g:localvimrc_sandbox = 0
+"let g:localvimrc_persistent = 2
 
 " CHECK IF FILE EXISTS
 " ==========================================================
-function! FileExists(fname)
-  if (filereadable(a:fname))
-    " echo "file is '" . a:fname . "' readable"
-  else
-    echo "file is '" . a:fname . "' not readable"
-  endif
-endfunction
+"function! FileExists(fname)
+"if (filereadable(a:fname))
+" echo "file is '" . a:fname . "' readable"
+"else
+"echo "file is '" . a:fname . "' not readable"
+"endif
+"endfunction
 " ==========================================================
 
-let g:js_indent_log = 0
+"let g:js_indent_log = 0
 "colorscheme monokai
 "colorscheme badwolf
 "colorscheme 0x7A69_dark
@@ -369,93 +374,92 @@ hi Search guibg=#111111 guifg=#ff2222
 
 
 
-if has('nvim')
-else
-  let g:neocomplete#enable_at_startup = 1
-  "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-  " Disable AutoComplPop.
-  let g:acp_enableAtStartup = 0
-  " Use neocomplete.
-  " Use smartcase.
-  " let g:neocomplete#enable_smart_case = 1
-  " Set minimum syntax keyword length.
-  " let g:neocomplete#sources#syntax#min_keyword_length = 3
+"if has('nvim')
+"else
+"let g:neocomplete#enable_at_startup = 1
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+"let g:acp_enableAtStartup = 0
+" Use neocomplete.
+" Use smartcase.
+" let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-  " Define dictionary.
-  " let g:neocomplete#sources#dictionary#dictionaries = {
-        " \ 'default' : '',
-        " \ 'vimshell' : $HOME.'/.vimshell_hist',
-        " \ 'scheme' : $HOME.'/.gosh_completions'
-        " \ }
+" Define dictionary.
+" let g:neocomplete#sources#dictionary#dictionaries = {
+" \ 'default' : '',
+" \ 'vimshell' : $HOME.'/.vimshell_hist',
+" \ 'scheme' : $HOME.'/.gosh_completions'
+" \ }
 
-  " Define keyword.
-  " if !exists('g:neocomplete#keyword_patterns')
-    " let g:neocomplete#keyword_patterns = {}
-  " endif
-  " let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Define keyword.
+" if !exists('g:neocomplete#keyword_patterns')
+" let g:neocomplete#keyword_patterns = {}
+" endif
+" let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-  " Plugin key-mappings.
-  " inoremap <expr><C-g>     neocomplete#undo_completion()
-  " inoremap <expr><C-l>     neocomplete#complete_common_string()
+" Plugin key-mappings.
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
 
-  " Recommended key-mappings.
-  " <CR>: close popup and save indent.
-  " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  " function! s:my_cr_function()
-    " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-    " For no inserting <CR> key.
-    "return pumvisible() ? "\<C-y>" : "\<CR>"
-  " endfunction
-  " <TAB>: completion.
-  " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  " inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  " Close popup by <Space>.
-  "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+" return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+" For no inserting <CR> key.
+"return pumvisible() ? "\<C-y>" : "\<CR>"
+" endfunction
+" <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-  " AutoComplPop like behavior.
-  "let g:neocomplete#enable_auto_select = 1
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
 
-  " Shell like behavior(not recommended).
-  "set completeopt+=longest
-  "let g:neocomplete#enable_auto_select = 1
-  "let g:neocomplete#disable_auto_complete = 1
-  "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
-  " Enable omni completion.
-  " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Enable omni completion.
+" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-  " Enable heavy omni completion.
-  " if !exists('g:neocomplete#sources#omni#input_patterns')
-    " let g:neocomplete#sources#omni#input_patterns = {}
-  " endif
-  "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-  "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-  "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+" Enable heavy omni completion.
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+" let g:neocomplete#sources#omni#input_patterns = {}
+" endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-  " For perlomni.vim setting.
-  " https://github.com/c9s/perlomni.vim
-  " let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-  " let g:neocomplete#enable_at_startup = 1
-endif
+" let g:neocomplete#enable_at_startup = 1
+"endif
 
 " nmap ,n :echo "hello"<cr>
 " nmap ,nn :NextColorScheme<cr>
 " nmap ,nb :PrevColorScheme<cr>
 " let g:colorscheme_switcher_exclude = ['billw', 'biogoo', '1989', '256-grayvim', '256-jungle', '0x7A69_dark''default', 'test', 'abra', 'adam', 'adobe', 'af', 'anderson', 'anotherdark', 'anasi_blows', 'astronaut', 'asu1dark', '256', '3dglasses', 'abbott']
 
-au filetype qf setlocal wrap
-au filetype qf setlocal syntax=c
+"au filetype qf setlocal wrap
+"au filetype qf setlocal syntax=c
 
-set completeopt+=preview
+"set completeopt+=preview
 
-autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif
+"autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif
 
 " set statusline=%y\ %f\ %l\\%L
 " set statusline=%#LineNR#
@@ -464,7 +468,7 @@ autocmd WinEnter * if &previewwindow | set filetype=c wrap  | endif
 " set statusline+=%=[%l/%L]
 " set statusline+=\ [%f]
 "
-set path=.,/usr/include,,~/include,
+"set path=.,/usr/include,,~/include,
 
 "nmap <c-f> :set statusline=[%F] <cr>
 

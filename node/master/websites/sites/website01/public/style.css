@@ -1,0 +1,21 @@
+body {
+  padding-top: 20px;
+}
+
+.box {
+  margin: 10px;
+  overflow: hidden;
+}
+
+.box:last-child {
+  margin-bottom: 20px;
+}
+
+.my-form {
+  padding-top: 20px;
+}
+
+.my-form .w3-input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

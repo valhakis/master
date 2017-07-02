@@ -5,6 +5,8 @@
 #include "inc/program.h"
 #include "inc/main.h"
 #include "inc/monster.h"
+#include "inc/character.h"
+#include "inc/levels.h"
 #include "inc/exs.h"
 
 static int open = true;
@@ -20,6 +22,12 @@ int main()
   ExsInitialize();
   ExTriangleInitialize();
   ExRectangleInitialize();
+  ExOrthoInitialize();
+  ExVectorsInitialize();
+  ExCursorInitialize();
+
+  CharacterInitialize();
+  LevelsInitialize();
 
   while (MainOpen())
   {

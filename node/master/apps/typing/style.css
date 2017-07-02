@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+.container {
+  font-family: 'PT Sans Narrow', sans-serif;
+  border: 1px solid #000;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.letter {
+  color: #333;
+}
+
+.active {
+  color: red;
+}
+
+.right {
+  color: #999;
+}
+
+.wrong {
+  color: #000;
+}

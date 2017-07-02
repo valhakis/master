@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[database]</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/websites/website1/style.css">
+  </head>
+  <body>
+
+    <div id="nav-template"></div>
+
+    <div class="w3-container">
+      <p>[database]</p>
+      <p>[number of tables]: {{ num_tables }}</p>
+    </div>
+
+    <div class="w3-container">
+      {{#each tables as |table|}}
+      <div class="w3-card">
+        <div class="w3-panel">
+          <div class="w3-panel">
+            <div>{{ table.name }}</div>
+            <hr>
+            <div>
+              <a class="w3-btn w3-dark-gray" href="/websites/website1/database/table/{{ table.name }}">GO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/websites/website1/script.js"></script>
+  </body>
+</html>

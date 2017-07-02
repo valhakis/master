@@ -35,6 +35,8 @@ nodemon.start = function() {
       root + '/apps/index.js',
       root + '/apps/sqlite',
       root + '/apps/music',
+      root + '/websites/sites/website01/server',
+      root + '/websites/index.js',
     ],
     "ignore": [
       root + '/apps/sqlite/views',

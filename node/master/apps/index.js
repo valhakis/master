@@ -16,6 +16,7 @@ router.use('/sqlite', require('./sqlite'));
 router.use('/music', require('./music'));
 router.use('/stack', require('./stack'));
 router.use('/bootstrap', static(root + '/bootstrap'));
+router.use('/typing', static(root + '/typing'));
 router.use('/exercises', static(root + '/exercises'));
 
 // watch([__dirname + '/index.js'], App.restartNodemon);
@@ -24,6 +25,7 @@ watch([
   root + '/exercises',
   root + '/bootstrap',
   root + '/music/public',
+  root + '/typing',
   root + '/stack/public',
 ], {
   recursive: true,

@@ -1,0 +1,13 @@
+body {
+  background-color: #111;
+  padding-top: 20px;
+}
+
+.x-well {
+  border: 2px solid #000;
+}
+
+.x-container {
+  width: 100%;
+  margin-bottom: 20px;
+}

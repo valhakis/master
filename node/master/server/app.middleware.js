@@ -36,6 +36,7 @@ module.exports = function(app) {
 
   app.use('/apps', App.rootRequire('apps'));
   app.use('/static', App.rootRequire('static/server'));
+  app.use('/websites', App.rootRequire('websites'));
   app.use('/projects', App.rootRequire('projects/server'));
   // app.use('/static', express.static(GET.base('static')));
   app.use('/', express.static(GET.root('node_modules')));

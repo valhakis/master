@@ -14,10 +14,6 @@ fs.writeFileSync(`${config.root}/sequelize/config/config.json`, JSON.stringify(s
 
 var spawn = require('child_process').spawn;
 
-console.log(config);
-
-console.log('root', App.root);
-
 //var db = require(config.root + '/sequelize/models');
 
 //db.sequelize.sync().then(function() {

@@ -6,21 +6,24 @@ require('./globals');
 var originalLogger = console.log;
 var filename;
 console.log = function(minions) {
-   try {
-      var err = new Error();
-      Error.prepareStackTrace = function (err, stack) {
-         return stack;
-      };
+  try {
+    var err = new Error();
+    Error.prepareStackTrace = function (err, stack) {
+      return stack;
+    };
+    filename = err.stack.shift().getFileName();
+    while (err.stack.length) {
       filename = err.stack.shift().getFileName();
-      while (err.stack.length) {
-         filename = err.stack.shift().getFileName();
-         if (filename !== filename) return filename;
-         originalLogger(filename);
+      if (filename !== filename) return filename;
+      if (!filename.match(/node_modules/))
+      {
+        originalLogger(filename);
       }
-   } catch (err) {
-      originalLogger(err);
-   }
-   return undefined;
+    }
+  } catch (err) {
+    originalLogger(err);
+  }
+  return undefined;
 };
 */
 
@@ -40,21 +43,21 @@ var host;
 var port;
 
 if (!process.env.NODE_ENV) {
-   process.env.NODE_ENV = 'development';
+  process.env.NODE_ENV = 'development';
 }
 
 if (process.env.NODE_ENV === 'development') {
-   host = config.development.host;
-   port = config.development.port;
+  host = config.development.host;
+  port = config.development.port;
 } else {
-   process.env.NODE_ENV = 'production';
-   host = config.production.host;
-   port = config.production.port;
+  process.env.NODE_ENV = 'production';
+  host = config.production.host;
+  port = config.production.port;
 }
 
 //var router = express.Router();
 //router.use('**', function(req, res) {
-   //proxy.web(req, res, { target: 'http://192.168.0.2:4500' });
+//proxy.web(req, res, { target: 'http://192.168.0.2:4500' });
 //});
 //app.use('/php-site', router);
 
@@ -117,7 +120,7 @@ db.sync().then(() => {
       throw err;
     }
     server.listen(port, host, function() {
-      console.log(`server at ${host}:${port}. [${process.env.NODE_ENV}]`);
+      console.log(`Server at ${host}:${port}. [${process.env.NODE_ENV}]`);
 
       if (process.env.NODE_ENV === 'development') {
         // RELOAD BROWSER-SYNC

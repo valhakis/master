@@ -6,14 +6,25 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+static struct {
+  int count;
+  void (*callbacks[10])(int button, int state);
+} mouse;
+
+static float mouseX, mouseY;
 static GLFWwindow *window;
 static const int width = 500, height = 500;
 static bool keys[1024];
 
 static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mod);
+static void cursor_position(GLFWwindow* window, double xpos, double ypos);
+static void mouse_button_callback(GLFWwindow* window, int button, int action, int mod);
+static void framebuffer_size(GLFWwindow* window, int width, int height);
 
 void WindowInitialize()
 {
+  mouse.count = 0;
+
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -27,7 +38,10 @@ void WindowInitialize()
     exit(EXIT_FAILURE);
   }
 
+  glfwSetFramebufferSizeCallback(window, framebuffer_size);
   glfwSetKeyCallback(window, keyboard);
+  glfwSetCursorPosCallback(window, cursor_position);
+  glfwSetMouseButtonCallback(window, mouse_button_callback);
   glfwMakeContextCurrent(window);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -74,4 +88,44 @@ static void keyboard(GLFWwindow* window, int key, int scancode, int action, int 
 void WindowGetKeysPtr(bool **keysPtr)
 {
   *keysPtr = (bool*)&keys;
+}
+
+void WindowGetDimensions(int *width, int *height)
+{
+  glfwGetFramebufferSize(window, width, height);
+}
+
+void WindowGetCursorPosition(float *x, float *y)
+{
+  *x = mouseX;
+  *y = mouseY;
+}
+
+static void cursor_position(GLFWwindow* window, double xpos, double ypos)
+{
+
+  mouseX = (float)xpos;
+  mouseY = (float)ypos;
+}
+
+static void mouse_button_callback(GLFWwindow* window, int button, int action, int mod)
+{
+  for (int x=0; x<mouse.count; x++)
+  {
+    if (mouse.callbacks[x])
+    {
+      mouse.callbacks[x](button, action);
+    }
+  }
+}
+
+void WindowRegisterMousePress(void (*callback)(int button, int action))
+{
+  mouse.callbacks[mouse.count] = callback;
+  mouse.count += 1;
+}
+
+static void framebuffer_size(GLFWwindow* window, int width, int height)
+{
+  glViewport(0, 0, width, height);
 }

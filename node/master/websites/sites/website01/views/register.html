@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[register]</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/websites/website1/style.css">
+  </head>
+  <body>
+
+    <div id="nav-template"></div>
+
+    <div class="w3-container">
+      <h2>[register]</h2>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-card">
+        <div class="w3-panel">
+          <form method="post" action="/websites/website1/auth/register" class="my-form">
+            <div class="box">
+              <label for="email">email</label>
+              <input class="w3-input" type="text" name="email" autofocus>
+            </div>
+            <div class="box">
+              <label for="password">password</label>
+              <input class="w3-input" type="password" name="password">
+            </div>
+            <div class="box">
+              <label for="password">confirm password</label>
+              <input class="w3-input" type="password" name="password2">
+            </div>
+            <div class="box">
+              <button class="w3-btn w3-dark-gray w3-right" type="submit">register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/websites/website1/script.js"></script>
+  </body>
+</html>

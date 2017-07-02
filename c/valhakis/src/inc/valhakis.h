@@ -26,6 +26,16 @@ extern "C" {
   void ValMat4TransformVec3(float mat1[4][4], float vec[3]);
   void ValMultiMat4ByMat4(float C[4][4], float B[4][4]);
   void ValMat4Scale(float M[4][4], float s);
+  void ValMat4SetIdentityf(int count, ...);
+  void ValSetVec3(float vec[3], float x, float y, float z);
+  void ValSetVec3v(float vec1[3], float vec2[3]);
+  void SetVec3(float vec[3], float x, float y, float z);
+  void SetUniformMatrix4fv(int program, const char *name, const float *M);
+  void Mat4Translate(float mat1[4][4], float vec[3]);
+  void Mat4Flip(float M[4][4]);
+  void Mat4MultiMat4(float C[4][4], float B[4][4]);
+  void SetUniform3fv(int program, const char *name, float color[3]);
+  void Mat4Scale(float M[4][4], float s);
 
 #ifdef __cplusplus
 }

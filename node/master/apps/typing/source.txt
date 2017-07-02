@@ -1,0 +1,30 @@
+How to Think
+
+Managing brain resources in an age of complexity.
+
+November 13, 2007
+When I applied for my faculty job at the MIT Media Lab, I had to write a teaching statement. One of the things I proposed was to teach a class called “How to Think,” which would focus on how to be creative, thoughtful, and powerful in a world where problems are extremely complex, targets are continuously moving, and our brains often seem like nodes of enormous networks that constantly reconfigure. In the process of thinking about this, I composed 10 rules, which I sometimes share with students. I’ve listed them here, followed by some practical advice on implementation.
+
+1. Synthesize new ideas constantly. Never read passively. Annotate, model, think, and synthesize while you read, even when you’re reading what you conceive to be introductory stuff. That way, you will always aim towards understanding things at a resolution fine enough for you to be creative.
+
+2. Learn how to learn (rapidly). One of the most important talents for the 21st century is the ability to learn almost anything instantly, so cultivate this talent. Be able to rapidly prototype ideas. Know how your brain works. (I often need a 20-minute power nap after loading a lot into my brain, followed by half a cup of coffee. Knowing how my brain operates enables me to use it well.)
+
+3. Work backward from your goal. Or else you may never get there. If you work forward, you may invent something profound–or you might not. If you work backward, then you have at least directed your efforts at something important to you.
+
+4. Always have a long-term plan. Even if you change it every day. The act of making the plan alone is worth it. And even if you revise it often, you’re guaranteed to be learning something.
+
+5. Make contingency maps. Draw all the things you need to do on a big piece of paper, and find out which things depend on other things. Then, find the things that are not dependent on anything but have the most dependents, and finish them first.
+
+6. Collaborate.
+
+7. Make your mistakes quickly. You may mess things up on the first try, but do it fast, and then move on. Document what led to the error so that you learn what to recognize, and then move on. Get the mistakes out of the way. As Shakespeare put it, “Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt.”
+
+8. As you develop skills, write up best-practices protocols. That way, when you return to something you’ve done, you can make it routine. Instinctualize conscious control.
+
+9. Document everything obsessively. If you don’t record it, it may never have an impact on the world. Much of creativity is learning how to see things properly. Most profound scientific discoveries are surprises. But if you don’t document and digest every observation and learn to trust your eyes, then you will not know when you have seen a surprise.
+
+10. Keep it simple. If it looks like something hard to engineer, it probably is. If you can spend two days thinking of ways to make it 10 times simpler, do it. It will work better, be more reliable, and have a bigger impact on the world. And learn, if only to know what has failed before. Remember the old saying, “Six months in the lab can save an afternoon in the library.”
+
+Two practical notes. The first is in the arena of time management. I really like what I call logarithmic time planning, in which events that are close at hand are scheduled with finer resolution than events that are far off. For example, things that happen tomorrow should be scheduled down to the minute, things that happen next week should be scheduled down to the hour, and things that happen next year should be scheduled down to the day. Why do all calendar programs force you to pick the exact minute something happens when you are trying to schedule it a year out? I just use a word processor to schedule all my events, tasks, and commitments, with resolution fading away the farther I look into the future. (It would be nice, though, to have a software tool that would gently help you make the schedule higher-resolution as time passes…)
+
+The second practical note: I find it really useful to write and draw while talking with someone, composing conversation summaries on pieces of paper or pages of notepads. I often use plenty of color annotation to highlight salient points. At the end of the conversation, I digitally photograph the piece of paper so that I capture the entire flow of the conversation and the thoughts that emerged. The person I’ve conversed with usually gets to keep the original piece of paper, and the digital photograph is uploaded to my computer for keyword tagging and archiving. This way I can call up all the images, sketches, ideas, references, and action items from a brief note that I took during a five-minute meeting at a coffee shop years ago–at a touch, on my laptop. With 10-megapixel cameras costing just over $100, you can easily capture a dozen full pages in a single shot, in just a second.
