@@ -79,7 +79,11 @@ mkdir -p $MASTER_BACKUP
 
 MASTER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "MASTER: $MASTER"
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 function exists
 {
@@ -117,3 +121,17 @@ then
 else
 	ln $MASTER/home/.bashrc $HOME/.bashrc
 fi
+
+if exists "$HOME/.tmux.conf"
+then
+	askReplace $HOME/.tmux.conf $MASTER/home/.tmux.conf
+else
+	ln $MASTER/home/.tmux.conf $HOME/.tmux.conf
+fi
+
+vim -c "PlugInstall|qa"
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+# nvm install node | bash
+# nvm use node | bash

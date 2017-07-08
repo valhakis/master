@@ -1,0 +1,89 @@
+#!/usr/bin/env node
+require('../globals');
+
+var express = require('express');
+var app = express();
+
+var watch = require('node-watch');
+var config = App.require('config');
+var spawn = require('child_process').spawn;
+var bs = require("browser-sync").create();
+
+var server = {
+  lastCode: 0,
+  spawn: null,
+  start: function() {
+    this.spawn = spawn('/usr/bin/env', ['node', '.'], {
+      stdio: 'inherit',
+      cwd: App.root('server')
+    });
+    this.spawn.on('close', (code, signal) => {
+    });
+  },
+  forceStart: function() {
+  },
+  restart: function() {
+    if (this.spawn && this.spawn.kill) {
+      this.spawn.kill();
+    }
+    delete this.spawn;
+    this.start();
+  },
+  close: function() {
+    this.spawn.kill();
+    this.spawn = null;
+  }
+};
+
+server.start();
+
+app.get('/restart', function(req, res) {
+  console.log('HAVE TO RESTART');
+  server.restart();
+  res.send('');
+});
+
+bs.init({
+  port: config['bs-port'],
+  host: config['bs-host'],
+  proxy: `http://${config.host}:${config.port}`,
+  open: false
+});
+
+App.masterRequire('notes/app')(server, bs);
+
+watch(App.root('server'), { recursive: true}, function() {
+  server.restart();
+});
+
+watch(App.root('public'), { recursive: true}, function() {
+  bs.reload();
+});
+
+
+app.listen(config['app-port'], config['app-host'], function() {
+  console.log(`APP IS AT ${config['app-host']}:${config['app-port']}.`);
+});
+
+process.stdin.resume();
+
+var exitHandler = function(options, err) {
+  if (options.cleanup) {
+    console.log('I HAVE TO CLEAN UP');
+    server.close();
+  }
+
+  if (err) {
+    console.log(err.stack);
+  }
+
+  if (options.exit) {
+    console.log('I HAVE TO EXIT');
+    process.exit();
+  }
+
+};
+
+process.on('exit', exitHandler.bind(null, {cleanup: true}));
+process.on('SIGINT', exitHandler.bind(null, {exit: true}));
+process.on('uncaughtException', exitHandler.bind(null, {exit: true}));

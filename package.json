@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/valhakis/master/issues"
   },
-  "homepage": "https://github.com/valhakis/master#readme"
+  "homepage": "https://github.com/valhakis/master#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "browser-sync": "^2.18.12",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "handlebars": "^4.0.10",
+    "node-watch": "^0.5.5",
+    "nodemon": "^1.11.0"
+  }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[create]</title>
+    <link rel="stylesheet" href="/notes/style.css">
+  </head>
+  <body>
+
+    <a href="/notes/plan">[back]</a>
+
+    <h1>[create]</h1>
+
+    <form method="post" action="/notes/plan/create">
+      <div>
+        <label>[title]</label>
+        <input type="text" name="title" autofocus>
+      </div>
+      <div>
+        <label>[description]</label>
+        <textarea name="description"></textarea>
+      </div>
+      <button>[create]</button>
+    </form>
+
+    {{#if errors.length}}
+    <div>
+      <h2>[errors]</h2>
+      {{#each errors}}
+      <div>
+        <b>Attention: </b>
+        <p style="color: tomato;">{{message}}</p>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+  </body>
+</html>
