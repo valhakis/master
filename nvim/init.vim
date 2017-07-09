@@ -27,3 +27,4 @@ au BufRead,BufNewFile app set filetype=javascript syntax=javascript
 nmap ,edit :tabedit ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
 nmap ,ne :NERDTree <cr>
+nmap ,nf :NERDTreeFind <cr>

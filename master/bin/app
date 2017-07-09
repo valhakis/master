@@ -51,6 +51,7 @@ bs.init({
 });
 
 App.masterRequire('notes/app')(server, bs);
+App.masterRequire('canvas/app')(server, bs);
 
 watch(App.root('server'), { recursive: true}, function() {
   server.restart();

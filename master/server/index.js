@@ -29,6 +29,7 @@ app.use(session({
 app.use('/', static(root('public')));
 
 app.use('/notes', masterRequire('notes/server'));
+app.use('/canvas', masterRequire('canvas/server'));
 
 app.use(function(req, res, next) {
   var source = fs.readFileSync(App.root('views/404.html'), 'utf8');
