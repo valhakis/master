@@ -5,8 +5,8 @@
 
   var context = canvas.getContext('2d');
 
-  canvas.style.width = '100%';
-  canvas.style.height = '700px';
+  canvas.style.width = '50%';
+  canvas.style.height = '300px';
 
   var width = canvas.width = canvas.offsetWidth;
   var height = canvas.height = canvas.offsetHeight;

@@ -24,3 +24,18 @@ function AddScript(src) {
   script.src = src;
   document.body.appendChild(script);
 }
+
+function NewCanvas(callback) {
+  var canvases = document.querySelector("#canvases");
+  var canvas = document.createElement('canvas');
+  canvases.appendChild(canvas);
+
+  var context = canvas.getContext('2d');
+
+  canvas.style.width = '50%';
+  canvas.style.height = '500px';
+
+  var width = canvas.width = canvas.offsetWidth;
+  var height = canvas.height = canvas.offsetHeight;
+  callback(canvas, context, width, height);
+}

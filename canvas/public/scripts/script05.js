@@ -5,8 +5,8 @@
 
   var context = canvas.getContext('2d');
 
-  canvas.style.width = '100%';
-  canvas.style.height = '500px';
+  canvas.style.width = '50%';
+  canvas.style.height = '300px';
 
   var width = canvas.width = canvas.offsetWidth;
   var height = canvas.height = canvas.offsetHeight;
@@ -101,6 +101,139 @@
     }
   };
 
+  class Circle {
+    constructor(x, y, radius, speed, angle, outerRadius) {
+      this.outerRadius = outerRadius || 100;
+      this.radius = radius || 3;
+      this.x = x || 0;
+      this.y = y || 0;
+      this.angle = angle || 0;
+      this.speed = speed || 0.05;
+    }
+
+    render() {
+
+      this.x = centerX + Math.cos(this.angle) * this.outerRadius;
+      this.y = centerY + Math.sin(this.angle) * this.outerRadius;
+
+      context.beginPath();
+      context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      context.fill();
+
+      this.angle += this.speed;
+    }
+
+    setPosition(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    setOuterRadius(radius) {
+      this.outerRadius = radius;
+    }
+
+    setRadius(radius) {
+      this.radius = radius;
+    }
+  }
+
+  class Objects {
+    constructor() {
+      this.circle = new Circle();
+
+      this.count = 10;
+      this.slice = Math.PI * 2 / this.count;
+      this.radius = 50;
+
+      this.circle.setRadius(5);
+      this.circle.setOuterRadius(this.radius);
+    }
+
+    render() {
+      for (var i=0; i<this.count; i++) {
+        var angle = i * this.slice;
+        var x = centerX + Math.cos(angle) * this.radius;
+        var y = centerY + Math.sin(angle) * this.radius;
+        context.beginPath();
+        context.arc(x, y, 3, 0, Math.PI * 2, false);
+        context.fill();
+      }
+      this.circle.render();
+    }
+  }
+
+  class Lissajous {
+    constructor() {
+      this.offsetX = 1400;
+      this.offsetY = centerY;
+
+      this.radiusX = 100;
+      this.radiusY = 150;
+
+      this.outer = this.createOuter();
+      this.circle = this.createCircle();
+    }
+
+    createOuter() {
+      var outer = {};
+
+      outer.count = 10;
+      outer.slice = Math.PI * 2 / outer.count;
+      outer.radius = 150;
+
+      outer.render = () => {
+        for (var i=0; i<outer.count; i++) {
+          // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+          var angleX = i * outer.slice;
+          var angleY = i * outer.slice;
+          var x = this.offsetX + Math.cos(angleX) * this.radiusX;
+          var y = this.offsetY + Math.sin(angleY) * this.radiusY;
+          context.beginPath();
+          context.arc(x, y, 8, 0, Math.PI * 2, false);
+          context.fill();
+        }
+      };
+
+      return outer;
+    }
+
+    createCircle() {
+      var circle = {
+        angleX: 0,
+        angleY: 0,
+        speedX: 0.1,
+        speedY: 0.2,
+        x: 0,
+        y: 0,
+        radius: 5,
+      };
+
+      circle.render = () => {
+
+        circle.x = this.offsetX + Math.cos(circle.angleX) * this.radiusX;
+        circle.y = this.offsetY + Math.sin(circle.angleY) * this.radiusY;
+
+        context.beginPath();
+        context.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
+        context.fill();
+
+        circle.angleX += circle.speedX;
+        circle.angleY += circle.speedY;
+      };
+
+      return circle;
+    }
+
+    render() {
+      this.circle.render();
+      this.outer.render();
+    }
+  }
+
+  var objects = new Objects();
+
+  var lissajous = new Lissajous();
+
   var render = function() {
     context.clearRect(0, 0, width, height);
 
@@ -108,6 +241,10 @@
     renderMovingCircle();
     ellipse.render();
     object.render();
+
+    objects.render();
+
+    lissajous.render();
 
     angle += speed;
     requestAnimationFrame(render);
