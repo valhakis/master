@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[canvas]</title>
+    <link rel="stylesheet" href="/canvas/style.css">
+  </head>
+  <body>
+    <a href="/">[master]</a>
+
+    <hr>
+
+    <a href="/learnopengl/program">[program]</a>
+
+    <div>
+      <h2>[programs]</h2>
+      {{#each programs as |program|}}
+      <div>
+        {{ program.name }}
+        <a href="{{program.dir.path}}/result.png">
+          <img src="{{program.dir.path}}/result.png" style="max-width: 100%;">
+        </a>
+      </div>
+      {{/each}}
+    </div>
+
+  </body>
+</html>

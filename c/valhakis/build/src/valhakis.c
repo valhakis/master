@@ -29,17 +29,31 @@ void ValErr(const char *format, ...)
   va_start(args, format);
   vfprintf(stderr, format, args);
   va_end(args);
+  fprintf(stderr, "\n");
+}
+
+void ValSuc(const char *format, ...)
+{
+  va_list args;
+  fprintf(stdout, KGRN);
+  fprintf(stdout, "LOG: ");
+  fprintf(stdout, KNRM);
+  va_start(args, format);
+  vfprintf(stdout, format, args);
+  va_end(args);
+  fprintf(stdout, "\n");
 }
 
 void ValLog(const char *format, ...)
 {
   va_list args;
-  fprintf(stderr, KBLU);
-  fprintf(stderr, "LOG: ");
-  fprintf(stderr, KNRM);
+  fprintf(stdout, KBLU);
+  fprintf(stdout, "LOG: ");
+  fprintf(stdout, KNRM);
   va_start(args, format);
-  vfprintf(stderr, format, args);
+  vfprintf(stdout, format, args);
   va_end(args);
+  fprintf(stdout, "\n");
 }
 
 char *ValReadSource(const char *file)

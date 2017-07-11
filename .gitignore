@@ -4,3 +4,4 @@ bower_components
 /node/master/dist
 /eksam/dist
 /vendor/
+/master/environment.js

@@ -1,0 +1,12 @@
+{
+  "name": "valhakis",
+  "version": "0.0.4",
+  "description": "no description required",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "William Valhakis",
+  "license": "ISC"
+}

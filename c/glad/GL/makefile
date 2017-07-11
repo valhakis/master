@@ -1,7 +1,7 @@
 cc = gcc
 
-include_dir = ~/include
-lib_dir = ~/lib
+include_dir = $(HOME)/include
+lib_dir = $(HOME)/lib
 
 src += src/glad.c
 obj := $(patsubst src/%.c, obj/%.o, $(src))
@@ -15,3 +15,6 @@ build: $(obj)
 
 obj/%.o: src/%.c
 	$(cc) $(cflags) -c $< -o $@
+
+clean:
+	rm -f $(obj)

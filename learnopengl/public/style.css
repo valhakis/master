@@ -1,0 +1,59 @@
+form {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5), -1px -1px 5px rgba(0, 0, 0, 0.5);
+}
+
+form > div {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+form, form label, form textarea, form input {
+  padding: 3px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  min-height: 100px;
+}
+
+form label {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+form textarea {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+form input {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+form button:hover {
+  color: #333;
+}
+
+
+#canvases {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#canvases canvas {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: block;
+  background-color: #eee;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+  float: left;
+}
+
+#canvases canvas:last-child {
+  margin-bottom: 0px;
+}

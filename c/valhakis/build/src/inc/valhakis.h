@@ -9,6 +9,18 @@
 extern "C" {
 #endif
 
+  typedef struct ValWindow ValWindow;
+
+  struct ValWindow {
+    bool open;
+    GLFWwindow* window;
+  };
+
+  ValWindow *ValCreateWindow();
+  void ValWindowEvents();
+  void ValWindowDestroy();
+
+
   void ValSample(const char *format, ...);
   void ValErr(const char *format, ...);
   char *ValReadSource(const char *file);
@@ -19,6 +31,7 @@ extern "C" {
   GLFWwindow *ValCreateLazyGLFWWindow();
   int ValLoadProgram(const char *vpath, const char *fpath);
   int ValGetUniform(int program, const char *name);
+  void ValSuc(const char *format, ...);
 
 #ifdef __cplusplus
 }

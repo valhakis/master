@@ -1,0 +1,38 @@
+#!/bin/env node
+
+var http = require('http');
+var watch = require('node-watch');
+var spawn = require('child_process').spawn;
+var express = require('express');
+var fs = require('fs');
+var env = JSON.parse(fs.readFileSync(__dirname + '/env.json'), 'utf-8');
+
+spawn('php', ['-S', `${env.host}:${env.wordpress.port}`], {
+  stdio: 'inherit',
+  cwd: __dirname
+});
+
+var app = express();
+
+app.use(express.static(__dirname + '/public'));
+
+var server = http.createServer(app);
+var io = require('socket.io')(server);
+
+watch([
+  __dirname + '/wp-content/plugins/master',
+  __dirname + '/wp-content/plugins/terminal'
+], {recursive: true}, function() {
+  io.emit('reload');
+});
+
+io.on('connection', function(socket) {
+  console.log('a user connected');
+  socket.on('disconnect', function() {
+    console.log('a user disconnected');
+  });
+});
+
+server.listen(env.server.port, env.host, function() {
+  console.log(`Server is at ${env.host}:${env.server.port}`);
+});
