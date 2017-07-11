@@ -51,12 +51,15 @@ bs.init({
 });
 
 App.masterRequire('notes/app')(server, bs);
+App.masterRequire('svg/app')(server, bs);
 App.masterRequire('canvas/app')(server, bs);
 App.masterRequire('site/app')(server, bs);
 App.masterRequire('terminal/app')(server, bs);
+App.masterRequire('api/app')(server, bs);
 App.masterRequire('todo/app')(server, bs);
 App.masterRequire('example/app')(server, bs);
 App.masterRequire('learnopengl/app')(server, bs);
+App.masterRequire('node/app')(server, bs);
 App.masterRequire('template_engines/app')(server, bs);
 App.masterRequire('highlighters/app')(server, bs);
 

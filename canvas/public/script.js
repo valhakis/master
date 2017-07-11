@@ -20,7 +20,7 @@ function LoadScripts(callback) {
 
 function AddScript(src) {
   var script = document.createElement('script');
-  script.async = 'async';
+  // script.async = 'async';
   script.src = src;
   document.body.appendChild(script);
 }

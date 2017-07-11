@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[node]</title>
+    <link rel="stylesheet" href="/node/style.css">
+    <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+  </head>
+  <body>
+
+    <div id="main">
+      <div id="main-nav">
+        <a href="/">[master]</a>
+        <a href="/node/server">[server]</a>
+      </div>
+
+      <div id="main-content">
+        <h1>[node]</h1>
+
+        <ul id="content-menu">
+          <li><load path="/node/raw/server.js" mode="text/javascript">[create server]</load></li>
+          <li><load path="/node/raw/module.js" mode="text/javascript">[module]</load></li>
+          <li><load path="/node/raw/include_module.js" mode="text/javascript">[include module]</load></li>
+          <li><load path="/node/raw/webserver.js" mode="text/javascript">[webserver]</load></li>
+          <li><load path="/node/raw/query_string.js" mode="text/javascript">[read query string]</load></li>
+        </ul>
+      </div>
+
+      <div id="main-editor">
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <script src="/codemirror/lib/codemirror.js"></script>
+    <script src="/codemirror/mode/javascript/javascript.js"></script>
+    <script src="/node/editor.js"></script>
+    <script src="/node/load.js"></script>
+    <script src="/node/script.js"></script>
+  </body>
+</html>

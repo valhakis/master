@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[workplace]</title>
+    <link rel="stylesheet" href="/canvas/style.css">
+  </head>
+  <body>
+
+    <div id="main">
+
+      <div id="top-menu">
+        <a href="/">[master]</a>
+        <a href="/canvas">[home]</a>
+      </div>
+
+      <h1>[workplace]</h1>
+
+      <div id="side">
+        <div id="side-menu">
+          <a href="/canvas/workplace/database">database</a>
+          <a href="#">lorem</a>
+          <a href="#">lorem</a>
+          <a href="#">lorem</a>
+        </div>
+      </div>
+
+      <div id="content">
+
+        <h2>[create new work]</h2>
+        <form method="POST" action="/canvas/workplace/create">
+          <div>
+            <label>[title]</label>
+            <input name="title">
+          </div>
+          <div>
+            <label>[description]</label>
+            <textarea name="textarea"></textarea>
+          </div>
+          <button class="btn info" type="submit">[create]</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

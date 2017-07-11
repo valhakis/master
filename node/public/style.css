@@ -1,0 +1,38 @@
+body {
+
+}
+#main {
+  padding: 10px;
+  margin: 0px;
+  overflow: hidden;
+}
+#main-nav {
+  padding: 10px;
+  margin: 0px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#main-nav > a {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+#main-content {
+  padding: 10px;
+  margin: 0px;
+  float: left;
+  width: 40%;
+  box-sizing: border-box;
+}
+#main-editor {
+  padding: 10px;
+  float: left;
+  margin: 0px;
+  width: 60%;
+  box-sizing: border-box;
+}
+
+#content-menu li:hover {
+  color: red;
+  cursor: pointer;
+}
