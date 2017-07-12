@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[master]</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+
+    <h1>[master]</h1>
+
+    <a href="/">[home]</a>
+
+    <h2>[notes]</h2>
+
+    {{#each notes as |note|}}
+    <div class="note">
+      <h4>[{{note.title}}]</h4>
+      <div>{{note.description}}</div>
+    </div>
+    {{/each}}
+
+  </body>
+</html>

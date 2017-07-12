@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <title>[program]</title>
+    <link rel="stylesheet" href="/learnopengl/style.css">
   </head>
   <body>
+    <div id="main">
+      <div id="main-nav">
+        <a href="/learnopengl">[home]</a>
+        <a href="/learnopengl/program/create">create program</a>
+        <a href="#">lorem</a>
+        <a href="#">lorem</a>
+        <a href="#">lorem</a>
+      </div>
+      <h1>[program]</h1>
+      <p>Number of programs: {{programs.count}}</p>
 
-    <h1>[program]</h1>
+      {{#each programs.list as |program|}}
+      <h2>[{{program.name}}]</h2>
+      <pre><code>{{program.source}}</code></pre>
+      {{/each}}
+    </div>
 
   </body>
 </html>

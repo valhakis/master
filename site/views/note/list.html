@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[list]</title>
+    <link rel="stylesheet" href="/site/style.css">
+  </head>
+  <body>
+
+    <a href="/site/note">[note]</a>
+    
+    <h1>[list of notes]</h1>
+
+    {{#if errors.length}}
+    <div id="errors">
+      {{#each errors as |error|}}
+      <div>
+        {{error.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if successes.length}}
+    <div id="successes">
+      {{#each successes as |success|}}
+      <div>
+        {{success.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#each notes as |note|}}
+    <div class="note">
+      {{note.title}}
+      <div>{{note.description}}</div>
+    </div>
+    {{/each}}
+
+  </body>
+</html>

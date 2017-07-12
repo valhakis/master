@@ -35,10 +35,12 @@ app.use(session({
 
 app.use('/', static(root('public')));
 
+app.use('/master', require('./master'));
 app.use('/site', masterRequire('site/server'));
 app.use('/notes', masterRequire('notes/server'));
 app.use('/canvas', masterRequire('canvas/server'));
 app.use('/svg', masterRequire('svg/server'));
+app.use('/problem', masterRequire('problem/server'));
 app.use('/todo', masterRequire('todo/server'));
 app.use('/api', masterRequire('api/server'));
 app.use('/node', masterRequire('node/server'));

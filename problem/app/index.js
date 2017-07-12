@@ -1,16 +1,14 @@
 var watch = require('node-watch');
 var path = require('path');
+var Loc = App.masterRequire('problem/local');
 
 module.exports = function(server, bs) {
-  watch([
-    path.join(__dirname, '../server'),
-    path.join(__dirname, '../extern')
-  ], { recursive: true }, function() {
+  watch(Loc.root('server'), { recursive: true }, function() {
     server.restart();
   });
   watch([
-    path.join(__dirname, '../public'),
-    path.join(__dirname, '../views'),
+    Loc.root('public'),
+    Loc.root('views'),
   ], { recursive: true }, function() {
     bs.reload();
   });

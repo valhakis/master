@@ -3,7 +3,10 @@ var path = require('path');
 var Loc = App.masterRequire('site/local');
 
 module.exports = function(server, bs) {
-  watch(Loc.root('server'), { recursive: true }, function() {
+  watch([
+    Loc.root('extern'),
+    Loc.root('server')
+  ], { recursive: true }, function() {
     server.restart();
   });
   watch([

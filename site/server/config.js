@@ -1,6 +1,7 @@
 var bodyParser = require('body-parser');
 var csrf = require('csurf');
 var session = require('client-sessions');
+var flash = require('connect-flash');
 
 var sess = {
   cookieName: 'session',
@@ -13,5 +14,6 @@ module.exports = function(router) {
   router.use(bodyParser.json());
   router.use(bodyParser.urlencoded({ extended: true }));
   router.use(session(sess));
-  router.use(csrf());
+  router.use(flash());
+  // router.use(csrf());
 };

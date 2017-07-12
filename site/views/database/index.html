@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[database]</title>
+    <link rel="stylesheet" href="/site/style.css">
+  </head>
+  <body>
+
+    <a href="/site">[site]</a>
+
+    <p>Database has number of tables: {{tables.count}}</p>
+
+    <h1>[database]</h1>
+
+    {{#if errors.length}}
+    <div id="errors">
+      {{#each errors as |error|}}
+      <div>
+        {{error.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if successes.length}}
+    <div id="successes">
+      {{#each successes as |success|}}
+      <div>
+        {{success.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <h2>[note]</h2>
+    <a class="btn success" href="/site/database/notes/create">[create table 'notes']</a>
+    <a class="btn danger" href="/site/database/notes/delete">[delete table 'notes']</a>
+
+  </body>
+</html>

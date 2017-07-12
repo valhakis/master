@@ -54,6 +54,7 @@ App.masterRequire('notes/app')(server, bs);
 App.masterRequire('svg/app')(server, bs);
 App.masterRequire('canvas/app')(server, bs);
 App.masterRequire('site/app')(server, bs);
+App.masterRequire('problem/app')(server, bs);
 App.masterRequire('terminal/app')(server, bs);
 App.masterRequire('api/app')(server, bs);
 App.masterRequire('todo/app')(server, bs);
@@ -67,7 +68,10 @@ watch(App.root('server'), { recursive: true}, function() {
   server.restart();
 });
 
-watch(App.root('public'), { recursive: true}, function() {
+watch([
+  App.root('public'),
+  App.root('views')
+], { recursive: true}, function() {
   bs.reload();
 });
 

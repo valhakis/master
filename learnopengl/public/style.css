@@ -57,3 +57,23 @@ form button:hover {
 #canvases canvas:last-child {
   margin-bottom: 0px;
 }
+
+#main-nav {
+  border: 1px solid #000;
+  margin: 5px;
+  overflow: hidden;
+  background-color: burlywood;
+}
+#main-nav > a {
+  display: block;
+  padding: 5px;
+  color: #111;
+  float: left;
+  margin-right: 5px;
+}
+#main-nav > a:hover {
+  color: #666;
+}
+#main {
+  border: 1px solid #000;
+}

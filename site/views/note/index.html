@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[note]</title>
+    <link rel="stylesheet" href="/site/style.css">
+  </head>
+  <body>
+
+    <a href="/site">[site]</a>
+
+    <h1>[note]</h1>
+
+    {{#if errors.length}}
+    <div id="errors">
+      {{#each errors as |error|}}
+      <div>
+        {{error.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if successes.length}}
+    <div id="successes">
+      {{#each successes as |success|}}
+      <div>
+        {{success.message}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <h3>[menu]</h3>
+    <div class="menu">
+      <a href="/site/note/list">[list of notes]</a>
+    </div>
+
+    <h3>[create note]</h3>
+
+    <form method="post" action="/site/note/create">
+      <div>
+        <label>[title]</label>
+        <input name="title" autofocus>
+      </div>
+      <div>
+        <label>[description]</label>
+        <textarea name="description"></textarea>
+      </div>
+      <button type="submit">[create]</button>
+    </form>
+
+  </body>
+</html>
