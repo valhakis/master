@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>app</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-app="app">
+    <canvas></canvas>
+    <p>Name: {{ name }}</p>
+
+    <p>CLICKS: <custom name="clicks"></custom></p>
+
+    <button onclick="increment()">INCREMENT</button>
+    <button onclick="reset()">RESET</button>
+
+    <h3>[set name]</h3>
+    <form name="set-name-form">
+      <label>Name: </label>
+      <input name="name">
+      <button type="submit">set</button>
+    </form>
+
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
