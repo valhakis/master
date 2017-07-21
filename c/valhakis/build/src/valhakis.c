@@ -140,7 +140,7 @@ int ValCreateShader(GLenum type, const char *file)
   glShaderSource(shader, 1, (const char **)&source, NULL);
   glCompileShader(shader);
 
-  int compile_ok;
+  int compile_ok = false;
   char info[512];
   glGetShaderiv(shader, GL_COMPILE_STATUS, &compile_ok);
 
@@ -163,7 +163,7 @@ int ValCreateProgram(int vshader, int fshader)
   glAttachShader(program, fshader);
   glLinkProgram(program);
 
-  int link_ok;
+  int link_ok = false;
   char info[512];
 
   if (!link_ok)
