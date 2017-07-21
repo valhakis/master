@@ -5,7 +5,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
+
 
 colorscheme antares
 
@@ -18,13 +21,35 @@ set nowrap incsearch hlsearch splitbelow
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
+let g:acp_enableAtStartup = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "let g:user_emmet_expandabbr_key='<tab>'
+"unmap ,start
+
 let g:user_emmet_leader_key=','
 
-au BufRead,BufNewFile app set filetype=javascript syntax=javascript
+au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 
 nmap ,edit :tabedit ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
 nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
+nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
+"nmap \mr :w <bar> !./start.sh <cr>
+
+function! MRun()
+  let arguments = input('arguments: ')
+  execute "!./start.sh " . arguments
+endfunction
+
+nmap ,start :w <bar> call MRun() <cr>
+nmap \mr :w <bar> call MRun() <cr>
