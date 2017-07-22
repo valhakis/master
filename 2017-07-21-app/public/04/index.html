@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>2017-07-21-app</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/prismjs/themes/prism.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h1>Application Window</h1>
+
+      <div class="btn-group">
+        <a class="btn btn-primary" href="makefile">makefile</a>
+        <a class="btn btn-primary" href="src/main.c">main.c</a>
+        <a class="btn btn-primary" href="bin/app.exe">app.exe</a>
+        <a class="btn btn-primary" href="source.tar.gz">source.tar.gz</a>
+      </div>
+
+      <hr>
+
+      <div id="output"></div>
+
+    </div>
+
+    <script src="/lib/prismjs/prism.js"></script>
+    <script src="/lib/prismjs/components/prism-c.js"></script>
+    <script src="/lib/prismjs/components/prism-makefile.js"></script>
+
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.status == 200 && this.readyState == 4) {
+          var pre = document.createElement('pre');
+          pre.innerHTML = Prism.highlight(this.responseText, Prism.languages.c);
+          document.querySelector("#output").appendChild(pre);
+        }
+      };
+      xhr.open('GET', 'src/main.c?raw=true', true);
+      xhr.send(null);
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.status == 200 && this.readyState == 4) {
+          var pre = document.createElement('pre');
+          pre.innerHTML = Prism.highlight(this.responseText, Prism.languages.makefile);
+          document.querySelector("#output").appendChild(pre);
+        }
+      };
+      xhr.open('GET', 'makefile?raw=true', true);
+      xhr.send(null);
+    </script>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

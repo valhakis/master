@@ -1,0 +1,37 @@
+body {
+  font-family: 'Arial Narrow';
+  background-color: #000;
+  color: #FFF;
+}
+
+a {
+  color: tomato;
+}
+
+pre {
+  background-color: #000;
+  border-color: #333;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.panel.panel-default div.panel-heading {
+  background-color: #000;
+  border: 1px solid #333;
+  border-color: #333;
+  border-bottom: none;
+  color: #ccc;
+}
+
+div.panel.panel-default div.panel-body {
+  background-color: #000;
+  border: 1px solid #333;
+  border-color: #333;
+}
+
+div.panel.panel-default {
+  background-color: #111;
+  border: #000;
+  border-color: #333;
+}
