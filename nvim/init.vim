@@ -16,7 +16,7 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set nowrap incsearch hlsearch splitbelow
+set nowrap incsearch hlsearch splitbelow mouse=n
 
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
