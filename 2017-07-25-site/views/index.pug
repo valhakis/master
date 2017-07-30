@@ -1,0 +1,21 @@
+html
+  head
+    base(href="/")
+    title 2017-07-25
+    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="style.css")
+  body
+    div.container
+
+      div#index-plan
+        h2 Plan
+        ol
+          li.alert.alert-success
+            h3 I need style on this page!
+            p Add style.css
+          li.alert.alert-warning
+            h3 What is the first thing I should do ?
+            p Auto reload html and css
+      div#index-scripts
+        script(src="socket.io/socket.io.js")
+        script(src="script.js")

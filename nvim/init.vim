@@ -7,6 +7,8 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'digitaltoad/vim-pug'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 

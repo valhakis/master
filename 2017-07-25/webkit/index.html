@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<title>2017-07-25</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="node_modules/prismjs/themes/prism-dark.css">
+		<link rel="stylesheet" href="static/style.css">
+		<script>
+			// nw.Window.get().showDevTools(); 
+			// nw.Window.get().maximize();
+		</script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+
+		<br>
+
+		<div class="container">
+
+
+			<div class="well">
+				<link-to target="code-window">window</link-to>
+				<link-to target="code-keyboard">keyboard</link-to>
+			</div>
+
+			<load-source id="code-window" file="raw/window.c">window.c</load-source>
+			<load-source id="code-keyboard" file="raw/keyboard.c">keyboard.c</load-source>
+
+			<div class="well">footer</div>
+
+		</div>
+
+		<script src="node_modules/prismjs/prism.js"></script>
+		<script src="node_modules/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+		<script src="node_modules/prismjs/components/prism-c.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
