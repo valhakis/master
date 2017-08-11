@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>[app]</title>
+    <link rel="stylesheet" href="/css/main.dist.css">
+  </head>
+  <body>
+
+    <div class="menu">
+      <a href="/pages/page1">Page 1</a>
+      <a href="/example">example</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+      <a href="#">Link 3</a>
+      <a class="right" href="#">Login</a>
+    </div>
+
+    <!-- <p>livereload is now working perfectly</p> -->
+
+    <div class="colors">
+      <div class="COLOR-BLUE">BLUE</div>
+      <div class="COLOR-YELLOW">YELLOW</div>
+      <div class="COLOR-GREEN">GREEN</div>
+      <div class="COLOR-RED">RED</div>
+      <div class="COLOR-BLACK">BLACK</div>
+    </div>
+
+    <div id="chat" class="chat">
+      <form name="chat-settings">
+        <div class="group">
+          <label class="width-30">Set Name: </label>
+          <input name="set-username" class="width-70" placeholder="Place ur name here.">
+        </div>
+        <select id="" name="">
+          <option value="chat-default">Layout: DEFAULT</option>
+          <option value="chat-fixed">Layout: FIXED</option>
+        </select>
+      </form>
+      <ul>
+        <!--
+          <li>message 1</li>
+          <li>message 2</li>
+          <li>message 3</li>
+          <li>message 4</li>
+          <li>message 5</li>
+          <li>message 6</li>
+        -->
+      </ul>
+      <form name="chat.main">
+        <input placeholder="Place your message here.">
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+
+    <div id="todo">
+      <form action="" name="new-todo">
+        <h2>NEW TODO</h2>
+        <input name="title" placeholder="Title: ">
+        <textarea name="content" placeholder="Content: "></textarea>
+        <button>create</button>
+      </form>
+    </div>
+
+    <div id="database">
+      <h2>database</h2>
+      <button action="create-todo-table">CREATE TODO TABLE</button>
+      <button action="drop-todo-table">DROP TODO TABLE</button>
+    </div>
+
+    <script name="socket.io" src="/socket.io-client/socket.io.min.js"></script>
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

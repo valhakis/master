@@ -21,12 +21,16 @@
   },
   "homepage": "https://github.com/valhakis/master#readme",
   "dependencies": {
+    "angular": "^1.6.5",
+    "base64id": "^1.0.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.18.12",
+    "bulma": "^0.5.1",
     "client-sessions": "^0.8.0",
-    "codemirror": "^5.27.4",
+    "codemirror": "^5.28.0",
     "connect-flash": "^0.1.1",
+    "connect-inject": "^0.4.0",
     "cookie-parser": "^1.4.3",
     "csurf": "^1.9.0",
     "express": "^4.15.3",
@@ -37,7 +41,7 @@
     "highlight.js": "^9.12.0",
     "highlightjs": "^9.10.0",
     "jquery": "^3.2.1",
-    "mongoose": "^4.11.3",
+    "mongoose": "^4.11.6",
     "mu2": "^0.5.21",
     "node-sass": "^4.5.3",
     "node-watch": "^0.5.5",
@@ -47,6 +51,7 @@
     "rest": "^2.0.0",
     "socket.io": "^2.0.3",
     "sqlite3": "^3.1.8",
-    "valhakis": "0.0.4"
+    "valhakis": "0.0.4",
+    "wide-align": "^1.1.2"
   }
 }

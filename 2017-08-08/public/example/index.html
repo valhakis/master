@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <link rel="stylesheet" href="/css/main.dist.css">
+  </head>
+  <body idea="example" ng-app="app">
+
+    <div class="row">
+      <div class="col-1" ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]">
+        <p>{{i}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2" ng-repeat="i in [0, 1, 2, 3, 4, 5]">
+        <p>{{i}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3" ng-repeat="i in [0, 1, 2, 3]">
+        <p>{{i}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4" ng-repeat="i in [0, 1, 2]">
+        <p>{{i}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6" ng-repeat="i in [0, 1]">
+        <p>{{i}}</p>
+      </div>
+    </div>
+
+    <div ng-controller="TodoController as vm">
+      <todo></todo>
+    </div>
+
+    <script src="/angular/angular.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
