@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "/home/viktor/master/2017-08-11/server/app/mysql/main.js"
+  ],
+  "watch": []
+}

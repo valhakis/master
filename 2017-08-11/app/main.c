@@ -8,6 +8,6 @@
 
 int main()
 {
-
+  printf("Application Ran.\n");
   return 0;
 }

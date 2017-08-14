@@ -21,6 +21,12 @@ set directory=~/.vim/swp/
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
 
+set softtabstop=0
+set noexpandtab
+set shiftround
+set autoindent
+set copyindent
+
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
