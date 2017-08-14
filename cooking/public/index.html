@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>competition</title>
+    <link rel="stylesheet" href="style.css">
+    <link name="style" rel="stylesheet" href="/lib/codemirror/lib/codemirror.css">
+  </head>
+  <body>
+
+    <h1>Winner: 20k</h1>
+    <p>Loser has to twek while being burned alive</p>
+
+    <p id="numOnline"></p>
+
+    <button onclick="setUsername()">set name</button>
+    <button onclick="clearChat()">clear chat</button>
+
+    <br>
+    <br>
+
+    <h3>Manager: whitefox489</h3>
+
+    <table border="1">
+      <tr>
+        <th>competitor</th>
+        <th>vote (red dude)</th>
+        <th>vote (love)</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>ruudi170</td>
+        <td>10</td>
+        <td>5</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>fox</td>
+        <td>4</td>
+        <td>7</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>bison</td>
+        <td>7</td>
+        <td>8</td>
+        <td>15</td>
+      </tr>
+    </table>
+
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" autofocus/><button>Send</button>
+    </form>
+
+    <div id="game"></div>
+
+    <textarea id="editor"></textarea>
+    <button onclick="editorSave()">save and reload</button>
+
+    <script src="/lib/codemirror/lib/codemirror.js"></script>
+    <script src="/lib/codemirror/mode/css/css.js"></script>
+    <script src="/lib/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

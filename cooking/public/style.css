@@ -1,0 +1,39 @@
+body {
+	background-color: white;
+}
+
+#m {
+ min-width: 400px;
+}
+
+#m, button {
+  padding: 7px 5px;
+}
+
+button {
+	min-width: 80px;
+}
+
+#messages {
+  border: 1px solid black;
+  height: 300px;
+  overflow: scroll;
+  background-color: blue;
+  max-width: 800px;
+  list-style: none;
+  padding: 5px;
+}
+#messages li {
+   background-color: tomato;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  color: lightgray;
+}
+
+textarea {
+	border: 1px solid black;
+}
+
+#editor {
+	position: fixed;
+}
