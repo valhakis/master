@@ -1,0 +1,3 @@
+[submodule "3d"]
+	path = 3d
+	url = git://github.com/ravensim14/3d
