@@ -1,5 +1,9 @@
 #include <app/share.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #include <stdio.h>
+#include <stdarg.h>
 #include <string.h>
 
 static struct Mouse mouse;
@@ -88,5 +92,79 @@ void PrintMat(const char *title, float matrix[4][4])
 		}
 		printf("\n");
 	}
+}
+
+int error(const char *format, ...)
+{
+	va_list args;
+	fprintf(stderr, IRED);
+	fprintf(stderr, "ERROR: ");
+	fprintf(stderr, KNRM);
+	va_start(args, format);
+	vfprintf(stderr, format, args);
+	va_end(args);
+	fprintf(stderr, "\n");
+	return -1;
+}
+
+int success(const char *format, ...)
+{
+	va_list args;
+	fprintf(stdout, IGRN);
+	fprintf(stdout, "SUCCESS: ");
+	fprintf(stdout, KNRM);
+	va_start(args, format);
+	vfprintf(stdout, format, args);
+	va_end(args);
+	fprintf(stdout, "\n");
+	return 0;
+}
+
+char *load_source(const char *path)
+{
+	char *source = NULL;
+	FILE *fp = NULL;
+	long bufsize = -1;
+	size_t newLen;
+
+	if ((fp = fopen(path, "r")) == NULL) {
+		error("Unable to read file '%s'.", path);
+		return NULL;
+	}
+
+	if (fseek(fp, 0L, SEEK_END) != 0) {
+		error("File read error '%s'.", path);
+		fclose(fp);
+		return NULL;
+	}
+
+	bufsize = ftell(fp);
+
+	if (bufsize == -1) {
+		error("File read error '%s'.", path);
+		fclose(fp);
+		return NULL;
+	}
+
+	source = malloc(sizeof(char) * (bufsize + 1));
+
+	if (fseek(fp, 0L, SEEK_SET) != 0) {
+		error("File read error '%s'.", path);
+		fclose(fp);
+		return NULL;
+	}
+
+	newLen = fread(source, sizeof(char), bufsize, fp);
+
+	if (ferror(fp) != 0) {
+		error("File read error '%s'.", path);
+		fclose(fp);
+		return NULL;
+	}
+	source[newLen++] = '\0';
+
+	return source;
+
+	// free source later;
 }
 
