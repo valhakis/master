@@ -1,3 +1,6 @@
 [submodule "3d"]
 	path = 3d
 	url = https://valhakis@github.com/ravensim14/3d
+[submodule "LaoSystem"]
+	path = LaoSystem
+	url = https://ruudi170@gitlab.com/kodu/LaoSystem.git
