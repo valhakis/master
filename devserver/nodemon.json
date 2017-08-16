@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "/home/viktor/master/devserver",
+    "/home/viktor/master/mongo/dev"
+  ],
+  "ignore": [
+    "nodemon.json"
+  ]
+}

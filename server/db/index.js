@@ -2,7 +2,8 @@ const Sequelize = require('sequelize');
 
 var db = new Sequelize({
   dialect: 'sqlite',
-  storage: App.path('server/data/db.sqlite')
+  storage: App.path('server/data/db.sqlite'),
+  logging: false
 });
 
 const User = db.define('User', {

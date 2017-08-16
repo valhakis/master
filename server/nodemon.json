@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "/home/viktor/master/server",
+    "/home/viktor/master/rest/app",
+    "/home/viktor/master/W3/app",
+    "/home/viktor/master/mongo/app"
+  ],
+  "ignore": []
+}

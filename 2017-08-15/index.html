@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+	<head>
+		<script src="load.js"></script>
+		<meta charset="UTF-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/lib/w3.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- <link rel="stylesheet" href="/prismjs/themes/prism.css"> -->
+	</head>
+	<body>
+
+		<div class="w3-panel" ng-controller="MainController as vm">
+			<select ng-model="theme">
+				<option ng-repeat="option in options" value="{{option.theme}}">{{option.theme}}</option>
+			</select>
+			<button ng-click="change()">change</button>
+		</div>
+
+		<div class="w3-panel" ng-controller="TodoController as vm">
+			<h1>{{title}}</h1>
+		</div>
+
+		<div class="w3-panel">
+			<src-code file="number.js"></src-code>
+		</div>
+
+		<div class="w3-panel" ng-controller="PersonController as vm">
+			<div class="w3-panel w3-card" ng-repeat="person in persons">
+				<p>{{person.name}}</p>
+				<p>Wealth: {{person.wealth | wealth}}</p>
+			</div>
+		</div>
+
+		<div class="w3-panel">
+			<a href="active-tab">active-tab</a>
+		</div>
+
+		<div class="w3-panel w3-card">
+			<div class="w3-bar">
+				<a class="w3-bar-item w3-yellow w3-hover-red" href="/">GO: ROOT</a>
+			</div>
+		</div>
+
+		<script src="/angular/angular.js"></script>
+		<script src="/prismjs/prism.js" data-manual></script>
+		<script src="/prismjs/components/prism-css.min.js" data-manual></script>
+
+		<script src="app/index.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

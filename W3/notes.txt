@@ -1,0 +1,17 @@
+# TODO MONGO COMMANDS
+
+help
+db.help();
+db.<collection>.help();
+
+show dbs
+use <db>
+show collections
+
+db.createCollection(name, options);
+db.createCollection("tasks", {
+	capped: true,
+	autoIndexId: true
+});
+
+db.tasks.insert("name": "Task name 1");
