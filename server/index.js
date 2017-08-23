@@ -23,7 +23,7 @@ var db = require('./db');
 db.sync().then(() => {
   server.listen(port, host, function() {
     log(`Server is listening at ${host}:${port}.`);
-    request('http://192.168.0.3:3000/__browser_sync__?method=reload', function(err) {
+    request(`${env['host']}:${env['bs'].port}/__browser_sync__?method=reload`, function(err) {
     	if (err) console.log(JSON.stringify(err));
     });
   });
