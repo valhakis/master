@@ -50,7 +50,8 @@ spawn('nodemon', ['--exec', 'babel-node', '--presets', 'es2015,stage-2', '.'], {
 });
 
 bs.init({
-	port: '3000',
+	port: env.bs.port,
+	host: env.host,
 	proxy: `${server.host}:${server.port}`,
 	open: false
 });
