@@ -3,6 +3,7 @@ Plug 'Haron-Prime/Antares'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'tpope/vim-surround'
+Plug 'nono/vim-handlebars'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
@@ -10,6 +11,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
+Plug 'python-mode/python-mode'
 call plug#end()
 
 
@@ -20,6 +22,8 @@ set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
+
+set number
 
 set softtabstop=0
 set noexpandtab
@@ -50,6 +54,7 @@ au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 
 nmap ,edit :tabedit ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
+nmap \e :edit % <cr>
 nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
