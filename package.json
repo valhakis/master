@@ -52,6 +52,7 @@
     "html-webpack-plugin": "^2.30.1",
     "jquery": "*",
     "mongoose": "*",
+    "morgan": "^1.8.2",
     "mu2": "*",
     "node-sass": "*",
     "node-watch": "*",

@@ -32,7 +32,12 @@ var nodemon = {
 		App.masterRoot("rest/app"),
 		App.masterRoot("W3/app"),
 		App.masterRoot("mongo/app"),
+<<<<<<< HEAD
 		App.masterRoot("2017-08-19/app"),
+=======
+		App.masterRoot("sqlite/app"),
+		App.masterRoot("current/app"),
+>>>>>>> f2fa5db9d27875c7c4e32191b409adbac2dd4b52
 	],
 	ignore: [
 	]
@@ -67,6 +72,9 @@ bs.watch([
 	App.masterRoot('2017-08-22/public/**/*.{html,js,css}'),
 	App.masterRoot('lib/**/*.{html,js,css}'),
 	App.masterRoot('public/**/*.{html,js,css}'),
+	App.masterRoot('sqlite/public/**/*.{html,js,css}'),
+	App.masterRoot('current/public/**/*.{html,js,css}'),
+	App.masterRoot('lib/**/*.{html,js,css}'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');

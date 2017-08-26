@@ -4,7 +4,12 @@
     "/home/viktor/master/rest/app",
     "/home/viktor/master/W3/app",
     "/home/viktor/master/mongo/app",
+<<<<<<< HEAD
     "/home/viktor/master/2017-08-19/app"
+=======
+    "/home/viktor/master/sqlite/app",
+    "/home/viktor/master/current/app"
+>>>>>>> f2fa5db9d27875c7c4e32191b409adbac2dd4b52
   ],
   "ignore": []
 }
