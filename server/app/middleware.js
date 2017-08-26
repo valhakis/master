@@ -1,6 +1,7 @@
 var express = require('express');
 module.exports = function(app) {
 	app.use('/3d', express.static(App.masterRoot('3d')));
+	app.use('/', express.static(App.masterRoot('public')));
 
 	app.use('/2017-08-22', express.static(App.masterRoot('2017-08-22/public')));
 

@@ -65,6 +65,10 @@
     "socket.io": "*",
     "sqlite3": "*",
     "style-loader": "^0.18.2",
+    "three": "^0.87.1",
+    "three-mtl-loader": "^1.0.1",
+    "three-obj-loader": "^1.1.2",
+    "three.js": "^0.77.1",
     "valhakis": "*",
     "webpack": "^3.5.4",
     "wide-align": "^1.1.2"

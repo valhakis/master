@@ -65,6 +65,8 @@ bs.watch([
 	App.masterRoot('mongo/{pub,dist}/**/*.{html,js,css}'),
 	App.masterRoot('2017-08-19/public/**/*.{html,js,css}'),
 	App.masterRoot('2017-08-22/public/**/*.{html,js,css}'),
+	App.masterRoot('lib/**/*.{html,js,css}'),
+	App.masterRoot('public/**/*.{html,js,css}'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');
