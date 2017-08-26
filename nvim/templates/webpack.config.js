@@ -15,12 +15,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: "style!css" }, 
       { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: "babel-loader", query: { presets: ['es2015'] } },
       { test: /\.scss/,    loader: "style-loader!css-loader!sass-loader" },
       { test: /\.json$/,   loader: "json-loader" },
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.pug/,     loader: "pug-loader" },
+      { test: /\.html/,     loader: "html-loader" },
       { test: /\.css$/,    loader: "style-loader!css-loader" },
       { test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
       { test: /\.jade$/,   loader: "jade-loader?self" },
