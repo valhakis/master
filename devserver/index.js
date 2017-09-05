@@ -34,6 +34,7 @@ var nodemon = {
 		App.masterRoot("mongo/app"),
 		App.masterRoot("sqlite/app"),
 		App.masterRoot("current/app"),
+		App.masterRoot("posts/app"),
 	],
 	ignore: [
 	]
@@ -67,6 +68,7 @@ bs.watch([
 	App.masterRoot('sqlite/public/**/*.{html,js,css}'),
 	App.masterRoot('current/public/**/*.{html,js,css}'),
 	App.masterRoot('lib/**/*.{html,js,css}'),
+	App.masterRoot('posts/views/**/*.{html,hbs}'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');

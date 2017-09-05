@@ -5,7 +5,8 @@
     "/home/viktor/master/W3/app",
     "/home/viktor/master/mongo/app",
     "/home/viktor/master/sqlite/app",
-    "/home/viktor/master/current/app"
+    "/home/viktor/master/current/app",
+    "/home/viktor/master/posts/app"
   ],
   "ignore": []
 }

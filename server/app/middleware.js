@@ -17,6 +17,7 @@ module.exports = function(app) {
 	app.use('/w3', App.masterRequire('W3/app'));
 	app.use('/sqlite', App.masterRequire('sqlite/app'));
 	app.use('/current', App.masterRequire('current/app'));
+	app.use('/posts', App.masterRequire('posts/app'));
 
 	app.get('/todo', function(req, res) {
 		res.send("I HAVE TO DO EVERYTHING");

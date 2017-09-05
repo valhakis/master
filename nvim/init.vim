@@ -10,6 +10,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
+Plug 'nono/vim-handlebars'
 call plug#end()
 
 
