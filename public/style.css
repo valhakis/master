@@ -1,0 +1,19 @@
+.example {
+	border: 1px solid #FF0000;
+	padding: 10px;
+	background-color: #FF6666;
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 100px;
+}
+
+.parent {
+	border: 1px solid #FF0000;
+	padding: 10px;
+	background-color: #FFCCCC;
+	margin-bottom: 10px;
+}
+
+.parent.focus {
+	background-color: #CCCCFF;
+}

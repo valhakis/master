@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>dashboard</title>
+		<link rel="stylesheet" href="/lib/w3.css">
+	</head>
+	<body>
+
+		<div class="w3-bar w3-dark-gray">
+			<a class="w3-bar-item w3-purple w3-hover-black" href="/php">PHP</a>
+			<a class="w3-bar-item w3-pink w3-hover-black" href="/">HOME</a>
+		</div>
+
+		{{#if message}}
+		<div class="w3-panel w3-blue">
+			<h5>{{message}}</h5>
+			<p>Elit dolor neque doloribus sequi ex saepe. Amet aspernatur sint!</p>
+		</div>
+		{{/if}}
+
+		<div class="w3-panel w3-dark-gray">
+			<h4>Welcome, {{user.name}}</h4>
+
+			<h5>Adipisicing eveniet distinctio.</h5>
+
+			<div class="w3-panel">
+				<p>
+					<span>UR ID: {{user._id}}</span>
+				</p>
+				<p>
+					<span>UR NAME: {{user.name}}</span>
+				</p>
+				<p>
+					<span>UR PASSWORD: {{user.password}}</span>
+				</p>
+			</div>
+
+			<p>Ipsum repudiandae eveniet accusamus nostrum iusto. Provident in deserunt dolor voluptates aliquam voluptates Vel voluptatem soluta ipsum fuga explicabo minus accusantium Officia similique fugiat numquam in voluptatum temporibus! Molestias neque?</p>
+
+			<p>
+			<a class="w3-btn w3-green" href="/logout">LOG OUT</a>
+			</p>
+		</div>
+
+		<div class="w3-panel w3-dark-gray">
+			<h5>Adipisicing eveniet distinctio.</h5>
+			<p>Ipsum repudiandae eveniet accusamus nostrum iusto. Provident in deserunt dolor voluptates aliquam voluptates Vel voluptatem soluta ipsum fuga explicabo minus accusantium Officia similique fugiat numquam in voluptatum temporibus! Molestias neque?</p>
+		</div>
+
+	</body>
+</html>

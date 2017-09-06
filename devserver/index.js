@@ -32,12 +32,11 @@ var nodemon = {
 		App.masterRoot("rest/app"),
 		App.masterRoot("W3/app"),
 		App.masterRoot("mongo/app"),
-<<<<<<< HEAD
 		App.masterRoot("2017-08-19/app"),
-=======
 		App.masterRoot("sqlite/app"),
 		App.masterRoot("current/app"),
->>>>>>> f2fa5db9d27875c7c4e32191b409adbac2dd4b52
+		App.masterRoot("game/dev"),
+		App.masterRoot("2017-09-05/app"),
 	],
 	ignore: [
 	]
@@ -58,27 +57,57 @@ bs.init({
 	port: env.bs.port,
 	host: env.host,
 	proxy: `${server.host}:${server.port}`,
-	open: false
+	open: false,
+  ui: false,
+  logLevel: "info", // 'info' 'silent' 'debug'
+  logConnections: true,
+  logFileChanges: true,
+  logSnippet: true,
+  notify: false,
+  reloadOnRestart: true,
+  snippetOptions: {
+    rule: {
+      match: /^/i,
+      fn: function (snippet, match) {
+        console.log('MATCH');
+        return snippet + match;
+      }
+    }
+  },
+  online: false,
+  files: [
+    {
+      match: [App.masterRoot("php/**/*.php")],
+      fn: function(event, file) {
+        console.log(`PHP FILE CHANGED '${file.slice(App.masterRoot('').length)}'.`);
+      }
+    }
+  ]
 });
 
 bs.watch([
-	App.masterRoot('todo/public/*.{html,js}'),
-	App.masterRoot('server/views/*.{pug,html}'),
-	App.masterRoot('rest/public/*.{html}'),
-	App.masterRoot('W3/public/**/*.{html,js,css}'),
-	App.masterRoot('2017-08-15/**/*.{html,js,css}'),
-	App.masterRoot('mongo/{pub,dist}/**/*.{html,js,css}'),
-	App.masterRoot('2017-08-19/public/**/*.{html,js,css}'),
-	App.masterRoot('2017-08-22/public/**/*.{html,js,css}'),
-	App.masterRoot('lib/**/*.{html,js,css}'),
-	App.masterRoot('public/**/*.{html,js,css}'),
-	App.masterRoot('sqlite/public/**/*.{html,js,css}'),
-	App.masterRoot('current/public/**/*.{html,js,css}'),
-	App.masterRoot('lib/**/*.{html,js,css}'),
+  App.masterRoot('todo/public/*.{html,js}'),
+  App.masterRoot('server/views/*.{pug,html,hbs}'),
+  App.masterRoot('rest/public/*.{html}'),
+  App.masterRoot('W3/public/**/*.{html,js,css}'),
+  App.masterRoot('2017-08-15/**/*.{html,js,css}'),
+  App.masterRoot('mongo/{pub,dist}/**/*.{html,js,css}'),
+  App.masterRoot('2017-08-19/public/**/*.{html,js,css}'),
+  App.masterRoot('2017-08-22/public/**/*.{html,js,css}'),
+  App.masterRoot('lib/**/*.{html,js,css}'),
+  App.masterRoot('public/**/*.{html,js,css}'),
+  App.masterRoot('sqlite/public/**/*.{html,js,css}'),
+  App.masterRoot('current/public/**/*.{html,js,css}'),
+  App.masterRoot('game/public/**/*.{html,js,css}'),
+  App.masterRoot('2017-09-05/public/**/*.{html,js,css}'),
+  App.masterRoot('php/*.{html,php,js,css}'),
+  App.masterRoot('php/blog/{app,public,routes,resources}/**/*.{html,php,js,css}'),
+  App.masterRoot('lib/**/*.{html,js,css}'),
+  App.masterRoot('css/**/*.css'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');
 
 app.listen(config.port, config.host, function() {
-	console.log(`Development server is at ${config.host}:${config.port}.`);
+  console.log(`Development server is at ${config.host}:${config.port}.`);
 });

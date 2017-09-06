@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>2017-09-05</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+    <div id="menu">
+      <a href="/">HOME</a>
+    </div>
+
+		<a href="progress.html">progress.html</a>
+
+    <div id="date"></div>
+
+    <div class="widgets">
+      <div class="widget" controller="WidgetController">
+        <h1>HOW TO CHANGE HTML CONTENT</h1>
+      </div>
+      <div class="widget" controller="AbcController">
+        <h1>ABC WIDGET</h1>
+
+      </div>
+      <div class="widget" controller="RegController">
+        <h1>REGULAR EXPRESSION WIDGET</h1>
+        <div class="box">
+          <label>PATTERN: </label>
+          <input type="text" name="pattern">
+        </div>
+        <div class="box">
+          <label>STRING: </label>
+          <input type="text" name="string">
+        </div>
+      </div>
+      <div class="widget">
+        <h1>SOME OTHER WIDGET</h1>
+      </div>
+    </div>
+
+    <script src="/handlebars/dist/handlebars.min.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>

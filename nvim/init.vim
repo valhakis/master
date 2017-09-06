@@ -11,7 +11,8 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
-Plug 'python-mode/python-mode'
+Plug 'jwalton512/vim-blade'
+"Plug 'python-mode/python-mode'
 call plug#end()
 
 
@@ -23,13 +24,11 @@ set directory=~/.vim/swp/
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
 
-set number
+set autoindent copyindent number
 
-set softtabstop=0
-set noexpandtab
-set shiftround
-set autoindent
-set copyindent
+" set softtabstop=0
+" set noexpandtab
+" set shiftround
 
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
@@ -106,4 +105,17 @@ endfunction
 "map <c-g> :call GetTemplate() <cr>
 "inoremap <c-l> <c-r>=GetTemplate() <cr>
 imap ,l <c-r>=GetTemplate() <cr><esc>
+" ==========================================================
+
+" ALTERNATE FILE [,al]
+" :e #
+" ==========================================================
+nmap ,al :e # <cr>
+" ==========================================================
+
+
+" EDIT LOCAL MAKEFILE [,ma]
+" :e #
+" ==========================================================
+nmap ,ma :tabe makefile <cr>
 " ==========================================================

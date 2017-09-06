@@ -1,5 +1,6 @@
 // global.App = require('../../share/App.js').initialize(path.join(__dirname, '..'));
 var path = require('path');
+var express = require('express');
 
 var RED = '\x1b[91m';
 var RESET = '\x1b[0m';
@@ -44,4 +45,9 @@ App.initialize = function(root) {
   return Object.create(this);
 };
 
+App.masterStatic = function(location) {
+	return express.static(this._masterRoot + '/' + location);
+};
+
 module.exports = App;
+
