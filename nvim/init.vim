@@ -13,6 +13,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
 Plug 'jwalton512/vim-blade'
 "Plug 'python-mode/python-mode'
+Plug 'nono/vim-handlebars'
 call plug#end()
 
 

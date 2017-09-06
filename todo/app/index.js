@@ -13,4 +13,3 @@ module.exports = function(server, bs) {
     bs.reload();
   });
 };
-

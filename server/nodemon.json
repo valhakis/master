@@ -8,7 +8,8 @@
     "/home/viktor/master/sqlite/app",
     "/home/viktor/master/current/app",
     "/home/viktor/master/game/dev",
-    "/home/viktor/master/2017-09-05/app"
+    "/home/viktor/master/2017-09-05/app",
+    "/home/viktor/master/posts/app"
   ],
   "ignore": []
 }

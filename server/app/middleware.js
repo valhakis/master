@@ -59,6 +59,7 @@ module.exports = function(app) {
 	app.use('/sqlite', App.masterRequire('sqlite/app'));
 	app.use('/current', App.masterRequire('current/app'));
 	app.use('/2017-09-05', App.masterRequire('2017-09-05/app'));
+	app.use('/posts', App.masterRequire('posts/app'));
 
 	app.get('/todo', function(req, res) {
 		res.send("I HAVE TO DO EVERYTHING");

@@ -37,6 +37,7 @@ var nodemon = {
 		App.masterRoot("current/app"),
 		App.masterRoot("game/dev"),
 		App.masterRoot("2017-09-05/app"),
+		App.masterRoot("posts/app"),
 	],
 	ignore: [
 	]
@@ -104,6 +105,8 @@ bs.watch([
   App.masterRoot('php/blog/{app,public,routes,resources}/**/*.{html,php,js,css}'),
   App.masterRoot('lib/**/*.{html,js,css}'),
   App.masterRoot('css/**/*.css'),
+	App.masterRoot('current/public/**/*.{html,js,css}'),
+	App.masterRoot('posts/views/**/*.{html,hbs}'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');
