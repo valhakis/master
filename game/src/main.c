@@ -24,6 +24,7 @@
 #include <app/glut/glut.h>
 
 #include <app/ABGR/ABGR.h>
+#include <app/default.h>
 
 #include <app/simple/main.h>
 #include <app/mysql/mysql.h>
@@ -36,6 +37,31 @@
 
 int main(int argc, char *argv[])
 {
+  if (argc > 1 && strcmp(argv[1], "01") == 0) {
+    _01_create_a_window(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "02") == 0) {
+    _02_hello_triangle(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "03") == 0) {
+    _03_element_buffer(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "04") == 0) {
+    _04_shaders(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "05") == 0) {
+    _05_transformations(argc, argv);
+    return 0;
+  } 
+
 	share::main("GAME ENGINE");
 
 	WAY way;

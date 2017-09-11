@@ -1,5 +1,10 @@
 import './style.scss';
 
+import angular from 'angular';
+import moment from 'moment';
+
+import app from './app';
+
 var username = 'valhakis';
 
 var mouse = {x: 0, y: 0};
@@ -89,3 +94,22 @@ window.addEventListener('click', function(event) {
 window.addEventListener('keydown', function(event) {
 
 });
+
+(function() {
+  var div = document.createElement('div');
+  div.classList.add('w3-panel', 'w3-blue');
+  div.style.margin = '15px';
+  div.style.padding = '5px';
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var date = new Date(this.responseText);
+      div.innerHTML = moment(date).format('DD.MM.YYYY HH:mm:ss');
+      div.innerHTML += ' | ';
+      div.innerHTML += moment(new Date()).format('DD.MM.YYYY HH:mm:ss');
+      document.body.appendChild(div);
+    }
+  };
+  xhr.open('GET', '/game/date', true);
+  xhr.send(null);
+})();

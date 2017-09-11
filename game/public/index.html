@@ -6,13 +6,40 @@
     <title>GAME</title>
     <link rel="stylesheet" href="/lib/w3.css">
   </head>
-  <body>
+  <body ng-app="app">
 
 		<div id="menu" class="w3-bar">
 			<a class="w3-bar-item" href="/">Home</a>
 		</div>
 
-		<div class="w3-container">
+    <div class="w3-container">
+      <h5>STATUS</h5>
+      <p>state: <% state %></p>
+    </div>
+
+    <div class="w3-container">
+      <button ng-click="setState('login')">Login</button>
+      <button ng-click="setState('register')">Register</button>
+      <button ng-click="setState('index')">Index</button>
+    </div>
+
+		<div class="w3-container" ng-if="!isAuthenticated()" ng-controller="AuthController">
+
+			<h1>GAME</h1>
+
+      <p>You are not authenticated. Maybe you are, but you are not.</p>
+
+      <div ng-if="isState('login')">
+        <auth-login-directive></auth-login-directive>
+      </div>
+
+      <div ng-if="isState('register')">
+        <auth-register-directive></auth-register-directive>
+      </div>
+
+		</div>
+
+		<div class="w3-container" ng-if="isAuthenticated()">
 
 			<h1>GAME</h1>
 

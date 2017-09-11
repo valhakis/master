@@ -11,10 +11,16 @@ case "$1" in
 	*)
 
 		if make ; then
+		  # make example
+			# game 01
+			# game 02
+			# game 03
+			# game 04
+			game new
 			# game 
 			# game $@
 			# game simple
-			game example1
+			# game example1
 			# game ABGR
 			# game help
 			# game glut bitmap
