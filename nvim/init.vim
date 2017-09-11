@@ -8,6 +8,7 @@ Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'Shougo/neocomplete.vim'
+Plug 'vim-utils/vim-man'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
@@ -54,6 +55,7 @@ au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 
 nmap ,edit :tabedit ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
+nmap ,no :noh <cr>
 nmap \e :edit % <cr>
 nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
