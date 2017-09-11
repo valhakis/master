@@ -1,22 +1,20 @@
-# REQUIRED [src/*, include/*, data/{some items}, start.sh, makefile]
-
 CC = g++
 
-src += $(wildcard src/*.cpp)
-src += $(wildcard src/*.c)
+src = $(shell find src -type f -name '*.cpp')
 
 obj += $(patsubst src/%.cpp, obj/%.o, $(src))
-obj += $(patsubst src/%.c, obj/%.o, $(src))
 
 libs += -I./include -lGL -lGLEW -lglfw -lglut -lGLU -ldl
 
 libs += -D_REENTRANT -I/usr/include/SDL2 -lSDL2
 
-all: bin obj bin/game
+dirs += bin obj
+dirs += $(patsubst src/%, obj/%, $(shell find src -type d))
+
+all: $(dirs) bin/game
 
 example: 
 	echo "obj: " $(obj)
-	echo "src: " $(src)
 
 bin:
 	mkdir -p $@
@@ -30,5 +28,8 @@ bin/game: $(obj)
 obj/%.o: src/%.cpp
 	$(CC) -c $< -o $@ $(libs)
 
+obj/%: src/%
+	mkdir -p $@
+
 clean:
-	rm -f $(obj) bin/game
+	rm -rf obj bin/game

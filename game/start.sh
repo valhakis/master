@@ -10,13 +10,14 @@ case "$1" in
 
 	*)
 
-		if make ; then
+		if make example ; then
+		  echo "done"
 		  # make example
 			# game 01
 			# game 02
 			# game 03
 			# game 04
-			game new
+			# game new
 			# game 
 			# game $@
 			# game simple
