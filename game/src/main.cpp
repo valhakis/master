@@ -10,6 +10,8 @@
 
 #include <app/debug.h>
 
+#include <app/new.h>
+
 #include <app/window.h>
 #include <app/share.h>
 #include <app/shader.h>
@@ -29,13 +31,15 @@
 #include <app/simple/main.h>
 #include <app/mysql/mysql.h>
 
+#include <app/c_tut.h>
+
 /* ===/========================================= |
  *  ///_____________________________________ | //
  * ///																				//
  * // main																   //
  * /________________________________________ | */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) // <++>
 {
   if (argc > 1 && strcmp(argv[1], "01") == 0) {
     _01_create_a_window(argc, argv);
@@ -59,6 +63,16 @@ int main(int argc, char *argv[])
 
   if (argc > 1 && strcmp(argv[1], "05") == 0) {
     _05_transformations(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "new") == 0) {
+    _new_main(argc, argv);
+    return 0;
+  } 
+
+  if (argc > 1 && strcmp(argv[1], "c_tut") == 0) {
+    _c_tut_main(argc, argv);
     return 0;
   } 
 

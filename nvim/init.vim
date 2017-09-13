@@ -15,6 +15,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jwalton512/vim-blade'
 "Plug 'python-mode/python-mode'
 Plug 'nono/vim-handlebars'
+Plug 'etnadji/vim-epub'
 call plug#end()
 
 
@@ -116,6 +117,9 @@ imap ,l <c-r>=GetTemplate() <cr><esc>
 nmap ,al :e # <cr>
 " ==========================================================
 
+" inoremap <space><space> <esc>/<++><Enter>
+nmap <space><space> /<++><cr>zt:noh<cr>
+" <++>
 
 " EDIT LOCAL MAKEFILE [,ma]
 " :e #

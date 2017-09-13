@@ -16,7 +16,7 @@ static void framebuffer(GLFWwindow* window, int width, int height) {
   glViewport(0, 0, width, height);
 }
 
-int _01_create_a_window(int argc, char *argv[]) {
+int _01_create_a_window(int argc, char *argv[]) { /* <++> */
   GLFWwindow* window;
   int check;
 
@@ -55,7 +55,7 @@ int _01_create_a_window(int argc, char *argv[]) {
     return -1;
   }
 
-  while (!glfwWindowShouldClose(window)) {
+  while (!glfwWindowShouldClose(window)) { /* <++> */
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
