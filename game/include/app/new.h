@@ -1,7 +1,7 @@
 #ifndef MY_NEW_H
 #define MY_NEW_H
 
-#include <glad/glad.h>
+// #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <linmath.h>
 
@@ -44,6 +44,15 @@ void MiscUpdateExample01();
 
 void MiscInitExample02(int _program);
 void MiscUpdateExample02();
+
+void MiscInitExample03(int _program);
+void MiscUpdateExample03();
+
+void MiscInitExample04(int _program);
+void MiscUpdateExample04();
+
+void MiscCenterDotInitialize(int _program);
+void MiscCenterDotUpdate();
 
 void NewMiscLoadTexture(unsigned int *texture, const char *fileName);
 float NewMiscRadians(float deg);

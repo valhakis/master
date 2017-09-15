@@ -14,6 +14,7 @@ class Shader {
 
 		void Bind();
 		void Update(const Transform& transform);
+		int GetProgram();
 
 		virtual ~Shader();
 

@@ -53,6 +53,12 @@ static float lastX = WIDTH / 2.0f;
 static float lastY = HEIGHT / 2.0f;
 static float fov = 45.0f;
 
+static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
+  if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+    glfwSetWindowShouldClose(window, true);
+  }
+}
+
 static void do_camera_movement() {
   float camSpeed = 8.5 * deltaTime; // <++>
   if (glfwGetKey(window._window, GLFW_KEY_W) == GLFW_PRESS) {
@@ -105,6 +111,10 @@ static void do_camera_movement() {
 
   if (glfwGetKey(window._window, GLFW_KEY_SPACE) == GLFW_PRESS) {
     camPos[1] += camSpeed;
+  }
+
+  if (glfwGetKey(window._window, 340) == GLFW_PRESS) {
+    camPos[1] -= camSpeed;
   }
 
 }
@@ -354,6 +364,7 @@ int _New_08(int argc, char *argv[]) { // <++>
 
   window = NewWindowCreateWSize((int)WIDTH, (int)HEIGHT);
   glfwSetCursorPosCallback(window._window, mousemove);
+  glfwSetKeyCallback(window._window, keyboard);
   glfwSetScrollCallback(window._window, scroll);
   glfwSetInputMode(window._window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   // glfwSetWindowPos(window._window, 0, 0);
@@ -376,6 +387,9 @@ int _New_08(int argc, char *argv[]) { // <++>
 
   MiscInitExample01(program);
   MiscInitExample02(program);
+  MiscInitExample03(program);
+  MiscInitExample04(program);
+  MiscCenterDotInitialize(program);
 
   monster = MiscMonsterInitialize(program);
   InitializeCircle();
@@ -587,6 +601,9 @@ int _New_08(int argc, char *argv[]) { // <++>
     update_sin_wave();
     MiscUpdateExample01();
     MiscUpdateExample02();
+    MiscUpdateExample03();
+    MiscUpdateExample04();
+    MiscCenterDotUpdate();
 
     NewWindowEvents(&window);
     NewWindowSwap(&window);

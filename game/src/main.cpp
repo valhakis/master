@@ -31,6 +31,8 @@
 #include <app/simple/main.h>
 #include <app/mysql/mysql.h>
 
+#include <app/red.h>
+
 #include <app/c_tut.h>
 
 /* ===/========================================= |
@@ -41,6 +43,11 @@
 
 int main(int argc, char *argv[]) // <++>
 {
+  if (argc > 1 && strcmp(argv[1], "red") == 0) {
+    _red_main(argc, argv);
+    return 0;
+  } 
+
   if (argc > 1 && strcmp(argv[1], "01") == 0) {
     _01_create_a_window(argc, argv);
     return 0;
@@ -76,72 +83,72 @@ int main(int argc, char *argv[]) // <++>
     return 0;
   } 
 
-	share::main("GAME ENGINE");
+  share::main("GAME ENGINE");
 
-	WAY way;
+  WAY way;
 
-	share::printf("NUMBER OF ARGUMENTS: [%d]", argc);
-	for (int i=0; i<argc; i++) {
-		share::printf("ARGUMENT [%d] => (%s)", i, argv[i]);
-	}
+  share::printf("NUMBER OF ARGUMENTS: [%d]", argc);
+  for (int i=0; i<argc; i++) {
+    share::printf("ARGUMENT [%d] => (%s)", i, argv[i]);
+  }
 
-	if (argc > 1) {
-		const char *argument = argv[1];
+  if (argc > 1) {
+    const char *argument = argv[1];
 
-		if (strcmp(argument, "choose") == 0) {
+    if (strcmp(argument, "choose") == 0) {
 
-		} else if (strcmp(argument, "simple") == 0) {
-			way.set("simple");
-		} else if (strcmp(argument, "ABGR") == 0) {
-			way.set("ABGR");
-		} else if (strcmp(argument, "help") == 0) {
-			way.set("help");
-		} else if (strcmp(argument, "glut") == 0) {
-			way.set("glut");
-		} else if (strcmp(argument, "mysql") == 0) {
-			way.set("mysql");
-			MYSQLInitialize(argc, argv);
-		} else if (strcmp(argument, "example1") == 0) {
-			way.set("example 1");
-			Example01Main();
-		} else {
-			way.set("NO IDEA");
-		}
+    } else if (strcmp(argument, "simple") == 0) {
+      way.set("simple");
+    } else if (strcmp(argument, "ABGR") == 0) {
+      way.set("ABGR");
+    } else if (strcmp(argument, "help") == 0) {
+      way.set("help");
+    } else if (strcmp(argument, "glut") == 0) {
+      way.set("glut");
+    } else if (strcmp(argument, "mysql") == 0) {
+      way.set("mysql");
+      MYSQLInitialize(argc, argv);
+    } else if (strcmp(argument, "example1") == 0) {
+      way.set("example 1");
+      Example01Main();
+    } else {
+      way.set("NO IDEA");
+    }
 
-		share::printf("ARGUMENT: '%s'", argument);
-	}
+    share::printf("ARGUMENT: '%s'", argument);
+  }
 
-	share::printf("IS WAY: '%s'", way.get().c_str());
+  share::printf("IS WAY: '%s'", way.get().c_str());
 
-	if (way.is("help")) {
-		printf("game\n");
-		printf("game help\n");
-		printf("game simple\n");
-		printf("game ABGR\n");
-		printf("game glut bitmap\n");
-	}
+  if (way.is("help")) {
+    printf("game\n");
+    printf("game help\n");
+    printf("game simple\n");
+    printf("game ABGR\n");
+    printf("game glut bitmap\n");
+  }
 
-	if (way.is("simple")) {
-		simple_main();
-	}
+  if (way.is("simple")) {
+    simple_main();
+  }
 
-	if (way.is("glut")) {
-		if (argc > 2) {
-			const char *arg = argv[2];
-			if (strcmp(arg, "bitmap") == 0) {
-				GlutBitmapMain(argc, argv);
-			}
-		}
-	}
+  if (way.is("glut")) {
+    if (argc > 2) {
+      const char *arg = argv[2];
+      if (strcmp(arg, "bitmap") == 0) {
+        GlutBitmapMain(argc, argv);
+      }
+    }
+  }
 
-	if (way.is("default")) {
-		default_main();
-	}
+  if (way.is("default")) {
+    default_main();
+  }
 
-	if (way.is("ABGR")) {
-		ABGRMain(argc, argv);
-	}
+  if (way.is("ABGR")) {
+    ABGRMain(argc, argv);
+  }
 
-	share::main("EXIT ENGINE");
-	return 0;
+  share::main("EXIT ENGINE");
+  return 0;
 } // int main() |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|

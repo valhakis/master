@@ -197,3 +197,10 @@ grep --exclude=*.o -rnw '/path/to/' -e 'pattern'
 pacman -S transmission-cli
 systemctl start transmission
 killall transmission-daemon or transmission-remote --exit
+
+<++> # 2017-09-12
+# Make youtube video full window
+----------------------------------------------------------
+https://www.youtube.com/[id]
+to
+https://www.youtube.com/embeded/[id]

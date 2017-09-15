@@ -1,6 +1,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <math.h>
+
 static int program;
 static struct {
   int model;
@@ -12,7 +14,7 @@ static float model[4][4] = {
   1.0f, 0.0f, 0.0f, 0.0f,
   0.0f, 1.0f, 0.0f, 0.0f,
   0.0f, 0.0f, 1.0f, 0.0f,
-  1.0f, 0.0f, 0.0f, 1.0f,
+  -10.0f, 0.0f, 0.0f, 1.0f,
 };
 static float view[4][4] = {
   1.0f, 0.0f, 0.0f, 0.0f,
@@ -27,11 +29,7 @@ static float projection[4][4] = {
   0.0f, 0.0f, 0.0f, 1.0f,
 };
 static unsigned int vbo, vao;
-static float vertices[] = {
-  -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,
-  +0.5f, -0.5f, 0.0f,   1.0f, 0.0f,
-  +0.0f, +0.5f, 0.0f,   0.5f, 1.0f,
-};
+static float vertices[300][5];
 
 void MiscInitExample02(int _program) {
   program = _program;
@@ -41,6 +39,18 @@ void MiscInitExample02(int _program) {
   uni.model = glGetUniformLocation(program, "model");
   uni.view = glGetUniformLocation(program, "view");
   uni.projection = glGetUniformLocation(program, "projection");
+
+  for (int i=0; i<300; i++) {
+    float angle = 2 * M_PI * i / (300-1);
+    float x = cosf(angle);
+    float y = sinf(angle);
+
+    vertices[i][0] = x;
+    vertices[i][1] = y;
+    vertices[i][2] = 0.0f;
+    vertices[i][3] = 1.0f;
+    vertices[i][4] = 1.0f;
+  }
 
   glGenVertexArrays(1, &vao);
   glGenBuffers(1, &vbo);
@@ -65,5 +75,5 @@ void MiscInitExample02(int _program) {
 void MiscUpdateExample02() {
   glBindVertexArray(vao);
   glUniformMatrix4fv(uni.model, 1, GL_FALSE, (float*)model);
-  glDrawArrays(GL_TRIANGLES, 0, 3);
+  glDrawArrays(GL_TRIANGLE_FAN, 0, 300);
 }

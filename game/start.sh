@@ -18,8 +18,12 @@ case "$1" in
 			# game 04
 			# game new 05
 			# game new 07
-			game new 08
+			# game new 08
 			# game new 06
+			# game red 1
+			# game red 2
+			# game red 3
+			game
 			# game new
 			# game new 1
 			# game new 02

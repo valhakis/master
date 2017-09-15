@@ -116,3 +116,7 @@ static void CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const s
 		share::errorf("%s: %s", errorMessage.c_str(), error);
 	}
 } // int CheckShaderError |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
+
+int Shader::GetProgram() {
+  return m_program;
+} // int GetProgram |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
