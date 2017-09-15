@@ -11,6 +11,8 @@ case "$1" in
 	*)
 
 		if make ; then
+		  cmake .
+		  make -f Makefile
 		  # make example
 			# game 01
 			# game 02
@@ -23,7 +25,7 @@ case "$1" in
 			# game red 1
 			# game red 2
 			# game red 3
-			game
+			# game
 			# game new
 			# game new 1
 			# game new 02
