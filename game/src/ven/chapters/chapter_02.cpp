@@ -46,9 +46,10 @@ int _ven_chapter_02_main(int argc, char *argv[]) {
   while (!glfwWindowShouldClose(window))
   {
     /* Render here */
+    glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    VenTextRender("WHAT IS TREE", 0, 0);
+    VenTextRender("MY FIRST TEXT EVER", 0, 0);
 
     /* Swap front and back buffers */
     glfwSwapBuffers(window);

@@ -65,6 +65,9 @@ char* CGLoadSource(const char* filePath) {
       }
     }
     fclose(fp);
+  } else {
+    printf("ERROR LOAD '%s'.\n", filePath);
+    exit(EXIT_FAILURE);
   }
   return source;
 }
@@ -136,6 +139,11 @@ void CGUniform3f(int program, const char *name, float r, float g, float b) {
   glUniform3f(glGetUniformLocation(program, name), r, g, b);
 }
 
+void CGUniform3fv(int program, const char *name, float *data) {
+  glUseProgram(program);
+  glUniform3fv(glGetUniformLocation(program, name), 1, data);
+}
+
 void CGInitialize(GLFWwindow* win) {
   window = win;
 }
@@ -152,7 +160,7 @@ void CGMatrix4fv(int program, const char *name, float *m) {
   glUniformMatrix4fv(glGetUniformLocation(program, name), 1, GL_FALSE, m);
 }
 
-void CGMakeWindow(GLFWwindow* win, int width, int height) {
+void CGMakeWindow(GLFWwindow** win, int width, int height) {
   /* Initialize the library */
   if (!glfwInit()) {
     printf("FAILED TO INITIALIZE GLFW\n");
@@ -178,7 +186,7 @@ void CGMakeWindow(GLFWwindow* win, int width, int height) {
 
   gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 
-  win = window;
+  *win = window;
 }
 
 bool CGWindowIsOpen() {
@@ -193,3 +201,4 @@ void CGWindowUpdate() {
 void CGTerminate() {
   glfwTerminate();
 }
+

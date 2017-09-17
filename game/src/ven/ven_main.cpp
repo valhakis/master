@@ -89,6 +89,7 @@ static struct {
 typedef struct Btn Btn;
 
 struct Btn {
+  char text[256];
   bool mouseDown;
   bool mouseOver;
   vec3 mouseDownColor;
@@ -196,6 +197,8 @@ Btn MakeButton(float x, float y, float w, float h) {
   Btn btn;
 
   btn.mousePressCallback = NULL;
+
+  strcpy(btn.text, "NO TEXT IS SET");
 
   btn.mouseOver = false;
   btn.mouseDown = false;
@@ -308,6 +311,9 @@ int _ven_main(int argc, char *argv[]) {
     } else if (strcmp(arg, "3") == 0) {
       _ven_chapter_03_main(argc, argv);
       return 0;
+    } else if (strcmp(arg, "4") == 0) {
+      _ven_chapter_04_main(argc, argv);
+      return 0;
     } else {
       printf("DID NOT FIND CHAPTER\n");
       return 0;
@@ -322,6 +328,7 @@ int _ven_main(int argc, char *argv[]) {
 
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+  // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_RESIZABLE, false);
 
   /* Create a windowed mode window and its OpenGL context */
@@ -344,6 +351,10 @@ int _ven_main(int argc, char *argv[]) {
   printf("SHADING LANGUAGE VERSION: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
   int program = CGLoadShader("2.0/default");
+
+  // CGInitialize(window);
+  // VenTextInitialize("code.ttf", 30.0);
+
   glUseProgram(program);
 
   initialize_uniform_locations(program);

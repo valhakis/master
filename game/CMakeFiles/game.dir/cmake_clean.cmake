@@ -57,6 +57,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o"
   "CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o"
   "CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o"
+  "CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o"
   "CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
   "CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
   "CMakeFiles/game.dir/src/window.cpp.o"

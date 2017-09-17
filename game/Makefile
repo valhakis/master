@@ -1761,6 +1761,33 @@ src/ven/chapters/chapter_03.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.s
 .PHONY : src/ven/chapters/chapter_03.cpp.s
 
+src/ven/chapters/chapter_04.o: src/ven/chapters/chapter_04.cpp.o
+
+.PHONY : src/ven/chapters/chapter_04.o
+
+# target to build an object file
+src/ven/chapters/chapter_04.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o
+.PHONY : src/ven/chapters/chapter_04.cpp.o
+
+src/ven/chapters/chapter_04.i: src/ven/chapters/chapter_04.cpp.i
+
+.PHONY : src/ven/chapters/chapter_04.i
+
+# target to preprocess a source file
+src/ven/chapters/chapter_04.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.i
+.PHONY : src/ven/chapters/chapter_04.cpp.i
+
+src/ven/chapters/chapter_04.s: src/ven/chapters/chapter_04.cpp.s
+
+.PHONY : src/ven/chapters/chapter_04.s
+
+# target to generate assembly for a file
+src/ven/chapters/chapter_04.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.s
+.PHONY : src/ven/chapters/chapter_04.cpp.s
+
 src/ven/ven_main.o: src/ven/ven_main.cpp.o
 
 .PHONY : src/ven/ven_main.o
@@ -2031,6 +2058,9 @@ help:
 	@echo "... src/ven/chapters/chapter_03.o"
 	@echo "... src/ven/chapters/chapter_03.i"
 	@echo "... src/ven/chapters/chapter_03.s"
+	@echo "... src/ven/chapters/chapter_04.o"
+	@echo "... src/ven/chapters/chapter_04.i"
+	@echo "... src/ven/chapters/chapter_04.s"
 	@echo "... src/ven/ven_main.o"
 	@echo "... src/ven/ven_main.i"
 	@echo "... src/ven/ven_main.s"

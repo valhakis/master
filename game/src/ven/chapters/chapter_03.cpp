@@ -16,9 +16,10 @@ int _ven_chapter_03_main(int argc, char *argv[]) {
   VenTextInitialize("code.ttf", 30.0);
 
   while (CGWindowIsOpen()) {
+    glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    VenTextRender("WHAT IS TREE", 0, 0);
+    VenTextRender("Where could I find potatoes ?", 10, 100);
 
     CGWindowUpdate();
   }

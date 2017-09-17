@@ -103,7 +103,7 @@ int VenTextDestroy() {
   return 0;
 }
 
-void VenTextRender(const char *text, float posX, float posY) {
+void VenTextRenderColor3f(const char *text, float posX, float posY, float r, float g, float b) {
   glUseProgram(program);
   glBindVertexArray(vao);
 
@@ -114,7 +114,7 @@ void VenTextRender(const char *text, float posX, float posY) {
 
   mat4x4_ortho(p, 0.0f, (float)width, 0.0f, (float)height, -1.0f, 1.0f);
 
-  CGUniform3f(program, "textColor", 1.0f, 0.3f, 0.3f);
+  CGUniform3f(program, "textColor", r, g, b);
   CGMatrix4fv(program, "projection", (float*)p);
 
   for (unsigned char *c=(unsigned char*)text; *c; c++) {
@@ -154,3 +154,8 @@ void VenTextRender(const char *text, float posX, float posY) {
   glBindVertexArray(0);
   glUseProgram(0);
 }
+
+void VenTextRender(const char *text, float posX, float posY) {
+  VenTextRenderColor3f(text, posX, posY, 1.0f, 0.3f, 0.3f);
+}
+

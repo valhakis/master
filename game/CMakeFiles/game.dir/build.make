@@ -1449,9 +1449,33 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o.provides: CMakeFiles/game.
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o.provides.build: CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o
 
 
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: src/ven/chapters/chapter_04.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o -c /home/viktor/master/game/src/ven/chapters/chapter_04.cpp
+
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/ven/chapters/chapter_04.cpp > CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.i
+
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/ven/chapters/chapter_04.cpp -o CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.s
+
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.requires
+
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.provides: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.provides
+
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.provides.build: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o
+
+
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: src/ven/ven_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/ven_main.cpp.o -c /home/viktor/master/game/src/ven/ven_main.cpp
 
 CMakeFiles/game.dir/src/ven/ven_main.cpp.i: cmake_force
@@ -1475,7 +1499,7 @@ CMakeFiles/game.dir/src/ven/ven_main.cpp.o.provides.build: CMakeFiles/game.dir/s
 
 CMakeFiles/game.dir/src/ven/ven_text.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/ven_text.cpp.o: src/ven/ven_text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/ven_text.cpp.o -c /home/viktor/master/game/src/ven/ven_text.cpp
 
 CMakeFiles/game.dir/src/ven/ven_text.cpp.i: cmake_force
@@ -1499,7 +1523,7 @@ CMakeFiles/game.dir/src/ven/ven_text.cpp.o.provides.build: CMakeFiles/game.dir/s
 
 CMakeFiles/game.dir/src/window.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/window.cpp.o: src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/game.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/game.dir/src/window.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/window.cpp.o -c /home/viktor/master/game/src/window.cpp
 
 CMakeFiles/game.dir/src/window.cpp.i: cmake_force
@@ -1581,6 +1605,7 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o" \
 "CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o" \
 "CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o" \
+"CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o" \
 "CMakeFiles/game.dir/src/ven/ven_main.cpp.o" \
 "CMakeFiles/game.dir/src/ven/ven_text.cpp.o" \
 "CMakeFiles/game.dir/src/window.cpp.o"
@@ -1646,6 +1671,7 @@ game: CMakeFiles/game.dir/src/transform.cpp.o
 game: CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o
 game: CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o
 game: CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o
+game: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o
 game: CMakeFiles/game.dir/src/ven/ven_main.cpp.o
 game: CMakeFiles/game.dir/src/ven/ven_text.cpp.o
 game: CMakeFiles/game.dir/src/window.cpp.o
@@ -1653,7 +1679,7 @@ game: CMakeFiles/game.dir/build.make
 game: glad/libglad.a
 game: stb/libstb.a
 game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking CXX executable game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1719,6 +1745,7 @@ CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/transform.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/ven_main.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/ven_text.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/window.cpp.o.requires

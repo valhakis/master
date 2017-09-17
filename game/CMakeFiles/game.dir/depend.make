@@ -275,6 +275,13 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o: glad/include/glad/glad.h
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o: include/app/CG.h
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o: include/app/ven.h
 
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: src/ven/chapters/chapter_04.cpp
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: glad/include/KHR/khrplatform.h
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: glad/include/glad/glad.h
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: include/app/CG.h
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: include/app/ven.h
+CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: include/linmath.h
+
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: src/ven/ven_main.cpp
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: glad/include/KHR/khrplatform.h
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: glad/include/glad/glad.h

@@ -686,6 +686,24 @@ app/CG.h
 stdio.h
 -
 
+/home/viktor/master/game/src/ven/chapters/chapter_04.cpp
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+app/ven.h
+-
+app/CG.h
+-
+linmath.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
 /home/viktor/master/game/src/ven/ven_main.cpp
 glad/glad.h
 -

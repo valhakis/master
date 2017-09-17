@@ -62,6 +62,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/viktor/master/game/src/ven/chapters/chapter_01.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o"
   "/home/viktor/master/game/src/ven/chapters/chapter_02.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o"
   "/home/viktor/master/game/src/ven/chapters/chapter_03.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o"
+  "/home/viktor/master/game/src/ven/chapters/chapter_04.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o"
   "/home/viktor/master/game/src/ven/ven_main.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
   "/home/viktor/master/game/src/ven/ven_text.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
   "/home/viktor/master/game/src/window.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/window.cpp.o"
