@@ -13,6 +13,7 @@ class Shader {
 		Shader(const std::string& path);
 
 		void Bind();
+		void bind() { glUseProgram(m_program); }
 		void Update(const Transform& transform);
 		int GetProgram();
 

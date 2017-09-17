@@ -63,10 +63,11 @@ CMAKE_BINARY_DIR = /home/viktor/master/game
 # Target rules for target CMakeFiles/game.dir
 
 # All Build rule for target.
-CMakeFiles/game.dir/all:
+CMakeFiles/game.dir/all: glad/CMakeFiles/glad.dir/all
+CMakeFiles/game.dir/all: stb/CMakeFiles/stb.dir/all
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/depend
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62 "Built target game"
 .PHONY : CMakeFiles/game.dir/all
 
 # Include target in all.
@@ -76,7 +77,7 @@ all: CMakeFiles/game.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 66
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 0
 .PHONY : CMakeFiles/game.dir/rule
@@ -93,6 +94,116 @@ CMakeFiles/game.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/game.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory glad
+
+# Convenience name for "all" pass in the directory.
+glad/all: glad/CMakeFiles/glad.dir/all
+
+.PHONY : glad/all
+
+# Convenience name for "clean" pass in the directory.
+glad/clean: glad/CMakeFiles/glad.dir/clean
+
+.PHONY : glad/clean
+
+# Convenience name for "preinstall" pass in the directory.
+glad/preinstall:
+
+.PHONY : glad/preinstall
+
+#=============================================================================
+# Target rules for target glad/CMakeFiles/glad.dir
+
+# All Build rule for target.
+glad/CMakeFiles/glad.dir/all:
+	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/depend
+	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=63,64 "Built target glad"
+.PHONY : glad/CMakeFiles/glad.dir/all
+
+# Include target in all.
+all: glad/CMakeFiles/glad.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 0
+.PHONY : glad/CMakeFiles/glad.dir/rule
+
+# Convenience name for target.
+glad: glad/CMakeFiles/glad.dir/rule
+
+.PHONY : glad
+
+# clean rule for target.
+glad/CMakeFiles/glad.dir/clean:
+	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/clean
+.PHONY : glad/CMakeFiles/glad.dir/clean
+
+# clean rule for target.
+clean: glad/CMakeFiles/glad.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory stb
+
+# Convenience name for "all" pass in the directory.
+stb/all: stb/CMakeFiles/stb.dir/all
+
+.PHONY : stb/all
+
+# Convenience name for "clean" pass in the directory.
+stb/clean: stb/CMakeFiles/stb.dir/clean
+
+.PHONY : stb/clean
+
+# Convenience name for "preinstall" pass in the directory.
+stb/preinstall:
+
+.PHONY : stb/preinstall
+
+#=============================================================================
+# Target rules for target stb/CMakeFiles/stb.dir
+
+# All Build rule for target.
+stb/CMakeFiles/stb.dir/all:
+	$(MAKE) -f stb/CMakeFiles/stb.dir/build.make stb/CMakeFiles/stb.dir/depend
+	$(MAKE) -f stb/CMakeFiles/stb.dir/build.make stb/CMakeFiles/stb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=65,66 "Built target stb"
+.PHONY : stb/CMakeFiles/stb.dir/all
+
+# Include target in all.
+all: stb/CMakeFiles/stb.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+stb/CMakeFiles/stb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 stb/CMakeFiles/stb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 0
+.PHONY : stb/CMakeFiles/stb.dir/rule
+
+# Convenience name for target.
+stb: stb/CMakeFiles/stb.dir/rule
+
+.PHONY : stb
+
+# clean rule for target.
+stb/CMakeFiles/stb.dir/clean:
+	$(MAKE) -f stb/CMakeFiles/stb.dir/build.make stb/CMakeFiles/stb.dir/clean
+.PHONY : stb/CMakeFiles/stb.dir/clean
+
+# clean rule for target.
+clean: stb/CMakeFiles/stb.dir/clean
 
 .PHONY : clean
 

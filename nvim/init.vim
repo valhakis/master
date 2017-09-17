@@ -62,6 +62,8 @@ nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
 "nmap \mr :w <bar> !./start.sh <cr>
+nmap <leader>k <Plug>(Man) 
+nmap ,k <Plug>(Man) 
 
 function! MRun()
   let arguments = input('arguments: ')
@@ -126,3 +128,5 @@ nmap <space><space> /<++><cr>zt:noh<cr>
 " ==========================================================
 nmap ,ma :tabe makefile <cr>
 " ==========================================================
+hi Search ctermfg=red ctermbg=none
+hi IncSearch ctermbg=yellow ctermfg=black

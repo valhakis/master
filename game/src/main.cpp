@@ -43,6 +43,11 @@
 
 int main(int argc, char *argv[]) // <++>
 {
+  if (argc > 1 && strcmp(argv[1], "ven") == 0) {
+    _ven_main(argc, argv);
+    return 0;
+  } 
+
   if (argc > 1 && strcmp(argv[1], "red") == 0) {
     _red_main(argc, argv);
     return 0;
@@ -142,7 +147,7 @@ int main(int argc, char *argv[]) // <++>
   }
 
   if (way.is("default")) {
-    default_main();
+    default_main(argc, argv);
   }
 
   if (way.is("ABGR")) {

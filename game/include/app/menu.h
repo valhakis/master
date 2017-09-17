@@ -8,10 +8,13 @@
 
 class Menu {
   public:
-    Menu(Window &window, Shader &shader);
+    Menu(Window &window);
     ~Menu();
+    void update();
   protected:
   private:
+    Window *p_window;
+    Shader *shader;
 };
 
 #endif

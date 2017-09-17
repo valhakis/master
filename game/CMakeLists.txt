@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 2.8.9)
 
 project(game)
+
+add_subdirectory(glad)
+add_subdirectory(stb)
+
 include_directories(include)
+include_directories(glad/include)
 
 include_directories(/usr/include/freetype2)
 include_directories(/usr/include/libpng16)
@@ -10,9 +15,7 @@ include_directories(/usr/include/glib-2.0)
 include_directories(/usr/lib/glib-2.0/include)
 include_directories(/usr/include/SDL2)
 
-file(GLOB SOURCES "src/**/*.cpp")
-
-# set(GAME_LINK_LIBS -lGL)
+file(GLOB_RECURSE SOURCES src/*.cpp)
 
 list(APPEND GAME_LINK_LIBS -ldl)
 list(APPEND GAME_LINK_LIBS -lGL)
@@ -22,16 +25,10 @@ list(APPEND GAME_LINK_LIBS -lGLEW)
 list(APPEND GAME_LINK_LIBS -lglut)
 list(APPEND GAME_LINK_LIBS -lfreetype)
 list(APPEND GAME_LINK_LIBS -lSDL2)
-
-# libs += -D_REENTRANT 
-# libs += -lfreetype
-# libs += -lGL 
-# libs += -lGLEW 
-# libs += -lglfw 
-# libs += -lglut 
-# libs += -lGLU 
-# libs += -ldl
-# libs += -lSDL2
+list(APPEND GAME_LINK_LIBS -lGLU)
+list(APPEND GAME_LINK_LIBS glad)
+list(APPEND GAME_LINK_LIBS stb)
 
 add_executable(game ${SOURCES})
 target_link_libraries(game ${GAME_LINK_LIBS})
+

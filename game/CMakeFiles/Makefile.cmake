@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.9.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.9.1/CMakeSystem.cmake"
   "CMakeLists.txt"
+  "glad/CMakeLists.txt"
+  "stb/CMakeLists.txt"
   "/usr/share/cmake-3.9/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.9/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake"
@@ -38,9 +40,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "glad/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "stb/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/game.dir/DependInfo.cmake"
+  "glad/CMakeFiles/glad.dir/DependInfo.cmake"
+  "stb/CMakeFiles/stb.dir/DependInfo.cmake"
   )

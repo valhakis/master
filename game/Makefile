@@ -56,16 +56,17 @@ CMAKE_BINARY_DIR = /home/viktor/master/game
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,6 +78,51 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +169,167 @@ game/fast:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+#=============================================================================
+# Target rules for targets named glad
+
+# Build rule for target.
+glad: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 glad
+.PHONY : glad
+
+# fast build rule for target.
+glad/fast:
+	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
+.PHONY : glad/fast
+
+#=============================================================================
+# Target rules for targets named stb
+
+# Build rule for target.
+stb: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 stb
+.PHONY : stb
+
+# fast build rule for target.
+stb/fast:
+	$(MAKE) -f stb/CMakeFiles/stb.dir/build.make stb/CMakeFiles/stb.dir/build
+.PHONY : stb/fast
+
+src/01_create_a_window.o: src/01_create_a_window.cpp.o
+
+.PHONY : src/01_create_a_window.o
+
+# target to build an object file
+src/01_create_a_window.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/01_create_a_window.cpp.o
+.PHONY : src/01_create_a_window.cpp.o
+
+src/01_create_a_window.i: src/01_create_a_window.cpp.i
+
+.PHONY : src/01_create_a_window.i
+
+# target to preprocess a source file
+src/01_create_a_window.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/01_create_a_window.cpp.i
+.PHONY : src/01_create_a_window.cpp.i
+
+src/01_create_a_window.s: src/01_create_a_window.cpp.s
+
+.PHONY : src/01_create_a_window.s
+
+# target to generate assembly for a file
+src/01_create_a_window.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/01_create_a_window.cpp.s
+.PHONY : src/01_create_a_window.cpp.s
+
+src/02_hello_triangle.o: src/02_hello_triangle.cpp.o
+
+.PHONY : src/02_hello_triangle.o
+
+# target to build an object file
+src/02_hello_triangle.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/02_hello_triangle.cpp.o
+.PHONY : src/02_hello_triangle.cpp.o
+
+src/02_hello_triangle.i: src/02_hello_triangle.cpp.i
+
+.PHONY : src/02_hello_triangle.i
+
+# target to preprocess a source file
+src/02_hello_triangle.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/02_hello_triangle.cpp.i
+.PHONY : src/02_hello_triangle.cpp.i
+
+src/02_hello_triangle.s: src/02_hello_triangle.cpp.s
+
+.PHONY : src/02_hello_triangle.s
+
+# target to generate assembly for a file
+src/02_hello_triangle.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/02_hello_triangle.cpp.s
+.PHONY : src/02_hello_triangle.cpp.s
+
+src/03_element_buffer.o: src/03_element_buffer.cpp.o
+
+.PHONY : src/03_element_buffer.o
+
+# target to build an object file
+src/03_element_buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/03_element_buffer.cpp.o
+.PHONY : src/03_element_buffer.cpp.o
+
+src/03_element_buffer.i: src/03_element_buffer.cpp.i
+
+.PHONY : src/03_element_buffer.i
+
+# target to preprocess a source file
+src/03_element_buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/03_element_buffer.cpp.i
+.PHONY : src/03_element_buffer.cpp.i
+
+src/03_element_buffer.s: src/03_element_buffer.cpp.s
+
+.PHONY : src/03_element_buffer.s
+
+# target to generate assembly for a file
+src/03_element_buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/03_element_buffer.cpp.s
+.PHONY : src/03_element_buffer.cpp.s
+
+src/04_shaders.o: src/04_shaders.cpp.o
+
+.PHONY : src/04_shaders.o
+
+# target to build an object file
+src/04_shaders.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/04_shaders.cpp.o
+.PHONY : src/04_shaders.cpp.o
+
+src/04_shaders.i: src/04_shaders.cpp.i
+
+.PHONY : src/04_shaders.i
+
+# target to preprocess a source file
+src/04_shaders.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/04_shaders.cpp.i
+.PHONY : src/04_shaders.cpp.i
+
+src/04_shaders.s: src/04_shaders.cpp.s
+
+.PHONY : src/04_shaders.s
+
+# target to generate assembly for a file
+src/04_shaders.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/04_shaders.cpp.s
+.PHONY : src/04_shaders.cpp.s
+
+src/05_transformations.o: src/05_transformations.cpp.o
+
+.PHONY : src/05_transformations.o
+
+# target to build an object file
+src/05_transformations.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/05_transformations.cpp.o
+.PHONY : src/05_transformations.cpp.o
+
+src/05_transformations.i: src/05_transformations.cpp.i
+
+.PHONY : src/05_transformations.i
+
+# target to preprocess a source file
+src/05_transformations.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/05_transformations.cpp.i
+.PHONY : src/05_transformations.cpp.i
+
+src/05_transformations.s: src/05_transformations.cpp.s
+
+.PHONY : src/05_transformations.s
+
+# target to generate assembly for a file
+src/05_transformations.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/05_transformations.cpp.s
+.PHONY : src/05_transformations.cpp.s
+
 src/ABGR/ABGR.o: src/ABGR/ABGR.cpp.o
 
 .PHONY : src/ABGR/ABGR.o
@@ -149,6 +356,33 @@ src/ABGR/ABGR.s: src/ABGR/ABGR.cpp.s
 src/ABGR/ABGR.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ABGR/ABGR.cpp.s
 .PHONY : src/ABGR/ABGR.cpp.s
+
+src/CG.o: src/CG.cpp.o
+
+.PHONY : src/CG.o
+
+# target to build an object file
+src/CG.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/CG.cpp.o
+.PHONY : src/CG.cpp.o
+
+src/CG.i: src/CG.cpp.i
+
+.PHONY : src/CG.i
+
+# target to preprocess a source file
+src/CG.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/CG.cpp.i
+.PHONY : src/CG.cpp.i
+
+src/CG.s: src/CG.cpp.s
+
+.PHONY : src/CG.s
+
+# target to generate assembly for a file
+src/CG.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/CG.cpp.s
+.PHONY : src/CG.cpp.s
 
 src/GLUT/bitmap.o: src/GLUT/bitmap.cpp.o
 
@@ -285,6 +519,33 @@ src/c_tut/c_tut_03.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.s
 .PHONY : src/c_tut/c_tut_03.cpp.s
 
+src/default_main.o: src/default_main.cpp.o
+
+.PHONY : src/default_main.o
+
+# target to build an object file
+src/default_main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/default_main.cpp.o
+.PHONY : src/default_main.cpp.o
+
+src/default_main.i: src/default_main.cpp.i
+
+.PHONY : src/default_main.i
+
+# target to preprocess a source file
+src/default_main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/default_main.cpp.i
+.PHONY : src/default_main.cpp.i
+
+src/default_main.s: src/default_main.cpp.s
+
+.PHONY : src/default_main.s
+
+# target to generate assembly for a file
+src/default_main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/default_main.cpp.s
+.PHONY : src/default_main.cpp.s
+
 src/example/example.o: src/example/example.cpp.o
 
 .PHONY : src/example/example.o
@@ -339,6 +600,87 @@ src/example/example01.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/example/example01.cpp.s
 .PHONY : src/example/example01.cpp.s
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/menu.o: src/menu.cpp.o
+
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
+src/mesh.o: src/mesh.cpp.o
+
+.PHONY : src/mesh.o
+
+# target to build an object file
+src/mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/mesh.cpp.o
+.PHONY : src/mesh.cpp.o
+
+src/mesh.i: src/mesh.cpp.i
+
+.PHONY : src/mesh.i
+
+# target to preprocess a source file
+src/mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/mesh.cpp.i
+.PHONY : src/mesh.cpp.i
+
+src/mesh.s: src/mesh.cpp.s
+
+.PHONY : src/mesh.s
+
+# target to generate assembly for a file
+src/mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/mesh.cpp.s
+.PHONY : src/mesh.cpp.s
+
 src/mysql/mysql.o: src/mysql/mysql.cpp.o
 
 .PHONY : src/mysql/mysql.o
@@ -365,6 +707,195 @@ src/mysql/mysql.s: src/mysql/mysql.cpp.s
 src/mysql/mysql.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/mysql/mysql.cpp.s
 .PHONY : src/mysql/mysql.cpp.s
+
+src/new/misc/example01.o: src/new/misc/example01.cpp.o
+
+.PHONY : src/new/misc/example01.o
+
+# target to build an object file
+src/new/misc/example01.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example01.cpp.o
+.PHONY : src/new/misc/example01.cpp.o
+
+src/new/misc/example01.i: src/new/misc/example01.cpp.i
+
+.PHONY : src/new/misc/example01.i
+
+# target to preprocess a source file
+src/new/misc/example01.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example01.cpp.i
+.PHONY : src/new/misc/example01.cpp.i
+
+src/new/misc/example01.s: src/new/misc/example01.cpp.s
+
+.PHONY : src/new/misc/example01.s
+
+# target to generate assembly for a file
+src/new/misc/example01.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example01.cpp.s
+.PHONY : src/new/misc/example01.cpp.s
+
+src/new/misc/example02.o: src/new/misc/example02.cpp.o
+
+.PHONY : src/new/misc/example02.o
+
+# target to build an object file
+src/new/misc/example02.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example02.cpp.o
+.PHONY : src/new/misc/example02.cpp.o
+
+src/new/misc/example02.i: src/new/misc/example02.cpp.i
+
+.PHONY : src/new/misc/example02.i
+
+# target to preprocess a source file
+src/new/misc/example02.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example02.cpp.i
+.PHONY : src/new/misc/example02.cpp.i
+
+src/new/misc/example02.s: src/new/misc/example02.cpp.s
+
+.PHONY : src/new/misc/example02.s
+
+# target to generate assembly for a file
+src/new/misc/example02.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example02.cpp.s
+.PHONY : src/new/misc/example02.cpp.s
+
+src/new/misc/example03.o: src/new/misc/example03.cpp.o
+
+.PHONY : src/new/misc/example03.o
+
+# target to build an object file
+src/new/misc/example03.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example03.cpp.o
+.PHONY : src/new/misc/example03.cpp.o
+
+src/new/misc/example03.i: src/new/misc/example03.cpp.i
+
+.PHONY : src/new/misc/example03.i
+
+# target to preprocess a source file
+src/new/misc/example03.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example03.cpp.i
+.PHONY : src/new/misc/example03.cpp.i
+
+src/new/misc/example03.s: src/new/misc/example03.cpp.s
+
+.PHONY : src/new/misc/example03.s
+
+# target to generate assembly for a file
+src/new/misc/example03.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example03.cpp.s
+.PHONY : src/new/misc/example03.cpp.s
+
+src/new/misc/example04.o: src/new/misc/example04.cpp.o
+
+.PHONY : src/new/misc/example04.o
+
+# target to build an object file
+src/new/misc/example04.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example04.cpp.o
+.PHONY : src/new/misc/example04.cpp.o
+
+src/new/misc/example04.i: src/new/misc/example04.cpp.i
+
+.PHONY : src/new/misc/example04.i
+
+# target to preprocess a source file
+src/new/misc/example04.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example04.cpp.i
+.PHONY : src/new/misc/example04.cpp.i
+
+src/new/misc/example04.s: src/new/misc/example04.cpp.s
+
+.PHONY : src/new/misc/example04.s
+
+# target to generate assembly for a file
+src/new/misc/example04.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/example04.cpp.s
+.PHONY : src/new/misc/example04.cpp.s
+
+src/new/misc/misc.o: src/new/misc/misc.cpp.o
+
+.PHONY : src/new/misc/misc.o
+
+# target to build an object file
+src/new/misc/misc.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc.cpp.o
+.PHONY : src/new/misc/misc.cpp.o
+
+src/new/misc/misc.i: src/new/misc/misc.cpp.i
+
+.PHONY : src/new/misc/misc.i
+
+# target to preprocess a source file
+src/new/misc/misc.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc.cpp.i
+.PHONY : src/new/misc/misc.cpp.i
+
+src/new/misc/misc.s: src/new/misc/misc.cpp.s
+
+.PHONY : src/new/misc/misc.s
+
+# target to generate assembly for a file
+src/new/misc/misc.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc.cpp.s
+.PHONY : src/new/misc/misc.cpp.s
+
+src/new/misc/misc_center_dot.o: src/new/misc/misc_center_dot.cpp.o
+
+.PHONY : src/new/misc/misc_center_dot.o
+
+# target to build an object file
+src/new/misc/misc_center_dot.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o
+.PHONY : src/new/misc/misc_center_dot.cpp.o
+
+src/new/misc/misc_center_dot.i: src/new/misc/misc_center_dot.cpp.i
+
+.PHONY : src/new/misc/misc_center_dot.i
+
+# target to preprocess a source file
+src/new/misc/misc_center_dot.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.i
+.PHONY : src/new/misc/misc_center_dot.cpp.i
+
+src/new/misc/misc_center_dot.s: src/new/misc/misc_center_dot.cpp.s
+
+.PHONY : src/new/misc/misc_center_dot.s
+
+# target to generate assembly for a file
+src/new/misc/misc_center_dot.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.s
+.PHONY : src/new/misc/misc_center_dot.cpp.s
+
+src/new/misc/monster.o: src/new/misc/monster.cpp.o
+
+.PHONY : src/new/misc/monster.o
+
+# target to build an object file
+src/new/misc/monster.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/monster.cpp.o
+.PHONY : src/new/misc/monster.cpp.o
+
+src/new/misc/monster.i: src/new/misc/monster.cpp.i
+
+.PHONY : src/new/misc/monster.i
+
+# target to preprocess a source file
+src/new/misc/monster.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/monster.cpp.i
+.PHONY : src/new/misc/monster.cpp.i
+
+src/new/misc/monster.s: src/new/misc/monster.cpp.s
+
+.PHONY : src/new/misc/monster.s
+
+# target to generate assembly for a file
+src/new/misc/monster.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/misc/monster.cpp.s
+.PHONY : src/new/misc/monster.cpp.s
 
 src/new/new.o: src/new/new.cpp.o
 
@@ -636,6 +1167,249 @@ src/red/chapter.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapter.cpp.s
 .PHONY : src/red/chapter.cpp.s
 
+src/red/chapters/chapter_01.o: src/red/chapters/chapter_01.cpp.o
+
+.PHONY : src/red/chapters/chapter_01.o
+
+# target to build an object file
+src/red/chapters/chapter_01.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o
+.PHONY : src/red/chapters/chapter_01.cpp.o
+
+src/red/chapters/chapter_01.i: src/red/chapters/chapter_01.cpp.i
+
+.PHONY : src/red/chapters/chapter_01.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_01.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.i
+.PHONY : src/red/chapters/chapter_01.cpp.i
+
+src/red/chapters/chapter_01.s: src/red/chapters/chapter_01.cpp.s
+
+.PHONY : src/red/chapters/chapter_01.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_01.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.s
+.PHONY : src/red/chapters/chapter_01.cpp.s
+
+src/red/chapters/chapter_02.o: src/red/chapters/chapter_02.cpp.o
+
+.PHONY : src/red/chapters/chapter_02.o
+
+# target to build an object file
+src/red/chapters/chapter_02.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o
+.PHONY : src/red/chapters/chapter_02.cpp.o
+
+src/red/chapters/chapter_02.i: src/red/chapters/chapter_02.cpp.i
+
+.PHONY : src/red/chapters/chapter_02.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_02.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.i
+.PHONY : src/red/chapters/chapter_02.cpp.i
+
+src/red/chapters/chapter_02.s: src/red/chapters/chapter_02.cpp.s
+
+.PHONY : src/red/chapters/chapter_02.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_02.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.s
+.PHONY : src/red/chapters/chapter_02.cpp.s
+
+src/red/chapters/chapter_03.o: src/red/chapters/chapter_03.cpp.o
+
+.PHONY : src/red/chapters/chapter_03.o
+
+# target to build an object file
+src/red/chapters/chapter_03.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o
+.PHONY : src/red/chapters/chapter_03.cpp.o
+
+src/red/chapters/chapter_03.i: src/red/chapters/chapter_03.cpp.i
+
+.PHONY : src/red/chapters/chapter_03.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_03.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.i
+.PHONY : src/red/chapters/chapter_03.cpp.i
+
+src/red/chapters/chapter_03.s: src/red/chapters/chapter_03.cpp.s
+
+.PHONY : src/red/chapters/chapter_03.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_03.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.s
+.PHONY : src/red/chapters/chapter_03.cpp.s
+
+src/red/chapters/chapter_04.o: src/red/chapters/chapter_04.cpp.o
+
+.PHONY : src/red/chapters/chapter_04.o
+
+# target to build an object file
+src/red/chapters/chapter_04.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o
+.PHONY : src/red/chapters/chapter_04.cpp.o
+
+src/red/chapters/chapter_04.i: src/red/chapters/chapter_04.cpp.i
+
+.PHONY : src/red/chapters/chapter_04.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_04.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.i
+.PHONY : src/red/chapters/chapter_04.cpp.i
+
+src/red/chapters/chapter_04.s: src/red/chapters/chapter_04.cpp.s
+
+.PHONY : src/red/chapters/chapter_04.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_04.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.s
+.PHONY : src/red/chapters/chapter_04.cpp.s
+
+src/red/chapters/chapter_05.o: src/red/chapters/chapter_05.cpp.o
+
+.PHONY : src/red/chapters/chapter_05.o
+
+# target to build an object file
+src/red/chapters/chapter_05.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o
+.PHONY : src/red/chapters/chapter_05.cpp.o
+
+src/red/chapters/chapter_05.i: src/red/chapters/chapter_05.cpp.i
+
+.PHONY : src/red/chapters/chapter_05.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_05.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.i
+.PHONY : src/red/chapters/chapter_05.cpp.i
+
+src/red/chapters/chapter_05.s: src/red/chapters/chapter_05.cpp.s
+
+.PHONY : src/red/chapters/chapter_05.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_05.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.s
+.PHONY : src/red/chapters/chapter_05.cpp.s
+
+src/red/chapters/chapter_06.o: src/red/chapters/chapter_06.cpp.o
+
+.PHONY : src/red/chapters/chapter_06.o
+
+# target to build an object file
+src/red/chapters/chapter_06.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o
+.PHONY : src/red/chapters/chapter_06.cpp.o
+
+src/red/chapters/chapter_06.i: src/red/chapters/chapter_06.cpp.i
+
+.PHONY : src/red/chapters/chapter_06.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_06.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.i
+.PHONY : src/red/chapters/chapter_06.cpp.i
+
+src/red/chapters/chapter_06.s: src/red/chapters/chapter_06.cpp.s
+
+.PHONY : src/red/chapters/chapter_06.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_06.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.s
+.PHONY : src/red/chapters/chapter_06.cpp.s
+
+src/red/chapters/chapter_07.o: src/red/chapters/chapter_07.cpp.o
+
+.PHONY : src/red/chapters/chapter_07.o
+
+# target to build an object file
+src/red/chapters/chapter_07.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o
+.PHONY : src/red/chapters/chapter_07.cpp.o
+
+src/red/chapters/chapter_07.i: src/red/chapters/chapter_07.cpp.i
+
+.PHONY : src/red/chapters/chapter_07.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_07.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.i
+.PHONY : src/red/chapters/chapter_07.cpp.i
+
+src/red/chapters/chapter_07.s: src/red/chapters/chapter_07.cpp.s
+
+.PHONY : src/red/chapters/chapter_07.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_07.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.s
+.PHONY : src/red/chapters/chapter_07.cpp.s
+
+src/red/chapters/chapter_08.o: src/red/chapters/chapter_08.cpp.o
+
+.PHONY : src/red/chapters/chapter_08.o
+
+# target to build an object file
+src/red/chapters/chapter_08.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o
+.PHONY : src/red/chapters/chapter_08.cpp.o
+
+src/red/chapters/chapter_08.i: src/red/chapters/chapter_08.cpp.i
+
+.PHONY : src/red/chapters/chapter_08.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_08.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.i
+.PHONY : src/red/chapters/chapter_08.cpp.i
+
+src/red/chapters/chapter_08.s: src/red/chapters/chapter_08.cpp.s
+
+.PHONY : src/red/chapters/chapter_08.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_08.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.s
+.PHONY : src/red/chapters/chapter_08.cpp.s
+
+src/red/chapters/chapter_09.o: src/red/chapters/chapter_09.cpp.o
+
+.PHONY : src/red/chapters/chapter_09.o
+
+# target to build an object file
+src/red/chapters/chapter_09.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o
+.PHONY : src/red/chapters/chapter_09.cpp.o
+
+src/red/chapters/chapter_09.i: src/red/chapters/chapter_09.cpp.i
+
+.PHONY : src/red/chapters/chapter_09.i
+
+# target to preprocess a source file
+src/red/chapters/chapter_09.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.i
+.PHONY : src/red/chapters/chapter_09.cpp.i
+
+src/red/chapters/chapter_09.s: src/red/chapters/chapter_09.cpp.s
+
+.PHONY : src/red/chapters/chapter_09.s
+
+# target to generate assembly for a file
+src/red/chapters/chapter_09.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.s
+.PHONY : src/red/chapters/chapter_09.cpp.s
+
 src/red/red.o: src/red/red.cpp.o
 
 .PHONY : src/red/red.o
@@ -662,6 +1436,60 @@ src/red/red.s: src/red/red.cpp.s
 src/red/red.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/red/red.cpp.s
 .PHONY : src/red/red.cpp.s
+
+src/shader.o: src/shader.cpp.o
+
+.PHONY : src/shader.o
+
+# target to build an object file
+src/shader.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shader.cpp.o
+.PHONY : src/shader.cpp.o
+
+src/shader.i: src/shader.cpp.i
+
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
+
+src/share.o: src/share.cpp.o
+
+.PHONY : src/share.o
+
+# target to build an object file
+src/share.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/share.cpp.o
+.PHONY : src/share.cpp.o
+
+src/share.i: src/share.cpp.i
+
+.PHONY : src/share.i
+
+# target to preprocess a source file
+src/share.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/share.cpp.i
+.PHONY : src/share.cpp.i
+
+src/share.s: src/share.cpp.s
+
+.PHONY : src/share.s
+
+# target to generate assembly for a file
+src/share.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/share.cpp.s
+.PHONY : src/share.cpp.s
 
 src/simple/main.o: src/simple/main.cpp.o
 
@@ -771,18 +1599,285 @@ src/simple/swindow.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/simple/swindow.cpp.s
 .PHONY : src/simple/swindow.cpp.s
 
+src/text.o: src/text.cpp.o
+
+.PHONY : src/text.o
+
+# target to build an object file
+src/text.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/text.cpp.o
+.PHONY : src/text.cpp.o
+
+src/text.i: src/text.cpp.i
+
+.PHONY : src/text.i
+
+# target to preprocess a source file
+src/text.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/text.cpp.i
+.PHONY : src/text.cpp.i
+
+src/text.s: src/text.cpp.s
+
+.PHONY : src/text.s
+
+# target to generate assembly for a file
+src/text.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/text.cpp.s
+.PHONY : src/text.cpp.s
+
+src/texture.o: src/texture.cpp.o
+
+.PHONY : src/texture.o
+
+# target to build an object file
+src/texture.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/texture.cpp.o
+.PHONY : src/texture.cpp.o
+
+src/texture.i: src/texture.cpp.i
+
+.PHONY : src/texture.i
+
+# target to preprocess a source file
+src/texture.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/texture.cpp.i
+.PHONY : src/texture.cpp.i
+
+src/texture.s: src/texture.cpp.s
+
+.PHONY : src/texture.s
+
+# target to generate assembly for a file
+src/texture.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/texture.cpp.s
+.PHONY : src/texture.cpp.s
+
+src/transform.o: src/transform.cpp.o
+
+.PHONY : src/transform.o
+
+# target to build an object file
+src/transform.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/transform.cpp.o
+.PHONY : src/transform.cpp.o
+
+src/transform.i: src/transform.cpp.i
+
+.PHONY : src/transform.i
+
+# target to preprocess a source file
+src/transform.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/transform.cpp.i
+.PHONY : src/transform.cpp.i
+
+src/transform.s: src/transform.cpp.s
+
+.PHONY : src/transform.s
+
+# target to generate assembly for a file
+src/transform.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/transform.cpp.s
+.PHONY : src/transform.cpp.s
+
+src/ven/chapters/chapter_01.o: src/ven/chapters/chapter_01.cpp.o
+
+.PHONY : src/ven/chapters/chapter_01.o
+
+# target to build an object file
+src/ven/chapters/chapter_01.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o
+.PHONY : src/ven/chapters/chapter_01.cpp.o
+
+src/ven/chapters/chapter_01.i: src/ven/chapters/chapter_01.cpp.i
+
+.PHONY : src/ven/chapters/chapter_01.i
+
+# target to preprocess a source file
+src/ven/chapters/chapter_01.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.i
+.PHONY : src/ven/chapters/chapter_01.cpp.i
+
+src/ven/chapters/chapter_01.s: src/ven/chapters/chapter_01.cpp.s
+
+.PHONY : src/ven/chapters/chapter_01.s
+
+# target to generate assembly for a file
+src/ven/chapters/chapter_01.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.s
+.PHONY : src/ven/chapters/chapter_01.cpp.s
+
+src/ven/chapters/chapter_02.o: src/ven/chapters/chapter_02.cpp.o
+
+.PHONY : src/ven/chapters/chapter_02.o
+
+# target to build an object file
+src/ven/chapters/chapter_02.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o
+.PHONY : src/ven/chapters/chapter_02.cpp.o
+
+src/ven/chapters/chapter_02.i: src/ven/chapters/chapter_02.cpp.i
+
+.PHONY : src/ven/chapters/chapter_02.i
+
+# target to preprocess a source file
+src/ven/chapters/chapter_02.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.i
+.PHONY : src/ven/chapters/chapter_02.cpp.i
+
+src/ven/chapters/chapter_02.s: src/ven/chapters/chapter_02.cpp.s
+
+.PHONY : src/ven/chapters/chapter_02.s
+
+# target to generate assembly for a file
+src/ven/chapters/chapter_02.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.s
+.PHONY : src/ven/chapters/chapter_02.cpp.s
+
+src/ven/chapters/chapter_03.o: src/ven/chapters/chapter_03.cpp.o
+
+.PHONY : src/ven/chapters/chapter_03.o
+
+# target to build an object file
+src/ven/chapters/chapter_03.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o
+.PHONY : src/ven/chapters/chapter_03.cpp.o
+
+src/ven/chapters/chapter_03.i: src/ven/chapters/chapter_03.cpp.i
+
+.PHONY : src/ven/chapters/chapter_03.i
+
+# target to preprocess a source file
+src/ven/chapters/chapter_03.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.i
+.PHONY : src/ven/chapters/chapter_03.cpp.i
+
+src/ven/chapters/chapter_03.s: src/ven/chapters/chapter_03.cpp.s
+
+.PHONY : src/ven/chapters/chapter_03.s
+
+# target to generate assembly for a file
+src/ven/chapters/chapter_03.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.s
+.PHONY : src/ven/chapters/chapter_03.cpp.s
+
+src/ven/ven_main.o: src/ven/ven_main.cpp.o
+
+.PHONY : src/ven/ven_main.o
+
+# target to build an object file
+src/ven/ven_main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_main.cpp.o
+.PHONY : src/ven/ven_main.cpp.o
+
+src/ven/ven_main.i: src/ven/ven_main.cpp.i
+
+.PHONY : src/ven/ven_main.i
+
+# target to preprocess a source file
+src/ven/ven_main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_main.cpp.i
+.PHONY : src/ven/ven_main.cpp.i
+
+src/ven/ven_main.s: src/ven/ven_main.cpp.s
+
+.PHONY : src/ven/ven_main.s
+
+# target to generate assembly for a file
+src/ven/ven_main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_main.cpp.s
+.PHONY : src/ven/ven_main.cpp.s
+
+src/ven/ven_text.o: src/ven/ven_text.cpp.o
+
+.PHONY : src/ven/ven_text.o
+
+# target to build an object file
+src/ven/ven_text.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_text.cpp.o
+.PHONY : src/ven/ven_text.cpp.o
+
+src/ven/ven_text.i: src/ven/ven_text.cpp.i
+
+.PHONY : src/ven/ven_text.i
+
+# target to preprocess a source file
+src/ven/ven_text.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_text.cpp.i
+.PHONY : src/ven/ven_text.cpp.i
+
+src/ven/ven_text.s: src/ven/ven_text.cpp.s
+
+.PHONY : src/ven/ven_text.s
+
+# target to generate assembly for a file
+src/ven/ven_text.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ven/ven_text.cpp.s
+.PHONY : src/ven/ven_text.cpp.s
+
+src/window.o: src/window.cpp.o
+
+.PHONY : src/window.o
+
+# target to build an object file
+src/window.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/window.cpp.o
+.PHONY : src/window.cpp.o
+
+src/window.i: src/window.cpp.i
+
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/window.cpp.i
+.PHONY : src/window.cpp.i
+
+src/window.s: src/window.cpp.s
+
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/window.cpp.s
+.PHONY : src/window.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... game"
+	@echo "... install/strip"
 	@echo "... edit_cache"
+	@echo "... game"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... glad"
+	@echo "... stb"
+	@echo "... src/01_create_a_window.o"
+	@echo "... src/01_create_a_window.i"
+	@echo "... src/01_create_a_window.s"
+	@echo "... src/02_hello_triangle.o"
+	@echo "... src/02_hello_triangle.i"
+	@echo "... src/02_hello_triangle.s"
+	@echo "... src/03_element_buffer.o"
+	@echo "... src/03_element_buffer.i"
+	@echo "... src/03_element_buffer.s"
+	@echo "... src/04_shaders.o"
+	@echo "... src/04_shaders.i"
+	@echo "... src/04_shaders.s"
+	@echo "... src/05_transformations.o"
+	@echo "... src/05_transformations.i"
+	@echo "... src/05_transformations.s"
 	@echo "... src/ABGR/ABGR.o"
 	@echo "... src/ABGR/ABGR.i"
 	@echo "... src/ABGR/ABGR.s"
+	@echo "... src/CG.o"
+	@echo "... src/CG.i"
+	@echo "... src/CG.s"
 	@echo "... src/GLUT/bitmap.o"
 	@echo "... src/GLUT/bitmap.i"
 	@echo "... src/GLUT/bitmap.s"
@@ -798,15 +1893,48 @@ help:
 	@echo "... src/c_tut/c_tut_03.o"
 	@echo "... src/c_tut/c_tut_03.i"
 	@echo "... src/c_tut/c_tut_03.s"
+	@echo "... src/default_main.o"
+	@echo "... src/default_main.i"
+	@echo "... src/default_main.s"
 	@echo "... src/example/example.o"
 	@echo "... src/example/example.i"
 	@echo "... src/example/example.s"
 	@echo "... src/example/example01.o"
 	@echo "... src/example/example01.i"
 	@echo "... src/example/example01.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
+	@echo "... src/mesh.o"
+	@echo "... src/mesh.i"
+	@echo "... src/mesh.s"
 	@echo "... src/mysql/mysql.o"
 	@echo "... src/mysql/mysql.i"
 	@echo "... src/mysql/mysql.s"
+	@echo "... src/new/misc/example01.o"
+	@echo "... src/new/misc/example01.i"
+	@echo "... src/new/misc/example01.s"
+	@echo "... src/new/misc/example02.o"
+	@echo "... src/new/misc/example02.i"
+	@echo "... src/new/misc/example02.s"
+	@echo "... src/new/misc/example03.o"
+	@echo "... src/new/misc/example03.i"
+	@echo "... src/new/misc/example03.s"
+	@echo "... src/new/misc/example04.o"
+	@echo "... src/new/misc/example04.i"
+	@echo "... src/new/misc/example04.s"
+	@echo "... src/new/misc/misc.o"
+	@echo "... src/new/misc/misc.i"
+	@echo "... src/new/misc/misc.s"
+	@echo "... src/new/misc/misc_center_dot.o"
+	@echo "... src/new/misc/misc_center_dot.i"
+	@echo "... src/new/misc/misc_center_dot.s"
+	@echo "... src/new/misc/monster.o"
+	@echo "... src/new/misc/monster.i"
+	@echo "... src/new/misc/monster.s"
 	@echo "... src/new/new.o"
 	@echo "... src/new/new.i"
 	@echo "... src/new/new.s"
@@ -837,9 +1965,42 @@ help:
 	@echo "... src/red/chapter.o"
 	@echo "... src/red/chapter.i"
 	@echo "... src/red/chapter.s"
+	@echo "... src/red/chapters/chapter_01.o"
+	@echo "... src/red/chapters/chapter_01.i"
+	@echo "... src/red/chapters/chapter_01.s"
+	@echo "... src/red/chapters/chapter_02.o"
+	@echo "... src/red/chapters/chapter_02.i"
+	@echo "... src/red/chapters/chapter_02.s"
+	@echo "... src/red/chapters/chapter_03.o"
+	@echo "... src/red/chapters/chapter_03.i"
+	@echo "... src/red/chapters/chapter_03.s"
+	@echo "... src/red/chapters/chapter_04.o"
+	@echo "... src/red/chapters/chapter_04.i"
+	@echo "... src/red/chapters/chapter_04.s"
+	@echo "... src/red/chapters/chapter_05.o"
+	@echo "... src/red/chapters/chapter_05.i"
+	@echo "... src/red/chapters/chapter_05.s"
+	@echo "... src/red/chapters/chapter_06.o"
+	@echo "... src/red/chapters/chapter_06.i"
+	@echo "... src/red/chapters/chapter_06.s"
+	@echo "... src/red/chapters/chapter_07.o"
+	@echo "... src/red/chapters/chapter_07.i"
+	@echo "... src/red/chapters/chapter_07.s"
+	@echo "... src/red/chapters/chapter_08.o"
+	@echo "... src/red/chapters/chapter_08.i"
+	@echo "... src/red/chapters/chapter_08.s"
+	@echo "... src/red/chapters/chapter_09.o"
+	@echo "... src/red/chapters/chapter_09.i"
+	@echo "... src/red/chapters/chapter_09.s"
 	@echo "... src/red/red.o"
 	@echo "... src/red/red.i"
 	@echo "... src/red/red.s"
+	@echo "... src/shader.o"
+	@echo "... src/shader.i"
+	@echo "... src/shader.s"
+	@echo "... src/share.o"
+	@echo "... src/share.i"
+	@echo "... src/share.s"
 	@echo "... src/simple/main.o"
 	@echo "... src/simple/main.i"
 	@echo "... src/simple/main.s"
@@ -852,6 +2013,33 @@ help:
 	@echo "... src/simple/swindow.o"
 	@echo "... src/simple/swindow.i"
 	@echo "... src/simple/swindow.s"
+	@echo "... src/text.o"
+	@echo "... src/text.i"
+	@echo "... src/text.s"
+	@echo "... src/texture.o"
+	@echo "... src/texture.i"
+	@echo "... src/texture.s"
+	@echo "... src/transform.o"
+	@echo "... src/transform.i"
+	@echo "... src/transform.s"
+	@echo "... src/ven/chapters/chapter_01.o"
+	@echo "... src/ven/chapters/chapter_01.i"
+	@echo "... src/ven/chapters/chapter_01.s"
+	@echo "... src/ven/chapters/chapter_02.o"
+	@echo "... src/ven/chapters/chapter_02.i"
+	@echo "... src/ven/chapters/chapter_02.s"
+	@echo "... src/ven/chapters/chapter_03.o"
+	@echo "... src/ven/chapters/chapter_03.i"
+	@echo "... src/ven/chapters/chapter_03.s"
+	@echo "... src/ven/ven_main.o"
+	@echo "... src/ven/ven_main.i"
+	@echo "... src/ven/ven_main.s"
+	@echo "... src/ven/ven_text.o"
+	@echo "... src/ven/ven_text.i"
+	@echo "... src/ven/ven_text.s"
+	@echo "... src/window.o"
+	@echo "... src/window.i"
+	@echo "... src/window.s"
 .PHONY : help
 
 

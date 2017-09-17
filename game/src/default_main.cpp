@@ -12,11 +12,12 @@
 
 static const char *image = "data/brick-wall.jpg";
 
-int default_main () {
+int default_main (int argc, char *argv[]) {
 
-  Window window(800, 600, "Window");
+  Window window(argc, argv, 800, 600, "Window");
   Shader shader("data/default");
-  Menu menu(window, shader);
+
+  Menu menu(window);
 
   Shader textShader("data/text");
   Text text(textShader);
@@ -37,8 +38,7 @@ int default_main () {
   while (!window.isClosed()) {
     window.clear(0.1f, 0.1f, 0.1f, 1.0f);
     text.render("this is very text like", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-    text.render("where does smart people live", 440.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-
+    text.render("where is the menu", 440.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 
     float sinCounter = sinf(counter);
     float cosCounter = cosf(counter);
@@ -53,6 +53,8 @@ int default_main () {
 
     shader.Update(transform);
     mesh.Draw();
+
+    menu.update();
 
     window.Update();
 

@@ -3,5 +3,6 @@
 
 CMakeFiles/app.dir/src/main.cpp.o
  /home/viktor/master/cmake/02/src/main.cpp
+ inc/student.h
 CMakeFiles/app.dir/src/student.cpp.o
  /home/viktor/master/cmake/02/src/student.cpp

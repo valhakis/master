@@ -21,8 +21,22 @@
 // ________$$$_ __$$$
 // ________$$$__ _$$$
 
-Window::Window(int width, int height, const std::string& title) {
+// Window::mouseButtonDownCallback = NULL;
+Window::Window(int argc, char **argv, int width, int height, const std::string& title) 
+  : mouseButtonDownCallback(NULL) ,
+  mouseMotionCallback(NULL), 
+  keys{false}
+{
+  // setMouseMotion(NULL);
 	share::print("WINDOW CREATION");
+
+	this->argc = argc;
+	this->argv = argv;
+
+  keys[WINDOW_KEY_W] = false;
+  keys[WINDOW_KEY_A] = false;
+  keys[WINDOW_KEY_S] = false;
+  keys[WINDOW_KEY_D] = false;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -45,6 +59,7 @@ Window::Window(int width, int height, const std::string& title) {
 
 	m_isClosed = false;
 
+  setMouseMotion(NULL);
 } // Window::Window |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
 
 Window::Window() {
@@ -68,21 +83,65 @@ void Window::Update() {
 		if (event.type == SDL_QUIT) {
 			m_isClosed = true;
 		}
-		if (event.type == SDL_KEYDOWN) {
-			if (event.key.keysym.sym == 27) {
-				m_isClosed = true;
-			}
-		}
-	}
+    if (event.type == SDL_KEYDOWN) {
+      if (event.key.keysym.sym == 27) {
+        m_isClosed = true;
+      }
+      keys[event.key.keysym.scancode] = true;
+      printf("KEY: %d.\n", event.key.keysym.scancode);
+    }
+    if (event.type == SDL_KEYUP) {
+      keys[(int)event.key.keysym.scancode] = false;
+    }
+    if (event.type == SDL_MOUSEMOTION) {
+      if (mouseMotionCallback) {
+        mouseMotionCallback(this, (float) event.motion.x, (float) event.motion.y);
+      }
+      // printf("MOUSE POSITION: '%.2f, %.2f'.\n", (float)event.motion.x, (float)event.motion.y);
+    }
+    if (event.type == SDL_MOUSEBUTTONDOWN) {
+      if (mouseButtonDownCallback) {
+        mouseButtonDownCallback(this, (float) event.motion.x, (float) event.motion.y);
+      }
+      // printf("MOUSE BUTTON DWON [%.2f, %.2f]\n", (float) event.motion.x, (float) event.motion.y);
+    }
+  }
 
 } // void Window::Update |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
 
 bool Window::isClosed() {
-	return m_isClosed;
+  return m_isClosed;
 } // bool Window::isClosed |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
 
 void Window::clear(float r, float g, float b, float a) {
-		glClearColor(r, g, b, a);
-		glClear(GL_COLOR_BUFFER_BIT);
+  glClearColor(r, g, b, a);
+  glClear(GL_COLOR_BUFFER_BIT);
 } // void Window::cleaer |=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=|
 
+float Window::getWidth() {
+  int width, height;
+  SDL_GetWindowSize(m_window, &width, &height);
+  return (float)width;
+}
+float Window::getHeight() {
+  int width, height;
+  SDL_GetWindowSize(m_window, &width, &height);
+  return (float)height;
+}
+
+void Window::setMouseMotion(void (*callback)(Window* window, float x, float y)) {
+  mouseMotionCallback = callback;
+}
+
+void Window::setMouseButtonDownCallback(void (*callback)(Window* window, float x, float y)) {
+  mouseButtonDownCallback = callback;
+}
+
+void Window::GetDimensions(float *width, float *height) {
+  int w, h;
+
+  SDL_GetWindowSize(m_window, &w, &h);
+
+  *width = (float)w;
+  *height = (float)h;
+}
