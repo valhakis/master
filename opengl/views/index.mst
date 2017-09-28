@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+  </head>
+  <body>
+
+    <h1>OpenGL</h1>
+
+    <a href="/dashboard" style="text-decoration: none;">Welcome,  <strong>{{user.name}}</strong>.</a>
+    <hr>
+
+    <div id="sections">
+      <section>
+        <h4><a href="/opengl/chat">chat</a></h4>
+      </section>
+      <section>
+        <h4><a href="/opengl/glfw">GLFW</a></h4>
+      </section>
+      <section>
+        <h4><a href="/opengl/program-01">program-01</a></h4>
+      </section>
+      <section>
+        <h4><a href="/opengl/program-02">program-02</a></h4>
+      </section>
+      <section>
+        <h4><a href="/opengl/program-03">program-03</a></h4>
+      </section>
+      <section>
+        <h4><a href="/opengl/program-04">program-04</a></h4>
+      </section>
+    </div>
+
+    {{> footer}}
+
+  </body>
+</html>

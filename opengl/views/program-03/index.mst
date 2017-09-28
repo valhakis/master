@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+  </head>
+  <body>
+
+    <a href="/opengl">OpenGL Home</a>
+
+    <h1>program-03</h1>
+
+    <div>
+      <button onClick="request(this, '/opengl/program-03/make')">MAKE</button>
+      <button onClick="request(this, '/opengl/program-03/run')">RUN</button>
+    </div>
+
+    <br>
+
+    <a href="/opengl/program-03/source">view source</a>
+
+    <br>
+    
+
+    <div class="sections">
+      <h1>HOW TO USE INDICES / HOW TO RE-USE VERTICES</h1>
+      <div>
+        <h3>Shaders</h3>
+        <h3 style="font-size: 14px; color: #3F3;">Vertex Shader</h3>
+        <raw-code file="/opengl/source?file=program-02/data/default.vs" lang="glsl"></raw-code>
+        <h3 style="font-size: 14px; color: #3F3;">Fragment Shader</h3>
+        <raw-code file="/opengl/source?file=program-02/data/default.fs" lang="glsl"></raw-code>
+      </div>
+      <div>
+        <h3>Vertex Array Object Creation</h3>
+        <raw-code file="/opengl/raw/program-03/vao_create.cc", lang="cpp"></raw-code>
+      </div>
+      <div>
+        <h3>Draw Vertices / Elements</h3>
+        <raw-code file="/opengl/raw/program-03/draw.cc", lang="cpp"></raw-code>
+      </div>
+      <div>
+        <h3>Draw Only lines from vertice to vertice</h3>
+        <raw-code file="/opengl/raw/program-03/polygon.cc", lang="cpp"></raw-code>
+      </div>
+      </div>
+    </div>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-makefile.js"></script>
+    <script src="/prismjs/components/prism-glsl.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/opengl/raw.js"></script>
+    <script src="/opengl/program-shared.js"></script>
+  </body>
+</html>

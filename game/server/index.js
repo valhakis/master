@@ -16,6 +16,7 @@ var app = express();
 var server = http.createServer(app);
 
 app.use(App.static('public'));
+app.use(App.static('public/dist'));
 
 app.get('/date', function(req, res) {
   res.send(new Date().toUTCString());

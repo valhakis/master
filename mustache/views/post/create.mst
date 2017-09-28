@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Create a post.</title>
+    <link rel="stylesheet" href="/mustache/style.css">
+  </head>
+  <body>
+
+    <h1>Create a post.</h1>
+
+    <a href="/mustache/home">Mustache Home</a>
+
+    <br> <br>
+
+    <form action="/mustache/post/create" method="post">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element labels</th>
+            <th>Input elements</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label>Title: </label>
+            </td>
+            <td>
+              <input name="title" type="text">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>Post Content: </label>
+            </td>
+            <td>
+              <textarea name="content" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button>create a post</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    {{> footer}}
+  </body>
+</html>

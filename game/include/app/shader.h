@@ -6,6 +6,7 @@
 #include <sstream>
 #include <GL/glew.h>
 #include <app/transform.h>
+#include <app/camera.h>
 
 class Shader {
 	public:
@@ -14,7 +15,7 @@ class Shader {
 
 		void Bind();
 		void bind() { glUseProgram(m_program); }
-		void Update(const Transform& transform);
+		void Update(const Transform& transform, const Camera& camera);
 		int GetProgram();
 
 		virtual ~Shader();

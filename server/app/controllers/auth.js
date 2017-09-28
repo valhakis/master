@@ -118,7 +118,8 @@ exports.POST = {
 				if (bcrypt.compareSync(req.body.password, user.password)) {
 					req.session.user = user; // set-cookie: session={email='', ...}
 					req.flash('success', 'Login was successful apparantlLogin was successful.');
-					res.redirect('/dashboard');
+					// res.redirect('/dashboard');
+					res.redirect('/');
 				} else {
 					req.flash('error', 'Invalid email or password.');
 					res.redirect('back');

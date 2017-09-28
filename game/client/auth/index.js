@@ -8,7 +8,7 @@ auth.factory('Auth', require('./auth.service'));
 
 auth.controller('AuthController', function AuthController(Auth) {
   console.log('WHAT');
-  Auth.setCredentials('what');
+  // Auth.setCredentials('what');
 });
 
 export default auth.name;

@@ -43,8 +43,26 @@ CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o: src/c_tut/c_tut_02.cpp
 
 CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o: src/c_tut/c_tut_03.cpp
 
+CMakeFiles/game.dir/src/camera.cpp.o: src/camera.cpp
+
+CMakeFiles/game.dir/src/codemath/button.cpp.o: src/codemath/button.cpp
+CMakeFiles/game.dir/src/codemath/button.cpp.o: /usr/include/freetype2/freetype/config/ftheader.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: /usr/include/freetype2/ft2build.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: glad/include/KHR/khrplatform.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: glad/include/glad/glad.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: include/app/CG.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: include/codemath.h
+CMakeFiles/game.dir/src/codemath/button.cpp.o: include/linmath.h
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: src/codemath/codemath_main.cpp
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: glad/include/KHR/khrplatform.h
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: glad/include/glad/glad.h
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: include/app/CG.h
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: include/codemath.h
+
 CMakeFiles/game.dir/src/default_main.cpp.o: src/default_main.cpp
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/WAY.h
+CMakeFiles/game.dir/src/default_main.cpp.o: include/app/camera.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/main.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/menu.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/mesh.h
@@ -54,6 +72,7 @@ CMakeFiles/game.dir/src/default_main.cpp.o: include/app/text.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/texture.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/transform.h
 CMakeFiles/game.dir/src/default_main.cpp.o: include/app/window.h
+CMakeFiles/game.dir/src/default_main.cpp.o: include/obj_loader.h
 
 CMakeFiles/game.dir/src/example/example.cpp.o: src/example/example.cpp
 CMakeFiles/game.dir/src/example/example.cpp.o: include/app/example.h
@@ -66,6 +85,7 @@ CMakeFiles/game.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/game.dir/src/main.cpp.o: include/app/ABGR/ABGR.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/WAY.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/c_tut.h
+CMakeFiles/game.dir/src/main.cpp.o: include/app/camera.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/debug.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/default.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/example.h
@@ -82,8 +102,10 @@ CMakeFiles/game.dir/src/main.cpp.o: include/app/texture.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/transform.h
 CMakeFiles/game.dir/src/main.cpp.o: include/app/window.h
 CMakeFiles/game.dir/src/main.cpp.o: include/linmath.h
+CMakeFiles/game.dir/src/main.cpp.o: include/obj_loader.h
 
 CMakeFiles/game.dir/src/menu.cpp.o: src/menu.cpp
+CMakeFiles/game.dir/src/menu.cpp.o: include/app/camera.h
 CMakeFiles/game.dir/src/menu.cpp.o: include/app/menu.h
 CMakeFiles/game.dir/src/menu.cpp.o: include/app/shader.h
 CMakeFiles/game.dir/src/menu.cpp.o: include/app/transform.h
@@ -92,6 +114,7 @@ CMakeFiles/game.dir/src/menu.cpp.o: include/app/window.h
 CMakeFiles/game.dir/src/mesh.cpp.o: src/mesh.cpp
 CMakeFiles/game.dir/src/mesh.cpp.o: include/app/mesh.h
 CMakeFiles/game.dir/src/mesh.cpp.o: include/app/share.h
+CMakeFiles/game.dir/src/mesh.cpp.o: include/obj_loader.h
 
 CMakeFiles/game.dir/src/mysql/mysql.cpp.o: src/mysql/mysql.cpp
 CMakeFiles/game.dir/src/mysql/mysql.cpp.o: include/app/mysql/mysql.h
@@ -188,6 +211,9 @@ CMakeFiles/game.dir/src/new/new_08.cpp.o: include/app/new.h
 CMakeFiles/game.dir/src/new/new_08.cpp.o: include/linmath.h
 CMakeFiles/game.dir/src/new/new_08.cpp.o: include/stb_image.h
 
+CMakeFiles/game.dir/src/obj_loader.cpp.o: src/obj_loader.cpp
+CMakeFiles/game.dir/src/obj_loader.cpp.o: include/obj_loader.h
+
 CMakeFiles/game.dir/src/red/chapter.cpp.o: src/red/chapter.cpp
 CMakeFiles/game.dir/src/red/chapter.cpp.o: include/app/red.h
 
@@ -213,6 +239,7 @@ CMakeFiles/game.dir/src/red/red.cpp.o: src/red/red.cpp
 CMakeFiles/game.dir/src/red/red.cpp.o: include/app/red.h
 
 CMakeFiles/game.dir/src/shader.cpp.o: src/shader.cpp
+CMakeFiles/game.dir/src/shader.cpp.o: include/app/camera.h
 CMakeFiles/game.dir/src/shader.cpp.o: include/app/shader.h
 CMakeFiles/game.dir/src/shader.cpp.o: include/app/share.h
 CMakeFiles/game.dir/src/shader.cpp.o: include/app/transform.h
@@ -242,6 +269,7 @@ CMakeFiles/game.dir/src/simple/swindow.cpp.o: include/app/simple/swindow.h
 CMakeFiles/game.dir/src/text.cpp.o: src/text.cpp
 CMakeFiles/game.dir/src/text.cpp.o: /usr/include/freetype2/freetype/config/ftheader.h
 CMakeFiles/game.dir/src/text.cpp.o: /usr/include/freetype2/ft2build.h
+CMakeFiles/game.dir/src/text.cpp.o: include/app/camera.h
 CMakeFiles/game.dir/src/text.cpp.o: include/app/shader.h
 CMakeFiles/game.dir/src/text.cpp.o: include/app/text.h
 CMakeFiles/game.dir/src/text.cpp.o: include/app/transform.h
@@ -300,4 +328,9 @@ CMakeFiles/game.dir/src/ven/ven_text.cpp.o: include/linmath.h
 CMakeFiles/game.dir/src/window.cpp.o: src/window.cpp
 CMakeFiles/game.dir/src/window.cpp.o: include/app/share.h
 CMakeFiles/game.dir/src/window.cpp.o: include/app/window.h
+
+CMakeFiles/game.dir/src/xlib/button.cpp.o: src/xlib/button.cpp
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o: src/xlib/xlib_main.cpp
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o: include/xlib.h
 

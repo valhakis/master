@@ -32,7 +32,7 @@ static void mousemove(Window *window, float x, float y) {
   mouseX = x;
   mouseY = -(y - height);
 
-  printf("MOUSE POSITION: '%.2f, %.2f'.\n", mouseX, mouseY);
+  // printf("MOUSE POSITION: '%.2f, %.2f'.\n", mouseX, mouseY);
   // printf("MOUSE DIMENSIONS: '%.2f, %.2f'.\n", width, height);
   check_collision();
 }

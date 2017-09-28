@@ -140,6 +140,38 @@ string.h
 
 /home/viktor/master/game/src/c_tut/c_tut_03.cpp
 
+/home/viktor/master/game/src/camera.cpp
+
+/home/viktor/master/game/src/codemath/button.cpp
+ft2build.h
+-
+codemath.h
+/home/viktor/master/game/src/codemath/codemath.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+linmath.h
+/home/viktor/master/game/src/codemath/linmath.h
+app/CG.h
+/home/viktor/master/game/src/codemath/app/CG.h
+string.h
+-
+stdio.h
+-
+
+/home/viktor/master/game/src/codemath/codemath_main.cpp
+stdio.h
+-
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+app/CG.h
+/home/viktor/master/game/src/codemath/app/CG.h
+codemath.h
+/home/viktor/master/game/src/codemath/codemath.h
+
 /home/viktor/master/game/src/default_main.cpp
 app/main.h
 -
@@ -156,6 +188,8 @@ app/texture.h
 app/menu.h
 -
 app/transform.h
+-
+app/camera.h
 -
 app/text.h
 -
@@ -242,9 +276,11 @@ glm/gtc/type_ptr.hpp
 
 /home/viktor/master/game/src/mesh.cpp
 app/mesh.h
--
+/home/viktor/master/game/src/app/mesh.h
 app/share.h
--
+/home/viktor/master/game/src/app/share.h
+obj_loader.h
+/home/viktor/master/game/src/obj_loader.h
 vector
 -
 
@@ -454,6 +490,18 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
+-
+
+/home/viktor/master/game/src/obj_loader.cpp
+obj_loader.h
+/home/viktor/master/game/src/obj_loader.h
+fstream
+-
+iostream
+-
+algorithm
+-
+map
 -
 
 /home/viktor/master/game/src/red/chapter.cpp
@@ -742,6 +790,32 @@ app/share.h
 GL/glew.h
 -
 
+/home/viktor/master/game/src/xlib/button.cpp
+X11/Xlib.h
+-
+X11/Xutil.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/viktor/master/game/src/xlib/xlib_main.cpp
+xlib.h
+/home/viktor/master/game/src/xlib/xlib.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+X11/Xlib.h
+-
+X11/Xutil.h
+-
+
 /usr/include/freetype2/freetype/config/ftheader.h
 
 /usr/include/freetype2/ft2build.h
@@ -788,6 +862,12 @@ string
 
 include/app/c_tut.h
 
+include/app/camera.h
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+
 include/app/debug.h
 
 include/app/default.h
@@ -819,10 +899,14 @@ string
 -
 
 include/app/mesh.h
+string
+-
 glm/glm.hpp
 -
 GL/glew.h
 -
+obj_loader.h
+include/app/obj_loader.h
 
 include/app/mysql/mysql.h
 
@@ -844,6 +928,8 @@ sstream
 GL/glew.h
 -
 app/transform.h
+-
+app/camera.h
 -
 
 include/app/share.h
@@ -902,8 +988,18 @@ iostream
 SDL2/SDL.h
 -
 
+include/codemath.h
+
 include/linmath.h
 math.h
+-
+
+include/obj_loader.h
+glm/glm.hpp
+-
+vector
+-
+string
 -
 
 include/stb_image.h
@@ -934,5 +1030,11 @@ emmintrin.h
 intrin.h
 -
 arm_neon.h
+-
+
+include/xlib.h
+X11/Xlib.h
+-
+X11/Xutil.h
 -
 

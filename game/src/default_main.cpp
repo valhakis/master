@@ -7,14 +7,18 @@
 #include <app/texture.h>
 #include <app/menu.h>
 #include <app/transform.h>
+#include <app/camera.h>
 #include <app/text.h>
 #include <app/WAY.h>
+
+#define WIDTH 800
+#define HEIGHT 600
 
 static const char *image = "data/brick-wall.jpg";
 
 int default_main (int argc, char *argv[]) {
 
-  Window window(argc, argv, 800, 600, "Window");
+  Window window(argc, argv, WIDTH, HEIGHT, "Window");
   Shader shader("data/default");
 
   Menu menu(window);
@@ -33,7 +37,13 @@ int default_main (int argc, char *argv[]) {
     Vertex(glm::vec3(+0.0f, +0.5f, 0.0f), glm::vec2(0.5f, 1.0f)),
   };
 
-  Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
+  unsigned int indices[] = {
+    0, 1, 2
+  };
+
+  Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
+  Mesh mesh2("/home/viktor/master/game/data/monkey3.obj");
+  Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)WIDTH/(float)HEIGHT, 0.01f, 1000.0f);
 
   while (!window.isClosed()) {
     window.clear(0.1f, 0.1f, 0.1f, 1.0f);
@@ -43,16 +53,21 @@ int default_main (int argc, char *argv[]) {
     float sinCounter = sinf(counter);
     float cosCounter = cosf(counter);
 
-    transform.GetPos().x = sinf(counter);
-    // transform.GetRot().z = counter / 2;
+    transform.GetPos().x = sinCounter;
+    transform.GetRot().z = cosCounter * 5;
+    transform.GetRot().x = sinCounter * 5;
+    transform.GetRot().y = sinCounter * 10;
+    transform.GetPos().y = sinCounter;
+    transform.GetPos().z = sinCounter;
     // share::printf("%.2f", cosCounter + 1.0);
     // transform.SetScale(glm::vec3(cosCounter, cosCounter, sinCounter));
 
     shader.Bind();
     texture.Bind(0);
 
-    shader.Update(transform);
+    shader.Update(transform, camera);
     mesh.Draw();
+    mesh2.Draw();
 
     menu.update();
 

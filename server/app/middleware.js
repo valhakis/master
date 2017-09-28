@@ -41,6 +41,7 @@ module.exports = function(app) {
 
 	app.use('/3d', express.static(App.masterRoot('3d')));
 	app.use('/', express.static(App.masterRoot('public')));
+	app.use('/', express.static(App.masterRoot('game/public/dist')));
 
 	app.use('/css', App.masterStatic('css'));
 
@@ -58,8 +59,14 @@ module.exports = function(app) {
 	// app.use('/w3', App.masterRequire('W3/app'));
 	app.use('/sqlite', App.masterRequire('sqlite/app'));
 	app.use('/current', App.masterRequire('current/app'));
+	app.use('/mustache', App.masterRequire('mustache/app'));
 	app.use('/2017-09-05', App.masterRequire('2017-09-05/app'));
 	app.use('/posts', App.masterRequire('posts/app'));
+	app.use('/code', App.masterRequire('code/app'));
+	app.use('/opengl', App.masterRequire('opengl/app'));
+	app.use('/prism', App.masterRequire('prism/app'));
+	app.use('/mongodb', App.masterRequire('mongodb/app'));
+	app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 
 	app.get('/todo', function(req, res) {
 		res.send("I HAVE TO DO EVERYTHING");

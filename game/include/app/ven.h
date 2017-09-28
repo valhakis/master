@@ -8,4 +8,5 @@ int VenTextInitialize(const char *font, float fontSize);
 int VenTextDestroy();
 void VenTextRender(const char *text, float x, float y);
 void VenTextRenderColor3f(const char *text, float posX, float posY, float r, float g, float b);
+int VenTextInitializeWShader(const char *font, float fontSize, const char *shaderName);
 #endif

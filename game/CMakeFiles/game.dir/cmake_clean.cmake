@@ -11,6 +11,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o"
   "CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o"
   "CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o"
+  "CMakeFiles/game.dir/src/camera.cpp.o"
+  "CMakeFiles/game.dir/src/codemath/button.cpp.o"
+  "CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o"
   "CMakeFiles/game.dir/src/default_main.cpp.o"
   "CMakeFiles/game.dir/src/example/example.cpp.o"
   "CMakeFiles/game.dir/src/example/example01.cpp.o"
@@ -34,6 +37,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/new/new_06.cpp.o"
   "CMakeFiles/game.dir/src/new/new_07.cpp.o"
   "CMakeFiles/game.dir/src/new/new_08.cpp.o"
+  "CMakeFiles/game.dir/src/obj_loader.cpp.o"
   "CMakeFiles/game.dir/src/red/chapter.cpp.o"
   "CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o"
   "CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o"
@@ -61,8 +65,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
   "CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
   "CMakeFiles/game.dir/src/window.cpp.o"
-  "game.pdb"
-  "game"
+  "CMakeFiles/game.dir/src/xlib/button.cpp.o"
+  "CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o"
+  "bin/game.pdb"
+  "bin/game"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -121,6 +121,7 @@ int CGLoadShader(const char *location) {
 
 char* CGGetDataLoc(const char *filePath) {
   char *result = (char*)malloc(sizeof(char) * 256);
+  memset(result, '\0', 256);
   strcat(result, CG_DATA_DIR);
   strcat(result, "/");
   strcat(result, filePath);
@@ -186,7 +187,9 @@ void CGMakeWindow(GLFWwindow** win, int width, int height) {
 
   gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 
-  *win = window;
+  if (win != NULL) {
+    *win = window;
+  }
 }
 
 bool CGWindowIsOpen() {

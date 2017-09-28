@@ -30,6 +30,12 @@ static void close_window() {
   glfwSetWindowShouldClose(window, true);
 }
 
+static void start_new_8() {
+  char command[256] = {'\0'};
+  sprintf(command, "%s new 8 &", loc.argv[0]);
+  system(command);
+}
+
 static void start_ven() {
   char command[256] = {'\0'};
   sprintf(command, "%s ven &", loc.argv[0]);
@@ -246,6 +252,8 @@ int _ven_chapter_04_main(int argc, char *argv[]) {
   CGMakeWindow(&window, (int)width, (int)height);
   VenTextInitialize("code.ttf", fontSize);
 
+  glfwSetWindowTitle(window, "CHAPTER 04");
+
   program = CGLoadShader("button");
   exitBtn = MakeButton(width-200-5, height-50-5, 200, 50);
 
@@ -259,6 +267,9 @@ int _ven_chapter_04_main(int argc, char *argv[]) {
   ButtonSetText(&buttonList.buttons[0], "EXAMPLE BUTTON 01");
   ButtonSetText(&buttonList.buttons[1], "START VEL");
   ButtonSetCallback(&buttonList.buttons[1], start_ven);
+
+  ButtonSetText(&buttonList.buttons[2], "START NEW 8");
+  ButtonSetCallback(&buttonList.buttons[2], start_new_8);
 
   while (CGWindowIsOpen()) {
     glClearColor(0.05f, 0.05f, 0.05f, 1.0f);

@@ -12,7 +12,10 @@ int _ven_chapter_03_main(int argc, char *argv[]) {
 
   CGInitialize(NULL);
 
-  CGMakeWindow(NULL, 800, 600);
+  GLFWwindow* window;
+
+  CGMakeWindow(&window, 800, 600);
+  glfwSetWindowTitle(window, "CHAPTER 03");
   VenTextInitialize("code.ttf", 30.0);
 
   while (CGWindowIsOpen()) {

@@ -17,6 +17,7 @@ var request = require('request');
 var app = require('./app');
 
 var server = http.createServer(app);
+// require('./socket').start(server);
 
 var db = require('./db');
 

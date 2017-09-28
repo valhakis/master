@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+  </head>
+  <body>
+
+    <a href="/opengl">OpenGL Home</a>
+
+    <h1>GLFW</h1>
+
+    <a href="/opengl/glfw/demo">demo</a>
+
+    {{> footer}}
+
+  </body>
+</html>

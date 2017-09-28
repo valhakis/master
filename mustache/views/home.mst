@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mustache Home</title>
+    <link rel="stylesheet" href="/mustache/style.css">
+  </head>
+  <body>
+
+    <h1>Mustache Home</h1>
+
+    <a href="/mustache/post/create">Create a new post.</a>
+
+    <p>You are: {{user.name}}</p>
+
+    <p>Master: {{master}}</p>
+
+
+    {{> footer}}
+  </body>
+</html>

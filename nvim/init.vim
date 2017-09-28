@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'juvenn/mustache.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'tpope/vim-surround'
 Plug 'nono/vim-handlebars'
@@ -12,12 +13,12 @@ Plug 'vim-utils/vim-man'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
+Plug 'othree/html5.vim'
 Plug 'jwalton512/vim-blade'
 "Plug 'python-mode/python-mode'
 Plug 'nono/vim-handlebars'
 Plug 'etnadji/vim-epub'
 call plug#end()
-
 
 colorscheme antares
 
@@ -53,15 +54,17 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:user_emmet_leader_key=','
 
 au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
+au BufRead,BufNewFile *.mst set filetype=html syntax=mustache
 
 nmap ,edit :tabedit ~/.vimrc <cr>
+" nmap ,so :so ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
+nmap ,ed :e % <cr>
 nmap ,no :noh <cr>
 nmap \e :edit % <cr>
 nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
-"nmap \mr :w <bar> !./start.sh <cr>
 nmap <leader>k <Plug>(Man) 
 nmap ,k <Plug>(Man) 
 
@@ -70,7 +73,8 @@ function! MRun()
   execute "!./start.sh " . arguments
 endfunction
 
-nmap ,start :w <bar> call MRun() <cr>
+" nmap ,start :w <bar> call MRun() <cr>
+nmap ,st :w <bar> !./start.sh <cr>
 nmap \mr :w <bar> call MRun() <cr>
 
 " CUSTOM TEMPLATE FUNCTION
@@ -130,3 +134,63 @@ nmap ,ma :tabe makefile <cr>
 " ==========================================================
 hi Search ctermfg=red ctermbg=none
 hi IncSearch ctermbg=yellow ctermfg=black
+
+au FileType man set syntax=c
+
+" nmap ,se :call CustomNew() <cr>
+
+" au BufEnter .* call CustomNew() <cr>
+" au BufEnter,BufWritePost * call CustomNew() 
+" au BufEnter,BufWritePost * call example#load()
+
+" @what is that what this
+" and @this is what
+" one two
+" two one
+
+" autocmd bufwritepost .vimrc source ~/.vimrc
+" call example#begin()
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+au filetype vim syntax match VimRed /^\/\//
+au filetype vim syntax match VimBlue /@search/
+au filetype vim syntax match VimBlue /^@/
+au filetype vim syntax match VimGreen /^one/
+au filetype vim syntax match VimYellow /\word/
+
+au filetype vim syntax match ValYellow /\word/
+au filetype vim syntax match ValYellow /\list/
+
+" digit
+au filetype vim syntax match ValLightBlue /\d/
+au filetype vim syntax match VimBrown /\<\item>/
+
+" head
+" syntax match ValYellow /\h/
+
+au filetype vim hi ValRed ctermfg=red
+au filetype vim hi ValBlue ctermfg=blue
+au filetype vim hi ValGreen ctermfg=green
+au filetype vim hi ValYellow ctermfg=yellow
+au filetype vim hi ValBrown ctermfg=brown
+
+
+" set list
+" set listchars=eol:⏎,space:·,tab:\ T,trail:→,extends:E,precedes:-,conceal:C,nbsp:X
+" set listchars=
+" set listchars+=eol:⏎
+" set listchars+=trail:·
+" set listchars+=space:·
+"set listchars+=tab:TE
+"set listchars+=extends:E
+"set listchars+=precedes:B
+set conceallevel=2
+
+" set listchars+=tab:\ X
+
+hi NonText ctermfg=236
+
+finish

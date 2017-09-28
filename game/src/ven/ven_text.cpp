@@ -30,7 +30,7 @@ static FT_Face face;
 static int program;
 static unsigned int vbo, vao;
 
-int VenTextInitialize(const char *font, float fontSize) {
+int VenTextInitializeWShader(const char *font, float fontSize, const char *shaderName) {
   if (FT_Init_FreeType(&ft)) {
     printf("COULD NOT INITIALIZE FREETYPE\n");
   }
@@ -45,7 +45,7 @@ int VenTextInitialize(const char *font, float fontSize) {
   }
   free(fontFile);
 
-  program = CGLoadShader("text");
+  program = CGLoadShader(shaderName);
 
   glGenVertexArrays(1, &vao);
   glGenBuffers(1, &vbo);
@@ -67,7 +67,7 @@ int VenTextInitialize(const char *font, float fontSize) {
     }
     Character *ch = &chars[c];
     glGenTextures(1, &ch->tex);
-    
+
     FT_GlyphSlot glyph = face->glyph;
     FT_Bitmap bitmap = face->glyph->bitmap;
 
@@ -92,6 +92,11 @@ int VenTextInitialize(const char *font, float fontSize) {
   glBindTexture(GL_TEXTURE_2D, 0);
 
   return 0;
+
+}
+
+int VenTextInitialize(const char *font, float fontSize) {
+  VenTextInitializeWShader(font, fontSize, "text");
 }
 
 int VenTextDestroy() {

@@ -369,6 +369,9 @@ int _New_08(int argc, char *argv[]) { // <++>
   glfwSetInputMode(window._window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   // glfwSetWindowPos(window._window, 0, 0);
   // glfwSetWindowMonitor(window._window, monitor, );
+  glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+  glClear(GL_COLOR_BUFFER_BIT);
+  NewWindowSwap(&window);
 
   GLFWmonitor* primary = glfwGetPrimaryMonitor();
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+  </head>
+  <body>
+
+    <a href="/opengl">OpenGL Home</a>
+
+    <h1>program-02</h1>
+
+    <div>
+      <button onClick="request(this, '/opengl/program-02/make')">MAKE</button>
+      <button onClick="request(this, '/opengl/program-02/run')">RUN</button>
+    </div>
+
+    <br>
+
+    <a href="/opengl/program-02/source">view source</a>
+
+    <br>
+    
+
+    <div class="sections">
+      <h1>HOW TO MAKE A TRIANGLE</h1>
+      <div>
+        <h3>Vertex Shader</h3>
+        <raw-code file="/opengl/program-02/source?file=program-02/data/default.vs" lang="glsl"></raw-code>
+      </div>
+      <div>
+        <h3>Fragment Shader</h3>
+        <raw-code file="/opengl/program-02/source?file=program-02/data/default.fs" lang="glsl"></raw-code>
+      </div>
+      <div>
+        <h3>Create Shader Program</h3>
+        <raw-code file="/opengl/raw/program-02/create_program.cc" lang="cpp"></raw-code>
+      </div>
+      <div>
+        <h3>Make Vertex Array Object</h3>
+        <raw-code file="/opengl/raw/program-02/make_vertex_array_object.cc" lang="cpp"></raw-code>
+      </div>
+      <div>
+        <h3>Render The Triangle</h3>
+        <raw-code file="/opengl/raw/program-02/render_triangle.cc" lang="cpp"></raw-code>
+      </div>
+      <h1>HELPER FUNCTIONS</h1>
+      <div>
+        <h3>Check Compilation</h3>
+        <raw-code file="/opengl/raw/program-02/check_compilation.cc" lang="cpp"></raw-code>
+      </div>
+      <div>
+        <h3>Load Source</h3>
+        <raw-code file="/opengl/raw/program-02/load_source.cc" lang="cpp"></raw-code>
+      </div>
+      <h1>OTHER</h1>
+      <div>
+        <h3>Makefile</h3>
+        <raw-code file="/opengl/program-02/source?file=program-02/makefile" lang="makefile"></raw-code>
+      </div>
+    </div>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-makefile.js"></script>
+    <script src="/prismjs/components/prism-glsl.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/opengl/raw.js"></script>
+    <script src="/opengl/program-02-script.js"></script>
+  </body>
+</html>

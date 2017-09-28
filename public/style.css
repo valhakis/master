@@ -17,3 +17,12 @@
 .parent.focus {
 	background-color: #CCCCFF;
 }
+
+@font-face {
+  font-family: COURIER;
+  src: url('/courier.ttf') format('truetype');
+}
+
+body, pre code, input, button, textarea {
+  font-family: COURIER !important;
+}

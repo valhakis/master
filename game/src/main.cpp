@@ -1,3 +1,14 @@
+/* ===/========================================= |
+ *  ///_____________________________________ | //
+ * ///		  																	//
+ * // main																   //
+ * / game 
+ * / game xlib                                      /
+ * / game ven                                     
+ * / game red
+ * / game 01
+ * /________________________________________ | */
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -35,14 +46,17 @@
 
 #include <app/c_tut.h>
 
-/* ===/========================================= |
- *  ///_____________________________________ | //
- * ///																				//
- * // main																   //
- * /________________________________________ | */
-
 int main(int argc, char *argv[]) // <++>
 {
+  if (argc > 1 && strcmp(argv[1], "codemath") == 0) {
+    _codemath_main(argc, argv);
+    return 0;
+  } 
+  if (argc > 1 && strcmp(argv[1], "xlib") == 0) {
+    _xlib_main(argc, argv);
+    return 0;
+  } 
+
   if (argc > 1 && strcmp(argv[1], "ven") == 0) {
     _ven_main(argc, argv);
     return 0;

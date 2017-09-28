@@ -1,0 +1,35 @@
+<div>
+  <p>Welcome to {{ place }}!</p>
+
+  <p>Label: {{info.label}}, num: {{info.num}}.</p>
+
+  {{#authenticated}}
+  <p>You are authenticated.</p>
+  {{/authenticated}}
+
+  {{^authenticated}}
+  <p>You are not authenticated.</p>
+  {{/authenticated}}
+
+  <h4>Friends are following: </h4>
+  {{#friends}}
+  <p>{{name}}</p>
+  {{/friends}}
+
+  <h4>Musketeers: </h4>
+  {{#musketeers}}
+  <span>* {{.}}</span>
+  {{/musketeers}}
+
+  <h4>List of persons:</h4>
+  <ul>
+    {{#persons}}
+    <li>{{fullName}}</li>
+    {{/persons}}
+  </ul>
+
+  <h2>Master partial</h2>
+  {{> master}}
+
+  <p>You are most welcomed here {{ name }}.</p>
+</div>

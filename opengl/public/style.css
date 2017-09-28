@@ -1,0 +1,53 @@
+body {
+  background-color: #010101;
+  color: #FFF;
+}
+
+pre code {
+  font-size: 13px;
+}
+
+a {
+  color: #FFF;
+}
+
+.sections {
+  margin-top: 10px;
+}
+
+.sections > div {
+  background-color: #151515;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sections > div h3 {
+  color: #F44;
+  padding: 5px;
+  background-color: #353535;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 11px;
+  paddinb-bottom: 3px;
+}
+
+.sections > div pre {
+  margin: 0px;
+  padding: 5px;
+}
+
+.sections > h1 {
+  background-color: #33A;
+  padding: 5px;
+  margin: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-width: 3px;
+  margin-bottom: 5px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  padding-top: 15px;
+}

@@ -519,6 +519,87 @@ src/c_tut/c_tut_03.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.s
 .PHONY : src/c_tut/c_tut_03.cpp.s
 
+src/camera.o: src/camera.cpp.o
+
+.PHONY : src/camera.o
+
+# target to build an object file
+src/camera.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.o
+.PHONY : src/camera.cpp.o
+
+src/camera.i: src/camera.cpp.i
+
+.PHONY : src/camera.i
+
+# target to preprocess a source file
+src/camera.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
+
+src/camera.s: src/camera.cpp.s
+
+.PHONY : src/camera.s
+
+# target to generate assembly for a file
+src/camera.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
+
+src/codemath/button.o: src/codemath/button.cpp.o
+
+.PHONY : src/codemath/button.o
+
+# target to build an object file
+src/codemath/button.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/button.cpp.o
+.PHONY : src/codemath/button.cpp.o
+
+src/codemath/button.i: src/codemath/button.cpp.i
+
+.PHONY : src/codemath/button.i
+
+# target to preprocess a source file
+src/codemath/button.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/button.cpp.i
+.PHONY : src/codemath/button.cpp.i
+
+src/codemath/button.s: src/codemath/button.cpp.s
+
+.PHONY : src/codemath/button.s
+
+# target to generate assembly for a file
+src/codemath/button.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/button.cpp.s
+.PHONY : src/codemath/button.cpp.s
+
+src/codemath/codemath_main.o: src/codemath/codemath_main.cpp.o
+
+.PHONY : src/codemath/codemath_main.o
+
+# target to build an object file
+src/codemath/codemath_main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o
+.PHONY : src/codemath/codemath_main.cpp.o
+
+src/codemath/codemath_main.i: src/codemath/codemath_main.cpp.i
+
+.PHONY : src/codemath/codemath_main.i
+
+# target to preprocess a source file
+src/codemath/codemath_main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/codemath_main.cpp.i
+.PHONY : src/codemath/codemath_main.cpp.i
+
+src/codemath/codemath_main.s: src/codemath/codemath_main.cpp.s
+
+.PHONY : src/codemath/codemath_main.s
+
+# target to generate assembly for a file
+src/codemath/codemath_main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/codemath_main.cpp.s
+.PHONY : src/codemath/codemath_main.cpp.s
+
 src/default_main.o: src/default_main.cpp.o
 
 .PHONY : src/default_main.o
@@ -1139,6 +1220,33 @@ src/new/new_08.s: src/new/new_08.cpp.s
 src/new/new_08.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/new/new_08.cpp.s
 .PHONY : src/new/new_08.cpp.s
+
+src/obj_loader.o: src/obj_loader.cpp.o
+
+.PHONY : src/obj_loader.o
+
+# target to build an object file
+src/obj_loader.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/obj_loader.cpp.o
+.PHONY : src/obj_loader.cpp.o
+
+src/obj_loader.i: src/obj_loader.cpp.i
+
+.PHONY : src/obj_loader.i
+
+# target to preprocess a source file
+src/obj_loader.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/obj_loader.cpp.i
+.PHONY : src/obj_loader.cpp.i
+
+src/obj_loader.s: src/obj_loader.cpp.s
+
+.PHONY : src/obj_loader.s
+
+# target to generate assembly for a file
+src/obj_loader.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/obj_loader.cpp.s
+.PHONY : src/obj_loader.cpp.s
 
 src/red/chapter.o: src/red/chapter.cpp.o
 
@@ -1869,6 +1977,60 @@ src/window.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/window.cpp.s
 .PHONY : src/window.cpp.s
 
+src/xlib/button.o: src/xlib/button.cpp.o
+
+.PHONY : src/xlib/button.o
+
+# target to build an object file
+src/xlib/button.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/button.cpp.o
+.PHONY : src/xlib/button.cpp.o
+
+src/xlib/button.i: src/xlib/button.cpp.i
+
+.PHONY : src/xlib/button.i
+
+# target to preprocess a source file
+src/xlib/button.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/button.cpp.i
+.PHONY : src/xlib/button.cpp.i
+
+src/xlib/button.s: src/xlib/button.cpp.s
+
+.PHONY : src/xlib/button.s
+
+# target to generate assembly for a file
+src/xlib/button.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/button.cpp.s
+.PHONY : src/xlib/button.cpp.s
+
+src/xlib/xlib_main.o: src/xlib/xlib_main.cpp.o
+
+.PHONY : src/xlib/xlib_main.o
+
+# target to build an object file
+src/xlib/xlib_main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o
+.PHONY : src/xlib/xlib_main.cpp.o
+
+src/xlib/xlib_main.i: src/xlib/xlib_main.cpp.i
+
+.PHONY : src/xlib/xlib_main.i
+
+# target to preprocess a source file
+src/xlib/xlib_main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/xlib_main.cpp.i
+.PHONY : src/xlib/xlib_main.cpp.i
+
+src/xlib/xlib_main.s: src/xlib/xlib_main.cpp.s
+
+.PHONY : src/xlib/xlib_main.s
+
+# target to generate assembly for a file
+src/xlib/xlib_main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/xlib_main.cpp.s
+.PHONY : src/xlib/xlib_main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1920,6 +2082,15 @@ help:
 	@echo "... src/c_tut/c_tut_03.o"
 	@echo "... src/c_tut/c_tut_03.i"
 	@echo "... src/c_tut/c_tut_03.s"
+	@echo "... src/camera.o"
+	@echo "... src/camera.i"
+	@echo "... src/camera.s"
+	@echo "... src/codemath/button.o"
+	@echo "... src/codemath/button.i"
+	@echo "... src/codemath/button.s"
+	@echo "... src/codemath/codemath_main.o"
+	@echo "... src/codemath/codemath_main.i"
+	@echo "... src/codemath/codemath_main.s"
 	@echo "... src/default_main.o"
 	@echo "... src/default_main.i"
 	@echo "... src/default_main.s"
@@ -1989,6 +2160,9 @@ help:
 	@echo "... src/new/new_08.o"
 	@echo "... src/new/new_08.i"
 	@echo "... src/new/new_08.s"
+	@echo "... src/obj_loader.o"
+	@echo "... src/obj_loader.i"
+	@echo "... src/obj_loader.s"
 	@echo "... src/red/chapter.o"
 	@echo "... src/red/chapter.i"
 	@echo "... src/red/chapter.s"
@@ -2070,6 +2244,12 @@ help:
 	@echo "... src/window.o"
 	@echo "... src/window.i"
 	@echo "... src/window.s"
+	@echo "... src/xlib/button.o"
+	@echo "... src/xlib/button.i"
+	@echo "... src/xlib/button.s"
+	@echo "... src/xlib/xlib_main.o"
+	@echo "... src/xlib/xlib_main.i"
+	@echo "... src/xlib/xlib_main.s"
 .PHONY : help
 
 

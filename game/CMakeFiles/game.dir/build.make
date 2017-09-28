@@ -345,9 +345,81 @@ CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o.provides: CMakeFiles/game.dir/src/c
 CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o.provides.build: CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o
 
 
+CMakeFiles/game.dir/src/camera.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/camera.cpp.o: src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.dir/src/camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/camera.cpp.o -c /home/viktor/master/game/src/camera.cpp
+
+CMakeFiles/game.dir/src/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/camera.cpp > CMakeFiles/game.dir/src/camera.cpp.i
+
+CMakeFiles/game.dir/src/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/camera.cpp -o CMakeFiles/game.dir/src/camera.cpp.s
+
+CMakeFiles/game.dir/src/camera.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/camera.cpp.o.requires
+
+CMakeFiles/game.dir/src/camera.cpp.o.provides: CMakeFiles/game.dir/src/camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/camera.cpp.o.provides
+
+CMakeFiles/game.dir/src/camera.cpp.o.provides.build: CMakeFiles/game.dir/src/camera.cpp.o
+
+
+CMakeFiles/game.dir/src/codemath/button.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/codemath/button.cpp.o: src/codemath/button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.dir/src/codemath/button.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/codemath/button.cpp.o -c /home/viktor/master/game/src/codemath/button.cpp
+
+CMakeFiles/game.dir/src/codemath/button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/codemath/button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/codemath/button.cpp > CMakeFiles/game.dir/src/codemath/button.cpp.i
+
+CMakeFiles/game.dir/src/codemath/button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/codemath/button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/codemath/button.cpp -o CMakeFiles/game.dir/src/codemath/button.cpp.s
+
+CMakeFiles/game.dir/src/codemath/button.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/codemath/button.cpp.o.requires
+
+CMakeFiles/game.dir/src/codemath/button.cpp.o.provides: CMakeFiles/game.dir/src/codemath/button.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/button.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/codemath/button.cpp.o.provides
+
+CMakeFiles/game.dir/src/codemath/button.cpp.o.provides.build: CMakeFiles/game.dir/src/codemath/button.cpp.o
+
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o: src/codemath/codemath_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o -c /home/viktor/master/game/src/codemath/codemath_main.cpp
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/codemath/codemath_main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/codemath/codemath_main.cpp > CMakeFiles/game.dir/src/codemath/codemath_main.cpp.i
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/codemath/codemath_main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/codemath/codemath_main.cpp -o CMakeFiles/game.dir/src/codemath/codemath_main.cpp.s
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.requires
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.provides: CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.provides
+
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.provides.build: CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o
+
+
 CMakeFiles/game.dir/src/default_main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/default_main.cpp.o: src/default_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.dir/src/default_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/game.dir/src/default_main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/default_main.cpp.o -c /home/viktor/master/game/src/default_main.cpp
 
 CMakeFiles/game.dir/src/default_main.cpp.i: cmake_force
@@ -371,7 +443,7 @@ CMakeFiles/game.dir/src/default_main.cpp.o.provides.build: CMakeFiles/game.dir/s
 
 CMakeFiles/game.dir/src/example/example.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/example/example.cpp.o: src/example/example.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.dir/src/example/example.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/game.dir/src/example/example.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/example/example.cpp.o -c /home/viktor/master/game/src/example/example.cpp
 
 CMakeFiles/game.dir/src/example/example.cpp.i: cmake_force
@@ -395,7 +467,7 @@ CMakeFiles/game.dir/src/example/example.cpp.o.provides.build: CMakeFiles/game.di
 
 CMakeFiles/game.dir/src/example/example01.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/example/example01.cpp.o: src/example/example01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/game.dir/src/example/example01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/game.dir/src/example/example01.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/example/example01.cpp.o -c /home/viktor/master/game/src/example/example01.cpp
 
 CMakeFiles/game.dir/src/example/example01.cpp.i: cmake_force
@@ -419,7 +491,7 @@ CMakeFiles/game.dir/src/example/example01.cpp.o.provides.build: CMakeFiles/game.
 
 CMakeFiles/game.dir/src/main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/main.cpp.o -c /home/viktor/master/game/src/main.cpp
 
 CMakeFiles/game.dir/src/main.cpp.i: cmake_force
@@ -443,7 +515,7 @@ CMakeFiles/game.dir/src/main.cpp.o.provides.build: CMakeFiles/game.dir/src/main.
 
 CMakeFiles/game.dir/src/menu.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/menu.cpp.o: src/menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/game.dir/src/menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/game.dir/src/menu.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/menu.cpp.o -c /home/viktor/master/game/src/menu.cpp
 
 CMakeFiles/game.dir/src/menu.cpp.i: cmake_force
@@ -467,7 +539,7 @@ CMakeFiles/game.dir/src/menu.cpp.o.provides.build: CMakeFiles/game.dir/src/menu.
 
 CMakeFiles/game.dir/src/mesh.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/mesh.cpp.o: src/mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/game.dir/src/mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/game.dir/src/mesh.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/mesh.cpp.o -c /home/viktor/master/game/src/mesh.cpp
 
 CMakeFiles/game.dir/src/mesh.cpp.i: cmake_force
@@ -491,7 +563,7 @@ CMakeFiles/game.dir/src/mesh.cpp.o.provides.build: CMakeFiles/game.dir/src/mesh.
 
 CMakeFiles/game.dir/src/mysql/mysql.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/mysql/mysql.cpp.o: src/mysql/mysql.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/game.dir/src/mysql/mysql.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/game.dir/src/mysql/mysql.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/mysql/mysql.cpp.o -c /home/viktor/master/game/src/mysql/mysql.cpp
 
 CMakeFiles/game.dir/src/mysql/mysql.cpp.i: cmake_force
@@ -515,7 +587,7 @@ CMakeFiles/game.dir/src/mysql/mysql.cpp.o.provides.build: CMakeFiles/game.dir/sr
 
 CMakeFiles/game.dir/src/new/misc/example01.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/example01.cpp.o: src/new/misc/example01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/game.dir/src/new/misc/example01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/game.dir/src/new/misc/example01.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/example01.cpp.o -c /home/viktor/master/game/src/new/misc/example01.cpp
 
 CMakeFiles/game.dir/src/new/misc/example01.cpp.i: cmake_force
@@ -539,7 +611,7 @@ CMakeFiles/game.dir/src/new/misc/example01.cpp.o.provides.build: CMakeFiles/game
 
 CMakeFiles/game.dir/src/new/misc/example02.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/example02.cpp.o: src/new/misc/example02.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/game.dir/src/new/misc/example02.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/game.dir/src/new/misc/example02.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/example02.cpp.o -c /home/viktor/master/game/src/new/misc/example02.cpp
 
 CMakeFiles/game.dir/src/new/misc/example02.cpp.i: cmake_force
@@ -563,7 +635,7 @@ CMakeFiles/game.dir/src/new/misc/example02.cpp.o.provides.build: CMakeFiles/game
 
 CMakeFiles/game.dir/src/new/misc/example03.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/example03.cpp.o: src/new/misc/example03.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/game.dir/src/new/misc/example03.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/game.dir/src/new/misc/example03.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/example03.cpp.o -c /home/viktor/master/game/src/new/misc/example03.cpp
 
 CMakeFiles/game.dir/src/new/misc/example03.cpp.i: cmake_force
@@ -587,7 +659,7 @@ CMakeFiles/game.dir/src/new/misc/example03.cpp.o.provides.build: CMakeFiles/game
 
 CMakeFiles/game.dir/src/new/misc/example04.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/example04.cpp.o: src/new/misc/example04.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/game.dir/src/new/misc/example04.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/game.dir/src/new/misc/example04.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/example04.cpp.o -c /home/viktor/master/game/src/new/misc/example04.cpp
 
 CMakeFiles/game.dir/src/new/misc/example04.cpp.i: cmake_force
@@ -611,7 +683,7 @@ CMakeFiles/game.dir/src/new/misc/example04.cpp.o.provides.build: CMakeFiles/game
 
 CMakeFiles/game.dir/src/new/misc/misc.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/misc.cpp.o: src/new/misc/misc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/game.dir/src/new/misc/misc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/game.dir/src/new/misc/misc.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/misc.cpp.o -c /home/viktor/master/game/src/new/misc/misc.cpp
 
 CMakeFiles/game.dir/src/new/misc/misc.cpp.i: cmake_force
@@ -635,7 +707,7 @@ CMakeFiles/game.dir/src/new/misc/misc.cpp.o.provides.build: CMakeFiles/game.dir/
 
 CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o: src/new/misc/misc_center_dot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o -c /home/viktor/master/game/src/new/misc/misc_center_dot.cpp
 
 CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.i: cmake_force
@@ -659,7 +731,7 @@ CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/game.dir/src/new/misc/monster.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/misc/monster.cpp.o: src/new/misc/monster.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/game.dir/src/new/misc/monster.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/game.dir/src/new/misc/monster.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/misc/monster.cpp.o -c /home/viktor/master/game/src/new/misc/monster.cpp
 
 CMakeFiles/game.dir/src/new/misc/monster.cpp.i: cmake_force
@@ -683,7 +755,7 @@ CMakeFiles/game.dir/src/new/misc/monster.cpp.o.provides.build: CMakeFiles/game.d
 
 CMakeFiles/game.dir/src/new/new.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new.cpp.o: src/new/new.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/game.dir/src/new/new.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/game.dir/src/new/new.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new.cpp.o -c /home/viktor/master/game/src/new/new.cpp
 
 CMakeFiles/game.dir/src/new/new.cpp.i: cmake_force
@@ -707,7 +779,7 @@ CMakeFiles/game.dir/src/new/new.cpp.o.provides.build: CMakeFiles/game.dir/src/ne
 
 CMakeFiles/game.dir/src/new/new_01.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_01.cpp.o: src/new/new_01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/game.dir/src/new/new_01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/game.dir/src/new/new_01.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_01.cpp.o -c /home/viktor/master/game/src/new/new_01.cpp
 
 CMakeFiles/game.dir/src/new/new_01.cpp.i: cmake_force
@@ -731,7 +803,7 @@ CMakeFiles/game.dir/src/new/new_01.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_02.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_02.cpp.o: src/new/new_02.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/game.dir/src/new/new_02.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/game.dir/src/new/new_02.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_02.cpp.o -c /home/viktor/master/game/src/new/new_02.cpp
 
 CMakeFiles/game.dir/src/new/new_02.cpp.i: cmake_force
@@ -755,7 +827,7 @@ CMakeFiles/game.dir/src/new/new_02.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_03.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_03.cpp.o: src/new/new_03.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/game.dir/src/new/new_03.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/game.dir/src/new/new_03.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_03.cpp.o -c /home/viktor/master/game/src/new/new_03.cpp
 
 CMakeFiles/game.dir/src/new/new_03.cpp.i: cmake_force
@@ -779,7 +851,7 @@ CMakeFiles/game.dir/src/new/new_03.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_04.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_04.cpp.o: src/new/new_04.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/game.dir/src/new/new_04.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/game.dir/src/new/new_04.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_04.cpp.o -c /home/viktor/master/game/src/new/new_04.cpp
 
 CMakeFiles/game.dir/src/new/new_04.cpp.i: cmake_force
@@ -803,7 +875,7 @@ CMakeFiles/game.dir/src/new/new_04.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_05.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_05.cpp.o: src/new/new_05.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/game.dir/src/new/new_05.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/game.dir/src/new/new_05.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_05.cpp.o -c /home/viktor/master/game/src/new/new_05.cpp
 
 CMakeFiles/game.dir/src/new/new_05.cpp.i: cmake_force
@@ -827,7 +899,7 @@ CMakeFiles/game.dir/src/new/new_05.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_06.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_06.cpp.o: src/new/new_06.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/game.dir/src/new/new_06.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/game.dir/src/new/new_06.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_06.cpp.o -c /home/viktor/master/game/src/new/new_06.cpp
 
 CMakeFiles/game.dir/src/new/new_06.cpp.i: cmake_force
@@ -851,7 +923,7 @@ CMakeFiles/game.dir/src/new/new_06.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_07.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_07.cpp.o: src/new/new_07.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/game.dir/src/new/new_07.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/game.dir/src/new/new_07.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_07.cpp.o -c /home/viktor/master/game/src/new/new_07.cpp
 
 CMakeFiles/game.dir/src/new/new_07.cpp.i: cmake_force
@@ -875,7 +947,7 @@ CMakeFiles/game.dir/src/new/new_07.cpp.o.provides.build: CMakeFiles/game.dir/src
 
 CMakeFiles/game.dir/src/new/new_08.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/new/new_08.cpp.o: src/new/new_08.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/game.dir/src/new/new_08.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/game.dir/src/new/new_08.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/new/new_08.cpp.o -c /home/viktor/master/game/src/new/new_08.cpp
 
 CMakeFiles/game.dir/src/new/new_08.cpp.i: cmake_force
@@ -897,9 +969,33 @@ CMakeFiles/game.dir/src/new/new_08.cpp.o.provides: CMakeFiles/game.dir/src/new/n
 CMakeFiles/game.dir/src/new/new_08.cpp.o.provides.build: CMakeFiles/game.dir/src/new/new_08.cpp.o
 
 
+CMakeFiles/game.dir/src/obj_loader.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/obj_loader.cpp.o: src/obj_loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/game.dir/src/obj_loader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/obj_loader.cpp.o -c /home/viktor/master/game/src/obj_loader.cpp
+
+CMakeFiles/game.dir/src/obj_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/obj_loader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/obj_loader.cpp > CMakeFiles/game.dir/src/obj_loader.cpp.i
+
+CMakeFiles/game.dir/src/obj_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/obj_loader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/obj_loader.cpp -o CMakeFiles/game.dir/src/obj_loader.cpp.s
+
+CMakeFiles/game.dir/src/obj_loader.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/obj_loader.cpp.o.requires
+
+CMakeFiles/game.dir/src/obj_loader.cpp.o.provides: CMakeFiles/game.dir/src/obj_loader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/obj_loader.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/obj_loader.cpp.o.provides
+
+CMakeFiles/game.dir/src/obj_loader.cpp.o.provides.build: CMakeFiles/game.dir/src/obj_loader.cpp.o
+
+
 CMakeFiles/game.dir/src/red/chapter.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapter.cpp.o: src/red/chapter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/game.dir/src/red/chapter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/game.dir/src/red/chapter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapter.cpp.o -c /home/viktor/master/game/src/red/chapter.cpp
 
 CMakeFiles/game.dir/src/red/chapter.cpp.i: cmake_force
@@ -923,7 +1019,7 @@ CMakeFiles/game.dir/src/red/chapter.cpp.o.provides.build: CMakeFiles/game.dir/sr
 
 CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o: src/red/chapters/chapter_01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_01.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.i: cmake_force
@@ -947,7 +1043,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o: src/red/chapters/chapter_02.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_02.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.i: cmake_force
@@ -971,7 +1067,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o: src/red/chapters/chapter_03.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_03.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.i: cmake_force
@@ -995,7 +1091,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o: src/red/chapters/chapter_04.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_04.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.i: cmake_force
@@ -1019,7 +1115,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o: src/red/chapters/chapter_05.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_05.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.i: cmake_force
@@ -1043,7 +1139,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o: src/red/chapters/chapter_06.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_06.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.i: cmake_force
@@ -1067,7 +1163,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o: src/red/chapters/chapter_07.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_07.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.i: cmake_force
@@ -1091,7 +1187,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o: src/red/chapters/chapter_08.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_08.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.i: cmake_force
@@ -1115,7 +1211,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o: src/red/chapters/chapter_09.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o -c /home/viktor/master/game/src/red/chapters/chapter_09.cpp
 
 CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.i: cmake_force
@@ -1139,7 +1235,7 @@ CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/red/red.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/red/red.cpp.o: src/red/red.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/game.dir/src/red/red.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/game.dir/src/red/red.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/red/red.cpp.o -c /home/viktor/master/game/src/red/red.cpp
 
 CMakeFiles/game.dir/src/red/red.cpp.i: cmake_force
@@ -1163,7 +1259,7 @@ CMakeFiles/game.dir/src/red/red.cpp.o.provides.build: CMakeFiles/game.dir/src/re
 
 CMakeFiles/game.dir/src/shader.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/shader.cpp.o: src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/game.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/game.dir/src/shader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/shader.cpp.o -c /home/viktor/master/game/src/shader.cpp
 
 CMakeFiles/game.dir/src/shader.cpp.i: cmake_force
@@ -1187,7 +1283,7 @@ CMakeFiles/game.dir/src/shader.cpp.o.provides.build: CMakeFiles/game.dir/src/sha
 
 CMakeFiles/game.dir/src/share.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/share.cpp.o: src/share.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/game.dir/src/share.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/game.dir/src/share.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/share.cpp.o -c /home/viktor/master/game/src/share.cpp
 
 CMakeFiles/game.dir/src/share.cpp.i: cmake_force
@@ -1211,7 +1307,7 @@ CMakeFiles/game.dir/src/share.cpp.o.provides.build: CMakeFiles/game.dir/src/shar
 
 CMakeFiles/game.dir/src/simple/main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/simple/main.cpp.o: src/simple/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/game.dir/src/simple/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/game.dir/src/simple/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/simple/main.cpp.o -c /home/viktor/master/game/src/simple/main.cpp
 
 CMakeFiles/game.dir/src/simple/main.cpp.i: cmake_force
@@ -1235,7 +1331,7 @@ CMakeFiles/game.dir/src/simple/main.cpp.o.provides.build: CMakeFiles/game.dir/sr
 
 CMakeFiles/game.dir/src/simple/shader.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/simple/shader.cpp.o: src/simple/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/game.dir/src/simple/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/game.dir/src/simple/shader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/simple/shader.cpp.o -c /home/viktor/master/game/src/simple/shader.cpp
 
 CMakeFiles/game.dir/src/simple/shader.cpp.i: cmake_force
@@ -1259,7 +1355,7 @@ CMakeFiles/game.dir/src/simple/shader.cpp.o.provides.build: CMakeFiles/game.dir/
 
 CMakeFiles/game.dir/src/simple/simple.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/simple/simple.cpp.o: src/simple/simple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/game.dir/src/simple/simple.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/game.dir/src/simple/simple.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/simple/simple.cpp.o -c /home/viktor/master/game/src/simple/simple.cpp
 
 CMakeFiles/game.dir/src/simple/simple.cpp.i: cmake_force
@@ -1283,7 +1379,7 @@ CMakeFiles/game.dir/src/simple/simple.cpp.o.provides.build: CMakeFiles/game.dir/
 
 CMakeFiles/game.dir/src/simple/swindow.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/simple/swindow.cpp.o: src/simple/swindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/game.dir/src/simple/swindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/game.dir/src/simple/swindow.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/simple/swindow.cpp.o -c /home/viktor/master/game/src/simple/swindow.cpp
 
 CMakeFiles/game.dir/src/simple/swindow.cpp.i: cmake_force
@@ -1307,7 +1403,7 @@ CMakeFiles/game.dir/src/simple/swindow.cpp.o.provides.build: CMakeFiles/game.dir
 
 CMakeFiles/game.dir/src/text.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/text.cpp.o: src/text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/game.dir/src/text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/game.dir/src/text.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/text.cpp.o -c /home/viktor/master/game/src/text.cpp
 
 CMakeFiles/game.dir/src/text.cpp.i: cmake_force
@@ -1331,7 +1427,7 @@ CMakeFiles/game.dir/src/text.cpp.o.provides.build: CMakeFiles/game.dir/src/text.
 
 CMakeFiles/game.dir/src/texture.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/texture.cpp.o: src/texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/game.dir/src/texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/game.dir/src/texture.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/texture.cpp.o -c /home/viktor/master/game/src/texture.cpp
 
 CMakeFiles/game.dir/src/texture.cpp.i: cmake_force
@@ -1355,7 +1451,7 @@ CMakeFiles/game.dir/src/texture.cpp.o.provides.build: CMakeFiles/game.dir/src/te
 
 CMakeFiles/game.dir/src/transform.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/transform.cpp.o: src/transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/game.dir/src/transform.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/game.dir/src/transform.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/transform.cpp.o -c /home/viktor/master/game/src/transform.cpp
 
 CMakeFiles/game.dir/src/transform.cpp.i: cmake_force
@@ -1379,7 +1475,7 @@ CMakeFiles/game.dir/src/transform.cpp.o.provides.build: CMakeFiles/game.dir/src/
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o: src/ven/chapters/chapter_01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o -c /home/viktor/master/game/src/ven/chapters/chapter_01.cpp
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.i: cmake_force
@@ -1403,7 +1499,7 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o: src/ven/chapters/chapter_02.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o -c /home/viktor/master/game/src/ven/chapters/chapter_02.cpp
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.i: cmake_force
@@ -1427,7 +1523,7 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o: src/ven/chapters/chapter_03.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o -c /home/viktor/master/game/src/ven/chapters/chapter_03.cpp
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.i: cmake_force
@@ -1451,7 +1547,7 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o: src/ven/chapters/chapter_04.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o -c /home/viktor/master/game/src/ven/chapters/chapter_04.cpp
 
 CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.i: cmake_force
@@ -1475,7 +1571,7 @@ CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/ven_main.cpp.o: src/ven/ven_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/ven_main.cpp.o -c /home/viktor/master/game/src/ven/ven_main.cpp
 
 CMakeFiles/game.dir/src/ven/ven_main.cpp.i: cmake_force
@@ -1499,7 +1595,7 @@ CMakeFiles/game.dir/src/ven/ven_main.cpp.o.provides.build: CMakeFiles/game.dir/s
 
 CMakeFiles/game.dir/src/ven/ven_text.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/ven/ven_text.cpp.o: src/ven/ven_text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/ven/ven_text.cpp.o -c /home/viktor/master/game/src/ven/ven_text.cpp
 
 CMakeFiles/game.dir/src/ven/ven_text.cpp.i: cmake_force
@@ -1523,7 +1619,7 @@ CMakeFiles/game.dir/src/ven/ven_text.cpp.o.provides.build: CMakeFiles/game.dir/s
 
 CMakeFiles/game.dir/src/window.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/window.cpp.o: src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/game.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/game.dir/src/window.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/window.cpp.o -c /home/viktor/master/game/src/window.cpp
 
 CMakeFiles/game.dir/src/window.cpp.i: cmake_force
@@ -1545,6 +1641,54 @@ CMakeFiles/game.dir/src/window.cpp.o.provides: CMakeFiles/game.dir/src/window.cp
 CMakeFiles/game.dir/src/window.cpp.o.provides.build: CMakeFiles/game.dir/src/window.cpp.o
 
 
+CMakeFiles/game.dir/src/xlib/button.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/xlib/button.cpp.o: src/xlib/button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/game.dir/src/xlib/button.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/xlib/button.cpp.o -c /home/viktor/master/game/src/xlib/button.cpp
+
+CMakeFiles/game.dir/src/xlib/button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/xlib/button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/xlib/button.cpp > CMakeFiles/game.dir/src/xlib/button.cpp.i
+
+CMakeFiles/game.dir/src/xlib/button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/xlib/button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/xlib/button.cpp -o CMakeFiles/game.dir/src/xlib/button.cpp.s
+
+CMakeFiles/game.dir/src/xlib/button.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/xlib/button.cpp.o.requires
+
+CMakeFiles/game.dir/src/xlib/button.cpp.o.provides: CMakeFiles/game.dir/src/xlib/button.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/button.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/xlib/button.cpp.o.provides
+
+CMakeFiles/game.dir/src/xlib/button.cpp.o.provides.build: CMakeFiles/game.dir/src/xlib/button.cpp.o
+
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o: src/xlib/xlib_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o -c /home/viktor/master/game/src/xlib/xlib_main.cpp
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/xlib/xlib_main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/viktor/master/game/src/xlib/xlib_main.cpp > CMakeFiles/game.dir/src/xlib/xlib_main.cpp.i
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/xlib/xlib_main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/viktor/master/game/src/xlib/xlib_main.cpp -o CMakeFiles/game.dir/src/xlib/xlib_main.cpp.s
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.requires
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.provides: CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.provides
+
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.provides.build: CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o
+
+
 # Object files for target game
 game_OBJECTS = \
 "CMakeFiles/game.dir/src/01_create_a_window.cpp.o" \
@@ -1559,6 +1703,9 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o" \
 "CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o" \
 "CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o" \
+"CMakeFiles/game.dir/src/camera.cpp.o" \
+"CMakeFiles/game.dir/src/codemath/button.cpp.o" \
+"CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o" \
 "CMakeFiles/game.dir/src/default_main.cpp.o" \
 "CMakeFiles/game.dir/src/example/example.cpp.o" \
 "CMakeFiles/game.dir/src/example/example01.cpp.o" \
@@ -1582,6 +1729,7 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/new/new_06.cpp.o" \
 "CMakeFiles/game.dir/src/new/new_07.cpp.o" \
 "CMakeFiles/game.dir/src/new/new_08.cpp.o" \
+"CMakeFiles/game.dir/src/obj_loader.cpp.o" \
 "CMakeFiles/game.dir/src/red/chapter.cpp.o" \
 "CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o" \
 "CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o" \
@@ -1608,82 +1756,90 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o" \
 "CMakeFiles/game.dir/src/ven/ven_main.cpp.o" \
 "CMakeFiles/game.dir/src/ven/ven_text.cpp.o" \
-"CMakeFiles/game.dir/src/window.cpp.o"
+"CMakeFiles/game.dir/src/window.cpp.o" \
+"CMakeFiles/game.dir/src/xlib/button.cpp.o" \
+"CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o"
 
 # External object files for target game
 game_EXTERNAL_OBJECTS =
 
-game: CMakeFiles/game.dir/src/01_create_a_window.cpp.o
-game: CMakeFiles/game.dir/src/02_hello_triangle.cpp.o
-game: CMakeFiles/game.dir/src/03_element_buffer.cpp.o
-game: CMakeFiles/game.dir/src/04_shaders.cpp.o
-game: CMakeFiles/game.dir/src/05_transformations.cpp.o
-game: CMakeFiles/game.dir/src/ABGR/ABGR.cpp.o
-game: CMakeFiles/game.dir/src/CG.cpp.o
-game: CMakeFiles/game.dir/src/GLUT/bitmap.cpp.o
-game: CMakeFiles/game.dir/src/c_tut/c_tut.cpp.o
-game: CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o
-game: CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o
-game: CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o
-game: CMakeFiles/game.dir/src/default_main.cpp.o
-game: CMakeFiles/game.dir/src/example/example.cpp.o
-game: CMakeFiles/game.dir/src/example/example01.cpp.o
-game: CMakeFiles/game.dir/src/main.cpp.o
-game: CMakeFiles/game.dir/src/menu.cpp.o
-game: CMakeFiles/game.dir/src/mesh.cpp.o
-game: CMakeFiles/game.dir/src/mysql/mysql.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/example01.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/example02.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/example03.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/example04.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/misc.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o
-game: CMakeFiles/game.dir/src/new/misc/monster.cpp.o
-game: CMakeFiles/game.dir/src/new/new.cpp.o
-game: CMakeFiles/game.dir/src/new/new_01.cpp.o
-game: CMakeFiles/game.dir/src/new/new_02.cpp.o
-game: CMakeFiles/game.dir/src/new/new_03.cpp.o
-game: CMakeFiles/game.dir/src/new/new_04.cpp.o
-game: CMakeFiles/game.dir/src/new/new_05.cpp.o
-game: CMakeFiles/game.dir/src/new/new_06.cpp.o
-game: CMakeFiles/game.dir/src/new/new_07.cpp.o
-game: CMakeFiles/game.dir/src/new/new_08.cpp.o
-game: CMakeFiles/game.dir/src/red/chapter.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o
-game: CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o
-game: CMakeFiles/game.dir/src/red/red.cpp.o
-game: CMakeFiles/game.dir/src/shader.cpp.o
-game: CMakeFiles/game.dir/src/share.cpp.o
-game: CMakeFiles/game.dir/src/simple/main.cpp.o
-game: CMakeFiles/game.dir/src/simple/shader.cpp.o
-game: CMakeFiles/game.dir/src/simple/simple.cpp.o
-game: CMakeFiles/game.dir/src/simple/swindow.cpp.o
-game: CMakeFiles/game.dir/src/text.cpp.o
-game: CMakeFiles/game.dir/src/texture.cpp.o
-game: CMakeFiles/game.dir/src/transform.cpp.o
-game: CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o
-game: CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o
-game: CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o
-game: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o
-game: CMakeFiles/game.dir/src/ven/ven_main.cpp.o
-game: CMakeFiles/game.dir/src/ven/ven_text.cpp.o
-game: CMakeFiles/game.dir/src/window.cpp.o
-game: CMakeFiles/game.dir/build.make
-game: glad/libglad.a
-game: stb/libstb.a
-game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable game"
+bin/game: CMakeFiles/game.dir/src/01_create_a_window.cpp.o
+bin/game: CMakeFiles/game.dir/src/02_hello_triangle.cpp.o
+bin/game: CMakeFiles/game.dir/src/03_element_buffer.cpp.o
+bin/game: CMakeFiles/game.dir/src/04_shaders.cpp.o
+bin/game: CMakeFiles/game.dir/src/05_transformations.cpp.o
+bin/game: CMakeFiles/game.dir/src/ABGR/ABGR.cpp.o
+bin/game: CMakeFiles/game.dir/src/CG.cpp.o
+bin/game: CMakeFiles/game.dir/src/GLUT/bitmap.cpp.o
+bin/game: CMakeFiles/game.dir/src/c_tut/c_tut.cpp.o
+bin/game: CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o
+bin/game: CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o
+bin/game: CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o
+bin/game: CMakeFiles/game.dir/src/camera.cpp.o
+bin/game: CMakeFiles/game.dir/src/codemath/button.cpp.o
+bin/game: CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o
+bin/game: CMakeFiles/game.dir/src/default_main.cpp.o
+bin/game: CMakeFiles/game.dir/src/example/example.cpp.o
+bin/game: CMakeFiles/game.dir/src/example/example01.cpp.o
+bin/game: CMakeFiles/game.dir/src/main.cpp.o
+bin/game: CMakeFiles/game.dir/src/menu.cpp.o
+bin/game: CMakeFiles/game.dir/src/mesh.cpp.o
+bin/game: CMakeFiles/game.dir/src/mysql/mysql.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/example01.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/example02.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/example03.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/example04.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/misc.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/misc_center_dot.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/misc/monster.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_01.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_02.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_03.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_04.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_05.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_06.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_07.cpp.o
+bin/game: CMakeFiles/game.dir/src/new/new_08.cpp.o
+bin/game: CMakeFiles/game.dir/src/obj_loader.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapter.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_03.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_04.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_05.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_06.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_07.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_08.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/chapters/chapter_09.cpp.o
+bin/game: CMakeFiles/game.dir/src/red/red.cpp.o
+bin/game: CMakeFiles/game.dir/src/shader.cpp.o
+bin/game: CMakeFiles/game.dir/src/share.cpp.o
+bin/game: CMakeFiles/game.dir/src/simple/main.cpp.o
+bin/game: CMakeFiles/game.dir/src/simple/shader.cpp.o
+bin/game: CMakeFiles/game.dir/src/simple/simple.cpp.o
+bin/game: CMakeFiles/game.dir/src/simple/swindow.cpp.o
+bin/game: CMakeFiles/game.dir/src/text.cpp.o
+bin/game: CMakeFiles/game.dir/src/texture.cpp.o
+bin/game: CMakeFiles/game.dir/src/transform.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/chapters/chapter_01.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/chapters/chapter_02.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/chapters/chapter_03.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/ven_main.cpp.o
+bin/game: CMakeFiles/game.dir/src/ven/ven_text.cpp.o
+bin/game: CMakeFiles/game.dir/src/window.cpp.o
+bin/game: CMakeFiles/game.dir/src/xlib/button.cpp.o
+bin/game: CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o
+bin/game: CMakeFiles/game.dir/build.make
+bin/game: glad/libglad.a
+bin/game: stb/libstb.a
+bin/game: CMakeFiles/game.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/viktor/master/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Linking CXX executable bin/game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/game.dir/build: game
+CMakeFiles/game.dir/build: bin/game
 
 .PHONY : CMakeFiles/game.dir/build
 
@@ -1699,6 +1855,9 @@ CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/c_tut/c_tut.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/camera.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/codemath/button.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/default_main.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/example/example.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/example/example01.cpp.o.requires
@@ -1722,6 +1881,7 @@ CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/new/new_05.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/new/new_06.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/new/new_07.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/new/new_08.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/obj_loader.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/red/chapter.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o.requires
@@ -1749,6 +1909,8 @@ CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/chapters/chapter_04.cp
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/ven_main.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/ven/ven_text.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/window.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/xlib/button.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o.requires
 
 .PHONY : CMakeFiles/game.dir/requires
 

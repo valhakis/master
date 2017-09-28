@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+  </head>
+  <body>
+
+    <a href="/opengl">Home</a>
+
+    <h1>OpenGL Chat System</h1>
+
+    <ul>
+      <li>message</li>
+      <li>message</li>
+      <li>message</li>
+    </ul>
+
+    <form>
+      <input type="text" name="message">
+      <button>send</button>
+    </form>
+
+    {{> footer}}
+
+    <script src="/socket.io-client/socket.io.min.js"></script>
+    <script src="/opengl/chat.js"></script>
+  </body>
+</html>

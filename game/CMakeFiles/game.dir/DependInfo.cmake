@@ -16,6 +16,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/viktor/master/game/src/c_tut/c_tut_01.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/c_tut/c_tut_01.cpp.o"
   "/home/viktor/master/game/src/c_tut/c_tut_02.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o"
   "/home/viktor/master/game/src/c_tut/c_tut_03.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o"
+  "/home/viktor/master/game/src/camera.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/camera.cpp.o"
+  "/home/viktor/master/game/src/codemath/button.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/codemath/button.cpp.o"
+  "/home/viktor/master/game/src/codemath/codemath_main.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o"
   "/home/viktor/master/game/src/default_main.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/default_main.cpp.o"
   "/home/viktor/master/game/src/example/example.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/example/example.cpp.o"
   "/home/viktor/master/game/src/example/example01.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/example/example01.cpp.o"
@@ -39,6 +42,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/viktor/master/game/src/new/new_06.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/new/new_06.cpp.o"
   "/home/viktor/master/game/src/new/new_07.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/new/new_07.cpp.o"
   "/home/viktor/master/game/src/new/new_08.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/new/new_08.cpp.o"
+  "/home/viktor/master/game/src/obj_loader.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/obj_loader.cpp.o"
   "/home/viktor/master/game/src/red/chapter.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/red/chapter.cpp.o"
   "/home/viktor/master/game/src/red/chapters/chapter_01.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/red/chapters/chapter_01.cpp.o"
   "/home/viktor/master/game/src/red/chapters/chapter_02.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/red/chapters/chapter_02.cpp.o"
@@ -66,6 +70,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/viktor/master/game/src/ven/ven_main.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/ven_main.cpp.o"
   "/home/viktor/master/game/src/ven/ven_text.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/ven/ven_text.cpp.o"
   "/home/viktor/master/game/src/window.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/window.cpp.o"
+  "/home/viktor/master/game/src/xlib/button.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/xlib/button.cpp.o"
+  "/home/viktor/master/game/src/xlib/xlib_main.cpp" "/home/viktor/master/game/CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mustache</title>
+    <link rel="stylesheet" href="/mustache/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-tomorrow.css">
+  </head>
+  <body>
+
+    <h1>Mustache</h1>
+
+    <a href="/mustache/home">Mustache Home</a>
+
+    <pre><code class="language-bash">&gt; npm install --save mustache</code></pre>
+    <pre><code class="language-bash">&gt; bower install --save mustache</code></pre>
+    <pre><code class="language-bash">&gt; npm install -g mustache</code></pre>
+    <pre><code class="language-bash">&gt; mustache dataView.json template.mustache &gt; output.html </code></pre>
+
+    <div id="target">Loading ...</div>
+
+    <div id="target-2">Loading ...</div>
+
+    <div style="border-top: 1px solid #000; padding-top: 6px;">
+      <a href="/">Home</a>
+    </div>
+
+    <script id="template" type="x-tmpl-mustache">
+      Hello {{ name }} !
+    </script>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/mustache/mustache.min.js"></script>
+    <script src="/prismjs/prism.js"></script>
+    <script src="/prismjs/components/prism-bash.js"></script>
+
+    <script src="/mustache/main.js"></script>
+  </body>
+</html>

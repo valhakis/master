@@ -3,7 +3,7 @@
 function cmake_run {
   if cmake . ; then
     if make -f Makefile ; then
-      ./game ven
+      game 
     fi
   fi
 }

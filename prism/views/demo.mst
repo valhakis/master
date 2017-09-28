@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prism Demo</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+    <link rel="stylesheet" href="/prism/style.css">
+  </head>
+  <body>
+
+    <h1>Prism Demo</h1>
+
+    <a href="/prism">Prism Home</a>
+
+    <h4>Dolor et a.</h4>
+    <p>Consectetur itaque in qui sapiente molestiae? Unde nihil illo minus mollitia suscipit ipsam. Repudiandae exercitationem explicabo quos exercitationem repellendus Eaque consequatur molestiae quasi inventore ipsa molestias Suscipit ea consequatur pariatur?</p>
+
+    <raw-code file="/prism/raw/example.html" lang="html"></raw-code>
+
+    <raw-code file="/prism/raw/main.c" lang="c"></raw-code>
+
+    <raw-code file="/prism/raw/main.js" lang="js"></raw-code>
+
+    <raw-code file="/prism/raw/main.cc" lang="cpp"></raw-code>
+
+    <raw-code file="/prism/raw.js" lang="javascript"></raw-code>
+
+    <raw-code file="/prism/demo" lang="html"></raw-code>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/prism/raw.js"></script>
+
+  </body>
+</html>

@@ -30,14 +30,20 @@ var nodemon = {
 	watch: [
 		App.masterRoot("server"),
 		App.masterRoot("rest/app"),
+		App.masterRoot("mongodb/app"),
+		App.masterRoot("opengl/app"),
 		App.masterRoot("W3/app"),
 		App.masterRoot("mongo/app"),
+		App.masterRoot("code/app"),
 		App.masterRoot("2017-08-19/app"),
 		App.masterRoot("sqlite/app"),
 		App.masterRoot("current/app"),
 		App.masterRoot("game/dev"),
+		App.masterRoot("mustache/app"),
 		App.masterRoot("2017-09-05/app"),
 		App.masterRoot("posts/app"),
+		App.masterRoot("prism/app"),
+		App.masterRoot("regular-expressions/app"),
 	],
 	ignore: [
 	]
@@ -70,7 +76,7 @@ bs.init({
     rule: {
       match: /^/i,
       fn: function (snippet, match) {
-        console.log('MATCH');
+        // console.log('MATCH');
         return snippet + match;
       }
     }
@@ -106,7 +112,13 @@ bs.watch([
   App.masterRoot('lib/**/*.{html,js,css}'),
   App.masterRoot('css/**/*.css'),
 	App.masterRoot('current/public/**/*.{html,js,css}'),
+	App.masterRoot('code/public/**/*.{html,js,css}'),
+	App.masterRoot('mustache/{public,views,partials}/**/*.{html,js,css,mst}'),
+	App.masterRoot('mongodb/{public,views,partials}/**/*.{html,js,css,mst}'),
+	App.masterRoot('opengl/{public,views,partials}/**/*.{html,js,css,mst}'),
+	App.masterRoot('prism/{public,views,partials}/**/*.{html,js,css,mst}'),
 	App.masterRoot('posts/views/**/*.{html,hbs}'),
+	App.masterRoot('regular-expressions/public/**/*.{html,css,js}'),
 ]).on('change', bs.reload);
 
 console.log('DEVELOPMENT SERVER HAS STARTED');

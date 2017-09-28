@@ -16,6 +16,7 @@ libs += -I/usr/include/SDL2
 
 libs += -ldl
 libs += -lglad
+libs += -lX11
 libs += -lstb
 libs += -D_REENTRANT 
 libs += -lfreetype

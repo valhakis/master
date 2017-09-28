@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prism</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/prism/style.css">
+  </head>
+  <body>
+
+    <h1>Prism Home</h1>
+
+    <a href="/prism/demo">demo</a>
+
+    <raw-code file="/prism/raw/example.html" lang="html"></raw-code>
+    <raw-code file="/prism/raw/main.cc" lang="cpp"></raw-code>
+
+    <select id="select" name="select"></select>
+
+    <div id="local-storage"></div>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/prism/raw.js"></script>
+    <script src="/prism/script.js"></script>
+  </body>
+</html>

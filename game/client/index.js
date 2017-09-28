@@ -1,4 +1,9 @@
 import './style.scss';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+// dark, tomorrow, twilight
+import 'prismjs/themes/prism-twilight.css';
 
 import angular from 'angular';
 import moment from 'moment';

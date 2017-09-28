@@ -43,9 +43,27 @@ CMakeFiles/game.dir/src/c_tut/c_tut_02.cpp.o
  /home/viktor/master/game/src/c_tut/c_tut_02.cpp
 CMakeFiles/game.dir/src/c_tut/c_tut_03.cpp.o
  /home/viktor/master/game/src/c_tut/c_tut_03.cpp
+CMakeFiles/game.dir/src/camera.cpp.o
+ /home/viktor/master/game/src/camera.cpp
+CMakeFiles/game.dir/src/codemath/button.cpp.o
+ /home/viktor/master/game/src/codemath/button.cpp
+ /usr/include/freetype2/freetype/config/ftheader.h
+ /usr/include/freetype2/ft2build.h
+ glad/include/KHR/khrplatform.h
+ glad/include/glad/glad.h
+ include/app/CG.h
+ include/codemath.h
+ include/linmath.h
+CMakeFiles/game.dir/src/codemath/codemath_main.cpp.o
+ /home/viktor/master/game/src/codemath/codemath_main.cpp
+ glad/include/KHR/khrplatform.h
+ glad/include/glad/glad.h
+ include/app/CG.h
+ include/codemath.h
 CMakeFiles/game.dir/src/default_main.cpp.o
  /home/viktor/master/game/src/default_main.cpp
  include/app/WAY.h
+ include/app/camera.h
  include/app/main.h
  include/app/menu.h
  include/app/mesh.h
@@ -55,6 +73,7 @@ CMakeFiles/game.dir/src/default_main.cpp.o
  include/app/texture.h
  include/app/transform.h
  include/app/window.h
+ include/obj_loader.h
 CMakeFiles/game.dir/src/example/example.cpp.o
  /home/viktor/master/game/src/example/example.cpp
  include/app/example.h
@@ -67,6 +86,7 @@ CMakeFiles/game.dir/src/main.cpp.o
  include/app/ABGR/ABGR.h
  include/app/WAY.h
  include/app/c_tut.h
+ include/app/camera.h
  include/app/debug.h
  include/app/default.h
  include/app/example.h
@@ -83,8 +103,10 @@ CMakeFiles/game.dir/src/main.cpp.o
  include/app/transform.h
  include/app/window.h
  include/linmath.h
+ include/obj_loader.h
 CMakeFiles/game.dir/src/menu.cpp.o
  /home/viktor/master/game/src/menu.cpp
+ include/app/camera.h
  include/app/menu.h
  include/app/shader.h
  include/app/transform.h
@@ -93,6 +115,7 @@ CMakeFiles/game.dir/src/mesh.cpp.o
  /home/viktor/master/game/src/mesh.cpp
  include/app/mesh.h
  include/app/share.h
+ include/obj_loader.h
 CMakeFiles/game.dir/src/mysql/mysql.cpp.o
  /home/viktor/master/game/src/mysql/mysql.cpp
  include/app/mysql/mysql.h
@@ -188,6 +211,9 @@ CMakeFiles/game.dir/src/new/new_08.cpp.o
  include/app/new.h
  include/linmath.h
  include/stb_image.h
+CMakeFiles/game.dir/src/obj_loader.cpp.o
+ /home/viktor/master/game/src/obj_loader.cpp
+ include/obj_loader.h
 CMakeFiles/game.dir/src/red/chapter.cpp.o
  /home/viktor/master/game/src/red/chapter.cpp
  include/app/red.h
@@ -214,6 +240,7 @@ CMakeFiles/game.dir/src/red/red.cpp.o
  include/app/red.h
 CMakeFiles/game.dir/src/shader.cpp.o
  /home/viktor/master/game/src/shader.cpp
+ include/app/camera.h
  include/app/shader.h
  include/app/share.h
  include/app/transform.h
@@ -243,6 +270,7 @@ CMakeFiles/game.dir/src/text.cpp.o
  /home/viktor/master/game/src/text.cpp
  /usr/include/freetype2/freetype/config/ftheader.h
  /usr/include/freetype2/ft2build.h
+ include/app/camera.h
  include/app/shader.h
  include/app/text.h
  include/app/transform.h
@@ -301,3 +329,8 @@ CMakeFiles/game.dir/src/window.cpp.o
  /home/viktor/master/game/src/window.cpp
  include/app/share.h
  include/app/window.h
+CMakeFiles/game.dir/src/xlib/button.cpp.o
+ /home/viktor/master/game/src/xlib/button.cpp
+CMakeFiles/game.dir/src/xlib/xlib_main.cpp.o
+ /home/viktor/master/game/src/xlib/xlib_main.cpp
+ include/xlib.h

@@ -1,0 +1,6 @@
+xlib.background: #FF0000
+!xlib.font: -*-courier-*-14-*
+xlib.font: fixed
+xlib.color: #FF0000
+
+tutorial06.color: #FFFF00

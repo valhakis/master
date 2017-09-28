@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MONGODB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mongodb/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-dark.css">
+  </head>
+  <body>
+
+    <h1>MONGODB</h1>
+
+    <a href="/mongodb/demo">demo</a>
+
+    <h3>CREATE A DATABASE</h3>
+    <raw-code file="/mongodb/raw/create_db.js" lang="javascript"></raw-code>
+
+    <h3>CREATE A COLLECTION</h3>
+    <raw-code file="/mongodb/raw/create_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT INTO COLLECTION</h3>
+    <raw-code file="/mongodb/raw/insert_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT MANY INTO COLLECTION</h3>
+    <raw-code file="/mongodb/raw/insert_many_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT CUSTOMER WITH AN _id INTO COLLECTION</h3>
+    <raw-code file="/mongodb/raw/insert_with_id.js" lang="javascript"></raw-code>
+
+    <button>Connect and disconnect mongodb.</button>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/mongodb/raw.js"></script>
+  </body>
+</html>

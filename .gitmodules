@@ -4,3 +4,9 @@
 [submodule "LaoSystem"]
 	path = LaoSystem
 	url = https://ruudi170@gitlab.com/kodu/LaoSystem.git
+[submodule "uTox"]
+	path = uTox
+	url = https://github.com/notsecure/uTox
+[submodule "LearnOpenGL"]
+	path = LearnOpenGL
+	url = https://github.com/JoeyDeVries/LearnOpenGL

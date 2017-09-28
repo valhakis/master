@@ -1,0 +1,2 @@
+glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
