@@ -16,6 +16,18 @@ app.get('/demo', function(req, res) {
   Loc.render('demo', req, res);
 });
 
+app.get('/compact', function(req, res) {
+  Loc.render('compact', req, res);
+});
+
+app.get('/tasks', function(req, res) {
+  Loc.render('tasks', req, res);
+});
+
+app.get('/tasks/task-01', function(req, res) {
+  Loc.render('tasks/task-01', req, res);
+});
+
 app.get('/demo/create_db', db.create_db);
 app.get('/demo/create_collection', db.create_collection);
 app.get('/demo/insert_to_collection', db.insert_to_collection);

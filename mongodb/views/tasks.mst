@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>M TASKS</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mongodb/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-dark.css">
+  </head>
+  <body>
+
+    <h1>MONGODB TASKS</h1>
+
+    <a href="/mongodb">Home</a>
+
+    <ul>
+      <li><a href="/mongodb/tasks/task-01">Make a connection to MongoDB.</a></li>
+      <li><a href="/mongodb/tasks/task-02">Add new collection named 'gods'.</a></li>
+      <li><a href="/mongodb/tasks/task-03">Insert one god named 'The God' into collection as document.</a></li>
+      <li><a href="/mongodb/tasks/task-04">Insert list of gods to the collection.</a></li>
+      <li><a href="/mongodb/tasks/task-05">Insert your self with and _id of 1.</a></li>
+      <li><a href="/mongodb/tasks/task-06">Find the first document.</a></li>
+      <li><a href="/mongodb/tasks/task-07">Find the document where is your name.</a></li>
+      <li><a href="/mongodb/tasks/task-08">Find all the documents.</a></li>
+      <li><a href="/mongodb/tasks/task-09">Find documents that are not removed.</a></li>
+      <li><a href="/mongodb/tasks/task-10">Find documents that are created less than 5 minutes ago.</a></li>
+      <li><a href="/mongodb/tasks/task-11">Find documents that start with a letter 'W' or 'V'.</a></li>
+      <li><a href="/mongodb/tasks/task-12">Sort the documents by createdAt.</a></li>
+      <li><a href="/mongodb/tasks/task-13">Sort the documents by createdAt descendingly.</a></li>
+      <li><a href="/mongodb/tasks/task-14">Delete the second document.</a></li>
+      <li><a href="/mongodb/tasks/task-15">Drop the collection.</a></li>
+      <li><a href="/mongodb/tasks/task-16">Update document where is your name to 'God yourname'</a></li>
+      <li><a href="/mongodb/tasks/task-17">Add a field 'description' to document where is your name, with contents of 'The God of Gods.'</a></li>
+      <li><a href="/mongodb/tasks/task-18">Update all the documents descriptions to 'Less God of the God of Gods.'.</a></li>
+      <li><a href="/mongodb/tasks/task-19">Find 5 latest created documents.</a></li>
+      <li><a href="/mongodb/tasks/task-20">Find 5 latest modified documents.</a></li>
+      <li><a href="/mongodb/tasks/task-21">Create a new collection named 'followers'</a></li>
+      <li><a href="/mongodb/tasks/task-22">Insert randomly 1 to 20 followers to each God.</a></li>
+      <li><a href="/mongodb/tasks/task-23">Find all 'followers' and their God.</a></li>
+      <li><a href="/mongodb/tasks/task-24">Find all documents with their followers.</a></li>
+    </ul>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/mongodb/raw.js"></script>
+  </body>
+</html>

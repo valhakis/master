@@ -66,6 +66,8 @@ module.exports = function(app) {
 	app.use('/opengl', App.masterRequire('opengl/app'));
 	app.use('/prism', App.masterRequire('prism/app'));
 	app.use('/mongodb', App.masterRequire('mongodb/app'));
+	app.use('/node', App.masterRequire('node/app'));
+	app.use('/standard', App.masterRequire('standard/app'));
 	app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 
 	app.get('/todo', function(req, res) {

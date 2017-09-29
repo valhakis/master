@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>STANDARD</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/standard/style.css">
+  </head>
+  <body>
+
+    <ul>
+      <li>Standard
+        <ul>
+          <li>title</li>
+          <li>description</li>
+          <li>code</li>
+          <li>createdAt</li>
+          <li>updatedAt</li>
+          <li>removedAt</li>
+          <li>ownerName</li>
+        </ul>
+      </li>
+    </ul>
+
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>MONGODB</title>
+    <title>M INDEX</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/mongodb/style.css">
     <link rel="stylesheet" href="/prismjs/themes/prism-dark.css">
@@ -12,6 +12,8 @@
     <h1>MONGODB</h1>
 
     <a href="/mongodb/demo">demo</a>
+    <a href="/mongodb/compact">compact</a>
+    <a href="/mongodb/tasks">tasks</a>
 
     <h3>CREATE A DATABASE</h3>
     <raw-code file="/mongodb/raw/create_db.js" lang="javascript"></raw-code>

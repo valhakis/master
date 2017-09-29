@@ -49,5 +49,23 @@ App.masterStatic = function(location) {
 	return express.static(this._masterRoot + '/' + location);
 };
 
+App.createLoc = function(location) {
+  var Loc = {
+    _root: path.join(location[0]?location[0]:'', location[1]?location[1]:'', location[2]?location[2]:'', location[3]?location[3]:''),
+    root: function(name) {
+      return this._root + '/' + name;
+    },
+    require: function(name) {
+      return require(this._root + '/' + name);
+    },
+    static: function(name) {
+      return express.static(this._root + '/' + name);
+    }
+  };
+  return Loc;
+};
+
+App.loc = {};
+
 module.exports = App;
 

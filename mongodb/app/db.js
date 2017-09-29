@@ -1,7 +1,7 @@
 var fs = require('fs');
 var mongodb = require('mongodb');
 
-var Loc = require('./Loc');
+var Loc = App.loc['mongodb'];
 
 var MongoClient = mongodb.MongoClient;
 var mongoUrl = 'mongodb://localhost:27017/mongodb';

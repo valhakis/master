@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>N CUSTOM</title>
+  </head>
+  <body>
+
+    <h1>NODE CUSTOM</h1>
+
+    <a href="/node">Node Home</a>
+
+    <h3>CREATE HTTP SERVER</h3>
+    <custom-raw-code file="http_server.js" lang="javascript"></custom-raw-code>
+
+    <h3>CONTENT TYPE</h3>
+    <custom-raw-code file="content_type.js" lang="javascript"></custom-raw-code>
+
+    <script src="/node/custom.js"></script>
+  </body>
+</html>

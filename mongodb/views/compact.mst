@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>M COMPACT</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mongodb/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+  </head>
+  <body>
+
+    <h1>MONGODB COMPACT</h1>
+
+    <a href="/mongodb">Home</a>
+
+    <h3>CONNECT TO DATABASE</h3>
+    <raw-code file="/mongodb/raw/compact/connection.js" lang="javascript"></raw-code>
+
+    <h3>CREATE A COLLECTION</h3>
+    <raw-code file="/mongodb/raw/compact/create_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT INTO COLLECTION</h3>
+    <raw-code file="/mongodb/raw/compact/insert_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT MANY INTO COLLECTION</h3>
+    <raw-code file="/mongodb/raw/compact/insert_many_collection.js" lang="javascript"></raw-code>
+
+    <h3>INSERT INTO COLLECTION, DOCUMENT CONTAINS _id</h3>
+    <raw-code file="/mongodb/raw/compact/insert_id_collection.js" lang="javascript"></raw-code>
+
+    <h3>FIND ONE DOCUMENT</h3>
+    <raw-code file="/mongodb/raw/compact/find_one_document.js" lang="javascript"></raw-code>
+
+    <h3>FIND ALL DOCUMENTS</h3>
+    <raw-code file="/mongodb/raw/compact/find_all_documents.js" lang="javascript"></raw-code>
+
+    <h3>FIND CERTAIN DOCUMENTS</h3>
+    <raw-code file="/mongodb/raw/compact/find_certain_documents.js" lang="javascript"></raw-code>
+
+    <h3>FIND QUERY DOCUMENT</h3>
+    <raw-code file="/mongodb/raw/compact/find_query_document.js" lang="javascript"></raw-code>
+
+    <h3>FIND DOCUMENT USING REGULAR EXPRESSION</h3>
+    <raw-code file="/mongodb/raw/compact/find_regular_expression.js" lang="javascript"></raw-code>
+
+    <h3>SORT THE RESULT</h3>
+    <raw-code file="/mongodb/raw/compact/find_sort_result.js" lang="javascript"></raw-code>
+
+    <h3>SORT THE RESULT DESCENDING</h3>
+    <raw-code file="/mongodb/raw/compact/find_sort_descending_result.js" lang="javascript"></raw-code>
+
+    <h3>DELETE ONE DOCUMENT</h3>
+    <raw-code file="/mongodb/raw/compact/delete_document.js" lang="javascript"></raw-code>
+
+    <h3>DELETE MANY DOCUMENTS</h3>
+    <raw-code file="/mongodb/raw/compact/delete_many_documents.js" lang="javascript"></raw-code>
+
+    <h3>DROP THE COLLECTION</h3>
+    <raw-code file="/mongodb/raw/compact/drop_collection.js" lang="javascript"></raw-code>
+
+    <h3>UPDATE ONE DOCUMENT</h3>
+    <raw-code file="/mongodb/raw/compact/update_document.js" lang="javascript"></raw-code>
+
+    <h3>UPDATE ONLY SPECIFIC FIELDS</h3>
+    <raw-code file="/mongodb/raw/compact/update_document_specific_fields.js" lang="javascript"></raw-code>
+
+    <h3>UPDATE MANY DOCUMENTS</h3>
+    <raw-code file="/mongodb/raw/compact/update_many_documents.js" lang="javascript"></raw-code>
+
+    <h3>LIMIT DOCUMENT COUNT</h3>
+    <raw-code file="/mongodb/raw/compact/limit_document_count.js" lang="javascript"></raw-code>
+
+    <h3>RELATION</h3>
+    <raw-code file="/mongodb/raw/compact/relation.js" lang="javascript"></raw-code>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/mongodb/raw.js"></script>
+  </body>
+</html>
