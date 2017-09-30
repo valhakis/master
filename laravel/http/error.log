@@ -1,0 +1,8 @@
+[Sat Sep 30 06:33:38.451551 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52450] AH01630: client denied by server configuration: /home/viktor/master/laravel/
+[Sat Sep 30 06:33:38.987160 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52450] AH01630: client denied by server configuration: /home/viktor/master/laravel/favicon.ico, referer: http://kodu.me:2001/
+[Sat Sep 30 06:33:49.695480 2017] [authz_core:error] [pid 6291] [client 192.168.0.3:52454] AH01630: client denied by server configuration: /home/viktor/master/laravel/public
+[Sat Sep 30 06:33:49.830477 2017] [authz_core:error] [pid 6291] [client 192.168.0.3:52454] AH01630: client denied by server configuration: /home/viktor/master/laravel/favicon.ico, referer: http://kodu.me:2001/public
+[Sat Sep 30 06:34:18.148784 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52462] AH01630: client denied by server configuration: /home/viktor/master/laravel/example.html
+[Sat Sep 30 06:34:18.308237 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52462] AH01630: client denied by server configuration: /home/viktor/master/laravel/favicon.ico, referer: http://kodu.me:2001/example.html
+[Sat Sep 30 06:34:19.602624 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52462] AH01630: client denied by server configuration: /home/viktor/master/laravel/example.html
+[Sat Sep 30 06:34:19.724141 2017] [authz_core:error] [pid 6289] [client 192.168.0.3:52462] AH01630: client denied by server configuration: /home/viktor/master/laravel/favicon.ico, referer: http://kodu.me:2001/example.html

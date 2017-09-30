@@ -122,6 +122,7 @@ bs.watch([
 	App.masterRoot('prism/{public,views,partials}/**/*.{html,js,css,mst}'),
 	App.masterRoot('node/{public,views,partials}/**/*.{html,js,css,mst}'),
 	App.masterRoot('standard/{public,views,partials}/**/*.{html,js,css,mst}'),
+	App.masterRoot('laravel/{routes,public,resources}/**/*.{html,js,css,mst,scss,php}'),
 	App.masterRoot('posts/views/**/*.{html,hbs}'),
 	App.masterRoot('regular-expressions/public/**/*.{html,css,js}'),
 ]).on('change', bs.reload);

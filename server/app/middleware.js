@@ -74,6 +74,7 @@ module.exports = function(app) {
 		res.send("I HAVE TO DO EVERYTHING");
 	});
 	app.use('/php', proxy('http://192.168.0.3:2000'));
+	app.use('/laravel', proxy('http://192.168.0.3:2001'));
   return new Promise(function(resolve) {
     resolve();
   });
