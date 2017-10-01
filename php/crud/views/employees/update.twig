@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1>EMPLOYEE CREATE</h1>
+<h1>EMPLOYEE UPDATE</h1>
 
 {# Kari Mcbride #}
 {# Domingo Scott #}
@@ -24,18 +24,18 @@
 
 <a href="{{ base ~ '/employees' }}">Employees Home</a>
 
-<form action="{{ base ~ '/employees/store' }}" method="POST">
+<form action="{{ base ~ '/employees/update/' ~ employee.id }}" method="POST">
   <div>
     <label for="name">Name: </label>
-    <input id="name" type="text" name="name" placeholder="Place name here." autofocus>
+    <input id="name" type="text" name="name" placeholder="Place name here." autofocus value="{{ employee.name }}">
   </div>
   <div>
     <label for="address">Address: </label>
-    <input id="address" type="text" name="address" placeholder="Place address here.">
+    <input id="address" type="text" name="address" placeholder="Place address here." value="{{ employee.address }}">
   </div>
   <div>
     <label for="salary">Salary: </label>
-    <input id="salary" type="number" name="salary" placeholder="Place salary here.">
+    <input id="salary" type="number" name="salary" placeholder="Place salary here." value="{{ employee.salary }}">
   </div>
 
   <button type="submit">Submit Employee</button>
