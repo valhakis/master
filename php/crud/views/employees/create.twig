@@ -1,0 +1,44 @@
+{% extends 'lay/base.twig' %}
+
+{% block body %}
+
+<h1>EMPLOYEES INDEX</h1>
+
+{# Kari Mcbride #}
+{# Domingo Scott #}
+{# Sidney Robinson #}
+{# Fredrick Hawkins #}
+{# Marty Ferguson #}
+{# Ora Cooper #}
+{# Kathryn Hansen #}
+{# Sally Hale #}
+{# Chelsea Cobb #}
+{# Eleanor Reynolds #}
+
+{# 123 6th St. Melbourne, FL 32904 #}
+{# 71 Pilgrim Avenue Chevy Chase, MD 20815 #}
+{# 70 Bowman St. South Windsor, CT 06074 #}
+{# 4 Goldfield Rd. Honolulu, HI 96815 #}
+{# 44 Shirley Ave. West Chicago, IL 60185 #}
+{# 514 S. Magnolia St. Orlando, FL 32806 #}
+
+<a href="{{ base ~ '/employees' }}">Employees Home</a>
+
+<form action="{{ base ~ '/employees/store' }}" method="POST">
+  <div>
+    <label for="name">Name: </label>
+    <input id="name" type="text" name="name" placeholder="Place name here." autofocus>
+  </div>
+  <div>
+    <label for="address">Address: </label>
+    <input id="address" type="text" name="address" placeholder="Place address here.">
+  </div>
+  <div>
+    <label for="salary">Salary: </label>
+    <input id="salary" type="number" name="salary" placeholder="Place salary here.">
+  </div>
+
+  <button type="submit">Submit Employee</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% set base = '/php/crud/index.php' %}
+{% set public = '/php/crud/public' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ public ~ '/style.css' }}">
+  </head>
+  <body>
+
+    {% include 'inc/navigation.twig' %}
+
+    <h1>CRUD</h1>
+
+    {% block body %} {% endblock %}
+
+  </body>
+</html>

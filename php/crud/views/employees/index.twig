@@ -1,0 +1,19 @@
+{% extends 'lay/base.twig' %}
+
+{% block body %}
+
+<h1>EMPLOYEES INDEX</h1>
+
+<a href="{{ base ~ '/employees/create' }}">Add Employee</a>
+
+<ul>
+  {% for employee in employees %}
+  <li>
+    <h4>{{ employee.name }}</h4>
+    <p>Salary: {{ employee.salary }}$</p>
+    <p>Address: {{ employee.address }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

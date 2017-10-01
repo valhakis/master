@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
+Plug 'evidens/vim-twig'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'juvenn/mustache.vim'
 Plug 'scrooloose/nerdtree' 
