@@ -7,6 +7,7 @@
     "/home/viktor/master/share",
     "/home/viktor/master/W3/app",
     "/home/viktor/master/mongo/app",
+    "/home/viktor/master/bootstrap/app",
     "/home/viktor/master/code/app",
     "/home/viktor/master/2017-08-19/app",
     "/home/viktor/master/sqlite/app",
@@ -17,6 +18,8 @@
     "/home/viktor/master/standard/app",
     "/home/viktor/master/2017-09-05/app",
     "/home/viktor/master/posts/app",
+    "/home/viktor/master/demo/app",
+    "/home/viktor/master/angular/app",
     "/home/viktor/master/prism/app",
     "/home/viktor/master/regular-expressions/app"
   ],

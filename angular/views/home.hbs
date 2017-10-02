@@ -1,0 +1,246 @@
+{{#extend "layout"}}
+
+{{#content "body"}}
+
+<h1>Home</h1>
+<p>Lorem eligendi ea natus deserunt quaerat id dolores? Aut ullam distinctio tempore assumenda assumenda. Sint ad necessitatibus natus cum accusantium. Esse molestias rem dignissimos sit odio? Accusamus labore ex magnam.</p>
+
+<div class="example">
+  <h3>Angular Static Example 01</h3>
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p><b>Hello <% name %></b></p>
+
+  <p><small>Binds the name model to input and outputs it.</small></p>
+</div>
+
+<div class="example">
+  <h3>Angular Static Example 02</h3>
+  <p>Hello, <b ng-bind="name"></b></p>
+
+  <p><small>Binds the name to element.</small></p>
+</div>
+
+<div class="example">
+  <h3>Angular Static Example 03</h3>
+  <div ng-init="name='William'"></div>
+
+  <p><small>Initializes name to 'william'.</small></p>
+</div>
+
+<div class="example">
+  <h3>Angular Static Example 04</h3>
+
+  <p>5 + 5 = <b><% 5 + 5 %></b></p>
+
+  <p><small>Adds two variables.</small></p>
+</div>
+
+<div class="example" ng-init="fname='Viktor'; lname='Valhakis'">
+  <h3>Angular Static Example 05</h3>
+
+  First Name: <input type="text" ng-model="fname">
+  Last Name: <input type="text" ng-model="lname">
+
+  <p>Full Name: <% fname + " " + lname %></p>
+
+  <p><small>Multiple models.</small></p>
+</div>
+
+<div class="example" ng-controller="brilliant">
+  <h3>Angular Static Example 06</h3>
+
+  First Name: <input type="text" ng-model="fname">
+  Last Name: <input type="text" ng-model="lname">
+
+  <p>Full Name: <% fname + " " + lname %></p>
+
+  <p><small>Using a controller.</small></p>
+</div>
+
+<div class="example" ng-init="hex='#FF3333'">
+  <h3>Angular Static Example 07</h3>
+
+  <div style="background-color: <% hex %>; padding: 10px; min-height: 80px; margin-bottom: 10px; text-align: center; vertial-align: middle; line-height: 50px; border: 1px solid rgba(0, 0, 0, 0.3)">
+    <p><% hex %></p>
+  </div>
+
+  Hex: <input type="text" ng-model="hex" value="<% hex %>">
+
+  <p><small>Dynamic color.</small></p>
+</div>
+
+<div class="example" ng-init="money=322;products=[{name: 'Tomato', price: 15, quantity: 9}, {name: 'Potato', price: 8, quantity: 12}]">
+  <h3>Angular Static Example 08</h3>
+  <p><b>Money: </b> <% money %>$</p>
+
+  <div ng-repeat="product in products" style="color: #333333;background-color: #66FF66; padding: 10px 5px; margin-bottom: 5px; border: 1px solid rgba(0, 0, 0, 0.3)">
+    <p style="margin: 0px 0px 10px 0px;">Name: <% product.name %></p>
+    <p style="margin: 0px 0px 10px 0px;">Quantity: <% product.quantity %></p>
+    <p style="margin: 0px 0px 10px 0px;">Price: <% product.price %>$</p>
+    <p style="margin: 0px 0px 10px 0px;">Total cost: <% product.price * product.quantity %>$</p>
+  </div>
+
+  <p><small>Object creation and displayation.</small></p>
+</div>
+
+<div class="example">
+  <h3>Angular Static Example 09 <small style="color: #8888FF; line-height: 0px;">(minimalist)</small></h3>
+
+  <div minimalist></div>
+
+  <p><small>Directive creation.</small></p>
+</div>
+
+<div class="example" ng-controller="country">
+  <h3>Angular Static Example 10 <small style="color: #8888FF; line-height: 0px;">(countries)</small></h3>
+
+  <span class="tag" ng-repeat="country in countries">
+    <% country %>
+  </span>
+
+  <p><small>List of some countries.</small></p>
+</div>
+
+<div class="example" ng-controller="keyword">
+  <h3>Angular Static Example 11 <small style="color: #8888FF; line-height: 0px;">(keywords)</small></h3>
+
+  <span class="tag" ng-repeat="keyword in keywords">
+    <% keyword %>
+  </span>
+
+  <p><small>List of some keywords.</small></p>
+</div>
+
+<div class="example" ng-controller="directive">
+  <h3>Angular Static Example 12 <small style="color: #8888FF; line-height: 0px;">(directives)</small></h3>
+
+
+  <directive-default></directive-default>
+
+  <app-element-directive></app-element-directive>
+  <div app-attribute-directive></div>
+  <div class="app-class-directive"></div>
+  <!-- directive: app-comment-directive -->
+
+  <p><small>Directive usage.</small></p>
+</div>
+
+<div class="example" ng-controller="validate">
+  <h3>Angular Static Example 13 <small style="color: #8888FF; line-height: 0px;">(validate)</small></h3>
+
+  <form name="valid">
+    <div>
+      <label>Email: </label>
+      <input type="email" name="email" ng-model="email" required>
+      <p ng-show="valid.email.$error.email"><small>Not a valid email.</small></p>
+      <p ng-show="valid.email.$touched"><small>Why did you touch this input field ? You bastard!</small></p>
+      <p ng-show="valid.email.$dirty"><small>This email field is kinda dirty.</small></p>
+      <p ng-show="valid.email.$valid"><small>This seems like a valid email filed.</small></p>
+    </div>
+  </form>
+
+  <p><small>Input model validation.</small></p>
+</div>
+
+<div class="example" ng-controller="click">
+  <h3>Angular Static Example 14 <small style="color: #8888FF; line-height: 0px;">(click)</small></h3>
+
+  <p>Name: <% name %></p>
+
+  <button ng-click="changeName('Camilla Maximus')">change name</button>
+
+  <p><small>Angular click method.</small></p>
+</div>
+
+<div class="example" ng-controller="names">
+  <h3>Angular Static Example 15 <small style="color: #8888FF; line-height: 0px;">(list of names)</small></h3>
+
+  <div ng-repeat="name in names" style="background-color: #88FF88; margin-bottom: 5px; padding: 7px 3px 4px 3px; border: 1px solid rgba(0, 0, 0, 0.3);">
+    <% name.fname + " " + name.lname %>
+  </div>
+
+  <p><small>List of names.</small></p>
+</div>
+
+<div class="example" ng-controller="filter">
+  <h3>Angular Static Example 16 <small style="color: #8888FF; line-height: 0px;">(filters)</small></h3>
+
+  <div>
+    <h4>Text to uppercase.</h4>
+    <p><% 'once upon a time' | uppercase %></p>
+  </div>
+
+  <div>
+    <h4>Text to lowercase.</h4>
+    <p><% 'oNce uPoP a tiMe' | lowercase %></p>
+  </div>
+
+  <div>
+    <h4>Sorting.</h4>
+    <h5>Persons by default order.</h5>
+    <div ng-repeat="person in persons" class="item">
+      <p>{<% person.id %>}: <% person.name %></p>
+    </div>
+    <h5>Persons sorted by name.</h5>
+    <div ng-repeat="person in persons | orderBy: 'name'" class="item">
+      <p>{<% person.id %>}: <% person.name %></p>
+    </div>
+    <h5>Persons sorted by id.</h5>
+    <div ng-repeat="person in persons | orderBy: 'id'" class="item">
+      <p>{<% person.id %>}: <% person.name %></p>
+    </div>
+  </div>
+
+  <div>
+    <h4>Currencty filter.</h4>
+    <p>Person has <% 3232 | currency %> in his pocket.</p>
+  </div>
+
+  <div>
+    <h4>Filter by name by user input.</h4>
+    <p>Name: <input type="text" ng-model="name"></p>
+    <div ng-repeat="person in persons | filter: name" class="item">
+      <p>{<% person.id %>}: <% person.name %></p>
+    </div>
+  </div>
+
+  <p><small>Angular filters.</small></p>
+</div>
+
+<div class="example" ng-controller="interactive">
+  <h3>Angular Static Example 17 <small style="color: #8888FF; line-height: 0px;">(interactive filters)</small></h3>
+
+  <div style="margin-bottom: 10px;">
+    <label>Order By: </label>
+    <select ng-model="order">
+      <option value="id">ID</option>
+      <option value="name">Name</option>
+      <option value="country">Country</option>
+    </select>
+  </div>
+
+  <div ng-repeat="person in persons | orderBy: order" class="item">
+    <p>{<% person.id %>}: <% person.name %>, country: <% person.country %></p>
+  </div>
+
+  <p><small>Interactive filters.</small></p>
+</div>
+
+<div class="example" ng-controller="custom-filter">
+  <h3>Angular Static Example 18 <small style="color: #8888FF; line-height: 0px;">(custom filter)</small></h3>
+
+  <p>Name: <% name | red%></p>
+
+  <p><small>Custom Filter</small></p>
+</div>
+
+<div class="example">
+  <h3>Angular Static Example 19 <small style="color: #8888FF; line-height: 0px;">(build in services)</small></h3>
+
+
+  <p><small>Built in services such as $location.</small></p>
+</div>
+
+{{/content}}
+
+{{/extend}}

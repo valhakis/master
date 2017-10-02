@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{#block "head"}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/rest/style.css">
+    {{/block}}
+  </head>
+  <body>
+
+    {{> navigation}}
+
+    <div class="container-fluid">
+      <h1>Bootstrap</h1>
+
+      {{#block "body"}}{{/block}}
+    </div>
+
+    {{> footer}}
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

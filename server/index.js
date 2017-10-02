@@ -1,5 +1,6 @@
 var path = require('path');
 global.App = require('../share/App.js').initialize(path.join(__dirname, '..'));
+global.Loc = require('../share/Loc.js');
 global.App.path = function(name) {
 	return path.join(__dirname, '..') + '/' + name;
 };

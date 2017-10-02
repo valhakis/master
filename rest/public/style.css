@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+#navigation ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+#navigation ul li {
+  display: inline-block;
+}
+#navigation ul li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+#navigation ul li a:hover {
+  color: #F00;
+}
+#navigation ul li a::before {
+  content: "☀ ";
+}
+
+form > div{
+  padding: 5px;
+}
+
+form label {
+  display: inline-block;
+  min-width: 80px;
+}
+
+form label, form input {
+  font-size: 14px;
+  padding: 5px;
+}
+
+form textarea, form input {
+  min-width: 400px;
+}
+
+form textarea {
+  min-height: 150px;
+}
+
+form button {
+  padding: 13px 15px 10px 15px;
+  font-size: 13px;
+}

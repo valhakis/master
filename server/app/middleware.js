@@ -63,6 +63,7 @@ module.exports = function(app) {
   // app.use('/w3', App.masterRequire('W3/app'));
   app.use('/sqlite', App.masterRequire('sqlite/app'));
   app.use('/current', App.masterRequire('current/app'));
+  app.use('/bootstrap', App.masterRequire('bootstrap/app'));
   app.use('/mustache', App.masterRequire('mustache/app'));
   app.use('/2017-09-05', App.masterRequire('2017-09-05/app'));
   app.use('/posts', App.masterRequire('posts/app'));
@@ -71,6 +72,8 @@ module.exports = function(app) {
   app.use('/prism', App.masterRequire('prism/app'));
   app.use('/mongodb', App.masterRequire('mongodb/app'));
   app.use('/node', App.masterRequire('node/app'));
+  app.use('/demo', App.masterRequire('demo/app'));
+  app.use('/angular', App.masterRequire('angular/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 

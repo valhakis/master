@@ -1,0 +1,38 @@
+.example {
+  margin-bottom: 5px;
+  background-color: #FF6;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example > h3 {
+  color: #F3F;
+}
+
+.example input {
+  padding: 5px;
+}
+
+.tag {
+  background-color: #AAAAFF;
+  padding: 8px 5px 5px 5px;
+  font-size: 12px;
+  margin: 5px;
+  display: inline-block;
+  color: #333;
+}
+
+form input.ng-invalid {
+  background-color: #FFAAAA;
+}
+
+.item {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 8px 5px 5px 5px;
+  margin-bottom: 5px;
+  background-color: #7c6ee4;
+  color: #FFFF33;
+}
+
+.item p {
+  margin: 0px;
+}

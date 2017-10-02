@@ -1,0 +1,4 @@
+1. Kernel version of currently running system ? 
+$ uname -a
+
+2. 
