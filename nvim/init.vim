@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
 Plug 'evidens/vim-twig'
+Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'juvenn/mustache.vim'
 Plug 'scrooloose/nerdtree' 
@@ -17,9 +18,10 @@ Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
 Plug 'othree/html5.vim'
 Plug 'jwalton512/vim-blade'
-"Plug 'python-mode/python-mode'
 Plug 'nono/vim-handlebars'
 Plug 'etnadji/vim-epub'
+
+"Plug 'python-mode/python-mode'
 call plug#end()
 
 colorscheme antares
@@ -29,10 +31,8 @@ set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
-
 set autoindent copyindent number
 
-" set softtabstop=0
 " set noexpandtab
 " set shiftround
 
@@ -189,7 +189,7 @@ au filetype vim hi ValBrown ctermfg=brown
 "set listchars+=tab:TE
 "set listchars+=extends:E
 "set listchars+=precedes:B
-set conceallevel=2
+"set conceallevel=2
 
 " set listchars+=tab:\ X
 

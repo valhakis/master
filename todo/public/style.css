@@ -1,25 +1,164 @@
-form, textarea, button {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  display: block;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111111;
+  color: #FFF;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  color: #FFFF44;
+}
+
+a:hover {
+  color: #FF4444;
+}
+
+a::before {
+  content: "-> ";
+  color: #3333FF;
+}
+
+.menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #FFFF00;
+}
+
+.menu li a::before {
+  color: #FF0000;
+}
+
+.menu li a:hover {
+  color: #44FF44;
+}
+
+#footer {
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+  margin-top: 20px;
+  padding-top: 10px;
 }
 
 form {
-  width: 400px;
+  max-width: 500px;
+  margin: 0px auto;
+}
+
+form > div {
+  margin-bottom: 10px;
+}
+
+form input, form textarea, form label {
+  display: block;
+  font-size: 14px;
+}
+
+form label {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+}
+
+form textarea {
+  min-height: 100px;
+}
+
+form input, form textarea {
+  padding: 5px;
+  width: 100%;
+}
+
+form button {
+  padding: 5px 8px;
+}
+
+form input:focus, form textarea:focus, form button:focus {
+  outline-color: #FFFF00;
+}
+
+ul.list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+ul.list li {
+  line-height: 25px;
+}
+
+p.error {
+  color: #FF4444;
+}
+p.success {
+  color: #44FF44;
+}
+
+.todo {
+  background-color: #151515;
+  padding: 5px;
+  margin-bottom: 7px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.todo .title {
+  color: #FFFF44;
+}
+
+.todo .title a {
+  color: #FFFF44;
+}
+
+.todo .title a:hover {
+  color: #FF0000;
+}
+
+.todo .body {
+  margin-bottom: 15px;
+  white-space: pre;
+}
+
+#navigation {
   overflow: hidden;
 }
 
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 200px;
+#navigation .menu:first-child {
+  float: left;
 }
-
-button:hover {
-  background-color: #ccc;
-}
-
-button {
-  margin-top: 10px;
+#navigation .menu:last-child {
   float: right;
+}
+
+.col-red {
+  color: #FF3333;
+}
+
+a {
+  color: #FFFFAA;
+}
+
+.post {
+  background-color: #181818;
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.post .title {
+  color: #FFFF00;
 }

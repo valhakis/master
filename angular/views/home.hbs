@@ -1,4 +1,8 @@
-{{#extend "layout"}}
+{{#extend "base"}}
+
+{{#content "head"}}
+
+{{/content}}
 
 {{#content "body"}}
 
@@ -234,13 +238,243 @@
   <p><small>Custom Filter</small></p>
 </div>
 
-<div class="example">
+<div class="example" ng-controller="built-in-services">
   <h3>Angular Static Example 19 <small style="color: #8888FF; line-height: 0px;">(build in services)</small></h3>
 
+  <h4>($location)</h4>
+  <p>Url: <% url %></p>
+
+  <h4>($http)</h4>
+  <p>Get /angular/anomaly : <% result %></p>
+
+  <h4>($timeout)</h4>
+  <p>Result should be here in 5 seconds: <% timeoutResult %></p>
+
+  <h4>($interval)</h4>
+  <p>Change the following text every second.</p>
+  <p><small><b><% intervalText %></b></small></p>
 
   <p><small>Built in services such as $location.</small></p>
 </div>
 
+<div class="example" ng-controller="custom-service">
+  <h3>Angular Static Example 20 <small style="color: #8888FF; line-height: 0px;">(custom service)</small></h3>
+
+  <p>Name: <% name %></p>
+  <p>Name: <% 'Annabella' | valhakis %></p>
+
+  <p><small>Your own custom service</small></p>
+</div>
+
+<div class="example" ng-controller="http">
+  <h3>Angular Static Example 21 <small style="color: #8888FF; line-height: 0px;">($http)</small></h3>
+
+  <h4>$http.get()</h4>
+  <p>Brilliant: <% brilliant %></p>
+
+  <h4>$http.post()</h4>
+  <p>Brilliant: <% brilliantPostResult %></p>
+
+  <h4>$http.put()</h4>
+  <p>Brilliant: <% brilliantPutResult %></p>
+
+  <h4>$http.patch()</h4>
+  <p>Brilliant: <% brilliantPatchResult %></p>
+
+  <h4>$http.delete()</h4>
+  <p>Brilliant: <% brilliantDeleteResult %></p>
+
+  <p><small>$http [get, post, delete, put] usage.</small></p>
+</div>
+
+<div class="example" ng-controller="name-generator">
+  <h3>Angular Static Example 22 <small style="color: #8888FF; line-height: 0px;">(name generator)</small></h3>
+
+  <button ng-click="generateName()">generate new name</button>
+
+  <p>Generated Name: <% name %></p>
+
+  <p><small>Name generator system.</small></p>
+</div>
+
+<div class="example" ng-controller="address-generator">
+  <h3>Angular Static Example 23 <small style="color: #8888FF; line-height: 0px;">(address generator)</small></h3>
+
+  <button ng-click="generateAddress()">generate new address</button>
+
+  <p>Generated Address: <% address %></p>
+
+  <p><small>Address generator system.</small></p>
+</div>
+
+<div class="example" ng-controller="customers">
+  <h3>Angular Static Example 24 <small style="color: #8888FF; line-height: 0px;">(customers)</small></h3>
+
+  <button ng-click="refresh()">refresh</button>
+
+  <div ng-repeat="customer in customers">
+    <p>Name: <b><% customer.name %></b></p>
+    <p><small><% customer.address %></small></p>
+  </div>
+
+  <p><small>Customers</small></p>
+</div>
+
+<div class="example" ng-controller="customers">
+  <h3>Angular Static Example 25 <small style="color: #8888FF; line-height: 0px;">(customers-table)</small></h3>
+
+  <button ng-click="refresh()">refresh</button>
+
+  <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th ng-click="orderBy('')">Index</th>
+        <th ng-click="orderBy('name')">Name</th>
+        <th ng-click="orderBy('address')">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="customer in customers | orderBy: order">
+        <td><% $index + 1 %></td>
+        <td><% customer.name %></td>
+        <td><% customer.address %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><small>Customers</small></p>
+</div>
+
+<div class="example" ng-controller="customers">
+  <h3>Angular Static Example 26 <small style="color: #8888FF; line-height: 0px;">(customer selection)</small></h3>
+
+  <label>Select a customer: </label>
+  <select ng-model="customer" ng-options="customer as customer.name for customer in customers track by customer.name"></select>
+
+  <p>Selected customer: <% customer.name %></p>
+  <p>His/Her address: <% customer.address %></p>
+
+  <p><small>Custom selection by select element. How to fill select element.</small></p>
+</div>
+
+<div class="example" ng-controller="customer">
+  <h3>Angular Static Example 27 <small style="color: #8888FF; line-height: 0px;">(database customers)</small></h3>
+
+  <h4>Add a customer.</h4>
+  <form ng-submit="addCustomer(customer)">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="name" ng-model="customer.name" placeholder="Place customer name here.">
+    </div>
+    <div>
+      <label>Address: </label>
+      <input type="text" name="address" ng-model="customer.address" placeholder="Place customer address here.">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h4>Customer Preview</h4>
+
+  <div class="preview">
+    <h4><% customer.name %></h4>
+    <p><% customer.address %></p>
+  </div>
+
+  <p><small>Database customers creation.</small></p>
+</div>
+
+<div class="example" ng-controller="customer">
+  <h3>Angular Static Example 28 <small style="color: #8888FF; line-height: 0px;">(all customers from database)</small></h3>
+
+  <button ng-click="updateCustomers()">update customers</button>
+
+  <h4>All the customers.</h4>
+
+  <div class="customer" ng-repeat="customer in customers">
+    <h5>Customer with an id of <% customer.id %></h5>
+    <p> Name: <% customer.name %> </p>
+    <p> Address: <% customer.address %> </p>
+    <p>Joined At <% customer.createdAt %></p>
+  </div>
+
+  <p><small>Display all the customers.</small></p>
+</div>
+
+<div class="example" ng-controller="customer">
+  <h3>Angular Static Example 29 <small style="color: #8888FF; line-height: 0px;">(inserts list of customers)</small></h3>
+  <h4>Place list of customers into database.</h4>
+
+  <button ng-click="customerListInsert()">Insert customers to database.</button>
+
+  <p><small>Insert list of customers to database.</small></p>
+</div>
+
+<div class="example" ng-controller="employee">
+  <h3>Angular Static Example 30 <small style="color: #8888FF; line-height: 0px;">(list of employees)</small></h3>
+
+  <h4>List of all the employees in the database.</h4>
+
+  <div class="employee" ng-repeat="employee in employees">
+    <h5><% employee.name %> (id: <% employee.id %>)</h5>
+    <p>Address: <% employee.address %></p>
+    <p>Salary: <% employee.salary | currency %></p>
+    <p>Joined us at <% employee.createdAt %></p>
+  </div>
+
+  <p><small>List of all the employees.</small></p>
+</div>
+
+<div class="example" ng-controller="user">
+  <h3>Angular Static Example 31 <small style="color: #8888FF; line-height: 0px;">(registered users)</small></h3>
+
+  <h4>Drop users database.</h4>
+  <button ng-click="dropUsersTable()">drop users database</button>
+
+  <h4>Register</h4>
+  <form class="register" ng-submit="addUser(user)">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="name" ng-model="user.name" placeholder="Place your name here.">
+    </div>
+    <div>
+      <label>Email: </label>
+      <input type="email" name="email" ng-model="user.email" placeholder="Place your email here.">
+    </div>
+    <div>
+      <label>Password: </label>
+      <input type="password" name="password" ng-model="user.password" placeholder="Place your password here.">
+    </div>
+    <div>
+      <label>Confirmation password: </label>
+      <input type="password" name="password2" ng-model="user.password2" placeholder="Place your password confirmation here.">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h4>List of registered users.</h4>
+  <div class="user" ng-repeat="user in users">
+    <h5><% user.name %> (id: <% user.id %>)</h5>
+    <p>Joined at <% user.createdAt %></p>
+  </div>
+
+  <p><small>Registered users and registration.</small></p>
+</div>
+
+<div class="example" ng-controller="pie-chart">
+  <h3>Angular Static Example 32 <small style="color: #8888FF; line-height: 0px;">(pie-chart)</small></h3>
+  <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options" style="max-width: 200px;"></canvas> 
+  <p><small>Pie chart example.</small></p>
+</div>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/angular/angular.js"></script>
+<script src="/chart.js/dist/Chart.min.js"></script>
+<script src="/angular-chart.js/dist/angular-chart.min.js"></script>
+<script src="/angular/app.js"></script>
 {{/content}}
 
 {{/extend}}

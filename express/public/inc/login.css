@@ -1,0 +1,46 @@
+form.login {
+  background-color: #FFFFAA;
+  padding: 5px;
+  max-width: 500px;
+  margin: 0px auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+form.login > div {
+  margin-bottom: 10px;
+}
+
+form.login > div:last-child {
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+form.login > div:last-child button {
+  float: left;
+}
+
+form.login > div:last-child a {
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 5px 5px 5px 5px;
+  float: right;
+}
+
+form.login h4 {
+  color: red;
+  margin: 7px 0px 15px 0px;
+}
+
+form.login input, form.login label {
+  display: block;
+  padding: 5px;
+  width: 100%;
+}
+
+form.login label {
+  padding-left: 0px;
+}
+
+form.login button {
+  padding: 5px 8px 3px 8px;
+}

@@ -1,0 +1,78 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+
+{{/content}}
+
+{{#content "body"}}
+
+<h1>API</h1>
+
+<ul>
+
+  <!-- POSTS -->
+  <li>
+    <h4>POSTS</h4>
+    <ul>
+
+      <!-- GET -->
+      <li>
+        <h5>GET</h5>
+        <ul>
+          <li>
+            <h6>/api/posts</h6>
+          </li>
+          <li>
+            <h6>/api/posts/:id</h6>
+          </li>
+        </ul>
+      </li>
+      <!-- END GET -->
+
+      <!-- POST -->
+      <li>
+        <h5>POST</h5>
+        <ul>
+          <li>
+            <h6>/api/posts</h6>
+          </li>
+        </ul>
+      </li>
+      <!-- END POST -->
+
+      <!-- DELETE -->
+      <li>
+        <h5>DELETE</h5>
+        <ul>
+          <li>
+            <h6>/api/posts/:id</h6>
+          </li>
+        </ul>
+      </li>
+      <!-- END DELETE -->
+
+      <!-- PUT -->
+      <li>
+        <h5>PUT</h5>
+        <ul>
+          <li>
+            <h6>/api/posts/:id</h6>
+          </li>
+        </ul>
+      </li>
+      <!-- END PUT -->
+
+    </ul>
+  </li>
+  <!-- END POSTS -->
+
+</ul>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/angular/angular.js"></script>
+<script src="/angular/api.js"></script>
+{{/content}}
+
+{{/extend}}

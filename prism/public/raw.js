@@ -10,16 +10,7 @@ elements.forEach(function(element) {
       var xCode = document.createElement('code');
       xPre.appendChild(xCode);
 
-      var code = Prism.plugins.NormalizeWhitespace.normalize(source, {
-        'remove-initial-line-feed': true,
-        'remove-trailing': true,
-        'remove-indent': true,
-        'indent': 0,
-        'tabs-to-spaces': 2,
-        // 'spaces-to-tabs': 2,
-        'left-trim': true,
-        'right-trim': true,
-      });
+      var code = source;
 
       xCode.innerHTML = Prism.highlight(code, Prism.languages[element.getAttribute('lang')]);
 

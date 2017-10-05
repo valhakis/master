@@ -1,6 +1,6 @@
-import webpack from 'webpack';
-import express from 'express';
-import fs from 'fs';
+var webpack = require('webpack');
+var express = require('express');
+var fs = require('fs');
 
 var started = false;
 

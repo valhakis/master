@@ -1,0 +1,11 @@
+#nav {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#nav ul:first-child {
+  float: left;
+}
+#nav ul:last-child {
+  float: right;
+}

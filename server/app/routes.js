@@ -43,13 +43,15 @@ module.exports = function(app) {
 	app.get('/chat', requireLogin, MainController.GET.chat);
 
   app.all('*', function(req, res, next) {
-    res.end(`
+    res.status(404).end(`
         <link rel="stylesheet" href="/lib/w3.css">
+        <div style="margin-top: 15px;"></div>
         <div class="w3-container">
+          <a class="w3-btn w3-red" href="/">HOME</a>
           <p>PAGE NOT FOUND: ${req.url}</p>
           <p id="date">${new Date()}</p>
           <p>${req.url}</p>
-          <a class="w3-btn w3-blue" href="/">HOME</a>
+          <a class="w3-btn w3-yellow" onclick="window.history.back()">BACK</a>
         </div>
         <script>
           setInterval(function() {

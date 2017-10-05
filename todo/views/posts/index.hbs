@@ -1,0 +1,32 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Posts index.</h1>
+
+<p><a href="/todo/posts/create/table">Create posts table.</a></p>
+<p><a href="/todo/posts/drop/table">Drop posts table.</a></p>
+
+<h4>Latest {{ posts.length }} posts.</h4>
+
+{{#each posts}}
+<div class="post">
+  {{#if this.title}}
+  <h3 class="title">{{ this.title }}</h3>
+  {{else}}
+  <h3 class="title">NO TITLE</h3>
+  {{/if}}
+
+  {{#if this.body}}
+  <div class="body">{{ this.body }}</div>
+  {{else}}
+  <div class="body">NO BODY</div>
+  {{/if}}
+
+  <p><small>Created at {{ this.createdAt }}</small></p>
+</div>
+{{/each}}
+
+{{/content}}
+
+{{/extend}}

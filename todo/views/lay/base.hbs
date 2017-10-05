@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{#block "head"}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ app.name }}</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/todo/style.css">
+    {{/block}}
+  </head>
+  <body>
+
+    {{> navigation}}
+
+    {{#each errors}}
+    <p class="error">{{ this }}</p>
+    {{/each}}
+
+    {{#each successes}}
+    <p class="success">{{ this }}</p>
+    {{/each}}
+
+    {{#if error}}
+    <p class="error">{{ error }}</p>
+    {{/if}}
+
+    {{#if success}}
+    <p class="success">{{ success }}</p>
+    {{/if}}
+
+    {{#block "body"}}{{/block}}
+
+    {{> footer}}
+  </body>
+</html>

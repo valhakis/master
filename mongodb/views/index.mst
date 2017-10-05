@@ -37,7 +37,6 @@
     <script src="/prismjs/prism.js" data-manual></script>
     <script src="/prismjs/components/prism-c.js"></script>
     <script src="/prismjs/components/prism-cpp.js"></script>
-    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
     <script src="/mongodb/raw.js"></script>
   </body>
 </html>

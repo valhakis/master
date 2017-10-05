@@ -1,0 +1,54 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+<link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+{{/content}}
+
+{{#content "body"}}
+
+<h1>CODE HOME</h1>
+<p>Lorem voluptates earum vero aliquam rerum. Aliquam cumque illum repellat.</p>
+
+<a href="/mysql/codes/create">CREATE CODE</a>
+
+<h3>List of codes.</h3>
+{{#if codes}}
+{{#each codes}}
+<div class="code">
+
+  <p><small>Code with an id of {{ this.id }} and its language is {{ this.language }}.</small></p>
+
+  {{#if this.title}}
+  <h4><a href="/mysql/codes/{{ this.id }}">{{ this.title }}</a></h4>
+  {{else}}
+  <h4>CODE HAS NO TITLE</h4>
+  {{/if}}
+
+  {{#if this.description}}
+  <p>{{ this.description }}</p>
+  {{else}}
+  <p>CODE HAS NO DESCRIPTION</p>
+  {{/if}}
+
+  {{#if this.body}}
+  <pre><code class="language-{{ this.language }}">{{ this.body }}</code></pre>
+  {{else}}
+  <pre><code style="color: #FF6666">CODE HAS NO BODY</code></pre>
+  {{/if}}
+
+  <p><small>Has been modified at {{ this.createdAt }}</small></p>
+  <p><small>Has been created at {{ this.createdAt }}</small></p>
+</div>
+{{/each}}
+{{/if}}
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/prismjs/prism.js"></script>
+<script src="/prismjs/components/prism-c.js"></script>
+<script src="/prismjs/components/prism-cpp.js"></script>
+<script src="/prismjs/components/prism-sql.js"></script>
+{{/content}}
+
+{{/extend}}

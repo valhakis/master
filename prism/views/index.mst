@@ -12,7 +12,8 @@
 
     <a href="/prism/demo">demo</a>
 
-    <raw-code file="/prism/raw/example.html" lang="html"></raw-code>
+    <raw-code file="/prism/raw/example.html" lang="markup"></raw-code>
+    <raw-code file="/prism/raw/example.pug" lang="jade"></raw-code>
     <raw-code file="/prism/raw/main.cc" lang="cpp"></raw-code>
 
     <select id="select" name="select"></select>
@@ -22,9 +23,11 @@
     {{> footer}}
 
     <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-clike.js"></script>
     <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-css.js"></script>
     <script src="/prismjs/components/prism-cpp.js"></script>
-    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/prismjs/components/prism-jade.js"></script>
     <script src="/prism/raw.js"></script>
     <script src="/prism/script.js"></script>
   </body>

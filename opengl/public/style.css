@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: #010101;
   color: #FFF;
@@ -50,4 +53,50 @@ a {
   border-right-width: 1px;
   border-top-width: 1px;
   padding-top: 15px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.menu li {
+  display: inline-block;
+}
+.menu li a {
+  text-decoration: none;
+  display: block;
+  color: #ddd;
+}
+.menu li a:hover {
+  color: #FF3333;
+}
+
+form.default {
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0px;
+}
+
+form.default > div {
+  padding: 5px;
+}
+form.default label {
+  display: block;
+  padding: 5px;
+  padding-left: 0px;
+}
+form.default input, form.default textarea, form.default select {
+  display: block;
+  padding: 5px;
+  min-width: 500px;
+}
+form.default button {
+  padding: 5px 9px;
+  margin: 5px;
+}
+form.default h3 {
+  margin: 10px 0px 0px 0px;
+  padding: 5px 5px 10px 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

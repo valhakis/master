@@ -32,7 +32,7 @@
     {{/unless}}
 
     {{#if user}}
-    <div class="w3-panel w3-blue">
+    <div class="w3-panel w3-blue w3-border">
       <h4>SEEMS THAT YOU ARE LOGGED IN.</h4>
       <h6>I guess you are {{user.name}} and ur username is  {{user.username}}.</h6>
       <p>Sit ipsum expedita dolorum non aperiam repellendus eaque Quasi dolorum quibusdam aspernatur placeat perferendis Obcaecati adipisci neque et quas quod! Odit repellat blanditiis fuga id illo? At quas velit provident?</p>
@@ -44,15 +44,46 @@
     </div>
     {{/if}}
 
+    <div class="w3-panel w3-card w3-yellow w3-border">
+      {{#if posts.length}}
+      <h4>Latest {{ posts.length }} posts.</h4>
+      {{#each posts}}
+      <div class="post w3-card w3-border w3-purple w3-panel">
+        <h5 class="title">{{ this.title }}</h5>
+        <div class="body">{{ this.body }}</div>
+
+        <p><small>Created at {{ this.createdAt }}</small></p>
+      </div>
+      {{/each}}
+      {{else}}
+      <h4>No posts in the database.</h4>
+      {{/if}}
+    </div>
+
+    <div class="w3-panel w3-card w3-green w3-border">
+      {{#if stacks.length}}
+      <h4>Latest {{ stacks.length }} stacks.</h4>
+      {{#each stacks}}
+      <div class="stack w3-card w3-border w3-pale-yellow w3-panel">
+        <h5 class="name">{{ this.name }}</h5>
+        <div class="description">{{ this.description }}</div>
+
+        <p><small>Created at {{ this.createdAt }}</small></p>
+      </div>
+      {{/each}}
+      {{else}}
+      <h4>No stacks in the database.</h4>
+      {{/if}}
+    </div>
+
     {{#if user}}
-    <div class="w3-panel w3-yellow">
+    <div class="w3-panel w3-card w3-yellow w3-border">
       <h4>SO, YOU ARE LOGGED IN</h4>
       <div class="w3-panel">
         <a class="w3-btn w3-purple" href="/mustache" style="margin-bottom: 5px;">Mustache</a>
-        <a class="w3-btn w3-purple" href="/mongodb" style="margin-bottom: 5px;">MongoDB</a>
-        <a class="w3-btn w3-purple" href="/prism" style="margin-bottom: 5px;">Prism</a>
         <a class="w3-btn w3-purple" href="/opengl" style="margin-bottom: 5px;">OpenGL</a>
         <a class="w3-btn w3-purple" href="/node" style="margin-bottom: 5px;">Node</a>
+        <a class="w3-btn w3-purple" href="/express" style="margin-bottom: 5px;">Express</a>
         <a class="w3-btn w3-purple" href="/laravel" style="margin-bottom: 5px;">Laravel</a>
         <a class="w3-btn w3-purple" href="/php" style="margin-bottom: 5px;">PHP</a>
         <a class="w3-btn w3-purple" href="/main" style="margin-bottom: 5px;">Main / Laravel</a>
@@ -67,6 +98,22 @@
       </p>
     </div>
 
+    <div class="w3-panel w3-card w3-border w3-yellow">
+      <h6>Languages</h6>
+      <p>
+        <a class="w3-btn w3-purple" href="/typescript">Typescript</a>
+      </p>
+    </div>
+
+    <div class="w3-panel w3-card w3-border w3-green">
+      <h6>Javascript Libraries</h6>
+      <p>
+        <a class="w3-btn w3-blue" href="/chartjs">Chart.js</a>
+        <a class="w3-btn w3-red" href="/codemirror">CodeMirror</a>
+        <a class="w3-btn w3-pink" href="/prism">Prism</a>
+      </p>
+    </div>
+
     {{#if user.master}}
     <div class="w3-panel w3-card w3-border w3-red">
       <h6>PHP BOXEN</h6>
@@ -75,6 +122,15 @@
         <a class="w3-btn w3-yellow" href="/php/crud/index.php">CRUD</a>
       </p>
     </div>
+
+    <div class="w3-panel w3-card w3-border w3-yellow">
+      <h6>DATABASE BOXEN</h6>
+      <p>
+        <a class="w3-btn w3-purple" href="/mongodb">MongoDB</a>
+        <a class="w3-btn w3-pink" href="/mysql">MySQL</a>
+      </p>
+    </div>
+
     <div class="w3-panel w3-card w3-border w3-red">
       <h6>PHP TO DO</h6>
       <p>

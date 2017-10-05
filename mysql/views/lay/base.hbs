@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ app.name }}</title>
+
+    {{#block "head"}}{{/block}}
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mysql/style.css">
+  </head>
+  <body>
+
+    {{> navigation}}
+
+    <div class="messages">
+      {{#each errors}}
+      <p class="error">{{ this }}</p>
+      {{/each}}
+
+      {{#each successes}}
+      <p class="success">{{ this }}</p>
+      {{/each}}
+    </div>
+
+    <div class="container-fluid">
+      <h1>{{ app.name }}</h1>
+
+      {{#block "body"}}{{/block}}
+    </div>
+
+    {{> footer}}
+
+    {{#block "scripts"}}{{/block}}
+  </body>
+</html>

@@ -30,3 +30,5 @@ require('./Loc')('demo', function() {
 });
 
 module.exports = app;
+
+require('./example');

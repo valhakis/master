@@ -1,0 +1,22 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Create a new stack.</h1>
+
+<form action="/stack/stacks/store" method="POST">
+  <h3>Stack creation form.</h3>
+  <div>
+    <label>Name: </label>
+    <input type="text" name="name" placeholder="Place name here." autofocus>
+  </div>
+  <div>
+    <label>Description: </label>
+    <textarea name="description" placeholder="Place description here."></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+{{/content}}
+
+{{/extend}}

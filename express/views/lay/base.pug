@@ -1,0 +1,23 @@
+//- lay/base.pug
+
+html
+  head
+    title Base - #{title}
+
+    link(rel="stylesheet", href="/style.css")
+    link(rel="stylesheet", href="/express/style.css")
+
+    block head
+      //- Head section
+
+  body
+
+    include /inc/nav
+
+    block body
+      //- Body section
+
+    block scripts
+      //- Scripts section
+
+    include /inc/footer

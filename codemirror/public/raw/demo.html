@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+
+<textarea></textarea>
+
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script>
+  var xTextArea = document.querySelector('textarea');
+  var editor = CodeMirror.fromTextArea(xTextArea, {
+    lineNumbers: true, 
+    mode: 'htmlmixed'
+  });
+</script>

@@ -1,0 +1,10 @@
+.code {
+  background-color: #FFFFAA;
+  padding: 5px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.code .title {
+  margin: 8px 0px 15px 0px;
+}

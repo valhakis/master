@@ -1,0 +1,32 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>CREATE A PROGRAM</h1>
+
+<p>Lorem officia minus consequatur debitis optio! Velit temporibus ab at dolores porro sapiente Ad optio esse odit consequatur repellendus Quae veniam a quae nemo quia Qui expedita incidunt deleniti commodi!</p>
+
+<a href="/opengl/programs">PROGRAMS HOME</a>
+
+<form class="default" action="/opengl/programs/create" method="post">
+  <h3>CREATE A NEW PROGRAM</h3>
+  <div>
+    <label>Name: </label>
+    <input type="text" name="name" placeholder="Place program name here.">
+  </div>
+  <div>
+    <label>Description: </label>
+    <textarea name="description" placeholder="Place program description here."></textarea>
+  </div>
+  <div>
+    <label>Template: </label>
+    <select name="template">
+      <option value="demo">Demo</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+{{/content}}
+
+{{/extend}}

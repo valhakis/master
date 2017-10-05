@@ -51,7 +51,7 @@ module.exports = function(app) {
 
   app.use('/2017-08-22', express.static(App.masterRoot('2017-08-22/public')));
 
-  app.use('/todo', express.static(App.masterRoot('todo/public')));
+  // app.use('/todo', express.static(App.masterRoot('todo/public')));
   app.use('/lib', express.static(App.masterRoot('lib')));
   app.use('/', express.static(App.masterRoot('node_modules')));
   app.use('/2017-08-15', express.static(App.masterRoot('2017-08-15')));
@@ -67,6 +67,7 @@ module.exports = function(app) {
   app.use('/mustache', App.masterRequire('mustache/app'));
   app.use('/2017-09-05', App.masterRequire('2017-09-05/app'));
   app.use('/posts', App.masterRequire('posts/app'));
+  app.use('/todo', App.masterRequire('todo/app'));
   app.use('/code', App.masterRequire('code/app'));
   app.use('/opengl', App.masterRequire('opengl/app'));
   app.use('/prism', App.masterRequire('prism/app'));
@@ -74,12 +75,17 @@ module.exports = function(app) {
   app.use('/node', App.masterRequire('node/app'));
   app.use('/demo', App.masterRequire('demo/app'));
   app.use('/angular', App.masterRequire('angular/app'));
+  app.use('/mysql', App.masterRequire('mysql/app'));
+  app.use('/stack', App.masterRequire('stack/app'));
+  app.use('/demo-2', App.masterRequire('demo-2/app'));
+  app.use('/express', App.masterRequire('express/app'));
+  app.use('/codemirror', App.masterRequire('codemirror/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 
-  app.get('/todo', function(req, res) {
-    res.send("I HAVE TO DO EVERYTHING");
-  });
+  //app.get('/todo', function(req, res) {
+    //res.send("I HAVE TO DO EVERYTHING");
+  //});
   return new Promise(function(resolve) {
     resolve();
   });

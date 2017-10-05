@@ -8,6 +8,11 @@
   </head>
   <body>
 
+    <ul class="menu">
+      <li><a href="/opengl">Home</a></li>
+      <li><a href="/opengl/programs">Programs</a></li>
+    </ul>
+
     <h1>OpenGL</h1>
 
     <a href="/dashboard" style="text-decoration: none;">Welcome,  <strong>{{user.name}}</strong>.</a>

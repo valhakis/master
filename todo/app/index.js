@@ -1,15 +1,29 @@
-var watch = require('node-watch');
-var path = require('path');
-var Loc = App.masterRequire('todo/local');
+var express = require('express');
+var app = express();
 
-module.exports = function(server, bs) {
-  watch(Loc.root('server'), { recursive: true }, function() {
-    server.restart();
+require('./Loc')('todo', function() { 
+  var loc = Loc['todo'];
+
+  // SETS UP ALL PARTIALS
+  loc.registerPartial('base', 'lay/base');
+  loc.registerPartial('navigation', 'inc/navigation');
+  loc.registerPartial('footer', 'inc/footer');
+
+  // INCLUDES APPLICATION MIDDLEWARES
+  require('./middleware')(app, function() {
+
+    // INITIALIZES VIEW LOCAL VALUES
+    app.use(function(req, res, next) {
+      res.locals.app = {
+        name: 'todo'
+      };
+      next();
+    });
+
+    require('./routes')(app);
+
   });
-  watch([
-    Loc.root('public'),
-    Loc.root('views'),
-  ], { recursive: true }, function() {
-    bs.reload();
-  });
-};
+
+});
+
+module.exports = app;

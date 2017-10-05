@@ -32,21 +32,27 @@ var nodemon = {
     App.masterRoot("rest/app"),
     App.masterRoot("mongodb/app"),
     App.masterRoot("opengl/app"),
+    App.masterRoot("todo/app"),
     App.masterRoot("share"),
     App.masterRoot("W3/app"),
     App.masterRoot("mongo/app"),
+    App.masterRoot("mysql/app"),
     App.masterRoot("bootstrap/app"),
+    App.masterRoot("codemirror/app"),
     App.masterRoot("code/app"),
     App.masterRoot("2017-08-19/app"),
     App.masterRoot("sqlite/app"),
     App.masterRoot("current/app"),
     App.masterRoot("node/app"),
+    App.masterRoot("stack/app"),
+    App.masterRoot("express/app"),
     App.masterRoot("game/dev"),
     App.masterRoot("mustache/app"),
     App.masterRoot("standard/app"),
     App.masterRoot("2017-09-05/app"),
     App.masterRoot("posts/app"),
     App.masterRoot("demo/app"),
+    App.masterRoot("demo-2/app"),
     App.masterRoot("angular/app"),
     App.masterRoot("prism/app"),
     App.masterRoot("regular-expressions/app"),
@@ -61,7 +67,8 @@ var server = {
   port: App.masterRequire('server/config').port,
 };
 
-spawn('nodemon', ['--exec', 'babel-node', '--presets', 'es2015,stage-2', '.'], {
+// spawn('nodemon', ['--exec', 'babel-node', '--presets', 'es2015,stage-2', '.'], {
+spawn('nodemon', ['.'], {
   cwd: App.masterRoot('server'),
   stdio: 'inherit'
 });
@@ -101,7 +108,6 @@ bs.init({
 });
 
 bs.watch([
-  App.masterRoot('todo/public/*.{html,js}'),
   App.masterRoot('server/views/*.{pug,html,hbs}'),
   App.masterRoot('rest/{public,views}/**/*.{html,css,js,mst,hbs}'),
   App.masterRoot('W3/public/**/*.{html,js,css}'),
@@ -124,17 +130,25 @@ bs.watch([
   App.masterRoot('code/public/**/*.{html,js,css}'),
   App.masterRoot('mustache/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('mongodb/{public,views,partials}/**/*.{html,js,css,mst}'),
-  App.masterRoot('opengl/{public,views,partials}/**/*.{html,js,css,mst}'),
+  App.masterRoot('opengl/{public,views,partials}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('prism/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('node/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('standard/{public,views,partials}/**/*.{html,js,css,mst}'),
-  App.masterRoot('laravel/{app,routes,public,resources}/**/*.{html,js,css,mst,scss,php}'),
-  App.masterRoot('bootstrap/{public,views}/**/*.{html,js,css,mst,scss,hbs}'),
-  App.masterRoot('demo/{public,views}/**/*.{html,js,css,mst,scss,hbs}'),
-  App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,scss,hbs}'),
+  App.masterRoot('laravel/{app,routes,public,resources}/**/*.{html,js,css,mst,php}'),
+  App.masterRoot('bootstrap/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('demo/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('express/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('demo-2/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('codemirror/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('mysql/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('stack/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('posts/views/**/*.{html,hbs}'),
   App.masterRoot('regular-expressions/public/**/*.{html,css,js}'),
-]).on('change', bs.reload);
+]).on('change', function() {
+  bs.reload();
+});
 
 console.log('DEVELOPMENT SERVER HAS STARTED');
 

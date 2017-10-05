@@ -1,0 +1,90 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+<link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+{{/content}}
+
+{{#content "body"}}
+
+<h1>EDIT: {{ code.title }}</h1>
+
+<div class="code">
+
+  <p><small>Code with an id of {{ code.id }} and its language is {{ code.language }}.</small></p>
+
+  {{#if code.title}}
+  <h4><a href="/mysq/codes/{{ code.id }}">{{ code.title }}</a></h4>
+  {{else}}
+  <h4>CODE HAS NO TITLE</h4>
+  {{/if}}
+
+  <form class="default" action="/mysql/codes/{{ code.id }}/update" method="POST">
+    <h3>Edit existing code.</h3>
+    <div>
+      <label>Title: </label>
+      <input type="text" name="title" placeholder="Place code title here." value="{{ code.title }}">
+    </div>
+    <div>
+      <label>Language: </label>
+      <select name="language">
+        <option value="javascript">Javascript</option>
+        <option value="php">PHP</option>
+        <option value="html">HTML</option>
+        <option value="cpp">C++</option>
+        <option value="sql">SQL</option>
+      </select>
+    </div>
+    <div>
+      <label>Description: </label>
+      <textarea name="description" placeholder="Place code description here.">{{ code.description }}</textarea>
+    </div>
+    <div>
+      <label>Body: </label>
+      <textarea code-editor name="body" mode="javascript" placeholder="Place code body here.">{{ code.body }}</textarea>
+    </div>
+    <div>
+      <label>Section: </label>
+      <select name="section">
+        <option value="section-01">Section 1</option>
+        <option value="section-02">Section 2</option>
+        <option value="section-03">Section 3</option>
+        <option value="section-04">Section 4</option>
+      </select>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  {{#if code.description}}
+  <p>{{ code.description }}</p>
+  {{else}}
+  <p>CODE HAS NO DESCRIPTION</p>
+  {{/if}}
+
+  {{#if code.body}}
+  <pre><code class="language-{{ code.language }}">{{ code.body }}</code></pre>
+  {{else}}
+  <pre><code style="color: #FF6666">CODE HAS NO BODY</code></pre>
+  {{/if}}
+
+  <p><small>Has been modified at {{ code.createdAt }}</small></p>
+  <p><small>Has been created at {{ code.createdAt }}</small></p>
+</div>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script src="/prismjs/prism.js"></script>
+<script src="/prismjs/components/prism-c.js"></script>
+<script src="/prismjs/components/prism-cpp.js"></script>
+<script src="/prismjs/components/prism-sql.js"></script>
+
+<script src="/mysql/code-editor.js"></script>
+{{/content}}
+
+{{/extend}}

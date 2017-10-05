@@ -26,3 +26,17 @@
 body, pre code, input, button, textarea {
   font-family: COURIER !important;
 }
+
+form.basic {
+  background-color: #FFFF88;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+form.basic > div {
+  margin-bottom: 5px;
+}
+
+form.basic button {
+  padding: 5px 5px 3px 5px;
+}
