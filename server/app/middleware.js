@@ -79,6 +79,7 @@ module.exports = function(app) {
   app.use('/stack', App.masterRequire('stack/app'));
   app.use('/demo-2', App.masterRequire('demo-2/app'));
   app.use('/express', App.masterRequire('express/app'));
+  app.use('/pug', App.masterRequire('pug/app'));
   app.use('/codemirror', App.masterRequire('codemirror/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));

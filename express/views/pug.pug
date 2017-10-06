@@ -1,0 +1,72 @@
+extends /lay/base
+
+block head
+  link(rel="stylesheet", href="/codemirror/lib/codemirror.css")
+  link(rel="stylesheet", href="/codemirror/theme/ambiance.css")
+
+block scripts
+  script(src="/codemirror/lib/codemirror.js")
+    //- the script
+  script(src="/codemirror/mode/javascript/javascript.js")
+    //- the script
+  script(src="/codemirror/mode/xml/xml.js")
+    //- the script
+  script(src="/codemirror/mode/htmlmixed/htmlmixed.js")
+    //- the script
+  script.
+    var xTextArea = document.querySelector('textarea');
+    var editor = CodeMirror.fromTextArea(xTextArea, {
+      lineNumbers: true, 
+      mode: 'htmlmixed',
+      theme: 'ambiance'
+    });
+
+block body
+  h1 Pug 
+
+  p Number of codes: #{codes.length}
+
+  form(action="/express/codes/store", method="POST")
+    div
+      label Title: 
+      input(type="text", name="title", placeholder="Place code title here.")
+    div
+      label Body: 
+      textarea(name="body", placeholder="Place code body here.")
+        //- textarea
+    div
+      button(type="submit") Submit
+
+  h3 Static Pug Codes
+  ol
+    li
+      h4 Pug installation.
+      pre
+        code npm install --save pug
+
+  h3 Static examples
+
+  - var authenticated = true
+
+  div(class=authenticated ? 'green' : 'red')
+    h4 Seems that you are #{authenticated ? '' : 'not'} authenticated
+
+  h4 Pipe character
+
+  a(href="https://www.google.com") Google
+  |
+  |
+  a(href="https://www.google.com") Google
+  |
+  |
+  a(href="https://www.google.com") Google
+
+  h4 Multi line attributes
+  textarea(
+    rows = '5',
+    cols = '5',
+    name = 'area'
+  )
+    //- textarea
+
+  h4='EXAMPLE: ' + build()

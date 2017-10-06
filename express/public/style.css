@@ -9,3 +9,19 @@
 * {
   box-sizing: border-bix;
 }
+
+.green, .red {
+  padding: 5px 5px 3px 5px;
+  margin: 0px 0px 10px 0px;
+}
+.green h4, .red h4 {
+  margin: 0px 0px 0px 0px;
+}
+
+.green {
+  background-color: #44FF44;
+}
+
+.red {
+  background-color: #FF4444;
+}

@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  color: #EEEEEE;
+}
+a {
+  color: #FFFFAA;
+  text-decoration: none;
+}
+a:hover {
+  color: #FFAAAA;
+}
+
+pre {
+  font-size: 14px;
+}

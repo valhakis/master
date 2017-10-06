@@ -1,25 +1,18 @@
-var path = require('path');
-var hbs = require('handlebars');
-var _root = path.join(__dirname, '..');
+var exphbs  = require('express-handlebars');
 var express = require('express');
-var fs = require('fs');
 
 var app = express();
 
-var posts = [];
+app.set('views', Loc.root('views'));
+app.locals.basedir = Loc.root('views');
+app.set('view engine', '.hbs');
+app.engine('.hbs', exphbs({
+  extname: '.hbs', 
+  deafultLayout: 'main', 
+  layoutsDir: Loc.root('views/layouts'),
+  partialsDir: Loc.root('views/partials'),
+}));
 
-var render = function(path, req, res) {
-	var source = fs.readFileSync(_root + '/views/' + path, 'utf-8');
-	res.end(hbs.compile(source)(res.locals));
-};
-
-app.get('/', function(req, res) {
-	res.locals.name = 'William Valhakis';
-	render('index.hbs', req, res);
-});
-
-app.get('/create', function(req, res) {
-	render('create.hbs', req, res);
-});
+require('./routes')(app);
 
 module.exports = app;
