@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .btn {
   border: none; /* Remove borders */
   color: white; /* Add a text color */
@@ -77,4 +80,92 @@ form button {
   box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.5), -1px -1px 5px rgba(50, 50, 50, 0.5);
   padding: 5px;
   margin-bottom: 15px;
+}
+
+.w3-bar {
+
+}
+.w3-bar .w3-bar-item {
+  font-size: 14px;
+  padding: 10px 15px 7px 15px;
+}
+
+
+.w3-input {
+  min-width: 100px;
+  width: 100%;
+  padding-top: 12px;
+}
+
+form > div:last-of-type {
+  margin-top: 20px;
+}
+
+.login-row .w3-input:focus {
+  outline-color: rgba(255, 0, 0, 0.7);
+}
+
+.login-row .w3-half:first-child {
+  padding-left: 0px;
+}
+
+.login-row .w3-half:last-child {
+  padding: 0px;
+}
+
+.login-row .w3-half:last-child > div {
+  padding: 0px;
+  margin: 0px;
+}
+
+.login-row .w3-half:last-child .w3-panel {
+  padding: 0px;
+  margin: 0px;
+}
+
+@media (max-width: 980px) {
+  .login-row {
+    margin: 0px auto;
+  }
+  .login-row .w3-half {
+    padding: 5px;
+  }
+  .login-row .w3-half:first-child {
+    display: block;
+    width: 100%;
+  }
+  .login-row .w3-half:last-child {
+    display: none;
+  }
+}
+
+.w3-btn {
+  padding: 10px 20px 6px 20px;
+  color: red;
+}
+
+.flashMessages .error, .flashMessages .success {
+  color: #000000;
+  padding: 6px 6px 3px 6px;
+}
+.flashMessages .error {
+  background-color: #FF4444;
+}
+
+.flashMessages .success {
+  background-color: #44FF44;
+}
+
+form.login > div:last-child a {
+  color: #FF2222;
+}
+
+form.login > div:last-child a:hover {
+  color: #FF0000;
+  font-weight: bold;
+}
+
+form.login > div:last-child a:active {
+  color: #000000;
+  font-weight: bold;
 }

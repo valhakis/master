@@ -22,6 +22,7 @@
   "homepage": "https://github.com/valhakis/master#readme",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.7",
+    "ajv": "^5.2.3",
     "angular": "^1.6.6",
     "angular-chart.js": "^1.1.1",
     "angular-ui-router": "^1.0.3",
@@ -54,6 +55,7 @@
     "flash": "^1.1.0",
     "handlebars": "*",
     "handlebars-layouts": "^3.1.4",
+    "handsontable": "^0.34.4",
     "has-binary2": "*",
     "highlight.js": "*",
     "highlightjs": "*",
@@ -64,6 +66,7 @@
     "jquery": "*",
     "mongoose": "^4.12.0",
     "morgan": "^1.9.0",
+    "ms": "^2.0.0",
     "mu2": "*",
     "mustache": "^2.3.0",
     "mysql": "^2.14.1",
@@ -71,7 +74,8 @@
     "node-sass": "*",
     "node-watch": "*",
     "nodemon": "^1.12.1",
-    "prismjs": "^9000.0.1",
+    "passport": "^0.4.0",
+    "prismjs": "^1.8.1",
     "progressbar.js": "^1.0.1",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
@@ -80,6 +84,7 @@
     "sass-loader": "^6.0.6",
     "scraperjs": "^1.2.0",
     "sequelize": "^4.13.5",
+    "serve-favicon": "^2.4.5",
     "socket.io": "*",
     "sqlite3": "^3.1.13",
     "style-loader": "^0.19.0",
@@ -89,6 +94,7 @@
     "three.js": "^0.77.1",
     "valhakis": "*",
     "webpack": "^3.6.0",
-    "wide-align": "^1.1.2"
+    "wide-align": "^1.1.2",
+    "xlsx": "^0.11.5"
   }
 }

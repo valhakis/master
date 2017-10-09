@@ -4,6 +4,7 @@ var express = require('express');
 var bs = require('browser-sync').create();
 var fs = require('fs');
 var watch = require('node-watch');
+var sass = require('node-sass');
 
 global.App = require('../share/App.js').initialize(path.join(__dirname));
 
@@ -38,9 +39,12 @@ var nodemon = {
     App.masterRoot("mongo/app"),
     App.masterRoot("mysql/app"),
     App.masterRoot("bootstrap/app"),
+    App.masterRoot("canvas/app"),
     App.masterRoot("codemirror/app"),
     App.masterRoot("pug/app"),
+    App.masterRoot("tmux/app"),
     App.masterRoot("code/app"),
+    App.masterRoot("site/app"),
     App.masterRoot("2017-08-19/app"),
     App.masterRoot("sqlite/app"),
     App.masterRoot("current/app"),
@@ -54,8 +58,11 @@ var nodemon = {
     App.masterRoot("posts/app"),
     App.masterRoot("demo/app"),
     App.masterRoot("demo-2/app"),
+    App.masterRoot("demo-3/app"),
+    App.masterRoot("excel/app"),
     App.masterRoot("angular/app"),
     App.masterRoot("prism/app"),
+    App.masterRoot("express/sub/app"),
     App.masterRoot("regular-expressions/app"),
   ],
   ignore: [
@@ -139,18 +146,44 @@ bs.watch([
   App.masterRoot('bootstrap/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('demo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('express/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('canvas/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('site/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('express/sub/app/{views,public}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('pug/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('posts/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('tmux/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('demo-2/{public,views}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('demo-3/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('excel/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('codemirror/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('mysql/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('stack/{public,views}/**/*.{html,js,css,mst,hbs}'),
-  App.masterRoot('posts/views/**/*.{html,hbs}'),
   App.masterRoot('regular-expressions/public/**/*.{html,css,js}'),
 ]).on('change', function() {
   bs.reload();
 });
+
+bs.watch([
+  App.masterRoot('sass/**/*.scss')
+], function() {
+  sass.render({
+    file: App.masterRoot('sass/main.scss'),
+    outFile: App.masterRoot('public/main.dist.css')
+  }, function(error, result) {
+    if (error) {
+      console.log(error);
+    } else {
+      fs.writeFile(App.masterRoot('public/main.dist.css'), result.css, function(error) {
+        if (error) {
+          console.log(error);
+        }
+      });
+    }
+  });
+  console.log('SASS CHANGED');
+})
 
 console.log('DEVELOPMENT SERVER HAS STARTED');
 

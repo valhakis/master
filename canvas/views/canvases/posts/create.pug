@@ -1,0 +1,15 @@
+extends /layouts/base
+
+block content
+  h1 Add post to a canvas.
+
+  form(action=`/canvas/canvases/${canvas._id}/posts/store`, method="POST")
+    div
+      label Title:
+      input(type="text", name="title", placeholder="Place title here.")
+    div
+      label Content:
+      textarea(name="body")
+        //- The textarea
+    div
+      button(type="submit") Submit

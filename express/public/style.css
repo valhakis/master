@@ -6,6 +6,10 @@
 @import 'inc/box.css';
 @import 'inc/login.css';
 
+a {
+  color: #FFFF88;
+}
+
 * {
   box-sizing: border-bix;
 }

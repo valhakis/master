@@ -9,3 +9,13 @@
 #nav ul:last-child {
   float: right;
 }
+
+#nav a {
+  color: red;
+}
+#nav a:hover {
+  color: #FFFF00;
+}
+#nav a:active {
+  color: #FF8888;
+}

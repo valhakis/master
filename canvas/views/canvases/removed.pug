@@ -1,0 +1,11 @@
+extends /layouts/base
+
+block content
+  h1 List of removed canvases.
+
+  each canvas in canvases
+    div.canvas
+      h4.title #{canvas.title}
+
+      p
+        small Removed At #{canvas.removedAt}

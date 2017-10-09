@@ -1,4 +1,5 @@
 module.exports = function(app) {
-  console.log('example');
   app.use(require('./locals'));
+
+  app.use('/sub/app', Loc.require('sub/app/app'));
 };

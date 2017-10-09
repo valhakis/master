@@ -1,0 +1,49 @@
+extends /layouts/base
+
+//- script.
+  var createdAt = new Date('!{canvas.createdAt}');
+  var timeNow = new Date();
+  var ms = timeNow - createdAt;
+  var hh = Math.floor(ms / 1000 / 60 / 60);
+  ms -= hh * 1000 * 60 * 60;
+  var mm = Math.floor(ms / 1000 / 60);
+  ms -= mm * 1000 * 60;
+  var ss = Math.floor(ms / 1000);
+  ms -= ss * 1000;
+  document.querySelector("#createdAgo").innerHTML = `Created ${hh != 0 ? hh + ' hours' : ''} ${mm} minutes and ${ss} seconds ago.`;
+  console.log(hh, mm, ss);
+
+block content
+  h1 Canvases index page.
+  |
+  p
+    a(href="/canvas/canvases/create") Create a canvas.
+  |
+  p
+    a(href="/canvas/canvases/removed") Removed canvases.
+  |
+  h3 List of all canvases.
+  each canvas in canvases
+    div.canvas(class=`${canvas.removedAt ? 'removed' : ''}`)
+      |
+      if canvas.title
+        h4.title 
+          a(href="/canvas/canvases/" + canvas._id) #{canvas.title}
+      else
+        h4.title 
+          a(href="/canvas/canvases/" + canvas._id) CANVAS HAS NO TITLE
+      p
+        small id -> #{canvas._id}
+      p
+        small Created at -> #{canvas.createdAt}
+      if canvas.removedAt
+        p
+          small Removed at -> #{canvas.removedAt}
+      p.light-red Number of posts: !{`<span style="color: ${canvas.posts.length < 1 ? '#FF3333' : '#33FF33'};">${canvas.posts.length}</span>`}
+      |
+      p.light-red Number of codes: !{`<span style="color: ${canvas.codes.length < 1 ? '#FF3333' : '#33FF33'};">${canvas.codes.length}</span>`}
+      |
+      p(style="text-align: right;")
+        small !{createdAgo(canvas.createdAt)}
+      //- script.
+        console.log('!{JSON.stringify(canvas)}');

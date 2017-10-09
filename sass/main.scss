@@ -1,3 +1,24 @@
+@import '_nav';
+@import '_form';
+
+@font-face {
+  font-family: COURIER;
+  src: url('/courier.ttf') format('truetype');
+}
+
+body, pre code, input, button, textarea {
+  font-family: COURIER !important;
+}
+
 body {
-  background-color: #1515151;
+  background-color: #151515;
+  color: #FFF;
+}
+
+a {
+  color: #FFFFAA;
+  text-decoration: none;
+}
+a:hover {
+  color: #FFFF00;
 }

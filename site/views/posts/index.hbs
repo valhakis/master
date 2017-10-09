@@ -1,0 +1,16 @@
+<h1>Posts Index</h1>
+
+{{> posts/menu}}
+
+<h2>List of posts.</h2>
+
+{{#each posts}}
+<div class="w3-panel">
+  <h3><a href="{{url (concat '/posts/' this._id)}}">{{ this.title }}</a></h3>
+  <div>{{ this.body }}</div>
+  <p>
+    <small>Created at: {{ this.createdAt }}</small>
+  </p>
+</div>
+{{/each}}
+

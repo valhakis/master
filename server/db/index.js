@@ -1,3 +1,4 @@
+/*
 const Sequelize = require('sequelize');
 
 var db = new Sequelize({
@@ -12,3 +13,4 @@ const User = db.define('User', {
 });
 
 module.exports = db;
+*/

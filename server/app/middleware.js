@@ -77,9 +77,14 @@ module.exports = function(app) {
   app.use('/angular', App.masterRequire('angular/app'));
   app.use('/mysql', App.masterRequire('mysql/app'));
   app.use('/stack', App.masterRequire('stack/app'));
+  app.use('/tmux', App.masterRequire('tmux/app'));
   app.use('/demo-2', App.masterRequire('demo-2/app'));
+  app.use('/demo-3', App.masterRequire('demo-3/app'));
+  app.use('/excel', App.masterRequire('excel/app'));
   app.use('/express', App.masterRequire('express/app'));
   app.use('/pug', App.masterRequire('pug/app'));
+  app.use('/canvas', App.masterRequire('canvas/app'));
+  app.use('/site', App.masterRequire('site/app'));
   app.use('/codemirror', App.masterRequire('codemirror/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));

@@ -1,0 +1,24 @@
+form {
+  padding: 5px 0px;
+}
+
+form > div {
+  margin-bottom: 8px;
+}
+
+form input, form label {
+  display: block;
+  padding: 5px;
+}
+
+form label {
+  padding-left: 0px;
+}
+
+form button {
+  padding: 6px 6px 4px 6px;
+}
+
+form input {
+  min-width: 400px;
+}

@@ -1,8 +1,30 @@
+var callsite = require('callsite');
+
+// OVERRIDE CONSOLE LOG
+var override = false;
+if (override) {
+  console.log = (function() {
+    var original = console.log;
+    return function() {
+      try {
+        var stack = callsite();
+        var tmp = process.stdout;
+        process.stdout = process.stderr;
+        original(stack[1].getFileName());
+        original.apply(console, arguments);
+      } finally {
+        process.stdout = tmp;
+      }
+    };
+  })();
+}
+
+
 var path = require('path');
 global.App = require('../share/App.js').initialize(path.join(__dirname, '..'));
 global.Loc = require('../share/Loc.js');
 global.App.path = function(name) {
-	return path.join(__dirname, '..') + '/' + name;
+  return path.join(__dirname, '..') + '/' + name;
 };
 var env = App.masterRequire('env');
 
@@ -22,11 +44,19 @@ var server = http.createServer(app);
 
 var db = require('./db');
 
-db.sync().then(() => {
+var start = function() {
   server.listen(port, host, function() {
     log(`Server is listening at ${host}:${port}.`);
     request(`http://${env.host}:${env.bs.port}/__browser_sync__?method=reload`, function(err) {
-    	if (err) console.log(JSON.stringify(err));
+      if (err) console.log(JSON.stringify(err));
     });
   });
-});
+};
+
+if (db && db.sync) {
+  db.sync().then(() => {
+    start();
+  });
+} else {
+  start();
+}

@@ -1,1 +1,29 @@
 <h1>Example App: Home</h1>
+
+{{#each posts}}
+<div class="post">
+  <p class="id"><small>{{ this.id }}</small></p>
+
+  {{#if this.title}}
+    <h3 class="title">{{ this.title }}</h3>
+  {{else}}
+    <h3 class="title">HAS NO TITLE</h3>
+  {{/if}}
+
+  {{#if this.body}}
+    <p class="body">{{ this.body }}</p>
+  {{else}}
+    <p class="body">HAS NO CONTENT</p>
+  {{/if}}
+
+  <div>
+    <a href="/posts/edit/{{ this.id }}" class="btn btn-blue">EDIT</a>
+    <button class="btn btn-blue" onclick="Main.ToggleNext(this)">JSON</button>
+    <pre class="code hide"><code class="language-json">{{JSON this}}</code></pre>
+  </div>
+
+  <br>
+
+  <p><small>Created at {{ this.createdAt }}</small></p>
+</div>
+{{/each}}
