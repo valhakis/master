@@ -20,6 +20,18 @@ module.exports = function(app) {
           return options.fn(this);
         }
         return options.inverse(this);
+      },
+      link: function(label, path) {
+        return `<a href="/site${path}" class="${this.path == path ? 'w3-green' : ''} w3-bar-item w3-button">${label}</a>`;
+      },
+      linkn: function(label, path) {
+        function strncmp(str1, str2, n) {
+          str1 = str1.substring(0, n);
+          str2 = str2.substring(0, n);
+          return ( ( str1 == str2 ) ? 0 :
+            (( str1 > str2 ) ? 1 : -1 ));
+        }
+        return `<a href="/site${path}" class="${strncmp(path, this.path, path.length) == 0 ? 'w3-green' : ''} w3-bar-item w3-button">${label}</a>`;
       }
     },
     extname: '.hbs', 

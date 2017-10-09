@@ -1,4 +1,6 @@
 var passport = require('passport');
+var User = Loc.require('app/models/user');
+var Post = Loc.require('app/models/post');
 
 var isLoggedIn = function(req, res, next) {
   if (req.isAuthenticated()) {
@@ -21,8 +23,15 @@ exports.demo = function(req, res) {
 };
 
 exports.renderIndex = function(req, res) {
-  res.render('index', {
-    flashMessages: req.flash('flashMessages')
+  User.find({}).populate('posts').exec(function(err, users) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.locals.users = users;
+      res.render('index', {
+        flashMessages: req.flash('flashMessages')
+      });
+    }
   });
 };
 
@@ -51,5 +60,13 @@ exports.renderProfile = function(req, res) {
       flashMessages: req.flash('flashMessages'),
       user: req.user
     });
+  });
+};
+
+exports.renderProfilePosts = function(req, res) {
+  Post.find({author: req.user._id}, function(err, posts) {
+    if (err) return res.send(err);
+    res.locals.posts = posts;
+    res.render('profile/posts');
   });
 };

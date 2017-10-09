@@ -21,7 +21,6 @@ Plug 'digitaltoad/vim-pug'
 Plug 'Yggdroot/indentLine'
 Plug 'othree/html5.vim'
 Plug 'jwalton512/vim-blade'
-Plug 'nono/vim-handlebars'
 Plug 'etnadji/vim-epub'
 
 "Plug 'python-mode/python-mode'

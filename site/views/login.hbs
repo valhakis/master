@@ -5,10 +5,10 @@
     <div class="w3-container w3-red">
       <h2>Log in to your account.</h2>
     </div>
-    <form class="login w3-container w3-yellow" action="{{url '/login'}}" method="POST">
+    <form class="login w3-container w3-yellow" action="{{url '/users/login'}}" method="POST">
       <div>
-        <label>Email or Username: </label>
-        <input class="w3-input" type="text" name="emailOrUsername" placeholder="Place your email or username here." autofocus>
+        <label>Email: </label>
+        <input class="w3-input" type="text" name="email" placeholder="Place your email here." autofocus>
       </div>
       <div>
         <label>Password: </label>
@@ -16,7 +16,7 @@
       </div>
       <div>
         <button type="submit">Submit</button>
-        <a href="{{ url '/register' }}">Become a member.</a>
+        <a href="{{ url '/users/register' }}">Become a member.</a>
       </div>
     </form>
   </div>
@@ -34,4 +34,8 @@
   </div>
 </div>
 
+<p><a href="{{ url '/auth/facebook' }}">LOG IN WITH FACEBOOK</a></p>
 
+<p><a href="{{ url '/auth/google' }}">LOG IN WITH GOOGLE</a></p>
+
+<p><a href="{{ url '/auth/github' }}">LOG IN WITH GITHUB</a></p>

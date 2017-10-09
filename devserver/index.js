@@ -154,6 +154,7 @@ bs.watch([
   App.masterRoot('tmux/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('demo-2/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('demo-3/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('sim/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('excel/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),

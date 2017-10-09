@@ -46,6 +46,7 @@ module.exports = function(app) {
   app.use('/3d', express.static(App.masterRoot('3d')));
   app.use('/', express.static(App.masterRoot('public')));
   app.use('/', express.static(App.masterRoot('game/public/dist')));
+  app.use('/sim', express.static(App.masterRoot('sim/public')));
 
   app.use('/css', App.masterStatic('css'));
 

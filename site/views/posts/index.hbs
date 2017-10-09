@@ -11,6 +11,11 @@
   <p>
     <small>Created at: {{ this.createdAt }}</small>
   </p>
+  {{#if this.author}}
+  <p>Author: {{ this.author.name }}</p>
+  {{else}}
+  <p>Author: HAS NO AUTHOR</p>
+  {{/if}}
 </div>
 {{/each}}
 

@@ -1,9 +1,9 @@
-var passport = require('passport');
 var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var passport = Loc.require('app/passport');
 
 module.exports = function(app) {
   app.use(Loc.static('public'));

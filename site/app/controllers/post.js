@@ -1,7 +1,9 @@
 var Post = Loc.require('app/models/post');
 
 exports.renderIndex = function(req, res) {
-  Post.find({}, function(error, posts) {
+  Post.find({}).populate('author').sort({
+    createdAt: -1
+  }).exec(function(error, posts) {
     if (error) {
       res.locals.error = 'Failed to fetch posts.';
     } else {
@@ -16,7 +18,11 @@ exports.renderCreate = function(req, res) {
 };
 
 exports.storePost = function(req, res) {
-  var post = new Post(req.body);
+  var post = new Post({
+    title: req.body.title,
+    body: req.body.body,
+    author: req.body.authorId,
+  });
   post.save(function(error) {
     if (error) {
       req.flash('errors', 'Failed to create a post.');

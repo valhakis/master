@@ -11,12 +11,16 @@
     {{> nav}}
 
     <div class="flashMessages">
-      {{#each flashMessages}}
+      {{#each messages.flashMessages}}
       {{#equals this.type "error"}}
       <p class="error">{{ this.message }}</p>
       {{else}}
       <p class="success">{{ this.message }}</p>
       {{/equals}}
+      {{/each}}
+
+      {{#each messages.error}}
+      <p class="error">{{ this }}</p>
       {{/each}}
     </div>
 

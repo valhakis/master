@@ -85,7 +85,7 @@ form button {
 .w3-bar {
 
 }
-.w3-bar .w3-bar-item {
+.w3-bar .w3-bar-item, .w3-bar .w3-button {
   font-size: 14px;
   padding: 10px 15px 7px 15px;
 }
@@ -168,4 +168,8 @@ form.login > div:last-child a:hover {
 form.login > div:last-child a:active {
   color: #000000;
   font-weight: bold;
+}
+
+.w3-button {
+  padding: 7px 20px 3px 20px;
 }

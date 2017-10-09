@@ -9,8 +9,8 @@
 </div>
 <form class="w3-container w3-yellow" action="{{url '/users/login'}}" method="POST">
   <div>
-    <label>Email or username: </label>
-    <input class="w3-input" type="text" name="emailOrUsername" placeholder="Place your email or username here.">
+    <label>Email: </label>
+    <input class="w3-input" type="text" name="email" placeholder="Place your email here.">
   </div>
   <div>
     <label>Password: </label>
@@ -20,3 +20,9 @@
     <button class="w3-btn w3-red" type="submit">Submit</button>
   </div>
 </form>
+
+<p><a href="{{ url '/auth/facebook' }}">LOG IN WITH FACEBOOK</a></p>
+
+<p><a href="{{ url '/auth/google' }}">LOG IN WITH GOOGLE</a></p>
+
+<p><a href="{{ url '/auth/github' }}">LOG IN WITH GITHUB</a></p>

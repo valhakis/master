@@ -1,8 +1,10 @@
 var express = require('express');
+var passport = require('passport');
 var app = express();
 
 require('./config')(app);
 require('./middleware')(app);
+require('./passport/config')();
 require('./routes')(app);
 
 // error handler
