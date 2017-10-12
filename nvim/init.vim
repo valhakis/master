@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
 Plug 'scrooloose/nerdtree' 
+Plug 'valhakis/vim' 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
@@ -13,7 +14,7 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set nowrap incsearch hlsearch splitbelow
+set nowrap incsearch hlsearch splitbelow backspace=2
 
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
@@ -28,3 +29,5 @@ nmap ,edit :tabedit ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
 nmap ,ne :NERDTree <cr>
 nmap ,nf :NERDTreeFind <cr>
+nmap ,install :w <bar> PlugInstall <cr>
+nmap \mr :w <bar> !./start.sh<cr>
