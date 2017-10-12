@@ -1,0 +1,24 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Stack</h1>
+
+<h3>Latest 3 stacks.</h3>
+
+{{#unless stacks.length}}
+<p class="info">No stack records in database.</p>
+{{/unless}}
+
+{{#each stacks}}
+<div class="stack">
+  <small>ID: {{ this.id }}</small>
+  <h3 class="title"><a href="/stack/stacks/{{ this.id }}">{{ this.name }}</a></h3>
+  <div class="description">{{ this.description }}</div>
+  <small>Created At {{ this.createdAt }}</small>
+</div>
+{{/each}}
+
+{{/content}}
+
+{{/extend}}

@@ -1,7 +1,0 @@
-#!/usr/bin/env node
-require('../globals');
-
-var browserSync = App.require('./util/browser-sync');
-var server = App.require('./server');
-
-server.start();

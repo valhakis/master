@@ -22,15 +22,19 @@ master.use(function(req, res, next) {
   next();
 });
 
+master.get('/music', function(req, res) {
+	res.render('master/music/index.hbs');
+});
+
 master.get('/', function(req, res) {
 
   Site.allNotes(function(err, notes) {
     if (err) {
-      return res.send(err);
+    	console.log(err);
     }
 
     res.render('master/index.html', {
-      notes: notes
+			notes: notes ? notes : []
     });
   });
 

@@ -1,0 +1,28 @@
+<h1>Log In</h1>
+
+{{> users/menu}}
+
+<br>
+
+<div class="w3-container w3-red">
+  <h3>Log into your account.</h3>
+</div>
+<form class="w3-container w3-yellow" action="{{url '/users/login'}}" method="POST">
+  <div>
+    <label>Email: </label>
+    <input class="w3-input" type="text" name="email" placeholder="Place your email here.">
+  </div>
+  <div>
+    <label>Password: </label>
+    <input class="w3-input" type="password" name="password" placeholder="Place your password here.">
+  </div>
+  <div>
+    <button class="w3-btn w3-red" type="submit">Submit</button>
+  </div>
+</form>
+
+<p><a href="{{ url '/auth/facebook' }}">LOG IN WITH FACEBOOK</a></p>
+
+<p><a href="{{ url '/auth/google' }}">LOG IN WITH GOOGLE</a></p>
+
+<p><a href="{{ url '/auth/github' }}">LOG IN WITH GITHUB</a></p>

@@ -1,0 +1,83 @@
+.hide {
+  display: none;
+}
+
+.btn {
+  padding: 5px 8px 3px 8px;
+  font-size: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: #FFFF00;
+  border-color: #333;
+}
+
+.btn.btn-blue {
+  background-color: #3333FF;
+  color: #FFFFFF;
+}
+
+.post {
+  background-color: #202020;
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  padding: 7px;
+  margin-bottom: 20px;
+}
+
+.post h1, .post h2, .post h3, .post h4 {
+  margin: 5px 0px 15px 0px;
+}
+
+.post .title {
+  color: #8888FF;
+}
+
+.post .code {
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.post .body {
+  margin: 0px 0px 15px 0px;
+}
+
+.post .id {
+  color: #FFAAAA;
+}
+
+.post .id small {
+  float: right;
+}
+
+.post p {
+  margin: 0px;
+}
+
+.quicklinks {
+  margin-bottom: 15px;
+}
+
+.quicklinks ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.quicklinks li {
+  display: inline-block;
+}
+
+.quicklinks a {
+  display: block;
+  padding: 5px 5px 3px 5px;
+  border: 1px solid #FFFF00;
+}
+
+a:active {
+  background-color: #000;
+  color: #FF8888;
+  border-color: #FF3333;
+}

@@ -1,7 +1,9 @@
 node_modules
 bower_components
 /.env
+/.env.js
 /node/master/dist
 /eksam/dist
 /vendor/
 /master/environment.js
+app.exe

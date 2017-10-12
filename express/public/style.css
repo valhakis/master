@@ -1,0 +1,31 @@
+@import 'inc/default.css';
+@import 'inc/menu.css';
+@import 'inc/code.css';
+@import 'inc/footer.css';
+@import 'inc/nav.css';
+@import 'inc/box.css';
+@import 'inc/login.css';
+
+a {
+  color: #FFFF88;
+}
+
+* {
+  box-sizing: border-bix;
+}
+
+.green, .red {
+  padding: 5px 5px 3px 5px;
+  margin: 0px 0px 10px 0px;
+}
+.green h4, .red h4 {
+  margin: 0px 0px 0px 0px;
+}
+
+.green {
+  background-color: #44FF44;
+}
+
+.red {
+  background-color: #FF4444;
+}

@@ -1,0 +1,75 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+
+{{/content}}
+
+{{#content "body"}}
+
+<h1>CRUD</h1>
+
+<ul>
+  <li>C - CREATE</li>
+  <li>R - READ</li>
+  <li>U - UPDATE</li>
+  <li>D - DELETE</li>
+</ul>
+
+<p>Angular $resource service is not bundled with main angular script.</p>
+<pre><code>angular.module('app', ['ngResource']);</code></pre>
+
+<h3>$resource end points.</h3>
+<table class="table-1">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>HTTP Verb</th>
+      <th>POST Body</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/api/entries</td>
+      <td>GET</td>
+      <td>empty</td>
+      <td>All entries returned.</td>
+    </tr>
+    <tr>
+      <td>/api/entries</td>
+      <td>POST</td>
+      <td>JSON String</td>
+      <td>New entry created.</td>
+    </tr>
+    <tr>
+      <td>/api/entries/:id</td>
+      <td>GET</td>
+      <td>empty</td>
+      <td>Single entry returned.</td>
+    </tr>
+    <tr>
+      <td>/api/entries/:id</td>
+      <td>PUT</td>
+      <td>JSON String</td>
+      <td>Existing entry updated.</td>
+    </tr>
+    <tr>
+      <td>/api/entries/:id</td>
+      <td>DELETE</td>
+      <td>empty</td>
+      <td>Existing entry deleted.</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code>angular.module('app').factory('Entry', function($resource) {<br>&#9;return $resource('/api/entries/:id');<br>});</code></pre>
+<pre><code>angular.module('app').controller('ResourceController', function($scope, Entry) {<br>&#9;var entry = Entry.get({ id: $scope.id }, function() {<br>&#9;&#9;console.log(entry);<br>&#9;})</br>});</code></pre>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/angular/angular.js"></script>
+<script src="/angular/posts.js"></script>
+{{/content}}
+
+{{/extend}}

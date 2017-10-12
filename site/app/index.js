@@ -1,19 +1,18 @@
-var watch = require('node-watch');
-var path = require('path');
-var Loc = App.masterRequire('site/local');
+var express = require('express');
+var passport = require('passport');
+var app = express();
 
-module.exports = function(server, bs) {
-  watch([
-    Loc.root('extern'),
-    Loc.root('server')
-  ], { recursive: true }, function() {
-    server.restart();
-  });
-  watch([
-    Loc.root('public'),
-    Loc.root('views'),
-  ], { recursive: true }, function() {
-    bs.reload();
-  });
-};
+require('./config')(app);
+require('./middleware')(app);
+require('./passport/config')();
+require('./routes')(app);
 
+// error handler
+app.use(function(req, res, next) {
+  res.locals.method = req.method;
+  res.locals.path = req.path;
+  res.locals.originalUrl = req.originalUrl;
+  res.status(404).render('404');
+});
+
+module.exports = app;

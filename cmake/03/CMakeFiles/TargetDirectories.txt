@@ -1,0 +1,7 @@
+/home/viktor/master/cmake/03/CMakeFiles/install/strip.dir
+/home/viktor/master/cmake/03/CMakeFiles/edit_cache.dir
+/home/viktor/master/cmake/03/CMakeFiles/student.dir
+/home/viktor/master/cmake/03/CMakeFiles/rebuild_cache.dir
+/home/viktor/master/cmake/03/CMakeFiles/list_install_components.dir
+/home/viktor/master/cmake/03/CMakeFiles/install/local.dir
+/home/viktor/master/cmake/03/CMakeFiles/install.dir

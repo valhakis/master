@@ -1,0 +1,15 @@
+[submodule "3d"]
+	path = 3d
+	url = https://valhakis@github.com/ravensim14/3d
+[submodule "LaoSystem"]
+	path = LaoSystem
+	url = https://ruudi170@gitlab.com/kodu/LaoSystem.git
+[submodule "uTox"]
+	path = uTox
+	url = https://github.com/notsecure/uTox
+[submodule "LearnOpenGL"]
+	path = LearnOpenGL
+	url = https://github.com/JoeyDeVries/LearnOpenGL
+[submodule "c"]
+	path = c
+	url = https://github.com/ravensim14/c.git

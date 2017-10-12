@@ -1,0 +1,61 @@
+body {
+	background-color: #111;
+	color: #ccc;
+}
+
+.panel.panel-default .panel-heading {
+	background-color: #121212;
+	color: #ccc;
+	border-color: #666;
+}
+
+.panel.panel-default .panel-footer {
+	background-color: #121212;
+	color: #ccc;
+	border-color: #666;
+}
+
+.panel.panel-default .panel-body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #121212;
+	color: #ccc;
+	border-color: #666;
+}
+
+.panel.panel-default {
+	border-color: #666;
+	background-color: #222;
+}
+
+.panel pre::-webkit-scrollbar {
+	display: none;
+}
+
+.panel pre {
+	background-color: #000;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	margin: 0px;
+	padding: 5px 10px;
+}
+
+.panel pre code {
+	/* tab-size: 1; */
+}
+
+.well {
+	background-color: #151515;
+	border-color: #666;
+}
+
+link-to {
+	cursor: pointer;
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	padding: 5px;
+	margin-bottom: 5px;
+}
+link-to:hover {
+	color: #FF0;
+	background-color: #181818;
+}

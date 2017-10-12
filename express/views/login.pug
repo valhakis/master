@@ -1,0 +1,17 @@
+extends /lay/base
+
+block body
+  h1 Login page.
+
+  form.login(action="/express/login", method="POST")
+    h4 Log in to your account.
+    div
+      label Email or username: 
+      input(type="text", name="email", autofocus)
+    div
+      label Password:
+      input(type="password", name="password")
+
+    div
+      button(type="submit") Submit
+      a(href="/express/register") Become a Member.

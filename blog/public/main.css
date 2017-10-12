@@ -1,0 +1,21 @@
+body {
+  font-family: 'Arial Narrow'; }
+
+#main-nav ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden; }
+
+#main-nav li {
+  list-style: none; }
+
+#main-nav a {
+  padding: 15px 20px;
+  text-decoration: none;
+  background-color: #111;
+  color: #fff;
+  float: left;
+  display: block;
+  margin-right: 1px; }
+  #main-nav a:hover {
+    background-color: #222; }

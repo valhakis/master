@@ -1,0 +1,29 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+{{/content}}
+
+{{#content "body"}}
+
+<br>
+<select name="theme-select">
+</select>
+
+<h1>CodeMirror Themes</h1>
+<p>Dolor repudiandae doloremque provident odit consequuntur.</p>
+
+<code-editor mode="htmlmixed" load="/codemirror/raw/demo.html"></code-editor>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<script src="/codemirror/code-editor.js"></script>
+{{/content}}
+
+{{/extend}}

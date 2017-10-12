@@ -1,0 +1,54 @@
+a {
+  color: #FF3333;
+  text-decoration: none;
+}
+
+a::before {
+  content: "➞ "
+}
+
+form {
+  background-color: #FFFFAA;
+  padding: 5px;
+  max-width: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+form > div {
+  margin-bottom: 10px;
+}
+
+form > div:last-child {
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+form > div:last-child button {
+  float: left;
+}
+
+form > div:last-child a {
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 5px 5px 5px 5px;
+  float: right;
+}
+
+form h4 {
+  color: red;
+  margin: 7px 0px 15px 0px;
+}
+
+form input, form label {
+  display: block;
+  padding: 5px;
+  width: 100%;
+}
+
+form label {
+  padding-left: 0px;
+}
+
+form button {
+  padding: 5px 8px 3px 8px;
+}

@@ -1,0 +1,16 @@
+extends /layouts/base
+
+block content
+  h1 Create a canvas page.
+
+  a(href="/canvas/canvases") Canvases index page.
+
+  form(action="/canvas/canvases/store", method="POST")
+    div
+      label Title:
+      input(type="text", name="title", placeholder="Place title here.")
+    div
+      label Slug:
+      input(type="text", name="slug", placeholder="Place title here.")
+    div
+      button(type="submit") Submit

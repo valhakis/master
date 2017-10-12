@@ -1,0 +1,21 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<p><small>ID: {{ stack.id }}</small></p>
+
+<h1 style="margin: 0px 0px 0px 0px;">{{ stack.name }}</h1>
+
+<p><small>Created At {{ stack.createdAt }}</small></p>
+
+<h3 style="margin: 0px 0px 10px 0px;">Description</h3>
+
+<div class="description">{{ stack.description }}</div>
+
+<br> 
+
+<p><small>Modified At {{ stack.updatedAt }}</small></p>
+
+{{/content}}
+
+{{/extend}}

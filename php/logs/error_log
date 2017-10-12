@@ -1,0 +1,18 @@
+[Wed Sep 06 03:43:04.518787 2017] [mime:error] [pid 5157:tid 140312345742272] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:43:05.982446 2017] [mime:error] [pid 5158:tid 139758028893120] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:43:21.260756 2017] [mime:error] [pid 5159:tid 139996837751744] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:44:42.131422 2017] [mime:error] [pid 5229:tid 140251180207040] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:45:16.117350 2017] [mime:error] [pid 5232:tid 140712417598400] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:45:24.788412 2017] [mime:error] [pid 5233:tid 140597934869440] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:46:47.733173 2017] [mime:error] [pid 5248:tid 140027312315328] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:47:27.854157 2017] [mime:error] [pid 5252:tid 139622746680256] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed
+[Wed Sep 06 03:47:29.741446 2017] [mime:error] [pid 5254:tid 140544430136256] (2)No such file or directory: AH01597: could not open mime types config file /home/viktor/master/php/conf/mime.types.
+AH00016: Configuration Failed

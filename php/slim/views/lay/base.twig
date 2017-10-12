@@ -1,0 +1,23 @@
+{% set base = '/php/slim/index.php' %}
+{% set public = '/php/slim/public' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Slim</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ public ~ '/style.css' }}">
+  </head>
+  <body>
+
+    {% include 'inc/navigation.twig' %} 
+
+    <h1>Slim Application</h1>
+
+    {% block body %}{% endblock %}
+
+    {% include 'inc/footer.twig' %} 
+
+  </body>
+</html>

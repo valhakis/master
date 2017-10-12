@@ -1,4 +1,5 @@
 require('../globals');
+//App.require('dev');
 
 var valhakis = require('valhakis');
 var session = require('express-session');
@@ -33,7 +34,13 @@ app.use(session({
   cookie: { secure: false }
 }));
 
+app.get('/home', function(req, res) {
+	var source = fs.readFileSync(App.root('views/index.html'), 'utf-8');
+	res.end(source);
+});
 app.use('/', static(root('public')));
+
+require('./Apps')(app);
 
 app.use('/master', require('./master'));
 app.use('/site', masterRequire('site/server'));

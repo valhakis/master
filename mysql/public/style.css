@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  color: #dddddd;
+}
+
+a {
+  color: #cccc99;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFFF66;
+}
+
+a:hover::before {
+  color: #FFFF00;
+}
+
+a::before {
+  content: "🔮 ";
+  color: #FFFF66;
+}
+
+a:active, .menu li a:active {
+  color: #FF6666;
+}
+
+.menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.menu li {
+  display: inline-block;
+}
+.menu li a {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 14px 5px 5px;
+  border-radius: 3px;
+  background-color: #303030;
+}
+.menu li a:hover {
+  background-color: #000;
+  border-color: rgba(255, 0, 255, 0.5);
+}
+
+#footer {
+  margin: 30px 0px;
+  padding: 5px 5px 25px 5px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-right: none;
+}
+
+form.default {
+  background-color: #000;
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form.default > h3 {
+  color: #FFFF33;
+}
+
+form.default input, form.default textarea, form.default label, form.default select {
+  display: block;
+  vertical-align: middle;
+}
+
+form.default input, form.default textarea, form.default select {
+  padding: 5px;
+  min-width: 600px;
+  width: 100%;
+  display: block;
+}
+
+form.default textarea {
+  min-height: 80px;
+}
+
+form.default > div {
+  padding: 5px 0px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+form.default > div:last-of-type {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+form.default label {
+  display: inline-block;
+  width: 130px;
+  text-transform: uppercase;
+  padding-left: 0px;
+  margin: 5px 0px 10px 0px;
+}
+
+form.default button {
+  padding: 5px 10px;
+}
+
+form.default input, form.default textarea, form.default button, form.default select {
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #DDD;
+}
+
+form.default input:focus, form.default textarea:focus, form.default button:focus, form.default select:focus {
+  outline-color: rgba(255, 255, 0, 0.3);
+}
+
+form.default button:active {
+  color: #FF6666;
+  background-color: #000;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+div.code {
+  background-color: #050505;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+}
+
+div.code h4 {
+  color: #66FF66;
+}
+
+pre code {
+  font-size: 13px;
+}
+
+pre.language-javascript {
+  padding: 1px 5px 1px 5px;
+  margin: 0px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.CodeMirror {
+  font-family: COURIER !important;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 5px 8px 4px 8px;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: #FFFF33;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.btn:active {
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.btn::before {
+  content: "";
+}
+
+.btn.btn-red {
+  background-color: #FF5555;
+  border-color: #555;
+  color: #333333;
+}
+
+.btn.btn-blue {
+  background-color: #5555FF;
+  color: #FFFF00;
+}
+
+p.error {
+  background-color: #AA0000;
+  color: #FFFF00;
+}
+
+p.info {
+  background-color: #0000AA;
+  color: #FFF000;
+}
+
+p.success, p.error, p.info {
+  padding: 6px 3px 3px 3px;
+  margin: 5px 0px 5px 0px;
+}
+
+p.success {
+  background-color: #00AA00;
+  color: #111111;
+}

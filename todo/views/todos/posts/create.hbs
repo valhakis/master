@@ -1,0 +1,21 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Add post to '{{ todo.title }}'.</h1>
+
+<form action="/todo/todos/{{ todo.id }}/posts/store" method="post">
+  <div>
+    <label>Title: </label>
+    <input type="text" name="title" placeholder="Place title here.">
+  </div>
+  <div>
+    <label>Content: </label>
+    <textarea name="body" placeholder="Place content here."></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+{{/content}}
+
+{{/extend}}

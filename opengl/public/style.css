@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #010101;
+  color: #FFF;
+}
+
+pre code {
+  font-size: 13px;
+}
+
+a {
+  color: #FFF;
+}
+
+.sections {
+  margin-top: 10px;
+}
+
+.sections > div {
+  background-color: #151515;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sections > div h3 {
+  color: #F44;
+  padding: 5px;
+  background-color: #353535;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 11px;
+  paddinb-bottom: 3px;
+}
+
+.sections > div pre {
+  margin: 0px;
+  padding: 5px;
+}
+
+.sections > h1 {
+  background-color: #33A;
+  padding: 5px;
+  margin: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-width: 3px;
+  margin-bottom: 5px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  padding-top: 15px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.menu li {
+  display: inline-block;
+}
+.menu li a {
+  text-decoration: none;
+  display: block;
+  color: #ddd;
+}
+.menu li a:hover {
+  color: #FF3333;
+}
+
+form.default {
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0px;
+}
+
+form.default > div {
+  padding: 5px;
+}
+form.default label {
+  display: block;
+  padding: 5px;
+  padding-left: 0px;
+}
+form.default input, form.default textarea, form.default select {
+  display: block;
+  padding: 5px;
+  min-width: 500px;
+}
+form.default button {
+  padding: 5px 9px;
+  margin: 5px;
+}
+form.default h3 {
+  margin: 10px 0px 0px 0px;
+  padding: 5px 5px 10px 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

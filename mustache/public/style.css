@@ -1,0 +1,16 @@
+@font-face {
+  font-family: COURIER;
+  src: url('/courier.ttf') format('truetype');
+}
+
+body {
+  font-family: COURIER;
+}
+
+pre code {
+  font-family: COURIER !important;
+}
+
+input, button, textarea {
+  font-family: COURIER !important;
+}

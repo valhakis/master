@@ -1,0 +1,9 @@
+{
+  "ignore": [ 
+    "public/scripts"
+  ],
+  "script": "server",
+  "watch": [
+    "server"
+  ]
+}

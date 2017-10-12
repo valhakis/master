@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NODE</title>
+  </head>
+  <body>
+
+    <h1>NODE</h1>
+
+    <a href="/node/custom">custom</a>
+
+    <div style="border-top: 1px solid #000; margin: 5px 0px;"></div>
+    <a href="/">Home</a>
+
+    <script src="/node/custom.js"></script>
+
+  </body>
+</html>

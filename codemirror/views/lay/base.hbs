@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ app.name }}</title>
+
+    {{#block "head"}}{{/block}}
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/codemirror/style.css">
+  </head>
+  <body>
+
+    {{> navigation}}
+
+    <div class="container-fluid">
+      {{#block "body"}}{{/block}}
+    </div>
+
+    {{> footer}}
+
+    {{#block "scripts"}}{{/block}}
+  </body>
+</html>

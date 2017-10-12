@@ -1,0 +1,17 @@
+.tabs {
+	border: 1px solid #0FF;
+}
+
+.tab-links {
+	border: 1px solid #F0F;
+	height: 500px;
+}
+
+.tab-links li.active {
+	color: red;
+}
+
+.tab {
+	border: 1px solid #FFF;
+	min-height: 500px;
+}

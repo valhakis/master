@@ -1,5 +1,9 @@
 body {
-
+  background-color: #252525;
+  color: #FFF;
+}
+a {
+  color: #FFF;
 }
 #main {
   padding: 10px;
@@ -35,4 +39,16 @@ body {
 #content-menu li:hover {
   color: red;
   cursor: pointer;
+}
+
+
+pre {
+  background-color: #151515;
+  color: #FFF;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+pre code {
+  font-size: 14px;
 }

@@ -1,0 +1,51 @@
+<h2>INDEX</h2>
+
+{{#if user }}
+
+{{#if user.github.id}}
+<div class="w3-panel w3-green">
+  <h2>LOGGED IN WITH GITHUB</h2>
+  <h4>You are logged in as {{ user.github.name }}</h4>
+  <p>Ipsum porro vero eius error quo ducimus minima aperiam Beatae enim eligendi officia veritatis laboriosam ea culpa. Voluptatibus veniam aliquam sunt iste repudiandae Autem quisquam architecto id blanditiis magni neque?</p>
+</div>
+{{/if}}
+
+{{#if user.facebook.id}}
+<div class="w3-panel w3-green">
+<h2>YOU ARE LOGGED IN WITH FACEBOOK</h2>
+<h4>Welcome home {{ user.facebook.name }}</h4>
+<p>Sit nulla reprehenderit nemo quo maxime? Unde aut tenetur est velit dicta exercitationem quae? Sunt numquam aspernatur modi id ipsum maiores perspiciatis? Delectus saepe cum hic eaque odit, doloribus, accusamus.</p>
+</div>
+{{/if}}
+
+{{#if user.google.id}}
+<div class="w3-panel w3-green">
+<h2>YOU ARE LOGGED IN WITH GOOGLE</h2>
+<p>Elit commodi alias corrupti sapiente dignissimos Sed ullam consectetur sunt cum numquam Quidem possimus nostrum quia repudiandae assumenda. Tempore quae veniam repudiandae architecto sequi. Corrupti autem labore quod incidunt provident?</p>
+</div>
+{{/if}}
+
+{{#if user.local.email}}
+<div class="w3-panel w3-green">
+<h2>YOU ARE LOGGED IN LOCALLY</h2>
+<p>Dolor dolor quaerat deleniti impedit aliquid id officiis qui Cupiditate culpa animi nemo unde dolorem, consequuntur libero? Quibusdam quisquam error neque velit id. Aperiam totam officia voluptatem dignissimos illum autem</p>
+</div>
+{{/if}}
+
+<div class="w3-panel w3-yellow">
+  <pre><code>{{ JSON user }}</code></pre>
+</div>
+
+<div class="w3-panel w3-blue">
+  <pre><code>{{ JSON users }}</code></pre>
+</div>
+
+{{else}}
+<div class="w3-panel w3-red">
+  <h3>You are not logged in.</h3>
+  <p>Consectetur accusantium debitis perspiciatis cum vitae quasi dolore placeat Odio atque ipsum porro neque dolor? Similique libero eligendi quia dolore necessitatibus? Ea asperiores atque id repellendus architecto. Minima doloribus eos?</p>
+  <p>
+    <a class="w3-button w3-blue w3-hover-pink" href="{{ url '/login' }}">LOG IN</a>
+  </p>
+</div>
+{{/if}}

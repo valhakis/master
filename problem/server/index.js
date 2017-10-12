@@ -11,6 +11,6 @@ problem.get('/', function(req, res) {
   res.end(template({}));
 });
 
-problem.use('/', express.static(Loc.root('public')));
+// problem.use('/', express.static(Loc.root('public')));
 
 module.exports = problem;

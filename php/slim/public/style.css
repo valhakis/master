@@ -1,0 +1,43 @@
+body {
+  background-color: #202020;
+  color: #AAA;
+}
+
+a {
+  color: #AAA;
+}
+
+a:hover {
+  color: #FFF;
+}
+
+a::before {
+  content: "⚛ "
+}
+
+#navigation {
+
+}
+
+#navigation ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#navigation ul li {
+  display: inline-block;
+}
+
+#navigation ul li a {
+  display: block;
+  text-decoration: none;
+}
+
+#navigation ul li a::before {
+  content: "☯ ";
+}
+
+.menu {
+
+}

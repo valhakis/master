@@ -1,0 +1,22 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Home</h1>
+
+<a href="/todo/todos/create">Create a todo.</a>
+
+<h3 class="col-red">Latest created todos.</h3>
+{{#each todos}}
+<div class="todo">
+  <h4 class="title"><a href="/todo/todos/{{ this.id }}">{{ this.title }}</a></h4>
+
+  <div class="body">{{ this.body }}</div>
+
+  <small>Created at: {{ this.createdAt }}</small>
+</div>
+{{/each}}
+
+{{/content}}
+
+{{/extend}}

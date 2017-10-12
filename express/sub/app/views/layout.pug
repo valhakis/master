@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/main.dist.css")
+    link(rel='stylesheet', href='/express/sub/app/stylesheets/style.css')
+  body
+
+    include /inc/nav
+
+    block content
+      //- The content
+
+    div
+      h4 The Footer
+      p
+        a(href="/express") Express Home
+        span=" "
+        a(href="/") Main Home

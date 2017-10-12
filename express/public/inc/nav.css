@@ -1,0 +1,21 @@
+#nav {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#nav ul:first-child {
+  float: left;
+}
+#nav ul:last-child {
+  float: right;
+}
+
+#nav a {
+  color: red;
+}
+#nav a:hover {
+  color: #FFFF00;
+}
+#nav a:active {
+  color: #FF8888;
+}

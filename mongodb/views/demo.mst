@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>M DEMO</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mongodb/style.css">
+  </head>
+  <body>
+    <a href="/mongodb">MongoDB Home</a>
+
+    <h2>MongoDB Demo Page</h2>
+    <p>Amet corrupti odio magni molestiae consequuntur Natus sapiente hic magni ipsum reiciendis eveniet Consectetur suscipit sit facilis saepe ducimus. Reiciendis ut nam repudiandae cupiditate ipsam Laborum modi libero distinctio cupiditate.</p>
+
+    <div id="demo-info"></div>
+
+    <h3>1. Create a database</h3>
+    <p>Info: /mongodb/demo/create_db</p>
+    <button onClick="get('/mongodb/demo/create_db')">creates a database named 'mongodb'</button>
+
+    <h3>2. Create a collection</h3>
+    <p>Info: /mongodb/demo/create_collection</p>
+    <button onClick="get('/mongodb/demo/create_collection')">creates a collection named 'customers'</button>
+
+    <h3>3. Insert a customer to a collection named 'customers'</h3>
+    <p>Info: /mongodb/demo/insert_to_collection</p>
+    <button onClick="get('/mongodb/demo/insert_to_collection')">insertes a customer to 'customers' collection</button>
+    
+    <h3>4. Insert many customers to a collection named 'customers'</h3>
+    <p>Info: /mongodb/demo/insert_many_to_collection</p>
+    <button onClick="get('/mongodb/demo/insert_many_to_collection')">insertes many customers to 'customers' collection</button>
+
+    <h3>5. Insert customer with an _id into 'customers' collection</h3>
+    <p>Info: /mongodb/demo/insert_with_id</p>
+    <button onClick="get('/mongodb/demo/insert_with_id')">inserts customer with an _id to 'customers' collection</button>
+
+    {{> footer}}
+
+    <script src="/mongodb/demo.js"></script>
+  </body>
+</html>

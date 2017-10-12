@@ -1,0 +1,58 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+{{/content}}
+
+{{#content "body"}}
+
+<h1>CREATE NEW CODE</h1>
+
+<form class="default" action="/mysql/codes/store" method="POST">
+  <h3>Insert code to database.</h3>
+  <div>
+    <label>Title: </label>
+    <input type="text" name="title" placeholder="Place code title here.">
+  </div>
+  <div>
+    <label>Language: </label>
+    <select name="language">
+      <option value="javascript">Javascript</option>
+      <option value="php">PHP</option>
+      <option value="html">HTML</option>
+      <option value="cpp">C++</option>
+      <option value="sql">SQL</option>
+    </select>
+  </div>
+  <div>
+    <label>Description: </label>
+    <textarea name="description" placeholder="Place code description here."></textarea>
+  </div>
+  <div>
+    <label>Body: </label>
+    <textarea code-editor name="body" mode="javascript" placeholder="Place code body here."></textarea>
+  </div>
+  <div>
+    <label>Section: </label>
+    <select name="section">
+      <option value="section-01">Section 1</option>
+      <option value="section-02">Section 2</option>
+      <option value="section-03">Section 3</option>
+      <option value="section-04">Section 4</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div class="clear-fix"></div>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="/mysql/code-editor.js"></script>
+{{/content}}
+
+{{/extend}}

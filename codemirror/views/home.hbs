@@ -1,0 +1,30 @@
+{{#extend "base"}}
+
+{{#content "head"}}
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+{{/content}}
+
+{{#content "body"}}
+
+<h1>Home</h1>
+<p>Lorem eligendi ea natus deserunt quaerat id dolores? Aut ullam distinctio tempore assumenda assumenda. Sint ad necessitatibus natus cum accusantium. Esse molestias rem dignissimos sit odio? Accusamus labore ex magnam.</p>
+
+<code-editor mode="javascript" load="/codemirror/raw/useage.js"></code-editor>
+<br>
+<code-editor mode="htmlmixed" load="/codemirror/raw/demo.html"></code-editor>
+<br>
+<code-editor mode="pug" load="/codemirror/raw/demo.pug"></code-editor>
+
+{{/content}}
+
+{{#content "scripts"}}
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="/codemirror/mode/pug/pug.js"></script>
+
+<script src="/codemirror/code-editor.js"></script>
+{{/content}}
+
+{{/extend}}

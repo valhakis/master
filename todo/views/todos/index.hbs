@@ -1,0 +1,31 @@
+{{#extend "base"}}
+
+{{#content "body"}}
+
+<h1>Todos index page.</h1>
+
+<ul class="list">
+  <li>
+    <a href="/todo/todos/create">create new todo</a>
+  </li>
+  <li>
+    <a href="/todo/todos/createTable">create todos table</a>
+  </li>
+  <li>
+    <a href="/todo/todos/dropTable">drop todos table</a>
+  </li>
+</ul>
+
+{{#each todos}}
+<div class="todo">
+  <h4 class="title"><a href="/todo/todos/{{ this.id }}">{{ this.title }}</a></h4>
+
+  <div class="body">{{ this.body }}</div>
+
+  <small>Created at: {{ this.createdAt }}</small>
+</div>
+{{/each}}
+
+{{/content}}
+
+{{/extend}}

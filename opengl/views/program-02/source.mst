@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+  </head>
+  <body>
+
+    <a href="/opengl/program-02">program-02 home</a>
+
+    <h1>program-02 source</h1>
+
+    <raw-code file="/opengl/program-02/source?file=program-02/src/main.cc" lang="cpp"></raw-code>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/opengl/raw.js"></script>
+  </body>
+</html>

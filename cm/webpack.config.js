@@ -8,7 +8,7 @@ module.exports = {
     'client': './client/index.js',
   },
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('public/dist'),
     filename: "[name].out.js"
   },
   module: {

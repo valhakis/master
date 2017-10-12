@@ -1,0 +1,41 @@
+<h1>LOGIN</h1>
+
+<div class="login-row w3-row">
+  <div class="w3-half w3-container">
+    <div class="w3-container w3-red">
+      <h2>Log in to your account.</h2>
+    </div>
+    <form class="login w3-container w3-yellow" action="{{url '/users/login'}}" method="POST">
+      <div>
+        <label>Email: </label>
+        <input class="w3-input" type="text" name="email" placeholder="Place your email here." autofocus>
+      </div>
+      <div>
+        <label>Password: </label>
+        <input class="w3-input" type="password" name="password" placeholder="Place your password here.">
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+        <a href="{{ url '/users/register' }}">Become a member.</a>
+      </div>
+    </form>
+  </div>
+  <div class="w3-half">
+    <div class="w3-container w3-yellow w3-container">
+      <div class="w3-panel" style="padding-left: 0px; padding-right: 0px;">
+        <ul class="w3-ul w3-border">
+          <li class="w3-red"><h2>Names</h2></li>
+          <li class="w3-dark-gray">Jill</li>
+          <li class="w3-dark-gray">ve</li>
+          <li class="w3-dark-gray">Adam</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><a href="{{ url '/auth/facebook' }}">LOG IN WITH FACEBOOK</a></p>
+
+<p><a href="{{ url '/auth/google' }}">LOG IN WITH GOOGLE</a></p>
+
+<p><a href="{{ url '/auth/github' }}">LOG IN WITH GITHUB</a></p>

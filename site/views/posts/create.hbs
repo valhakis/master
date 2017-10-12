@@ -1,0 +1,23 @@
+<h1>Create a post.</h1>
+
+{{> posts/menu}}
+
+<form class="w3-container" action="{{url '/posts/store'}}" method="POST">
+
+  <input type="hidden" name="authorId" value="{{ user.id }}">
+
+  <div>
+    <label>Title: </label>
+    <input class="w3-input" type="text" name="title">
+  </div>
+
+  <div>
+    <label>Content: </label>
+    <textarea class="w3-input" name="body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+
+</form>

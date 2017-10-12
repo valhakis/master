@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OpenGL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/opengl/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-twilight.css">
+  </head>
+  <body>
+
+    <a href="/opengl">OpenGL Home</a>
+
+    <h1>program-01</h1>
+
+    <div>
+      <button onClick="request(this, '/opengl/program-01/make')">MAKE</button>
+      <button onClick="request(this, '/opengl/program-01/run')">RUN</button>
+    </div>
+
+    <br>
+
+    <a href="/opengl/program-01/source">view source</a>
+
+    <br>
+    
+    <div class="sections">
+      <div>
+        <h3>To build and run this program</h3>
+        <raw-code file="/opengl/raw/program-01/build.sh" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>Libraries to include.</h3>
+        <raw-code file="/opengl/raw/program-01/example01.cc" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>GLFW library initialization.</h3>
+        <raw-code file="/opengl/raw/program-01/glfw_init.cc" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>Window creation.</h3>
+        <raw-code file="/opengl/raw/program-01/win_create.cc" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>The main loop.</h3>
+        <raw-code file="/opengl/raw/program-01/main_loop.cc" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>Free up at the end.</h3>
+        <raw-code file="/opengl/raw/program-01/end.cc" lang="cpp"></raw-code>
+      </div>
+
+      <div>
+        <h3>Makefile to build the project.</h3>
+        <raw-code file="/opengl/program-01/source?file=program-01/makefile" lang="makefile"></raw-code>
+      </div>
+    </div>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-makefile.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <script src="/opengl/raw.js"></script>
+    <script src="/opengl/program-01-script.js"></script>
+  </body>
+</html>

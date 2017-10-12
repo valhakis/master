@@ -7,7 +7,7 @@ module.exports = function(server, bs) {
     server.restart();
   });
   watch([
-    Loc.root('public'),
+    // Loc.root('public'),
     Loc.root('views'),
   ], { recursive: true }, function() {
     bs.reload();

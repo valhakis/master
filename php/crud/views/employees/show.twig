@@ -1,0 +1,21 @@
+{% extends 'lay/base.twig' %}
+
+{% block body %}
+
+<h1>EMPLOYEES INDEX</h1>
+
+<a href="{{ base ~ '/employees' }}">Employees Home</a>
+
+<h2>{{ employee.name }}</h2>
+<p>Salary: {{ employee.salary }}$</p>
+<p>Address: {{ employee.address }}</p>
+
+<p>Joined At: {{ employee.createdAt }}</p>
+<p>Updated At: {{ employee.updatedAt }}</p>
+
+<hr>
+
+<a href="{{ base ~ '/employees/update/' ~ employee.id }}">Update</a>
+<a href="{{ base ~ '/employees/remove/' ~ employee.id }}">Remove</a>
+
+{% endblock %}

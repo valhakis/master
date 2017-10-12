@@ -1,0 +1,35 @@
+extends /lay/base
+
+block head
+  link(rel="stylesheet", href="/prismjs/themes/prism-tomorrow.css")
+
+
+block body
+  h1 Express index page.
+
+  p
+    a(href="/express/sub/app") Sub App
+
+  h3 Latest #{codes.length} codes.
+  each code in codes
+    div.code
+      h4.title #{code.title}
+      p.description #{code.description}
+      p
+        small Created at #{code.createdAt}
+      pre
+        code(class="language-" + code.language) #{code.body}
+
+
+block scripts
+  script(src="/prismjs/prism.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script
+
+  script(src="/prismjs/components/prism-cpp.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script

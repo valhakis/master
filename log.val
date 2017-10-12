@@ -1,0 +1,218 @@
+<++> # 2017-09-07
+
+var i = 'okei';
+
+# Make a window that is fullscreen, and bring it up by using [win] + u.
+----------------------------------------------------------
+
+background start
+bindsym $mod+u exec --no-startup-id background
+[win] + u
+
+<++> # 2017-09-07
+# How to reload tmux config
+----------------------------------------------------------
+:source-file ~/.tmux.conf
+
+<++> # 2017-09-07
+# How to have a file specific configuration in vim.
+----------------------------------------------------------
+FILE START
+#-!-#-!-#-!
+set nonumber
+#-!-#-!-#-!
+
+var example = function(name) {
+  console.log(name);
+};
+FILE END
+
+<++> # 2017-09-07
+# How to end highlight search in vim?
+----------------------------------------------------------
+:noh
+
+<++> # 2017-09-07
+# Tmux configuration, set username to statusbar and modify date format.
+----------------------------------------------------------
+set -g status-right '#[fg=colour233,bg=colour241,bold] %d-%m-%Y [#(whoami)] #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+
+<++> # 2017-09-07
+# HOW TO RELOAD/RESTART/EXIT I3: [win]+SHIFT+c / [win]+SHIFT+r / [win]+SHIFT+e
+----------------------------------------------------------
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+<++> # 2017-09-07
+# HOW TO RUN i3 using startx
+----------------------------------------------------------
+# Add following to ~/.xinitrc
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+exec i3
+
+<++> # 2017-09-07
+# HOW TO RUN gnome using startx
+----------------------------------------------------------
+exec gnome-session
+
+<++> # 2017-09-09
+# VIDEO
+----------------------------------------------------------
+https://www.youtube.com/watch?v=sB2iQSvrcG0
+
+<++> # 2017-09-09
+# VIDEO
+----------------------------------------------------------
+REQUIREMENTS GATHERING
+SUCCESS SCENARIO | WHAT HAPPENS FROM START TO FINISH
+WHAT WE NEED SYSTEM TO DO
+PROTOTYPING | HOW ITS GOING TO LOOK OUT (image / drawing / powerpoint item)
+
+<++> # 2017-09-09
+# JAVA
+----------------------------------------------------------
+Maven | Gradle
+
+<++> # 2017-09-09
+# DOWNLOAD MUSIC FROM YOUTUBE
+----------------------------------------------------------
+youtube-dl -x --audio-format mp3 [url]
+
+<++> # 2017-09-09
+# cmus
+----------------------------------------------------------
+PRESS 5 TO SWITCH TO THE FILE-BROWSER
+
+<++> # 2017-09-09
+# TODO: DOWNLOAD QUICLY MUSIC
+----------------------------------------------------------
+music [url] [filename]
+
+<++> # 2017-09-09
+# I3 MULTIMEDIA KEYS
+----------------------------------------------------------
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+<++> # 2017-09-09
+# HOW TO VIEW IMAGES WITH ARCH LINUX
+----------------------------------------------------------
+fbida (fbi), fbv, fim, jfbviewer
+
+<++> # 2017-09-11
+# How to improve makefile
+----------------------------------------------------------
+CC = g++
+
+src = $(shell find src -type f -name '*.cpp')
+
+obj += $(patsubst src/%.cpp, obj/%.o, $(src))
+
+libs += -I./include -lGL -lGLEW -lglfw -lglut -lGLU -ldl
+
+libs += -D_REENTRANT -I/usr/include/SDL2 -lSDL2
+
+dirs += bin obj
+dirs += $(patsubst src/%, obj/%, $(shell find src -type d))
+
+all: $(dirs) bin/game
+
+example: 
+	echo "obj: " $(obj)
+
+bin:
+	mkdir -p $@
+
+obj:
+	mkdir -p $@
+
+bin/game: $(obj)
+	$(CC) -o $@ $^ $(libs)
+
+obj/%.o: src/%.cpp
+	$(CC) -c $< -o $@ $(libs)
+
+obj/%: src/%
+	mkdir -p $@
+
+clean:
+	rm -rf obj bin/game
+
+<++> # 2017-09-11
+# How to remove only from remote github something
+----------------------------------------------------------
+git rm --cached file.txt
+
+<++> # 2017-09-11
+# EMACS
+----------------------------------------------------------
++ HOW TO CHANGE THEME
+Alt+x customize-themes
++ EMACS EPUB
++ UNDO / REDO
+C-/ C-_
++ TERMINAL
+Alt+x term
+
+<++> # 2017-09-12
+# LEARN LINUX PIPING AND REDIRECTION
+----------------------------------------------------------
+STDIN   (0)
+STDOUT  (1)
+STDERR  (2)
+
+$ REDIRECT TO FILE
+ls > output.txt
+
+$ REDIRECT STDERR
+ls -l notexist1.txt notexist2.js 2> errors
+
+$ REDIRECT STDERR AND NORMAL OUTPUT
+ls -l notexists1.txt notexists2.js > errors 2>&1
+
+<++> # 2017-09-12
+# GO TO PROGRAM OUTPUT
+----------------------------------------------------------
+cd "`today -d`"
+
+<++> # 2017-09-12
+# HOW TO SEARCH FROM FILES
+----------------------------------------------------------
+grep --exclude=*.o -rnw '/path/to/' -e 'pattern'
+
+<++> # 2017-09-12
+# transmission-cli
+----------------------------------------------------------
+pacman -S transmission-cli
+systemctl start transmission
+killall transmission-daemon or transmission-remote --exit
+
+<++> # 2017-09-12
+# Make youtube video full window
+----------------------------------------------------------
+https://www.youtube.com/[id]
+to
+https://www.youtube.com/embeded/[id]
+
+# wol
+----------------------------------------------------------
+# wolcmd 001c23e0795f 192.168.0.2 255.255.255.0 7
+wol 001c23e0795f 
+
+<++> # 2017-09-12
+# Vim Surround
+----------------------------------------------------------
+ysit: Add new element within element 
+
+ysat: Add new element over element

@@ -1,0 +1,11 @@
+{{#if post.title}}
+  <h1>{{ post.title }}</h1>
+{{else}}
+  <h1>POST HAS NO TITLE</h1>
+{{/if}}
+
+{{> posts/menu}}
+
+<h3>The Content</h3>
+
+<div class="w3-container">{{ post.body }}</div>

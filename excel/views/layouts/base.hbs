@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EXCEL</title>
+    <link rel="stylesheet" href="/main.dist.css">
+    <link rel="stylesheet" href="{{ url '/style.css' }}">
+
+    {{{boxen "head"}}}
+    {{! THE HEAD BLOCK !}}
+  </head>
+  <body>
+
+    {{> nav}}
+
+    {{{body}}}
+    {{! THE BODY BLOCK !}}
+
+    {{> footer}}
+
+    <script>var text = 'I AM A TEXT';</script>
+
+    {{{boxen "scripts"}}}
+    {{! THE SCRIPTS BLOCK !}}
+
+  </body>
+</html>

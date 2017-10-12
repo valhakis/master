@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>2017-08-09</title>
+  </head>
+  <body ng-app="app">
+
+    <h1>challenge</h1>
+    <p>READ AN HOUR</p>
+
+    <p ng-if="startedAt">Started At: <% startedAt | date:'yyyy-MM-dd hh:mm:ss' %></p>
+
+    <p ng-if="remaining">Remaining: <% remaining %></p>
+
+    <button onclick="challenge.start()">start</button>
+
+    <script src="angular/angular.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

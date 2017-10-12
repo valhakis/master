@@ -1,0 +1,71 @@
+extends /layouts/base
+
+block head
+  link(rel="stylesheet", href="/prismjs/themes/prism-tomorrow.css")
+
+block content
+  h1 Single canvas.
+  p 
+    span SLUG: 
+    small #{canvas.slug}
+
+  h2 #{canvas.title}
+
+  p ID: #{canvas._id}
+
+  p 
+    small Created AT #{canvas.createdAt}
+  if canvas.removedAt
+    p 
+      small Removed AT #{canvas.removedAt}
+
+  a(href=`/canvas/canvases/${canvas._id}/remove`).btn.btn-red Remove
+
+  h3 The Main Canvas
+  canvas#main-canvas.canvas
+    //- the canvas
+
+  hr.default
+  a.btn.btn-blue(href=`/canvas/canvases/${canvas._id}/posts/create`) Add post to canvas.
+
+  h3 List of its posts#{canvas.posts.length ? ` (${canvas.posts.length})` : ''}.
+  each post in canvas.posts
+    div.post
+      h4.title 
+        a(href=`/canvas/posts/${post._id}`) !{'<span>' + post.title + '</span>'} - !{'<small>' + post._id + '</small>'}
+      div.body #{post.body}
+
+      p
+        small Created at #{post.createdAt}
+
+  hr.default
+  a.btn.btn-green(href=`/canvas/canvases/${canvas._id}/codes/create`) Add codes to canvas.
+
+  h3 List of its codes#{canvas.codes.length ? ` (${canvas.codes.length})` : ''}.
+  each code in canvas.codes
+    div.code
+      h4.title
+        a(href=`/canvas/codes/${code._id}`)
+          span #{code.title}
+      pre.code
+        code.language-javascript #{code.body}
+      p.createdAt
+        small Created at #{code.createdAt}
+
+  //- script.
+    console.log('!{JSON.stringify(canvas)}')
+block scripts
+  script(src="/prismjs/prism.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script
+
+  script(src="/prismjs/components/prism-cpp.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script
+
+  script(src=`/canvas/canvases/${canvas.slug}/main.js`)
+

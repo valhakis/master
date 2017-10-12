@@ -1,0 +1,47 @@
+<div class="w3-container w3-red">
+	<h4>Component</h4>
+</div>
+
+<div class="w3-panel w3-card w3-blue">
+	<h4>Create Component</h4>
+
+	<form style="padding-bottom: 20px;" ng-submit="createComponent(component)">
+		<div class="w3-panel">
+			<label>Title: </label>
+			<input class="w3-input" type="text" placeholder="Place component title here." ng-model="component.title">
+		</div>
+		<div class="w3-panel">
+			<label>Description: </label>
+			<textarea class="w3-input" placeholder="Place component description here." ng-model="component.description"></textarea>
+		</div>
+		<div>
+			<button class="w3-btn w3-black">Create Component</button>
+		</div>
+	</form>
+
+</div>
+
+<div class="w3-panel w3-blue">
+	<h4>Component Preview</h4>
+	<div class="w3-panel">
+		<h4>{{component.title}}</h4>
+		<p>{{component.description}}</p>
+	</div>
+</div>
+
+<div id="active-component">
+
+	<div class="bar"></div>
+
+</div>
+
+<div id="components-list" class="w3-panel w3-blue">
+	<h4>LIST OF COMPONENTS</h4>
+	<div class="w3-panel w3-card w3-white component" ng-repeat="component in components">
+		<h5>{{component.title}}</h5>
+		<p>{{component.description}}</p>
+		<p>_id: {{component._id}}</p>
+		<button class="w3-btn w3-red delete" ng-click="deleteComponent(component)">DELETE</button>
+		<button class="w3-btn w3-green">SELECT</button>
+	</div>
+</div>

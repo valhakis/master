@@ -1,0 +1,26 @@
+{% extends 'lay/base.twig' %}
+
+{% block body %}
+
+<h1>EMPLOYEES INDEX</h1>
+
+<a href="{{ base ~ '/employees/create' }}">Add Employee</a>
+
+<ul>
+  {% for employee in employees %}
+  <li style="margin-bottom: 50px;">
+    <h4><a href="{{ base ~ '/employees/show/' ~ employee.id }}">{{ employee.name }}</a></h4>
+    <p>Salary: {{ employee.salary }}$</p>
+    <p>Address: {{ employee.address }}</p>
+
+    <p>Joined At: {{ employee.createdAt }}</p>
+
+    <hr>
+
+    <a href="{{ base ~ '/employees/update/' ~ employee.id }}">Update</a>
+    <a href="{{ base ~ '/employees/remove/' ~ employee.id }}">Remove</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -3,5 +3,6 @@ module.exports = {
   port: '2000',
   bs: {
     port: '80'
-  }
+  },
+  root: __dirname
 };

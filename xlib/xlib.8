@@ -1,0 +1,157 @@
+.TH man 8 "TODAY" "1.0" "xlib manpage"
+
+." ====================================================================================
+.SH DESCRIPTION
+
+." ====================================================================================
+.SH DEFAULT
+.nf
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
+int main(int argc, char *argv[]) {
+
+  XEvent event;
+  Display *dpy = XOpenDisplay(NULL);
+  Window win = XCreateSimpleWindow(dpy, DefaultRootWindow(dpy), 0, 0, 500, 500, 1, WhitePixel(dpy, 0), BlackPixel(dpy, 0));
+
+  XStoreName(dpy, win, "WINDOW");
+
+  XSelectInput(dpy, win, ExposureMask | StructureNotifyMask | KeyPressMask);
+
+  XSizeHints *hints = XAllocSizeHints(); 
+
+  hints->flags = PAllHints;
+  hints->x = 1;
+  hints->y = 1;
+  hints->min_width = 500;
+  hints->min_height = 500;
+  hints->max_width = 500;
+  hints->max_height = 500;
+
+  XSetWMNormalHints(dpy, win, hints);
+
+  XMapWindow(dpy, win);
+  XFlush(dpy);
+
+  while (1) {
+    XNextEvent(dpy, &event);
+    if (event.type == Expose) {
+
+    }
+    if (event.type == KeyPress) {
+      int key = event.xkey.keycode;
+
+      if (key == 9) {
+        break;
+      }
+    }
+  }
+
+  XCloseDisplay(dpy);
+
+  return 0;
+}
+.fi
+
+How to create a window.
+
+." ====================================================================================
+.SH 1. HOW TO CREATE A WINDOW
+
+.nf
+#include <X11/Xlib.h>
+
+XEvent event;
+Display *dpy = XOpenDisplay(NULL);
+Window win = XCreateSimpleWindow(dpy, DefaultRootWindow(dpy), 0, 0, 500, 500, 1, WhitePixel(dpy, 0), BlackPixel(dpy, 0));
+XSelectInput(dpy, win, ExposureMask | StructureNotifyMask | KeyPressMask);
+XMapWindow(dpy, win);
+XFlush(dpy);
+
+while (1) {
+  XNextEvent(dpy, &event);
+  if (event.type == Expose) {
+
+  }
+}
+
+XCloseDisplay(dpy);
+.fi
+
+." ====================================================================================
+.SH 2. KEYBOARD INPUT
+
+.nf
+if (event.type == KeyPress) {
+  int key = event.xkey.keycode;
+
+  if (key == 9) {
+    break;
+  }
+}
+.fi
+
+." ====================================================================================
+.SH 3. FIXED WINDOW SIZE / NOT RESIZABLE
+
+.nf
+#include <X11/Xutil.h>
+
+XSizeHints *hints = XAllocSizeHints(); 
+
+hints->flags = PAllHints;
+hints->x = 1;
+hints->y = 1;
+hints->min_width = 500;
+hints->min_height = 500;
+hints->max_width = 500;
+hints->max_height = 500;
+
+XSetWMNormalHints(dpy, win, hints);
+.fi
+
+." ====================================================================================
+.SH 4. SET WINDOW TITLE
+.nf
+XStoreName(dpy, win, "WINDOW");
+.fi
+
+." ====================================================================================
+.SH 5. DRAW WITH COLOR
+.nf
+
+// ...
+
+Colormap cmap = DefaultColormap(dpy, screen);
+XColor color;
+
+// XAllocNamedColor(dpy, cmap, "red", &color, &color);
+XAllocNamedColor(dpy, cmap, "#FF0000", &color, &color);
+
+// ... while 
+
+if (event.type == Expose) {
+  XSetForeground(dpy, DefaultGC(dpy, screen), colors.red.pixel);
+  XDrawLine(dpy, win, DefaultGC(dpy, screen), 0, 0, 100, 100);
+}
+
+// ...
+.fi
+
+." ====================================================================================
+.SH 6. MOUSE INPUT
+.nf
+// CHOOSES INPUT MASKS
+XSelectInput(dpy, win, ButtonPressMask | ButtonReleaseMask);
+
+// MANAGES MOUSE BUTTON PRESS EVENT
+if (event.type == ButtonPress) {
+  int button = event.xbutton.button;
+  if (button == Button1) {
+    XAllocNamedColor(dpy, cmap, "#FFFF00", &color, &color);
+    XSetForeground(dpy, DefaultGC(dpy, screen), color.pixel);
+    XDrawPoint(dpy, win, DefaultGC(dpy, screen), event.xbutton.x, event.xbutton.y);
+  }
+}
+.fi

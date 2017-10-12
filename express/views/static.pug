@@ -1,0 +1,40 @@
+extends /lay/base
+
+block head
+  link(rel="stylesheet", href="/codemirror/lib/codemirror.css")
+
+block body
+  h1 Express static page.
+
+  div.box
+    h4 Installs express module.
+    pre
+      code npm install --save express
+
+  div.box
+    h4 Includes express module.
+    pre
+      code var express = require('express');
+
+  h2 Add Code To Database.
+  form(action="/express/codes/store", method="POST")
+    h4 Stores the following code in the database.
+    div
+      label Title:
+      input(type="text", name="title")
+    div
+      label Code:
+      textarea(name="body")
+        //- the textarea
+    div
+      button(type="submit") Submit
+
+block scripts
+  script(src="/codemirror/lib/codemirror.js")
+    //- the script
+  script(src="/codemirror/mode/javascript/javascript.js")
+    //- the script
+  script(src="/codemirror/mode/xml/xml.js")
+    //- the script
+  script(src="/codemirror/mode/htmlmixed/htmlmixed.js")
+    //- the script

@@ -1,7 +1,26 @@
 #!/usr/bin/env node
+var os = require('os');
+
 require('../globals');
 
 var express = require('express');
+
+var example = {
+  'client-watch': [
+
+  ],
+  'server-watch': [
+    App.root('dev')
+  ]
+};
+
+/*
+var sample = express();
+sample.listen(80, function() {
+  console.log('listening at 80');
+});
+*/
+
 var app = express();
 
 var watch = require('node-watch');
@@ -13,11 +32,19 @@ var server = {
   lastCode: 0,
   spawn: null,
   start: function() {
-    this.spawn = spawn('/usr/bin/env', ['node', '.'], {
-      stdio: 'inherit',
-      cwd: App.root('server')
-    });
+    if (os.platform() == 'win32') {
+      this.spawn = spawn('node', ['index.js'], {
+        stdio: 'inherit',
+        cwd: App.root('server')
+      });
+    } else {
+      this.spawn = spawn('/usr/bin/env', ['node', '.'], {
+        stdio: 'inherit',
+        cwd: App.root('server')
+      });
+    }
     this.spawn.on('close', (code, signal) => {
+      console.log(`server closed: ${code}`);
     });
   },
   forceStart: function() {
@@ -35,7 +62,30 @@ var server = {
   }
 };
 
+App.require('dev')(server, bs);
+
 server.start();
+
+watch(example['server-watch'], { recursive: true}, function() {
+  server.restart();
+});
+
+app.get('/', function(req, res) {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>[app]</title>
+    </head>
+    <body>
+
+    <p>[app]</p>
+
+    </body>
+    </html>
+  `);
+});
 
 app.get('/restart', function(req, res) {
   console.log('HAVE TO RESTART');

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="/mongo/">
+		<meta charset="UTF-8">
+		<title>Mongo</title>
+		<link rel="stylesheet" href="/lib/w3.css">
+	</head>
+	<body ng-app="app">
+
+		<div class="w3-bar w3-black">
+			<a class="w3-bar-item" ui-sref="home" ui-sref-active="w3-green">Home</a>
+		</div>
+
+		<div class="w3-container">
+			<p>{{title}}</p>
+
+			<ui-view></ui-view>
+		</div>
+
+		<div class="w3-panel w3-black" style="padding-bottom: 15px;">
+			<h5>FOOTER</h5>
+			<p>Elit fuga illo voluptatibus adipisci provident, tempora laborum Nostrum laborum.</p>
+			<a class="w3-btn w3-red" href="/">GO: ROOT</a>
+			<button tag="dev" class="w3-btn w3-red">START DEV SERVER</button>
+		</div>
+
+		<script src="pub.js"></script>
+		<script src="common.out.js"></script>
+		<script src="vendor.out.js"></script>
+		<script src="client.out.js"></script>
+	</body>
+</html>

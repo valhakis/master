@@ -10,10 +10,12 @@ masterRoot = path.join(__dirname, '..', '..');
 var App = global.App = {};
 
 App.root = function(name) {
+  if (!name) name = '';
   return root + '/' + name;
 };
 
 App.require = function(name) {
+  if (!name) name = '';
   return require(root + '/' + name);
 };
 
@@ -21,10 +23,12 @@ var config = App.require('config');
 var env = App.require('environment');
 
 App.masterRoot = function(name) {
+  if (!name) name = '';
   return masterRoot + '/' + name;
 };
 
 App.masterRequire = function(name) {
+  if (!name) name = '';
   return require(masterRoot + '/' + name);
 };
 

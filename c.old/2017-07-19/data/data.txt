@@ -1,0 +1,5 @@
+Question: What color is red ?
+Answer: red
+
+Question: What color is blue ?
+Answer: blue

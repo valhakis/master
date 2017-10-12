@@ -1,0 +1,15 @@
+{{#box "head"}}
+<link rel="stylesheet" href="/handsontable/dist/handsontable.full.min.css">
+{{/box}}
+
+<h1>HANDS ON TABLE INDEX</h1>
+
+<div id="example"></div>
+
+{{#box "scripts"}}
+<script src="/handsontable/dist/handsontable.full.min.js"></script>
+
+<div class="info">SCRIPT: {{ url '/handlebars/index.js' }}</div>
+<script src="{{ url '/handlebars/index.js' }}"></script>
+<script>console.log(text);</script>
+{{/box}}

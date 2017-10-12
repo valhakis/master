@@ -1,0 +1,8 @@
+@font-face {
+  font-family: COURIER;
+  src: url('/courier.ttf') format('truetype');
+}
+
+body {
+  font-family: COURIER;
+}

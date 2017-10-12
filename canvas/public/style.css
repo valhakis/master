@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 form {
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5), -1px -1px 5px rgba(0, 0, 0, 0.5);
@@ -59,10 +62,10 @@ form button:hover {
 }
 
 .btn {
-    border: none; /* Remove borders */
-    color: white; /* Add a text color */
-    padding: 14px 28px; /* Add some padding */
-    cursor: pointer; /* Add a pointer cursor on mouse-over */
+  border: none; /* Remove borders */
+  color: white; /* Add a text color */
+  padding: 14px 28px; /* Add some padding */
+  cursor: pointer; /* Add a pointer cursor on mouse-over */
 }
 
 .success {background-color: #4CAF50;} /* Green */
@@ -113,4 +116,101 @@ div#main div#side div#side-menu > a {
 
 div#main div#side div#side-menu > a:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.canvas {
+  padding: 5px;
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+}
+
+.canvas.removed {
+  border-color: #FF0000;
+}
+
+.canvas .title {
+  margin: 10px 0px 15px 0px;
+  color: #FFFF00;
+}
+
+.btn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 5px 3px 5px;
+  margin-right: 5px;
+}
+
+.btn:active {
+  border-color: #000;
+}
+
+.btn.btn-red {
+  background-color: #FF3333;
+  color: #FFFFFF;
+}
+.btn.btn-red:active {
+  background-color: #FF0000;
+}
+.btn.btn-blue {
+  background-color: #3333FF;
+  color: #FFFFFF;
+}
+.btn.btn-green {
+  background-color: #33FF33;
+  color: #222222;
+}
+
+.post {
+  background-color: #333;
+  padding: 5px;
+  margin-bottom: 9px;
+  border: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+.post .title {
+  margin-top: 8px;
+  color: #FFFF33;
+}
+
+.post .title span, .post .title small {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px;
+}
+
+.post .body {
+  color: #ccc;
+}
+
+.light-red {
+  color: #FF5577;
+}
+
+canvas.canvas {
+  padding: 0px;
+  display: block;
+  min-width: 500px;
+  min-height: 300px;
+}
+
+div.code {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px;
+}
+
+div.code .title {
+  margin-top: 5px;
+}
+
+hr.default {
+  display: block;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: rgba(255, 0, 0, 0.5);
+  margin: 40px 0px 20px 0px;
+}
+
+pre.code {
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  font-size: 14px;
 }

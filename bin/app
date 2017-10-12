@@ -4,7 +4,7 @@ require('../globals');
 
 var spawn = require('child_process').spawn;
 
-spawn('nodemon', [], {
+spawn(App.root('node_modules/.bin/nodemon'), [], {
   stdio: 'inherit',
   cwd: App.path('server')
 });
