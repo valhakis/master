@@ -1,4 +1,5 @@
 var Post = Loc.require('app/models/post');
+var User = Loc.require('app/models/user');
 
 exports.renderIndex = function(req, res) {
   Post.find({}).populate('author').sort({
@@ -9,6 +10,7 @@ exports.renderIndex = function(req, res) {
     } else {
       res.locals.posts = posts;
     }
+    res.locals.flashMessages = req.flash('flashMessages');
     res.render('posts/index');
   });
 };
@@ -19,16 +21,19 @@ exports.renderCreate = function(req, res) {
 
 exports.storePost = function(req, res) {
   var post = new Post({
+    name: req.body.name,
     title: req.body.title,
     body: req.body.body,
-    author: req.body.authorId,
+    author: req.user._id,
   });
-  post.save(function(error) {
-    if (error) {
-      req.flash('errors', 'Failed to create a post.');
-    } else {
-      req.flash('successes', 'Post has been created.');
-    }
+  post.save().then(() => {
+    return User.update({_id: req.user._id}, {$push: {posts: post._id}});
+  }).then(() => {
+    req.flash('flashMessages', {type: 'success', message: 'Post has been created.'});
+    res.redirect('/site/posts');
+  }).catch((err) => {
+    console.log(err);
+    req.flash('flashMessages', {type: 'error', message: 'Failed to create a post.'});
     res.redirect('/site/posts');
   });
 };

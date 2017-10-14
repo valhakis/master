@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <link rel="stylesheet" href="/lib/w3.css">
+    <link rel="stylesheet" href="/main.dist.css">
+    <link rel="stylesheet" href="/site/style.css">
+    {{{boxen "head"}}}
+  </head>
+  <body id="book-main">
+    {{> books/nav }}
+    {{> flashMessages }}
+
+    <div class="w3-container">
+
+      {{> books/menu }}
+
+      {{{body}}}
+    </div>
+
+    {{> footer}}
+
+    <script src="{{ url '/keyboard.js' }}"></script>
+    {{{boxen 'scripts'}}}
+  </body>
+</html>

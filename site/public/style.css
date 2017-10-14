@@ -173,3 +173,166 @@ form.login > div:last-child a:active {
 .w3-button {
   padding: 7px 20px 3px 20px;
 }
+
+.CodeMirror {
+  font-size: 12px;
+}
+
+#colors {
+  background-color: #222;
+  padding: 5px;
+  border: 1px solid #444;
+}
+#colors > div {
+  margin-bottom: 5px;
+  border: 1px solid #222;
+  padding: 6px 5px 3px 5px;
+  font-size: 15px;
+  line-height: 15px;
+  position: relative;
+  overflow: auto;
+}
+#colors > div:last-child {
+  margin-bottom: 0px;
+}
+#colros > div span {
+  display: block;
+}
+#colors > div span.name {
+  float: left;
+}
+#colors > div span.value {
+  float: right;
+}
+
+#status {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #FFFF00;
+  height: 0px;
+  color: #000;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 25px;
+  transition: visibility, height 0.1s;
+  padding: 2px 5px 5px 5px;
+  visibility: hidden;
+}
+#status.active {
+  height: 25px;
+  visibility: visible;
+}
+
+.modal {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 30px;
+  background-color: rgba(10, 10, 10, 0.9);
+  position: fixed;
+  visibility: hidden;
+}
+.modal span.close {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 8px 15px 4px 15px;
+  background-color: #A33;
+  user-select: none;
+  cursor: default;
+}
+.modal span.close:hover {
+  background-color: #A22;
+}
+.modal span.close:active {
+  background-color: #A11;
+}
+.modal.active {
+  visibility: visible;
+}
+
+.books-menu {
+  background-color: black;
+}
+
+.books-menu a {
+  margin-right: 3px;
+  background-color: coral;
+  color: black;
+}
+.books-menu a:last-child {
+  margin-right: 0px;
+}
+.books-menu a:hover {
+  background-color: darkmagenta;
+  color: #FFFF33;
+}
+.books-menu a:active {
+  background-color: indigo;
+}
+.book-form {
+  box-shadow: none;
+  padding: 0px;
+}
+.books-list > div {
+  background-color: darkorchid;
+  margin-bottom: 10px;
+  font-family: Courier;
+  padding-bottom: 10px;
+}
+
+.books-list a {
+  font-family: Courier;
+}
+
+#book-main {
+  font-family: Courieri;
+}
+
+#book-main .w3-modal-content {
+  background-color: blueviolet;
+}
+
+#book-main .w3-modal-content form {
+  box-shadow: none;
+}
+.book-posts {
+}
+.book-posts > div {
+  background-color: coral;
+  margin-bottom: 15px;
+}
+.book-posts .title {
+  color: black;
+}
+
+.w3-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  padding: 10px 5px 5px 5px;
+}
+.w3-select option {
+  padding: 20px;
+}
+
+.book-codes-list > div {
+  color: black;
+  background-color: khaki;
+}
+
+#game-canvas {
+  background-color: #000;
+  width: 100%;
+  min-height: 600px;
+  display: block;
+}
+
+.v1-form {
+  box-shadow: none;
+}
+

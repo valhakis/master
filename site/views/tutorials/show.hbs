@@ -1,0 +1,24 @@
+<h1>{{ tutorial.title }}</h1>
+
+<p>Author: <a href="{{ url (concat '/users/' tutorial.author._id) }}">{{ tutorial.author.name }}</a></p>
+
+<p><a class="w3-btn w3-green" href="{{ url (concat '/tutorials/' tutorial._id '/posts/create') }}">Add a post.</a></p>
+<p><a class="w3-btn w3-green" href="{{ url (concat '/tutorials/' tutorial._id '/codes/create') }}">Add a code.</a></p>
+
+<h3>List of its posts.</h3>
+{{#each tutorial.posts}}
+<div class="w3-panel w3-card w3-dark-gray">
+  <h3><a href="{{url (concat '/posts/' this._id)}}">{{ this.title }}</a></h3>
+  <div>{{ this.body }}</div>
+  <p>
+    <small>Created at: {{ this.createdAt }}</small>
+  </p>
+  {{#if this.author}}
+  <p>Author: <a href="{{ url (concat '/users/' ../user._id) }}">{{ this.author.name }}</a></p>
+  {{else}}
+  <p>Author: HAS NO AUTHOR</p>
+  {{/if}}
+</div>
+{{/each}}
+
+{{ tutorial }}

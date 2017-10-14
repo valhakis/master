@@ -4,4 +4,10 @@ module.exports = function(app) {
   app.use('/users', require('./user'));
   app.use('/auth', require('./auth'));
   app.use('/tutorials', require('./tutorial'));
+  app.use('/colors', require('./colors'));
+  app.use('/d3', require('./d3'));
+  app.use('/w3', require('./w3'));
+  app.use('/books', require('./books'));
+  app.use('/game', require('./game'));
+  app.use('/boxen', require('./box'));
 };

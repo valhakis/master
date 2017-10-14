@@ -1,4 +1,10 @@
 call plug#begin('~/.vim/plugged')
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'rschmukler/pangloss-vim-indent'
+Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'tpope/vim-commentary'
+
 Plug 'Haron-Prime/Antares'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'moll/vim-node'
@@ -8,6 +14,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'juvenn/mustache.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'tpope/vim-surround'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'nono/vim-handlebars'
 Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-repeat'
@@ -71,8 +78,11 @@ nmap ,so :so ~/.vimrc <cr>
 nmap ,ed :e % <cr>
 nmap ,no :noh <cr>
 nmap \e :edit % <cr>
-nmap ,ne :NERDTree <cr>
+" nmap ,ne :NERDTree <cr>
+" nmap ,ne :NERDTreeTabsOpen <cr>
+nmap ,ne :NERDTreeSteppedOpen <cr>
 nmap ,nf :NERDTreeFind <cr>
+" nmap ,nf :NERDTreeTabsFind <cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
 nmap <leader>k <Plug>(Man) 
 nmap ,k <Plug>(Man) 

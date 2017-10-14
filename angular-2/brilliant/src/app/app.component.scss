@@ -1,0 +1,158 @@
+$flax: #E9D985;
+$mistyMoss: #B2BD7E;
+$xanadu: #749C75;
+$oldLavender: #6A5D7B;
+$independence: #5D4A66;
+
+h1 {
+  color: #FF2222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+.box {
+  background-color: $flax;
+  color: $independence;
+  padding: 5px;
+  font-family: Courier;
+  border: 1px solid #000;
+  margin-bottom: 5px;
+}
+
+.box.selected {
+  background-color: royalblue;
+  color: #FFF;
+}
+
+.box input {
+  padding: 5px;
+}
+
+.person {
+  background-color: $mistyMoss;
+}
+.monster {
+  background-color: $xanadu;
+}
+
+.colors {
+  padding: 5px;
+  margin: 5px;
+}
+
+
+.colors > div {
+  border: 1px solid #000;
+  min-height: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-family: Courier;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.colors > div .name {
+  float: left;
+  margin-left: 10px;
+}
+
+.colors > div .value {
+  float: right;
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.persons {
+  background-color: #333;
+}
+
+.persons ul li:last-child .box {
+  margin-bottom: 0px;
+}
+
+.persons ul li .box {
+  position: relative;
+}
+
+.persons .title {
+  background-color: slateblue;
+  color: #000;
+  padding: 4px 3px;
+  margin-bottom: 10px;
+  border: 1px solid #888;
+}
+
+.badge {
+  background-color: $oldLavender;
+  text-align: center;
+  min-width: 20px;
+  color: #FFFF55;
+  font-size: 14px;
+  padding: 5px;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 3px;
+  border: 1px solid #000;
+}
+
+.selector {
+  background-color: $xanadu;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin: 3px;
+  padding: 3px 5px;
+  color: #FFFF88;
+  border: 1px solid #000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.person.selected {
+  background-color: #FFFF88;
+  color: #000;
+}
+
+.person .selector:hover {
+  background-color: $independence;
+}
+
+.person .selector:active {
+  color: #33FFFF;
+}
+
+.blue {
+  background-color: cornflowerblue;
+}
+
+.container .title {
+  background-color: slateblue;
+  margin: 0px 0px 15px 0px;
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 8px;
+}
+
+.container {
+  background-color: seagreen;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+.box {
+  position: relative;
+}
+
+.orangered {
+  background-color: orangered;
+  color: #FFF;
+}

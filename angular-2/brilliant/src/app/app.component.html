@@ -6,6 +6,75 @@
   <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <h2>Here are some links to help you start: </h2>
+
+<p>HERO: {{ hero }}</p>
+
+<div class="box monster">
+  <h3>THE MONSTER</h3>
+  <h5>{{ monster.name }}</h5>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="monster.name" type="text" placeholder="Place monster's name here.">
+  </div>
+</div>
+
+<div class="box person">
+  <h3>THE PERSON</h3>
+  <h5>{{ person.name }}</h5>
+  <p><small>{{ person.id }}</small></p>
+</div>
+
+<div class="box persons">
+  <div class="title">
+    <h2>LIST OF PERSONS</h2>
+  </div>
+  <div *ngIf="selectedPerson" class="box person blue">
+    <h2>{{ selectedPerson.name}}</h2>
+    <span class="badge">{{ person.id }}</span>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]="selectedPerson.name" type="text" placeholder="Place person's name here.">
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let person of persons">
+      <div class="box person" [class.selected]="person === selectedPerson">
+        <h3>{{ person.name }}</h3>
+
+        <span class="badge">{{ person.id }}</span>
+
+        <p><small>{{ person.id }}</small></p>
+
+        <span class="selector" (click)="selectPerson(person)">SELECT</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="container gods">
+  <h3 class="title">LIST OF GODS</h3>
+
+  <div *ngIf="selectedGod" class="box god orangered">
+    <h2>{{ selectedGod.name }}</h2>
+  </div>
+
+  <div *ngFor="let god of gods" class="box god" [class.selected]="god === selectedGod">
+    <h3>{{ god.name }}</h3>
+    <span class="badge">{{ god.id }}</span>
+    <span class="selector" (click)="selectGod(god)">SELECT</span>
+  </div>
+
+  <app-demo [god]="selectedGod"></app-demo>
+
+</div>
+
+<div class="colors">
+  <div *ngFor="let color of colors" [ngStyle]="{'background-color': '#' + color.value}">
+    <span class="name">{{ color.name }}</span>
+    <span class="value">{{ color.value }}</span>
+  </div>
+</div>
+
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>

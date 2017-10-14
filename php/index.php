@@ -73,5 +73,9 @@ echo '</div>';
 
 <?php Card::initialize(); ?>
 
+<?php
+
+?>
+
 </body>
 </html>
