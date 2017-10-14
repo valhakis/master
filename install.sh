@@ -131,7 +131,7 @@ fi
 
 vim -c "PlugInstall|qa"
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+" curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
 # nvm install node | bash
 # nvm use node | bash

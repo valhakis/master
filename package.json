@@ -110,9 +110,9 @@
     "three.js": "^0.77.1",
     "tinymce": "^4.7.1",
     "valhakis": "*",
-    "webpack": "^3.6.0",
     "webpack-js-obfuscator": "0.0.5",
     "webpack-obfuscator": "^0.11.2",
+    "webpack": "^3.7.1",
     "wide-align": "^1.1.2",
     "xlsx": "^0.11.5",
     "yui": "^3.18.1"

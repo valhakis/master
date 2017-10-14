@@ -13,6 +13,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'juvenn/mustache.vim'
 Plug 'scrooloose/nerdtree' 
+Plug 'valhakis/vim' 
 Plug 'tpope/vim-surround'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'nono/vim-handlebars'
@@ -39,6 +40,7 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+" set nowrap incsearch hlsearch splitbelow backspace=2
 set nowrap incsearch hlsearch splitbelow mouse=n
 set autoindent copyindent number
 
@@ -83,6 +85,8 @@ nmap \e :edit % <cr>
 nmap ,ne :NERDTreeSteppedOpen <cr>
 nmap ,nf :NERDTreeFind <cr>
 " nmap ,nf :NERDTreeTabsFind <cr>
+nmap ,install :w <bar> PlugInstall <cr>
+nmap \mr :w <bar> !./start.sh<cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
 nmap <leader>k <Plug>(Man) 
 nmap ,k <Plug>(Man) 
@@ -219,3 +223,4 @@ au filetype vim hi ValBrown ctermfg=brown
 hi NonText ctermfg=236
 
 finish
+>>>>>>> e8ceb17290ab69f66f56c951dfa56422d7f43098
