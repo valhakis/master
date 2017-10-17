@@ -6,6 +6,8 @@ var fs = require('fs');
 var watch = require('node-watch');
 var sass = require('node-sass');
 
+var isWin = /^win/.test(process.platform);
+
 global.App = require('../share/App.js').initialize(path.join(__dirname));
 
 var spawn = require('child_process').spawn;
@@ -76,10 +78,20 @@ var server = {
 };
 
 // spawn('nodemon', ['--exec', 'babel-node', '--presets', 'es2015,stage-2', '.'], {
-spawn('nodemon', ['.'], {
-  cwd: App.masterRoot('server'),
-  stdio: 'inherit'
-});
+if (isWin) {
+  spawn('mongod', ['--dbpath', 'C:\\tmp'], {
+    // stdio: 'inherit'
+  });
+  spawn('nodemon.cmd', ['.'], {
+    cwd: App.masterRoot('server'),
+    stdio: 'inherit'
+  });
+} else {
+  spawn('nodemon', ['.'], {
+    cwd: App.masterRoot('server'),
+    stdio: 'inherit'
+  });
+}
 
 bs.init({
   port: env.bs.port,

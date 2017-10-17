@@ -7,4 +7,6 @@ var pool = mysql.createPool({
   database: 'shared'
 });
 
+console.log(pool);
+
 module.exports = pool;

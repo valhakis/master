@@ -14,7 +14,9 @@ module.exports = function(app) {
         return JSON.stringify(input, ' ', 2);
       },
       url: function(input) {
+        // console.log(app.mountpath);
         return '/site' + input;
+        // return app.mountpath + '/' + input;
       },
       concat: function(path) {
         var arg = Array.prototype.slice.call(arguments, 0);
