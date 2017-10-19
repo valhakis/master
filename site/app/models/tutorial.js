@@ -16,5 +16,6 @@ module.exports = db.model('Tutorial', {
     type: Date,
     default: null
   },
-  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
+  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
+  codes: [{ type: Schema.Types.ObjectId, ref: 'Code' }],
 });

@@ -1,12 +1,24 @@
+<?php
+
+$page = "Demo";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>DEMO</title>
+  <link rel="stylesheet" href="shared.css">
 </head>
 <body>
 
+<?php include './links.php'; ?>
+
 <?php
+
+$bankBalance = 0;
+$loggedIn = false;
+
 define("ROOT_LOCATION", "/usr/local/www/");
 
 echo 'Today is ' . date('l') . '.';
@@ -62,6 +74,49 @@ $dir = ROOT_LOCATION;
 echo "<p>Directory: $dir</p>";
 
 echo "<p>Current line of " . __FILE__ . " is " . __LINE__ . "<p>";
+
+function longdate($timestamp) {
+  return date("l F jS Y", $timestamp);
+}
+
+echo "<p>" . longdate(time() - 17 * 24 * 60 * 60) . "</p>";
+$days = 17;
+$hours = 24;
+$minutes = 60;
+$seconds = 60;
+echo "<p>" . longdate(time() - $days * $hours * $minutes * $seconds) . "</p>";
+echo "<p>The date is " . longdate(time()) . "</p>";
+
+function example() {
+  static $num = 0;
+  echo "<p>Example function executed $num.</p>";
+  $num += 1;
+}
+
+example();
+example();
+example();
+example();
+
+echo "<p>Sqrt number 1 is " . sqrt(1) . "</p>";
+echo "<p>Sqrt number 2 is " . sqrt(2) . "</p>";
+echo "<p>Sqrt number 3 is " . sqrt(3) . "</p>";
+echo "<p>Sqrt number 4 is " . sqrt(4) . "</p>";
+
+$cameFrom = $_SERVER['HTTP_REFERER'];
+$cameFrom = htmlentities($cameFrom);
+
+echo "<p>Came from $cameFrom</p>";
+
+/* y = 3(abs(2x) + 4) */
+$x = 5;
+$y = 3 * (abs(2 * $x) + 4);
+
+echo "<p>X is $x and Y is $y</p>";
+
+$month = date("F");
+
+echo "<p>The month is $month.</p>";
 
 ?>
 

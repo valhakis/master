@@ -1,3 +1,7 @@
+{{#box 'head'}}
+  <link rel="stylesheet" href="/prismjs/themes/prism-tomorrow.css">
+{{/box}}
+
 <h1>{{ tutorial.title }}</h1>
 
 <p>Author: <a href="{{ url (concat '/users/' tutorial.author._id) }}">{{ tutorial.author.name }}</a></p>
@@ -7,18 +11,43 @@
 
 <h3>List of its posts.</h3>
 {{#each tutorial.posts}}
-<div class="w3-panel w3-card w3-dark-gray">
-  <h3><a href="{{url (concat '/posts/' this._id)}}">{{ this.title }}</a></h3>
-  <div>{{ this.body }}</div>
-  <p>
-    <small>Created at: {{ this.createdAt }}</small>
-  </p>
-  {{#if this.author}}
-  <p>Author: <a href="{{ url (concat '/users/' ../user._id) }}">{{ this.author.name }}</a></p>
-  {{else}}
-  <p>Author: HAS NO AUTHOR</p>
-  {{/if}}
-</div>
+  <div class="w3-panel w3-card w3-dark-gray">
+    <h3><a href="{{url (concat '/posts/' this._id)}}">{{ this.title }}</a></h3>
+    <div>{{ this.body }}</div>
+    <p>
+      <small>Created at: {{ this.createdAt }}</small>
+    </p>
+    {{#if this.author}}
+      <p>Author: <a href="{{ url (concat '/users/' ../user._id) }}">{{ this.author.name }}</a></p>
+    {{else}}
+      <p>Author: HAS NO AUTHOR</p>
+    {{/if}}
+  </div>
 {{/each}}
 
-{{ tutorial }}
+<h3>List of its codes.</h3>
+{{#each tutorial.codes as |code|}}
+  <div class="w3-panel w3-card w3-dark-gray">
+    <h3><a href="{{ url (concat '/codes/' code._id)}}">{{ code.title }}</a></h3>
+    <pre><code class="language-{{ code.language }}">{{ code.body }}</code></pre>
+    <p>
+      <span class="w3-tag">{{ code.language }}</span>
+    </p>
+    <p>Author: 
+      {{#if code.author}}
+        <a href="{{ url (concat '/users/' code.author._id) }}">{{ code.author.name }}</a>
+      {{else}}
+        <span>HAS NO AUTHOR</span>
+      {{/if}}
+    </p>
+  </div>
+{{/each}}
+
+{{#box 'scripts'}}
+  <script src="/prismjs/prism.js"></script>
+  <script src="/prismjs/components/prism-c.js"></script>
+  <script src="/prismjs/components/prism-css.js"></script>
+  <script src="/prismjs/components/prism-cpp.js"></script>
+  <script src="/prismjs/components/prism-javascript.js"></script>
+  <script src="/prismjs/components/prism-css.js"></script>
+{{/box}}

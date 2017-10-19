@@ -4,6 +4,6 @@
 
 # (cd server ; ./start.sh)
 
-sudo systemctl start mongodb
-sudo systemctl start httpd
+# sudo systemctl start mongodb
+# sudo systemctl start httpd
 (cd devserver ; ./start.sh)

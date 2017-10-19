@@ -1,3 +1,4 @@
+
 module.exports = function(app) {
   app.use('/', require('./main'));
   app.use('/posts', require('./post'));
@@ -8,6 +9,9 @@ module.exports = function(app) {
   app.use('/d3', require('./d3'));
   app.use('/w3', require('./w3'));
   app.use('/books', require('./books'));
-  app.use('/game', require('./game'));
+  app.use('/games', require('./game'));
   app.use('/boxen', require('./box'));
+  app.use('/gallery', require('./gallery'));
+  app.use('/images', require('./image'));
+  app.use('/videos', require('./video'));
 };

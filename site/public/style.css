@@ -336,3 +336,12 @@ form.login > div:last-child a:active {
   box-shadow: none;
 }
 
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.w3-tag {
+  padding: 5px 8px 2px 8px;
+}

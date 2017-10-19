@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas {
+        background-color: #151515;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <canvas></canvas>
+
+    <script>
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+      var w = canvas.width = window.innerWidth;
+      var h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', event => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      var render = function() {
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = 'white';
+
+        ctx.beginPath();
+        ctx.arc(w/2, h/2, 300, 0, Math.PI*2);
+        ctx.fill();
+
+        requestAnimationFrame(render);
+      };
+      render();
+    </script>
+
+  </body>
+</html>

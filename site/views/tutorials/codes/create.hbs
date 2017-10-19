@@ -9,7 +9,16 @@
 <form action="{{ url (concat '/tutorials/' tutorial._id '/codes/store') }}" method="POST">
   <div>
     <label>Title: </label>
-    <input type="text" name="title">
+    <input type="text" name="title" placeholder="Place code's title here.">
+  </div>
+  <div>
+    <label>Language: </label>
+    <select class="w3-input" name="language">
+      <option value="javascript">Javascript</option>
+      <option value="css">CSS</option>
+      <option value="html">HTML</option>
+      <option value="PHP">PHP</option>
+    </select>
   </div>
   <div>
     <label>Content: </label>

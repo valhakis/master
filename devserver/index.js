@@ -116,6 +116,10 @@ bs.init({
 });
 
 bs.watch([
+  App.masterRoot('scrap/**/*.{html,css,js}'),
+]).on('change', bs.reload);
+
+bs.watch([
   App.masterRoot('server/views/*.{pug,html,hbs}'),
   App.masterRoot('rest/{public,views}/**/*.{html,css,js,mst,hbs}'),
   App.masterRoot('W3/public/**/*.{html,js,css}'),

@@ -1,5 +1,6 @@
 var Tutorial = Loc.require('app/models/tutorial');
 var Post = Loc.require('app/models/post');
+var Code = Loc.require('app/models/code');
 
 exports.renderIndex = function(req, res) {
   Tutorial.find({})
@@ -26,6 +27,9 @@ exports.renderShow = function(req, res) {
     _id: req.params.tutorialId 
   }).populate('author').populate({
     path: 'posts',
+    populate: { path: 'author' }
+  }).populate({
+    path: 'codes',
     populate: { path: 'author' }
   }).exec().then(tutorial => {
     res.locals.tutorial = tutorial;
@@ -81,5 +85,26 @@ exports.storePost = function(req, res) {
 };
 
 exports.renderCreateCode = function(req, res) {
-  res.render('tutorials/codes/create');
+  Tutorial.findOne({_id: req.params.tutorialId}).exec().then(tutorial => {
+    res.locals.tutorial = tutorial;
+    res.render('tutorials/codes/create');
+  });
+};
+
+exports.storeCode = function(req, res) {
+  Code.create({
+    title: req.body.title,
+    body: req.body.body,
+    language: req.body.language,
+    author: req.user._id
+  }).then(code => {
+    this.code = code;
+    return Tutorial.findOne({_id: req.params.tutorialId}).exec();
+  }).then(tutorial => {
+    this.tutorial = tutorial;
+    tutorial.codes.push(this.code._id);
+    return tutorial.save();
+  }).then(() => {
+    res.redirect(`/site/tutorials/${this.tutorial._id}`);
+  });
 };
