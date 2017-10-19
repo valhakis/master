@@ -82,12 +82,12 @@ if (isWin) {
   spawn('mongod', ['--dbpath', 'C:\\tmp'], {
     // stdio: 'inherit'
   });
-  spawn('nodemon.cmd', ['.'], {
+  spawn('nodemon.cmd', ['-q', '.'], {
     cwd: App.masterRoot('server'),
     stdio: 'inherit'
   });
 } else {
-  spawn('nodemon', ['.'], {
+  spawn('nodemon', ['-q', '.'], {
     cwd: App.masterRoot('server'),
     stdio: 'inherit'
   });
