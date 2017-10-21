@@ -1,27 +1,27 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'moll/vim-node'
-Plug 'evidens/vim-twig'
-Plug 'leafgarland/typescript-vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'juvenn/mustache.vim'
-Plug 'scrooloose/nerdtree' 
-Plug 'tpope/vim-surround'
-Plug 'nono/vim-handlebars'
-Plug 'jwalton512/vim-blade'
-Plug 'tpope/vim-repeat'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'Shougo/neocomplete.vim'
-Plug 'vim-utils/vim-man'
-Plug 'tikhomirov/vim-glsl'
-Plug 'digitaltoad/vim-pug'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'moll/vim-node'
+" Plug 'evidens/vim-twig'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'juvenn/mustache.vim'
+" Plug 'scrooloose/nerdtree' 
+" Plug 'tpope/vim-surround'
+" Plug 'nono/vim-handlebars'
+" Plug 'jwalton512/vim-blade'
+" Plug 'tpope/vim-repeat'
+" Plug 'mattn/emmet-vim'
+" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'vim-utils/vim-man'
+" Plug 'tikhomirov/vim-glsl'
+" Plug 'digitaltoad/vim-pug'
 " Plug 'statianzo/vim-jade'
-Plug 'Yggdroot/indentLine'
-Plug 'othree/html5.vim'
-Plug 'jwalton512/vim-blade'
-Plug 'etnadji/vim-epub'
+" Plug 'Yggdroot/indentLine'
+" Plug 'othree/html5.vim'
+" Plug 'jwalton512/vim-blade'
+" Plug 'etnadji/vim-epub'
 
 "Plug 'python-mode/python-mode'
 call plug#end()
@@ -38,9 +38,9 @@ set autoindent copyindent number
 " set noexpandtab
 " set shiftround
 
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
+"let g:javascript_plugin_jsdoc = 1
+"let g:javascript_plugin_ngdoc = 1
+"let g:javascript_plugin_flow = 1
 
 
 let g:NERDTreeWinPos = "right"
