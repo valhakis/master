@@ -1,0 +1,13 @@
+<h1>IMAGES INDEX PAGE</h1>
+
+{{#each images as |image|}}
+  <div class="w3-panel">
+    <p><small>{{ image.createdAt }}</small></p>
+
+    <img class="image" src="{{ image.url }}">
+
+    <p>
+      <a href="{{ url (concat '/images/' image._id) }}" class="w3-btn w3-pink">View</a>
+    </p>
+  </div>
+{{/each}}

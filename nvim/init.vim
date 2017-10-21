@@ -1,4 +1,10 @@
 call plug#begin('~/.vim/plugged')
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'rschmukler/pangloss-vim-indent'
+Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'tpope/vim-commentary'
+
 Plug 'Haron-Prime/Antares'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'moll/vim-node'
@@ -17,6 +23,25 @@ Plug 'Haron-Prime/Antares'
 " Plug 'vim-utils/vim-man'
 " Plug 'tikhomirov/vim-glsl'
 " Plug 'digitaltoad/vim-pug'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'moll/vim-node'
+Plug 'evidens/vim-twig'
+Plug 'leafgarland/typescript-vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'juvenn/mustache.vim'
+Plug 'scrooloose/nerdtree' 
+Plug 'valhakis/vim' 
+Plug 'tpope/vim-surround'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'nono/vim-handlebars'
+Plug 'jwalton512/vim-blade'
+Plug 'tpope/vim-repeat'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'Shougo/neocomplete.vim'
+Plug 'vim-utils/vim-man'
+Plug 'tikhomirov/vim-glsl'
+Plug 'digitaltoad/vim-pug'
 " Plug 'statianzo/vim-jade'
 " Plug 'Yggdroot/indentLine'
 " Plug 'othree/html5.vim'
@@ -32,6 +57,7 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+" set nowrap incsearch hlsearch splitbelow backspace=2
 set nowrap incsearch hlsearch splitbelow mouse=n
 set autoindent copyindent number
 
@@ -71,8 +97,13 @@ nmap ,so :so ~/.vimrc <cr>
 nmap ,ed :e % <cr>
 nmap ,no :noh <cr>
 nmap \e :edit % <cr>
-nmap ,ne :NERDTree <cr>
+" nmap ,ne :NERDTree <cr>
+" nmap ,ne :NERDTreeTabsOpen <cr>
+nmap ,ne :NERDTreeSteppedOpen <cr>
 nmap ,nf :NERDTreeFind <cr>
+" nmap ,nf :NERDTreeTabsFind <cr>
+nmap ,install :w <bar> PlugInstall <cr>
+nmap \mr :w <bar> !./start.sh<cr>
 nmap ,install :w <bar> so ~/.vimrc <bar> PlugInstall <cr>
 nmap <leader>k <Plug>(Man) 
 nmap ,k <Plug>(Man) 
@@ -209,3 +240,4 @@ au filetype vim hi ValBrown ctermfg=brown
 hi NonText ctermfg=236
 
 finish
+>>>>>>> e8ceb17290ab69f66f56c951dfa56422d7f43098

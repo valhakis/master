@@ -3,8 +3,10 @@ var bodyParser = require('body-parser');
 // var sessions = require('client-sessions');
 var csrf = require('csurf');
 var session = require('express-session');
+var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 var proxy = require('express-http-proxy');
+var serveIndex = require('serve-index');
 
 module.exports = function(app) {
   app.use('/php', proxy('http://192.168.0.3:2000'));
@@ -17,6 +19,30 @@ module.exports = function(app) {
   app.use(require('cookie-parser')());
 
   // app.use(require('express-session')({
+
+  /*
+     var db = mongoose.createConnection('mongodb://localhost:27017/test-app', {
+useMongoClient: true
+});
+
+db.catch(err => {
+console.log('MONGO ERROR [test-app]:', JSON.stringify(err, ' ', 2));
+});
+
+db.then(db => {
+
+});
+*/
+
+  var store = new MongoStore({
+    url: 'mongodb://localhost/test-app'
+    // mongooseConnection: db.connection
+  });
+
+  //store.catch(err => {
+  //console.log('ERROR', err);
+  //});
+
   app.use(session({
     secret: 'keyboard dog',
     resave: false,
@@ -24,26 +50,31 @@ module.exports = function(app) {
     cookie: {
       secure: false
     },
-    store: new MongoStore({
-      url: 'mongodb://localhost/test-app'
-    })
+    store: store
   }));
 
   /*
-  app.use(require('client-sessions')({
-    cookieName: 'session',
-    secret: 'secret words',
-    duration: 30 * 60 * 1000,
-    activeDuration: 5 * 60 * 1000,
-    // httpOnly: true, // don't let browser javascript access cookie
-    // secure: true, // only use this cookie over https
-    // ephemeral: true, // delete this cookie when the browser exists
-  }));
-  */
+     app.use(require('client-sessions')({
+cookieName: 'session',
+secret: 'secret words',
+duration: 30 * 60 * 1000,
+activeDuration: 5 * 60 * 1000,
+// httpOnly: true, // don't let browser javascript access cookie
+// secure: true, // only use this cookie over https
+// ephemeral: true, // delete this cookie when the browser exists
+}));
+*/
 
   app.use(require('express-flash')());
 
   app.use('/3d', express.static(App.masterRoot('3d')));
+  app.use('/scrap', serveIndex(App.masterRoot('scrap'), {
+    hidden: true,
+    icons: true,
+    view: 'details',
+    stylesheet: 'serve-index.css'
+  }));
+  app.use('/scrap', express.static(App.masterRoot('scrap')));
   app.use('/', express.static(App.masterRoot('public')));
   app.use('/', express.static(App.masterRoot('game/public/dist')));
   app.use('/sim', express.static(App.masterRoot('sim/public')));
@@ -86,12 +117,13 @@ module.exports = function(app) {
   app.use('/pug', App.masterRequire('pug/app'));
   app.use('/canvas', App.masterRequire('canvas/app'));
   app.use('/site', App.masterRequire('site/app'));
+  app.use('/tinymce', App.masterRequire('tinymce/app'));
   app.use('/codemirror', App.masterRequire('codemirror/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 
   //app.get('/todo', function(req, res) {
-    //res.send("I HAVE TO DO EVERYTHING");
+  //res.send("I HAVE TO DO EVERYTHING");
   //});
   return new Promise(function(resolve) {
     resolve();

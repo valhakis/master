@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas {
+        background-color: #151515;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <canvas></canvas>
+
+    <script>
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+      var w = canvas.width = window.innerWidth;
+      var h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', event => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      var lines = [];
+
+      for (var i=0; i<100; i++) {
+        var line = {
+          x1: Math.random() * w,
+          y1: Math.random() * h,
+          x2: Math.random() * w,
+          y2: Math.random() * h,
+        };
+        lines.push(line);
+      }
+
+      var render = function() {
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'white';
+
+        // RENDER RANDOM LINES
+        lines.forEach(line => {
+          ctx.beginPath();
+          ctx.moveTo(line.x1, line.y1);
+          ctx.lineTo(line.x2, line.y2);
+          ctx.stroke();
+        });
+
+        requestAnimationFrame(render);
+      };
+      render();
+    </script>
+
+  </body>
+</html>

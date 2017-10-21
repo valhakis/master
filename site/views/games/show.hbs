@@ -1,0 +1,34 @@
+{{#box 'head'}}
+{{/box}}
+
+<p>
+  <a class="w3-btn w3-purple" href="{{ url '/games' }}">GAMES INDEX</a>
+</p>
+
+<h1>{{ game.name }}</h1>
+
+<p>
+  <button onclick="modal.show('box-modal')" class="w3-btn w3-purple">Add Box.</button>
+  <button onclick="modal.show('post-modal')" class="w3-btn w3-purple">Add Post.</button>
+  <button onclick="modal.show('code-modal')" class="w3-btn w3-purple">Add Code.</button>
+</p>
+
+{{> games/box-modal}}
+{{> games/post-modal}}
+{{> games/code-modal}}
+
+<script>
+  var modal = {
+    show: function(id) {
+      var modal = document.querySelector(`#${id}`);
+      modal.style.display = 'block';
+    },
+    hide: function(id) {
+      var modal = document.querySelector(`#${id}`);
+      modal.style.display = 'none';
+    }
+  };
+</script>
+
+{{#box 'scripts'}}
+{{/box}}

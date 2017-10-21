@@ -7,6 +7,10 @@ var hbs = require('handlebars');
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost:27017/master', {
   useMongoClient: true
+}).then(() => {
+
+}).catch(err => {
+  console.log('FAILED TO CONNECT TO MONGODB: ', JSON.stringify(err, ' ', 2));
 });
 
 hbs.registerHelper('json', function(content) {

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Moving Circle</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas {
+        background-color: #151515;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <canvas></canvas>
+
+    <script>
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+      var w = canvas.width = window.innerWidth;
+      var h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', event => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      class Label {
+        constructor(options) {
+          this.text = options.text || "NO LABEL";
+        }
+      }
+
+      class Circle {
+        constructor(options) {
+          this.x = options.x || 0;
+          this.y = options.y || 0;
+          this.r = options.r || 20;
+          this.color = options.color || "white";
+          this.label = options.label || null;
+        }
+        update() {
+          this.draw();
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.strokeStyle = this.color;
+          ctx.fillStyle = this.color;
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+          ctx.fill();
+
+          if (this.label) {
+            this.drawLabel();
+          }
+        }
+        drawLabel() {
+          ctx.font = 'Arial 15px'
+          ctx.textAlign = 'center';
+          this.label.x = this.x + 35;
+          this.label.y = this.y - 25;
+          ctx.fillText(this.label.text, this.label.x, this.label.y);
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(this.label.x, this.label.y);
+          ctx.stroke();
+        }
+      };
+
+      var circles = [];
+
+      var circle = {
+        speed: 0.02,
+        initialX: w/2,
+        initialY: h/2,
+        offsetX: 100,
+        x: w/2,
+        y: h/2,
+        r: 25,
+        angle: 0,
+      };
+
+      circles.push(new Circle({
+        x: circle.initialX + circle.offsetX,
+        y: circle.initialY,
+        r: 5,
+        color: "blue",
+        label: new Label({
+          text: "offset x"
+        })
+      }));
+
+      var render = function() {
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'white';
+
+        circle.x = circle.initialX + Math.sin(circle.angle) * circle.offsetX;
+
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*2);
+        ctx.fill();
+
+        circle.angle += circle.speed;
+
+        // RENDERS RED CIRCLE IN THE MIDDLE OF THE SCREEN
+        (function() {
+          var circle = {
+            x: w/2,
+            y: h/2,
+            r: 5,
+          };
+          ctx.beginPath();
+          ctx.fillStyle = 'red';
+          ctx.strokeStyle = 'red';
+          ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*2);
+          ctx.fill();
+          // RENDERS HELPER TEXT FOR CENTER RED CIRCLE
+          ctx.font = 'bold 15px Arial';
+          ctx.textAlign = 'center';
+          var text = {
+            x: w/2 + 20,
+            y: h/2 - 22,
+          };
+          ctx.fillText('center', text.x, text.y);
+          // DRAWS LINE FROM TEXT TO RED CIRCLE
+          ctx.beginPath();
+          ctx.moveTo(circle.x, circle.y);
+          ctx.lineTo(text.x, text.y);
+          ctx.stroke();
+        })();
+
+        circles.forEach(circle => {
+          circle.update();
+        });
+
+        requestAnimationFrame(render);
+      };
+      render();
+    </script>
+
+  </body>
+</html>

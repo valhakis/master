@@ -1,0 +1,16 @@
+<h1>THE GALLERY</h1>
+
+<p>
+  <a class="w3-btn w3-purple" href="{{ url '/images' }}">Images</a>
+</p>
+
+<h2>Add Remote Image</h2>
+<form action="{{ url '/images/store' }}" method="POST">
+  <div>
+    <label>IMAGE URL</label>
+    <input type="url" name="url" placeholder="Place image's url here.">
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>

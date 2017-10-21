@@ -1,0 +1,25 @@
+var canvas=document.querySelector(canvas);
+height=canvas.height=window.InnerHeight;
+witdh=canvas.width=window.InnerWidth;
+var ctx=canvas.getContext("2d");
+var player1={x:10,y:10,id="green"}
+var player2={x:10,y:10,id="red"}
+function render(){
+ctx.clearRect(0,0,width,height);
+
+
+ctx.fillStyle="green";
+ctx.rect(player1.x-5,player1.y-5,player1.x+5,player1.y+5);
+ctx.fill();
+
+ctx.fillStyle="red";
+ctx.rect(player2.x-5,player2.y-5,player2.x+5,player2.y+5);
+
+
+ctx.stroke();
+ctx.fill();
+
+
+requestAnimationFrame(render);
+}
+render();

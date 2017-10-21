@@ -1,5 +1,69 @@
 <h2>INDEX</h2>
 
+<div class="w3-panel">
+  <p>PRESS: ',m'</p>
+</div>
+
+<div class="w3-container w3-purple">
+  <h1>RESOURCE LINKS</h1>
+  <p>
+    <a class="w3-btn w3-blue" href="{{ url '/videos' }}">Videos</a>
+    <a class="w3-btn w3-blue" href="{{ url '/images' }}">Images</a>
+    <a class="w3-btn w3-blue" href="{{ url '/codes' }}">Codes</a>
+    <a class="w3-btn w3-blue" href="{{ url '/posts' }}">Posts</a>
+    <a class="w3-btn w3-blue" href="{{ url '/tutorials' }}">Tutorials</a>
+  </p>
+</div>
+
+<br>
+
+<div class="w3-container w3-purple">
+  <h1>GAMES</h1>
+  <p><a class="w3-btn w3-blue" href="{{ url '/games' }}">Games</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-purple">
+  <h1>THE GALLERY</h1>
+  <p><a class="w3-btn w3-blue" href="{{ url '/gallery' }}">Gallery</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-pink">
+  <h1>THE BOXEN</h1>
+  <p><a class="w3-btn w3-blue" href="{{ url '/boxen' }}">Boxen</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-purple">
+  <h1>THE GAME</h1>
+  <p><a class="w3-btn w3-blue" href="{{ url '/game' }}">Game</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-pink">
+  <h1>BOOKS BLOCK</h1>
+  <p><a class="w3-btn w3-blue" href="{{ url '/books' }}">Books</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-green">
+  <h1>D3 BLOCK</h1>
+  <p><a class="w3-btn w3-red" href="{{ url '/d3' }}">D3</a></p>
+</div>
+
+<br>
+
+<div class="w3-container w3-green">
+  <h1>W3 BLOCK</h1>
+  <p><a class="w3-btn w3-red" href="{{ url '/w3' }}">W3</a></p>
+</div>
+
 {{#if user }}
 
 {{#if user.github.id}}
@@ -49,3 +113,16 @@
   </p>
 </div>
 {{/if}}
+
+<div>
+  <div class="w3-container w3-yellow">
+    <h2>LATEST {{ posts.length }} POSTS</h2>
+  </div>
+  {{#each posts}}
+  <div class="w3-panel w3-card w3-pale-yellow">
+    <h3>{{ this.title }}</h3>
+    <div>{{ this.body }}</div>
+    <p>Author: <a class="w3-text-blue" href="{{ url (concat '/users/' this.author._id) }}">{{ this.author.name }}</a></p>
+  </div>
+  {{/each}}
+</div>

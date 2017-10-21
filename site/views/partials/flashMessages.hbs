@@ -1,0 +1,18 @@
+<div class="flashMessages">
+  {{#each flashMessages}}
+    {{#equals this.type "error"}}
+      <p class="error">{{ this.message }}</p>
+    {{else}}
+      <p class="success">{{ this.message }}</p>
+    {{/equals}}
+  {{/each}}
+
+  {{#if error}}
+    <p class="error">{{ error }}</p>
+  {{/if}}
+
+  {{#if success}}
+    <p class="success">{{ success }}</p>
+  {{/if}}
+</div>
+

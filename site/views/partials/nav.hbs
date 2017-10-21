@@ -1,22 +1,19 @@
 <div class="w3-bar w3-border w3-light-grey">
   {{{ link 'Home' '/' }}}
   {{#if user}}
-  {{{ linkn 'Posts' '/posts' }}}
-  {{{ linkn 'Users' '/users' }}}
-  {{! !}}
+    {{{ linkn 'Posts' '/posts' }}}
+    {{{ linkn 'Users' '/users' }}}
+    {{{ linkn 'Colors' '/colors' }}}
+    {{{ linkn 'Tutorials' '/tutorials' }}}
 
-  <a href="{{url '/color'}}" class="w3-bar-item w3-button">Color</a>
-  {{{ linkn 'Tutorials' '/tutorials' }}}
-  {{! !}}
-
-  <div class="w3-dropdown-hover w3-right w3-blue">
-    <a href="{{ url '/profile' }}" class="w3-button w3-hover-dark-gray">PROFILE</a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-      <a href="{{url '/profile/posts'}}" class="w3-bar-item w3-button w3-red w3-right w3-hover-dark-gray">MY POSTS</a>
-      <a href="{{url '/logout'}}" class="w3-bar-item w3-button w3-red w3-right w3-hover-dark-gray">Log Out</a>
+    <div class="w3-dropdown-hover w3-right w3-blue">
+      <a href="{{ url '/profile' }}" class="w3-button w3-hover-dark-gray">PROFILE</a>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="{{url '/profile/posts'}}" class="w3-bar-item w3-button w3-red w3-right w3-hover-dark-gray">MY POSTS</a>
+        <a href="{{url '/logout'}}" class="w3-bar-item w3-button w3-red w3-right w3-hover-dark-gray">Log Out</a>
+      </div>
     </div>
-  </div>
   {{else}}
-  <a href="{{url '/login'}}" class="w3-bar-item w3-button w3-green w3-right">Login</a>
+    <a href="{{url '/login'}}" class="w3-bar-item w3-button w3-green w3-right">Login</a>
   {{/if}}
 </div>

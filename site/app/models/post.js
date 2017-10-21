@@ -3,18 +3,16 @@ var Schema = mongoose.Schema;
 
 var db = Loc.require('app/db');
 
-module.exports = db.model('Post', {
+module.exports = db.model('Post', new Schema({
   title: String,
   body: String,
   author: {
     type: Schema.Types.ObjectId, ref: 'User'
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
   removedAt: {
     type: Date,
     default: null
   }
-});
+}, {
+  timestamps: true
+}));

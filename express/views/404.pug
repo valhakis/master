@@ -1,0 +1,26 @@
+extends /lay/base
+
+block head
+  //- THE HEAD BLOCK
+
+block body
+  //- THE BODY BLOCK
+  h1 404 EXPRESS PAGE NOT FOUND
+  p URL: #{data.url}
+  p Method: #{data.method}
+  p Path: #{data.path}
+  p Base URL: #{data.baseUrl}
+  p Original URL: #{data.originalUrl}
+  hr
+  p IP: #{data.ip}
+  p IPs: #{data.ips}
+  p Hostname: #{data.hostname}
+  p Params: !{`<pre><code>${JSON.stringify(data.params, ' ', 2)}</code></pre>`}
+  p Body: !{`<pre><code>${JSON.stringify(data.body, ' ', 2)}</code></pre>`}
+  p Cookies: !{`<pre><code>${JSON.stringify(data.cookies, ' ', 2)}</code></pre>`}
+  p Query: !{`<pre><code>${JSON.stringify(data.query, ' ', 2)}</code></pre>`}
+  p Route: #{data.route}
+  // p Signed Cookies: #{data.signedCookies}
+
+block scripts
+  //- THE SCRIPTS BLOCK

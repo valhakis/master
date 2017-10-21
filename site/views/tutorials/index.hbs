@@ -1,3 +1,21 @@
 <h1>TUTORIALS</h1>
 
 {{> tutorials/menu }}
+
+{{#each tutorials}}
+<div>
+  <h3>
+    <a href="{{ url (concat '/tutorials/' this._id) }}">
+      {{#if this.title}}
+      <span>{{ this.title }}</span>
+      {{else}}
+      <span>HAS NO TITLE</span>
+      {{/if}}
+    </a>
+  </h3>
+
+  <p>Author: <a href="{{ url (concat '/users/' this.author._id) }}">{{ this.author.name }}</a></p>
+
+  <p><small>{{ this._id }}</small></p>
+</div>
+{{/each}}

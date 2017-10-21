@@ -1,0 +1,26 @@
+<h1>COMPONENTS</h1>
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#new-component">New Component</button>
+
+<div id="new-component" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/bootstrap/components/store" method="POST">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3>New Component Creation</h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name: </label>
+            <input class="form-control" type="text" name="name">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">SUBMIT</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

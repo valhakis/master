@@ -4,15 +4,16 @@
 
 <h2>List of posts.</h2>
 
-{{#each posts}}
+{{#each posts as |post|}}
+
 <div class="w3-panel">
-  <h3><a href="{{url (concat '/posts/' this._id)}}">{{ this.title }}</a></h3>
-  <div>{{ this.body }}</div>
+  <h3><a href="{{url (concat '/posts/' post._id)}}">{{ post.title }}</a></h3>
+  <div>{{ post.body }}</div>
   <p>
-    <small>Created at: {{ this.createdAt }}</small>
+    <small>Created at: {{ post.createdAt }}</small>
   </p>
-  {{#if this.author}}
-  <p>Author: {{ this.author.name }}</p>
+  {{#if post.author}}
+  <p>Author: <a href="{{ url (concat '/users/' ../user._id) }}">{{ post.author.name }}</a></p>
   {{else}}
   <p>Author: HAS NO AUTHOR</p>
   {{/if}}

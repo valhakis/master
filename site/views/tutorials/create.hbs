@@ -1,3 +1,18 @@
 <h1>CREATE A TUTORIAL</h1>
 
 {{> tutorials/menu }}
+
+<br>
+
+<div class="w3-container w3-purple">
+  <h3>CREATE A NEW TUTORIAL</h3>
+</div>
+<form class="w3-container w3-pink" action="{{ url '/tutorials/store' }}" method="POST">
+  <div>
+    <label>Title: </label>
+    <input class="w3-input" type="text" name="title" placeholder="Place tutorial's title here.">
+  </div>
+  <div>
+    <button class="w3-btn w3-blue w3-hover-red" type="submit">Submit</button>
+  </div>
+</form>

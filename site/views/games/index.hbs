@@ -1,0 +1,29 @@
+<h1>GAMES INDEX</h1>
+
+<form class="w3-panel w3-card w3-red"action="{{ url '/games/store' }}" method="POST">
+  <h2>Create a new one.</h2>
+  <hr>
+  <div>
+    <label>Name: </label>
+    <input class="w3-input" type="text" name="name" placeholder="Place game's name here." autofocus>
+  </div>
+  <hr>
+  <div>
+    <button class="w3-btn w3-blue" type="submit">Submit</button>
+  </div>
+</form>
+
+<h2>List of games.</h2>
+{{#each games as |game|}}
+  <div class="w3-panel w3-card w3-purple">
+    <h3><a href="{{ url (concat '/games/' game._id) }}">{{ game.name }}</a></h3>
+
+    <p>Author: 
+      {{#if author}}
+        {{ game.author.name }}
+      {{else}}
+        <span>HAS NO AUTHOR</span>
+      {{/if}}
+    </p>
+  </div>
+{{/each}}

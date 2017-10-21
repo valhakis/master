@@ -56,4 +56,24 @@ app.get('/pug', function(req, res) {
   });
 });
 
+app.use('*', function(req, res) {
+  res.locals.data = {
+    ip: req.ip,
+    ips: req.ips,
+    baseUrl: req.baseUrl,
+    method: req.method,
+    query: req.query,
+    route: req.router,
+    path: req.path,
+    url: req.url,
+    signedCookies: req.signedCookies,
+    params: req.params,
+    body: req.body,
+    cookies: req.cookies,
+    hostname: req.hostname,
+    originalUrl: req.originalUrl,
+  };
+  res.render('404');
+});
+
 module.exports = app;

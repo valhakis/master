@@ -1,0 +1,32 @@
+<div class="w3-container w3-pink">
+  <h2>The Books Index</h2>
+  <p>Adipisicing at nisi aspernatur maxime ut placeat? Eius hic illo pariatur fugit ad quibusdam Doloribus nam doloribus qui voluptate at Esse nobis vitae id hic ad Veniam accusantium natus temporibus.</p>
+</div>
+
+<br>
+
+<div class="books-list">
+  {{#each books as |book|}}
+    <div class="w3-container">
+
+      <!-- BOOK TITLE -->
+
+      <h3>
+        <a href="{{ url (concat '/books/' book._id) }}">
+          {{#if book.title}}
+            <span>{{ book.title }}</span>
+          {{else}}
+            <span>BOOK HAS NO TITLE</span>
+          {{/if}}
+        </a>
+      </h3>
+
+      <!-- BOOK DESCRIPTION -->
+
+      <div>Elit tenetur debitis molestiae ducimus delectus dolore hic Incidunt odio totam in molestiae ea quae ratione. Odit quidem iure eius dolore aliquam enim Odio illum nam cumque nulla sit Consectetur.</div>
+
+      <!-- BOOK AUTHOR -->
+      <p><small>Author: <a href="#">{{ book.author }}</a></small></p>
+    </div>
+  {{/each}}
+</div>
