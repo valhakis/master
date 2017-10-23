@@ -14,6 +14,7 @@ app.locals.basedir = Loc.root('views');
 app.use(Loc.static('public'));
 
 require('./middleware')(app);
+require('./routes')(app);
 
 app.get('/', function(req, res) {
   db.query(`SELECT * FROM codes ORDER BY createdAt DESC LIMIT 3`, function(err, codes) {

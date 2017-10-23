@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>M EXAMPLE</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mongodb/style.css">
+    <link rel="stylesheet" href="/prismjs/themes/prism-dark.css">
+  </head>
+  <body>
+    <a href="/mongodb">MongoDB Home</a>
+
+    <h3>CONNECTION TO DATABASE</h3>
+    <raw-code file="/mongodb/raw/example/connection.js" lang="javascript"></raw-code>
+
+    <h3>SAMPLE MODEL</h3>
+    <raw-code file="/mongodb/raw/example/model.js" lang="javascript"></raw-code>
+
+    {{> footer}}
+
+    <script src="/prismjs/prism.js" data-manual></script>
+    <script src="/prismjs/components/prism-c.js"></script>
+    <script src="/prismjs/components/prism-cpp.js"></script>
+    <script src="/mongodb/raw.js"></script>
+  </body>
+</html>

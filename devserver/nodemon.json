@@ -1,7 +1,7 @@
 {
   "watch": [
-    "C:\\master\\devserver",
-    "C:\\master/mongo/dev"
+    "/home/viktor/master/devserver",
+    "/home/viktor/master/mongo/dev"
   ],
   "ignore": [
     "nodemon.json"
