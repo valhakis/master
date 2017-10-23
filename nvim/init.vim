@@ -104,7 +104,8 @@ endfunction
 
 " nmap ,start :w <bar> call MRun() <cr>
 nmap ,st :w <bar> !./start.sh <cr>
-nmap \mr :w <bar> call MRun() <cr>
+" nmap \mr :w <bar> call MRun() <cr>
+nmap \mr :w <bar> !./start.sh <cr>
 
 " CUSTOM TEMPLATE FUNCTION
 " ==========================================================

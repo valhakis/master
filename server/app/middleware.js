@@ -119,6 +119,7 @@ activeDuration: 5 * 60 * 1000,
   app.use('/site', App.masterRequire('site/app'));
   app.use('/tinymce', App.masterRequire('tinymce/app'));
   app.use('/codemirror', App.masterRequire('codemirror/app'));
+  app.use('/cc', App.masterRequire('cc/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
 
