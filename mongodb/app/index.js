@@ -16,6 +16,10 @@ app.get('/demo', function(req, res) {
   Loc.render('demo', req, res);
 });
 
+app.get('/example', function(req, res) {
+  Loc.render('example', req, res);
+});
+
 app.get('/compact', function(req, res) {
   Loc.render('compact', req, res);
 });

@@ -30,6 +30,9 @@ watch(__dirname + '/nodemon.json', function() {
 });
 
 var nodemon = {
+  ignore: [
+    App.masterRoot("osrs/app/public")
+  ],
   watch: [
     App.masterRoot("server"),
     App.masterRoot("rest/app"),
@@ -49,6 +52,7 @@ var nodemon = {
     App.masterRoot("code/app"),
     App.masterRoot("site/app"),
     App.masterRoot("2017-08-19/app"),
+    App.masterRoot("osrs/app"),
     App.masterRoot("sqlite/app"),
     App.masterRoot("current/app"),
     App.masterRoot("node/app"),
@@ -67,8 +71,6 @@ var nodemon = {
     App.masterRoot("prism/app"),
     App.masterRoot("express/sub/app"),
     App.masterRoot("regular-expressions/app"),
-  ],
-  ignore: [
   ]
 };
 fs.writeFileSync(App.masterRoot("server/nodemon.json"), JSON.stringify(nodemon, ' ', 2), 'utf-8');
@@ -165,6 +167,7 @@ bs.watch([
   App.masterRoot('express/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('canvas/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('site/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('osrs/app/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('express/sub/app/{views,public}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('pug/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('posts/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),

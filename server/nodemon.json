@@ -1,4 +1,7 @@
 {
+  "ignore": [
+    "/home/viktor/master/osrs/app/public"
+  ],
   "watch": [
     "/home/viktor/master/server",
     "/home/viktor/master/rest/app",
@@ -18,6 +21,7 @@
     "/home/viktor/master/code/app",
     "/home/viktor/master/site/app",
     "/home/viktor/master/2017-08-19/app",
+    "/home/viktor/master/osrs/app",
     "/home/viktor/master/sqlite/app",
     "/home/viktor/master/current/app",
     "/home/viktor/master/node/app",
@@ -36,6 +40,5 @@
     "/home/viktor/master/prism/app",
     "/home/viktor/master/express/sub/app",
     "/home/viktor/master/regular-expressions/app"
-  ],
-  "ignore": []
+  ]
 }

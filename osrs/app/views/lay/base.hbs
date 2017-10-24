@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    {{{boxen "head"}}}
+  </head>
+  <body>
+    {{> nav}}
+
+    <div class="container-fluid">
+      {{{body}}}
+    </div>
+
+    {{> foot}}
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    {{{boxen 'scripts'}}}
+  </body>
+</html>
