@@ -13,3 +13,6 @@
 [submodule "c"]
 	path = c
 	url = https://github.com/ravensim14/c.git
+[submodule "arch"]
+	path = arch
+	url = https://valhakis@github.com/valhakis/arch
