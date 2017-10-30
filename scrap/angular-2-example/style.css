@@ -1,0 +1,20 @@
+.heroes {
+  padding: 0px;
+  margin: 0px;
+}
+
+.heroes li {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+.heroes li:hover {
+  background-color: darkblue;
+}
+
+.heroes li.selected {
+  background-color: seagreen;
+}

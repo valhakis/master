@@ -11,8 +11,11 @@
 	path = LearnOpenGL
 	url = https://github.com/JoeyDeVries/LearnOpenGL
 [submodule "c"]
-	path = c
+	path = siim-c
 	url = https://github.com/ravensim14/c.git
 [submodule "arch"]
 	path = arch
 	url = https://valhakis@github.com/valhakis/arch
+[submodule "siim-c"]
+	path = siim-c
+	url = https://valhakis@github.com/ravensim14/c.git
