@@ -19,7 +19,8 @@ require('./config.php');
   <a class="w3-bar-item w3-hover-black" href="/php/example/public/">EXAMPLE</a>
 </div>
 
-<div class="w3-card w3-panel">
+<div class="w3-card w3-panel w3-padding">
+  <a class="w3-btn w3-purple" href="/php/crud/index.php">Crud</a>
   <a class="w3-btn w3-purple" href="/php/slim/index.php">Slim</a>
 </div>
 

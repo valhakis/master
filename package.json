@@ -122,6 +122,7 @@
     "webpack": "^3.7.1",
     "webpack-js-obfuscator": "0.0.5",
     "webpack-obfuscator": "^0.11.2",
+    "webpage": "^0.3.0",
     "wide-align": "^1.1.2",
     "xlsx": "^0.11.5",
     "yui": "^3.18.1",
