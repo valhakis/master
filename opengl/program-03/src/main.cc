@@ -4,7 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-const char* root = "/home/viktor/master/opengl/program-02/data";
+char root[512];
 static const unsigned int width = 800, height = 600;
 
 static void framebuffer(GLFWwindow* window, int width, int height) {
@@ -82,6 +82,7 @@ static char *loadSource(const char *path) {
 }
 
 int main(int argc, char *argv[]) {
+  sprintf(root, "%s/master/opengl/program-03/data", getenv((char*)"HOME"));
 
   GLFWwindow* window;
 
@@ -93,7 +94,7 @@ int main(int argc, char *argv[]) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+  glfwWindowHint(GLFW_RESIZABLE, false);
 
   window = glfwCreateWindow(width, height, "program-02", NULL, NULL);
 

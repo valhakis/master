@@ -15,10 +15,10 @@ dirs += lib
 libs += -L lib
 libs += -I glad/include
 
-libs += -ldl
 libs += -lGL
 libs += -lglfw
 libs += -lglad
+libs += -ldl
 
 all: $(dirs) lib/libglad.a bin/app
 
@@ -32,7 +32,7 @@ lib:
 	mkdir -p $@
 
 lib/libglad.a: glad/src/glad.cc
-	$(CC) -c $^ -o glad.o -I glad/include 
+	$(CC) -c $^ -o glad.o -I glad/include -ldl
 	ar rvs $@ glad.o
 
 bin/app: $(obj)

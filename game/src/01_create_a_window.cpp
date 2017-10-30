@@ -8,7 +8,7 @@ static int HEIGHT = 600;
 
 static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-    glfwSetWindowShouldClose(window, GLFW_TRUE);
+    glfwSetWindowShouldClose(window, GL_TRUE);
   }
 }
 
@@ -22,7 +22,7 @@ int _01_create_a_window(int argc, char *argv[]) { /* <++> */
 
   check = glfwInit();
 
-  if (check == GLFW_FALSE) {
+  if (check == GL_FALSE) {
     printf("FAILED TO INITIALIZE GLFW.\n");
     return -1;
   }
@@ -30,7 +30,7 @@ int _01_create_a_window(int argc, char *argv[]) { /* <++> */
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 #ifdef __APPLE__
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); 
