@@ -1,21 +1,26 @@
+var http = require('http');
 var express = require('express');
-var handlebars = require('handlebars');
-var fs = require('fs');
-var Loc = App.masterRequire('site/local');
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
-var site = express.Router();
+global.App = require('../../share/App');
+global.Loc = require('../../share/Loc');
 
-site.use(Loc.renderer);
-require('./config')(site);
-site.use('/note', require('./note'));
-site.use('/database', require('./db').router);
+var app = express();
 
-site.get('/', function(req, res) {
-  var source = fs.readFileSync(Loc.root('views/index.html'), 'utf-8');
-  var template = handlebars.compile(source);
-  res.end(template({}));
+var example = express();
+
+console.log('PATH', example.mountpath);
+
+var router = require('../app');
+app.use(express.static(App.masterRoot('public')));
+app.use('/lib', express.static(App.masterRoot('lib')));
+app.use(router);
+
+var server = http.createServer(app);
+
+var env = App.masterRequire('env');
+
+server.listen(env.port, env.host, () => {
+  console.log(`Server started at ${env.host}:${env.port}.`);
 });
-
-site.use('/', express.static(Loc.root('public')));
-
-module.exports = site;

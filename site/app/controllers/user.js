@@ -39,3 +39,20 @@ exports.setPassword = function(req, res) {
     });
   });
 };
+
+exports.setName = function(req, res) {
+  User.update({_id: req.user._id}, {$set: {name: req.body.name}}).exec().then(() => {
+    req.flash('flashMessages', {type: 'success', message: 'Name has been changed.'});
+    res.redirect('/site/profile');
+  }).catch((err) => {
+    req.flash('flashMessages', {type: 'error', message: 'Failed to change name.'});
+    res.redirect('/site/profile');
+  });
+};
+
+exports.renderShow = function(req, res) {
+  User.findOne({ _id: req.params.userId }).populate('posts').exec().then(user => {
+    res.locals.user = user;
+    res.render('users/show');
+  });
+};

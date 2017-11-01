@@ -6,15 +6,32 @@
 
 <br> <br>
 
-<div class="w3-container w3-yellow">
-  <h2>Set password: </h2>
+<div>
+  <div class="w3-container w3-yellow">
+    <h2>Set password: </h2>
+  </div>
+  <form class="w3-container w3-pale-yellow" action="{{ url '/users/setPassword' }}" method="POST">
+    <div>
+      <label>Password: </label>
+      <input type="password" name="password" placeholder="Place your password here.">
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 </div>
-<form class="w3-container w3-pale-yellow" action="{{ url '/users/setPassword' }}" method="POST">
-  <div>
-    <label>Password: </label>
-    <input type="password" name="password" placeholder="Place your password here.">
+
+<div>
+  <div class="w3-container w3-yellow">
+    <h2>Set name</h2>
   </div>
-  <div>
-    <button type="submit">Submit</button>
-  </div>
-</form>
+  <form class="w3-container w3-pale-yellow" action="{{ url '/users/setName' }}" method="POST">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="name" placeholder="Place your name here.">
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>

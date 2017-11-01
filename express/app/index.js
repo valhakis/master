@@ -14,6 +14,7 @@ app.locals.basedir = Loc.root('views');
 app.use(Loc.static('public'));
 
 require('./middleware')(app);
+require('./routes')(app);
 
 app.get('/', function(req, res) {
   db.query(`SELECT * FROM codes ORDER BY createdAt DESC LIMIT 3`, function(err, codes) {
@@ -54,6 +55,26 @@ app.get('/pug', function(req, res) {
       title: 'Pug'
     });
   });
+});
+
+app.use('*', function(req, res) {
+  res.locals.data = {
+    ip: req.ip,
+    ips: req.ips,
+    baseUrl: req.baseUrl,
+    method: req.method,
+    query: req.query,
+    route: req.router,
+    path: req.path,
+    url: req.url,
+    signedCookies: req.signedCookies,
+    params: req.params,
+    body: req.body,
+    cookies: req.cookies,
+    hostname: req.hostname,
+    originalUrl: req.originalUrl,
+  };
+  res.render('404');
 });
 
 module.exports = app;

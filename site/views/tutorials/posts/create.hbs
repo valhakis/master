@@ -1,0 +1,15 @@
+<h1>CREATE A NEW POST</h1>
+
+<form action="{{ url (concat '/tutorials/' tutorial._id '/posts/store') }}" method="POST">
+  <div>
+    <label>Title: </label>
+    <input class="w3-input" type="text" name="title" placeholder="Place post's title here.">
+  </div>
+  <div>
+    <label>Content: </label>
+    <textarea class="w3-input" name="body" placeholder="Place post's content here."></textarea>
+  </div>
+  <div>
+    <button class="w3-btn w3-green">Submit</button>
+  </div>
+</form>

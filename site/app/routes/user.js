@@ -8,5 +8,7 @@ router.get('/register', UserController.renderRegister);
 router.post('/login', UserController.doLogin);
 router.post('/register', UserController.doRegister);
 router.post('/setPassword', UserController.setPassword);
+router.post('/setName', UserController.setName);
+router.get('/:userId', UserController.renderShow);
 
 module.exports = router;

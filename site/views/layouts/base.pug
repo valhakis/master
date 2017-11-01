@@ -1,0 +1,24 @@
+html
+  head
+    title Site
+    link(rel="stylesheet", href="/lib/w3.css")
+    link(rel="stylesheet", href="/main.dist.css")
+    link(rel="stylesheet", href="/site/style.css")
+    block head
+      // head
+  body
+    include /partials/nav
+
+    div.w3-bar.w3-dark-gray
+      a.w3-panel-item.w3-button.w3-dark-gray(href="/site") Home
+
+    div.w3-container
+      block content
+        // THE BODY CONTENT
+
+    div.w3-container
+      include /partials/footer
+
+    script(src="/site/keyboard.js")
+    block scripts
+      // scripts

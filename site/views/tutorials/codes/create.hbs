@@ -1,0 +1,51 @@
+{{#box 'head'}}
+<link rel="stylesheet" href="/prismjs/themes/prism-tomorrow.css">
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="/codemirror/theme/ambiance.css">
+{{/box}}
+
+<h1>CREATE TUTORIAL CODE</h1>
+
+<form action="{{ url (concat '/tutorials/' tutorial._id '/codes/store') }}" method="POST">
+  <div>
+    <label>Title: </label>
+    <input type="text" name="title" placeholder="Place code's title here.">
+  </div>
+  <div>
+    <label>Language: </label>
+    <select class="w3-input" name="language">
+      <option value="javascript">Javascript</option>
+      <option value="css">CSS</option>
+      <option value="html">HTML</option>
+      <option value="PHP">PHP</option>
+    </select>
+  </div>
+  <div>
+    <label>Content: </label>
+    <textarea name="body"></textarea>
+  </div>
+  <div>
+    <button class="w3-btn w3-blue" type="submit">Submit</button>
+  </div>
+</form>
+
+{{#box 'scripts'}}
+<script src="/prismjs/prism.js" data-manual></script>
+<script src="/prismjs/components/prism-c.js"></script>
+<script src="/prismjs/components/prism-css.js"></script>
+<script src="/prismjs/components/prism-cpp.js"></script>
+<script src="/prismjs/components/prism-javascript.js"></script>
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/javascript/javascript.js"></script>
+<script src="/codemirror/mode/xml/xml.js"></script>
+<script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script>
+  var xTextArea = document.querySelector('textarea');
+  var editor = CodeMirror.fromTextArea(xTextArea, {
+    lineNumbers: true, 
+    mode: 'javascript',
+    theme: 'ambiance'
+  });
+</script>
+{{/box}}
+

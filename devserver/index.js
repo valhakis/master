@@ -6,6 +6,8 @@ var fs = require('fs');
 var watch = require('node-watch');
 var sass = require('node-sass');
 
+var isWin = /^win/.test(process.platform);
+
 global.App = require('../share/App.js').initialize(path.join(__dirname));
 
 var spawn = require('child_process').spawn;
@@ -28,6 +30,9 @@ watch(__dirname + '/nodemon.json', function() {
 });
 
 var nodemon = {
+  ignore: [
+    App.masterRoot("osrs/app/public")
+  ],
   watch: [
     App.masterRoot("server"),
     App.masterRoot("rest/app"),
@@ -41,11 +46,13 @@ var nodemon = {
     App.masterRoot("bootstrap/app"),
     App.masterRoot("canvas/app"),
     App.masterRoot("codemirror/app"),
+    App.masterRoot("cc/app"),
     App.masterRoot("pug/app"),
     App.masterRoot("tmux/app"),
     App.masterRoot("code/app"),
     App.masterRoot("site/app"),
     App.masterRoot("2017-08-19/app"),
+    App.masterRoot("osrs/app"),
     App.masterRoot("sqlite/app"),
     App.masterRoot("current/app"),
     App.masterRoot("node/app"),
@@ -64,8 +71,6 @@ var nodemon = {
     App.masterRoot("prism/app"),
     App.masterRoot("express/sub/app"),
     App.masterRoot("regular-expressions/app"),
-  ],
-  ignore: [
   ]
 };
 fs.writeFileSync(App.masterRoot("server/nodemon.json"), JSON.stringify(nodemon, ' ', 2), 'utf-8');
@@ -76,10 +81,20 @@ var server = {
 };
 
 // spawn('nodemon', ['--exec', 'babel-node', '--presets', 'es2015,stage-2', '.'], {
-spawn('nodemon', ['.'], {
-  cwd: App.masterRoot('server'),
-  stdio: 'inherit'
-});
+if (isWin) {
+  spawn('mongod', ['--dbpath', 'C:\\tmp'], {
+    // stdio: 'inherit'
+  });
+  spawn('nodemon.cmd', ['-q', '.'], {
+    cwd: App.masterRoot('server'),
+    stdio: 'inherit'
+  });
+} else {
+  spawn('nodemon', ['-q', '.'], {
+    cwd: App.masterRoot('server'),
+    stdio: 'inherit'
+  });
+}
 
 bs.init({
   port: env.bs.port,
@@ -116,6 +131,10 @@ bs.init({
 });
 
 bs.watch([
+  App.masterRoot('scrap/**/*.{html,css,js}'),
+]).on('change', bs.reload);
+
+bs.watch([
   App.masterRoot('server/views/*.{pug,html,hbs}'),
   App.masterRoot('rest/{public,views}/**/*.{html,css,js,mst,hbs}'),
   App.masterRoot('W3/public/**/*.{html,js,css}'),
@@ -148,6 +167,7 @@ bs.watch([
   App.masterRoot('express/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('canvas/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('site/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('osrs/app/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('express/sub/app/{views,public}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('pug/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('posts/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
@@ -155,6 +175,7 @@ bs.watch([
   App.masterRoot('demo-2/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('demo-3/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('sim/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('cc/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('excel/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),

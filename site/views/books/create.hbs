@@ -1,0 +1,23 @@
+<div class="w3-container w3-pink">
+  <h2>Create A New Book</h2>
+  <p>Elit corrupti nisi quibusdam natus dicta fugit Suscipit earum eligendi deserunt delectus nobis? Pariatur cupiditate nisi ex sequi et reiciendis. Accusamus vel similique ex est debitis, alias. Asperiores dolor facere.</p>
+</div>
+
+<br>
+
+<div class="w3-container w3-pink">
+  <h2>Book Creation Form</h2>
+  <form class="book-form" action="{{ url '/books/store' }}" method="POST">
+    <div>
+      <label>Book Title: </label>
+      <input class="w3-input" type="text" name="title" autofocus>
+    </div>
+    <div>
+      <label>Author: </label>
+      <input class="w3-input" type="text" name="author">
+    </div>
+    <div>
+      <button type="submit" class="w3-btn w3-blue">Submit</button>
+    </div>
+  </form>
+</div>

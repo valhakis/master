@@ -1,0 +1,162 @@
+{{#box 'head'}}
+  <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="/codemirror/theme/ambiance.css">
+{{/box}}
+
+<h4>Box: <small>{{ box._id }}</small></h4>
+
+<h1>{{ box.title }}</h1>
+
+<small>Created at {{ box.createdAt }}</small>
+
+<ul>
+  <li>JAVASCRIPT FILE</li>
+  <li>CSS FILE</li>
+  <li>HTML FILE</li>
+</ul>
+
+<iframe style="background-color: #FFF; width:100%; min-height: 300px;" sanbox></iframe>
+
+<div id="editor" style="overflow: hidden;">
+  <h2>THE EDITOR</h2>
+  <textarea></textarea>
+  <hr>
+  <button onclick="save()" class="w3-btn w3-pink w3-right">SAVE</button>
+  <button type="html" onclick="editor.load(this, 'html')"class="w3-btn w3-pink">HTML</button>
+  <button type="javascript" onclick="editor.load(this, 'javascript')"class="w3-btn w3-pink">JAVASCRIPT</button>
+  <button type="css" onclick="editor.load(this, 'css');" class="w3-btn w3-pink">CSS</button>
+</div>
+
+<p>Author: <a href="#">{{ box.author.name }}</a></p>
+
+<a class="w3-btn w3-pink" href="{{ url '/boxen' }}">Boxen</a>
+
+{{#box 'scripts'}}
+  <script src="/codemirror/lib/codemirror.js"></script>
+  <script src="/codemirror/keymap/vim.js"></script>
+  <script src="/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/codemirror/mode/xml/xml.js"></script>
+  <script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="/codemirror/mode/css/css.js"></script>
+
+  <script>
+    var files = {
+      html: '{{{ escape box.files.html }}}',
+      javascript: '{{{ escape box.files.javascript }}}',
+      css: '{{{ escape box.files.css }}}',
+    };
+    var iframe = document.querySelector('iframe');
+
+    var frame = {
+      update: function() {
+        iframe.contentWindow.document.body.innerHTML = files.html;
+        var script = document.createElement('script');
+        script.text = files.javascript;
+        iframe.contentWindow.document.body.appendChild(script);
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML = files.css;
+        iframe.contentWindow.document.head.appendChild(style);
+      }
+    };
+
+    frame.update();
+
+    var xTextArea = document.querySelector('textarea');
+
+    var editor = CodeMirror.fromTextArea(xTextArea, {
+      lineNumbers: true, 
+      mode: 'htmlmixed',
+      theme: 'ambiance',
+      extraKeys: {
+        "Ctrl-S": function(instance) {
+          save();
+        }
+      },
+      keyMap: "vim",
+    });
+
+    editor.load = function(btn, type) {
+      var previous = document.querySelector('#editor button.w3-purple');
+      if (previous) {
+        previous.classList.remove('w3-purple');
+      }
+      btn.classList.add('w3-purple');
+
+      files[editor.type] = editor.getValue();
+
+      if (type == 'html') {
+        editor.type = 'html';
+        editor.setOption('mode', 'htmlmixed');
+      } else if (type == 'javascript') {
+        editor.setOption('mode', 'javascript');
+        editor.type = 'javascript';
+      } else if (type == 'css') {
+        editor.setOption('mode', 'text/css');
+        editor.type = 'css';
+      }
+
+      editor.setValue(files[editor.type]);
+    };
+    editor.loadNext = function() {
+      //var current = document.querySelector('#editor button.w3-purple');
+      var buttons = document.querySelectorAll('#editor [type]');
+
+      var len = buttons.length;
+
+      for (var i=0; i<len; i++) {
+        var button = buttons[i];
+        if (button.classList.contains('w3-purple')) {
+          if (i+1 >= len-1) {
+            editor.load(buttons[0], buttons[0].getAttribute('type'));
+          } else {
+            editor.load(buttons[i+1], buttons[i+1].getAttribute('type'));
+          }
+        }
+      }
+      //if (current) {
+      //var next = current.nextElementSibling;
+      //editor.load(next, next.getAttribute('type'));
+      //}
+    };
+
+    var keys = '';
+    CodeMirror.on(editor, 'vim-keypress', function(key) {
+      // console.log(key);
+      keys += key;
+    });
+    CodeMirror.on(editor, 'vim-command-done', function(e) {
+      if (keys == 'gt') {
+        // editor.loadNext();
+      }
+      //if (keys == 'gT') {
+      //console.log('HAVE TO GO PREVIOUS');
+      //}
+      keys = '';
+    });
+
+    editor.load(document.querySelector("#editor button[type='html']"), 'html');
+
+    editor.isType = function(type) {
+    };
+
+    CodeMirror.commands.save = function() {
+      save();
+    };
+
+    function save() {
+      files[editor.type] = editor.getValue();
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // console.log(this.responseText);
+          frame.update();
+        }
+      };
+      xhr.open('POST', `/site/boxen/{{box._id}}/save`, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(files));
+    }
+  </script>
+{{/box}}

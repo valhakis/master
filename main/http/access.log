@@ -16,3 +16,7 @@
 192.168.0.3 - - [03/Oct/2017:15:16:42 +0300] "GET / HTTP/1.1" 200 2321
 192.168.0.3 - - [03/Oct/2017:15:16:45 +0300] "GET /favicon.ico HTTP/1.1" 304 -
 192.168.0.3 - - [04/Oct/2017:12:15:38 +0300] "GET / HTTP/1.1" 200 2321
+80.235.113.27 - - [11/Oct/2017:17:41:35 +0300] "GET / HTTP/1.1" 200 2321 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
+80.235.113.27 - - [11/Oct/2017:17:41:38 +0300] "GET /favicon.ico HTTP/1.1" 200 - "http://kodu.webhop.me/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
+80.235.113.27 - - [11/Oct/2017:17:41:40 +0300] "GET / HTTP/1.1" 200 2321 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
+80.235.113.27 - - [11/Oct/2017:17:42:28 +0300] "-" 408 - "-" "-"

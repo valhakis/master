@@ -11,7 +11,7 @@ module.exports = {
 			require('./models/component')(db);
 			cb(db);
 		}).catch(function(err) {
-			console.log(`Failed to connect to database [${uri}].`);
+			console.log(`Failed to connect to database [${uri}].`, JSON.stringify(err, ' ', 2));
 		});
 	}
 };

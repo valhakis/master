@@ -1,0 +1,168 @@
+{{#box 'head'}}
+  <link rel="stylesheet" href="/jquery-ui-dist/jquery-ui.min.css">
+  <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="/codemirror/theme/ambiance.css">
+  <link rel="stylesheet" href="/prismjs/themes/prism-tomorrow.css">
+{{/box}}
+
+<div class="w3-container w3-pink">
+  {{#if book.title}}
+    <h2>{{ book.title }}</h2>
+  {{else}}
+    <h2>BOOK HAS NO TITLE</h2>
+  {{/if}}
+  <p>Elit corrupti nisi quibusdam natus dicta fugit Suscipit earum eligendi deserunt delectus nobis? Pariatur cupiditate nisi ex sequi et reiciendis. Accusamus vel similique ex est debitis, alias. Asperiores dolor facere.</p>
+  <p><small>Author: <a href="#">{{ book.author }}</a></small></p>
+</div>
+
+<br>
+
+<div>
+  <button onclick="modal.show('#add-post-modal')" class="w3-btn w3-yellow">Add A Post</button>
+  <button onclick="modal.show('#add-code-modal')" class="w3-btn w3-yellow">Add a Code</button>
+</div>
+
+
+<!-- add-post-modal -->
+<div id="add-post-modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <h1>ADD POST MODAL</h1>
+      <span onclick="modal.hide('#add-post-modal')" class="w3-button w3-dark-gray w3-display-topright">&times;</span>
+      <form action="{{ url (concat '/books/' book._id '/posts/store') }}" method="POST">
+        <div>
+          <label>Title: </label>
+          <input class="w3-input" type="text" name="title" placeholder="Place posts title here.">
+        </div>
+        <div>
+          <label>Content: </label>
+          <textarea class="text-editor" name="body" placeholder="Place posts content here."></textarea>
+        </div>
+        <div>
+          <button type="submit" class="w3-btn w3-blue">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- add-code-modal -->
+<div id="add-code-modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <h1>ADD CODE MODAL</h1>
+      <span onclick="modal.hide('#add-code-modal')" class="w3-button w3-dark-gray w3-display-topright">&times;</span>
+      <form action="{{ url (concat '/books/' book._id '/codes/store') }}" method="POST">
+        <div>
+          <label>Title: </label>
+          <input class="w3-input" type="text" name="title" placeholder="Place code title here.">
+        </div>
+        <div>
+          <label>Language: </label>
+          <select class="w3-select" name="language">
+            <option value="javascript">Javascript</option>
+            <option value="php">PHP</option>
+            <option value="html">HTML</option>
+            <option value="sql">SQL</option>
+          </select>
+        </div>
+        <div>
+          <label>Content: </label>
+          <textarea class="code-editor" name="body" placeholder="Place posts content here."></textarea>
+        </div>
+        <div>
+          <button type="submit" class="w3-btn w3-blue">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- list-of-posts -->
+<br>
+
+<div class="book-posts">
+  {{#each book.posts as |post|}}
+    <div class="w3-panel">
+      <h3 class="title">{{ post.title }}</h3>
+      <div class="body">{{{ post.body }}}</div>
+    </div>
+  {{/each}}
+</div>
+
+<!-- list-of-codes -->
+<div class="book-codes-list">
+  {{#each book.codes as |code|}}
+    <div class="w3-panel">
+      <h3 class="title">{{ code.title }}</h3>
+      <p><small>Language: {{ code.language }}</small></p>
+      <pre><code class="language-{{code.language}}">{{ code.body }}</code></pre>
+    </div>
+  {{/each}}
+</div>
+
+{{#box 'scripts'}}
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/jquery-ui-dist/jquery-ui.min.js"></script>
+  <script src="/tinymce/tinymce.min.js"></script>
+  <script src="/codemirror/lib/codemirror.js"></script>
+  <script src="/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/codemirror/mode/xml/xml.js"></script>
+  <script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="/codemirror/mode/php/php.js"></script>
+  <script src="/codemirror/mode/css/css.js"></script>
+  <script src="/codemirror/mode/clike/clike.js"></script>
+  <script src="/codemirror/mode/sql/sql.js"></script>
+  <script src="/codemirror/keymap/vim.js"></script>
+  <script src="/prismjs/prism.js"></script>
+  <script src="/prismjs/components/prism-c.js"></script>
+  <script src="/prismjs/components/prism-css.js"></script>
+  <script src="/prismjs/components/prism-cpp.js"></script>
+  <script src="/prismjs/components/prism-javascript.js"></script>
+  <script src="/prismjs/components/prism-php.js"></script>
+  <script src="/prismjs/components/prism-sql.js"></script>
+  <script>
+    tinymce.init({ height: '400', selector: '.text-editor' });
+
+    var modal = {
+      show: function(id) {
+        var modal = document.body.querySelector(id);
+        modal.style.display = 'block';
+      },
+      hide: function(id) {
+        var modal = document.body.querySelector(id);
+        modal.style.display = 'none';
+      }
+    };
+
+    window.addEventListener('keydown', function(event) {
+      if (event.key == 'Escape') {
+        modal.hide('#add-post-modal');
+      }
+    });
+
+    var editors = [];
+
+    var xEditor = document.querySelector('.code-editor');
+    var editor = CodeMirror.fromTextArea(xEditor, {
+      // lineNumbers: true, 
+      mode: 'javascript',
+      theme: 'ambiance'
+    });
+    var form = document.body.querySelector("#add-code-modal form");
+    var select = form.elements.language;
+    $(select).selectmenu({
+      change: function(event, ui) {
+        if (this.value == 'php') {
+          editor.setOption("mode", "application/x-httpd-php");
+        } else if (this.value == "sql") {
+          editor.setOption("mode", "text/x-sql");
+        } else if (this.value == "html") {
+          editor.setOption("mode", "htmlmixed");
+        } else {
+          editor.setOption("mode", this.value);
+        }
+      }
+    });
+  </script>
+{{/box}}

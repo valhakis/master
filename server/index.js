@@ -19,6 +19,7 @@ if (override) {
   })();
 }
 
+// OVERRIDE ERROR
 
 var path = require('path');
 global.App = require('../share/App.js').initialize(path.join(__dirname, '..'));

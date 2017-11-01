@@ -5,29 +5,21 @@
     <title>Site</title>
     <link rel="stylesheet" href="/lib/w3.css">
     <link rel="stylesheet" href="/main.dist.css">
-    <link rel="stylesheet" href="/site/style.css">
+    <link rel="stylesheet" href="{{ url '/style.css' }}">
+    {{{boxen "head"}}}
   </head>
   <body>
     {{> nav}}
 
-    <div class="flashMessages">
-      {{#each messages.flashMessages}}
-      {{#equals this.type "error"}}
-      <p class="error">{{ this.message }}</p>
-      {{else}}
-      <p class="success">{{ this.message }}</p>
-      {{/equals}}
-      {{/each}}
-
-      {{#each messages.error}}
-      <p class="error">{{ this }}</p>
-      {{/each}}
-    </div>
+    {{> flashMessages }}
 
     <div class="w3-container">
       {{{body}}}
     </div>
 
     {{> footer}}
+
+    <script src="{{ url '/keyboard.js' }}"></script>
+    {{{boxen 'scripts'}}}
   </body>
 </html>

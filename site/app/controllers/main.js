@@ -23,15 +23,15 @@ exports.demo = function(req, res) {
 };
 
 exports.renderIndex = function(req, res) {
-  User.find({}).populate('posts').exec(function(err, users) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.locals.users = users;
-      res.render('index', {
-        flashMessages: req.flash('flashMessages')
-      });
-    }
+  Promise.all([
+    Post.find({}).limit(3).sort({createdAt: -1}).populate('author').exec(),
+    User.find({}).populate('posts').exec(),
+  ]).then(values => {
+    res.locals.posts = values[0];
+    res.locals.users = values[1];
+    res.render('index');
+  }).catch(errors => {
+    res.send(errors);
   });
 };
 
@@ -56,10 +56,8 @@ exports.doLogout = function(req, res) {
 
 exports.renderProfile = function(req, res) {
   isLoggedIn(req, res, function() {
-    res.render('profile', {
-      flashMessages: req.flash('flashMessages'),
-      user: req.user
-    });
+    res.locals.flashMessages = req.flash('flashMessages');
+    res.render('profile');
   });
 };
 
@@ -69,4 +67,8 @@ exports.renderProfilePosts = function(req, res) {
     res.locals.posts = posts;
     res.render('profile/posts');
   });
+};
+
+exports.renderD3Index = function(req, res) {
+  res.render('d3/index');
 };

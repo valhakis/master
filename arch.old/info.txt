@@ -1,0 +1,40 @@
+1. Identify and ensure the correct driver of wireless device and configure the interface.
+2. Some wireless chipsets require firmware. [linux-firmware]
+3. Check the driver status.
+--- $ lspci -k 
+--- $ lspci -v
+4. Check output of the following command.
+--- $ ip link set wlp3s0f0 up
+--- [No such file or directory] 
+::::: Meaning: Wireless chipset requires firmware.
+5. Install [iproute2], [wpa_supplicant] and [iw]
+6. Commands to use.
+--- $ iwlist
+7. Get the name of the interface.
+--- $ iw dev
+8. Check link status.
+--- $ iw dev interface link
+--- $ iw dev wlp3s0f0 link
+--- $ iw dev wlp3s0f0 station dump
+9. Activate the interface.
+--- $ ip link set wlp3s0f0 up
+10. Verify that the interface is up.
+--- $ ip link show wlp3s0f0 
+11. Discover access points.
+--- $ sudo iw dev wlp3s0f0 scan
+::::: Search for 'SSID'
+12. Set operating mode.
+--- If connection is to ad-hoc network.
+::::: $ iw dev wlp3s0f0 set type ibss
+13. Connecting to access point.
+--- No encryption
+::::: $ iw dev wlp3s0f0 connect "SSID"
+::::: $ iw dev wlp3s0f0 connect "Kodu"
+--- WEP
+::::: $ iw dev wlp3s0f0 connect "Kodu" key 0:eioleparooli
+::::: $ iw dev wlp3s0f0 connect "Kodu" key d:2:eioleparooli
+--- WPA/WPA2
+::::: $ wpa_supplicant -i wlp3s0f0 -c <(wpa_passphrase "Kodu" "eioleparooli")
+
+ieee80211 phy0: rt2x00queue_write_tx_frame: Error - Arrived at non-free entry in the non-full queue 0
+Please file bug report to http://rt2x00.serialmonkey.com

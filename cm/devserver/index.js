@@ -5,7 +5,7 @@ var bs = require("browser-sync").create();
 
 var env = require('../env');
 
-var proc = spawn('nodemon.cmd', ['.'], {
+var proc = spawn('nodemon', ['.'], {
   stdio: 'inherit',
   cwd: env.root + '/server'
 });

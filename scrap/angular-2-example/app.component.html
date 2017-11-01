@@ -1,0 +1,23 @@
+<h1>APP COMPONENT</h1>
+
+<hello-world></hello-world>
+
+
+<h3>We have a hero in our town.</h3>
+<p>He is named <b>{{ hero.name }}</b> and he has an id of {{ hero.id }}.</p>
+
+<h4><b>hero0 is also a member of the club.</b></h4>
+
+<label>name: </label>
+<input type="text" placeholder="name" [(ngModel)]="hero0.name">
+
+<h3>The Heroes Academy</h3>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="hero == selectedHero">id: {{hero.id}}: name: <b>{{ hero.name }}</b></li>
+</ul>
+
+<h4>ACADEMY SELECTED HERO FORM</h4>
+<div>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="selectedHero.name" placeholder="name">
+</div>

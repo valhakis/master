@@ -2,8 +2,8 @@
 #include <GLFW/glfw3.h>
 #include <stb_image.h>
 
-#include <string>
 #include <fstream>
+#include <string>
 #include <sstream>
 #include <iostream>
 
@@ -74,11 +74,12 @@ static unsigned int vbos[2];
 static unsigned int ebos[2];
 static unsigned int textures[2];
 
-static std::string LoadShaderSource (std::string name) {
+static std::string LoadShaderSource (const char *cName) {
   std::string code;
   std::ifstream file;
   file.exceptions(std::ifstream::failbit|std::ifstream::badbit);
   try {
+std::string name = cName;
     file.open("/home/viktor/master/game/data/shaders/" + name);
     std::stringstream stream;
     stream << file.rdbuf();
@@ -116,7 +117,7 @@ static bool check_compilation(GLuint id, bool isProgram, GLenum type, const char
 
 static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-    glfwSetWindowShouldClose(window, GLFW_TRUE);
+    glfwSetWindowShouldClose(window, true);
   }
 }
 
@@ -129,7 +130,7 @@ int _04_shaders(int argc, char *argv[]) {
 
   check = glfwInit();
 
-  if (check == GLFW_FALSE) {
+  if (check == false) {
     printf("FAILED TO INITIALIZE GLFW.\n");
     return -1;
   }
@@ -137,7 +138,7 @@ int _04_shaders(int argc, char *argv[]) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+  glfwWindowHint(GLFW_RESIZABLE, false);
 
 #ifdef __APPLE__
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); 

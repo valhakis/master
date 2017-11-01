@@ -1,0 +1,40 @@
+extends /lay/base
+
+block head
+  link(rel="stylesheet", href="/prismjs/themes/prism-tomorrow.css")
+
+block body
+  p HBS
+
+  h3 Configuration
+  raw-code(file="config.js", language="javascript")
+
+  h3 Base layout
+  raw-code(file="base.hbs", language="handlebars")
+
+  h3 Sample page
+  raw-code(file="index.hbs", language="handlebars")
+
+  h3 Full Configuration
+  raw-code(file="example.js", language="javascript")
+
+block scripts
+  script(src="/prismjs/prism.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script
+
+  script(src="/prismjs/components/prism-cpp.js")
+    //- script
+
+  script(src="/prismjs/components/prism-c.js")
+    //- script
+
+  script(src="/prismjs/components/prism-handlebars.js")
+    //- script
+
+  script(src="/express/raw/raw.js")
+    //- script
+
+

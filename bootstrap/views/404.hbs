@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="/bootstrap/clock.css">
+
+<div class="alert alert-danger">
+  <h2>(404) PAGE NOT FOUND</h2>
+
+  <p>Sit ducimus amet autem mollitia accusamus iure. Sint amet quisquam beatae itaque eos? Labore error velit aspernatur cum est, officiis. Harum incidunt tempora suscipit iusto porro? Illum enim voluptates consequatur.</p>
+</div>
+
+<div class="alert alert-info">
+  <p>Original URL: {{ data.originalUrl }}</p>
+  <p>Method: {{ data.method }}</p>
+  <p>URL: {{ data.url }}</p>
+  <p>Path: {{ data.path }}</p>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="time-wrap zoomIn animated">
+      <div class="time-base bounceInUp animated"></div>
+      <div class="time-belt bounceInUp animated"></div>
+      <div class="time-wheel bounceInLeft animated"></div>
+      <div class="time-clock bounceInUp animated">
+        <div class="indicators">
+          <div></div><div></div>
+          <div></div><div></div>
+          <div></div><div></div>
+        </div>
+        <div class="letters">
+          <div></div><div></div>
+          <div></div><div></div>
+          <div></div><div></div>
+        </div>
+        <div class="arrows">
+          <div class="hour"></div>
+          <div class="minute"></div>
+          <div class="second"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <p>Sit itaque qui aliquid consequatur consequatur Autem vero nobis in laudantium possimus! Reprehenderit odit illum inventore facilis incidunt optio Architecto deserunt enim quas atque quibusdam reprehenderit? Rerum quaerat voluptates quia.</p>
+    <p>Lorem ipsum dolor totam quam distinctio! Tempora reprehenderit fugiat molestiae ipsam dolore Ullam sapiente expedita eum incidunt voluptate aut, fugiat Amet nulla quod voluptates iusto quae? Voluptatibus in quidem nostrum.</p>
+    <p>Adipisicing mollitia accusamus enim blanditiis delectus alias Blanditiis quibusdam accusamus officiis adipisci quos. Velit illum velit perspiciatis officia corporis A nesciunt magnam molestias quos harum Ad tenetur culpa omnis beatae!</p>
+  </div>
+</div>
+
+<br>
+
+<div class="alert alert-info">
+  <p>Base URL: {{ data.baseUrl }}</p>
+</div>
+
+
+{{#box 'scripts'}}
+  <script>
+    $(function(){
+      Time.install();
+    });
+
+    Time = {
+      counter:0,
+      install:function(){
+        this.setSeconds();
+        this.setMinutes();
+        this.setHours();
+        this.setAnimation();
+      },
+      setSeconds:function(){
+        setInterval(function(){
+          var seconds = new Date().getSeconds();
+          var sdegree = seconds * 6;
+          var srotate = "rotate(" + sdegree + "deg)";
+          $('.second').css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+        },1000);
+      },
+      setMinutes:function(){
+        setInterval(function(){
+          var mins = new Date().getMinutes();
+          var mdegree = mins * 6;
+          var mrotate = "rotate(" + mdegree + "deg)";
+          $('.minute').css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+        },1000);
+      },
+      setHours:function(){
+        setInterval(function(){
+          var hours = new Date().getHours();
+          var mins = new Date().getMinutes();
+          var hdegree = hours * 30 + (mins / 2);
+          var hrotate = "rotate(" + hdegree + "deg)";
+          $('.hour').css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+        },1000);
+      },
+      setAnimation:function(){
+        setInterval(function(){			
+          if(Time.counter==10){
+            $('.time-wrap').removeClass('zoomIn').addClass('zoomOut');
+            $('.time-wrap').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd',function(){
+              $('.time-wrap').hide();
+            });
+          }
+          if(Time.counter==1){
+            $('.time-wrap').show();
+            $('.time-wrap').removeClass('zoomOut').addClass('zoomIn');
+            $('.time-wrap').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd',function(){
+              $('.time-wrap').show();
+            });
+          }
+          if(Time.counter==10)Time.counter=0;
+
+          Time.counter+=1;
+        },1000);
+      }
+    }
+  </script>
+{{/box}}

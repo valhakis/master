@@ -1,6 +1,7 @@
 var db = Loc.require('app/db');
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var Schema = mongoose.Schema;
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
@@ -37,7 +38,8 @@ var userSchema = mongoose.Schema({
     token: String,
     email: String,
     name: String
-  }
+  },
+  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
 });
 
 // methods ======================

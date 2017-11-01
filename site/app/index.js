@@ -11,6 +11,9 @@ require('./routes')(app);
 app.use(function(req, res, next) {
   res.locals.method = req.method;
   res.locals.path = req.path;
+  res.locals.data = {
+    url: req.url,
+  };
   res.locals.originalUrl = req.originalUrl;
   res.status(404).render('404');
 });

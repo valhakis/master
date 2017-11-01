@@ -14,6 +14,7 @@
     <a href="/mongodb/demo">demo</a>
     <a href="/mongodb/compact">compact</a>
     <a href="/mongodb/tasks">tasks</a>
+    <a href="/mongodb/example">example</a>
 
     <h3>CREATE A DATABASE</h3>
     <raw-code file="/mongodb/raw/create_db.js" lang="javascript"></raw-code>

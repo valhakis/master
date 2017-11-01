@@ -11,7 +11,7 @@ fs.writeFileSync(Loc.root('data/mongodb.log'), '', 'utf-8');
 MongoClient.connect(mongoUrl, function(err, db) {
   if (err) {
     fs.appendFileSync(Loc.root('data/mongodb.log'), 'UNABLE TO CONNECT TO DATABASE\n', 'utf-8');
-    return console.log(err);
+    return console.log(JSON.stringify(err, ' ', 2));
   }
   fs.appendFileSync(Loc.root('data/mongodb.log'), 'CONNECTED TO DATABASE\n', 'utf-8');
   db.createCollection('customers', function(err, res) {
