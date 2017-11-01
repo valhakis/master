@@ -1,5 +1,5 @@
 #!/bin/bash
 
-(cd devserver ; nodemon .)
+node devserver
 
 # nodemon server
