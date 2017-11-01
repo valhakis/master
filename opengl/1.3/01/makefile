@@ -1,14 +1,14 @@
-# $ g++ -o bin/app src/main.cc
-#
-# or
-
-CC = g++
+cc = g++
 
 src = $(shell find src -type f -name '*.cc')
+src += glad/src/glad.cc
 obj += $(patsubst src/%.cc, obj/%.o, $(src))
 dirs += $(patsubst src/%, obj/%, $(shell find src -type d))
 
-dirs += bin
+dirs += bin obj lib
+
+libs += -I./glad/include
+libs += -I./src/inc
 
 ifeq ($(OS),Windows_NT)
 	cc = i686-w64-mingw32-g++.exe
@@ -18,8 +18,9 @@ else
 	libs += -lGL
 	libs += -lglfw
 endif
+libs += -ldl
 
-all: $(dirs) bin/app
+all: $(dirs) app
 
 bin: 
 	mkdir -p $@
@@ -27,14 +28,17 @@ bin:
 obj:
 	mkdir -p $@
 
-bin/app: $(obj)
-	$(CC) -o $@ $^ $(libs)
+lib: 
+	mkdir -p $@
+
+app: $(obj)
+	$(cc) -o $@ $^ $(libs)
 
 obj/%.o: src/%.cc
-	$(CC) -c $< -o $@ $(libs)
+	$(cc) -c $< -o $@ $(libs)
 
 obj/%: src/%
 	mkdir -p $@
 
 clean:
-	rm -rf obj bin/app
+	rm -rf obj app

@@ -5,64 +5,64 @@
 #include <GLFW/glfw3.h>
 
 static float vertices[] = {
-   -0.5f, -0.5f, 0.0f,
-   0.5f, -0.5f, 0.0f,
-   0.5f, 0.5f, 0.0f,
+  -0.5f, -0.5f, 0.0f,
+  0.5f, -0.5f, 0.0f,
+  0.5f, 0.5f, 0.0f,
 };
 
 GLuint VBO, VAO, EBO;
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-      glfwSetWindowShouldClose(window, GL_TRUE);
+  if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
 int main()
 {
-   glfwInit();
+  glfwInit();
 
-   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+  // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+  // glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-   GLFWwindow* window = glfwCreateWindow(800, 600, "Window", NULL, NULL);
+  GLFWwindow* window = glfwCreateWindow(800, 600, "Window", NULL, NULL);
 
-   if (window == NULL) {
-      printf("Failed to create window.\n");
-      glfwTerminate();
-      exit(EXIT_FAILURE);
-   }
-   glfwSetKeyCallback(window, key_callback);
-   glfwMakeContextCurrent(window);
+  if (window == NULL) {
+    printf("Failed to create window.\n");
+    glfwTerminate();
+    exit(EXIT_FAILURE);
+  }
+  glfwSetKeyCallback(window, key_callback);
+  glfwMakeContextCurrent(window);
 
-   glewExperimental = GL_TRUE;
-   if (glewInit() != GLEW_OK) {
-      printf("Failed to initialize glew.\n");
-      exit(EXIT_FAILURE);
-   }
+  glewExperimental = GL_TRUE;
+  if (glewInit() != GLEW_OK) {
+    printf("Failed to initialize glew.\n");
+    exit(EXIT_FAILURE);
+  }
 
-   int width, height;
-   glfwGetFramebufferSize(window, &width, &height);
-   glViewport(0, 0, width, height);
-   glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+  int width, height;
+  glfwGetFramebufferSize(window, &width, &height);
+  glViewport(0, 0, width, height);
+  glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-   glGenBuffers(1, &VBO);
-   glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  glGenBuffers(1, &VBO);
+  glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
-   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-   while (!glfwWindowShouldClose(window)) 
-   {
-      glfwPollEvents();
+  while (!glfwWindowShouldClose(window)) 
+  {
+    glfwPollEvents();
 
-      glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
 
-      glfwSwapBuffers(window);
-   }
+    glfwSwapBuffers(window);
+  }
 
-   glfwTerminate();
+  glfwTerminate();
 
-   return 0;
+  return 0;
 }

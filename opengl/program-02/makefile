@@ -2,10 +2,11 @@
 #
 # or
 
-CC = g++
+cc = g++
 
 src = $(shell find src -type f -name '*.cc')
-obj += $(patsubst src/%.cpp, obj/%.o, $(src))
+src += glad/src/glad.cc
+obj += $(patsubst src/%.cc, obj/%.o, $(src))
 dirs += $(patsubst src/%, obj/%, $(shell find src -type d))
 
 dirs += bin
@@ -15,12 +16,22 @@ dirs += lib
 libs += -L lib
 libs += -I glad/include
 
-libs += -lGL
-libs += -lglfw
-libs += -lglad
+# libs += -lGL
+# libs += -lglfw
+# libs += -lglad
+# libs += -ldl
+
+ifeq ($(OS),Windows_NT)
+	cc = i686-w64-mingw32-g++.exe
+	libs += -lopengl32 
+	libs += -lglfw3
+else
+	libs += -lGL
+	libs += -lglfw
+endif
 libs += -ldl
 
-all: $(dirs) lib/libglad.a bin/app
+all: $(dirs) bin/app
 
 bin: 
 	mkdir -p $@
@@ -32,17 +43,17 @@ lib:
 	mkdir -p $@
 
 lib/libglad.a: glad/src/glad.cc
-	$(CC) -c $^ -o glad.o -I glad/include -ldl
+	$(cc) -c $^ -o glad.o -I glad/include -ldl
 	ar rvs $@ glad.o
 
 bin/app: $(obj)
-	$(CC) -o $@ $^ $(libs)
+	$(cc) -o $@ $^ $(libs)
 
-obj/%.o: src/%.cpp
-	$(CC) -c $< -o $@ $(libs)
+obj/%.o: src/%.cc
+	$(cc) -c $< -o $@ $(libs)
 
 obj/%: src/%
 	mkdir -p $@
 
 clean:
-	rm -r obj 
+	rm -rf obj bin/app

@@ -1,11 +1,22 @@
 CC = g++
 
-LIBS += -lGL
-LIBS += -lglfw
+# IF WINDOWS
+ifeq ($(OS),Windows_NT)
+	LIBS += -lopengl32
+	LIBS += -I/mingw32/include 
+	LIBS += -L/mingw32/lib 
+	LIBS += -lglfw3 
+	LIBS += -lgdi32
+# IF NOT WINDOWS
+else
+	LIBS += -lGL
+	LIBS += -lglfw
+endif
 
 all: app
 
-app: main.o
+app: main.cc
+	echo $(OS)
 	$(CC) -o $@ $^ $(LIBS)
 
 clean:

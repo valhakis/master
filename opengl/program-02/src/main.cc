@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <iostream>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -84,6 +86,7 @@ static char *loadSource(const char *path) {
 
 int main(int argc, char *argv[]) {
   sprintf(root, "%s/master/opengl/program-02/data", getenv((char*)"HOME"));
+  printf("ROOT: '%s'.\n", root);
 
   GLFWwindow* window;
 
@@ -92,9 +95,10 @@ int main(int argc, char *argv[]) {
     return -1;
   }
 
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+  // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  //glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_RESIZABLE, false);
 
   window = glfwCreateWindow(width, height, "program-02", NULL, NULL);
@@ -115,9 +119,11 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "Failed to initialize glad.\n");
     return -1;
   }
+  printf("VERSION: '%s'.\n", glGetString(GL_VERSION));
 
   char *vsource = loadSource("default.vs");
   int vshader = glCreateShader(GL_VERTEX_SHADER);
+  return 0;
   glShaderSource(vshader, 1, &vsource, NULL);
   glCompileShader(vshader);
   checkCompilation(vshader, false, GL_COMPILE_STATUS);
