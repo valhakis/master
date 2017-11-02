@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.9)
 project(game)
 
 add_subdirectory(glad)
-add_subdirectory(stb)
+# add_subdirectory(stb)
 
 include_directories(include)
 include_directories(glad/include)

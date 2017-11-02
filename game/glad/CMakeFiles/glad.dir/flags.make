@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/viktor/master/game/glad/include 
+CXX_INCLUDES = -I/home/ruudi/master/game/glad/include 
 

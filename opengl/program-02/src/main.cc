@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
+static int program;
 
 char root[512];
 
@@ -13,6 +19,8 @@ static void framebuffer(GLFWwindow* window, int width, int height) {
 }
 
 static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) {
+
+  vec4(ourColor.r, ourColor.g, ourColor.b, 1.0f);
 
 }
 
@@ -82,6 +90,42 @@ static char *loadSource(const char *path) {
   return source;
 }
 
+static struct {
+  unsigned int vao;
+  unsigned int vbo;
+} lin;
+
+static void init_lin() {
+  glGenVertexArrays(1, &lin.vao);
+  glGenBuffers(1, &lin.vbo);
+
+  glBindVertexArray(lin.vao);
+  glBindBuffer(GL_ARRAY_BUFFER, lin.vbo);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(float)*2*3, NULL, GL_DYNAMIC_DRAW);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+  glEnableVertexAttribArray(0);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindVertexArray(0);
+}
+
+static void line(int x1, int y1, int x2, int y2) {
+  glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
+  glBindVertexArray(lin.vao);
+  float vertices[2][3] = {
+    (float)x1, (float)y1, 0.0,
+    (float)x2, (float)y2, 0.0,
+  };
+  glBindBuffer(GL_ARRAY_BUFFER, lin.vbo);
+  glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+  glUniform3f(glGetUniformLocation(program, "mColor"), 1.0f, 0.0f, 0.0f);
+  glUniformMatrix4fv(glGetUniformLocation(program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+  glPointSize(20);
+  glDrawArrays(GL_LINES, 0, 2);
+  glBindVertexArray(0);
+}
+
 int main(int argc, char *argv[]) {
   sprintf(root, "%s/master/opengl/program-02/data", getenv((char*)"HOME"));
 
@@ -116,6 +160,8 @@ int main(int argc, char *argv[]) {
     return -1;
   }
 
+  init_lin();
+
   char *vsource = loadSource("default.vs");
   int vshader = glCreateShader(GL_VERTEX_SHADER);
   glShaderSource(vshader, 1, &vsource, NULL);
@@ -130,7 +176,7 @@ int main(int argc, char *argv[]) {
   checkCompilation(fshader, false, GL_COMPILE_STATUS);
   free(fsource);
 
-  int program = glCreateProgram();
+  program = glCreateProgram();
 
   glAttachShader(program, vshader);
   glDeleteShader(vshader);
@@ -170,9 +216,16 @@ int main(int argc, char *argv[]) {
 
     glClear(GL_COLOR_BUFFER_BIT);
 
+    glm::mat4 projection = glm::mat4();
+    glUniformMatrix4fv(glGetUniformLocation(program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+
     glUseProgram(program);
     glBindVertexArray(vao);
+
+    glUniform3f(glGetUniformLocation(program, "mColor"), 0.3f, 0.0f, 0.0f);
     glDrawArrays(GL_TRIANGLES, 0, 3);
+
+    line(0, 0, 300, 300);
 
     glfwPollEvents();
     glfwSwapBuffers(window);

@@ -59,7 +59,7 @@ set directory=~/.vim/swp/
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " set nowrap incsearch hlsearch splitbelow backspace=2
 set nowrap incsearch hlsearch splitbelow mouse=n
-set autoindent copyindent number
+set autoindent copyindent number noesckeys
 
 " set noexpandtab
 " set shiftround

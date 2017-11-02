@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>nsite</title>
+    <style>.active { color: red; font-weight: bolder; }</style>
+  </head>
+  <body ng-app="app">
+
+    <h1>nsite</h1>
+
+    <a ui-sref="hello" ui-sref-active="active">Hello</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+    <a ui-sref="products" ui-sref-active="active">Products</a>
+
+    <ui-view></ui-view>
+
+    <script src="/dist/client.out.js"></script>
+  </body>
+</html>

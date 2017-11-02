@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>code</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bulma/css/bulma.css">
+
+    {{{boxen "head"}}}
+  </head>
+  <body>
+    {{> nav}}
+
+    {{{body}}}
+
+    {{> foot}}
+
+    <div class="section">
+      <div class="container">
+        <my-app>Loading ... </my-app>
+      </div>
+    </div>
+
+    <script src="/core-js/client/shim.min.js"></script>
+    <script src="/zone.js/dist/zone.js"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+
+    <script src="/rxjs/bundles/Rx.js"></script>
+
+    <script src="/@angular/core/bundles/core.umd.js"></script>
+    <script src="/@angular/common/bundles/common.umd.js"></script>
+    <script src="/@angular/compiler/bundles/compiler.umd.js"></script>
+    <script src="/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="/@angular/forms/bundles/forms.umd.js"></script>
+    <script src="/code/app/index.js"></script>
+    {{{boxen 'scripts'}}}
+  </body>
+</html>

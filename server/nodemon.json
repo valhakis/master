@@ -1,6 +1,7 @@
 {
   "ignore": [
-    "/home/ruudi/master/osrs/app/public"
+    "/home/ruudi/master/osrs/app/public",
+    "/home/ruudi/master/code/app/public"
   ],
   "watch": [
     "/home/ruudi/master/server",

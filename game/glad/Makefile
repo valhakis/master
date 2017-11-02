@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/viktor/master/game
+CMAKE_SOURCE_DIR = /home/ruudi/master/game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/viktor/master/game
+CMAKE_BINARY_DIR = /home/ruudi/master/game
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/viktor/master/game && $(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles /home/viktor/master/game/glad/CMakeFiles/progress.marks
-	cd /home/viktor/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 0
+	cd /home/ruudi/master/game && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruudi/master/game/CMakeFiles /home/ruudi/master/game/glad/CMakeFiles/progress.marks
+	cd /home/ruudi/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruudi/master/game/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/viktor/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/clean
+	cd /home/ruudi/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/viktor/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/preinstall
+	cd /home/ruudi/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/viktor/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/preinstall
+	cd /home/ruudi/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/viktor/master/game && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ruudi/master/game && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 glad/CMakeFiles/glad.dir/rule:
-	cd /home/viktor/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/rule
+	cd /home/ruudi/master/game && $(MAKE) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/rule
 .PHONY : glad/CMakeFiles/glad.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ glad: glad/CMakeFiles/glad.dir/rule
 
 # fast build rule for target.
 glad/fast:
-	cd /home/viktor/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
+	cd /home/ruudi/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
 src/glad.o: src/glad.cpp.o
@@ -177,7 +177,7 @@ src/glad.o: src/glad.cpp.o
 
 # target to build an object file
 src/glad.cpp.o:
-	cd /home/viktor/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.o
+	cd /home/ruudi/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.o
 .PHONY : src/glad.cpp.o
 
 src/glad.i: src/glad.cpp.i
@@ -186,7 +186,7 @@ src/glad.i: src/glad.cpp.i
 
 # target to preprocess a source file
 src/glad.cpp.i:
-	cd /home/viktor/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.i
+	cd /home/ruudi/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.i
 .PHONY : src/glad.cpp.i
 
 src/glad.s: src/glad.cpp.s
@@ -195,7 +195,7 @@ src/glad.s: src/glad.cpp.s
 
 # target to generate assembly for a file
 src/glad.cpp.s:
-	cd /home/viktor/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.s
+	cd /home/ruudi/master/game && $(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.cpp.s
 .PHONY : src/glad.cpp.s
 
 # Help Target
@@ -225,6 +225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/viktor/master/game && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ruudi/master/game && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

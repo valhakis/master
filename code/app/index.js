@@ -3,13 +3,12 @@ var path = require('path');
 
 var app = express();
 
-var Loc = {
-  _root: path.join(__dirname, '..'),
-  root: function(name) {
-    return this._root + '/' + name;
-  }
-};
+Loc.require('config')(app);
 
 app.use('/', express.static(Loc.root('public')));
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
 
 module.exports = app;

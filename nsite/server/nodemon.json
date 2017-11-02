@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "/home/ruudi/master/nsite/server",
+    "/home/ruudi/master/nsite/globals"
+  ],
+  "ignore": []
+}

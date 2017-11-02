@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "/home/ruudi/master/wsite/server",
+    "/home/ruudi/master/wsite/globals"
+  ],
+  "ignore": []
+}

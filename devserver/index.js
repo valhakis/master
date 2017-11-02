@@ -31,7 +31,8 @@ watch(__dirname + '/nodemon.json', function() {
 
 var nodemon = {
   ignore: [
-    App.masterRoot("osrs/app/public")
+    App.masterRoot("osrs/app/public"),
+    App.masterRoot("code/app/public"),
   ],
   watch: [
     App.masterRoot("server"),
@@ -154,7 +155,7 @@ bs.watch([
   App.masterRoot('lib/**/*.{html,js,css}'),
   App.masterRoot('css/**/*.css'),
   App.masterRoot('current/public/**/*.{html,js,css}'),
-  App.masterRoot('code/public/**/*.{html,js,css}'),
+  // App.masterRoot('code/public/**/*.{html,js,css}'),
   App.masterRoot('mustache/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('mongodb/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('opengl/{public,views,partials}/**/*.{html,js,css,mst,hbs}'),
@@ -168,6 +169,7 @@ bs.watch([
   App.masterRoot('canvas/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('site/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('osrs/app/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
+  App.masterRoot('code/app/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('express/sub/app/{views,public}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('pug/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
   App.masterRoot('posts/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/viktor/master/game/glad/src/glad.cpp" "/home/viktor/master/game/glad/CMakeFiles/glad.dir/src/glad.cpp.o"
+  "/home/ruudi/master/game/glad/src/glad.cpp" "/home/ruudi/master/game/glad/CMakeFiles/glad.dir/src/glad.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

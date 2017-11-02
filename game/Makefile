@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/viktor/master/game
+CMAKE_SOURCE_DIR = /home/ruudi/master/game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/viktor/master/game
+CMAKE_BINARY_DIR = /home/ruudi/master/game
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles /home/viktor/master/game/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruudi/master/game/CMakeFiles /home/ruudi/master/game/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/viktor/master/game/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruudi/master/game/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -181,19 +181,6 @@ glad: cmake_check_build_system
 glad/fast:
 	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
-
-#=============================================================================
-# Target rules for targets named stb
-
-# Build rule for target.
-stb: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stb
-.PHONY : stb
-
-# fast build rule for target.
-stb/fast:
-	$(MAKE) -f stb/CMakeFiles/stb.dir/build.make stb/CMakeFiles/stb.dir/build
-.PHONY : stb/fast
 
 src/01_create_a_window.o: src/01_create_a_window.cpp.o
 
@@ -2045,7 +2032,6 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... glad"
-	@echo "... stb"
 	@echo "... src/01_create_a_window.o"
 	@echo "... src/01_create_a_window.i"
 	@echo "... src/01_create_a_window.s"

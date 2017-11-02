@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/viktor/master/game/glad/src/glad.cpp
+/home/ruudi/master/game/glad/src/glad.cpp
 stdio.h
 -
 stdlib.h
