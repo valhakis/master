@@ -102,6 +102,7 @@ activeDuration: 5 * 60 * 1000,
   app.use('/todo', App.masterRequire('todo/app'));
   app.use('/code', App.masterRequire('code/app'));
   app.use('/opengl', App.masterRequire('opengl/app'));
+  app.use('/typescript', App.masterRequire('typescript/app'));
   app.use('/prism', App.masterRequire('prism/app'));
   app.use('/mongodb', App.masterRequire('mongodb/app'));
   app.use('/node', App.masterRequire('node/app'));
@@ -123,6 +124,11 @@ activeDuration: 5 * 60 * 1000,
   app.use('/cc', App.masterRequire('cc/app'));
   app.use('/standard', App.masterRequire('standard/app'));
   app.use('/regular-expressions', App.masterRequire('regular-expressions/app'));
+  app.use('/api', App.masterRequire('server/app/api'));
+  app.use('/wsite', App.masterRequire('wsite/server/app'));
+  app.use('/jquery', App.masterRequire('jquery/app'));
+  app.use('/javascript', App.masterRequire('javascript/app'));
+
 
   //app.get('/todo', function(req, res) {
   //res.send("I HAVE TO DO EVERYTHING");

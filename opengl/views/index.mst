@@ -9,8 +9,9 @@
   <body>
 
     <ul class="menu">
-      <li><a href="/opengl">Home</a></li>
-      <li><a href="/opengl/programs">Programs</a></li>
+      <li><a href="/opengl">HOME</a></li>
+      <li><a href="/opengl/programs">PROGRAMS</a></li>
+      <li><a href="/opengl/blog">BLOG</a></li>
     </ul>
 
     <h1>OpenGL</h1>

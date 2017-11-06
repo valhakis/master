@@ -9,7 +9,10 @@ var env = App.require('env');
 // webpack 
 var compiler = webpack(App.require('webpack.config'));
 var watching = compiler.watch({}, (err, stats) => {
-  console.log(stats.toString({colors: true, chunks: false}));
+  console.log(stats.toString({
+    colors: true, 
+    chunks: false
+  }));
 });
 
 // server nodemon configuration
@@ -33,7 +36,7 @@ spawn('nodemon', ['-q', '.'], {
 });
 
 bs.init({
-  port: 3000,
+  port: env.bs_port,
   host: env.host,
   proxy: `${env.host}:${env.port}`,
   open: false,

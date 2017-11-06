@@ -1,14 +1,16 @@
 var webpack = require('webpack');
 var path = require('path');
+var env = require('./env');
 
 module.exports = {
   context: __dirname,
   devtool: 'eval-source-map',
   entry: {
     'client': './client/index.js',
+    'game': './client/game/index.js',
   },
   output: {
-    path: path.resolve('public/dist'),
+    path: env.root + '/public/dist',
     filename: "[name].out.js"
   },
   module: {

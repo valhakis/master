@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/wsite/">
+    <meta charset="UTF-8">
+    <title>wsite</title>
+    <style>.active { color: red; font-weight: bolder; }</style>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bulma/css/bulma.css">
+  </head>
+  <body ng-app="app">
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Website</h1>
+      </div>
+
+      <div class="container">
+
+        <app-nav></app-nav>
+
+        <div class="tabs">
+          <ul>
+            <li><a ui-sref="main" ui-sref-active="active">Main</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a ui-sref="hello" ui-sref-active="active">Hello</a></li>
+            <li><a ui-sref="about" ui-sref-active="active">About</a></li>
+            <li><a ui-sref="example" ui-sref-active="active">Example</a></li>
+            <li><a ui-sref="angular" ui-sref-active="active">Angular</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <ui-view></ui-view>
+    </section>
+
+    <script src="/dist/common.out.js"></script>
+    <script src="/dist/polyfills.out.js"></script>
+    <script src="/dist/client.out.js"></script>
+  </body>
+</html>

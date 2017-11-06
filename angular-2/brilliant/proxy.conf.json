@@ -1,0 +1,12 @@
+{
+  "/example": {
+    "target": {
+      "host": "192.168.0.3",
+      "protocol": "http",
+      "port": "4000"
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

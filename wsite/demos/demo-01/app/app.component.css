@@ -1,0 +1,15 @@
+* {
+}
+
+.heroes {
+  cursor: default;
+}
+
+.heroes li strong:hover {
+  color: #666;
+  text-decoration: underline;
+}
+.heroes li.active strong {
+  color: #F00;
+}
+

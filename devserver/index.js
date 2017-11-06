@@ -9,16 +9,38 @@ var sass = require('node-sass');
 var isWin = /^win/.test(process.platform);
 
 global.App = require('../share/App.js').initialize(path.join(__dirname));
+global.Loc = require('../share/Loc.js');
+require('../globals/Master');
+require('./globals/Dev');
+
+Master.require('opengl/app/dev');
 
 var spawn = require('child_process').spawn;
 var env = App.masterRequire('env');
 var config = require('./config');
 var app = require('./app');
 
+/*
+// STARTS NSITE DEVELOPMENT SERVER
+spawn('sh', ['start.sh'], {
+  stdio: 'inherit',
+  cwd: App.masterRoot('nsite')
+});
+*/
+
+/*
+// STARTS WSITE DEVELOPMENT SERVER
+spawn('sh', ['start.sh'], {
+  stdio: 'inherit',
+  cwd: App.masterRoot('wsite')
+});
+*/
+
 fs.writeFileSync(__dirname + '/nodemon.json', JSON.stringify({
   watch: [
     __dirname,
-    App.masterRoot("mongo/dev")
+    App.masterRoot("mongo/dev"),
+    App.masterRoot("opengl/app/dev"),
   ],
   ignore: [
     "nodemon.json"
@@ -33,13 +55,22 @@ var nodemon = {
   ignore: [
     App.masterRoot("osrs/app/public"),
     App.masterRoot("code/app/public"),
+    App.masterRoot("opengl/app/dev"),
+    App.masterRoot("opengl/app/client"),
+    App.masterRoot("opengl/app/public"),
+    App.masterRoot("jquery/app/public"),
+    App.masterRoot("javascript/app/public"),
+    "nodemon.json",
   ],
   watch: [
     App.masterRoot("server"),
+    App.masterRoot("wsite/server"),
     App.masterRoot("rest/app"),
+    App.masterRoot("javascript/app"),
     App.masterRoot("mongodb/app"),
     App.masterRoot("opengl/app"),
     App.masterRoot("todo/app"),
+    App.masterRoot("typescript/app"),
     App.masterRoot("share"),
     App.masterRoot("W3/app"),
     App.masterRoot("mongo/app"),
@@ -50,6 +81,7 @@ var nodemon = {
     App.masterRoot("cc/app"),
     App.masterRoot("pug/app"),
     App.masterRoot("tmux/app"),
+    App.masterRoot("jquery/app"),
     App.masterRoot("code/app"),
     App.masterRoot("site/app"),
     App.masterRoot("2017-08-19/app"),
@@ -158,7 +190,7 @@ bs.watch([
   // App.masterRoot('code/public/**/*.{html,js,css}'),
   App.masterRoot('mustache/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('mongodb/{public,views,partials}/**/*.{html,js,css,mst}'),
-  App.masterRoot('opengl/{public,views,partials}/**/*.{html,js,css,mst,hbs}'),
+  App.masterRoot('opengl/app/{public,views,partials}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('prism/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('node/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('standard/{public,views,partials}/**/*.{html,js,css,mst}'),
@@ -178,6 +210,9 @@ bs.watch([
   App.masterRoot('demo-3/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('sim/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('cc/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('jquery/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('typescript/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('javascript/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('excel/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),
@@ -206,7 +241,7 @@ bs.watch([
       });
     }
   });
-  console.log('SASS CHANGED');
+  // console.log('SASS CHANGED');
 })
 
 console.log('DEVELOPMENT SERVER HAS STARTED');

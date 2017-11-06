@@ -1,14 +1,23 @@
 {
   "ignore": [
     "/home/ruudi/master/osrs/app/public",
-    "/home/ruudi/master/code/app/public"
+    "/home/ruudi/master/code/app/public",
+    "/home/ruudi/master/opengl/app/dev",
+    "/home/ruudi/master/opengl/app/client",
+    "/home/ruudi/master/opengl/app/public",
+    "/home/ruudi/master/jquery/app/public",
+    "/home/ruudi/master/javascript/app/public",
+    "nodemon.json"
   ],
   "watch": [
     "/home/ruudi/master/server",
+    "/home/ruudi/master/wsite/server",
     "/home/ruudi/master/rest/app",
+    "/home/ruudi/master/javascript/app",
     "/home/ruudi/master/mongodb/app",
     "/home/ruudi/master/opengl/app",
     "/home/ruudi/master/todo/app",
+    "/home/ruudi/master/typescript/app",
     "/home/ruudi/master/share",
     "/home/ruudi/master/W3/app",
     "/home/ruudi/master/mongo/app",
@@ -19,6 +28,7 @@
     "/home/ruudi/master/cc/app",
     "/home/ruudi/master/pug/app",
     "/home/ruudi/master/tmux/app",
+    "/home/ruudi/master/jquery/app",
     "/home/ruudi/master/code/app",
     "/home/ruudi/master/site/app",
     "/home/ruudi/master/2017-08-19/app",

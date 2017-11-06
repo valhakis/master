@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express();
+var app = module.exports = express();
 
 app.use(function(req, res, next) {
 
@@ -23,5 +23,3 @@ app.use('/mongo', App.masterRequire('mongo/dev'));
 app.get('/', function(req, res) {
 	res.send('DEVELOPMENT SERVER');
 });
-
-module.exports = app;

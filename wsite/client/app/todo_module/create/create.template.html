@@ -1,0 +1,17 @@
+<h1>CREATE NEW TODO BITCH</h1>
+
+<form ng-submit="submit(todo)">
+  <div class="field">
+    <label>Title: </label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" ng-model="todo.title" type="text" placeholder="Place title here bitch.">
+      <span class="icon is-small is-left"> <i class="fa fa-user"></i> </span>
+      <span class="icon is-small is-right"> <i class="fa fa-check"></i> </span>
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Create Todo</button>
+    </div>
+  </div>
+</form>

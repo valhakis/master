@@ -1,0 +1,7 @@
+<h1>THE LATEST TODOS DIRECTIVE</h1>
+
+<div class="box" ng-repeat="todo in todos | orderBy:createdAt:true">
+  <strong>{{ todo.title }}</strong>
+  <p>Consectetur voluptates temporibus quam error omnis sequi assumenda Vero doloremque.</p>
+  <p>Created At {{ todo.createdAt }}</p>
+</div>

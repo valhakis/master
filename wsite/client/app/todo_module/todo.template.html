@@ -1,0 +1,22 @@
+<h1 class="title">THE TODO PAGE</h1>
+
+<div class="columns is-mobile">
+  <div class="column is-one-quarter">
+    <aside class="menu">
+      <p class="menu-label">General</p>
+      <ul class="menu-list">
+        <li>
+          <a ui-sref-active="is-active" ui-sref="todo.home">Home</a>
+        </li>
+        <li>
+          <a ui-sref-active="is-active" ui-sref="todo.create">Create</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+  <div class="column">
+    <ui-view></ui-view>
+  </div>
+</div>
+
+<p>The word is '{{ word }}'.</p>

@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <title>NODE</title>
+    <link rel="stylesheet" href="/lib/w3.css">
   </head>
   <body>
 
-    <h1>NODE</h1>
+    <div class="w3-container">
 
-    <a href="/node/custom">custom</a>
+      <h1>NODE</h1>
 
-    <div style="border-top: 1px solid #000; margin: 5px 0px;"></div>
-    <a href="/">Home</a>
+      <a href="/node/custom">custom</a>
+
+      <div style="border-top: 1px solid #000; margin: 5px 0px;"></div>
+      <a href="/">Home</a>
+
+      <div class="w3-panel w3-pink">
+        <h4><strong>Node on port 80</strong></h4>
+        <p>sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 3000 -j REDIRECT --to-port 80</p>
+      </div>
+    </div>
 
     <script src="/node/custom.js"></script>
 

@@ -1,5 +1,2 @@
-var app = App.require('server/app');
+var app = Loc.require('server/app');
 
-app.get('/', function(req, res) {
-  res.send('welcome');
-});

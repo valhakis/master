@@ -29,7 +29,9 @@ var fs = require('fs');
 
 var loc = require('./Loc');
 
-var app = express();
+var app = Loc.require('app');
+
+require('./middleware');
 
 app.use(App.require('server/app/controllers/auth').MID.main);
 

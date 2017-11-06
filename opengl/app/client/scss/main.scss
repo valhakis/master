@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  // border: 1px solid #000;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* main-menu */
+main-menu {
+  display: block;
+  background-color: #333;
+  // border: 1px solid #000;
+}
+main-menu ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  // border: 1px solid #000;
+}
+main-menu ul li {
+  display: inline-block;
+  // border: 1px solid #000;
+}
+main-menu ul li a {
+  display: block;
+  // border: 1px solid #000;
+  padding: 12px 15px 10px 15px;
+  color: #FFF;
+  text-decoration: none;
+}
+main-menu ul li a:hover {
+  background-color: #999;
+}
+
+/* .demo */
+.demo {
+  // border: 1px solid #000;
+  margin-top: 10px;
+}
+.demo aside {
+  // border: 1px solid #000;
+  float: left;
+  width: 25%;
+}
+.demo aside ul {
+  margin: 0px 5px;
+  padding: 0px 0px 0px;
+  list-style: none;
+  margin-right: 0px;
+}
+.demo aside ul li {
+}
+.demo aside ul li a {
+  display: block;
+  text-decoration: none;
+  background-color: #666;
+  color: #FFF;
+  padding: 8px 10px 5px 10px;
+  margin-bottom: 1px;
+}
+.demo aside ul li a:hover {
+  background-color: #333;
+}
+.demo section {
+  // border: 1px solid #000;
+  width: 75%;
+  float: left;
+}
+.demo section .content {
+  padding: 5px;
+  background-color: #999;
+  margin: 0px 5px;
+}
+
+/* .form */
+.form {
+  // border: 1px solid #000;
+  padding: 5px;
+}
+.form > div {
+  // border: 1px solid #000;
+}
+.form > div label {
+  display: block;
+  padding: 5px 0px;
+}
+.form > div input {
+  display: block;
+  padding: 5px;
+}
+.form > div input, 
+.form > div textarea {
+  min-width: 300px;
+}
+.form > div textarea {
+  min-height: 140px;
+}
+.form > div button {
+  padding: 8px 8px 8px 8px;
+  margin-top: 8px;
+}
+
+/* .container */
+.container {
+  margin: 0px 5px;
+}
+
+/* .post */
+.post {
+  border-left: 2px solid #000;
+  padding-left: 5px;
+  background-color: #eeeeee;
+  padding: 5px;
+}
+
+/* .small */
+button.small {
+  border-color: #000;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 3px 3px 1px 3px;
+}
+
+/* .red */
+button.red {
+  background-color: #faa;
+}
+button.red:hover {
+  background-color: #F00;
+  color: #FFF;
+}
+button.red:active {
+  background-color: #333;
+  color: #FFF;
+}
+/* .blue */
+button.blue {
+  background-color: #aaf;
+}
+button.blue:hover {
+  background-color: #00F;
+  color: #FFF;
+}
+button.blue:active {
+  background-color: #333;
+  color: #FFF;
+}
+
+/* .main-status */
+.main-status {
+  border: 1px solid #000;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  overflow-y: scroll;
+}

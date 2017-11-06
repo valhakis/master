@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BLOG</title>
+  </head>
+  <body ng-app="app">
+
+    <main-menu></main-menu>
+
+    <div class="container">
+      <h1>BLOG</h1>
+    </div>
+
+    <div class="container" ng-controller="PostController">
+      <h2>ADD POST</h2>
+      <form class="form" ng-submit="submit(post)">
+        <div>
+          <label>Title: </label>
+          <input type="text" ng-model="post.title">
+        </div>
+        <div>
+          <label>Content: </label>
+          <textarea ng-model="post.body"></textarea>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container" ng-controller="PostController">
+      <h2>LIST OF POSTS</h2>
+      <div class="post" ng-repeat="post in posts">
+        <h3><% post.title %></h3>
+        <pre><% post.body %></pre>
+        <button class="small blue" ng-click="view_post(post)">View</button>
+        <button class="small red" ng-click="remove_post(post)">Remove</button>
+      </div>
+    </div>
+
+    <div class="demo">
+      <aside>
+        <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul>
+      </aside>
+      <section>
+        <div class="content">
+          <div ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><% i %></div>
+        </div>
+      </section>
+      </main>
+    </div>
+
+    <script src="/opengl/dist/common.js"></script>
+    <script src="/opengl/dist/client.out.js"></script>
+  </body>
+</html>

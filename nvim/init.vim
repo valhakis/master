@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'rschmukler/pangloss-vim-indent'
+" Plug 'rschmukler/pangloss-vim-indent'
 Plug 'mustache/vim-mustache-handlebars'
 
 Plug 'tpope/vim-commentary'

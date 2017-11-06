@@ -4,11 +4,11 @@ var layouts = require('handlebars-layouts');
 var fs = require('fs');
 var path = require('path');
 
-var app = express();
+var app = module.exports = express();
 
 require('./config')(app);
 
-app.use(Loc.static('public'));
+require('./middleware');
 
 require('./routes')(app);
 
@@ -37,5 +37,3 @@ app.use('*', function(req, res, next) {
   };
   res.status(404).render('404');
 });
-
-module.exports = app;

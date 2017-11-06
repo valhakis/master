@@ -1,7 +1,8 @@
 {
   "watch": [
     "/home/ruudi/master/devserver",
-    "/home/ruudi/master/mongo/dev"
+    "/home/ruudi/master/mongo/dev",
+    "/home/ruudi/master/opengl/app/dev"
   ],
   "ignore": [
     "nodemon.json"

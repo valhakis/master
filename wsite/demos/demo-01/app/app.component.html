@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+
+<p>THE APPLICATION COMPONENT</p>
+
+<div>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="hero.name" placeholder="Place Hero's name here.">
+</div>
+
+<p>LIST OF HEROES</p>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.active]="hero === selectedHero">
+    <span class="badge">{{ hero.id }}</span>
+    <strong (click)="selectHero(hero)">{{ hero.name }}</strong>
+  </li>
+</ul>

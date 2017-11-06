@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var Mustache = require('mustache');
 
-var app = express();
+var app = require('./app');
 
 var Loc = App.loc['node'] = App.createLoc([__dirname, '..']);
 

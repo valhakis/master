@@ -4,19 +4,19 @@ var webpack = require('webpack');
 var spawn = require('child_process').spawn;
 var bs = require('browser-sync').create();
 var fs = require('fs');
-var env = App.require('env');
+var env = Loc.require('env');
 
 // webpack 
-var compiler = webpack(App.require('webpack.config'));
+var compiler = webpack(Loc.require('webpack.config'));
 var watching = compiler.watch({}, (err, stats) => {
   console.log(stats.toString({colors: true, chunks: false}));
 });
 
 // server nodemon configuration
-fs.writeFileSync(App.root("server/nodemon.json"), JSON.stringify({
+fs.writeFileSync(Loc.root("server/nodemon.json"), JSON.stringify({
   watch: [
-    App.root('server'),
-    App.root('globals')
+    Loc.root('server'),
+    Loc.root('globals')
   ],
   ignore: [
   ]
@@ -29,11 +29,11 @@ spawn('nodemon', ['-q', '.'], {
     env.mode = 'development';
     return env;
   })(),
-  cwd: App.root('server')
+  cwd: Loc.root('server')
 });
 
 bs.init({
-  port: 3000,
+  port: env.bs_port,
   host: env.host,
   proxy: `${env.host}:${env.port}`,
   open: false,
@@ -48,6 +48,6 @@ bs.init({
 });
 
 bs.watch([
-  App.root('server/views/**/*.{hbs,html,js}'),
-  App.root('public/**/*.{hbs,html,js}'),
+  Loc.root('server/views/**/*.{hbs,html,js}'),
+  Loc.root('public/**/*.{hbs,html,js,css}'),
 ]).on('change', bs.reload);

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <base href="/wsite/">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body ng-app="app">
+
+    <main-nav></main-nav>
+
+    <h1>Todo</h1>
+
+    <div ng-controller="TodoController">
+      <h3>{{ title }}</h3>
+      <pre><code>{{ todos | json }}</code></pre>
+    </div>
+
+    <create-todo></create-todo>
+
+    <todo-list></todo-list>
+
+    <script src="/dist/common.out.js"></script>
+    <script src="/dist/client-angular.out.js"></script>
+  </body>
+</html>
