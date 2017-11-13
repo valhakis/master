@@ -1,9 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+export TERM="xterm-256color"
+force_color_prompt=yes
 
 alias ls="ls --color "
 
-force_color_prompt=yes
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -34,6 +35,7 @@ function make_ps1()
 }
 make_ps1
 
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH=$PATH:"$HOME/include"
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:"$HOME/include"
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:"$HOME/include"
@@ -47,3 +49,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+# export TERM="xterm-color"

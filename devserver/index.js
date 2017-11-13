@@ -35,6 +35,12 @@ spawn('sh', ['start.sh'], {
   cwd: App.masterRoot('wsite')
 });
 */
+/*
+spawn('sh', ['start.sh'], {
+  stdio: 'inherit',
+  cwd: process.env['HOME'] + '/wsite'
+});
+*/
 
 fs.writeFileSync(__dirname + '/nodemon.json', JSON.stringify({
   watch: [
@@ -59,7 +65,9 @@ var nodemon = {
     App.masterRoot("opengl/app/client"),
     App.masterRoot("opengl/app/public"),
     App.masterRoot("jquery/app/public"),
+    App.masterRoot("server/public"),
     App.masterRoot("javascript/app/public"),
+    App.masterRoot("javascript/app/scrap"),
     "nodemon.json",
   ],
   watch: [
@@ -124,13 +132,15 @@ if (isWin) {
   });
 } else {
   spawn('nodemon', ['-q', '.'], {
+  // spawn('npm', ['run', 'nodemon', '-q', '.'], {
     cwd: App.masterRoot('server'),
     stdio: 'inherit'
   });
 }
 
 bs.init({
-  port: env.bs.port,
+  // port: env.bs.port,
+  port: env.bs_port,
   host: env.host,
   proxy: `${server.host}:${server.port}`,
   open: false,
@@ -181,12 +191,13 @@ bs.watch([
   App.masterRoot('current/public/**/*.{html,js,css}'),
   App.masterRoot('game/public/**/*.{html,js,css}'),
   App.masterRoot('2017-09-05/public/**/*.{html,js,css}'),
-  App.masterRoot('php/**/*.{twig,html,php,js,css}'),
+  //App.masterRoot('php/**/*.{twig,html,php,js,css}'),
   // App.masterRoot('php/database/**/*.{html,php,js,css}'),
   // App.masterRoot('php/blog/{app,public,routes,resources}/**/*.{html,php,js,css}'),
   App.masterRoot('lib/**/*.{html,js,css}'),
   App.masterRoot('css/**/*.css'),
   App.masterRoot('current/public/**/*.{html,js,css}'),
+  App.masterRoot('server/public/**/*.{html,js,css,hbs}'),
   // App.masterRoot('code/public/**/*.{html,js,css}'),
   App.masterRoot('mustache/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('mongodb/{public,views,partials}/**/*.{html,js,css,mst}'),
@@ -194,7 +205,7 @@ bs.watch([
   App.masterRoot('prism/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('node/{public,views,partials}/**/*.{html,js,css,mst}'),
   App.masterRoot('standard/{public,views,partials}/**/*.{html,js,css,mst}'),
-  App.masterRoot('laravel/{app,routes,public,resources}/**/*.{html,js,css,mst,php}'),
+  // App.masterRoot('laravel/{app,routes,public,resources}/**/*.{html,js,css,mst,php}'),
   App.masterRoot('bootstrap/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('demo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('express/{public,views}/**/*.{html,js,css,mst,hbs,pug,jade}'),
@@ -212,7 +223,7 @@ bs.watch([
   App.masterRoot('cc/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('jquery/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('typescript/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
-  App.masterRoot('javascript/app/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
+  App.masterRoot('javascript/app/{public,views,scrap}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('excel/{public,views}/**/*.{html,js,css,mst,hbs,pug}'),
   App.masterRoot('todo/{public,views}/**/*.{html,js,css,mst,hbs}'),
   App.masterRoot('angular/{public,views}/**/*.{html,js,css,mst,hbs}'),

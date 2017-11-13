@@ -1,3 +1,9 @@
+set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
+
+
 call plug#begin('~/.vim/plugged')
 Plug 'Haron-Prime/Antares'
 Plug 'mattn/emmet-vim'
@@ -18,66 +24,98 @@ Plug 'Shougo/neocomplete.vim'
 "Plug 'majutsushi/tagbar'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'vim-airline/vim-airline-themes'
-" Plug 'rschmukler/pangloss-vim-indent'
+"Plug 'rschmukler/pangloss-vim-indent'
 "Plug 'mustache/vim-mustache-handlebars'
-
 "Plug 'tpope/vim-commentary'
-
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'moll/vim-node'
-" Plug 'evidens/vim-twig'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'cakebaker/scss-syntax.vim'
-" Plug 'juvenn/mustache.vim'
-" Plug 'tpope/vim-surround'
-" Plug 'nono/vim-handlebars'
-" Plug 'jwalton512/vim-blade'
-" Plug 'vim-utils/vim-man'
-" Plug 'tikhomirov/vim-glsl'
-" Plug 'digitaltoad/vim-pug'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'moll/vim-node'
-" Plug 'evidens/vim-twig'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'cakebaker/scss-syntax.vim'
-" Plug 'juvenn/mustache.vim'
-" Plug 'scrooloose/nerdtree' 
-" Plug 'valhakis/vim' 
-" Plug 'tpope/vim-surround'
-" Plug 'nono/vim-handlebars'
-" Plug 'jwalton512/vim-blade'
-" Plug 'tpope/vim-repeat'
-" Plug 'mattn/emmet-vim'
-" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'vim-utils/vim-man'
-" Plug 'tikhomirov/vim-glsl'
-" Plug 'digitaltoad/vim-pug'
-" Plug 'statianzo/vim-jade'
-" Plug 'Yggdroot/indentLine'
-" Plug 'othree/html5.vim'
-" Plug 'jwalton512/vim-blade'
-" Plug 'etnadji/vim-epub'
-
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'moll/vim-node'
+"Plug 'evidens/vim-twig'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'cakebaker/scss-syntax.vim'
+"Plug 'juvenn/mustache.vim'
+"Plug 'tpope/vim-surround'
+"Plug 'nono/vim-handlebars'
+"Plug 'jwalton512/vim-blade'
+"Plug 'vim-utils/vim-man'
+"Plug 'tikhomirov/vim-glsl'
+"Plug 'digitaltoad/vim-pug'
+"Plug 'Townk/vim-autoclose'
+"Plug 'tpope/vim-fugitive'
+"Plug 'elzr/vim-json'
+"Plug 'hushicai/tagbar-javascript.vim'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'leshill/vim-json'
+"Plug 'briancollins/vim-jst'
+"Plug 'hail2u/vim-css3-syntax'
+"Plug 'Haron-Prime/Antares'
+"Plug 'scrooloose/nerdtree' 
+"Plug 'valhakis/vim' 
+"Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'tpope/vim-repeat'
+"Plug 'mattn/emmet-vim'
+"Plug 'pangloss/vim-javascript'
+"Plug 'Shougo/neocomplete.vim'
+"Plug 'Yggdroot/indentLine'
+"Plug 'nikvdp/ejs-syntax'
+"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'statianzo/vim-jade'
+"Plug 'othree/html5.vim'
+"Plug 'etnadji/vim-epub'
 "Plug 'python-mode/python-mode'
 call plug#end()
 
+
 colorscheme antares
+let g:NERDTreeWinSize=50
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
 set laststatus=2
 
+
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-" set nowrap incsearch hlsearch splitbelow backspace=2
 set nowrap incsearch hlsearch splitbelow mouse=n
 set autoindent copyindent number noesckeys
 set wildmenu
 
-"AirlineTheme wombat
 let g:airline_solarized_bg='dark'
 let g:airline_theme='wombat'
+set t_Co=256
+set background=dark
+
+set ruler
+
+" if (has("termguicolors"))
+  " set termguicolors
+" endif
+
+if has('nvim')
+  set autoindent
+else
+  set noesckeys
+endif
+
+"set wildignore=*.o,*~,*.pyc
+"if has("win16") || has("win32")
+  "set wildignore+=.git\*,.hg\*,.svn\*
+"else
+  "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+"endif
+
+
+
+" Ignore compiled files
+
+"Always show current position
+
+" Height of the command bar
+"set cmdheight=2
 
 " set noexpandtab
 " set shiftround
@@ -85,9 +123,6 @@ let g:airline_theme='wombat'
 let g:nerdtree_tabs_focus_on_files = 1
 let g:nerdtree_tabs_startup_cd = 0
 let g:nerdtree_tabs_autofind = 1
-"let g:javascript_plugin_jsdoc = 1
-"let g:javascript_plugin_ngdoc = 1
-"let g:javascript_plugin_flow = 1
 
 let g:tagbar_type_typescript = {                                                  
       \ 'ctagsbin' : 'tstags',                                                        
@@ -140,7 +175,9 @@ au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mst set filetype=html syntax=mustache
 
 nmap ,tg :TagbarToggle<CR>
+map <F8> :let mycurf=expand("<cfile>")<cr><c-w> w :execute("e ".mycurf)<cr><c-w>p
 nmap ,edit :tabedit ~/.vimrc <cr>
+nmap ,tg :TagbarToggle<cr>
 " nmap ,so :so ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
 nmap ,ed :e % <cr>
@@ -174,7 +211,6 @@ nmap ,st :w <bar> !./start.sh <cr>
 nmap \mr :w <bar> !./start.sh <cr>
 
 " CUSTOM TEMPLATE FUNCTION
-" ==========================================================
 function! GetTemplate()
   " get the current line number
   let line = line('.')
@@ -208,8 +244,6 @@ function! GetTemplate()
   endif
   return ''
 endfunction
-"map <c-g> :call GetTemplate() <cr>
-"inoremap <c-l> <c-r>=GetTemplate() <cr>
 imap ,l <c-r>=GetTemplate() <cr><esc>
 " ==========================================================
 
@@ -219,33 +253,14 @@ imap ,l <c-r>=GetTemplate() <cr><esc>
 nmap ,al :e # <cr>
 " ==========================================================
 
-" inoremap <space><space> <esc>/<++><Enter>
-"nmap <space><space> /<++><cr>zt:noh<cr>
-" <++>
-
 " EDIT LOCAL MAKEFILE [,ma]
 " :e #
 " ==========================================================
-"nmap ,ma :tabe makefile <cr>
 " ==========================================================
-hi Search ctermfg=red ctermbg=none
+hi Search ctermfg=red ctermbg=none guibg=NONE guifg=yellow
 hi IncSearch ctermbg=yellow ctermfg=black
 
 au FileType man set syntax=c
-
-" nmap ,se :call CustomNew() <cr>
-
-" au BufEnter .* call CustomNew() <cr>
-" au BufEnter,BufWritePost * call CustomNew() 
-" au BufEnter,BufWritePost * call example#load()
-
-" @what is that what this
-" and @this is what
-" one two
-" two one
-
-" autocmd bufwritepost .vimrc source ~/.vimrc
-" call example#begin()
 
 
 au filetype vim syntax match VimRed /^\/\//
@@ -271,6 +286,14 @@ au filetype vim hi ValYellow ctermfg=yellow
 au filetype vim hi ValBrown ctermfg=brown
 
 
+hi NonText ctermfg=236
+filetype plugin on
+
+"au BufNewFile,BufRead *.ejs set syntax=html
+"au BufEnter *.ejs echo 'entered'
+"au FocusGained *.ejs :redraw
+" g:vim_json_syntax_conceal = 0 
+
 " set list
 " set listchars=eol:⏎,space:·,tab:\ T,trail:→,extends:E,precedes:-,conceal:C,nbsp:X
 " set listchars=
@@ -281,9 +304,31 @@ au filetype vim hi ValBrown ctermfg=brown
 "set listchars+=extends:E
 "set listchars+=precedes:B
 "set conceallevel=2
-
 " set listchars+=tab:\ X
 
-hi NonText ctermfg=236
+" nmap ,se :call CustomNew() <cr>
 
-finish
+" au BufEnter .* call CustomNew() <cr>
+" au BufEnter,BufWritePost * call CustomNew() 
+" au BufEnter,BufWritePost * call example#load()
+
+" @what is that what this
+" and @this is what
+" one two
+" two one
+
+" autocmd bufwritepost .vimrc source ~/.vimrc
+" call example#begin()
+
+" inoremap <space><space> <esc>/<++><Enter>
+"nmap <space><space> /<++><cr>zt:noh<cr>
+" <++>
+"nmap ,ma :tabe makefile <cr>
+"map <c-g> :call GetTemplate() <cr>
+"inoremap <c-l> <c-r>=GetTemplate() <cr>
+"let g:javascript_plugin_jsdoc = 1
+"let g:javascript_plugin_ngdoc = 1
+"let g:javascript_plugin_flow = 1
+" set nowrap incsearch hlsearch splitbelow backspace=2
+" let g:elite_mode=1
+"set ruler

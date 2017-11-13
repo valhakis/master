@@ -6,7 +6,9 @@
     "/home/ruudi/master/opengl/app/client",
     "/home/ruudi/master/opengl/app/public",
     "/home/ruudi/master/jquery/app/public",
+    "/home/ruudi/master/server/public",
     "/home/ruudi/master/javascript/app/public",
+    "/home/ruudi/master/javascript/app/scrap",
     "nodemon.json"
   ],
   "watch": [

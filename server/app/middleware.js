@@ -67,6 +67,7 @@ activeDuration: 5 * 60 * 1000,
 
   app.use(require('express-flash')());
 
+  app.use('/api', App.masterRequire('server/api'));
   app.use('/3d', express.static(App.masterRoot('3d')));
   app.use('/scrap', serveIndex(App.masterRoot('scrap'), {
     hidden: true,
@@ -76,6 +77,7 @@ activeDuration: 5 * 60 * 1000,
   }));
   app.use('/scrap', express.static(App.masterRoot('scrap')));
   app.use('/', express.static(App.masterRoot('public')));
+  app.use('/', express.static(App.masterRoot('server/public')));
   app.use('/', express.static(App.masterRoot('game/public/dist')));
   app.use('/sim', express.static(App.masterRoot('sim/public')));
 

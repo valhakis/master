@@ -17,6 +17,7 @@ ifeq ($(OS),Windows_NT)
 else
 	libs += -lGL
 	libs += -lglfw
+	libs += -lX11
 endif
 libs += -ldl
 
