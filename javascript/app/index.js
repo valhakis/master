@@ -10,9 +10,10 @@ app.get('/', function(req, res) {
   common.render('index', req, res);
 });
 
-app.use('/scrap', serveIndex(Loc.root('public/scrap'), {
+app.use('/scrap', serveIndex(Loc.root('scrap'), {
   hidden: true,
   icons: true,
   view: 'details',
   stylesheet: 'serve-index.css'
 }));
+app.use('/scrap', Loc.static('scrap'));

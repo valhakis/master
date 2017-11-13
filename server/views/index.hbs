@@ -5,7 +5,7 @@
     <title>SERVER</title>
     <link rel="stylesheet" href="/lib/w3.css">
   </head>
-  <body style="max-width: 900px; margin: 0px auto;">
+  <body style="margin: 0px auto;" ng-app="server-app">
 
     {{#if user}}
       <script>var user = {{{json user}}}</script>
@@ -52,6 +52,55 @@
         </p>
       </div>
     {{/if}}
+
+    <div class="w3-container">
+      <div class="w3-container">
+        <h1>BLOG POSTS</h1>
+      </div>
+      <div class="w3-row">
+        <div class="w3-col m12 l5">
+          <div class="w3-container">
+            <div class="w3-panel w3-red w3-card w3-border">
+              <h3>LOREM IPSUM</h3>
+              <p>Consectetur inventore harum dolor assumenda laudantium Aspernatur libero deleniti incidunt sit dolor? Dicta possimus odit at officia veritatis. Reprehenderit mollitia!</p>
+            </div>
+            <div class="w3-panel w3-pink w3-card w3-border">
+              <h3>LOREM IPSUM</h3>
+              <p>Consectetur inventore harum dolor assumenda laudantium Aspernatur libero deleniti incidunt sit dolor? Dicta possimus odit at officia veritatis. Reprehenderit mollitia!</p>
+            </div>
+            <div class="w3-panel w3-purple w3-card w3-border">
+              <h3>LOREM IPSUM</h3>
+              <p>Consectetur inventore harum dolor assumenda laudantium Aspernatur libero deleniti incidunt sit dolor? Dicta possimus odit at officia veritatis. Reprehenderit mollitia!</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m8 l5">
+          <server-app-blog-posts></server-app-blog-posts>
+        </div>
+        <div class="w3-col m4 l2">
+          <server-app-post-create></server-app-post-create>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-col m12 l6">
+          <div>
+            <h3>LOREM 1</h3>
+            <p>Sit aliquid accusantium molestiae ex eligendi quasi! Repellendus voluptatem omnis quia illo sit sapiente Consectetur animi natus quo quis itaque Placeat quod saepe nihil laudantium corporis quis Accusantium laborum ex</p>
+          </div>
+        </div>
+        <div class="w3-col m12 l6">
+          <div>
+            <h3>LOREM 2</h3>
+            <p>Sit aliquid accusantium molestiae ex eligendi quasi! Repellendus voluptatem omnis quia illo sit sapiente Consectetur animi natus quo quis itaque Placeat quod saepe nihil laudantium corporis quis Accusantium laborum ex</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <server-app-row></server-app-row>
 
     {{#if user}}
       <div class="w3-panel w3-pink w3-border w3-card">
@@ -235,5 +284,6 @@
     <script src="/lib/example.js"></script>
     <script src="/keyboard.js"></script>
     <script src="/index.hbs.js"></script>
+    <script src="/server-app/index.js"></script>
   </body>
 </html>

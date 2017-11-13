@@ -1,0 +1,8 @@
+<div class="w3-container">
+  <h3 class="w3-panel w3-black w3-padding">THE BLOG POSTS</h3>
+
+  <div ng-repeat="post in posts | orderBy:createdAt:true | limitTo: 3" class="w3-panel w3-card-4 w3-purple">
+    <h3><% post.title %></h3>
+    <pre class="w3-pale-red w3-padding"><% post.body %></pre>
+  </div>
+</div>

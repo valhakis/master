@@ -1,28 +1,29 @@
+set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
+
 call plug#begin('~/.vim/plugged')
+Plug 'cakebaker/scss-syntax.vim'
+" optional i mean new
+"Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-fugitive'
+Plug 'elzr/vim-json'
+Plug 'majutsushi/tagbar'
+Plug 'hushicai/tagbar-javascript.vim'
+Plug 'airblade/vim-gitgutter'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'leshill/vim-json'
+Plug 'elzr/vim-json'
+" ^^
 Plug 'joukevandermaas/vim-ember-hbs'
-" Plug 'rschmukler/pangloss-vim-indent'
+Plug 'briancollins/vim-jst'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tmhedberg/matchit'
 Plug 'mustache/vim-mustache-handlebars'
-
 Plug 'tpope/vim-commentary'
-
 Plug 'Haron-Prime/Antares'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'moll/vim-node'
-" Plug 'evidens/vim-twig'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'cakebaker/scss-syntax.vim'
-" Plug 'juvenn/mustache.vim'
-" Plug 'scrooloose/nerdtree' 
-" Plug 'tpope/vim-surround'
-" Plug 'nono/vim-handlebars'
-" Plug 'jwalton512/vim-blade'
-" Plug 'tpope/vim-repeat'
-" Plug 'mattn/emmet-vim'
-" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'vim-utils/vim-man'
-" Plug 'tikhomirov/vim-glsl'
-" Plug 'digitaltoad/vim-pug'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'moll/vim-node'
 Plug 'evidens/vim-twig'
@@ -37,29 +38,91 @@ Plug 'nono/vim-handlebars'
 Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'pangloss/vim-javascript'
 Plug 'Shougo/neocomplete.vim'
 Plug 'vim-utils/vim-man'
 Plug 'tikhomirov/vim-glsl'
 Plug 'digitaltoad/vim-pug'
+Plug 'Yggdroot/indentLine'
+" Plug 'nikvdp/ejs-syntax'
+" Plug 'rschmukler/pangloss-vim-indent'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'moll/vim-node'
+" Plug 'evidens/vim-twig'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'juvenn/mustache.vim'
+" Plug 'scrooloose/nerdtree' 
+" Plug 'tpope/vim-surround'
+" Plug 'nono/vim-handlebars'
+" Plug 'jwalton512/vim-blade'
+" Plug 'tpope/vim-repeat'
+" Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'vim-utils/vim-man'
+" Plug 'tikhomirov/vim-glsl'
+" Plug 'digitaltoad/vim-pug'
+" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Plug 'statianzo/vim-jade'
-" Plug 'Yggdroot/indentLine'
 " Plug 'othree/html5.vim'
 " Plug 'jwalton512/vim-blade'
 " Plug 'etnadji/vim-epub'
-
 "Plug 'python-mode/python-mode'
 call plug#end()
 
+"au BufNewFile,BufRead *.ejs set syntax=html
+"au BufEnter *.ejs echo 'entered'
+"au FocusGained *.ejs :redraw
+
+" g:vim_json_syntax_conceal = 0 
+
 colorscheme antares
+let g:NERDTreeWinSize=50
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 
+set t_Co=256
+set background=dark
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" let g:elite_mode=1
+
+set wildmenu
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " set nowrap incsearch hlsearch splitbelow backspace=2
 set nowrap incsearch hlsearch splitbelow mouse=n
-set autoindent copyindent number noesckeys
+set autoindent copyindent number
+"set ruler
+set laststatus=2
+
+if has('nvim')
+  set autoindent
+else
+  set noesckeys
+endif
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+  set wildignore+=.git\*,.hg\*,.svn\*
+else
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+"Always show current position
+set ruler
+
+" Height of the command bar
+"set cmdheight=2
 
 " set noexpandtab
 " set shiftround
@@ -91,7 +154,9 @@ let g:user_emmet_leader_key=','
 au BufRead,BufNewFile *.vs,*.fs set filetype=glsl syntax=glsl
 au BufRead,BufNewFile *.mst set filetype=html syntax=mustache
 
+map <F8> :let mycurf=expand("<cfile>")<cr><c-w> w :execute("e ".mycurf)<cr><c-w>p
 nmap ,edit :tabedit ~/.vimrc <cr>
+nmap ,tg :TagbarToggle<cr>
 " nmap ,so :so ~/.vimrc <cr>
 nmap ,so :so ~/.vimrc <cr>
 nmap ,ed :e % <cr>
@@ -179,7 +244,7 @@ nmap <space><space> /<++><cr>zt:noh<cr>
 " ==========================================================
 nmap ,ma :tabe makefile <cr>
 " ==========================================================
-hi Search ctermfg=red ctermbg=none
+hi Search ctermfg=red ctermbg=none guibg=NONE guifg=yellow
 hi IncSearch ctermbg=yellow ctermfg=black
 
 au FileType man set syntax=c
@@ -239,6 +304,5 @@ au filetype vim hi ValBrown ctermfg=brown
 " set listchars+=tab:\ X
 
 hi NonText ctermfg=236
+filetype plugin on
 
-finish
->>>>>>> e8ceb17290ab69f66f56c951dfa56422d7f43098
