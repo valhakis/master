@@ -3,16 +3,37 @@ syntax on
 set nowrap
 set encoding=utf8
 
-
 call plug#begin('~/.vim/plugged')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  " Plug 'Shougo/neocomplete.vim'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'vim-scripts/Wombat'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'moll/vim-node'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-commentary'
 Plug 'Haron-Prime/Antares'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-repeat'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree' 
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'pangloss/vim-javascript'
-Plug 'Shougo/neocomplete.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'wavded/vim-stylus'
+Plug 'tpope/vim-surround'
 
+let g:deoplete#enable_at_startup = 1
+
+
+"Plug 'airblade/vim-rooter'
 "Plug 'joukevandermaas/vim-ember-hbs'
 "Plug 'tmhedberg/matchit'
 "Plug 'alvan/vim-closetag'
@@ -26,14 +47,11 @@ Plug 'Shougo/neocomplete.vim'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'rschmukler/pangloss-vim-indent'
 "Plug 'mustache/vim-mustache-handlebars'
-"Plug 'tpope/vim-commentary'
 "Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'moll/vim-node'
 "Plug 'evidens/vim-twig'
 "Plug 'leafgarland/typescript-vim'
 "Plug 'cakebaker/scss-syntax.vim'
 "Plug 'juvenn/mustache.vim'
-"Plug 'tpope/vim-surround'
 "Plug 'nono/vim-handlebars'
 "Plug 'jwalton512/vim-blade'
 "Plug 'vim-utils/vim-man'
@@ -44,7 +62,6 @@ Plug 'Shougo/neocomplete.vim'
 "Plug 'elzr/vim-json'
 "Plug 'hushicai/tagbar-javascript.vim'
 "Plug 'easymotion/vim-easymotion'
-"Plug 'jelera/vim-javascript-syntax'
 "Plug 'leshill/vim-json'
 "Plug 'briancollins/vim-jst'
 "Plug 'hail2u/vim-css3-syntax'
@@ -56,7 +73,6 @@ Plug 'Shougo/neocomplete.vim'
 "Plug 'mattn/emmet-vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'Shougo/neocomplete.vim'
-"Plug 'Yggdroot/indentLine'
 "Plug 'nikvdp/ejs-syntax'
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'statianzo/vim-jade'
@@ -65,13 +81,22 @@ Plug 'Shougo/neocomplete.vim'
 "Plug 'python-mode/python-mode'
 call plug#end()
 
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_vimfiler = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 
-colorscheme antares
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize=50
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeQuitOnOpen = 1
+" let g:javascript_plugin_jsdoc = 1
+" let g:javascript_plugin_ngdoc = 1
+" let g:javascript_plugin_flow = 1
+" let g:jsx_ext_required = 0
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
@@ -81,31 +106,44 @@ set laststatus=2
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
-set autoindent copyindent number noesckeys
-set wildmenu
+set autoindent copyindent number 
+set wildmenu relativenumber
 
-let g:airline_solarized_bg='dark'
-let g:airline_theme='wombat'
+" let g:airline_solarized_bg='dark'
+" let g:airline_theme='wombat'
+"hi NonText 		guifg=#808080 guibg=#303030 gui=none
+"highlight Normal ctermbg=NONE guibg=NONE
+"highlight nonText ctermbg=NONE guibg=NONE
 set t_Co=256
-set background=dark
 
-set ruler
-
-" if (has("termguicolors"))
-  " set termguicolors
-" endif
+" set ruler
 
 if has('nvim')
+
   set autoindent
+  colorscheme wombat
 else
+  colorscheme antares
   set noesckeys
+  " set Vim-specific sequences for RGB colors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+set background=dark
+hi Normal 		guifg=#f6f3e8 guibg=#242424 gui=none
+hi NonText 		guifg=#f6f3e8 guibg=#242424 gui=none
+hi LineNr 		guibg=#242424 gui=none
 
 "set wildignore=*.o,*~,*.pyc
 "if has("win16") || has("win32")
-  "set wildignore+=.git\*,.hg\*,.svn\*
+"set wildignore+=.git\*,.hg\*,.svn\*
 "else
-  "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 "endif
 
 
@@ -120,9 +158,9 @@ endif
 " set noexpandtab
 " set shiftround
 
-let g:nerdtree_tabs_focus_on_files = 1
-let g:nerdtree_tabs_startup_cd = 0
-let g:nerdtree_tabs_autofind = 1
+" let g:nerdtree_tabs_focus_on_files = 1
+" let g:nerdtree_tabs_startup_cd = 0
+" let g:nerdtree_tabs_autofind = 1
 
 let g:tagbar_type_typescript = {                                                  
       \ 'ctagsbin' : 'tstags',                                                        
@@ -144,11 +182,7 @@ let g:tagbar_type_typescript = {
       \ }    
 
 
-let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden = 1
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize = 50
-let g:acp_enableAtStartup = 1
+"let g:acp_enableAtStartup = 1
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
@@ -289,6 +323,8 @@ au filetype vim hi ValBrown ctermfg=brown
 hi NonText ctermfg=236
 filetype plugin on
 
+" set guifont=DroidSansMono_Nerd_Font:h11
+
 "au BufNewFile,BufRead *.ejs set syntax=html
 "au BufEnter *.ejs echo 'entered'
 "au FocusGained *.ejs :redraw
@@ -332,3 +368,4 @@ filetype plugin on
 " set nowrap incsearch hlsearch splitbelow backspace=2
 " let g:elite_mode=1
 "set ruler
+
