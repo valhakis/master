@@ -2,6 +2,7 @@ set nocompatible
 syntax on
 set nowrap
 set encoding=utf8
+let g:javascript_plugin_jsdoc = 1
 
 call plug#begin('~/.vim/plugged')
 if has('nvim')
@@ -13,6 +14,8 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'heavenshell/vim-jsdoc'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/Wombat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'moll/vim-node'
@@ -29,6 +32,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'wavded/vim-stylus'
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
 
 let g:deoplete#enable_at_startup = 1
 
@@ -47,9 +51,7 @@ let g:deoplete#enable_at_startup = 1
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'rschmukler/pangloss-vim-indent'
 "Plug 'mustache/vim-mustache-handlebars'
-"Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'evidens/vim-twig'
-"Plug 'leafgarland/typescript-vim'
 "Plug 'cakebaker/scss-syntax.vim'
 "Plug 'juvenn/mustache.vim'
 "Plug 'nono/vim-handlebars'
@@ -93,7 +95,6 @@ let g:NERDTreeWinSize=50
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
-" let g:javascript_plugin_jsdoc = 1
 " let g:javascript_plugin_ngdoc = 1
 " let g:javascript_plugin_flow = 1
 " let g:jsx_ext_required = 0
@@ -107,7 +108,7 @@ set laststatus=2
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set nowrap incsearch hlsearch splitbelow mouse=n
 set autoindent copyindent number 
-set wildmenu relativenumber
+set wildmenu relativenumber autochdir
 
 " let g:airline_solarized_bg='dark'
 " let g:airline_theme='wombat'
